@@ -1,0 +1,411 @@
+/* Common */
+/*동탄 S*/
+.ml5{margin-left: 5px;}
+.Fr { float: right;}
+.Fl {float: left;}
+.mbt11 { margin-top: 11px;}
+.btnSet_F {height: 34px;}
+.btnSet_F li { float: left; margin-right: 6px; }
+.btnSet_F li.last { margin-right: 0 !important;}
+.mgt9 { margin-top: 9px !important; }
+.mgt-9 { margin-top: -9px !important; }
+.mgl10{margin-left: 10px !important;}
+.mgb10{madding-bottom: 10px !important;}
+.W170{width:170px}
+.Clear{clear: both;}
+.pdt40{padding-top: 40px!important;}
+
+.mgt35{margin-top: 35px}
+
+
+/*미팅룸*/
+.gbDnstBox,
+.gbDnstBox2{display:inline-block;background-color:#f8f8f8;border:1px solid #f1f1f1;padding:5px 10px;}
+.gbDnstBox2{width:407px;padding:10px;margin-bottom:10px;}
+.gbDnstBoxLeft{float:left;width:340px;}
+.gbDnstBoxRight{float:right;width:500px;}
+.gbDnstBoxRight ul{border-left:1px solid #e7e7e7;overflow:hidden;}
+.gbDnstBoxRight li{float:left;padding:4px 6px;background-color:#FFF;border:1px solid #f1f1f1;margin-right:10px;text-align:center;}
+.gbDnstBoxRight li.first{margin-right:0;background-color:transparent;border:none;}
+.mgBtm10{margin-bottom:10px;}
+
+.capaBox{display:inline-block;margin-top:10px;}
+.capaBox li{float:left;padding:4px 6px;background-color:#FFF;border:1px solid #f1f1f1;margin-right:10px;text-align:center;}
+.capaBox li.last{margin-right:0;}
+
+.ctnMeetingRoom .Fl .gbDnstBox { margin-bottom: 10px; padding: 10px; width: 407px;}
+.ctnMeetingRoom .Fl .gbDnstBox { background-color: #F8F8F8; border: 1px solid #F1F1F1; display: inline-block; padding: 5px 10px;}
+
+.ctnMeetingRoom .Fr .gbDnstBox { margin-bottom: 10px; padding: 10px; width: 407px;}
+.ctnMeetingRoom .Fr .gbDnstBox { background-color: #F8F8F8; border: 1px solid #F1F1F1; display: inline-block; padding: 5px 10px;}
+
+.ctnMeetingRoom img { vertical-align: middle;}
+
+.lnbAreaFacil .BoxL dd, .lnbAreaFacil .BoxL dt{float:left !important;}
+
+/*테이블타입D*/
+.tableTypeD{ margin:0 0 0px 0; border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:fixed;}
+.tableTypeD th,
+.tableTypeD td{ border:none; padding:6px 14px; text-align:center; line-height:27px; border-bottom:#eceae1 solid 1px; border-right:#eceae1 solid 1px; color:#333333}
+.tableTypeD th{color:#5a452e; background:#f6f4eb; }
+.tableTypeD td{ background:#FFF; color:#1b1b1b}
+.tableTypeD .thR{ background:#faf9f4; font-weight: bold!important; padding-left:40px; text-align: left !important;}
+.tableTypeD .last th,
+.tableTypeD .last td {border-bottom:#cdcbbe solid 1px; }
+.tableTypeD .bdBot{border-bottom:#cdcbbe solid 1px !important; }
+.tableTypeD th.last,
+.tableTypeD td.last{ border-right:none; padding-left:32px; *width:200px;}
+.tableTypeD .bdR{border-right:#eceae1 solid 1px !important;}
+.tableTypeD .bdBot{border-bottom:#cdcbbe solid 1px !important; }
+.tableTypeD .fw_B{ font-weight: bold !important;}
+.tableTypeD .left{text-align: left;}
+.PAL10 {padding-left:10px !important;}
+
+
+/*도면보기*/
+
+
+/*동탄E*/
+
+
+
+.facilCon{}
+
+.conFacilWrap{width:100%;overflow:hidden;}
+.conFacilWrap p,
+.conFacilWrap li{color:#444;}
+.fcLeft{float:left;width:566px;}
+.fcRight{float:right;width:300px;}
+.fcLeft_98{float:right;width:98px; margin-top:-40px}
+.fcRight_192{float:right;width:197px;  margin-top:135px}
+
+.alignR{display:inline-block;float:right}
+.bullin{font-weight:bold;float:left;width:90%;margin:5px 0;background:url(../../../images/ko/jeju/main/bul02.gif) no-repeat 0px 8px;padding-left:7px;}
+
+.facilCon .headTit .tit {line-height:100%;}
+.facilCon .mgTop30{margin-top:30px;}
+.facilCon .slidePhotoBox{margin-bottom:0px;}
+.mt30{margin-top:30px;}
+.mt20{margin-top:20px;}
+.mt_30{margin-top:-30px}
+
+/* Index */
+.facilCon .facilIndexCon{}
+.facilCon .mRoomTit{width:100%;overflow:hidden;} 
+.facilCon .mRoomLeft{float:left;width:273px;}
+.facilCon .mRoomRight{float:right;width:571px;}
+
+.facilCon .mRoomInfo{width:100%;overflow:hidden;padding-bottom:45px;border-bottom:1px solid #e8e4de;margin-bottom:45px;}
+.facilCon .mRoomLeft img,
+.facilCon .mRoomRight img{margin:-3px 0;*margin:-1px 0;padding:0;}
+
+
+
+/* meetingRoom */
+
+.mrInfoMainImg{width:100%;overflow:hidden;margin-bottom:30px;}
+
+.fcRight.ctsBtn{margin-top:0px;}
+.facilCon .fcTit{display:block; overflow:hidden;margin:0px 0 10px 0;} /* 2013-07-29수정 */
+.facilCon .fcTit1{*margin-top:0px;}
+.facilCon .fcTit2{*margin-top:0px;}
+.facilCon .fcTit3{margin-top:0px;}
+
+.facilCon .introdFacil{width:100%;margin:60px 0;overflow:hidden;}
+.facilCon .introdFacilBox{float:left;width:670px;background-color:#f4f4f4;padding:15px 10px;overflow:hidden;}
+.introdFacil ul{float:left;}
+.facilCon .introdFacil ul.introUl1{width:45%;}
+.facilCon .introdFacil ul.introUl2{width:30%;}
+.facilCon .introdFacil ul.introUl3{width:25%;}
+.facilCon .introdFacil li{float:left;width:90%;margin:2px 0;background:url(../../images/ko/jeju/main/bul02.gif) no-repeat 0px 8px;padding-left:7px;}
+.facilCon .introdFacilBtm{float:right;margin-top:30px;}
+
+.facilCon .rsvQstBox{float:left;padding:15px;width:100%;background-color:#faf7ed;overflow:hidden;margin-top:35px;}
+.facilCon .rsvQstBox p{padding-left:7px;}
+.facilCon .fcRsvQstTit{width:65px; margin-bottom:10px;background:url(../../images/ko/jeju/facilities/facilRsvTit.jpg);display:block;height:12px; text-indent:-9999%;overflow:hidden;}
+.facilCon .fcRsvQstInfo{font-weight:bold;float:left;width:100%;margin:5px 0;background:url(../../images/ko/jeju/main/bul02.gif) no-repeat 0px 8px;}
+
+.facilCon .fcMroomFc{width:100%;padding-top:10px;overflow:hidden;}
+.facilCon .fcMroomFc dl{border-top:1px solid #e9e5e0;overflow:hidden;}
+.facilCon .fcMroomFc dl.fcDlast{border-bottom:1px solid #e9e5e0;}
+.facilCon .fcMroomFc dt{float:left;width:15%;}
+.facilCon .fcMroomFc dd{float:right;width:85%;}
+.facilCon .fcMroomFc dt,
+.facilCon .fcMroomFc dd{padding:20px 0;}
+.facilCon .fcMroomFc dt.fcMroomFcTit1 img{margin-top:20px;}
+.facilCon .fcMroomFc dt.fcMroomFcTit2 img{margin-top:0px;}
+.facilCon .fcMroomFc dt.fcMroomFcTit3 img{margin-top:0px;}
+.facilCon .fcMroomFc dt.fcMroomFcTit4 img{margin-top:10px;}
+.facilCon .fcMroomFc dt.fcMroomFcTit5 img{margin-top:10px;}
+.facilCon .fcMroomFc dd li{background:url(../../images/ko/jeju/main/bul02.gif) no-repeat 0px 8px;padding-left:7px;width:98%;}
+.facilCon .fcMroomFc dd li p{text-indent:38px;}
+
+
+/* Grand Ball Room */
+
+.facilCon .ctnGrandBall{}
+.facilCon .ctnGrandBall .headTit .tit{line-height:100%;}
+
+.facilCon .conGrandBall{padding-top:0px;}
+.facilCon .gbHalla{clear:both;float:left;width:100%;}
+.facilCon .gbHallaLeft{float:left;}
+.facilCon .gbHallaRight{float:right;}
+.facilCon .gbRoomInfo{float:left;width:100%;margin-top:30px;}
+.facilCon .tableGball{margin:10px 0;}
+.facilCon .tableGball.tableTypeD th, .tableTypeD td{padding:6px 3px;}
+.facilCon .mg50{margin-top:50px;}
+.facilCon .gbBtnBox{margin-top:-4px;}
+.facilCon .gbBtnBox a img{float:right;margin-left:5px;}
+
+/* Pop up */
+.popLayerHallaHall,
+.mainFacilPop{width:800px; left:50%; margin:0 0 0 -400px;}
+.popLayerHallaHall .popHead .tit,
+.popLayerFcLawn .popHead .tit,
+.facilPop .popHead .tit{text-align:left;line-height:100%;}
+.hallaPopCtn{}
+
+/*로터스홀*/
+.hallaPopCtn p.popSubTit{font-weight:bold;padding-bottom:10px;}
+
+.facilPop .LosePopTab .tabBox .ctn .tit a{ display:block; padding:0px; width:137px; height:15px; background:#FFF; text-align:center; border-right:#ccc solid 1px; text-decoration:none; }
+.facilPop .LosePopTab .tabBox .ctn2 .tit a { width:99px !important; }
+.facilPop .LosePopTab .tabBox .ctn3 .tit a { width:130px !important; border:  none!important;}
+
+.facilPop .LosePopTab .tabBox .ctn2 .tit{ left:138px;}
+.facilPop .LosePopTab .tabBox .ctn3 .tit{ left:238px;}
+.facilPop .LosePopTab .tabBox .ctn4 .tit{ left:243px;}
+
+
+
+.LosePopTab .sdPhotoBox{ position:relative; margin:0 0 10px 0;}
+.LosePopTab .sdPhotoBox .txt{ position:absolute; left:0px; top:0px;}
+.LosePopTab .sdPhotoBox .urbanPhoto{overflow:hidden; zoom:1; position:relative;}
+.LosePopTab .sdPhotoBox .urbanPhoto .slide_box{min-height:410px;border:#e2d5c5 solid 1px;padding:35px 10px;}
+.LosePopTab .sdPhotoBox .urbanPhoto .slides_container{ left:50%; top:0px;min-width:423px; min-height:410px;margin-left:-310px;margin-bottom:2px; z-index:11; zoom:1;}
+.LosePopTab .fcPdfBox{width:100%;overflow:hidden;}
+.LosePopTab .fcPdfBox p{float:left;width:400px;color:#333;}
+.LosePopTab .fcPdfBox a img{float:right;}
+.LosePopTab .sdPhotoBox #urbanPhoto4.urbanPhoto .slides_container{width:644px;margin-left:29px}
+
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination{clear:both;width:100%; overflow:hidden;border-top:#cdcbbe solid 1px;border-bottom:#cdcbbe solid 1px;margin-top:10px;}
+
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination ul{float:left;width:600px;}
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li{ display:block;float:left; padding:5px 2px 5px 3px;margin:0;border-right:1px solid #eceae1;text-align:center;min-width:77px;}
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li.noBd{border-right:none;}
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li a{display:block;height:74px;margin-bottom:6px;}
+
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination .big{float:left;width:102px;padding:33px 0;border-right:1px solid #eceae1;text-align:center;}
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination .big p{color:#826b51;font-weight:bold;}
+ 
+
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li img,
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li p{margin:0;padding:0;}
+.LosePopTab .sdPhotoBox .urbanPhoto .pagination li img{*margin-bottom:6px;}
+.LosePopTab .fcPdfBox{width:100%;overflow:hidden;}
+.LosePopTab .fcPdfBox p{float:left;width:400px;color:#333;}
+.LosePopTab .fcPdfBox a img{float:right;}
+/*로터스홀 E*/
+
+/*월라홀*/
+
+.facilPop .WeollaPopTab .tabBox .ctn .tit a{ display:block; padding:0px; width:137px; height:15px; background:#FFF; text-align:center; border:  none!important; text-decoration:none; }
+
+.WeollaPopTab .sdPhotoBox{ position:relative; margin:0 0 10px 0;}
+.WeollaPopTab .sdPhotoBox .txt{ position:absolute; left:0px; top:0px;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto{overflow:hidden; zoom:1; position:relative;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .slide_box{min-height:410px;border:#e2d5c5 solid 1px;padding:35px 10px;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .slides_container{ left:50%; top:0px;min-width:423px; min-height:410px;margin-left:-310px;margin-bottom:2px; z-index:11; zoom:1;}
+.WeollaPopTab .fcPdfBox{width:100%;overflow:hidden;}
+.WeollaPopTab .fcPdfBox p{float:left;width:400px;color:#333;}
+.WeollaPopTab .fcPdfBox a img{float:right;}
+.WeollaPopTab .sdPhotoBox #urbanPhoto4.urbanPhoto .slides_container{width:644px;margin-left:29px}
+
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination{clear:both;width:100%; overflow:hidden;border-top:#cdcbbe solid 1px;border-bottom:#cdcbbe solid 1px;margin-top:10px;}
+
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination ul{float:left;width:600px;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li{ display:block;float:left; padding:5px 2px 5px 3px;margin:0;border-right:1px solid #eceae1;text-align:center;min-width:77px;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li.noBd{border-right:none;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li a{display:block;height:74px;margin-bottom:6px;}
+
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination .big{float:left;width:102px;padding:33px 0;border-right:1px solid #eceae1;text-align:center;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination .big p{color:#826b51;font-weight:bold;}
+ 
+
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li img,
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li p{margin:0;padding:0;}
+.WeollaPopTab .sdPhotoBox .urbanPhoto .pagination li img{*margin-bottom:6px;}
+.WeollaPopTab .fcPdfBox{width:100%;overflow:hidden;}
+.WeollaPopTab .fcPdfBox p{float:left;width:400px;color:#333;}
+.WeollaPopTabㄴ .fcPdfBox a img{float:right;}
+
+/*월라홀 E*/
+
+/*한라홀*/
+.hallaPopCtn p.popSubTit{font-weight:bold;padding-bottom:10px;}
+
+.hallaPopTab .slidePhotoBox .ad-gallery{}
+
+.hallaPopTab .sdPhotoBox{ position:relative; margin:0 0 10px 0;}
+.hallaPopTab .sdPhotoBox .txt{ position:absolute; left:0px; top:0px;}
+.hallaPopTab .sdPhotoBox .urbanPhoto{overflow:hidden; zoom:1; position:relative;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .slide_box{min-height:410px;border:#e2d5c5 solid 1px;padding:35px 10px;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .slides_container{ left:50%; top:0px;min-width:423px; min-height:410px;margin-left:-210px;margin-bottom:2px; z-index:11; zoom:1;}
+
+
+
+
+.hallaPopTab .sdPhotoBox #urbanPhoto4.urbanPhoto .slides_container{width:644px;margin-left:-325px}
+
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination{clear:both;width:100%; overflow:hidden;border-top:#cdcbbe solid 1px;border-bottom:#cdcbbe solid 1px;margin-top:10px;}
+
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination ul{float:left;width:600px;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li{ display:block;float:left; padding:5px 2px 5px 3px;margin:0;border-right:1px solid #eceae1;text-align:center;min-width:77px;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li.noBd{border-right:none;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li a{display:block;height:74px;margin-bottom:6px;}
+
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination .big{float:left;width:102px;padding:33px 0;border-right:1px solid #eceae1;text-align:center;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination .big p{color:#826b51;font-weight:bold;}
+ 
+
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li img,
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li p{margin:0;padding:0;}
+.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li img{*margin-bottom:6px;}
+/*.hallaPopTab .sdPhotoBox .urbanPhoto .pagination li.current{border:2px solid #9b7f5b;background-color:#fcf8f2;}*/
+
+/*.hallaPopTab .sdPhotoBox .urbanPhoto a.prev{top:185px; left:0px; margin: 0 0 0 0px; position: absolute; z-index: 1000; width:20px; height:94px !important; background:url(../../images/ko/jeju/facilities/arrowL.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.hallaPopTab .sdPhotoBox .urbanPhoto a.next{top:185px; right:10px; margin: 0 0 0 0px; position: absolute; z-index: 1000; width:20px; height:94px !important; background:url(../../images/ko/jeju/facilities/arrowR.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+
+.hallaPopTab .sdPhotoBox #urbanPhoto4.urbanPhoto a.prev{top:185px; left:0px; margin: 0 0 0 0px; position: absolute; z-index: 1000; width:20px; height:94px !important; background:url(../../images/ko/jeju/facilities/arrowL.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.hallaPopTab .sdPhotoBox #urbanPhoto4.urbanPhoto a.next{top:185px; right:10px; margin: 0 0 0 0px; position: absolute; z-index: 1000; width:20px; height:94px !important; background:url(../../images/ko/jeju/facilities/arrowR.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+*/
+
+.hallaPopTab .fcPdfBox{width:100%;overflow:hidden;}
+.hallaPopTab .fcPdfBox p{float:left;width:400px;color:#333;}
+.hallaPopTab .fcPdfBox a img{float:right;}
+
+.popLayerFcLawn{width:600px; left:50%; margin:0 0 0 -300px;}
+.normalPopCtn{text-align:center;}
+.normalBox{ border: 1px solid #EAE0D4;}
+
+.mainFacilPop .normalPopCtn{}
+.tableTypeD.tableFacil th{border-bottom:#cdcbbe solid 1px;}
+.tableTypeD.tableFacil th{color:#666;}
+.tableTypeD.tableFacil td{color:#333;padding:0px 14px; text-align:left;}
+.tableTypeD.tableFacil td.alText{text-align:center;}
+
+
+
+.facilPop .tabBox{ position:relative; padding:30px 0px 0 0px; overflow:hidden;}
+.facilPop .tabBox .ctn{ float:left; width:100%;}
+.facilPop .tabBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.facilPop .tabBox .ctn .tit a{ display:block; padding:0px; width:80px; height:15px; background:#FFF; text-align:center;border-right:#ccc solid 1px; text-decoration:none; }
+.facilPop .tabBox .ctn .box{ display:none; padding:0; margin:0; padding:15px; }
+.facilPop .tabBox .ctn .btnMore{ position:absolute; right:4px; top:8px;}
+.facilPop .tabBox .ctn1 .tit{ left:0px;}
+.facilPop .tabBox .ctn2 .tit{ left:81px;}
+.facilPop .tabBox .ctn3 .tit{ left:162px;}
+.facilPop .tabBox .ctn4 .tit{ left:243px;}
+.facilPop .tabBox .ctnOn .tit a{ height:15px; font-weight:bold; font-size:12px; }
+.facilPop .tabBox .ctnOn .btnMore{ display:block;}
+.facilPop .tabBox .ctnOn .box{display:block;}
+.facilPop .tabBox .ctn .tit a.noRborder{border-right:none;}
+
+
+.popLayerFcLawn{width:600px; left:50%; margin:0 0 0 -300px;}
+.normalPopCtn{text-align:center;}
+
+
+.mainFacilPop .normalPopCtn{}
+.tableTypeD.tableFacil th{border-bottom:#cdcbbe solid 1px;}
+.tableTypeD.tableFacil th{color:#666;}
+.tableTypeD.tableFacil td{color:#333;padding:0px 14px; text-align:left;}
+.tableTypeD.tableFacil td.alText{text-align:center;}
+
+
+/*   Lotus    */
+
+.facilPop .lotusPopTab .tabBox .ctn .tit a{ width:120px;}
+.facilPop .lotusPopTab .tabBox .ctn1 .tit{ left:0px;}
+.facilPop .lotusPopTab .tabBox .ctn2 .tit{ left:121px;}
+.facilPop .lotusPopTab .tabBox .ctn3 .tit{ left:242px;}
+.facilPop .lotusPopTab .tabBox .ctn4 .tit{ left:0px;}
+.lotusPopTab .sdPhotoBox #urbanPhoto1.urbanPhoto .slides_container{width:628px;margin-left:-314px;}
+
+/* Medium & Small Size Rooms */
+
+.facilCon .ctnMSRoom{}
+.facilCon .conMsRoom{}
+.facilCon .msRightBtnBox {clear:both;float:right;}
+.facilCon .msRightBtnBox a{margin:10px 0 5px 0;display:block;height:27px;float:right;width:156px;text-indent:-9999px;}
+
+.facilCon .msRightBtnBox2{clear:both;float:right;}
+.facilCon .msRightBtnBox2 a{margin:10px 0 5px 0;float:right;}
+
+.facilCon .msRightBtnBox a.a1.off{background:url(../../images/ko/jeju/facilities/msRmLotusViewBtn2.gif) no-repeat left top;width:167px;}
+.facilCon .msRightBtnBox a.a1.on{background:url(../../images/ko/jeju/facilities/msRmLotusViewBtn.gif) no-repeat left top;width:167px;}
+
+.facilCon .msRightBtnBox a.a2.off{background:url(../../images/ko/jeju/facilities/msRmWallaViewBtn2.gif) no-repeat left top;}
+.facilCon .msRightBtnBox a.a2.on{background:url(../../images/ko/jeju/facilities/msRmWallaViewBtn.gif) no-repeat left top;}
+
+.facilCon .msRightBtnBox a.a3.off{background:url(../../images/ko/jeju/facilities/msRmRoseViewBtn2.gif) no-repeat left top;}
+.facilCon .msRightBtnBox a.a3.on{background:url(../../images/ko/jeju/facilities/msRmRoseViewBtn.gif) no-repeat left top;}
+
+.facilCon .msRightBtnBox a.a4.off{background:url(../../images/ko/jeju/facilities/msRmLilyViewBtn2.gif) no-repeat left top;}
+.facilCon .msRightBtnBox a.a4.on{background:url(../../images/ko/jeju/facilities/msRmLilyViewBtn.gif) no-repeat left top;}
+
+.facilCon .msRightBtnBox a.a5.off{background:url(../../images/ko/jeju/facilities/msRmMaraViewBtn.jpg) no-repeat left top;}
+.facilCon .msRightBtnBox a.a5.on{background:url(../../images/ko/jeju/facilities/msRmMaraViewBtn.jpg) no-repeat left bottom;}
+
+.facilCon .msRightBtnBox a.a6.off{background:url(../../images/ko/jeju/facilities/msRmAraViewBtn.jpg) no-repeat left top;}
+.facilCon .msRightBtnBox a.a6.on{background:url(../../images/ko/jeju/facilities/msRmAraViewBtn.jpg) no-repeat left bottom;}
+
+.facilCon .msRightBtnBox a.a7.off{background:url(../../images/ko/jeju/facilities/msRmOraViewBtn.jpg) no-repeat left top;}
+.facilCon .msRightBtnBox a.a7.on{background:url(../../images/ko/jeju/facilities/msRmOraViewBtn.jpg) no-repeat left bottom;}
+
+.conMsRoom .gbHalla{margin-top:30px;}
+.conMsRoom .gbHallaRight{width:420px;}
+
+
+.facilCon .msRmInfo{}
+
+.facilCon .msTableBox{margin-top:10px;*margin-top:0px;}
+.facilCon .msTableLeft{float:left;width:425px;}
+.facilCon .msTableRight{float:right;width:440px;}
+.facilCon .tableRoundSize{}
+
+.facilCon td.txAleft{text-align:left;}
+
+/* Outdoor Functions */
+
+.facilCon .ctnodFunc{}
+.facilCon .odRoomInfo{margin-top:0px;padding-bottom:35px;}
+.facilCon .odRoomTit{height:15%;width:100%;overflow:hidden;}
+
+.ctnodFunc.facilCon .gbBtnBox{margin-top:20px;}
+
+.ctnodFunc .odRoomInfo .fcLeft{width:427px;}
+.ctnodFunc .odRoomInfo .fcRight{width:420px;}
+
+/* Business Center */
+
+.facilCon .bizCenterInfo{width:100%;padding-top:10px;overflow:hidden;}
+.facilCon .bizCenterInfo dl{border-top:1px solid #e9e5e0;overflow:hidden;}
+.facilCon .bizCenterInfo dl.bcDlast{border-bottom:1px solid #e9e5e0;}
+.facilCon .bizCenterInfo dt{float:left;width:15%;}
+.facilCon .bizCenterInfo dd{float:right;width:85%;}
+.facilCon .bizCenterInfo dd{padding:20px 0;}
+.facilCon .bizcenterInfoBox{margin-top:30px;}
+
+/* Arcade */
+
+.facilCon .acBox{width:100%;overflow:hidden;margin-top:0px;}
+.facilCon .acLeftBox{float:left;width:50%;}
+.facilCon .acRightBox{float:right;width:50%;}
+
+.facilCon .acRightBoxA a { margin: 45px 0 0 0; float: right; }
+
+
+.facilPop .sdPhotoBox .urbanPhoto .pagination li p{margin-top:10px;}
+.facilPop .sdPhotoBox .urbanPhoto .pagination li.t1 p,
+.facilPop .sdPhotoBox .urbanPhoto .pagination li.t2 p{margin-top:0px;}
