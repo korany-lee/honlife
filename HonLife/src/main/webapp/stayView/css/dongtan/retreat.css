@@ -1,0 +1,265 @@
+/* Retreat CSS Document */
+.ctnRetreat img{ vertical-align:middle;}
+
+/*Retreat Index*/
+.ctnRetreat.ctnRetreatIndex{}
+.ctnRetreat.ctnRetreatIndex .box1{ overflow:hidden; border-bottom:#e8e4de solid 1px; padding:0 0 30px 0; margin:0 0 40px 0;}
+.ctnRetreat.ctnRetreatIndex .box1 .c1{ float:left;}
+.ctnRetreat.ctnRetreatIndex .box1 .c2{ float:right;}
+.ctnRetreat.ctnRetreatIndex .box2{ overflow:hidden; border-bottom:#e8e4de solid 1px; padding:0 0 30px 0; margin:0 0 40px 0;}
+.ctnRetreat.ctnRetreatIndex .box2 .c1{ float:left;}
+.ctnRetreat.ctnRetreatIndex .box2 .c2{ float:right;}
+.ctnRetreat.ctnRetreatIndex .box3{ overflow:hidden;}
+.ctnRetreat.ctnRetreatIndex .box3 .c1{ float:left;}
+.ctnRetreat.ctnRetreatIndex .box3 .c2{ float:right;}
+
+
+.ctnOpSoombi .btn{float:right; margin-top:-35px}
+
+/*Soombi Spa & Jacuzzi*/
+.ctnRetreat.ctnOpSoombi{}
+.ctnRetreat.ctnOpSoombi:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnOpSoombi img{ vertical-align:middle;}
+.ctnRetreat.ctnOpSoombi .sdTxt{ margin:0 0 38px 0;}
+.ctnRetreat.ctnOpSoombi .box1{ float:left;}
+.ctnRetreat.ctnOpSoombi .box2{ float:right;}
+.ctnRetreat.ctnOpSoombi .box3{ float:left;}
+.ctnRetreat.ctnOpSoombi .box4{ float:right; width:418px;}
+.ctnRetreat.ctnOpSoombi .box4 .guide{ border:#e9e5e0 solid 1px; padding:5px 0px 5px 7px ; color:#666}
+.ctnRetreat.ctnOpSoombi .box4 .guide p{color:#666}
+.ctnRetreat.ctnOpSoombi .box4 .guide strong{color:#95806a}
+/*Floor Map*/
+.popLayerFloorMapPop{ width:600px; left:50%; margin:0 0 0 -300px}
+.popLayerFloorMapPop .popHead .tit{ background:url(../../images/ko/jeju/main/popHeadTitRetreat.gif) no-repeat 0 -200px; line-height:200px; overflow:hidden;}
+
+/*Luxury Cabana*/
+.ctnRetreat.ctnOpCabana{}
+.ctnRetreat.ctnOpCabana:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnOpCabana img{ vertical-align:middle;}
+.ctnRetreat.ctnOpCabana .bbTop{ overflow:hidden; margin:0 0 4px 0;}
+.ctnRetreat.ctnOpCabana .bbTop .date{ float:left; font-weight:bold; font-size:14px;}
+.ctnRetreat.ctnOpCabana .bbTop .info{ float:right; color:#7e4f15;}
+.ctnRetreat.ctnOpCabana .tablePrice{ margin:0 0 40px 0;}
+.ctnRetreat.ctnOpCabana .tablePrice .aLeft{ text-align:center;}
+.ctnRetreat.ctnOpCabana .box1{ overflow:hidden; margin:0 0 25px 0;}
+.ctnRetreat.ctnOpCabana .box1 .photo{ float:left}
+.ctnRetreat.ctnOpCabana .box1 .info{ float:right;}
+/*�꾨줈留덊뼢 �앹뾽*/
+.popLayerLuxuryCabanaAmPop{ width:600px; margin:0 0 0 -300px; left:50%;}
+.popLayerLuxuryCabanaAmPop .popHead .tit{ background:url(../../images/ko/jeju/main/popHeadTitRetreat.gif) no-repeat 0 -400px; width:500px; line-height:200px; overflow:hidden;}
+.popLayerLuxuryCabanaAmPop .tableAroma{}
+.popLayerLuxuryCabanaAmPop .tableAroma th,
+.popLayerLuxuryCabanaAmPop .tableAroma td{ padding:3px 10px; line-height:20px;}
+
+/*Season Special*/
+.ctnRetreat .seSpBox{ overflow:hidden; display:block}
+.ctnRetreat .seSpBox .tit{}
+.ctnRetreat .seSpBox .spBox{ float:left; position:relative; margin:0 20px 0 0; display:block}
+.ctnRetreat .seSpBox .spBox .img{ height:185px; width:330px; background:#000; display:block;}
+.ctnRetreat .seSpBox .spBox .info{ width:330px; height:56px; position:absolute; left:0px; bottom:0px; display:block;}
+.ctnRetreat .seSpBox .spBox .info .name{ padding:10px 0 0; text-align:center; font-weight:bold; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnRetreat .seSpBox .spBox .info .name a{ color:#FFF;}
+.ctnRetreat .seSpBox .spBox .info .name a:hover{text-decoration:underline}
+.ctnRetreat .seSpBox .spBox .info .date{ text-align:center; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnRetreat .seSpBox .spBox .info .mask{ width:330px; height:56px; background:#000; opacity:0.7;	filter: alpha(opacity = 70); position:absolute; left:0px; bottom:0px; display:block;}
+
+
+/*The Shilla Spa*/
+.ctnRetreat.ctnSpShillaSpa{}
+.ctnRetreat.ctnSpShillaSpa:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnSpShillaSpa .box1{ overflow:hidden;}
+.ctnRetreat.ctnSpShillaSpa .box1 .info{ width:866px;}
+.ctnRetreat.ctnSpShillaSpa .box1 .ea{ width:806px; overflow:hidden; padding:15px 30px;background-color:#f8f8f8;margin:10px 0;}
+.ctnRetreat.ctnSpShillaSpa .box1 .ea .list{ overflow:hidden}
+.ctnRetreat.ctnSpShillaSpa .box1 .ea .list li{ width:190px; float:left; background:url(../../images/ko/jeju/main/bul02.gif) no-repeat 0 9px; padding:0 0 0 10px;}
+.ctnRetreat.ctnSpShillaSpa .tableEa{ width:168px; float:left;}
+.ctnRetreat.ctnSpShillaSpa .tableEa2{ margin:0 0 0 10px;}
+.ctnRetreat.ctnSpShillaSpa .tableEa th,
+.ctnRetreat.ctnSpShillaSpa .tableEa td{ padding:2px 1px; text-align:center; line-height:18px;}
+.ctnRetreat.ctnSpShillaSpa .box2{ float:left;}
+.ctnRetreat.ctnSpShillaSpa .box3{ float:right;}
+.ctnRetreat.ctnSpShillaSpa .box23{ margin:0 0 32px 0;}
+.ctnRetreat.ctnSpShillaSpa .tabBox{ position:relative; padding:36px 0px 0 0px; zoom:1; margin:0 0 30px 0;}
+.ctnRetreat.ctnSpShillaSpa .tabBox:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn{ float:left; width:100%;}
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/jeju/retreat/tabMenuShillaSpa.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn .box{ border:#727272 solid 1px; display:none; padding:25px; }
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn1 .tit{ left:0px; }
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn2 .tit{ left:129px; }
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctn2 .tit a{ width:128px; background-position:-129px 0px;}
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctnOn .tit a{ background-image:url(../../images/ko/jeju/retreat/tabMenuShillaSpaOn.gif)}
+.ctnRetreat.ctnSpShillaSpa .tabBox .ctnOn .box{display:block;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap{ overflow:hidden;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1{ overflow:hidden; width:815px}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1 .ctt1{ float:left; margin:0;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1 .ctt2{ float:left; margin:0;width:100%;overflow:hidden;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1 .ctt2 ul li{ margin:0 0 3px 0;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1 .tit{}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox1 .ct{ float:left; margin:0 10px 0 0;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox2{ overflow:hidden; margin:30px 0 0px 0;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox2 .img{ float:left}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox2 .img img{ margin-right:5px;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox2 .txt{ float:left}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox3{ overflow:hidden;}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox3 .img{ float:left}
+.ctnRetreat.ctnSpShillaSpa .prdWrap .cBox3 .txt{ float:right}
+.ctnRetreat.ctnSpShillaSpa .guideWrap{}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .txt1{}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .txt2{ margin:0 0 30px 0;}
+
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox2{ overflow:hidden; margin:0 0 40px 0;}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox2 .img{ float:left}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox2{}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox3{ overflow:hidden;}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox3 .img{ float:left}
+.ctnRetreat.ctnSpShillaSpa .guideWrap .cBox3 .txt{ float:right}
+
+
+/*肄붿뒪留ㅽ떛 �앹뾽*/
+.popLayerCosmetic img{ vertical-align:middle;}
+.popLayerCosmetic{ width:604px; margin:0 0 0 -302px; left:50%;}
+.popLayerCosmetic .popHead .tit{ background:url(../../images/ko/jeju/retreat/cosmeticPopHeadTit.gif) no-repeat; line-height:100px; overflow:hidden;}
+.popLayerCosmetic .cosBrand{ margin:0 0 20px 0;}
+.popLayerCosmetic .cosBrand .name{ font-weight:bold; margin:0 10px 0 0;} 
+.popLayerCosmetic .cosBrand .btnGo{ background:url(../../images/ko/jeju/retreat/cosmeticPopBtnGo.gif) no-repeat; width:44px; height:22px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;} 
+.popLayerCosmetic .cBox{}
+.popLayerCosmetic .hTit{ border-bottom:#a1886f solid 3px; margin:0 0 10px 0;}
+.popLayerCosmetic .cBox .list{ margin:0 0 10px 0;}
+.popLayerCosmetic .cBox .list li{ padding:5px 0;}
+.popLayerCosmetic .cBox .list li .tit{ background:url(../../images/ko/jeju/main/bul02.gif) no-repeat 0 9px; padding:0 0 0 10px; font-weight:bold;}
+.popLayerCosmetic .cBox .list li .txt{ padding:0 0 0 10px;}
+.popLayerCosmetic .cBox .msg{ color:#7e4f15}
+
+
+/*�ㅽ뙆 �꾨줈洹몃옩*/
+.ctnSpProgram {}
+.ctnSpProgram .topMsg{ background:url(../../images/ko/jeju/retreat/spProgramTopMsg.gif) no-repeat; height:47px; line-height:200px; overflow:hidden;}
+.ctnSpProgram .btnBrc{ text-align:right; height:34px; margin:-30px 0 10px 0;}
+.ctnSpProgram .btnBrc .txt{ vertical-align:middle; margin:0 10px 0 0;}
+.ctnSpProgram .btnBrc .btnBorchure{ background:url(../../images/ko/jeju/retreat/spProgramBtnBrochure.gif) no-repeat; width:120px; height:34px; display:inline-block; vertical-align:middle; line-height:200px; overflow:hidden;}
+.ctnSpProgram .msgTax{ color:#7e4f15; padding:10px 0px; text-align:right;}
+.ctnSpProgram .programList{ border-top:#cdcbbf solid 1px; margin:0 0 0px 0;}
+.ctnSpProgram .programList ul{}
+.ctnSpProgram .programList .pBox{ border-bottom:#cdcbbf solid 1px;}
+.ctnSpProgram .programList .pBox .pTit{ display:block; padding:12px 20px; height:20px; background:url(../../images/ko/jeju/retreat/spProgramBtnDown.gif) no-repeat right 10px}
+.ctnSpProgram .programList .on .pTit{ background:url(../../images/ko/jeju/retreat/spProgramBtnUp.gif) no-repeat right 10px #faf9f4; border-bottom:#eceae1 solid 1px;} 
+.ctnSpProgram .programList .pBox .pTit .tit{ float:left; font-weight:bold; margin:0 10px 0 0;}
+.ctnSpProgram .programList .pBox .pTit .txt{ float:left; padding:0 0 0 10px; background:url(../../images/ko/jeju/retreat/spProgramBar.gif) no-repeat 0 4px;}
+.ctnSpProgram .programList .pBox .pList{}
+.ctnSpProgram .programList .pBox .pList li{}
+.ctnSpProgram .programList .pBox .pList .hTit{ background:#fbfbfb; padding:10px 15px; border-bottom:#eceae1 solid 1px;}
+.ctnSpProgram .programList .pBox .psBox{ position:relative; padding:30px 20px; border-bottom:#eceae1 solid 1px;}
+.ctnSpProgram .programList .pBox .psBox .tit{ font-weight:bold; font-size:14px; margin:0 0 13px 0;}
+.ctnSpProgram .programList .pBox .psBox .opt{}
+.ctnSpProgram .programList .pBox .psBox .btn{ position:absolute; right:20px; top:26px; }
+.ctnSpProgram .programList .pBox .psBox .btn .opt{display:inline-block; vertical-align:middle; margin:0 10px 0 20px;}
+.ctnSpProgram .programList .pBox .psBox .btn .btnRsv{background:url(../../images/ko/jeju/retreat/spProgramBtnRsv.gif) no-repeat; width:83px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnSpProgram .programList .pBox .last{border-bottom:none}
+.ctnSpProgram .spProgram{}
+.ctnSpProgram .spProgram .hTit{ height:27px; margin:0 0 20px 0; border-bottom:#a1886f solid 3px;}
+.ctnSpProgram .spProgram .hTit .tit{ float:left; background:url(../../images/ko/jeju/retreat/spProgramTit1.gif) no-repeat; width:120px; height:27px; line-height:100px; overflow:hidden;}
+
+.ctnSpProgram .slideBox{ padding:0 0 0 33px; width:814px; height:160px; position:relative;}
+.ctnSpProgram .slideBox .ad-gallery{ width:805px;}
+.ctnSpProgram .slideBox .ad-gallery .ad-nav{}
+.ctnSpProgram .slideBox .ad-gallery .ad-back{ background:url(../../images/ko/jeju/specialoffers/packageViewBtnPrev.gif) no-repeat; left:-33px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.ctnSpProgram .slideBox .ad-gallery .ad-forward{ background:url(../../images/ko/jeju/specialoffers/packageViewBtnNext.gif) no-repeat; right:-23px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a img{ border:none ; opacity:1 !important; 	filter: alpha(opacity = 100) !important;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a{ text-align:center; width:235px; margin:auto; }
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a .tit{ font-weight:bold; display:block; padding:14px 0 0 0; text-align:left; font-size:15px; color:#856f56; text-decoration:underline;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li{ padding-right:0px; width:265px; text-align:center; }
+
+
+/*�ㅽ뙆 �꾨줈洹몃옩 �앹뾽*/
+.popLayerSpProgam { width:578px; left:50%; top:200px; margin:0px 0 0 -264px; position:absolute;}
+.popLayerSpProgam .popHead .tit{ background:url(../../images/ko/jeju/main/popHeadTitRetreat.gif) no-repeat 0 0px; line-height:100px; overflow:hidden;}
+.tableSpProgram{ margin:0 0 10px 0;}
+.popLayerSpProgam .guideBox{ margin:10px 0 0 0;}
+.popLayerSpProgam .guideBox .info{ color:#666666}
+.popLayerSpProgam .guideBox .tit{ font-weight:bold;margin:10px 0 0 0; color:#666666}
+.popLayerSpProgam .guideBox .msg{ margin:0px 0 0 0; color:#666666}
+.popLayerSpProgam .hTitS{}
+.popLayerSpProgam .policyBox{ border:#CCC solid 1px; height:100px; overflow:auto; overflow-x:hidden}
+.popLayerSpProgam .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerSpProgam .privacyBox{ padding:0px; margin:10px 0 0 0;}
+.popLayerSpProgam .privacyBox .hTitS{ }
+.popLayerSpProgam .privacyBox .hTitS .tit{font-weight:bold;}
+.popLayerSpProgam .msgBox{ border:#eaeaea solid 1px;  background:#fbfbfb; padding:15px; color:#666666}
+.popLayerSpProgam textarea.leaveMsg { width:397px; height:50px;}
+.popLayerSpProgam .btnList{ margin:20px 0 0px 0;}
+.popLayerSpProgam .btnSpRsv{background:url(../../images/ko/jeju/retreat/btnSpRsv.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.popLayerSpProgam .btnSpCancel{background:url(../../images/ko/jeju/retreat/btnSpCancel.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+.popLayerSpProgam input.rMemCnt,
+.popLayerSpProgam input.gender,
+.popLayerSpProgam input.gender1,
+.popLayerSpProgam input.gender2,
+.popLayerSpProgam input.gender3{ width:20px;}
+
+.popLayerSpProgam #uniform-emailDomainCd{ width:115px !important;}
+.popLayerSpProgam #uniform-emailDomainCd span{ width:90px !important;}
+.popLayerSpProgam #uniform-bkrUseLang{ width:115px !important;}
+.popLayerSpProgam #uniform-bkrUseLang span{ width:90px !important;}
+
+.popLayerSpProgam #uniform-phoneComp{ width:65px !important;}
+.popLayerSpProgam #uniform-phoneComp span{ width:40px !important;}
+.popLayerSpProgam #uniform-phone1{ width:50px !important;}
+.popLayerSpProgam #uniform-phone1 span{ width:25px !important;}
+.popLayerSpProgam input.phone2{ width:50px;}
+.popLayerSpProgam input.phone3{ width:50px;}
+.popLayerSpProgam label.phoneSel1,
+.popLayerSpProgam label.phoneSel2{ margin:0 10px 0 0}
+.popLayerSpProgam #uniform-phoneHome{ width:50px !important;}
+.popLayerSpProgam #uniform-phoneHome span{ width:25px !important;}
+.popLayerSpProgam input.emailId { width:110px;}
+.popLayerSpProgam input.emailDomain {width:110px;}
+.popLayerSpProgam input.rDate  {width:70px;}
+.popLayerSpProgam label.rHour{ }
+.popLayerSpProgam #uniform-resvTm1 { width:40px !important;}
+.popLayerSpProgam #uniform-resvTm1  span{ width:15px !important;}
+.popLayerSpProgam #uniform-resvTm2 { width:40px !important;}
+.popLayerSpProgam #uniform-resvTm2  span{ width:15px !important;}
+.popLayerSpProgam label.gender,
+.popLayerSpProgam label.nameF,
+.popLayerSpProgam label.phoneComp,
+.popLayerSpProgam label.phone1,
+.popLayerSpProgam label.phone2,
+.popLayerSpProgam label.phone3,
+.popLayerSpProgam label.phoneHome,
+.popLayerSpProgam label.phoneHome1,
+.popLayerSpProgam label.phoneHome2,
+.popLayerSpProgam label.emailId,
+.popLayerSpProgam label.emailDomain,
+.popLayerSpProgam label.emailDomainSel{position:absolute; left:-9999%}
+
+
+/*Lounge S*/
+.ctnRetreat.ctnLoungeS{ zoom:1}
+.ctnRetreat.ctnLoungeS:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnLoungeS .time{ font-weight:bold; padding:5px 0}
+.ctnRetreat.ctnLoungeS .box1{ float:left}
+.ctnRetreat.ctnLoungeS .box2{ float:right}
+.ctnRetreat.ctnLoungeS .box3{ clear:both; margin:0 0 20px 0;}
+.ctnRetreat.ctnLoungeS .box3 .guide{ line-height:17px; margin:0 0 4px 0; width:430px;}
+.ctnRetreat.ctnLoungeS .box3 .msg{ background:#fbfbfb; border:#eaeaea solid 1px; padding:5px 9px; width:410px;}
+.ctnRetreat.ctnLoungeS .guideMsg{ background:#fbfbfb; border:#eaeaea solid 1px; padding:5px 9px; clear:both; margin:0 0 30px 0;}
+.ctnRetreat.ctnLoungeS .box4{ margin:0 0 32px 0;}
+.ctnRetreat.ctnLoungeS .box5 { float:left;}
+.ctnRetreat.ctnLoungeS .box6 { float:right;}
+
+
+/*�ㅼ씠��/
+.ctnDining .spBox{ float:left; position:relative; display:block}
+.ctnDining .spBox .img{ height:185px; width:330px; background:#000; display:block;}
+.ctnDining .spBox .info{ width:330px; height:56px; position:absolute; left:0px; bottom:0px; display:block;}
+.ctnDining .spBox .info .name{ padding:10px 0 0; text-align:center; font-weight:bold; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnDining .spBox .info .name a{ color:#FFF;}
+.ctnDining .spBox .info .name a:hover{text-decoration:underline}
+.ctnDining .spBox .info .date{ text-align:center; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnDining .spBox .info .mask{ width:330px; height:56px; background:#000; opacity:0.7;	filter: alpha(opacity = 70); position:absolute; left:0px; bottom:0px; display:block;}
+
+
+
+

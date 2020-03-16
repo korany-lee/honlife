@@ -17,10 +17,10 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler/>
 	<mvc:view-resolvers>
-		<mvc:jsp prefix="/WEB-INF/view/"/>
+		<mvc:jsp prefix="/"/>
 	</mvc:view-resolvers>
 	
-	<mvc:resources location="/WEB-INF/view/" mapping="/**" cache-period="14400" />	
+	<mvc:resources location="/" mapping="/**" cache-period="14400" />	
 	
 	<mvc:view-controller path="/main" view-name="main"/>
 	

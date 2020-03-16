@@ -6,5 +6,6 @@
                      ">
                      
 <bean class="controller.main.mainController" />
+<bean class="controller.main.careMainController"/>
 
 </beans>
