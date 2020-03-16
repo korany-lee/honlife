@@ -20,11 +20,9 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 
-	<link rel="stylesheet" href="https://webfonts.fontstand.com/WF-026657-6cb79b36cbe5ad0503277ac805eb4f67.css" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 
-	<link rel="alternate" hreflang="ro" href="https://www.voxverticalvillage.ro" />
-<link rel="alternate" hreflang="en" href="https://www.voxverticalvillage.ro/en/" />
-
+	
 <!-- This site is optimized with the Yoast SEO plugin v12.8.1 - https://yoast.com/wordpress/plugins/seo/ -->
 <meta name="description" content="We bring you a collection of 120 contemporary apartments designed to offer you an incredible experience. Suspended gardens, private cinema and many more."/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
@@ -72,41 +70,6 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 <link rel="alternate" type="text/xml+oembed" href="https://www.voxverticalvillage.ro/en/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Fwww.voxverticalvillage.ro%2Fen%2F&#038;format=xml" />
 <meta name="generator" content="WPML ver:4.0.7 stt:1,45;" />
 
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-TG4Z4F8');</script>
-	<!-- End Google Tag Manager -->
-
-	<!-- Facebook Pixel Code -->
-	<script>
-	!function(f,b,e,v,n,t,s)
-	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];
-	s.parentNode.insertBefore(t,s)}(window,document,'script',
-	'https://connect.facebook.net/en_US/fbevents.js');
-	fbq('init', '150193019004301');
-	fbq('track', 'PageView');
-	</script>
-	<noscript>
-	<img height="1" width="1" src="https://www.facebook.com/tr?id=150193019004301&ev=PageView&noscript=1"/>
-	</noscript>
-	<!-- End Facebook Pixel Code -->
-
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116160053-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-116160053-1', { 'anonymize_ip': true });
-	</script>
 
 </head>
 
@@ -131,16 +94,9 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="header-content clearfix">
 
 			<div class="col-left">
-				<a class="logo" href="https://www.voxverticalvillage.ro/en/" title="Vox Vertical Village"></a>
+				<a class="logo" href="" title="HON LIFE"></a>
 			</div>
-
-			<div class="col-right">
-
-				<a class="register-btn"><svg class="icon fill align-left" width="18" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M17.7 2.988a.7.7 0 0 1 0 .023V11.5c0 1.222-1.043 2.2-2.3 2.2H2.6c-1.257 0-2.3-.978-2.3-2.2V3.01a.7.7 0 0 1 0-.022V2.5C.3 1.278 1.343.3 2.6.3h12.8c1.257 0 2.3.978 2.3 2.2v.488zm-1.4-.376V2.5c0-.428-.397-.8-.9-.8H2.6c-.503 0-.9.372-.9.8v.112L9 7.175l7.3-4.563zm0 1.651l-6.929 4.33a.7.7 0 0 1-.742 0L1.7 4.264V11.5c0 .428.397.8.9.8h12.8c.503 0 .9-.372.9-.8V4.263z"/></svg>Schedule Appointment</a>
-
-								<a class="phone" href="tel:+40799000585"><svg class="icon fill align-left" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M14.63 12.687a1.934 1.934 0 0 1-2.123 1.934 13.576 13.576 0 0 1-5.91-2.097 13.357 13.357 0 0 1-4.113-4.103A13.532 13.532 0 0 1 .378 2.479 1.933 1.933 0 0 1 2.306.37h1.955a1.938 1.938 0 0 1 1.938 1.67 7.73 7.73 0 0 0 .422 1.693 1.934 1.934 0 0 1-.438 2.045l-.481.48a9.818 9.818 0 0 0 3.03 3.023l.485-.484c.538-.53 1.335-.7 2.041-.435a7.79 7.79 0 0 0 1.705.423 1.935 1.935 0 0 1 1.667 1.955v1.947zm-1.26-1.954v-.016a.674.674 0 0 0-.577-.684 9.04 9.04 0 0 1-1.976-.491.678.678 0 0 0-.713.15l-.83.828a.63.63 0 0 1-.756.102 11.078 11.078 0 0 1-4.158-4.15.63.63 0 0 1 .102-.758l.828-.826a.673.673 0 0 0 .152-.712A8.978 8.978 0 0 1 4.95 2.21a.678.678 0 0 0-.683-.58h-1.96a.678.678 0 0 0-.675.726A12.27 12.27 0 0 0 3.543 7.74a12.11 12.11 0 0 0 3.733 3.723 12.312 12.312 0 0 0 5.355 1.904.679.679 0 0 0 .739-.677v-1.957z"/></svg>+40 799 000 585</a>
-
-				<div class="nav-toggle">
+             	<div class="nav-toggle">
 					<span class="nav-toggle-label">Menu</span>
 					<span class="nav-toggle-lines">
 						<span></span>
@@ -149,79 +105,29 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 					</span>
 				</div>
 
-			</div>
+	
 
 		</div> <!-- END .header-content -->
 
 		<nav>
 			<button class="close-nav minimal-btn">Close<svg class="icon stroke" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.056 1L1 17.056m16.056 0L1 1" stroke="#b7c0c4" stroke-width="1.2" fill="none" fill-rule="evenodd"/></svg></button>
 
-			<a class="register-btn"><svg class="icon fill align-left" width="18" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M17.7 2.988a.7.7 0 0 1 0 .023V11.5c0 1.222-1.043 2.2-2.3 2.2H2.6c-1.257 0-2.3-.978-2.3-2.2V3.01a.7.7 0 0 1 0-.022V2.5C.3 1.278 1.343.3 2.6.3h12.8c1.257 0 2.3.978 2.3 2.2v.488zm-1.4-.376V2.5c0-.428-.397-.8-.9-.8H2.6c-.503 0-.9.372-.9.8v.112L9 7.175l7.3-4.563zm0 1.651l-6.929 4.33a.7.7 0 0 1-.742 0L1.7 4.264V11.5c0 .428.397.8.9.8h12.8c.503 0 .9-.372.9-.8V4.263z"/></svg>Schedule Appointment</a>
 
-			<ul id="menu-header-nav-en" class="menu list-style-none"><li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="https://www.voxverticalvillage.ro/en/building/">Building</a></li>
-<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="https://www.voxverticalvillage.ro/en/interior/">Interior</a></li>
-<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="https://www.voxverticalvillage.ro/en/amenities/">Amenities</a></li>
-<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="https://www.voxverticalvillage.ro/en/residences/">Residences</a></li>
-<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="https://www.voxverticalvillage.ro/en/community/">Community</a></li>
-<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="https://www.voxverticalvillage.ro/en/contact/">Contact</a></li>
+			<ul id="menu-header-nav-en" class="menu list-style-none"><li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="https://www.voxverticalvillage.ro/en/building/">청소요금안내</a></li>
+<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="#">세탁요금안내</a></li>
+<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
+<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
+<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
+<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">Contact</a></li>
 </ul>
-			<div class="nav-bottom">
-
-				<div class="contact-info clearfix">
-
-										<div class="contact-info-col">
-						<span class="contact-info-col-title">Contact Us</span>
-
-						<span>+40 356 829 898</span>
-
-													<span>+40 799 000 585</span>
-						
-											</div>
-
-					<div class="contact-info-col">
-						<span class="contact-info-col-title">Office</span>
-						<address><b>Address:</b> 13 Aurel Pop Street, Timisoara </br> <b>Sales Office: </b> 69 Calea Torontalului, </br> 10th floor, Timisoara</address>
-					</div>
-				</div>
-
-				<div class="lang">
-					<a href="https://www.voxverticalvillage.ro">Română</a><span class="divider">/</span><span class="current-lang">English</span>				</div>
-
-			</div>
+		
 	 </nav>
 
 	</header>
 
-	<div class="sticky-nav">
-
-	<div class="sticky-nav-content">
-
-		<a class="logo" href="https://www.voxverticalvillage.ro/en/" title="Vox Vertical Village"></a>
-
-		<ul id="menu-header-nav-en-1" class="menu list-style-none"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="https://www.voxverticalvillage.ro/en/building/">Building</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="https://www.voxverticalvillage.ro/en/interior/">Interior</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="https://www.voxverticalvillage.ro/en/amenities/">Amenities</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="https://www.voxverticalvillage.ro/en/residences/">Residences</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="https://www.voxverticalvillage.ro/en/community/">Community</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="https://www.voxverticalvillage.ro/en/contact/">Contact</a></li>
-</ul>
-		<div class="nav-toggle">
-			<span class="nav-toggle-label">Menu</span>
-			<span class="nav-toggle-lines">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-		</div>
-
-	</div>
-
-</div>
 
 	
-<div class="section-loader">
-	<span class="logo"><svg width="120" height="81" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="129.062%" y1="89.677%" x2="-77.857%" y2="6.22%" id="a"><stop stop-color="#2B7EC2" offset="0%"/><stop stop-color="#25BEC9" offset="100%"/></linearGradient><linearGradient x1="68.844%" y1="94.528%" x2="38.521%" y2="8.494%" id="b"><stop stop-color="#2AB293" offset="0%"/><stop stop-color="#74C9B4" offset="100%"/></linearGradient></defs><g fill-rule="nonzero" fill="none"><path d="M15.56 61.797l14.449-8.32V36.96l-14.448 8.32v16.518zm0 18.66l8.765-5.068a11.346 11.346 0 0 0 5.684-9.826V54.745l-14.448 8.32v17.391zm0-36.428l14.449-8.32V18.71L15.56 27.03v16.999zm8.748-38.962L15.561 0v25.746l14.448-8.32v-2.533a11.362 11.362 0 0 0-5.7-9.826z" fill="url(#a)"/><path d="M.017 62.482l14.448 8.354V54.077L.017 45.74v16.742zm0 3.081A11.31 11.31 0 0 0 5.7 75.39l8.765 5.067v-8.37L.017 63.732v1.831zm0-50.67v20.645l14.448 8.25V18.027L.993 10.322a11.176 11.176 0 0 0-.976 4.571zM5.7 5.067a11.52 11.52 0 0 0-4.228 4.28l12.993 7.429V0L5.7 5.067zM.017 44.457l14.448 8.336V45.04L.017 36.787v7.67z" fill="url(#b)"/><path d="M50.38 24.548l-.24.856a14.725 14.725 0 0 0-.257-.856l-2.311-6.574H45.21l3.868 10.408h2.123l3.869-10.408h-2.362l-2.329 6.574zm10.835 4.04c1.524 0 2.808-.514 3.818-1.54 1.01-1.028 1.523-2.329 1.523-3.87 0-1.54-.513-2.841-1.523-3.868-1.01-1.028-2.294-1.541-3.818-1.541-1.523 0-2.807.513-3.834 1.54-1.01 1.028-1.524 2.329-1.524 3.87 0 1.54.514 2.841 1.524 3.868 1.01 1.027 2.31 1.54 3.834 1.54zm-2.26-7.858c.583-.599 1.353-.907 2.243-.907.908 0 1.66.308 2.243.907.582.6.89 1.438.89 2.465 0 1.028-.291 1.866-.89 2.465-.582.6-1.353.908-2.243.908-.907 0-1.66-.308-2.242-.908-.582-.599-.89-1.437-.89-2.465.017-1.044.308-1.865.89-2.465zM69.33 28.4l2.276-3.8 2.311 3.8h2.345l-3.423-5.667 2.978-4.759h-2.26l-1.95 3.099-1.85-3.099h-2.362l3.03 4.845-3.475 5.58h2.38zM50.38 41.94l-.24.856a14.725 14.725 0 0 0-.257-.856l-2.328-6.573h-2.362l3.868 10.408h2.123l3.869-10.408H52.69l-2.31 6.573zm13.677-4.588v-1.985h-7.275v10.408h7.31v-1.986h-5.12v-2.397h4.674v-1.985h-4.673v-2.055h5.084zm10.716 8.423l-2.482-4.348c1.49-.582 2.26-1.61 2.26-3.048 0-.924-.343-1.66-1.027-2.19-.668-.531-1.592-.805-2.722-.805h-4.468v10.408h2.174v-4.109h1.404l2.345 4.109h2.516v-.017zm-6.265-8.457h2.277c1.044 0 1.557.394 1.557 1.198 0 .805-.513 1.199-1.557 1.199h-2.277v-2.397zm12.616 8.457v-8.371h3.099v-2.037h-8.388v2.037h3.098v8.37h2.191zm4.622-10.408h2.174v10.408h-2.174V35.367zm12.53 6.624c-.701 1.319-1.677 1.952-2.944 1.952A3.013 3.013 0 0 1 93.107 43c-.6-.633-.907-1.438-.907-2.43 0-1.01.308-1.832.907-2.448.6-.617 1.352-.925 2.225-.925 1.301 0 2.226.634 2.842 1.918l.069.154 1.763-1.267-.052-.103c-.36-.822-.958-1.472-1.763-1.986-.804-.496-1.763-.753-2.807-.753-1.54 0-2.825.514-3.852 1.507-1.027 1.01-1.54 2.31-1.54 3.903 0 1.592.513 2.91 1.506 3.903.993.992 2.277 1.506 3.817 1.506 1.079 0 1.986-.223 2.67-.65.685-.428 1.37-1.147 2.02-2.14l.07-.103-1.73-1.233-.068.137zm6.694-6.624l-4.211 10.408h2.328l1.01-2.654h3.749l1.01 2.654h2.328l-4.211-10.408h-2.003zm-.103 5.786l.856-2.26.24-.719c.086.257.171.496.257.719l.856 2.243h-2.209v.017zm9.895 2.585v-8.371h-2.174v10.408h7.258v-2.037h-5.084zM50.379 59.315l-.24.856a14.725 14.725 0 0 0-.256-.856l-2.328-6.573h-2.362L49.06 63.15h2.123l3.869-10.408H52.69l-2.31 6.573zm6.403-6.573h2.174V63.15h-2.174V52.742zm6.898 0h-2.174v10.425h7.259V61.13H63.68v-8.388zm8.97 0h-2.19v10.425h7.275V61.13H72.65v-8.388zm10.477 0l-4.211 10.425h2.328l1.01-2.653h3.732l1.01 2.653h2.328l-4.211-10.408h-1.986v-.017zm-.103 5.786l.856-2.26.24-.719c.085.257.171.497.257.72l.856 2.242h-2.209v.017zm11.35.77h3.252c-.12.565-.376 1.044-.787 1.404-.428.41-1.062.616-1.832.616-.856 0-1.592-.308-2.157-.941-.565-.634-.856-1.438-.856-2.431 0-1.044.308-1.883.925-2.517.616-.633 1.352-.941 2.242-.941 1.335 0 2.294.582 2.91 1.763l.069.137 1.66-1.198-.051-.103c-.394-.77-1.01-1.404-1.815-1.866-.804-.462-1.729-.685-2.739-.685-1.489 0-2.79.514-3.817 1.524-1.044 1.01-1.575 2.328-1.575 3.869 0 1.557.497 2.858 1.472 3.868.976 1.01 2.226 1.541 3.68 1.541 1.319 0 2.346-.48 3.03-1.42l.36 1.215h1.49v-5.684h-5.461v1.85zm9.997-.53h4.69v-1.97h-4.69v-2.07h5.084v-1.986h-7.258v10.425h7.31V61.18h-5.136v-2.414z" fill="#8A97A2"/></g></svg></span>
-</div>
+
 
 <section class="hero">
 
@@ -229,9 +135,11 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 	<div class="section-content">
 
-		<h1>Redefining Urban Lifestyle In Timisoara</h1>
+		<h1 style="font-size: 70px;">Hon Care</h1>
+		<h2>Simple & Comfortable Life</h2>
 
-		<a class="play-btn fancybox" href="https://vimeo.com/261213645?color=35B89A">Play video</a>
+		<a class="play-btn fancybox" href="#">청소 예약하기</a>
+		<a class="play-btn fancybox" href="#">세탁 예약하기</a>
 
 	</div>
 
@@ -244,16 +152,18 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="section-content animate-in-view clearfix">
 
 			<div class="col-left text-col">
-				<h2>Experience The New Concept Of Contemporary Residences</h2>
-<p>Vox Vertical Village presents a collection of 120 apartments built on 10 levels designed to give you an incredible experience. You are not on vacation, but you feel as if you were; every day. Vox Vertical Village residences are extremely spacious and allow you enjoy nature both indoors and outdoors, on generous terraces.</p>
-<p>It&#8217;s not a dream, it&#8217;s the home you&#8217;ve always dreamed of. We&#8217;ve combined the comfort of a condominium residence with the benefits of a house to offer you a great, modern home with premium amenities.</p>
-<p>&nbsp;</p>
+				<h2 style="font-size: 40px;">성실한 인재 찾습니다!!</h2>
+<p>고객의 집에 직접 들어가는만큼 신원이 확실하고 성실한 분을 찾고있습니다.</p>
+<p>여러가지 복지가 제공되는 최고의 회사!</p>
+<p>청소 매니저님들을 구합니다...</p>
+<p>어서 지원하세요!</p>
 
-				<a class="light-color elem-line-before" href="https://www.voxverticalvillage.ro/en/building/">Find out more</a>
+				<a class="light-color elem-line-before" href="#">입사지원</a>
 			</div>
 
 			<div class="col-right img-col">
-				<img width="699" height="480" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/home-section-1.jpg" class="attachment-full size-full" alt="Vox Vertical Village entrance" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/home-section-1.jpg 699w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/home-section-1-620x426.jpg 620w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/home-section-1@2x.jpg 1398w" sizes="(max-width: 699px) 100vw, 699px" />			</div>
+				<img width="699" height="480" src="careView/images/main/clean.jpg" class="attachment-full size-full" alt="Vox Vertical Village entrance" sizes="(max-width: 699px) 100vw, 699px" />
+							</div>
 
 		</div>
 
@@ -261,7 +171,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 	<section class="main-section-2 animate-in-view">
 
-		<img width="1440" height="600" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace.jpg" class="attachment-full size-full" alt="Vox Vertical Village features large terraces with lots of natural plants" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace.jpg 1440w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace-780x325.jpg 780w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace-620x258.jpg 620w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace@2x.jpg 2880w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace-620x258@2x.jpg 1240w" sizes="(max-width: 1440px) 100vw, 1440px" />
+		<img style=" width:1440px; height:400px;" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace.jpg" class="attachment-full size-full" alt="Vox Vertical Village features large terraces with lots of natural plants"  sizes="(max-width: 1100px) 100vw, 1440px" />
 	</section>
 
 	<section class="main-section-3">
@@ -279,11 +189,8 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 			<div class="col-left img-collage clearfix">
 
-				<div class="img-collage-elem-1">
-					<img width="390" height="550" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-living-room-vox-vertical-village.jpg" class="attachment-full size-full" alt="Living room interior of Vox Vertical Village premium apartment" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-living-room-vox-vertical-village.jpg 390w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-living-room-vox-vertical-village-340x480.jpg 340w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-living-room-vox-vertical-village@2x.jpg 780w" sizes="(max-width: 390px) 100vw, 390px" />				</div>
-
 				<div class="img-collage-elem-2">
-				 <img width="390" height="550" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg" class="attachment-full size-full" alt="Carefully selected prints and materials make Vox Vertical Village the perfect apartment for your family" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg 390w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage-340x480.jpg 340w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage@2x.jpg 780w" sizes="(max-width: 390px) 100vw, 390px" />				</div>
+				 <img width="700" height="550" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg" class="attachment-full size-full" alt="Carefully selected prints and materials make Vox Vertical Village the perfect apartment for your family" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg 390w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage-340x480.jpg 340w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage@2x.jpg 780w" sizes="(max-width: 390px) 100vw, 390px" />				</div>
 
 			</div>
 
