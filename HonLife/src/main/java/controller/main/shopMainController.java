@@ -4,9 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class mainController {
-	@RequestMapping("/stayMain")
-	public String headerTest() {
-		return "stayView/stayMain";
+public class shopMainController {
+	@RequestMapping("/shopMain")
+	public String shopMain() {
+		return "shopView/shopMain";
 	}
+
 }
