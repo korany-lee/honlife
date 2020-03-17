@@ -16,6 +16,7 @@
   		<param-value>
   			classpath:spring-context.xml
   			classpath:spring-mainController.xml
+  			classpath:care-controller.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

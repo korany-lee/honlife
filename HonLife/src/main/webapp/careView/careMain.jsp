@@ -75,35 +75,26 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 <body class="home page-template-default page page-id-410 cookies-not-set">
 
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG4Z4F8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
-	<script>
-		if (typeof(Storage) !== "undefined") {
-			var $body = $('body');
-			if ( $body.is('.home') && !localStorage.getItem('visited') ) {
-			  $body.addClass('page-loading');
-			  localStorage.setItem('visited', 'yes');
-			}
-		}
-	</script>
-
 	<header class="transparent">
 
 		<div class="header-content clearfix">
 
 			<div class="col-left">
-				<a class="logo" href="" title="HON LIFE"></a>
+				<a class="logo" href="careMain" title="HON LIFE"></a>			
 			</div>
-             	<div class="nav-toggle">
-					<span class="nav-toggle-label">Menu</span>
+			<div class="col-right">
+				<a  href="#" id="regist" >회원가입</a>		
+			</div>
+				
+             	<div class="nav-toggle">            		
+             	<span class="nav-toggle-label" id="mainMenu">Menu</span>
 					<span class="nav-toggle-lines">
 						<span></span>
 						<span></span>
 						<span></span>
 					</span>
 				</div>
+		
 
 	
 
@@ -114,13 +105,36 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 
 			<ul id="menu-header-nav-en" class="menu list-style-none"><li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="https://www.voxverticalvillage.ro/en/building/">청소요금안내</a></li>
-<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="#">세탁요금안내</a></li>
+<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="laundryAmountInfo">세탁요금안내</a></li>
 <li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
 <li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
 <li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
-<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">Contact</a></li>
+
+<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
 </ul>
 		
+		
+			<div class="nav-bottom">
+
+				<div class="contact-info clearfix">
+
+										<div class="contact-info-col">
+						<span class="contact-info-col-title">Contact Us</span>
+
+						<span>TEL. 02-2230-0700</span>
+
+						<span>FAX. 02-2230-0726</span>
+						
+											</div>
+
+					<div class="contact-info-col">
+						<span class="contact-info-col-title">Office</span>
+						<address>혼 라이프 주식회사 <br>  서울특별시 영등포구 양산로 53  (우 : 07271) </address>
+					</div>
+				</div>
+
+
+			</div>
 	 </nav>
 
 	</header>
@@ -131,7 +145,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 <section class="hero">
 
-	<div class="hero-bg fixed" style="background-image:url(https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-hero-opt-1.jpg)"></div>
+	<div class="hero-bg fixed" style="background-image:url(careView/images/main/caremainroom.jpg)"></div>
 
 	<div class="section-content">
 
@@ -152,13 +166,14 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="section-content animate-in-view clearfix">
 
 			<div class="col-left text-col">
-				<h2 style="font-size: 40px;">성실한 인재 찾습니다!!</h2>
-<p>고객의 집에 직접 들어가는만큼 신원이 확실하고 성실한 분을 찾고있습니다.</p>
-<p>여러가지 복지가 제공되는 최고의 회사!</p>
-<p>청소 매니저님들을 구합니다...</p>
-<p>어서 지원하세요!</p>
+				<h2 style="font-size: 40px;">매니저가 되는 방법을 확인해보세요!</h2>
+<p style="font-size: 25px;">등록을 위한 회비나 업무에 따른 수수료가 없습니다 </p>
 
-				<a class="light-color elem-line-before" href="#">입사지원</a>
+<p>처음이라서 걱정이신 분도, 다른 일을 해보신분도 일의 선택부터 당당하게 일하는법까지! 
+<br> 전문교육을 통해 든든하게 지원해드리겠습니다!</p>
+
+
+				<a class="light-color elem-line-before" href="#">모집요강</a>
 			</div>
 
 			<div class="col-right img-col">
@@ -171,7 +186,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 	<section class="main-section-2 animate-in-view">
 
-		<img style=" width:1440px; height:400px;" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-timisoara-terace.jpg" class="attachment-full size-full" alt="Vox Vertical Village features large terraces with lots of natural plants"  sizes="(max-width: 1100px) 100vw, 1440px" />
+		<img style=" width:100%; height:400px;" src="careView/images/main/caremainroom1.jpg" class="attachment-full size-full" alt="Vox Vertical Village features large terraces with lots of natural plants"  sizes="(max-width: 1100px) 100vw, 1440px" />
 	</section>
 
 	<section class="main-section-3">
@@ -179,18 +194,22 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="section-content animate-in-view clearfix">
 
 			<div class="col-right text-col">
-				<h2>An Exquisite Blend Of Indoor And Outdoor Spaces</h2>
-<p>Spacious living spaces offer you a unique experience, characterized by sublime comfort and elegance. The abundance of light energizes residents and creates a gorgeous environment, ideal for relaxation. Exceptional interior finishes integrate textures and colors designed to create a welcoming ambiance for both residents and guests.</p>
-<p>Carefully selected prints break the monotony of solid and contrast-less colors, thus transforming a seemingly minimalist residence into a home that is in full harmony with your personality and in perfect accordance with the imposing terraces of the building.</p>
+				<h2>세탁의 전문가들이 정성스럽게 <br>세탁해드립니다!</h2>
+			
+			<p>수백만 점을 세탁해도 고객은 단 한 점의 옷으로 평가하며 출혈경쟁의 원가부담을 값싼 노동력과 저급한 원료로 대체하지 않습니다.
+			 품질과 직결되는 수고로운 일에 기교를 부리지 않습니다. 오직 고객과 세탁에 집중합니다.</p>
+			 <p>품목별로 공정을 분리하고 세탁하여 전문성을 극대화했습니다.
+			  만일 품질에 만족하지 못하시면 어떠한 추가비용 없이 재세탁 해드립니다. 이유있는 1등 서비스를 지금 경험해보세요.</p>
 <p>&nbsp;</p>
 
-				<a class="light-color elem-line-before" href="https://www.voxverticalvillage.ro/en/interior/">Discover the interiors</a>
+				<a class="light-color elem-line-before" href="laundryAmountInfo" style="font-size: 20px;" >세탁요금 안내</a> <br>
+				<a class="light-color elem-line-before" href="" style="font-size: 20px;">세탁예약 하기</a>
 			</div>
 
 			<div class="col-left img-collage clearfix">
 
 				<div class="img-collage-elem-2">
-				 <img width="700" height="550" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg" class="attachment-full size-full" alt="Carefully selected prints and materials make Vox Vertical Village the perfect apartment for your family" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage.jpg 390w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage-340x480.jpg 340w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/interior-homepage@2x.jpg 780w" sizes="(max-width: 390px) 100vw, 390px" />				</div>
+				 <img style="width:585px; height:420px;" src="careView/images/main/clean1.jpg" class="attachment-full size-full" alt="Carefully selected prints and materials make Vox Vertical Village the perfect apartment for your family"  sizes="(max-width: 390px) 100vw, 390px" />				</div>
 
 			</div>
 
@@ -203,16 +222,17 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="section-content animate-in-view clearfix">
 
 			<div class="col-left text-col">
-				<h2>Premium Amenities At Your Doorstep</h2>
-<p>We&#8217;ve designed Vox Vertical Village with your desires in mind. That&#8217;s why we offer you premium amenities, in line with the rhythm of your life.</p>
-<p>We value your time and know how important it is for you to have everything at hand. Thus, Vox Vertical Village incorporates a private swimming pool, a cinema, a fully equipped gym and an entire suite of services meant to make your life easier and help keep you focused on the things that really matter.</p>
+				<h2>믿고 맡길수있도록 꼼꼼한 검증을 청소매니저분들이 함께합니다.</h2>
+<p style="font-size: 30px;"><b>표준화된 청소가이드 </b></p>
+<p>주방,거실,방,화장실 각 영역별로 표준화된 청소가이드에 맞춰 깔끔하게 청소해드립니다! </p>
 <p>&nbsp;</p>
 
-				<a class="light-color elem-line-before" href="https://www.voxverticalvillage.ro/en/amenities/">Explore the amenities</a>
+				<a class="light-color elem-line-before" href="" style="font-size: 20px;">청소요금 안내</a><br>
+				<a class="light-color elem-line-before" href="" style="font-size: 20px;">청소예약하기</a>
 			</div>
 
 			<div class="col-right img-col">
-				<img width="699" height="479" src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/lounge-vox-vertical-village.jpg" class="attachment-full size-full" alt="Vox Vertical Village lounge for premium apartments in Timisoara" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/lounge-vox-vertical-village.jpg 699w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/lounge-vox-vertical-village-620x425.jpg 620w, https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/lounge-vox-vertical-village@2x.jpg 1398w" sizes="(max-width: 699px) 100vw, 699px" />			</div>
+				<img width="699" height="479" src="careView/images/main/clean2.jpg" class="attachment-full size-full" alt="Vox Vertical Village lounge for premium apartments in Timisoara"  sizes="(max-width: 699px) 100vw, 699px" />			</div>
 
 		</div>
 
@@ -224,9 +244,9 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 			<div class="intro">
 
-				<h3>Be part of our community, stay up to date</h3>
+				<h2 style="font-size: 30px;">후기를 확인해보세요!</h2>
 
-				<a class="view-all light-color elem-line-after" href="https://www.voxverticalvillage.ro/en/community/">View all</a>
+				<a class="view-all light-color elem-line-after" href="" style="font-size: 20px;">후기게시판</a>
 
 			</div>
 
@@ -234,24 +254,16 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 				
 					
-						<article>
-
-	
-	
-		
-			
-		
-			
-				
+						<article>		
 					<div class="article-thumb-gallery loading">
 
 						<a href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-februarie-2020/">
 
-							<img width="290" height="194" src="https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-290x194.png" class="attachment-article-thumb-small size-article-thumb-small wp-post-image" alt="" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-290x194.png 290w, https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-1536x1027.png 1536w, https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-2048x1370.png 2048w, https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-598x400.png 598w, https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-620x415.png 620w, https://www.voxverticalvillage.ro/wp-content/uploads/2020/02/vvv1-1280x856.png 1280w" sizes="(max-width: 290px) 100vw, 290px" />							<span class="layer layer-1"></span>
+							<img width="290" height="194" src="careView/images/main/clean1.jpg" class="attachment-article-thumb-small size-article-thumb-small wp-post-image" alt=""  sizes="(max-width: 290px) 100vw, 290px" />							<span class="layer layer-1"></span>
 							<span class="layer layer-2"></span>
 
 							<span class="article-thumb-overlay">
-								<span>read article</span>
+								<span>확인!</span>
 							</span>
 
 						</a>
@@ -260,122 +272,15 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 				
 			
-		
-	
-	<span class="date light-color small-font"> 18 February 2020</span>
+	<span class="date light-color small-font" style="font-size: 20px;">작성날짜</span>
 
-		<h4>		<a href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-februarie-2020/">Work status &#8211; February 2020</a>
+		<h4>		<a href="" style="font-size: 15px;">내용</a>
 	</h4>
-	<a class="more light-color elem-line-after" href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-februarie-2020/">Read more</a>
+	<a class="more light-color elem-line-after" href="#">후기게시판</a>
 
 </article>
 
-					
-						<article>
 
-	
-	
-		
-			
-		
-			
-				
-					<div class="article-thumb-gallery loading">
-
-						<a href="https://www.voxverticalvillage.ro/en/work-status-july-2019/">
-
-							<img width="290" height="208" src="https://www.voxverticalvillage.ro/wp-content/uploads/2019/07/vox-vertical-village-iulie-2019-4-290x208.png" class="attachment-article-thumb-small size-article-thumb-small wp-post-image" alt="" srcset="https://www.voxverticalvillage.ro/wp-content/uploads/2019/07/vox-vertical-village-iulie-2019-4-290x208.png 290w, https://www.voxverticalvillage.ro/wp-content/uploads/2019/07/vox-vertical-village-iulie-2019-4-558x400.png 558w, https://www.voxverticalvillage.ro/wp-content/uploads/2019/07/vox-vertical-village-iulie-2019-4-620x444.png 620w, https://www.voxverticalvillage.ro/wp-content/uploads/2019/07/vox-vertical-village-iulie-2019-4.png 1200w" sizes="(max-width: 290px) 100vw, 290px" />							<span class="layer layer-1"></span>
-							<span class="layer layer-2"></span>
-
-							<span class="article-thumb-overlay">
-								<span>read article</span>
-							</span>
-
-						</a>
-
-					</div>
-
-				
-			
-		
-	
-	<span class="date light-color small-font"> 25 July 2019</span>
-
-		<h4>		<a href="https://www.voxverticalvillage.ro/en/work-status-july-2019/">Work status &#8211; July 2019</a>
-	</h4>
-	<a class="more light-color elem-line-after" href="https://www.voxverticalvillage.ro/en/work-status-july-2019/">Read more</a>
-
-</article>
-
-					
-						<article>
-
-	
-	
-		
-			
-		
-			
-		
-			
-		
-			
-				
-					<div class="article-thumb-gallery loading">
-
-						<a href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-mai-2019/">
-
-							<img width="290" height="192" src="https://www.voxverticalvillage.ro/wp-content/uploads/2019/05/Santier-Vox-Vertical-Village-Timisoara-Apartamente-noi7.png" class="attachment-article-thumb-small size-article-thumb-small wp-post-image" alt="Santier Vox Vertical Village Timisoara Apartamente noi" />							<span class="layer layer-1"></span>
-							<span class="layer layer-2"></span>
-
-							<span class="article-thumb-overlay">
-								<span>read article</span>
-							</span>
-
-						</a>
-
-					</div>
-
-				
-			
-		
-			
-		
-	
-	<span class="date light-color small-font"> 21 May 2019</span>
-
-		<h4>		<a href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-mai-2019/">Work Status &#8211; May 2019</a>
-	</h4>
-	<a class="more light-color elem-line-after" href="https://www.voxverticalvillage.ro/en/stadiul-lucrarilor-mai-2019/">Read more</a>
-
-</article>
-
-					
-						<article>
-
-	
-	
-		<div class="article-thumb loading">
-
-			<a href="https://www.voxverticalvillage.ro/en/te-bucuri-de-facilitatile-smart-home-acasa/">
-
-				<img width="290" height="176" src="https://www.voxverticalvillage.ro/wp-content/uploads/2019/04/smart-home-vox-vertical-village4.png" class="attachment-article-thumb-small size-article-thumb-small wp-post-image" alt="Vox vertical village consola control smart home apartamente timisoara" />
-				<span class="article-thumb-overlay">
-					<span>read article</span>
-				</span>
-
-			</a>
-
-		</div>
-
-	
-	<span class="date light-color small-font"> 7 May 2019</span>
-
-		<h4>		<a href="https://www.voxverticalvillage.ro/en/te-bucuri-de-facilitatile-smart-home-acasa/">Enjoy your smart home</a>
-	</h4>
-	<a class="more light-color elem-line-after" href="https://www.voxverticalvillage.ro/en/te-bucuri-de-facilitatile-smart-home-acasa/">Read more</a>
-
-</article>
 
 					
 				
@@ -393,175 +298,35 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="footer-content clearfix">
 
 			<div class="col-left">
-
-				<div class="subscribe-container">
-
-					<h6>Newsletter Subscription</h6>
-
-					<div id="mc_embed_signup">
-  <form action="https://voxverticalvillage.us12.list-manage.com/subscribe/post?u=5f21795bdc4d5fbb9e3d153d0&amp;id=0096a33130" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate clearfix" target="_blank" novalidate>
-    <div class="mc-field-group row">
-    	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
-    </div>
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5f21795bdc4d5fbb9e3d153d0_0096a33130" tabindex="-1" value=""></div>
-    <input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="button submit">
-    <div id="mce-responses" class="clear">
-    	<div class="response" id="mce-error-response" style="display:none"></div>
-    	<div class="response" id="mce-success-response" style="display:none"></div>
-    </div>
-  </form>
-</div>
-<!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script> -->
-
-					<p>By joining our mailing list you consent to having your data processed as shown in our <a href="https://www.voxverticalvillage.ro/en/privacy-policy/">privacy policy</a>.</p>
-
-				</div>
-
+				<div class="adressBox">
+					<p><b>혼 라이프 주식회사 </b> <br>   서울특별시 영등포구 양산로 53  (우 : 07271) <br> TEL. 02-2230-0700 <br>  FAX. 02-2230-0726 <br> 사업자등록번호 201-86-40254   통신판매신고번호 영등포구0882호  <br>대표이사<b style="font-size: 20px;"> 강노이</b></p>
+				</div>		
+					<div class="copyright">COPYRIGHT &copy; HON LIFE CO., LTD. ALL RIGHTS RESERVED. </div>
 			</div>
 
-			<div class="col-right">
-
-				<div class="contact-info">
-					<span>Contact Us:</span><br>
-										<a href="tel:+40799000585">+40 799 000 585</a>
-				</div>
-
-				
-					<div class="social">
-
-						<span>Follow us:</span>
-
-						
-						
-							<a href="https://www.facebook.com/vox.vertical/" target="_blank">Facebook</a>
-							<span class="divider">—</span>
-						
-							<a href="https://www.instagram.com/vox.vertical/" target="_blank">Instagram</a>
-							
-						
-					</div>
-
-				
-				<button class="modal-trigger minimal-btn">Credits</button>
-
-				<button class="up-btn minimal-btn">Go Up <svg class="arrow fill" width="13" height="21" xmlns="http://www.w3.org/2000/svg"><path d="M6 6.5h1v14H6v-14zm.8-4.233L1.773 8.671.83 7.93 6.8.324l5.971 7.606-.943.741L6.8 2.267z" fill="#787F89" fill-rule="nonzero"/></svg></button>
-			</div>
-
+		
+<button class="up-btn minimal-btn">Go Up <svg class="arrow fill" width="13" height="21" xmlns="http://www.w3.org/2000/svg"><path d="M6 6.5h1v14H6v-14zm.8-4.233L1.773 8.671.83 7.93 6.8.324l5.971 7.606-.943.741L6.8 2.267z" fill="#787F89" fill-rule="nonzero"/></svg></button>
 		</div> <!-- END .footer-content -->
 
 		<div class="bottom clearfix">
 
 			<div class="col-left">
 
-				<div class="lang small-font">
-					<a href="https://www.voxverticalvillage.ro">Română</a><span class="divider">/</span><span class="current-lang">English</span>				</div>
-
 				<button class="up-btn minimal-btn">Go Up <svg class="arrow fill" width="13" height="21" xmlns="http://www.w3.org/2000/svg"><path d="M6 6.5h1v14H6v-14zm.8-4.233L1.773 8.671.83 7.93 6.8.324l5.971 7.606-.943.741L6.8 2.267z" fill="#787F89" fill-rule="nonzero"/></svg></button>
 
 			</div>
 
 			<div class="col-right">
-
-				<div class="bottom-nav">
-					<a href="https://www.voxverticalvillage.ro/en/terms-and-conditions/">Website Policies</a>
-				</div>
-
-				<p class="copyright">©2018 Vox Vertical Village</p>
-
+				<p class="copyright" style="font-size: 35px;">©2020 HON CARE</p>
 			</div>
 
 		</div> <!-- END .bottom -->
 
 	</footer>
 
-	<div class="modal">
-
-	<div class="modal-content light-color small-font">
-
-		<div class="row row-1">
-			<span>Project Developer</span>
-
-							<a href="http://www.werkpropertygroup.ro/en" target="_blank">
-					<img src="https://www.voxverticalvillage.ro/wp-content/uploads/2018/08/logo-vox-property-group.svg" alt="" />
-				</a>
-			
-		</div>
-
-		<div class="row row-2">
-			<ul class="list-style-none">
-<li>Architecture: <a href="https://www.studioarca.ro/" target="_blank" rel="noopener">Studio Arca</a></li>
-<li>Interior Design: <a href="http://ezzo.ro/" target="_blank" rel="noopener">Ezzo Design</a></li>
-<li>Project Management: <a href="http://www.hafner-solutions.ro/" target="_blank" rel="noopener">Hafner Solutions</a></li>
-<li>General Contractor: <a href="http://www.porr.ro" target="_blank" rel="noopener">PORR Construct</a></li>
-<li>Marketing: <a href="https://baumann.management/" target="_blank" rel="noopener">Baumann Management</a></li>
-<li>Website: <a href="http://onemadlab.com" target="_blank" rel="noopener">OneMadLab</a></li>
-</ul>
-		</div>
-
-		<a class="close-modal" href="#"><svg class="stroke" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17 1L1 17m16 0L1 1" stroke="#909C9C" stroke-width="1.3" fill="none" fill-rule="evenodd"/></svg></a>
-
-	</div>
-
-	<div class="modal-overlay"></div>
-
-</div>
-
 	
-<div class="register-modal">
-
-	<button class="close-modal minimal-btn">Close<svg class="icon stroke" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.056 1L1 17.056m16.056 0L1 1" stroke="#b7c0c4" stroke-width="1.2" fill="none" fill-rule="evenodd"/></svg></button>
-
-	<!-- <a class="register-btn light-color"></a> -->
-
-	<p>Thank you for your interest in Vox Vertical Village. We’d be happy to contact you at that point, if you’d like to register your interest.</p>
-
 	
-		<div role="form" class="wpcf7" id="wpcf7-f1731-o1" lang="en-US" dir="ltr">
-<div class="screen-reader-response"></div>
-<form action="/en/#wpcf7-f1731-o1" method="post" class="wpcf7-form mailchimp-ext-0.5.14 wpcf7-acceptance-as-validation" novalidate="novalidate">
-<div style="display: none;">
-<input type="hidden" name="_wpcf7" value="1731" />
-<input type="hidden" name="_wpcf7_version" value="5.1.6" />
-<input type="hidden" name="_wpcf7_locale" value="en_US" />
-<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1731-o1" />
-<input type="hidden" name="_wpcf7_container_post" value="0" />
-<input type="hidden" name="g-recaptcha-response" value="" />
-</div>
-<p><span class="wpcf7-form-control-wrap first-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First Name" /></span></p>
-<p><span class="wpcf7-form-control-wrap last-name"><input type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name" /></span></p>
-<p><span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email address" /></span></p>
-<p><span class="wpcf7-form-control-wrap phone"><input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone" /></span></p>
-<div class="field-select">
-   <label>How did you hear about us?</label><br />
-   <span class="wpcf7-form-control-wrap source"><select name="source" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="">Choose</option><option value="Social media">Social media</option><option value="Google search">Google search</option><option value="Outdoor advertising">Outdoor advertising</option><option value="Recommendation">Recommendation</option><option value="Other">Other</option></select></span>
-</div>
-<div class="field-radio field-radio-1">
-   <label>Apartment type</label><br />
-   <span class="wpcf7-form-control-wrap apartment"><span class="wpcf7-form-control wpcf7-radio"><span class="wpcf7-list-item first"><label><input type="radio" name="apartment" value="2 Rooms" /><span class="wpcf7-list-item-label">2 Rooms</span></label></span><span class="wpcf7-list-item"><label><input type="radio" name="apartment" value="3 Rooms" /><span class="wpcf7-list-item-label">3 Rooms</span></label></span><span class="wpcf7-list-item last"><label><input type="radio" name="apartment" value="Penthouse" /><span class="wpcf7-list-item-label">Penthouse</span></label></span></span></span>
-</div>
-<div class="field-radio field-radio-2">
-   <label>Parking space</label><br />
-   <span class="wpcf7-form-control-wrap parking"><span class="wpcf7-form-control wpcf7-radio"><span class="wpcf7-list-item first"><label><input type="radio" name="parking" value="Underground" /><span class="wpcf7-list-item-label">Underground</span></label></span><span class="wpcf7-list-item"><label><input type="radio" name="parking" value="Outdoor" /><span class="wpcf7-list-item-label">Outdoor</span></label></span><span class="wpcf7-list-item last"><label><input type="radio" name="parking" value="None" /><span class="wpcf7-list-item-label">None</span></label></span></span></span>
-</div>
-<div class="field-radio field-radio-3">
-   <label>Storage unit</label><br />
-   <span class="wpcf7-form-control-wrap extras"><span class="wpcf7-form-control wpcf7-radio"><span class="wpcf7-list-item first"><label><input type="radio" name="extras" value="One" /><span class="wpcf7-list-item-label">One</span></label></span><span class="wpcf7-list-item last"><label><input type="radio" name="extras" value="None" /><span class="wpcf7-list-item-label">None</span></label></span></span></span>
-</div>
-<div class="field-select field-select-last">
-   <label>Terrace area</label><br />
-   <span class="wpcf7-form-control-wrap terrace"><select name="terrace" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="">Choose</option><option value="18 - 89m²">18 - 89m²</option><option value="30 - 88m²">30 - 88m²</option><option value="133 - 201m²">133 - 201m²</option></select></span>
-</div>
-<p><span id="wpcf7-5e6f0acff3915" class="wpcf7-form-control-wrap field-4-wrap" ><label  class="hp-message">Please leave this field empty.</label><input class="wpcf7-form-control wpcf7-text"  type="text" name="field-4" value="" size="40" tabindex="-1" autocomplete="nope" /></span></p>
-<p class="acceptance-field"><span class="wpcf7-form-control-wrap opt"><span class="wpcf7-form-control wpcf7-acceptance optional"><span class="wpcf7-list-item"><label><input type="checkbox" name="opt" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">I want to subscribe to the newsletter; I agree with the <a href="https://www.voxverticalvillage.ro/en/commercial-communications-policy/" target="_blank">Commercial Communications Policy</a>.</span></label></span></span></span></p>
-<p class="acceptance-field"><span class="wpcf7-form-control-wrap acceptance"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">I agree with the <a href="http://www.voxverticalvillage.ro/en/privacy-policy/" target="_blank">Privacy Policy</a>.</span></label></span></span></span></p>
-<div class="button-container">
-<p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit submit" /></p>
-</div>
-<div class="wpcf7-response-output wpcf7-display-none"></div><p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page"><input type="hidden" name="referer-page" value="https://onepagelove.com/vox-vertical-village" class="wpcf7-form-control wpcf7-text referer-page" aria-invalid="false"></span></p>
-<!-- Chimpmail extension by Renzo Johnson --></form></div>
-	
-</div>
+
 
 	<div id="results" style="display:none;" ></div>
 
@@ -574,8 +339,8 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/www.voxverticalvillage.ro\/en\/wp-
 /* ]]> */
 </script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.6'></script>
-<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LdbdagUAAAAAIOh3VncotGrlC1-U3cYPClejykH&#038;ver=3.0'></script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/pace.min.js'></script>
+
+
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/slick.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
@@ -584,63 +349,7 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 </script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
-<script type="text/javascript">
-( function( grecaptcha, sitekey, actions ) {
 
-	var wpcf7recaptcha = {
-
-		execute: function( action ) {
-			grecaptcha.execute(
-				sitekey,
-				{ action: action }
-			).then( function( token ) {
-				var forms = document.getElementsByTagName( 'form' );
-
-				for ( var i = 0; i < forms.length; i++ ) {
-					var fields = forms[ i ].getElementsByTagName( 'input' );
-
-					for ( var j = 0; j < fields.length; j++ ) {
-						var field = fields[ j ];
-
-						if ( 'g-recaptcha-response' === field.getAttribute( 'name' ) ) {
-							field.setAttribute( 'value', token );
-							break;
-						}
-					}
-				}
-			} );
-		},
-
-		executeOnHomepage: function() {
-			wpcf7recaptcha.execute( actions[ 'homepage' ] );
-		},
-
-		executeOnContactform: function() {
-			wpcf7recaptcha.execute( actions[ 'contactform' ] );
-		},
-
-	};
-
-	grecaptcha.ready(
-		wpcf7recaptcha.executeOnHomepage
-	);
-
-	document.addEventListener( 'change',
-		wpcf7recaptcha.executeOnContactform, false
-	);
-
-	document.addEventListener( 'wpcf7submit',
-		wpcf7recaptcha.executeOnHomepage, false
-	);
-
-} )(
-	grecaptcha,
-	'6LdbdagUAAAAAIOh3VncotGrlC1-U3cYPClejykH',
-	{"homepage":"homepage","contactform":"contactform"}
-);
-</script>
-
-		
 	</body>
 
 </html>
