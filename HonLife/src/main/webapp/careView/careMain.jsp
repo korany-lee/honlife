@@ -82,8 +82,13 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<div class="col-left">
 				<a class="logo" href="careMain" title="HON LIFE"></a>			
 			</div>
+
 			<div class="col-right">
-				<a  href="#" id="regist" >회원가입</a>		
+			    <a href="careManager" class="regist" > 관리자페이지</a> <br>
+			
+				<a  href="#" class="regist" >회원가입</a> <br>
+				
+						
 			</div>
 				
              	<div class="nav-toggle">            		

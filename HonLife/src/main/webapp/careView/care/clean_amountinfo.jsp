@@ -15,12 +15,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
-
+<jsp:include page="../includer/careheader.jsp"/>
 <body class="archive post-type-archive post-type-archive-apartament cookies-not-set">
 
 
 
-	<jsp:include page="../includer/careheader.jsp"/>
+	
 
 	
 <main>
@@ -37,31 +37,7 @@
 		
 	
 
-		<div class="filter filter-1" data-filter="option-level">
-			<div class="toggle-filter">
-				<span class="toggle-filter-text">
-				평수: 
-					<span class="toggle-filter-current">선택해주세요</span>
-				</span>
-				<svg class="arrow stroke" width="16" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l7 7 7-7" stroke="#909C9C" stroke-width="1.3" fill="none" fill-rule="evenodd" stroke-linejoin="bevel"/></svg>
-			</div>
-8,10,13,16
-			<div class="filter-options-container">
-				<ul class="filter-options list-style-none">
-						<li class="cat-item cat-item-41"><a href="">8평</a>
-				</li>
-						<li class="cat-item cat-item-42"><a href="">10평</a>
-				</li>
-						<li class="cat-item cat-item-43"><a href="">13평</a>
-				</li>
-				<li class="cat-item cat-item-44"><a href="">16평</a>
-				</li>
-						
-				<li><a class="option-all" href="#">모두</a>
-				</li>
-				</ul>
-			</div>
-		</div>
+	
 
 	
 
@@ -96,7 +72,7 @@
 									</div>
 								
 									<div class="td">
-										<span>1,500원</span>
+										<span>40,000원</span>
 										<span class="icon icon-plus"></span>
 									</div>
 								</div>
@@ -104,13 +80,13 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/dress/shirt.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/clean/8.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
 										<div class="ap-description">
-											<p style="font-size: 50px;">셔츠</p>											
-											<p style="font-size: 30px;">1500원</p>
+											<p style="font-size: 50px;">8평</p>											
+											<p style="font-size: 30px;">40,000원</p>
 											</div>		
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>
@@ -127,7 +103,7 @@
 									</div>
 									
 									<div class="td">
-										<span>3,900원</span>
+										<span>46,000원</span>
 										<span class="icon icon-plus"></span>
 									</div>
 								</div>
@@ -135,13 +111,13 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/dress/MtoM.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/clean/10.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
 										<div class="ap-description">
-											<p style="font-size: 50px;">맨투맨, 후드티</p>											
-											<p style="font-size: 30px;">3,900원</p>
+											<p style="font-size: 50px;">10평</p>											
+											<p style="font-size: 30px;">46,000원</p>
 											</div>		
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>
@@ -159,7 +135,7 @@
 								
 									
 									<div class="td">
-										<span>8,000원</span>
+										<span>55,000원</span>
 										<span class="icon icon-plus"></span>
 									</div>
 								</div>
@@ -167,13 +143,13 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/living/cover.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/clean/13.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
 										<div class="ap-description">
-											<p style="font-size: 50px;">쇼파 커버</p>											
-											<p style="font-size: 30px;">8,000원</p>
+											<p style="font-size: 50px;">13평</p>											
+											<p style="font-size: 30px;">55,000원</p>
 											</div>		
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>
@@ -190,7 +166,7 @@
 									</div>
 									
 									<div class="td">
-										<span>5,000원</span>
+										<span>64,000원</span>
 										<span class="icon icon-plus"></span>
 									</div>
 								</div>
@@ -198,13 +174,13 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/living/damyo.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/clean/16.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
 										<div class="ap-description">
-											<p style="font-size: 50px;">무릎담요</p>											
-											<p style="font-size: 30px;">5,000원</p>
+											<p style="font-size: 50px;">16평</p>											
+											<p style="font-size: 30px;">64,000원</p>
 											</div>		
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>

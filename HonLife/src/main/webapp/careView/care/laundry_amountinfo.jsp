@@ -109,7 +109,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/dress/shirt.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/dress/shirt.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -143,7 +143,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/dress/MtoM.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/dress/MtoM.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -177,7 +177,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/living/cover.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/living/cover.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -211,7 +211,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/living/damyo.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/living/damyo.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -245,7 +245,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/bedroom/topper.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/bedroom/topper.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -279,7 +279,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/bedroom/silk.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="careView/images/laundry/bedroom/silk.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
