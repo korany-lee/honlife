@@ -15,7 +15,7 @@
 <body>
 	<div id="header" class="container">
 			<a href="stayMain"><img src="main/images/honstay_G.png" alt="#"/></a>
-			<a href="#"><img src="main/images/honshop_G.png" alt="#"/></a>
+			<a href="shopMain"><img src="main/images/honshop_G.png" alt="#"/></a>
 			<a href="careMain"><img src="main/images/honcare_G.png" alt="#"/></a>	
 	</div>
 

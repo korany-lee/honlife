@@ -53,7 +53,7 @@ body{font-family: 'Do Hyeon', sans-serif;font-size:16px;line-height:21px;}#cooki
 .bottom a:hover,.light-color a:hover,.register-modal button:hover,.table-head a:hover,
 a.light-color:hover,a:hover,button:hover,footer .submit:hover,header 
 .lang .current-lang,header .lang a:hover,header .menu a:hover,ul .current-level a,
-.nav-toggle:hover .nav-toggle-label{color:#f0eeee}
+.nav-toggle:hover .nav-toggle-label{color:#aaa6a6}
 .fill path{transition:fill .2s ease-in}.stroke path{transition:stroke .2s ease-in}a:hover .fill path,button:hover .fill path{fill:#35B89A}
 .hero p:not(:last-child),.main-text ol,.main-text ul,.tr-body p,main p{margin-bottom:20px}svg.align-left{margin-right:5px}
 svg.align-right{margin-left:5px}.minimal-btn{border:0;background-color:transparent;padding:0}
@@ -79,9 +79,9 @@ svg.align-right{margin-left:5px}.minimal-btn{border:0;background-color:transpare
 .logo{width:285px;height:75px;background:url(../images/header/headerLOGO.png) no-repeat}
 header .col-right{margin-top:24px}.register-btn .icon{margin-right:10px}.nav-toggle{padding-right:35px}
 .nav-toggle-lines{width:24px;height:11px;position:absolute;top:5px;right:0}
-.nav-toggle-lines span{width:100%;height:1px;background-color:#9AB7E3;position:absolute;left:0;top:0;transition:top 0.2s ease-in-out}
+.nav-toggle-lines span{width:100%;height:1px;background-color:#858282;position:absolute;left:0;top:0;transition:top 0.2s ease-in-out}
 .nav-toggle-lines span:nth-child(2){top:5px}.nav-toggle-lines span:nth-child(3){top:10px}
-.nav-toggle:hover .nav-toggle-lines span{background-color:#35B89A}.nav-toggle:hover .nav-toggle-lines span:nth-child(1){top:-2px}
+.nav-toggle:hover .nav-toggle-lines span{background-color:#858282}.nav-toggle:hover .nav-toggle-lines span:nth-child(1){top:-2px}
 .nav-toggle:hover .nav-toggle-lines span:nth-child(3){top:12px}.home .nav-toggle:hover .nav-toggle-lines span{background-color:#949393}
 .home .header-content .phone:hover,.home .header-content .register-btn:hover,.home .nav-toggle:hover .nav-toggle-label{color:#949393}
 .home .header-content .register-btn:hover path,.home .header-content .phone:hover path{fill:#9AB7E3}
@@ -260,10 +260,10 @@ div.fancybox-thumbs{top:auto;width:auto;bottom:0;left:0;right:0;height:95px;padd
 .table .td:last-child,.table .th:last-child{width:14.0625%}.tr-head .icon{width:17px;height:17px;position:absolute;top:0;right:0}
 .icon-plus::after,.icon-plus::before{background-color:#192546;position:absolute}.icon-plus::before{width:100%;height:1px;top:8px;left:0}
 .icon-plus::after{width:1px;height:100%;top:0;left:8px;transition:transform .2s ease-out}.tr-open .icon-plus::after{transform:rotate(-90deg)}
-.reserved:not(.tr-open) .tr-head{color:#9fa7a7}.reserved .tr-head:hover,.tr-head:hover{color:#35b894}
+.reserved:not(.tr-open) .tr-head{color:#9fa7a7}.reserved .tr-head:hover,.tr-head:hover{color:#e4e4e4}
 .acceptance-field a,.acceptance-field label,.cat-nav .current-cat a,.field-radio>label,.field-select>label,form input,form textarea{color:#515F5F}
 .reserved:not(.tr-open) .icon-plus::after,.reserved:not(.tr-open) .icon-plus::before{background-color:#9fa7a7}
-.tr-head:hover .icon-plus::after,.tr-head:hover .icon-plus::before{background-color:#35b894}
+.tr-head:hover .icon-plus::after,.tr-head:hover .icon-plus::before{background-color:#e4e4e4}
 .tr:not(.tr-open) .tr-head:hover .icon{-webkit-animation:spin .2s linear forwards;animation:spin .2s linear forwards}
 @-webkit-keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(90deg)}}
 @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(90deg)}}.sort-triggers{position:relative;margin-left:5px}

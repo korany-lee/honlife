@@ -104,13 +104,13 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<button class="close-nav minimal-btn">Close<svg class="icon stroke" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.056 1L1 17.056m16.056 0L1 1" stroke="#b7c0c4" stroke-width="1.2" fill="none" fill-rule="evenodd"/></svg></button>
 
 
-			<ul id="menu-header-nav-en" class="menu list-style-none"><li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="https://www.voxverticalvillage.ro/en/building/">청소요금안내</a></li>
-<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="laundryAmountInfo">세탁요금안내</a></li>
-<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
-<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
-<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
-
-<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
+			<ul id="menu-header-nav-en" class="menu list-style-none">
+				<li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="cleanAmountInfo">청소요금안내</a></li>
+				<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="laundryAmountInfo">세탁요금안내</a></li>
+				<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
+				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
+				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
+				<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
 </ul>
 		
 		

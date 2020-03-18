@@ -4,12 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      ">
-                     
- <!-- main bean -->
-<bean class="controller.care.CareMainController"/>
-<!--/main bean -->
-
-
-<bean class="controller.care.laundry.LaundryAmountInfoController"/>                    
+                  
+<bean class="controller.care.laundry.laundryAmountInfoController"/>     
+<bean class="controller.care.clean.cleanAmountInfoController" />               
                      
 </beans>

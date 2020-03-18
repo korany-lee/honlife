@@ -169,7 +169,7 @@ header .col-right .register-btn{float:left}
 .home .hero .section-content{color:#fff;position:absolute;width:100%;bottom:10px;left:50%;transform:translateX(-50%);margin:0;z-index:1}
 .home h1{font-size:32px;line-height:40px;max-width:40%}.play-btn{padding-left:15px;position:relative}
 .play-btn::before{width:0;height:0;position:absolute;left:0;top:5px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid #fff}
-.play-btn:hover::before{border-left-color:#35B89A}.home section{padding:35px 0}.home .main-section-1{padding-top:75px}.home .main-section-3{padding-bottom:130px}
+.play-btn:hover::before{border-left-color:#aaaaaa}.home section{padding:35px 0}.home .main-section-1{padding-top:75px}.home .main-section-3{padding-bottom:130px}
 .text-col{max-width:39.844%;padding-top:3%}.img-col{width:51.5625%}
 .text-col.col-right{margin-right:3.125%;padding-top:7%}.img-collage{position:relative;width:46.094%}
 .img-collage-elem-1{width:64.407%;position:relative;left:33.899%;z-index:2}
