@@ -129,6 +129,7 @@ body {
 
 </style>
 </head>
+
 <body
 	class=" controls-visible yui3-skin-sam signed-out public-page site"
 	style="width: 100%;">
@@ -203,7 +204,7 @@ body {
 																<li class="lfr-nav-item open">소개
 																	<ul class="layouts level-2">
 																		<li class="lfr-nav-item open">
-																			<a class="lfr-nav-item open"href="#">오피스텔 소개</a>
+																			<a class="lfr-nav-item open"href="./introduce/room">오피스텔 소개</a>
 																		</li>
 																		<li class="lfr-nav-item open"><a class="lfr-nav-item open" href="#">서비스 소개</a>
 																		</li>

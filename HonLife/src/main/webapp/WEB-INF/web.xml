@@ -17,11 +17,9 @@
   			classpath:spring-context.xml
   			classpath:spring-mainController.xml
   			classpath:care-controller.xml
-<<<<<<< HEAD
   			classpath:manager-controller.xml
-=======
   			classpath:spring-commonController.xml
->>>>>>> branch 'master' of https://github.com/korany-lee/honlife.git
+			classpath:stay-introduceController.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
