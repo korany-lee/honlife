@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+   <!DOCTYPE html>
+<html lang="ko">
+<head>
 <link href="css/main.css" rel="stylesheet" type="text/css">
+<title>HON LIFE - 회원가입</title>
+</head>
 
+<jsp:include page="../stayView/includer/header1.jsp"></jsp:include>
 <body class="member-join" oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection" style="">
 
 <!-- KM-201 장차석 : Google Tag Manager (noscript) -->
@@ -9,15 +15,15 @@
 
 
 <div id="wrap" class="">
-	<div id="pos_scroll"></div>
+   <div id="pos_scroll"></div>
 
-	<div id="container">
-		<div id="header"><!-- ie8 이하 브라우져 띠배너 -->
+   <div id="container">
+      <div id="header">
 
 
 <div class="bnr_header" id="top-message">
 <!-- 상단 띠배너 -->
-        
+      </div>  
 
 
 <!-- 탑 네비게이션 바 -->
@@ -35,116 +41,7 @@ $(document).ready(function(){
     userMenu.loginCheck = false;
 });
 </script>
-<!-- // 탑 네비게이션 바 -->
 
-<style>
-#headerLogo{position:relative;width:1050px;height:63px;margin:0 auto}
-#headerLogo .bnr_delivery{position:absolute;left:17px;top:-28px;margin:auto;height:22px}
-#headerLogo .bnr_delivery img{width:163px;height:22px}
-#headerLogo .logo{position:absolute;left:50%;bottom:6px;width:200px;height:79px;margin-left:-100px}
-#headerLogo .logo img{display:block;width:103px;height:79px;margin:0 auto}
-#headerLogo .logo #gnbLogoContainer {margin:0 auto}
-#gnb.gnb_stop{position:fixed;z-index:300;left:0;top:0;width:100%}
-#gnb .gnb_kurly{position:relative;z-index:300;min-width:1050px;background-color:#fff;font-family:'Noto Sans';letter-spacing:-0.3px}
-#gnb .gnb_kurly:after{content:"";position:absolute;z-index:299;left:0;top:56px;width:100%;height:9px;background:url(https://res.kurly.com/pc/service/common/1902/bg_1x9.png) repeat-x 0 100%}
-#gnb .inner_gnbkurly{position:relative;width:1050px;height:56px;margin:0 auto}
-/* 검색창 */
-#gnb .gnb_search{position:absolute;right:45px;top:10px;width:238px}
-#gnb .gnb_search .inp_search{width:238px;height:36px;padding:0 50px 0 20px;border:1px solid #f7f7f6;border-radius:18px;background-color:#f7f7f7;font-family: 'Noto Sans';font-weight:400;font-size:12px;color:#666;line-height:16px;outline:none}
-#gnb .gnb_search .inp_search.focus{background-color:#fff;color:#333}
-#gnb .gnb_search .btn_search{position:absolute;right:10px;top:3px;width:30px;height:30px}
-/* 장바구니 */
-#gnb .cart_count{position:absolute;right:-6px;top:10px}
-#gnb .cart_count .inner_cartcount{text-align:center;font-weight:400}
-#gnb .cart_count .num{display:none;position:absolute;left:19px;top:-1px;min-width:20px;height:20px;padding:0 5px;border:2px solid #fff;border-radius:10px;background-color:#5f0080;font-size:9px;color:#fff;line-height:15px;text-align:center;white-space:nowrap}
-#gnb .cart_count img{display:block;width:36px;height:36px;margin:0 auto}
-#gnb .cart_count .msg_cart{display:none;position:absolute;right:-7px;top:61px;width:348px;height:102px;border:1px solid #ddd;background-color:#fff;opacity:0}
-#gnb .cart_count .inner_msgcart{display:block;overflow:hidden;padding:20px 0 0 20px}
-#gnb .cart_count .msg_cart .thumb{float:left;width:46px;height:60px}
-#gnb .cart_count .msg_cart .desc{float:left;width:240px;padding:8px 0 0 20px;font-weight:700;font-size:14px;line-height:21px}
-#gnb .cart_count .msg_cart .tit{display:block;overflow:hidden;width:100%;color:#999;white-space:nowrap;text-overflow:ellipsis}
-#gnb .cart_count .msg_cart .name{overflow:hidden;float:left;max-width:178px;text-overflow:ellipsis}
-#gnb .cart_count .msg_cart .txt{display:block;padding-top:3px;color:#333}
-#gnb .cart_count .msg_cart .point{position:absolute;right:13px;top:-14px;width:20px;height:14px;background:url(https://res.kurly.com/pc/ico/1903/ico_layer_point.png) no-repeat 0 0}
-/* GNB메인 */
-#gnb .gnb_main{overflow:hidden;width:1050px;margin:0 auto}
-#gnb .gnb_main .gnb{float:left;width:100%}
-#gnb .gnb_main .gnb li{float:left;background:url(https://res.kurly.com/pc/service/common/1902/line_1x11_c_ccc.png) no-repeat 100% 23px}
-#gnb .gnb_main .gnb .lst{background:none}
-#gnb .gnb_main .gnb a{overflow:hidden;float:left;height:55px;padding:16px 50px 0 48px;font-size:16px;color:#333;line-height:20px}
-#gnb .gnb_main .gnb a .txt{font-weight:700}
-#gnb .gnb_main .gnb a:hover,
-#gnb .gnb_main .gnb a.on{font-weight:700;color:#5f0080}
-#gnb .gnb_main .gnb a:hover .txt{border-bottom:1px solid #5f0080}
-#gnb .gnb_main .menu1 a{padding-left:19px}
-#gnb .gnb_main .menu1 .ico{float:left;width:16px;height:14px;margin:4px 14px 0 0;background:url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off.png) no-repeat}
-#gnb .gnb_main .menu1 a.on .ico,
-#gnb .gnb_main .menu1 a:hover .ico{background:url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all.png) no-repeat 0 0}
-#gnb .gnb_main .menu1 a.on .txt,
-#gnb .gnb_main .menu1 a:hover .txt,
-#gnb .gnb_main .menu1 .txt{float:left;font-weight:700;border-bottom:0}
-/* /* GNB서브 */
-#gnb .gnb_sub{display:none;overflow:hidden;position:absolute;z-index:301;left:0;top:55px;width:213px;padding-top:1px}
-#gnb .gnb_sub .inner_sub{width:100%;border:1px solid #ddd;background:url(https://res.kurly.com/pc/service/common/1908/bg_gnb_sub_v3.png) repeat-y 0 0}
-#gnb .size_over{overflow-x:hidden;overflow-y:auto}
-#gnb .gnb_sub .gnb_menu{width:219px}
-#gnb .gnb_sub .gnb_menu li{width:100%;text-align:left}
-#gnb .gnb_sub .gnb_menu li:first-child{padding-top:0}
-#gnb .gnb_sub .menu{display:block;overflow:hidden;width:100%;height:40px;padding:8px 0 0 14px;cursor:pointer}
-#gnb .gnb_sub .gnb_menu li:first-child .menu{height:39px;padding-top:7px}
-#gnb .gnb_sub .current .menu{background:#f7f7f7}
-#gnb .gnb_sub .current .txt,
-#gnb .gnb_sub .menu.on.off:hover .txt,
-#gnb .gnb_sub .menu.on .txt{font-weight:700;color:#5f0080}
-#gnb .gnb_sub .ico{float:left;width:24px;height:24px}
-#gnb .gnb_sub .ico img{width:24px;height:24px}
-#gnb .gnb_sub .ico .ico_off{display:block}
-#gnb .gnb_sub .ico .ico_on{display:none}
-#gnb .gnb_sub .current .ico_off,
-#gnb .gnb_sub .menu.on .ico_off,
-#gnb .gnb_sub .menu:hover .ico_off{display:none}
-#gnb .gnb_sub .current .ico_on,
-#gnb .gnb_sub .menu.on .ico_on,
-#gnb .gnb_sub .menu:hover .ico_on{display:block}
-#gnb .gnb_sub .ico_arrow{display:none;float:right;width:16px;height:17px;padding:6px 9px 0 0}
-#gnb .gnb_sub .ico_arrow img{width:7px;height:11px}
-#gnb .gnb_sub .current .ico_arrow{display:block}
-#gnb .gnb_sub .txt{float:left;padding:0 4px 0 10px;font-weight:400;font-size:14px;color:#333;line-height:22px;white-space:nowrap}
-#gnb .gnb_sub .ico_new{overflow:hidden;float:left;width:14px;height:14px;margin-top:5px;background-position:50% 50%;background-repeat:no-repeat;background-size:14px 14px;font-size:0;line-height:0;text-indent:-9999px}
-#gnb .gnb_sub .sub_menu{position:absolute;z-index:0;left:200px;top:0;width:248px;height:100%;padding:0 0 0 20px;background:url(https://res.kurly.com/images/common/bg_1_1.gif) repeat 0 0;opacity:0;transition:opacity 0.2s}
-#gnb .gnb_sub .current .sub_menu{z-index:1;opacity:1;transition:opacity 0.5s}
-#gnb .gnb_sub .sub_menu li:first-child{padding-top:11px}
-#gnb .gnb_sub .sub_menu .sub{display:block;overflow:hidden;height:40px;padding-left:20px;font-size:14px;color:#333;line-height:18px;cursor:pointer}
-#gnb .gnb_sub .sub_menu .sub:hover .name{border-bottom:1px solid #5f0080;font-weight:700;color:#5f0080}
-#gnb .gnb_sub .sub_menu .sub.on{font-weight:700;color:#5f0080}
-#gnb .gnb_sub .recommend{overflow:hidden;width:529px;padding:21px 0 0 40px}
-#gnb .gnb_sub .recommend li{float:left;width:120px;height:130px;padding:0 10px 0 0}
-#gnb .gnb_sub .recommend li:first-child{padding-top:0}
-#gnb .gnb_sub .recommend .sub{display:block;overflow:hidden;width:120px;height:130px;padding:0;cursor:pointer}
-#gnb .gnb_sub .recommend .thumb{display:block;width:110px;height:83.4px;margin-bottom:8px;background-position:50% 50%;background-repeat:no-repeat;background-size:cover}
-#gnb .gnb_sub .recommend .thumb img{width:110px;height:84px}
-#gnb .gnb_sub .recommend .name{font-size:14px;line-height:18px} */
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 1.5dppx) {
-    #gnb .gnb_sub .ico_new{background:url(https://res.kurly.com/pc/ico/1808/ico_new_gnb_16x16.png) no-repeat 0 0;background-size:8px 8px}
-    #gnb .cart_count .msg_cart .point{background:url(https://res.kurly.com/pc/ico/1903/ico_layer_point_x2.png) no-repeat 0 0;background-size:20px 14px}
-    #gnb .gnb_main .menu1 .ico{background:url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_off_x2.png) no-repeat 0 0;background-size:16px 14px}
-    #gnb .gnb_main .menu1 a.on .ico,
-    #gnb .gnb_main .menu1 a:hover .ico{background:url(https://res.kurly.com/pc/service/common/1908/ico_gnb_all_x2.png) no-repeat 0 0;background-size:16px 14px}
-}
-
-/* 승민버튼 */
-.myBtn {
-	float:none;height:40px;margin-left:10px;border:1px solid #512771;border-radius:3px;background-color:#5f0080;font-size:14px;color:#fff;line-height:34px;vertical-align:top
-
-
-
-	}
-
-
-</style>
 
 <div id="headerLogo" class="layout-wrapper">
     <!-- <h1 class="logo">
@@ -158,66 +55,21 @@ only screen and (min-resolution: 1.5dppx) {
 
 <div id="gnb" class="">
     <h2 class="screen_out">메뉴</h2>
-    <div id="gnbMenu" class="gnb_kurly"><div class="inner_gnbkurly"><div class="gnb_main">
-
-<script src="/common_js/gnb_v1.js?ver=202003191138"></script>
-<script type="text/javascript">
-//
-gnbMenu.update();
-
-
-
-</script>
-
-
-
+    <div id="gnbMenu" class="gnb_kurly">
+    <div class="inner_gnbkurly">
+    <div class="gnb_main">
+</div>
+</div>
+</div>
 </div>
 
-		<div id="main">
-			<div id="content">
+</div><!-- #header -->
+      <div id="main">
+         <div id="content">
 
-		    <!-- 퀵 메뉴 -->
-			<div id="qnb" class="quick-navigation" style="top: 70px;">
+          <!-- 퀵 메뉴 -->
+         <div id="qnb" class="quick-navigation" style="top: 70px;">
 
-
-<style>
-    #qnb{position:absolute;z-index:1;right:20px;top:70px;width:80px;font:normal 12px/16px "Noto Sans";color:#333;letter-spacing:-0.3px;transition:top 0.2s}
-    .goods-goods_view #qnb{top:20px}
-    /* 배너 */
-    #qnb .bnr_qnb{padding-bottom:7px}
-    #qnb .bnr_qnb .thumb{width:80px;height:120px;vertical-align:top}
-    /* 메뉴 */    
-    #qnb .side_menu{width:80px;border:1px solid #ddd;border-top:0 none;background-color:#fff}
-    #qnb .link_menu{display:block;height:29px;padding-top:5px;border-top:1px solid #ddd;text-align:center}
-    #qnb .link_menu:hover,
-    #qnb .link_menu.on{color:#5f0080}
-    /* 최근본상품 */
-    #qnb .side_recent{position:relative;margin-top:6px;border:1px solid #ddd;background-color:#fff}
-    #qnb .side_recent .tit{display:block;padding:22px 0 6px;text-align:center}
-    #qnb .side_recent .list_goods{overflow:hidden;position:relative;width:60px;margin:0 auto}
-    #qnb .side_recent .list{position:absolute;left:0;top:0}
-    #qnb .side_recent .link_goods{display:block;overflow:hidden;width:60px;height:80px;padding:1px 0 2px}
-    #qnb .side_recent .btn{display:block;overflow:hidden;width:100%;height:17px;border:0 none;font-size:0;line-height:0;text-indent:-9999px}
-    
-    #qnb .side_recent .btn_up{position:absolute;left:0;top:0;background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover.png) no-repeat 50% 50%}
-    #qnb .side_recent .btn_up.off{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up.png) no-repeat 50% 50%}
-    #qnb .side_recent .btn_down{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover.png) no-repeat 50% 0}
-    #qnb .side_recent .btn_down.off{background:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down.png) no-repeat 50% 0}
-    
-    
-    @media
-    only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 1.5dppx) {
-        #qnb .side_recent .btn_up{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_hover_x2.png);background-size:12px 18px}
-        #qnb .side_recent .btn_down{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_hover_x2.png);background-size:12px 18px}
-        #qnb .side_recent .btn_up.off{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_up_x2.png);background-size:12px 18px}
-        #qnb .side_recent .btn_down.off{background-image:url(https://res.kurly.com/pc/service/main/2002/ico_quick_down_x2.png);background-size:12px 18px}
-    }
-    @media all and (max-width: 1250px){
-        #qnb{display:none}
-    }
-</style>
 
 
 <!-- 이벤트 배너영역 -->
@@ -309,7 +161,7 @@ var getGoodsRecent = (function(){
 })();
 </script>
 
-			</div>
+         </div>
 
 <div class="page_aticle"><!-- Start indiv -->
 
@@ -317,19 +169,19 @@ var getGoodsRecent = (function(){
 <script src="/common_js/join_v1.js?ver=202003191138"></script>
 
 <style type="text/css">
-	#content{margin-bottom:30px;padding-bottom:70px;background-color:#f9f9f9}
-	.member_join{width:640px;margin:0 auto}
-	.member_join .boardWrite{padding:9px 0 19px;border:1px solid #f3f2f4;background-color:#fff}
-	.member_join .field_head.head_type2{padding:0 0 29px}
-	.member_join .reg_agree{margin-top:10px;padding:29px 0 21px 29px;border:1px solid #f3f2f4;background-color:#fff}
+   #content{margin-bottom:30px;padding-bottom:70px;background-color:#f9f9f9}
+   .member_join{width:640px;margin:0 auto}
+   .member_join .boardWrite{padding:9px 0 19px;border:1px solid #f3f2f4;background-color:#fff}
+   .member_join .field_head.head_type2{padding:0 0 29px}
+   .member_join .reg_agree{margin-top:10px;padding:29px 0 21px 29px;border:1px solid #f3f2f4;background-color:#fff}
 </style>
 
 <script language="javascript">
     function checkSubmit() {
         var oForm = document.getElementById("form");
 
-        var rdo_jumin		= document.getElementById("RnCheckType_jumin");
-        var rdo_ipin		= document.getElementById("RnCheckType_ipin");
+        var rdo_jumin      = document.getElementById("RnCheckType_jumin");
+        var rdo_ipin      = document.getElementById("RnCheckType_ipin");
         var rdo_hpauthDream = document.getElementById("RnCheckType_hpauthDream");
 
         if (rdo_ipin && rdo_ipin.checked)  {
@@ -349,172 +201,170 @@ var getGoodsRecent = (function(){
 </script>
 
 <div class="page_location">
-	
+   
 </div>
 <div class="head_section head_join">
-	<h2 class="tit">회원가입</h2>
+   <h2 class="tit">회원가입</h2>
 </div>
 
 <div class="member_join"><!-- 회원가입일때만 스타일 적용 -->
-
-
-	
-	
+   
 <div class="">
-	<form id="form" name="frmMember" method="post" action="/shop/member/indb.php" onsubmit="return chkForm2(this)">
-		<input type="hidden" name="mode" value="joinMember">
-		<input type="hidden" name="check_mobile" value="">
-		<input type="hidden" name="auth_finish_code" value="">
-		<input type="hidden" name="rncheck" value="">
-		<input type="hidden" name="dupeinfo" value="">
-		<input type="hidden" name="pakey" value="">
-		<input type="hidden" name="foreigner" value="">
-		<input type="hidden" name="passwordSkin" value="Y"><!-- 비밀번호 작성 규칙 보완 스킨패치 여부 -->
+   <form id="form" name="frmMember" method="post" action="/shop/member/indb.php" onsubmit="return chkForm2(this)">
+      <input type="hidden" name="mode" value="joinMember">
+      <input type="hidden" name="check_mobile" value="">
+      <input type="hidden" name="auth_finish_code" value="">
+      <input type="hidden" name="rncheck" value="">
+      <input type="hidden" name="dupeinfo" value="">
+      <input type="hidden" name="pakey" value="">
+      <input type="hidden" name="foreigner" value="">
+      <input type="hidden" name="passwordSkin" value="Y"><!-- 비밀번호 작성 규칙 보완 스킨패치 여부 -->
 
-		<input type="hidden" name="private2" value="">
-		<input type="hidden" name="private3" value="">
-		<input type="hidden" name="return_url" value="">
+      <input type="hidden" name="private2" value="">
+      <input type="hidden" name="private3" value="">
+      <input type="hidden" name="return_url" value="">
 
-		<!-- 네이버체크아웃(회원연동) -->
-		
+      <!-- 네이버체크아웃(회원연동) -->
+      
 
-		<div class="field_head head_type1">
-			<h3 class="tit"><span class="screen_out">기본정보</span></h3>
-			<p class="sub">*필수입력사항</p>	
-		</div>
-		
-		<div class="boardWrite">
-			<table class="tbl_comm">
-				<tbody><tr>
-					<td class="memberCols1">아이디*</td>
-					<td class="memberCols2">
-						<input type="text" name="m_id" value="" maxlength="16" required="" fld_esssential="" option="regId" label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
-						<input type="button" id="idCheck" name="idCheck" class="myBtn" value="중복확인">
-						
-					</td>
-				</tr>
-				<tr>
-					<td class="memberCols1"> 비밀번호*</td>
-					<td class="memberCols2">
-						<input type="password" name="password" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
-						
-					</td>
-				</tr>
-				<tr class="member_pwd">
-					<td class="memberCols1">비밀번호확인*</td>
-					<td class="memberCols2">
-						<input type="password" name="password2" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
-					</td>
-				</tr>
-				<tr>
-					<td class="memberCols1">이름*</td>
-					<td class="memberCols2">
-						<input type="text" name="name" value="" required="" fld_esssential="" label="이름" placeholder="고객님의 이름을 입력해주세요">
-					</td>
-				</tr>
+      <div class="field_head head_type1">
+         <h3 class="tit"><span class="screen_out">기본정보</span></h3>
+         <p class="sub">*필수입력사항</p>   
+      </div>
+      
+      <div class="boardWrite">
+         <table class="tbl_comm">
+            <tbody><tr>
+               <td class="memberCols1">아이디*</td>
+               <td class="memberCols2">
+                  <input type="text" name="m_id" value="" maxlength="16" required="" fld_esssential="" option="regId" label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
+                  <input type="button" id="idCheck" name="idCheck" class="myBtn" value="중복확인">
+                  
+               </td>
+            </tr>
+            <tr>
+               <td class="memberCols1"> 비밀번호*</td>
+               <td class="memberCols2">
+                  <input type="password" name="password" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
+                  
+               </td>
+            </tr>
+            <tr class="member_pwd">
+               <td class="memberCols1">비밀번호확인*</td>
+               <td class="memberCols2">
+                  <input type="password" name="password2" required="" fld_esssential="" option="regPass" label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
+               </td>
+            </tr>
+            <tr>
+               <td class="memberCols1">이름*</td>
+               <td class="memberCols2">
+                  <input type="text" name="name" value="" required="" fld_esssential="" label="이름" placeholder="고객님의 이름을 입력해주세요">
+               </td>
+            </tr>
 
-				<tr>
-					<td class="memberCols1">  이메일*</td>
-					<td class="memberCols2">
-						<input type="text"  id ="email" name="email"  placeholder="예: honlife@naver.com">
-					
-			
-					</td>
-				</tr>
-				
+            <tr>
+               <td class="memberCols1">  이메일*</td>
+               <td class="memberCols2">
+                  <input type="text"  id ="email" name="email"  placeholder="예: honlife@naver.com">
+               
+         
+               </td>
+            </tr>
+            
 
-				<tr class="mobile">
-					<td class="memberCols1">  휴대폰*</td>
-					<td class="memberCols2">
-						<div class="phone_num">
-							<input type="text" value="" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp">
-							
-						</div>
-						
+            <tr class="mobile">
+               <td class="memberCols1">  휴대폰*</td>
+               <td class="memberCols2">
+                  <div class="phone_num">
+                     <input type="text" value="" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp">
+                     
+                  </div>
+                  
 
-					</td>
-				</tr>
+               </td>
+            </tr>
 
-				<tr>
-					<td class="memberCols1">주소</td>
-					<td class="memberCols2">
-						<div class="field_address">
-							<input type="text" id="addr" name="addr" readonly="readonly" placeholder="주소를 검색하세요">&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="button" id="addr" name="addr" class="myBtn" value="주소찾기">
-							
-							<div id="addressView">
-								<div class="view_address"></div>
-							</div>
-						</div>
-						
-						<div class="field_address lst">
-							<input type="text" name="address_sub" id="address_sub" value="" onkeyup="SameAddressSub(this)" oninput="SameAddressSub(this)" label="세부주소" placeholder="세부주소를 입력해주세요." class="byteTotext">
-							<p class="txt_guide">
-								<span class="txt">
-									<span id="div_road_address"></span>
-									<span id="div_road_address_sub"></span>
-								</span>	
-							</p>
+            <tr>
+               <td class="memberCols1">주소</td>
+               <td class="memberCols2">
+                  <div class="field_address">
+                     <input type="text" id="addr" name="addr" readonly="readonly" placeholder="주소를 검색하세요">&nbsp;&nbsp;&nbsp;&nbsp;
+                     <input type="button" id="addr" name="addr" class="myBtn" value="주소찾기">
+                     
+                     <div id="addressView">
+                        <div class="view_address"></div>
+                     </div>
+                  </div>
+                  
+                  <div class="field_address lst">
+                     <input type="text" name="address_sub" id="address_sub" value="" onkeyup="SameAddressSub(this)" oninput="SameAddressSub(this)" label="세부주소" placeholder="세부주소를 입력해주세요." class="byteTotext">
+                     <p class="txt_guide">
+                        <span class="txt">
+                           <span id="div_road_address"></span>
+                           <span id="div_road_address_sub"></span>
+                        </span>   
+                     </p>
 
-							<div class="bytes_wrapper chk_bytes">
-								<span class="bytes">0</span>자 / <span class="limit">50</span>자
-							</div>
-						</div>
-					</td>
-				</tr>
-
-
-				<tr class="select_sex">
-					<td class="memberCols1">성별</td>
-					<td class="memberCols2">
-						<div class="group_radio">
-							<label class="label_radio">
-								<input type="radio" name="sex_option" label="성별" value="m">
-								<span class="text_position">남자</span>
-							</label>
-							<label class="label_radio">
-								<input type="radio" name="sex_option" label="성별" value="w">
-								<span class="text_position">여자</span>
-							</label>
-							<label class="label_radio">
-								<input type="radio" name="sex_option" label="성별" value="n">
-								<span class="text_position">선택안함</span>
-							</label>
-							<input type="hidden" name="sex" label="성별" value="n">
-						</div>
-					</td>
-				</tr>
-
-				<tr class="birth field_birth">
-					<td class="memberCols1">생년월일</td>
-					<td class="memberCols2">
-						<div class="birth_day">
-							<input type="text" name="birth_year" id="birth_year" pattern="[0-9]*" value="" label="생년월일" size="4" maxlength="4" placeholder="YYYY">
-							<span class="bar"><span>/</span></span>
-							<input type="text" name="birth[]" id="birth_month" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="MM">
-							<span class="bar"><span>/</span></span>
-							<input type="text" name="birth[]" id="birth_day" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="DD">
-						</div>
-						<p class="txt_guide">
-							<span class="txt bad"></span>
-						</p>
-						
-					</td>
-				</tr>
-				
-				
+                     <div class="bytes_wrapper chk_bytes">
+                        <span class="bytes">0</span>자 / <span class="limit">50</span>자
+                     </div>
+                  </div>
+               </td>
+            </tr>
 
 
-			</tbody></table>
+            <tr class="select_sex">
+               <td class="memberCols1">성별</td>
+               <td class="memberCols2">
+                  <div class="group_radio">
+                     <label class="label_radio">
+                        <input type="radio" name="sex_option" label="성별" value="m">
+                        <span class="text_position">남자</span>
+                     </label>
+                     <label class="label_radio">
+                        <input type="radio" name="sex_option" label="성별" value="w">
+                        <span class="text_position">여자</span>
+                     </label>
+                     <label class="label_radio">
+                        <input type="radio" name="sex_option" label="성별" value="n">
+                        <span class="text_position">선택안함</span>
+                     </label>
+                     <input type="hidden" name="sex" label="성별" value="n">
+                  </div>
+               </td>
+            </tr>
 
-		</div>
+            <tr class="birth field_birth">
+               <td class="memberCols1">생년월일</td>
+               <td class="memberCols2">
+                  <div class="birth_day">
+                     <input type="text" name="birth_year" id="birth_year" pattern="[0-9]*" value="" label="생년월일" size="4" maxlength="4" placeholder="YYYY">
+                     <span class="bar"><span>/</span></span>
+                     <input type="text" name="birth[]" id="birth_month" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="MM">
+                     <span class="bar"><span>/</span></span>
+                     <input type="text" name="birth[]" id="birth_day" pattern="[0-9]*" value="" label="생년월일" size="2" maxlength="2" placeholder="DD">
+                  </div>
+                  <p class="txt_guide">
+                     <span class="txt bad"></span>
+                  </p>
+                  
+               </td>
+            </tr>
+            
+            
 
-			
 
-		<div id="avoidDbl">
-			<button type="submit" class="btn_submit">가입하기</button>
-		</div>
-	</form>
+         </tbody>
+         </table>
+
+      </div>
+
+         
+
+      <div id="avoidDbl">
+         <button type="submit" class="btn_submit">가입하기</button>
+      </div>
+   </form>
 </div>
 
 </div>
@@ -527,7 +377,7 @@ var getGoodsRecent = (function(){
 <script type="text/javascript">
     $(document).ready(function() {
         $('input[name=name]').on('keyup keydown blur', function(){
-	        preventSpecialChars($(this), 'write');	
+           preventSpecialChars($(this), 'write');   
         });
             
         $("#avoidDbl .btn_submit").click(function(){
@@ -539,15 +389,15 @@ var getGoodsRecent = (function(){
         });
 
         // PRDPJ-159 장차석 : 사용자 아이디와 추처인 아이디 중복 안되도록 처리
-		var $nameRecommid = $('[name=recommid]');
-		var $nameMId = $('[name=m_id]');
-		$($nameRecommid , $nameMId).blur(function(){
-			if ($.trim($nameMId.val()) !== '' && $.trim($nameRecommid.val()) !== '' &&
-					($nameRecommid.val() === $nameMId.attr('data-id') || $nameRecommid.val() === $nameMId.val())) {
-				$nameRecommid.val('');
-				alert('추천인 아이디에는 본인 아이디를 입력할 수 없습니다.');
-			}
-		});
+      var $nameRecommid = $('[name=recommid]');
+      var $nameMId = $('[name=m_id]');
+      $($nameRecommid , $nameMId).blur(function(){
+         if ($.trim($nameMId.val()) !== '' && $.trim($nameRecommid.val()) !== '' &&
+               ($nameRecommid.val() === $nameMId.attr('data-id') || $nameRecommid.val() === $nameMId.val())) {
+            $nameRecommid.val('');
+            alert('추천인 아이디에는 본인 아이디를 입력할 수 없습니다.');
+         }
+      });
 
         //개인정보처리방침
         function getAgreement() {
@@ -592,7 +442,7 @@ var getGoodsRecent = (function(){
                 topResult = $essential;
             }else if($layer3 == true){
                 bgDimd.show();
-				$choice.show();
+            $choice.show();
                 $essential.hide();
                 $agreement.hide();
                 topResult = $choice;
@@ -609,7 +459,7 @@ var getGoodsRecent = (function(){
         });
 
         // 이용약관전체동의
-		var agree = $('.reg_agree');
+      var agree = $('.reg_agree');
         $('.check_agree input[name = agree_allcheck]').change(function(){
             if($(this).is(':checked') === true){
                 $('.check_agree').addClass('checked')
@@ -627,18 +477,18 @@ var getGoodsRecent = (function(){
         });
         $('.reg_agree').find('input[type=checkbox]').change(function(){
             if($(this).is(':checked')){
-				$(this).parent().addClass('checked');
+            $(this).parent().addClass('checked');
                 $(this).attr('checked','checked');
                 $(this).prop('checked','checked');
                 $(this).val('y');
                 if($(this).attr('name') == 'hiddenCheck') $('#consentHidden').val('y');
-			}else{
+         }else{
                 $(this).parent().removeClass('checked');
                 $(this).attr('checked','');
                 $(this).prop('checked','');
                 $(this).val('n');
                 if($(this).attr('name') == 'hiddenCheck') $('#consentHidden').val('n');
-			}
+         }
             $('.reg_agree').find('input[type=checkbox]').each(function(){
                 if($(this).is(':checked') === false){
                     $('.label_all_check').removeClass('checked');
@@ -681,7 +531,7 @@ var getGoodsRecent = (function(){
             }else{
                 $('.check_agree input[name = agree_allcheck]').parent().removeClass('checked');
                 $('.check_agree input[name = agree_allcheck]').prop('checked','');
-			}
+         }
         });
 
         function inputFocus() {
@@ -756,7 +606,7 @@ var getGoodsRecent = (function(){
             if($('[name=chk_id]').val() == 1){
                 $('[name=chk_id]').val('');
                 class_change($target.find('.txt_case2'),'bad');
-			}
+         }
         });
 
         // 비밀번호검증
@@ -804,28 +654,28 @@ var getGoodsRecent = (function(){
                 class_change($target.find('.txt_case2'),'good');
             }
 
-			var hasThreeOrMoreConsecutiveNumbers = pwValidate.hasThreeOrMoreConsecutiveNumbers($chkVal)
+         var hasThreeOrMoreConsecutiveNumbers = pwValidate.hasThreeOrMoreConsecutiveNumbers($chkVal)
             if (hasThreeOrMoreConsecutiveNumbers) {
                 class_change($target.find('.txt_case3'),'bad');
             } else {
                 class_change($target.find('.txt_case3'),'good');
-			}
+         }
             
             if($(this).attr('id') == 'newPassword'){
                 if($('[name=originalPassword]').val() == $('[name=newPassword]').val() ){
                     class_change($target.find('.txt_case4'),'bad');
-				}else{
+            }else{
                     class_change($target.find('.txt_case4'),'good');
-				}
+            }
                 $('[name=confirmPassword]').trigger('keyup');
                 var newPasswordCheckNum = 0;
                 $target.find('.txt').each(function(){
                    if($(this).hasClass('good')) newPasswordCheckNum++;
                    $('[name=newPasswordCheck]').val(newPasswordCheckNum);
-				});
-			}else{
+            });
+         }else{
                 $('[name=password2]').trigger('keyup');    
-			}
+         }
         });
 
         // ----모바일 인증 v2 start ----
@@ -864,7 +714,7 @@ var getGoodsRecent = (function(){
             var number = inputText.replace(/[^0-9]/g,'');
             $(this).val(number);
             number = $(this).val();
-			
+         
             if($(this).val().length > 11){
                 $(this).val(number.substring(0,11));
             }
@@ -876,7 +726,7 @@ var getGoodsRecent = (function(){
                 if(confirmCertBtn == false){
                     if($('#btn_cert span').hasClass('disabled')) $('#btn_cert span').removeClass('disabled');
                     checkCertBtn = true;
-				}
+            }
             }else{
                 if(!$('#btn_cert span').hasClass('disabled')) $('#btn_cert span').addClass('disabled');
                 checkCertBtn = false;
@@ -1054,26 +904,26 @@ var getGoodsRecent = (function(){
 
         // ----모바일 인증 v2 end ----
 
-		
+      
 
-			// 기존 텍스트 리셋
+         // 기존 텍스트 리셋
             textBox.val("")
 
             // placeholder 텍스트 변경
-			textBox.attr('placeholder', placeholderMessage)
+         textBox.attr('placeholder', placeholderMessage)
 
-			// input name, value값 변경
-			var nameOptions = {
+         // input name, value값 변경
+         var nameOptions = {
                 'recommendId': 'recommid',
                 'eventName': 'ex2'
-			}
-			textBox.attr('name', nameOptions[selectOption])
+         }
+         textBox.attr('name', nameOptions[selectOption])
             inputWrapper.addClass('selected')
         })
 
         // 라디오버튼 토글-성별
        
-    });
+
 
     // 클래스변경
     function class_change(obj,state){
@@ -1090,8 +940,8 @@ var getGoodsRecent = (function(){
         var authtype = document.getElementsByName("RnCheckType");
 
         if (authtype.item(0) != null) {
-            var div_jumin		= document.getElementById("div_RnCheck_jumin");
-            var div_ipin		= document.getElementById("div_RnCheck_ipin");
+            var div_jumin      = document.getElementById("div_RnCheck_jumin");
+            var div_ipin      = document.getElementById("div_RnCheck_ipin");
             var div_hpauthDream = document.getElementById("div_RnCheck_hpauthDream");
 
             if (authtype.item(0).value == 'jumin')
@@ -1107,12 +957,12 @@ var getGoodsRecent = (function(){
     }
 
     function selectRnCheckType(){
-        var div_jumin		= document.getElementById("div_RnCheck_jumin");
-        var div_ipin		= document.getElementById("div_RnCheck_ipin");
+        var div_jumin      = document.getElementById("div_RnCheck_jumin");
+        var div_ipin      = document.getElementById("div_RnCheck_ipin");
         var div_hpauthDream = document.getElementById("div_RnCheck_hpauthDream");
 
-        var rdo_jumin		= document.getElementById("RnCheckType_jumin");
-        var rdo_ipin		= document.getElementById("RnCheckType_ipin");
+        var rdo_jumin      = document.getElementById("RnCheckType_jumin");
+        var rdo_ipin      = document.getElementById("RnCheckType_ipin");
         var rdo_hpauthDream = document.getElementById("RnCheckType_hpauthDream");
 
         if(rdo_jumin && rdo_jumin.checked == true){
@@ -1121,13 +971,13 @@ var getGoodsRecent = (function(){
             if (div_hpauthDream != null) { div_hpauthDream.style.display='none'; }
         }
         if(rdo_ipin && rdo_ipin.checked == true){
-            if (div_jumin != null)	{ div_jumin.style.display='none'; }
-            if (div_ipin != null)	{ div_ipin.style.display=''; }
+            if (div_jumin != null)   { div_jumin.style.display='none'; }
+            if (div_ipin != null)   { div_ipin.style.display=''; }
             if (div_hpauthDream != null) { div_hpauthDream.style.display='none'; }
         }
         if(rdo_hpauthDream && rdo_hpauthDream.checked == true){
-            if (div_jumin != null)	{ div_jumin.style.display='none'; }
-            if (div_ipin != null)	{ div_ipin.style.display='none'; }
+            if (div_jumin != null)   { div_jumin.style.display='none'; }
+            if (div_ipin != null)   { div_ipin.style.display='none'; }
             if (div_hpauthDream != null) { div_hpauthDream.style.display=''; }
         }
     }
@@ -1143,7 +993,7 @@ var getGoodsRecent = (function(){
         kurlyApi({
             method:'post',
             url:'/v1/users/check/password',
-			data:req
+         data:req
         }).then(function (response) {
             if (response) {
                 if (response.status === 200 && response.data.hasOwnProperty('data')) {
@@ -1152,9 +1002,9 @@ var getGoodsRecent = (function(){
                 }
             }
             errorMessage.show();
-			return false;
+         return false;
         });
-	}
+   }
 
     function chkId()
     {
@@ -1174,7 +1024,7 @@ var getGoodsRecent = (function(){
         var isValidId = eval(idPattern);
         if (!isValidId.test(form.m_id.value)) {
             alert(alertMsg);
-			return;
+         return;
         }
         var $idValidator = $("[name='m_id']").attr('data-validator');
         if($idValidator === "false"){
@@ -1184,7 +1034,7 @@ var getGoodsRecent = (function(){
             $target.addClass('bad');
         }else{
             ifrmHidden.location.href = "indb.php?mode=chkId&m_id=" + form.m_id.value;
-		}
+      }
     }
     function chkId2(num){
         var $target = $("[name='m_id']").parent().find('.txt_case2');
@@ -1209,7 +1059,7 @@ var getGoodsRecent = (function(){
             alert("이메일 주소를 입력해 주세요.");
             return false;
         }
-		if(email_regex.test(trim_txt) === false) {
+      if(email_regex.test(trim_txt) === false) {
             alert("잘못된 이메일 형식입니다.");
             return false;
         }
@@ -1226,20 +1076,20 @@ var getGoodsRecent = (function(){
     });
 
     
-	// 생년월일 입력시 폼 포커스 이벤트
-	$('.birth_day input').focus(function(){
-		$(this).parent().addClass('on');
-		
-	}).keyup(function(){
-		var inputText = $(this).val();
-		var number = $(this).val().replace(/[^0-9]/g,'');
-		$(this).val(number);
-	}).blur(function(){
-		$(this).parent().removeClass('on');
-		// KM-1261 회원가입 14세 인증
-		birthCheckAction.validatorText();
-	});
-	
+   // 생년월일 입력시 폼 포커스 이벤트
+   $('.birth_day input').focus(function(){
+      $(this).parent().addClass('on');
+      
+   }).keyup(function(){
+      var inputText = $(this).val();
+      var number = $(this).val().replace(/[^0-9]/g,'');
+      $(this).val(number);
+   }).blur(function(){
+      $(this).parent().removeClass('on');
+      // KM-1261 회원가입 14세 인증
+      birthCheckAction.validatorText();
+   });
+   
 
     function chkForm2(f) {
         if ($("input[name='chk_id']").val() != "1")
@@ -1250,10 +1100,10 @@ var getGoodsRecent = (function(){
             return false;
         }
 
-	    if(! preventSpecialChars($('input[name=name]'), 'result')){
-		    return false;
-	    }
-		
+       if(! preventSpecialChars($('input[name=name]'), 'result')){
+          return false;
+       }
+      
         if ($("input[name='check_mobile']").val() != "1")
         {
             alert("휴대폰 인증을 완료해 주세요.", function () {
@@ -1282,23 +1132,23 @@ var getGoodsRecent = (function(){
             });
             return false;
         }
-		if($('[name=private1]').attr('checked') != 'checked'){
+      if($('[name=private1]').attr('checked') != 'checked'){
             alert('[(필수) 개인정보취급방침 동의]에 동의를 하셔야 회원가입이 가능합니다.', function () {
                 $('#private1').focus();
             });
             return false;
         }
-		if($('[name=fourteen_chk]').attr('checked') != 'checked'){
+      if($('[name=fourteen_chk]').attr('checked') != 'checked'){
             alert('[(필수) 본인은 만 14세 이상입니다.]에 동의를 하셔야 회원가입이 가능합니다.', function () {
                 $('#fourteenChk').focus();
             });
             return false;
         }
 
-		// KM-1261 회원가입 14세 인증
-		if(! birthCheckAction.validatorForm()){
-			return false;
-		}
+      // KM-1261 회원가입 14세 인증
+      if(! birthCheckAction.validatorForm()){
+         return false;
+      }
         
         if (chkForm(f) === false) {
             return false;
@@ -1323,287 +1173,187 @@ var getGoodsRecent = (function(){
     });
 
 
-	// KM-1483 Amplitude
-	KurlyTracker.setScreenName('sign_up').setAction('view_sign_up').sendData();
+   // KM-1483 Amplitude
+   KurlyTracker.setScreenName('sign_up').setAction('view_sign_up').sendData();
 </script>
 
 </div><!-- End indiv -->
 
 </div><!-- #content -->
-		</div><!-- #container -->
+      </div><!-- #main -->
 
 
-		<!-- 배송지역 검색 결과 -->
-		<div id="layerDSR"><!-- layer delivery search result -->
-			<div class="bg_dim"></div>
-			
-			<div class="in_layer">
-				<div class="inner_layer layer_star">
-					<strong class="dsr_result">샛별배송 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_kurly.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="샛별배송 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">오늘 밤 11시 전</strong>까지 주문시<br>
-						<strong class="emph">다음날 아침 7시</strong> 이전 도착합니다!
-					</p>
-					<p class="dsr_notice">샛별배송은 휴무 없이 매일 배송 합니다</p>
-				</div>
+      <!-- 배송지역 검색 결과 -->
+      <div id="layerDSR"><!-- layer delivery search result -->
+         <div class="bg_dim"></div>
+         
+         <div class="in_layer">
+            <div class="inner_layer layer_star">
+               <strong class="dsr_result">샛별배송 지역입니다.</strong>
+               <div class="ani">
+                  <img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_kurly.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="샛별배송 이미지">
+               </div>
+               <p class="dsr_desc">
+                  <strong class="emph">오늘 밤 11시 전</strong>까지 주문시<br>
+                  <strong class="emph">다음날 아침 7시</strong> 이전 도착합니다!
+               </p>
+               <p class="dsr_notice">샛별배송은 휴무 없이 매일 배송 합니다</p>
+            </div>
 
-				<div class="inner_layer layer_normal">
-					<strong class="dsr_result">택배배송 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_car.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="택배배송 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">밤 8시 전</strong>까지 주문시<br>
-						<strong class="emph">다음날</strong> 도착합니다!
-					</p>
-					<p class="dsr_notice">일요일은 배송 휴무로 토요일에는 주문 불가</p>
-				</div>
+            <div class="inner_layer layer_normal">
+               <strong class="dsr_result">택배배송 지역입니다.</strong>
+               <div class="ani">
+                  <img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_car.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="택배배송 이미지">
+               </div>
+               <p class="dsr_desc">
+                  <strong class="emph">밤 8시 전</strong>까지 주문시<br>
+                  <strong class="emph">다음날</strong> 도착합니다!
+               </p>
+               <p class="dsr_notice">일요일은 배송 휴무로 토요일에는 주문 불가</p>
+            </div>
 
-				<div class="inner_layer layer_none">
-					<strong class="dsr_result">배송 불가 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_none.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="배송불가 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">도로명 주소</strong>로 검색하셨다면,<br>
-						<strong class="emph">지번 주소(구 주소)</strong>로 다시 시도해 주세요.
-					</p>
-					<p class="dsr_notice">배송지역을 확장하도록 노력하겠습니다!</p>
-				</div>
+            <div class="inner_layer layer_none">
+               <strong class="dsr_result">배송 불가 지역입니다.</strong>
+               <div class="ani">
+                  <img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_none.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="배송불가 이미지">
+               </div>
+               <p class="dsr_desc">
+                  <strong class="emph">도로명 주소</strong>로 검색하셨다면,<br>
+                  <strong class="emph">지번 주소(구 주소)</strong>로 다시 시도해 주세요.
+               </p>
+               <p class="dsr_notice">배송지역을 확장하도록 노력하겠습니다!</p>
+            </div>
 
-				<div class="layer_btn1">
-					<button type="button" class="btn_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();">확인</button>
-				</div>
-				<button type="button" class="layer_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();"></button>
-			</div>
-		</div>
+            <div class="layer_btn1">
+               <button type="button" class="btn_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();">확인</button>
+            </div>
+            <button type="button" class="layer_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();"></button>
+         </div>
+      </div>
 
-		<!-- <div id="footer">
-			<div class="inner_footer">
-				<div class="footer_cc">
-					<h2 class="tit_cc">고객행복센터</h2>
-					<div class="cc_view cc_call">
-						<h3><span class="tit">1644-1107</span></h3>
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_kakao">
-						<h3><a class="tit" href="#none">카카오톡 문의</a></h3>
-						<script type="text/javascript">
-							$('.cc_kakao .tit').on('click',function(e){
-								e.preventDefault();
-								$.ajax({
-									type: "GET",
-									url: apiDomain+'/v1/mypage/asks/confirm/kakao',
-									dataType: 'json',
-									success: function(data) {
-										if(data.data.ok_button_action_url.indexOf('https://api.happytalk.io/') > -1){
-											if(confirm('['+data.data.title+'] '+data.data.message)) window.open(data.data.ok_button_action_url,'_blank');
-										}else{
-											alert(data.data.title+'\n'+data.data.message);
-										}
-									}
-								})
-							});
-						</script>
-	
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_qna">
-						<h3><a href="/shop/mypage/mypage_qna_register.php?mode=add_qna" class="tit">1:1 문의</a></h3>
-						<dl class="list">
-							<dt>24시간 접수 가능</dt>
-							<dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
-						</dl>
-					</div>
-				</div>
-				<div class="company">
-					<ul class="list">
-						<li><a class="link" href="/shop/introduce/about_kurly.php">컬리소개</a></li>2018-09-06 어바웃컬리 장아름 수정
-						<li><a class="link" href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&amp;showinfo=0&amp;wmode=opaque&amp;enablejsapi=1" onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">컬리소개영상</a></li>
-						<li><a class="link" href="https://marketkurly.recruiter.co.kr/appsite/company/index" target="_blank">인재채용</a></li>
-						<li><a class="link" href="/shop/service/agreement.php">이용약관</a></li>
-						<li><a class="link emph" href="/shop/service/private.php">개인정보처리방침</a></li>
-						<li><a class="link" href="/shop/service/guide.php">이용안내</a></li>
-					</ul>
-					
-					법인명 (상호) : 주식회사 컬리 <span class="bar">I</span> 사업자등록번호 : 261-81-23567 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&amp;apv_perm_no=" target="_blank" class="link">사업자정보 확인</a>
-					<br>
-					통신판매업 : 제 2018-서울강남-01646 호 <span class="bar">I</span> 개인정보보호책임자 : 이지훈
-					<br>
-					주소 : 서울시 도산대로 16길 20, 이래빌딩 B1 ~ 4F <span class="bar">I</span> 대표이사 : 김슬아
-					<br>
-					입점문의 : <a href="https://forms.gle/NJNBNmtYeKQyX5Rn9" target="_blank" class="link">입점문의하기</a> <span class="bar">I</span> 제휴문의 : <a href="mailto:business@kurlycorp.com" class="link">business@kurlycorp.com</a>
-					<br>
-					채용문의 : <a href="mailto:recruit@kurlycorp.com" class="link">recruit@kurlycorp.com</a>
-					<br>
-					팩스: 070 - 7500 - 6098 <span class="bar">I</span> 이메일 : <a href="mailto:help@kurlycorp.com" class="link">help@kurlycorp.com</a>
-
-					<em class="copy">© KURLY CORP. ALL RIGHTS RESERVED</em>
-				</div>
-			</div>
-			
-			<div class="footer_link">
-				<div class="authentication">
-					<div class="mark">
-						<img src="https://res.kurly.com/mobile/service/common/1904/logo_isms_v2.png" alt="isms 로고" class="logo">
-						<p class="txt">
-							[인증범위] 마켓컬리 쇼핑몰 서비스 개발 · 운영<br>
-							[유효기간] 2019.04.01 ~ 2022.03.31
-						</p>
-					</div>
-					<div class="mark lguplus">
-						<img src="https://res.kurly.com/pc/ico/1810/logo_lguplus_v2.png?v=1" alt="LG U+로고" class="logo">
-						<p class="txt">
-							고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br>
-							LG U+ 구매안전(에스크로) 서비스를 이용하실 수 있습니다. <a href="#none" target="_blank" onclick="popup('http://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=go_thefarmers',460,520);return false;" class="emph">서비스 가입사실 확인</a>
-						</p>
-					</div>
-				</div>
-				<ul class="list_sns">
-					<li>
-						<a href="https://instagram.com/marketkurly" class="link_sns" target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt="마켓컬리 인스타그램 바로가기"></a>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/marketkurly" class="link_sns" target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_fb.png" alt="마켓컬리 페이스북 바로가기"></a>
-					</li>
-					<li>
-						<a href="http://blog.naver.com/marketkurly" class="link_sns" target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_blog.png" alt="마켓컬리 네이버블로그 바로가기"></a>
-					</li>
-					<li>
-						<a href="https://m.post.naver.com/marketkurly" class="link_sns" target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_naverpost.png" alt="마켓컬리 유튜브 바로가기"></a>
-					</li>
-					<li>
-						<a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" class="link_sns lst" target="_blank"><img src="https://res.kurly.com/pc/ico/1810/ico_youtube.png" alt="마켓컬리 유튜브 바로가기"></a>
-					</li>
-				</ul>
-			</div>
-		</div> -->
-			
-	</div><!-- #main -->
-</div><iframe name="xdomain-db3467e2" id="xdomain-db3467e2" src="https://api.kurly.com/xdomain" style="display:none;"></iframe><!-- #wrap -->
+   <!-- footer영역 -->
+   <div class="footer">
+   
+   </div><!-- #footer -->
+   
+         
+   </div><!-- #container -->
+</div><!-- #wrap  -->
+<iframe name="xdomain-db3467e2" id="xdomain-db3467e2" src="https://api.kurly.com/xdomain" style="display:none;"></iframe><!-- #wrap -->
 
 
 <!-- page Top -->
 <a href="#top" id="pageTop">맨 위로가기</a>
 <script>
-	$(document).ready(function(){
-		var pageTop = {
-			$target : $('#pageTop'),
-			$targetDefault : 0,
-			$scrollTop : 0,
-			$window : $(window),
-			$windowHeight : 0,
-			setTime : 500,
-			saveHeight : 0,
-			init:function(){
-			},
-			action:function(){
-				var $self = this;
-				$self.$windowHeight = parseInt($self.$window.height());
-				$self.$window.on('scroll', function(){
-					$self.$scrollTop = parseInt($self.$window.scrollTop());
-					if($self.$scrollTop >= $self.$windowHeight){
-						if(!$self.$target.hasClass('on')){
-							$self.position();
-							$self.$target.addClass('on');
-							$self.showAction();
-						}
-					}else{
-						if($self.$target.hasClass('on')){
-							$self.position();
-							$self.$target.removeClass('on');
-							$self.hideAction();
-						}
-					}
-				});
+   $(document).ready(function(){
+      var pageTop = {
+         $target : $('#pageTop'),
+         $targetDefault : 0,
+         $scrollTop : 0,
+         $window : $(window),
+         $windowHeight : 0,
+         setTime : 500,
+         saveHeight : 0,
+         init:function(){
+         },
+         action:function(){
+            var $self = this;
+            $self.$windowHeight = parseInt($self.$window.height());
+            $self.$window.on('scroll', function(){
+               $self.$scrollTop = parseInt($self.$window.scrollTop());
+               if($self.$scrollTop >= $self.$windowHeight){
+                  if(!$self.$target.hasClass('on')){
+                     $self.position();
+                     $self.$target.addClass('on');
+                     $self.showAction();
+                  }
+               }else{
+                  if($self.$target.hasClass('on')){
+                     $self.position();
+                     $self.$target.removeClass('on');
+                     $self.hideAction();
+                  }
+               }
+            });
                 
-				$self.$target.on('click', function(e){
-					e.preventDefault();
-					$self.topAction();
-				});
-			},
-			showAction:function(){
-				var $self = this;
-				$self.$target.stop().animate({
-					opacity:1,
-					bottom:$self.saveHeight
-				}, $self.setTime);
-			},
-			hideAction:function(){
-				var $self = this;
-				$self.$target.stop().animate({
-					opacity:0,
-					bottom:-$self.$target.height()
-				}, $self.setTime);
-			},
-			topAction:function(){
-				var $self = this;
-				$self.hideAction();
-				$('html,body').animate({
-					scrollTop:0
-				}, $self.setTime);
-			},
-			position:function(){
-				var $self = this;
-				$self.saveHeight = 15;
-				if($('#sectionView').length > 0){
-					$self.saveHeight = 25;
-				}
-				if($('#branch-banner-iframe').length > 0 && parseInt( $('#branch-banner-iframe').css('bottom') ) > 0){
-					$('#footer').addClass('bnr_app');
-					$self.saveHeight += $('#branch-banner-iframe').height();
-				}
-			}
-		}
-		pageTop.action();
-	});
+            $self.$target.on('click', function(e){
+               e.preventDefault();
+               $self.topAction();
+            });
+         },
+         showAction:function(){
+            var $self = this;
+            $self.$target.stop().animate({
+               opacity:1,
+               bottom:$self.saveHeight
+            }, $self.setTime);
+         },
+         hideAction:function(){
+            var $self = this;
+            $self.$target.stop().animate({
+               opacity:0,
+               bottom:-$self.$target.height()
+            }, $self.setTime);
+         },
+         topAction:function(){
+            var $self = this;
+            $self.hideAction();
+            $('html,body').animate({
+               scrollTop:0
+            }, $self.setTime);
+         },
+         position:function(){
+            var $self = this;
+            $self.saveHeight = 15;
+            if($('#sectionView').length > 0){
+               $self.saveHeight = 25;
+            }
+            if($('#branch-banner-iframe').length > 0 && parseInt( $('#branch-banner-iframe').css('bottom') ) > 0){
+               $('#footer').addClass('bnr_app');
+               $self.saveHeight += $('#branch-banner-iframe').height();
+            }
+         }
+      }
+      pageTop.action();
+   });
 </script>
 <!-- // page Top -->
 
 
-			
+         
 <script>
 // 클릭인인경우(푸터에 있으나, 아직공용작업은 못함) => bgLoading 이부분 처리필요
 var bodyScroll = {
-	winScrollTop : 0,
-	body : $('body'),
-	gnb : $('#gnb'),
-	bg : $('#bgLoading'),
-	bodyFixed : function(){
-		var $self = this;
-		var gnbCheck = false;
-		$self.gnb = $('#gnb');
-		if($self.gnb.hasClass('gnb_stop')){
-			gnbCheck = true;
-		}
-		$self.body = $('body');
-		$self.bg = $('#bgLoading');
-		$self.winScrollTop = $(window).scrollTop();
-		$self.bg.show();
-		$self.body.addClass('noBody').css({
-			'top' : -$self.winScrollTop
-		});
-	},
-	bodyDefault : function(type){
-		var $self = this;
-		$self.body.removeClass('noBody').removeAttr('style');
-		$self.bg.hide();
-		if(type === undefined){
-			window.scrollTo(0, $self.winScrollTop);
-		}
-	}
+   winScrollTop : 0,
+   body : $('body'),
+   gnb : $('#gnb'),
+   bg : $('#bgLoading'),
+   bodyFixed : function(){
+      var $self = this;
+      var gnbCheck = false;
+      $self.gnb = $('#gnb');
+      if($self.gnb.hasClass('gnb_stop')){
+         gnbCheck = true;
+      }
+      $self.body = $('body');
+      $self.bg = $('#bgLoading');
+      $self.winScrollTop = $(window).scrollTop();
+      $self.bg.show();
+      $self.body.addClass('noBody').css({
+         'top' : -$self.winScrollTop
+      });
+   },
+   bodyDefault : function(type){
+      var $self = this;
+      $self.body.removeClass('noBody').removeAttr('style');
+      $self.bg.hide();
+      if(type === undefined){
+         window.scrollTo(0, $self.winScrollTop);
+      }
+   }
 }
 </script>
-			
+         
 
 
 <!-- 절대! 지우지마세요 : Start -->
@@ -1614,30 +1364,5 @@ var bodyScroll = {
 }(document.getElementById("ifrmHidden")));
 </script>
 <!-- 절대! 지우지마세요 : End -->
-
-<!-- PROM-316 [Branch] 트래킹 -->
-<script src="https://res.kurly.com/js/polifill/customeEvent.js"></script><!-- polifll -->
-<script>
-	window.addEventListener('load', function () {
-		// KM-1238 branch
-		(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-		branch.init('key_live_meOgzIdffiVWvdquf7Orkacksxa2LneN');
-		// branch.init('key_test_joIkrHgomhL3qaEreXL5QdigzEn6Ucd4');
-		branch.setIdentity(uuidCheck);
-		branch.track("pageview");
-
-		// branchReady
-		var _eventBranchReady = new CustomEvent("branchReady", {
-			detail:{ // 전달 할께 있으면 반드시 detail 오브젝트에 넣어야 함
-				val:'1',
-			}
-		});
-		document.dispatchEvent(_eventBranchReady);
-		// END branchReady
-	}, false);
-</script>
-<!-- // PROM-316 [Branch] 트래킹 -->
-
-			
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaWFELV1RBTFgNWFpMRV1E","queueTime":0,"applicationTime":27,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script>
 </body>
+</html>

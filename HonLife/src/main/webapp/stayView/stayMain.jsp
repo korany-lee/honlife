@@ -5,9 +5,7 @@
 <html class="ltr" style="width: 100%;" dir="ltr" lang="ko-KR">
 <head>
 
-<meta name="naver-site-verification"
-	content="02b40612c40b6291c2a5d496b1e8b80382fb294d" />
-<!--<title>index - 글래드 마포 - 글래드 호텔 공식 사이트</title>-->
+<meta name="naver-site-verification" content="02b40612c40b6291c2a5d496b1e8b80382fb294d" />
 <title>HON STAY</title>
 <meta content="initial-scale=1.0, width=device-width" name="viewport" />
 <link href="stayView/css/mentions.css" rel="stylesheet" type="text/css" />
@@ -32,10 +30,11 @@
 
 <script src="stayView/js/js_bundle_config" type="text/javascript"></script>
 
-<link class="lfr-css-file" data-senna-track="temporary"
-	href="stayView/css/main.css"
-	id="liferayThemeCSS" rel="stylesheet" type="text/css" />
+</style>
+<link class="lfr-css-file" data-senna-track="temporary" href="stayView/css/main.css" id="liferayThemeCSS" rel="stylesheet" type="text/css" />
 <style data-senna-track="temporary" type="text/css">
+
+
 .do_nav .list-menu>ul>li {
 	font-size: 15px;
 }
@@ -116,26 +115,24 @@ li.do_list .do_image_cover_three_img_area>a {
 }
 </style>
 
-<link data-senna-track="temporary"
-	href="stayView/css/simulation_panel.css"
-	rel="stylesheet" type="text/css" />
-<link data-senna-track="temporary"
-	href="stayView/css/product_navigation_product_menu.css"
-	rel="stylesheet" type="text/css" />
-<link data-senna-track="temporary"
-	href="stayView/css/product_navigation_control_menu.css"
-	rel="stylesheet" type="text/css" />
+<link data-senna-track="temporary" href="stayView/css/simulation_panel.css" rel="stylesheet" type="text/css" />
+<link data-senna-track="temporary" href="stayView/css/product_navigation_product_menu.css" rel="stylesheet" type="text/css" />
+<link data-senna-track="temporary" href="stayView/css/product_navigation_control_menu.css" rel="stylesheet" type="text/css" />
 <style>
 body {
+	
 	letter-spacing: -1px;
 	font-family: "Open Sans", 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans KR',
 		"Malgun Gothic", sans-serif;
 }
+
+
 </style>
 </head>
 <body
 	class=" controls-visible yui3-skin-sam signed-out public-page site"
 	style="width: 100%;">
+<div class="back">
 	<div class="do_wrap" id="site_url_https://gladmapo-hotels.com/web/mapo">
 		<nav class="quick-access-nav" id="yfqr_quickAccessNav">
 			<h1 class="hide-accessible">항법</h1>
@@ -152,8 +149,8 @@ body {
 					<div class="do_top-menu">
 						<ul>
 							<li class="do_tm_member"><a
-								href="https://glad-hotels.com/ko/web/gate" target="_blank">HON LIFE</a></li>
-							<li class="do_tm_lang"><a href="#a">PROPERTY</a>
+								href="./common/memberJoin" >회원가입</a></li>
+							<li class="do_tm_lang"><a href="./common/memberLogin">로그인</a>
 								<ul class="do_select_lang" style="width: 185px;">
 									<li><a href="https://glad-hotels.com/ko/web/gate"
 										target="_blank">HON SHOP</a></li>
@@ -165,8 +162,7 @@ body {
 					</div>
 					<!-- //탑메뉴 -->
 					<h1>
-						<a class="logo custom-logo"
-							href="./stayMain" title="Go to honstay">
+						<a class="logo custom-logo" href="./stayMain" title="Go to honstay">
 							<img alt=""
 							src="stayView/images/honstay_main.png" />
 						</a>
@@ -204,24 +200,16 @@ body {
 													<div class="portlet-body">
 														<div aria-label="Site Pages" class="list-menu">
 															<ul class="layouts level-1">
-																<li class="lfr-nav-item open">개요
+																<li class="lfr-nav-item open">소개
 																	<ul class="layouts level-2">
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/about">호텔
-																				소개</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/city-tour-guide">투어
-																				가이드</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/contact-us">오시는
-																				길</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/33">주차장
-																				안내</a></li>
+																		<li class="lfr-nav-item open">
+																			<a class="lfr-nav-item open"href="#">오피스텔 소개</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a class="lfr-nav-item open" href="#">서비스 소개</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a class="lfr-nav-item open" href="#">오시는길</a>
+																		</li>
+																		
 																	</ul>
 																</li>
 																<li class="lfr-nav-item open">객실
@@ -407,9 +395,8 @@ body {
 													<div>
 														<div class="slider">
 															<div>
-																<a href="https://glad-hotels.com/web/gate/gladhocancefair/main?utm_source=gladmapo&utm_medium=mainslide&utm_campaign=hocancefair"
-																	target="_blank"> 
-																	<img class="do_pc_img" src="stayView/images/GM_main.jpg" />
+																<a href="#"> 
+																	<img class="do_pc_img" src="stayView/images/GM_main_02.jpg" />
 																</a>
 															</div>															
 														</div>
@@ -1406,5 +1393,6 @@ AUI().use('aui-tooltip', 'liferay-menu', 'liferay-notice', 'aui-base', 'liferay-
   });
 </script>
 	<!-- -->
+	</div>
 </body>
 </html>

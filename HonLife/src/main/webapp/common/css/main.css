@@ -1270,17 +1270,17 @@ only screen and (min-resolution: 1.5dppx) {
 /* 로그인&비회원 */
 /* ############ */
 /* 버튼공통 - 해당방식의 사용은 PC에는 없는 버전 */
-.btn_type1,
+.btn_type2-1,
 .btn_type2{display:block;overflow:hidden;width:100%;height:54px;border-radius:3px;font-size:0;text-align:center}
-.btn_type1 .txt_type,
+.btn_type2-1 .txt_type,
 .btn_type2 .txt_type{display:inline-block;height:100%;font-weight:500;font-size:16px;color:#fff;line-height:51px;text-align:center}
-.btn_type1 .extra,
+.btn_type2-1 .extra,
 .btn_type2 .extra{opacity:0.6}
 /* purple */
-.btn_type1{border:1px solid #5f0081;background-color:#5f0080}
-.btn_type1 .txt_type{color:#fff}
-.btn_type1.btn_disabled{border:1px solid #ddddde;background-color:#ddd}
-.btn_type1.btn_disabled .txt_type{opacity:0.8}
+.btn_type2-1{border:1px solid #5f0081;background-color:#5f0080}
+.btn_type2-1 .txt_type{color:#fff}
+.btn_type2-1.btn_disabled{border:1px solid #ddddde;background-color:#ddd}
+.btn_type2-1.btn_disabled .txt_type{opacity:0.8}
 /* white */
 .btn_type2{border:1px solid #5f0081;background-color:#fff}
 .btn_type2 .txt_type{color:#5f0080}
@@ -1294,7 +1294,7 @@ only screen and (min-resolution: 1.5dppx) {
 .section_login .write_form{padding-top:36px}
 .section_login input[type=number],
 .section_login input[type=text],
-.section_login input[type=password]{width:100%;height:54px;padding:0 19px;border:1px solid #ccc;border-radius:3px;background-color:#fff;font-size:14px;line-height:20px;outline:none}
+.section_login input[type=password]{width:100%;height:54px;padding:0 0px;border:1px solid #ccc;border-radius:3px;background-color:#fff;font-size:14px;line-height:20px;outline:none}
 .section_login input[type=number]:focus,
 .section_login input[type=text]:focus,
 .section_login input[type=password]:focus{border:1px solid #333}
