@@ -1,1358 +1,1398 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HON STAY</title>
-<!-- <meta name="description" content="신라스테이 허브" />
-<meta name="keywords" content="신라스테이 허브" />-->
-<meta name="og:title" content="신라스테이 허브" />
-
-<!-- 검색엔진용 추가 180518 -->
-<meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈" />
-<meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다." />
-<meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약," />
-<meta property="og:image" content="http://www.shillastay.com/images/common/facebook_shillastay.jpg" />
-<link href="stayView/css/dongtan/common.css" rel="stylesheet" type="text/css">
-<link href="stayView/css/common/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="stayView/css/common/reserve_new.css" rel="stylesheet" type="text/css">
-<link href="stayView/css/common/lang-ko_N.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" type="image/x-icon" href="main/images/WEB.png" />
-<script src="stayView/js/jquery-1.8.3.js" charset="UTF-8"></script>
-<script src="stayView/js/jquery/jquery-ui-1.10.3.min.js" charset="UTF-8"></script>
-<script src="stayView/js/json2.js" charset="UTF-8"></script>
-<script src="stayView/js/uniform.js" charset="UTF-8"></script>
-<script src="stayView/js/browser.js" charset="UTF-8"></script>
-<script src="stayView/js/style.dongtan.js" charset="UTF-8"></script>
-<script src="stayView/js/common.js" charset="UTF-8"></script>
-<script src="stayView/js/commonEx.js" charset="UTF-8"></script>
-<script src="stayView/js/jquery.slides.js" charset="UTF-8"></script>
-<script src="stayView/js/popLogin.js" charset="UTF-8"></script>
-<script src="stayView/js/forIdPwd.js" charset="UTF-8"></script>
-<script src="stayView/js/popCalendar.js" charset="UTF-8"></script>
-<script src="stayView/js/resvCalendar.js" charset="UTF-8"></script>
-<script src="stayView/js/resv.js" charset="UTF-8"></script>
-<script src="stayView/js/din.js" charset="UTF-8"></script>
-<script src="stayView/js/ask.js" charset="UTF-8"></script>
-<script src="stayView/js/zipno.js" charset="UTF-8"></script>
-<script src="stayView/js/makeAPlan.js" charset="UTF-8"></script>
-<script src="stayView/js/mbr_join.js" charset="UTF-8"></script>
-<script src="stayView/js/makePCookie.js" charset="UTF-8"></script>
-<script src="stayView/js/jquery.cookie.js" charset="UTF-8"></script>
-<script src="stayView/js/placeholders.js" charset="UTF-8"></script><!-- 20180209 메인 예약바 추가 -->
-
-<script src="stayView/js/advResvCalendar.js" charset="UTF-8"></script> <!-- [2019_모션추가] 달력 고도화 -->
-<script src="stayView/js/style.advance.js" charset="UTF-8"></script><!-- 개선 : js 추가 -->
-
-<!--[if IE 6]>
-<script src="./js/png24.js"></script><![endif]-->
-<script src="stayView/stayhub/secu/jquery.validate.js" charset="UTF-8"></script>
-	<!--[if IE 6]><script src="./js/png24.js"></script><![endif]-->
-
-<script>
-
-var UserInfo = UserInfo || (function() {
-	var module = {};
-	var _isLogin = false;
-	var _firstName = "";
-	var _lastName = "";
-	
-	var ajax = function(callback) {
-		jQuery.ajax(
- 			{
- 			    url: 'https://www.shillahotels.com/cmm/getUserInfo.do',
- 			    type: "post",
- 			    dataType: "jsonp",
- 			    error: function(){
- 			    	callback(null);
- 			    },
- 			    success: function( strData ){
- 			    	if(strData.NAME_ID != '') {
- 			    		_isLogin = true;
- 			    		_firstName = strData.FIRST_NAME;
- 			    		_lastName = strData.LAST_NAME;
- 			    	}
- 			    	callback(_firstName + " " +_lastName);
- 			    }
- 			}                           
- 		);
-	};
-	
-	module.drawName = function(callback) {
-		ajax(callback);
-	};
-	
-	module.isLogin = function() {
-		return _isLogin;
-	};
-	
-	return module;
-})();
-
-</script>
-
-<script type="text/javascript">
-
-var filter = "win16|win32|win64|mac|macintel";
-var pcFlag = $.cookie('SHILLA_PC');
-
-if(navigator.platform){
-    if( filter.indexOf(navigator.platform.toLowerCase())<0){
-    	if (pcFlag != 'Y') {
-	        document.location.href = "http://m.shillastay.com/stayhub/index.do";
-    	}
-    }
-}
-
-</script>
-
-</head>
-<body class="mainBody">
-<dl class="skipNavi">
-	<dt>SHILLA STAY 바로가기 메뉴</dt>
-	<dd><a class="goGnbMenu" href="#gnbMenu">메인메뉴 바로가기</a></dd>
-	<dd><a class="goContents" href="#contents">본문으로 바로가기</a></dd>
-</dl>
-
-	<script type="text/javascript" >
-	function ssoLogout() {
-		location.href = "https://www.shillahotels.com/stayhub/login/SSOLogout.do?returnType=P";
-//  		location.href = "/stayhub/login/SSOLogout.do";
-	}
-	
-	function fnNoticeAlert() {
-		
-			alert("2015년 7월 27일 신라호텔의 새로운 멤버십 서비스 신라리워즈가 오픈함에 따라 온라인 회원 서비스가 종료됩니다. 다이너스티 또는 골드 멤버십에 가입하셨던 고객께서는 신라리워즈 멤버십으로 전환하여 주시면 감사하겠습니다.");
-		
-	}
-		
-// 		document.oncontextmenu = function(){ // 컨텍스트 메뉴금지
-//			return false;
-//		};
-	/* loginCk */
-
-</script> 
-
-	<!-- header include -->
-	<jsp:include page="../stayView/includer/header.jsp"></jsp:include>
-
-
-<script>
-
-$(window).load(function() {
-	UserInfo.drawName(function(name) {
-		name = $.trim(name);
-		if(name != null && name != undefined && name != '') {
-			jQuery("#loginAreaSpan").hide();
-			jQuery("#logoutAreaSpan").show();
-		} else {
-			jQuery("#loginAreaSpan").show();
-			jQuery("#logoutAreaSpan").hide();
-		}
-	});
-});
-
-</script>
-</div>
-	<!-- <div id="depbar" class="depbar"  style="display:none"></div> -->
-	
-	<!-- <div id="test" class="test" style="display:none;position:absolute;top:154px;left:0;z-index:15;width:100%;height:31px;background-color:#77726D;"></div> -->
-	
-	
-	
-
-
-
-
-	<script src="stayView/js/jquery.jsSelect.js" charset="UTF-8"></script><!-- 20180209 추가 -->
-	<script type="text/javascript">
-	$(document).keypress(function(e) { if (e.keyCode == 13) e.preventDefault(); }); // 엔터 막기
-	
-	var calOpts = {
-			calDiv: "sDate",
-			calDiv: "rsvCalendarDate",
-			ckinYmdId: "ckinYmd",
-			ckoutYmdId: "ckoutYmd",
-			nightCntId: "nightCnt",
-			resvDateInfoId: "resvDateInfo",
-			ckinYmdInfoId: "ckinYmdInfo",
-			ckoutYmInfodId: "ckoutYmdInfo",
-			nightCntInfoId: "nightCntInfo",
-			isMain: true,
-			today: '2020-03-13' //오늘날짜
-			// oks 추가 2019-10-21 어권 추가
-			,lang : 'ko'
-		};
-	
-
-	/// oks 추가 페이지 로드시 요일체크
-	function wok(nowDate){
-		var week = [
-			'일' 
-			,'월'
-			,'화'
-			,'수'
-			,'목'
-			,'금'
-			,'토'
-			];
-		var dayOfWeek = week[new Date(nowDate).getDay()];
-		return dayOfWeek;
-	}
-	
-	var lfs = 30;
-$(document).ready(function () {
-	// 스크롤 생성 제거
-	if($(".scroll.jspScrollable").data('jsp') !== undefined ){
-		$(".scroll.jspScrollable").data('jsp').destroy(); 
-	}
-	
-	jQuery('.btnQuestion').on('mouseover', function(){
-		jQuery(this).children('.warnBalloonBox').addClass('on')
-	}).on('mouseout', function(){
-		jQuery(this).children('.warnBalloonBox').removeClass('on')
-	});
-	
-	
-	var speedTime='7';
-	
-		speedTime = parseInt(speedTime)*1000;
-	
-	
-	/*
-		[2019_모션추가] 호텔 선택 레이어
-		기능 : 호텔 선택 레이어 슬라이드 
-		- 호텔을 검색해주세요 (.inpHtSch) 클릭 시 -> 레이어 활성화
-		- '.htData > li > a ' 버튼 클릭 시 -> '.flexslider .slides' 슬라이드 추가 
-		- 선택한 호텔 정보 출력('.ckList')
-		※ .htData > li에 data 속성 추가 필요(*개발*) : data-hotelId="호텔Id", data-hotelTitle="호텔 명", data-addr="호텔 주소", data-imgUrl="슬라이드 이미지"
-		※ 언어 변경 시  설정된 언어로 data-hotelTitle, data-addr 값 적용
-
-		※ 검색 결과 없을 경우 호출 : pc.resvSelHotel.isData(false);
-		※ 검색 결과 있을 경우 호출 : pc.resvSelHotel.isData(true);
-	*/
-
-	/*
-		개선  : [2019_모션추가] 달력 고도화 start
-	*/
-	$.advResvCalendar.setDefaults(calOpts);
-
-
-	$('.containSlides').flexslider({
-           animation: "fade",
-           slideshow: true,
-           animationLoop: true,
-           prevText : '이전',
-           nextText: '다음',
-           controlNav :false,
-           slideshowSpeed: speedTime,
-           itemWidth : 1200
-       });
- 
-	
-	var ckinD = new Date();
-	ckinD.setDate(ckinD.getDate()+parseInt(0));
-	var ckinMm = ckinD.getMonth()+1 < 10 ? "0"+(ckinD.getMonth()+1) : ckinD.getMonth()+1; 
-	var ckinDd = ckinD.getDate() < 10 ? "0"+ckinD.getDate() : ckinD.getDate();
-	
-	var ckoutD = new Date();
-	ckoutD.setDate(ckoutD.getDate()+(parseInt(0)+1));
-	var ckoutMm = ckoutD.getMonth()+1 < 10 ? "0"+(ckoutD.getMonth()+1) : ckoutD.getMonth()+1; 
-	var ckoutDd = ckoutD.getDate() < 10 ? "0"+ckoutD.getDate() : ckoutD.getDate();
-	
-	// oks 
-	jQuery("#ckinYmd").val(ckinD.getFullYear()+"-"+ckinMm+"-"+ckinDd);
-	jQuery("#ckoutYmd").val(ckoutD.getFullYear()+"-"+ckoutMm+"-"+ckoutDd);
-	
-	var dayIdx1 = new Date(ckinD.getFullYear(), ckinMm , ckinDd ).getDay();
-	var dayIdx2 = new Date(ckoutD.getFullYear(), ckoutMm, ckoutDd ).getDay();
-	
-	$("#ckinDateInfo").text(ckinD.getFullYear()+"."+ckinMm+"."+ckinDd +" (" + wok($("#ckinYmd").val()) + ")");
-	$("#ckoutDateInfo").text(ckoutD.getFullYear()+"."+ckoutMm+"."+ckoutDd+" (" + wok($("#ckoutYmd").val()) + ")");
-	
-	$("#nightCntInfo").text("1"+messages["javascript.calendar.night"]);
-	$("#nightCnt").val("1");
-
-	
-	window.setInterval("reloadServerTime()", 10000);
-	//fncOpenPopup();
-	
-	fncMainPopup();
-	
-	//reseration select default title
-	var hotlLabel = "호텔을 선택해주세요.";
-	var adltLable = "성인";
-	var chldLabel = "어린이";
-	var infantLabel = "유아";
-	
-	//reseration select default title
-	$("#findhtl .jsSelect .value").text(hotlLabel);
-	$("#adult .jsSelect .value").text(adltLable);
-	$("#child .jsSelect .value").text(chldLabel);
-	$("#baby .jsSelect .value").text(infantLabel);
-	
-	
-	
-	// 달력 열기
-	$('.rsvInput').on('click', function(){
-		if($("#hotlId").val() == '') {
-			alert('호텔을 선택해주세요.');
-			$("#hotlId_selection").focus();
-			return;
-		}
-		
-		$.resvCalendar.setDefaults(calOpts).createCalendar();	
-		$('.rsvCalendarDate').toggleClass('on');
-	});
-	
-	
-	
-	/************ 호텔 키워드 검색 탭*********************/
-	pc.resvSelHotel.init();
-	$("#keywordAreaBtn").click(function(){
-	 	var $ckOptList = $('.htSearch .ckType');
-        var oSelf = this;
-        $ckOptList.each(function(){
-            oSelf.maxSelCnt = $(this).attr('data-maxSelCnt'); //호텔 최대 선택 가능 갯수
-
-            if(oSelf.maxSelCnt === undefined){
-            	// 프로모션의 경우 1개만 선택 가능
-                if($('.newpromotionWrap').length > 0){
-                    oSelf.maxSelCnt = 1;
-                }else{
-                    oSelf.maxSelCnt = 5;
-                }
-                $(this).attr('data-maxSelCnt', oSelf.maxSelCnt);
-            }
-        });
-	});
-	
-	$("ul.htTab").find("li").click(function(e){
-		
-		$("#hotlId").val("");
-		$("#hotlIdArr").val("");
-		$("#keywordAreaBtn").attr("src","/images/ko/common/new_2019/reserve_step1_ok_disable.gif");
-		
-		$("#htBoxInfo .htTabCon li a").each(function(){
-			if($(this).hasClass("on")){
-				$(this).removeClass();
-			}
-		});
-		
-		if($("#searchBarKeyword").val().length == 1 ){
-			$("#htBrandList").hide();
-			$("#htRegionList").hide();
-			$(".txtErr").show();
-			$("#htBoxInfo .noti").html("");
-			$("#htBoxInfo .noti").hide();
-			$(".noData").html("<p>두 글자 이상 입력해주세요.</p>");
-			$(".noData").show();
-			// 선택해제 버튼
-			$(".btnClear").css("display","none");
-
-		} else {
-			if($("#htBrandList .htData").html() == ""){
-				$("#htBoxInfo .noData").show();
-				$("#htBoxInfo .htTabCon").hide();
-				//$("#htBoxInfo .noti").hide();
-			}else{
-				var $target = $(e.currentTarget);
-	            var tabIdx = $target.index();
-	            var $tabCont = $('.htSearch .htTabCon');
-	            var $resetBtn = $('.htSearch .btnClear');
-
-	            $tabCont.eq(tabIdx).show();
-	            $tabCont.eq(tabIdx).siblings().hide();
-	            if($("#htBoxInfo .noti").html() == ""){
-	            	$("#htBoxInfo .noti").hide();	
-	            }else{
-	            	$("#htBoxInfo .noti").show();
-	            }
-			}
-		}
-		
-		$("#searchBarKeyword").attr('placeholder', "호텔을 선택해주세요.");
-	});
-	
-	$("#htSchDel").click(function(){
-		$("#hotlId").val("");
-		$("#searchBarKeyword").val("");
-		$("#searchBarKeyword").trigger("keyup");
-		$("#hotlIdArr").val("");
-		$("#htBoxInfo .noti").hide();
-		// oks 1017
-		$("#searchBarKeyword").attr('placeholder', "호텔을 선택해주세요.");
-	});
-	
-	$(".btnClear").click(function(){
-		$("#hotlId").val("");
-		$("#hotlIdArr").val("");
-		$("#keywordAreaBtn").attr("src","/images/ko/common/new_2019/reserve_step1_ok_disable.gif");
-		$("#searchBarKeyword").attr('placeholder', "호텔을 선택해주세요.");
-	});
-	
-	$(".btnInpSch").click(function(){
-		$("#searchBarKeyword").trigger("click");
-	});
-	
-	$("#searchBarKeyword").click(function(){
-		if($("#hotlIdArr").val().length == 0){
-			searchFunction("","");
-		} else {
-			searchFunction("","_plg");
-		}
-	}).bind().delay(1000).keyup(function(e){
-		if(e.keyCode == 13){
-			return false;
-		}
-		
-		if(!keyupValidation(e.keyCode)){
-			return false;
-		}
-		
-		$("#hotlId").val("");
-		$("#hotlIdArr").val("");
-		$("#searchBarKeyword").attr('placeholder', "호텔을 선택해주세요.");
-		var keyword = $("#searchBarKeyword").val();
-		var regexp = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣0-9a-zA-Z.]/; // 숫자,영문,특수문자
-		for( var i=0; i<keyword.length; i++){
-			if(keyword.charAt(i) != " " && regexp.test(keyword.charAt(i)) == false ){
-				$("#searchBarKeyword").val($("#searchBarKeyword").val().replace(keyword.charAt(i),""));
-				//alert(keyword.charAt(i) + "는 입력불가능한 문자입니다");
-			}
-        }
-
-		if (keyword.length > 1 || keyword.trim() == "" ) {
-			$(".txtErr").hide();
-			$(".noData").html("<p>검색 결과가 없습니다.<br>다른 검색어를 입력해주세요.</p>");
-			$(".noData").hide();
-			searchFunction(keyword,"");
-		} else {
-			$("#htBrandList").hide();
-			$("#htRegionList").hide();
-			$(".txtErr").show();
-			$("#htBoxInfo .noti").html("");
-			$("#htBoxInfo .noti").hide();
-			$(".noData").html("<p>두 글자 이상 입력해주세요.</p>");
-			$(".noData").show();
-			// 선택해제 버튼
-			$(".btnClear").css("display","none");
-		}
-		
-	});
-	/******************************************/
-	
-	var searchFunction = function(key,plg){
-		var chkIdx = 0;
-		
-		$(".htSearch .htTab li").each(function(idx){
-			if($(this).hasClass("on")){
-				chkIdx = idx;
-			}
-		});
-		
-		if(key.trim() != ""){
-			$("#htBoxInfo .noti").show();
-		}
-		if(key.trim() == ""){
-			$("#htBoxInfo .noti").html("");
-			$("#htBoxInfo .noti").hide();
-		}
-		
-		var param = encodeURIComponent(
-				JSON.stringify({
-					"keyword" : key
-				}
-			)
-		);
-		var ajaxUrl = "/resv/rpm/searchKeyword.do";
-		
-		$.ajax({
-			url: ajaxUrl,
-			data: "data="+param ,
-			cache: false,
-			type: "POST",
-			async: false,
-			beforeSend : function(){
-			},
-			success : function(data){
-				var jsonObj = jQuery.parseJSON(data);
-				var objData = jsonObj.model;
-				var resultCnt = 0;
-				var brandHtml = "";
-				var regionHtml = "";
-				
-				var tsHtml = "";
-				var stayHtml = "";
-				var monoglamHtml = "";
-				
-				var GNHtml = ""; //강남
-				var GBHtml = ""; //강북
-				var NWHtml = ""; //전국
-				var OSHtml = ""; //해외
-				
-				//키워드 타이핑 시 초기화
-				if(plg != "_plg"){
-					$("#hotlId").val("");
-					$("#hotlIdArr").val("");
-					$(".btnClear").trigger("click");
-				}
-				
-				if(objData.FLAG == "00"){
-					if(objData.hotlList.length > 0){
-						hotelList = objData.hotlList;
-						// 선택해제 버튼
-						$(".btnClear").css("display","block");
-						
-						for(var i = 0; i < hotelList.length; i++){
-							var hotelObj = hotelList[i];
-							
-							var addClassOn = "";
-							if(plg == "_plg"){
-								var hotlarry = $("#hotlIdArr").val().split(",");
-								hotlarry.forEach(function(element) {
-									if(element == hotelObj.hotlId){
-										addClassOn = "class=\"on\"";
-									}
-								});
-							}
-							
-							var img = "/images/ko/common/new_2019/bg_check_hotel_default.gif"; 
-							if(hotelObj.attFilePath != undefined){ img = "https://www.shilla.net//images/upload/"+hotelObj.attFilePath; } else { img }
-							var nm = ""; 
-							if(hotelObj.hotlNm != undefined){ nm = hotelObj.hotlNm; }
-							var add = ""; 
-							if(hotelObj.hotlAddr != undefined){ add = hotelObj.hotlAddr; }
-							
-							if(hotelObj.brandGroupCd == "TS"){
-								//tsHtml +="<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\"data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-							}else if(hotelObj.brandGroupCd == "STAY"){
-								resultCnt++;
-								stayHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\"" +nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-							}else if(hotelObj.brandGroupCd == "MONOGLAM"){
-								//monoglamHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-							}
-							
-							if(hotelObj.hotlId != 'S' && hotelObj.hotlId != 'C'){
-								if(hotelObj.regionGroupNm == "GN" ){
-									GNHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-								}else if(hotelObj.regionGroupNm == "GB" ){
-									GBHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-								}else if(hotelObj.regionGroupNm == "TS" ){
-									NWHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-								}else if(hotelObj.regionGroupNm =="OS" ){
-									//OSHtml += "<li data-hotlId=\""+hotelObj.hotlId+"\"data-hoteltitle=\""+ nm +"\" data-addr=\""+ add +"\" data-imgUrl=\""+ img +"\"><a " + addClassOn + " href=\"#none\">"+ nm +"</a></li>";
-								}
-							}
-							
-						}
-						
-						if(GNHtml != "" || GBHtml != "" || NWHtml != ""){
-							regionHtml += "<strong class=\"contury\">국내</strong>";						
-						}
-						if(GBHtml != ""){
-							regionHtml += "<dl>";
-							regionHtml += "	<dt>서울 강북</dt>";
-							regionHtml += "	<dd>";
-							regionHtml += "		<ul>";
-							regionHtml += 			GBHtml;
-							regionHtml += 	"	</ul>";
-							regionHtml += "	</dd>";
-							regionHtml += "</dl>";
-						}
-						if(GNHtml != ""){
-							regionHtml += "<dl>";
-							regionHtml += "	<dt>서울 강남</dt>";
-							regionHtml += "	<dd>";
-							regionHtml += "		<ul>";
-							regionHtml += 			GNHtml;
-							regionHtml += 	"	</ul>";
-							regionHtml += "	</dd>";
-							regionHtml += "</dl>";
-						}
-						if(NWHtml != ""){
-							regionHtml += "<dl>";
-							regionHtml += "	<dt>전국</dt>"; 
-							regionHtml += "	<dd>";
-							regionHtml += "		<ul>";
-							regionHtml += 			NWHtml;
-							regionHtml += 	"	</ul>";
-							regionHtml += "	</dd>";
-							regionHtml += "</dl>";
-						}
-						if(OSHtml != ""){
-							regionHtml += "<strong class=\"contury\">해외</strong>"; 
-							regionHtml += "<dl>";
-							regionHtml += "	<dt>베트남</dt>"; 
-							regionHtml += "	<dd>";
-							regionHtml += "		<ul>";
-							regionHtml += 			OSHtml;
-							regionHtml += 	"	</ul>";
-							regionHtml += "	</dd>";
-							regionHtml += "</dl>";
-						}
-						
-						if(tsHtml != ""){
-							brandHtml += "<dl>";
-							brandHtml += "	<dt>더 신라</dt>";
-							brandHtml += "	<dd>";
-							brandHtml += "		<ul>";
-							brandHtml += 			tsHtml;
-							brandHtml += 	"	</ul>";
-							brandHtml += "	</dd>";
-							brandHtml += "</dl>";
-						}
-						if(monoglamHtml != ""){
-							brandHtml += "<dl>";
-							brandHtml += "	<dt>신라모노그램</dt>";
-							brandHtml += "	<dd>";
-							brandHtml += "		<ul>";
-							brandHtml += 			monoglamHtml;
-							brandHtml += 	"	</ul>";
-							brandHtml += "	</dd>";
-							brandHtml += "</dl>";
-						}
-						if(stayHtml != ""){
-							brandHtml += "<dl>";
-							brandHtml += "	<dt>신라스테이</dt>";
-							brandHtml += "	<dd>";
-							brandHtml += "		<ul>";
-							brandHtml += 			stayHtml;
-							brandHtml += 	"	</ul>";
-							brandHtml += "	</dd>";
-							brandHtml += "</dl>";
-						}
-						
-						$("#htBoxInfo .noData").hide();
-						$("#htBrandList .htData").html(brandHtml);
-						$("#htRegionList .htData").html(regionHtml);
-						//키워드 재검색 시 초기화
-						
-						if(chkIdx==0){
-							$("#htBrandList").hide();
-							$("#htRegionList").show();
-						}else{
-							$("#htBrandList").show();
-							$("#htRegionList").hide();
-						}
-						$(".htSearch .htTab li").removeClass("on");
-						$(".htSearch .htTab li:eq("+chkIdx+")").addClass("on");
-						
-						//권역별
-						$("#htBoxInfo .htTabCon li a").click(function(){
-							var hotelId = $(this).parent("li").data("hotlid");
-							var hotlIdStr = $("#hotlIdArr").val();
-							var hotlIdArr = hotlIdStr.split(",");
-							var onCount = 0;
-							//$("#htBoxInfo .htTabCon li a").each(function(){
-							//	if($(this).hasClass("on")){
-							//		onCount++;
-							//	}
-							//});
-
-							hotlIdArr.forEach(function(element){
-								onCount++;
-							});
-							
-							if(!$(this).hasClass("on")){
-								if(onCount > 4){
-									var mgs = messages["javascript.alert.hotel.select"];
-									mgs = mgs.replace('{0}', "5");
-									alert(mgs);
-									return false;
-								} else {
-									if(hotlIdStr == ""){
-										hotlIdStr = hotelId;
-										$('#searchBarKeyword').val("");
-									}else{
-										hotlIdStr += ","+hotelId;
-									}
-								}
-							}else{
-								if(hotlIdArr.length == 1){
-									// oks 1017
-									$("#searchBarKeyword").attr('placeholder', "호텔을 선택해주세요.");
-									hotlIdStr = "";
-								}else{
-									hotlIdStr = "";
-									for(var i = 0;i < hotlIdArr.length; i++){
-										if(hotlIdArr[i] != hotelId){
-											if(0 == i){
-												hotlIdStr = hotlIdArr[i];
-											}else{
-												if(hotlIdStr == ""){
-													hotlIdStr = hotlIdArr[i];
-													fnHotlIdSelection(hotlIdArr[i]);
-													
-												}else{
-													hotlIdStr += "," + hotlIdArr[i];	
-												}
-											}
-										}
-									}
-								}
-							}
-							if(hotlIdStr != "" && hotlIdStr.split(",").length == 1){
-								fnHotlIdSelection(hotlIdStr); // ID
-							}
-							$("#hotlIdArr").val(hotlIdStr);
-							
-							if(hotlIdStr == ""){
-								$("#keywordAreaBtn").attr("src","/images/ko/common/new_2019/reserve_step1_ok_disable.gif");
-								//$("#keywordAreaBtn").parent().removeClass();
-							}else{
-								$("#keywordAreaBtn").attr("src","/images/ko/common/new_2019/reserve_step1_ok.gif");
-								$("#keywordAreaBtn").parent().addClass("btnSubmit");
-							}
-						});
-					}else{
-						$("#htBrandList .htData").html("");
-						$("#htRegionList .htData").html("");
-						
-						$("#htBoxInfo .noData").css("display","block");
-						$("#htBoxInfo .htTabCon").css("display","none");
-						// 선택해제 버튼
-						$(".btnClear").css("display","none");
-
-					}
-					
-				}else{
-					$("#htBrandList .htData").html("");
-					$("#htRegionList .htData").html("");
-					
-					$("#htBoxInfo .noData").show();
-					$("#htBoxInfo .htTabCon").hide();
-					// 선택해제 버튼
-					$(".btnClear").css("display","none");
-
-				}
-				
-				// oks 1018
-				if(key.length > 1){
-					var keywordSearchTxt = "'{0}'에 대한 {1}개의 검색결과";
-						keywordSearchTxt = keywordSearchTxt.replace("{0}", key);
-						keywordSearchTxt = keywordSearchTxt.replace("{1}", resultCnt);
-					jQuery("#htBoxInfo .noti").html(keywordSearchTxt);
-					jQuery("#htBoxInfo .noti").css("display","block");
-				} else {
-					jQuery("#htBoxInfo .noti").html("");
-					jQuery("#htBoxInfo .noti").css("display","none");
-				}
-			},
-			error : function(jqxhr, textStatus, error){
-				alert("keywordsSearch request fail : " + error);
-			}
-		});
-	};
-	
-});
-//특수키 입력
-function keyupValidation(key){
-	var result = true;
-	if(key == 9 || key == 13 || key == 16 || key == 17 || key == 18 
-			|| key == 19 || key == 20 || key == 27 || key == 33 || key == 34 
-			|| key == 35 || key == 36 || key == 37 || key == 38 || key == 39 
-			|| key == 40 || key == 45 || key == 46 || key == 91 || key == 92
-			|| key == 93 || key == 144 || key ==  145 || key == 186 || key == 187 
-			|| key == 188 || key == 189 || key == 190 || key == 191 || key == 192 
-			|| key == 219 || key == 220 || key == 221 || key == 222){
-		result = false;
-	}
-	return result;
-}
-
-/****************************************** 2*/
-//호텔별 당일 예약 가능 여부 체크
-function fnResvPosbAheadDyYnTF(resvPosbAheadDyCnt){
-	var ckinYmd = $("#ckinYmd").val();
-	var afterInYmd = "";
-	var aheadDayYnTF = true;
-	
-	var limitDay = new Date("2020-03-13");
-	limitDay.setDate(limitDay.getDate()+parseInt(resvPosbAheadDyCnt));
-	var limitMm = limitDay.getMonth()+1 < 10 ? "0"+(limitDay.getMonth()+1) : limitDay.getMonth()+1; 
-	var limitDd = limitDay.getDate() < 10 ? "0"+limitDay.getDate() : limitDay.getDate();
-	var limitYmd = limitDay.getFullYear()+""+limitMm+""+limitDd;
-	//예약가능일 체크인 선택 날짜 비교 후 체크인 날짜 변경
-	if(parseInt(limitYmd) >= parseInt(ckinYmd.replace(/-/gi,""))){
-		var ckinD = new Date();
-		ckinD.setDate(ckinD.getDate()+parseInt(resvPosbAheadDyCnt));
-		var ckinMm = ckinD.getMonth()+1 < 10 ? "0"+(ckinD.getMonth()+1) : ckinD.getMonth()+1; 
-		var ckinDd = ckinD.getDate() < 10 ? "0"+ckinD.getDate() : ckinD.getDate();
-		
-		afterInYmd = ckinD.getFullYear()	+ "" + ckinMm	+ "" + ckinDd; // 변경된 체크인 날짜( YYYY-MM-DD )
-	}else{
-		afterInYmd = ckinYmd;
-	}
-	
-	if(parseInt(ckinYmd.replace(/-/gi,"")) < parseInt(afterInYmd.replace(/-/gi,""))){
-		aheadDayYnTF = false;
-	}
-	
-	return aheadDayYnTF;
-}
-
-function fnHotlIdSelection(selectVal){
-	var selectObj = selectVal;
-	
-	$.ajax({
-		url: "/resv/rpm/getHotlInfo.do",
-		data : { "hotlId": selectObj },
-		cache: false,
-		type: "POST",
-		async: false,
-		success : function(json){
-			var data = jQuery.parseJSON(json);
-			$("#searchBarKeyword").attr('placeholder', data.model.hotlVo.hotlNm);
-			$("#maxCapaCnt").val(data.model.hotlVo.maxCapaCnt);
-			$("#resvPosbAheadDyCnt").val(data.model.hotlVo.resvPosbAheadDyCnt);
-			
-			
-			
-			$("#prtyExpRoom").val(data.model.hotlVo.prtyExpRoom);
-			$("#rsvInquireHotlId").val(data.model.hotlId);	//객실예약연락처 가져오는 호텔ID
-			$("#hotlId").val(data.model.hotlId);
-			$("#hotlUrlPath").val(selectObj);
-			$("input[name='keyword']").each(function(){
-				$(this).prop("checked", false);
-			});
-		},
-		error : function(){
-			alert( "getHotlInfo Request Failed");
-		}
-	});
-	
-}
-
-	// 해당이름의 쿠키를 가져온다.
-    function getCookie(cookie_name) {
-        var isCookie = false;
-        var start, end;
-        var i = 0;
-
-        // cookie 문자열 전체를 검색
-        while(i <= document.cookie.length) {
-             start = i;
-             end = start + cookie_name.length;
-             // cookie_name과 동일한 문자가 있다면
-             if(document.cookie.substring(start, end) == cookie_name) {
-                 isCookie = true;
-                 break;
-             }
-             i++;
-        }
-
-        // cookie_name 문자열을 cookie에서 찾았다면
-        if(isCookie) {
-            start = end + 1;
-            end = document.cookie.indexOf(";", start);
-            // 마지막 부분이라는 것을 의미(마지막에는 ";"가 없다)
-            if(end < start)
-                end = document.cookie.length;
-            // cookie_name에 해당하는 value값을 추출하여 리턴한다.
-            return document.cookie.substring(start, end);
-        }
-        // 찾지 못했다면
-        return "";
-    }
-	function reloadServerTime(){
-		callAjax("./getServerTime.do", null, function(data){
-			var obj, area = $("#timeWeatherArea"), weather = data.weather;
-			obj = area.find("#ampm");
-			if(obj.text() != weather.get("ampm")){
-				setTimeView(obj, "", obj.text(), weather.get("ampm"));
-			}
-			obj = area.find("#hour");
-			if(obj.text() != weather.get("hour")){
-				setTimeView(obj, "hour", obj.text(), weather.get("hour"));
-			}
-			obj = area.find("#min");
-			if(obj.text() != weather.get("min")){
-				setTimeView(obj, "min", obj.text(), weather.get("min"));
-			}
-		}, true, function(errCd){
-			//do nothing
-		});
-	}
-	function setTimeView(obj, classPrefix, oldVa, newVa){
-		obj.removeClass(classPrefix+oldVa);
-		obj.addClass(classPrefix+newVa);
-		obj.text(newVa);
-	}	
-	// 공지사항 팝업
-	function fncOpenPop(){
-		var eventCookie=getCookie("pop20131119");
-        // 쿠키가 없을 경우에만 (다시 보지 않기를 선택하지 않았을 경우.)
-        if (eventCookie != "no"){
-        	//window.open('/open_pop.html','_blank','width=480,height=366');
-        	window.open('/open_pop.html','_blank','width=400,height=530');
-            
-        }
-	}
-	//공지사항 팝업	
-	function fncPopup(dbbsId,idx) {
-		
-		if (getCookie("pop_"+dbbsId) != "done") {
-			var url = "/stayhub/popop/noticePop.do?dbbsId="+dbbsId;
-			var win = window.open(url, dbbsId+idx, 'width=100,height=150,scrollbars=no,top=0,status=no,location=no,menubar=no,left='+lfs);
-			lfs = parseInt(lfs) + 360;
-			//win.focus(); 
-		}
-		 
-	}
-	
-	function fncOpenPopup() {
-		var popLen = '4';
-		var dbbsId ='';
-		if(popLen > 0){
-			var idx = 0;
-			
-				dbbsId = '9692';
-				fncPopup(dbbsId, idx);
-				idx++;
-			
-				dbbsId = '9691';
-				fncPopup(dbbsId, idx);
-				idx++;
-			
-				dbbsId = '9690';
-				fncPopup(dbbsId, idx);
-				idx++;
-			
-				dbbsId = '9689';
-				fncPopup(dbbsId, idx);
-				idx++;
-			
-		}
-		
-	}
-	
-	//메인 팝업
-	function fncMainPopupOpen(obj) {
-		
-		if (getCookie("popup_"+obj.dbbsId+"_"+obj.hotlId) != "done") {
-			var url = "/stayhub/popop/mainPopup.do?dbbsId="+obj.dbbsId+"&langTypCd="+obj.langTypCd;
-			var opt = "";
-			
-			if(obj.popSize != ""){
-				var popSize = obj.popSize.split(":");
-				if(popSize.length > 1){
-					opt = "width="+popSize[0]+",height="+popSize[1];
-				}
-			}
-			
-			if(obj.popLoc != ""){
-				var popLoc = obj.popLoc.split(":");
-				if(popLoc.length > 1){
-					if(opt != "") opt = opt + ","; 
-					opt = opt + "top="+popLoc[0]+",left="+popLoc[1];
-				}
-			}
-			
-			if(opt != "") opt = opt + ",";  
-			opt = opt + 'scrollbars=no,status=no';
-			window.open(url, obj.dbbsId+obj.idx, opt);
-
-		}
-		 
-	}
-	
-	//메인 팝업 
-	function fncMainPopup() {
-		var popLen = '1';
-
-		if(popLen > 0){
-			
-				var param_0 = new Object();
-				param_0.index = "0";
-				param_0.hotlId = "STAYHUB";
-				param_0.dbbsId = "9689";
-				param_0.langTypCd = "KR";
-				param_0.subj = "[전 지점] 체크인 / 체크아웃 시간 안내 _ 국문";
-				param_0.popLoc = "0:0";
-				param_0.popSize = "450:432";
-				if("PC,MOBILE,APP".indexOf("PC") > -1){
-					fncMainPopupOpen(param_0);
-				}
-			
-		}
-		
-	}
-	
-	
-	// 검색
-	function fncGoResv(){
-		
-		var hotlLabel = "호텔을 선택해주세요.";
-		var ckinLabel = "체크인 날짜를 선택해주세요.";
-		var ckoutLabel = "체크아웃 날짜를 선택해주세요.";
-		var guestLabel = "투숙인원을 선택해주세요.";
-		// 호텔 선택 확인
-		 if(jQuery("#hotlIdArr").val() == ""){
-			alert(hotlLabel);
-			return;
-		}
-	 	
-		// 체크인/아웃 날짜 확인
-		if(jQuery("#ckinYmd").val() == ""){
-			alert(ckinLabel);
-			return;
-		}
-		if(jQuery("#ckoutYmd").val() == ""){
-			alert(ckoutLabel);
-			return;
-		}
-		
-
-		var aryPeople = [];
-		jQuery('.number > .num').each(function(index) {
-	    	aryPeople.push($(this).text());
-		});
-	    var sumAds = Number(aryPeople[0]) + Number(aryPeople[3]) + Number(aryPeople[6]);
-	    var sumKis = Number(aryPeople[1]) + Number(aryPeople[4]) + Number(aryPeople[7]);
-	    var sumBbs = Number(aryPeople[2]) + Number(aryPeople[5]) + Number(aryPeople[8]);
-	    
-	    if(sumAds <= 0){
-			alert(guestLabel);
-			return;
-		} 
-	    
-	    var romCnt = 1;
-	    if(jQuery(".rsvPeople").find('.r_number ').attr('class').indexOf('addRoom3') > 0) {
-	    	romCnt = 3;
-	    } else if(jQuery(".rsvPeople").find('.r_number ').attr('class').indexOf('addRoom2') > 0) {
-	    	romCnt = 2;
-	    } else {
-	    	romCnt = 1;
-	    }
-	    
-	    jQuery("#roomCnt").val(romCnt);
-	    jQuery("#adltCnt").val(aryPeople[0] +","+ aryPeople[3] +","+ aryPeople[6] );
-	    jQuery("#chldCnt").val(aryPeople[1] +","+ aryPeople[4] +","+ aryPeople[7] );
-	    jQuery("#infantCnt").val(aryPeople[2] +","+ aryPeople[5] +","+ aryPeople[8] );
-	    
-	    jQuery("#totlAdltCnt").val(sumAds);
-	    jQuery("#totlChldCnt").val(sumKis);
-	    jQuery("#totlInfantCnt").val(sumBbs);
-	    
-	    
-		//인원 수 VALIDATION CHECK
-		var hotlIdArr = $("#hotlIdArr").val();
-		if(hotlIdArr != ""){
-			var alertFlag = "N";
-			//선택된 호텔 ARRAY STRING;
-			var hotlIds = hotlIdArr.split(",");
-			//선택된 호텔 갯수
-			var hotlCnt = hotlIds.length;
-			 // 객실당 최대 선택가능한 총인원수
-	        var maxCnt = 4;
-	        // 객실당 최대 선택가능한 성인수
-	        var adltMaxCnt = 3;
-	        // 객실 별 인원 LIST로 변경
-	        var adultStr = $("#adltCnt").val();
-	        var adltList = adultStr.split(",");
-	        var chldStr = $("#chldCnt").val();
-	        var chldList = chldStr.split(",");
-	        var infantStr = $("#infantCnt").val();
-	        var infantList = infantStr.split(",");
-	        var roomCnt = $("#roomCnt").val();
-	        
-	        for(var i = 0; i < hotlCnt; i++){
-	    		if(hotlIds[i] == "D"){  
-	    			//동탄인 경우
-					maxCnt = 3;
-	    			adltMaxCnt = 2;
-	    			break;
-	    		}else if(hotlIds[i] == "HUDSS"){
-	    			// 스테이 해운대인 경우
-	    			if(hotlCnt == 1){
-	    				maxCnt = 5;
-	    				adltMaxCnt = 4;
-	    			}else{
-	    				maxCnt = 4;
-	    				adltMaxCnt = 3;
-	    			}
-	    			continue;
-	    		}
-	    	}
-	        for(var i = 0; i < hotlCnt; i++){
-	    		if(hotlIds[i] == "D"){  
-	    			//스테이 동탄인 경우
-	    			if(alertFlag == "H"){
-	    				alertFlag += "D";
-	    			}else{
-	    				alertFlag = "D";
-	    			}
-	    		}else if(hotlIds[i] == "HUDSS"){
-	    			// 스테이 해운대인 경우
-	    			if(alertFlag == "D"){
-	    				alertFlag += "H";
-	    			}else{
-	    				alertFlag = "H";
-	    			}
-	    		}
-	    	}
-	        //객실 별 인원 체크
-	        for(var roomIdx = 0; roomIdx < Number(roomCnt); roomIdx++){
-	        	var adltCnt = adltList[roomIdx]; // 성인 수
-	        	var chldCnt = chldList[roomIdx]; // 어린이 수
-	        	var infantCnt = infantList[roomIdx]; // 유아 수
-	        	var totlCnt = parseInt(adltCnt) + parseInt(chldCnt) + parseInt(infantCnt);
-	        	
-	        	if(2 > hotlCnt){
-	        		if(totlCnt > maxCnt || adltCnt > adltMaxCnt ){
-	        			if(alertFlag == "N"){
-	        				//객실 1실당 성인과 소인 동반 시 최대 4인까지만 투숙이 가능합니다.
-	        				var mag = messages["javascript.fncgoresv.room.alert1"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}else if(alertFlag == "D"){
-		            		//객실 1실당 성인과 소인 동반 시 최대 3인까지만 투숙이 가능합니다.
-		            		var mag = messages["javascript.fncgoresv.room.alert2"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}else if(alertFlag == "H"){
-		            		//객실 1실당 성인과 소인 동반 시 최대 5인까지만 투숙이 가능합니다.
-		            		var mag = messages["javascript.fncgoresv.room.alert3"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}
-	        			$('.opacity').hide();
-						pc.layerPopup.unLockScroll();
-						$('.re-loader').hide();
-	        			return false;
-	        		}
-	        	}else{
-	        		if(totlCnt > maxCnt || adltCnt > adltMaxCnt ){
-	        			if(alertFlag == "N"){
-	        				//객실 1실당 성인과 소인 동반 시 최대 4인까지만 투숙이 가능합니다.
-		            		var mag = messages["javascript.fncgoresv.room.alert1"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}else if(alertFlag == "D"){
-		            		/* alert("객실 1실당 성인과 소인 동반 시 최대 4인까지만 투숙이 가능합니다.\n"
-	            			+"\n* 신라스테이 동탄은 객실 1실당 성인과 소인 동반 시 최대 3인까지만"   
-	            			+"\n투숙이 가능하오니 3인 이상 투숙을 원하시는 경우 동탄 지점을 선택 해제해주십시오."); */
-	            			var mag = messages["javascript.fncgoresv.room.alert4"]; 
-				        		mag = mag.replace(/<br\/>/g,"\n");
-				        	alert(mag);
-		            	}else if(alertFlag == "H"){
-		            		/* alert("객실 1실당 성인과 소인 동반 시 최대 4인까지만 투숙이 가능합니다.\n"
-	            			+"\n* 신라스테이 해운대는 객실 1실당 성인과 소인 동반 시 최대 5인까지" 
-	            			+"\n투숙이 가능하오니 4인 이상 투숙을 원하시는 경우 해운대 지점만 단일 선택해주십시오."); */
-		            		var mag = messages["javascript.fncgoresv.room.alert5"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}else if(alertFlag == "DH" || alertFlag == "HD"){
-		            		/* alert("객실 1실당 성인과 소인 동반 시 최대 4인까지만 투숙이 가능합니다.\n"
-	            			+"\n* 신라스테이 동탄은 객실 1실당 성인과 소인 동반 시 최대 3인까지만" 
-	            			+"\n투숙이 가능하오니 3인 이상 투숙을 원하시는 경우 동탄 지점을 선택 해제해주십시오."
-	            			+"\n* 신라스테이 해운대는 최대 5인까지 투숙이 가능하오니 4인 이상"
-	            			+"\n투숙을 원하시는 경우 해운대 지점만 단일 선택해주십시오."); */
-		            		var mag = messages["javascript.fncgoresv.room.alert6"]; 
-					        	mag = mag.replace(/<br\/>/g,"\n");
-		            		alert(mag);
-		            	}
-	        			$('.opacity').hide();
-						pc.layerPopup.unLockScroll();
-						$('.re-loader').hide();
-	        			return false;
-	        		}
-	        	}
-	        }
-		}
-		//인원 수 VALIDATION CHECK
-	    
-	    
-		/****************************************** 1*/
-		var noResvHotlNm = "";
-		var noResvHotlCnt = 0;
-				
-		$.ajax({
-			url: "/resv/rpm/getHotlInfoList.do",
-			data : { "hotlIdStr": $("#hotlIdArr").val() },
-			cache: false,
-			type: "POST",
-			async: false,
-			success : function(json){
-				var data = jQuery.parseJSON(json);
-				var hotlList = data.model.hotlList;
-				var lang = "ko";
-				
-				
-				for(var c = 0;c < hotlList.length; c++){
-					var hotlObj = hotlList[c];
-					var hotlNm = "";
-					if(hotlObj.resvPosbAheadDyCnt != "0"){
-						aheadDayYnTF = fnResvPosbAheadDyYnTF(hotlObj.resvPosbAheadDyCnt);
-						if(!aheadDayYnTF){
-							switch (lang) {
-							case "ko" : hotlNm = hotlObj.hotlNmKr; break;
-							case "en" : hotlNm = hotlObj.hotlNmEn; break;
-							case "ja" : hotlNm = hotlObj.hotlNmJp; break;
-							case "zh" : hotlNm = hotlObj.hotlNmCn; break;
-							default	  : hotlNm = hotlObj.hotlNmKr; break;
-							}
-		
-							noResvHotlNm += hotlNm + ", ";
-							noResvHotlCnt++; 
-						}
-					}
-				}
-			},
-			error : function(){
-				alert( "getHotlInfoList Request Failed");
-			}
-		});
-		
-		if(noResvHotlCnt > 0){
-			noResvHotlNm = noResvHotlNm.substring(0, noResvHotlNm.lastIndexOf(","));
-			/* alert(noResvHotlNm+"은 당일 예약이 불가하오니 투숙일을 변경해주십시오. 당일 예약을 원하시는 경우 다른 호텔을 선택해주십시오\n"
-	        +"\n- 제주신라호텔 : 당일 15시까지 예약 가능\n"
-	        +"- 신라스테이 전 지점 : 당일 23시까지 예약 가능"); */
-			var mag = messages["javascript.fncgoresv.room.alert7"]; 
-				mag = mag.replace('{0}', noResvHotlNm);
-				mag = mag.replace(/<br\/>/g,"\n");
-					alert(mag);
-			return ;
-		}
-
-		
-		/////////////
-		jQuery("#resvForm").attr("method", "post");
-		jQuery("#resvForm").attr("action", "https://www.shillahotels.com/stayhub/resv/rpm/memSetStep1.do");
-		jQuery("#resvForm").submit();
-		
-
-	}
-	
-</script>
-
-<!-- start 20180209 메인 예약바 추가 -->
-<script type="text/javascript">
-$(document).ready(function () {
-    $('.selArea ul li').on('click', function(){
-        if(!jQuery(this).hasClass("rsvInput")){
-            if(jQuery(".rsvCalendarDate").is(":visible")){
-                jQuery(".rsvCalendarDate").toggleClass('on');
-            }
-            $(this).addClass('on').siblings().removeClass('on').children().removeClass('jsSelect_on');
-        }else{
-            $(this).addClass('on').siblings().removeClass('on').children().removeClass('jsSelect_on');
-        }
-    });
-    $('.warnBalloon').on('mouseover', function(){
-        $(this).children('.warnBalloonInner').addClass('on')
-    }).on('mouseout', function(){
-        $(this).children('.warnBalloonInner').removeClass('on')
-    });
     
-});
-</script>
+<!DOCTYPE html>
+<html class="ltr" style="width: 100%;" dir="ltr" lang="ko-KR">
+<head>
 
-<!-- end 20180209 메인 예약바 추가 -->
-<form name="resvForm" id="resvForm" method="get" >
-	<input type="hidden" name="hotlId" id="hotlId" />
-	<input type="hidden" name="nightCnt" id="nightCnt" />
-	<input type="hidden" name="maxCapaCnt" id="maxCapaCnt" />
-	<input type="hidden" id="URL_PREFIX" name="URL_PREFIX" value="/stayhub"/>
-	<input type="hidden" name="resvPosbAheadDyCnt" id="resvPosbAheadDyCnt" />
+<meta name="naver-site-verification" content="02b40612c40b6291c2a5d496b1e8b80382fb294d" />
+<title>HON STAY</title>
+<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+<link href="stayView/css/mentions.css" rel="stylesheet" type="text/css" />
+<link href="stayView/css/dynamic-main.css" rel="stylesheet" type="text/css" />
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta
+	content=".도심 속 나만의 안식처가 되어줄 공덕의 랜드마크, 모던함을 갖춘 프리미엄 비즈니스 호텔 F&amp;B: 그리츠M, Segafredo Cafe &amp; Bar / 부대시설: 비즈니스라운지, 세븐일레븐, 미팅룸, GYM"
+	lang="ko-KR" name="description" />
+<link rel="shortcut icon" type="image/x-icon" href="main/images/WEB.png" />
+
+
+<script src="stayView/js/combo/aui-alert-min.js" type="text/javascript"></script>
+<script src="stayView/js/combo/aui-url-min.js" type="text/javascript"></script>
+<script src="stayView/js/combo/event-flick-min.js" type="text/javascript"></script>
+<script src="stayView/js/combo/event-move-min.js" type="text/javascript"></script>
+<script src="stayView/js/combo/init.es.js" type="text/javascript"></script>
+<script src="stayView/js/combo/notification.js" type="text/javascript"></script>
+<script src="stayView/js/combo/sign_in_modal.js" type="text/javascript"></script>
+<script src="stayView/js/combo/structs.js" type="text/javascript"></script>
+
+<script src="stayView/js/js_loader_modules" type="text/javascript"></script>
+
+<script src="stayView/js/js_bundle_config" type="text/javascript"></script>
+
+</style>
+<link class="lfr-css-file" data-senna-track="temporary" href="stayView/css/main.css" id="liferayThemeCSS" rel="stylesheet" type="text/css" />
+<style data-senna-track="temporary" type="text/css">
+
+
+.do_nav .list-menu>ul>li {
+	font-size: 15px;
+}
+
+.do_header .do_nav .list-menu>ul.level-1>li, .do_header .do_nav .list-menu>ul.level-1>li.active,
+	.do_header .do_nav .list-menu>ul.level-1>li>a {
+	font-weight: bold;
+	color: #000;
+}
+
+.do_nav ul {
+	margin-bottom: 0;
+}
+
+#navigation {
+	width: 100%;
+}
+
+.do_header .logo>img {
+	height: 70px;
+}
+</style>
+<style data-senna-track="temporary" type="text/css">
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .portlet-content {
+	border-width:;
+	border-style:
+}
+
+#portlet_Slider_INSTANCE_q24GQWjojKZg header {
+	top: 30px;
+}
+
+#p_p_id_ReservationIndexIndex_INSTANCE_ZSOx0846ZBpK_ .portlet-content {
+	border-width:;
+	border-style:
+}
+
+#p_p_id_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw_ .portlet-content {
+	border-width:;
+	border-style:
+}
+
+li.do_list .do_image_cover_three_img_area {
+	padding-bottom: 55.8%;
+}
+
+li.do_list .do_image_cover_three_img_area>a {
+	disaplay: block;
+	width: 100%;
+	height: 100%;
+}
+
+.do_image_cover_three_board_area li.do_list .do_image_cover_three_img_area
+	{
+	padding-bottom: 55%;
+}
+
+#portlet_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw .do_btn_area {
+	position: relative;
+	width: auto;
+	left: 0;
+	bottom: 0;
+	border: none;
+}
+
+#p_p_id_Slider_INSTANCE_UGRi0acdNWgS_ .portlet-content {
+	border-width:;
+	border-style:
+}
+
+#portlet_Slider_INSTANCE_UGRi0acdNWgS .bx-wrapper {
+	margin: 30px 0 0 0;
+}
+
+#p_p_id_maingallery_INSTANCE_foCPHrNrr3EK_ .portlet-content {
+	border-width:;
+	border-style:
+}
+</style>
+
+<link data-senna-track="temporary" href="stayView/css/simulation_panel.css" rel="stylesheet" type="text/css" />
+<link data-senna-track="temporary" href="stayView/css/product_navigation_product_menu.css" rel="stylesheet" type="text/css" />
+<link data-senna-track="temporary" href="stayView/css/product_navigation_control_menu.css" rel="stylesheet" type="text/css" />
+<style>
+body {
 	
-	<!-- 2019 추가 -->
-	<input type="hidden" id="hotlIdArr" name="hotlIdArr" />
-	<input type="hidden" id="adltCnt" name="adltCnt" />
-	<input type="hidden" id="chldCnt" name="chldCnt" />
-	<input type="hidden" id="infantCnt" name="infantCnt" />
-	<input type="hidden" id="totlAdltCnt" name="totlAdltCnt" />
-	<input type="hidden" id="totlChldCnt" name="totlChldCnt" />
-	<input type="hidden" id="totlInfantCnt" name="totlInfantCnt" />
-	<input type="hidden" id="roomCnt" name="roomCnt" />
-	<input type="hidden" name="ckinYmd" id="ckinYmd" />
-	<input type="hidden" name="ckoutYmd" id="ckoutYmd" />
-</form>  
+	letter-spacing: -1px;
+	font-family: "Open Sans", 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans KR',
+		"Malgun Gothic", sans-serif;
+}
 
-<div id="contents" class="mainVisual hub">
-<script src="stayView/js/jquery.flexslider-min.js" charset="UTF-8"></script><!-- 20180227 추가 -->
-<script type="text/javascript">
-	$(document).ready(function () {
-		var selectHotlTxt = "호텔을 선택해주세요.";
-		$('#searchBarKeyword').attr('placeholder' , selectHotlTxt);
-		
-		
-		var speedTime='7';
-		
-			speedTime = parseInt(speedTime)*1000;
-		
 
-		$('.containSlides').flexslider({
-            animation: "fade",
-            slideshow: true,
-            animationLoop: true,
-            prevText : '이전',
-            nextText: '다음',
-            controlNav :false,
-            slideshowSpeed: speedTime,
-            itemWidth : 1200
-        });
-		
-		$('.specialOfferSlide').flexslider({
-		    animation: "slide",
-		    slideshowSpeed: '4500',
-		    directionNav: true,
-		    slideshow: false,
-		    prevText: '이전',
-		    nextText: '다음',
-		    controlsContainer: '#specialOfferControl'
-		});
-            
-	});
-</script>
-	<div class="containSlides">
-	<ul class="slides">
-					<li>
-						<a href="#">
-							<img class="img" src="stayView/images/contents/main/MAIN_STAYHUB/R0000000ZV1T_KR1.jpg"   alt="Joyful Staycation" />
+</style>
+</head>
+<body
+	class=" controls-visible yui3-skin-sam signed-out public-page site"
+	style="width: 100%;">
+<div class="back">
+	<div class="do_wrap" id="site_url_https://gladmapo-hotels.com/web/mapo">
+		<nav class="quick-access-nav" id="yfqr_quickAccessNav">
+			<h1 class="hide-accessible">항법</h1>
+			<ul>
+				<li><a href="#main-content">내용으로 건너뛰기</a></li>
+			</ul>
+		</nav>
+		<!--<div id="wrapper" style="background-color: #fff;font-family: 'ygd32';">-->
+		<div id="wrapper" style="background-color: #fff;">
+			<header class="do_header">
+				<div class="do_nav_line"></div>
+				<div class="do_header-inner">
+					<!-- 탑메뉴 -->
+					<div class="do_top-menu">
+						<ul>
+							<li class="do_tm_member"><a
+								href="./common/memberJoin" >회원가입</a></li>
+							<li class="do_tm_lang"><a href="./common/memberLogin">로그인</a>
+								<ul class="do_select_lang" style="width: 185px;">
+									<li><a href="https://glad-hotels.com/ko/web/gate"
+										target="_blank">HON SHOP</a></li>
+									<li><a
+										href="https://gladyeouido-hotels.com/ko/web/yeouido"
+										target="_blank">HON CARE</a></li>									
+								</ul></li>
+						</ul>
+					</div>
+					<!-- //탑메뉴 -->
+					<h1>
+						<a class="logo custom-logo" href="./stayMain" title="Go to honstay">
+							<img alt=""
+							src="stayView/images/honstay_main.png" />
 						</a>
-					</li>
+					</h1>
+					<p class="do_toggle">toggle</p>
+				</div>
+				<div class="do_nav">
+					<div class="do_nav_membership">
+						<div class="do_nav_return">
+							<span
+								onclick="location.href='https://gladmapo-hotels.com/web/mapo'">hove</span><span>close</span>
+						</div>
+						<ul>
+							<li><a href="https://www.glad-hotels.com"><img
+									src="stayView/images/layout_set_logo.png">GLAD
+									GATE</a></li>
+							<!--<li><a href="/web/gate/membership"><img src="/documents/20143/161603/mo_reserbtn_gray.png/ed81d01b-4758-aaba-0087-81a8b8af39d0?t=1529210165606">MEMBERSHIP</a></li>-->
+							<li><a href="tel:02-6222-5000"><img
+									src="stayView/images/mo_reserbtn_gray.png">RESERVATION</a></li>
+						</ul>
+					</div>
+					<div class="do_property_custom_nav">
+						<div aria-expanded="false" class="collapse navbar-collapse"
+							id="navigationCollapse">
+							<nav class="sort-pages modify-pages site-navigation"
+								id="navigation" role="navigation">
+								<div class="navbar-left navbar-width">
+									<div
+										class="portlet-boundary portlet-boundary_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_ portlet-static portlet-static-end portlet-barebone portlet-navigation "
+										id="p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_">
+										<section class="portlet"
+											id="portlet_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet">
+											<div class="portlet-content">
+												<div class=" portlet-content-container">
+													<div class="portlet-body">
+														<div aria-label="Site Pages" class="list-menu">
+															<ul class="layouts level-1">
+																<li class="lfr-nav-item open">소개
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open">
+																			<a class="lfr-nav-item open"href="#">오피스텔 소개</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a class="lfr-nav-item open" href="#">서비스 소개</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a class="lfr-nav-item open" href="#">오시는길</a>
+																		</li>
+																		
+																	</ul>
+																</li>
+																<li class="lfr-nav-item open">객실
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/standard-double">스탠다드
+																				더블</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/superior-double">수페리어
+																				더블</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/deluxe-double">디럭스
+																				더블</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/deluxe-twin">디럭스
+																				트윈</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/jumbo-twin">점보
+																				트윈</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/glad-house">글래드
+																				하우스</a></li>
+																		<li class="lfr-nav-item open">콜라보레이션
+																			<ul class="layouts level-3">
+																				<li class="lfr-nav-item open"><a
+																					class="lfr-nav-item open"
+																					href="https://gladmapo-hotels.com/web/mapo/collaboration/slou">슬로우</a>
+																				</li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+																<li class="lfr-nav-item open"><a
+																	class="lfr-nav-item open"
+																	href="https://gladmapo-hotels.com/web/mapo/11">다이닝
+																		&amp; 바</a>
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/greetsm">GREETS
+																				M</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/fnb/segafredo-cafe-bar">Segafredo
+																				Cafe &amp; Bar</a></li>
+																	</ul></li>
+																<li class="lfr-nav-item open">미팅
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/meeting1">미팅</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/banquet">연회</a>
+																		</li>
+																	</ul>
+																</li>
+																<li class="lfr-nav-item open">부대시설
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/gym">피트니스</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/creative-lounge">크리에이티브
+																				라운지</a></li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/convenience">편의점</a>
+																		</li>
+																	</ul>
+																</li>
+																<li class="lfr-nav-item open">스페셜 오퍼
+																	<ul class="layouts level-2">
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/packages">패키지</a>
+																		</li>
+																		<li class="lfr-nav-item open"><a
+																			class="lfr-nav-item open"
+																			href="https://gladmapo-hotels.com/web/mapo/event">이벤트</a>
+																		</li>
+																	</ul>
+																</li>
+																<li class="lfr-nav-item open"><a
+																	class="lfr-nav-item open"
+																	href="https://be.synxis.com/?hotel=7885&chain=25084">예약</a>
+																</li>
+																<li class="lfr-nav-item open"><a
+																	class="lfr-nav-item open"
+																	href="https://gladyeouido-hotels.com/web/yeouido/gladshop/introduction"
+																	target="_blank">GLAD SHOP</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<div class="do_nav_fooer">
+						<ul>
+							<li><a href="#a"><img
+									src="stayView/images/mo_facebook.png"></a></li>
+							<li><a href="#a"><img
+									src="stayView/images/mo_instar.png"></a></li>
+							<li><a href="#a"><img
+									src="stayView/images/mo_trip.png"></a></li>
+						</ul>
+						<div class="do_select do_input_tiny">
+							<!--<div class="do_select_title"><p><img src="/documents/20143/33306/mo_lang.png/56a2ea5f-1905-9b5d-97f1-54b4a0aee61b?t=1528875022611">KOREA</p></div>-->
+							<div class="do_select_title">
+								<p>KOREAN</p>
+							</div>
+							<ul class="do_input_tiny">
+								<li class="do_input_tiny"><a href="/ko/web/mapo">KOREAN<img
+										src="/o/admin-theme/images/language/ko_KR.png" alt="한국어 바로가기"></a></li>
+								<li class="do_input_tiny"><a href="/en/web/mapo-en">ENGLISH<img
+										src="/o/admin-theme/images/language/en_US.png" alt="영어 바로가기"></a></li>
+								<li class="do_input_tiny"><a href="/zh/web/mapo-zh">CHINESE<img
+										src="/o/admin-theme/images/language/zh_CN.png" alt="중국어 바로가기"></a></li>
+								<li class="do_input_tiny"><a href="/ja/web/mapo-ja">JAPANESE<img
+										src="/o/admin-theme/images/language/ja_JP.png" alt="일본어 바로가기"></a></li>
+								<li class="do_input_tiny" id="new_mo_display_none"><a
+									href="https://jash.co.kr/kor/ARS/index.php?/" target="_blank">제주
+										항공 우주호텔</a></li>
+								<li class="do_input_tiny" id="new_mo_display_none"><a
+									href="http://www.mayhills.co.kr/" target="_blank">메이힐스 리조트</a></li>
+								<!--<li class="do_input_tiny" id="new_mo_display_none"><a href="https://www.ihg.com/hotels/kr/ko/reservation" target="_blank">홀리데이 인 익스프레스</a></li>-->
+								<li class="do_input_tiny" id="new_mo_display_none"><a
+									href="https://oracc.com/kor/OCC/index.php?/" target="_blank">오라
+										컨트리 클럽</a></li>
+							</ul>
+						</div>
+					</div>
+					<address>&copy; 2012 By a+d All rights reserved.</address>
+				</div>
+			</header>
+			<section class="container-fluid-property" id="content"
+				style="margin-top: 35px;">
+				<h1 class="hide-accessible">index - 글래드 마포</h1>
+				<div class="columns-1" id="main-content" role="main">
+					<div class="portlet-layout row">
+						<div class="col-md-12 portlet-column portlet-column-only"
+							id="column-1">
+							<div
+								class="portlet-dropzone portlet-column-content portlet-column-content-only"
+								id="layout-column_column-1">
+						
 
-					<li>
-						<a href="#">
-							<img class="img" src="stayView/images/contents/main/MAIN_STAYHUB/R0000000YC2G_KR.jpg"   alt="Happy Sunday" />
-						</a>
-					</li>
+								<div
+									class="portlet-boundary portlet-boundary_Slider_  portlet-static portlet-static-end portlet-decorate  do_screen_width_portlet&#x20;do_custom_title_display"
+									id="p_p_id_Slider_INSTANCE_q24GQWjojKZg_">
 
-					<li>
-						<a href="#">
-							<img class="img" src="stayView/images/contents/main/MAIN_STAYHUB/R00000010MYN_KR1.jpg"   alt="10+1 프로모션" />
-						</a>
-					</li>
 
-	</ul>
-	<div id="mainVisualControl" class="mainControl"></div>
+									<section class="portlet"
+										id="portlet_Slider_INSTANCE_q24GQWjojKZg">
+
+
+										<div class="portlet-content">
+
+											<h2 class="portlet-title-text">슬라이더</h2>
+
+
+											<div class=" portlet-content-container">
+
+
+
+												<div class="portlet-body">
+
+
+													<div>
+														<div class="slider">
+															<div>
+																<a href="#"> 
+																	<img class="do_pc_img" src="stayView/images/GM_main_02.jpg" />
+																</a>
+															</div>															
+														</div>
+<style>
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+	margin-top: -35px;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ img {
+	display: block;
+	width: 100%;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper {
+	width: 100%;
+	border: none;
+	box-shadow: none;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .bx-controls-direction a
+	{
+	z-index: 1000;
+}
+
+@media screen and (min-width:1025px) {
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+		height: 22vw;
+	}
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .do_m_img {
+		display: none;
+	}
+}
+
+@media screen and (max-width:1024px) {
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+		height: 58vw;
+	}
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .do_pc_img {
+		display: none;
+	}
+}
+</style>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div
+									class="portlet-boundary portlet-boundary_ImageCoverThreeBoard_ portlet-static portlet-static-end portlet-decorate do_custom_side_line"
+									id="p_p_id_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw_">
+									<section class="portlet"
+										id="portlet_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw">
+										<div class="portlet-content">
+											<h2 class="portlet-title-text">First Title</h2>
+											<div class=" portlet-content-container">
+												area1
+											</div>
+										</div>
+									</section>
+								</div>
+								
+								<div
+									class="portlet-boundary portlet-boundary_maingallery_ portlet-static portlet-static-end portlet-decorate do_custom_side_line"
+									id="p_p_id_maingallery_INSTANCE_foCPHrNrr3EK_">
+									<section class="portlet"
+										id="portlet_maingallery_INSTANCE_foCPHrNrr3EK">
+										<div class="portlet-content">
+											<h2 class="portlet-title-text">Second Title</h2>
+											<div class=" portlet-content-container">
+											
+											area2	
+													
+											</div>
+											</div>
+										<form action="#" id="hrefFm" method="post" name="hrefFm"><span></span></form>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			<style type="text/css">
+@media ( min-width :1025px) {
+	.do_footer {
 		
-	</div>
-</div>
+	}
+	.do_footer_mobile {
+		display: none;
+	}
+	.do_footer ul {
+		list-style: none;
+	}
+	.do_foot_list1 {
+		width: 100%;
+		background-color: #fff;
+		height: 55px;
+	}
+	.do_foot_list1 ul li {
+		float: left
+	}
+	.do_foot_list1 ul:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list1_con {
+		max-width: 1024px;
+		margin: 0 auto
+	}
+	.do_list1_con .do_list1_con1 {
+		float: left;
+		margin-top: 5px;
+	}
+	.do_list1_con .do_list1_con2 {
+		float: right;
+		margin-top: 5px;
+	}
+	.do_list1_con:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list1_con .do_list1_con1 li {
+		margin-right: 20px
+	}
+	.do_list1_con .do_list1_con2 li {
+		margin-left: 40px;
+		line-height: 45px
+	}
+	.do_list1_con .do_list1_con2 li a img {
+		vertical-align: middle
+	}
+	.do_foot_list2 {
+		width: 100%;
+		background-color: #fff;
+	}
+	.do_list2_con {
+		width: 1024px;
+		margin: 0 auto;
+		padding-left: 50px;
+		position: relative;
+		overflow: hidden;
+		border-top: 1px solid #bebfbf;
+	}
+	.do_list2_con:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list2_con h2 {
+		float: left;
+		margin-top: 30px
+	}
+	.do_list2_con .do_foot_infor {
+		float: left;
+		margin: 25px 0px 0px 40px;
+		font-size: 14px;
+		width: calc(100% - 228px);
+	}
+	.do_list2_con .do_foot_infor ul:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list2_con .do_foot_infor li {
+		float: left;
+		margin-right: 20px;
+	}
+	.do_list2_con .do_foot_infor li:last-of-type {
+		margin-right: 0;
+	}
+	/*폰트색.do_list2_con .do_foot_infor li a{color:#bdbcba}*/
+	.do_list2_con .do_foot_infor li a {
+		color: #8c8e8f
+	}
+	.do_list2_con .do_foot_infor address {
+		color: #8c8e8f;
+		width: 50%;
+		float: left;
+	}
+	.do_list2_con .do_foot_infor .do_copyright {
+		color: #8c8e8f
+	}
+	.do_list2_con .do_family_site {
+		float: right;
+		width: 217px;
+		height: 26px;
+		line-height: 26px;
+		border: 2px solid #d0cfcd;
+		margin-top: 50px;
+		font-size: 14px;
+	}
+	.do_list2_con .do_family_site p {
+		color: #8c8e8f;
+		margin-left: 10px;
+		display: block;
+		cursor: pointer;
+		background:
+			url(/documents/20143/161603/family_dot.png/79f93208-ca27-836b-4e81-752a72b00599?t=1528961228976)
+			no-repeat 90% 10px
+	}
+	.do_list2_con .do_family_site p.do_on {
+		background:
+			url(/documents/20143/161603/family_dot.png/79f93208-ca27-836b-4e81-752a72b00599?t=1528961228976)
+			no-repeat 90% -5px
+	}
+	.do_list2_con .do_fmsite_list {
+		position: absolute;
+		top: -66px;
+		right: 0;
+		border: 2px solid #d0cfcd;
+		display: none
+	}
+	.do_list2_con .do_fmsite_list.do_on {
+		display: block
+	}
+	.do_list2_con .do_fmsite_list ul li {
+		width: 213px;
+		height: 26px;
+		background-color: #2a2a2a;
+		padding-left: 10px;
+	}
+	.do_list2_con .do_fmsite_list ul li:hover {
+		background-color: #1a1a1a
+	}
+	.do_list2_con .do_fmsite_list ul li a {
+		color: #fff;
+		font-size: 14px
+	}
+	.do_footer .TA_socialButtonBubbles {
+		float: right;
+		margin-top: 19px;
+		position: static;
+	}
+	.do_footer_sns {
+		float: right;
+		margin-top: 19px;
+		margin-left: 20px;
+	}
+	.do_footer_sns>li {
+		float: left;
+	}
+	.do_footer_sns>li img {
+		width: 20px;
+		height: 20px;
+	}
+	.do_footer .socialWidgetContainer {
+		margin-top: -19px;
+	}
+	.socialWidgetContainer {
+		display: block;
+	}
+}
+/**************************************************
 
-	<script type="text/javascript">
-	$(function () {
-		if($("#mainImages img").size() == 1) {
-			$("#mainImages a").remove();
-		}
-	});
-	</script> 
-		<script type="text/javascript" src="stayView/js/siteoverlay2.js">	</script> 
+
+                        태블릿
+
+
+ ***************************************************/
+@media ( min-width :768px) and (max-width:1024px) {
+	.do_footer {
+		
+	}
+	.do_footer_mobile {
+		display: none;
+	}
+	.do_list2_con>h2>img {
+		display: none;
+	}
+	.do_foot_list1 {
+		width: 100%;
+		background-color: #fff;
+		border-bottom: 1px solid #484848;
+		height: 55px;
+	}
+	.do_foot_list1 ul li {
+		float: left;
+		list-style: none;
+	}
+	.do_foot_list1 ul:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list1_con {
+		width: 100%;
+		margin: 0 auto;
+		position: relative
+	}
+	.do_list1_con .do_list1_con1 {
+		width: 88%;
+		margin: 0 auto;
+		padding-top: 5px;
+	}
+	.do_list1_con .do_list1_con2 {
+		position: absolute;
+		z-index: 1;
+		top: 71px;
+		right: 31%;
+	}
+	.do_list1_con:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list1_con .do_list1_con1 li {
+		margin-right: 2%
+	}
+	.do_list1_con .do_list1_con1 li:last-of-type {
+		margin: 0
+	}
+	.do_list1_con .do_list1_con2 li {
+		margin-left: 40px;
+		line-height: 45px
+	}
+	.do_list1_con .do_list1_con2 li a img {
+		vertical-align: middle
+	}
+	.do_foot_list2 {
+		width: 100%;
+		background-color: #fff;
+	}
+	.do_list2_con {
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		border-top: 1px solid #bebfbf;
+	}
+	.do_list2_con:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list2_con h2 {
+		float: left;
+		margin: 40px 0 0 5%
+	}
+	.do_list2_con .do_foot_infor {
+		float: right;
+		margin: 40px 4% 0 0;
+		font-size: 13px;
+	}
+	.do_list2_con .do_foot_infor ul:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_list2_con .do_foot_infor li {
+		float: left;
+		margin-right: 16px;
+	}
+	.do_list2_con .do_foot_infor li:last-of-type {
+		margin-right: 0;
+	}
+	.do_list2_con .do_foot_infor li a {
+		color: #8c8e8f
+	}
+	.do_list2_con .do_foot_infor address {
+		margin-top: 15px;
+		color: #8c8e8f;
+		text-align: right;
+		padding-left: 0px;
+	}
+	.do_list2_con .do_foot_infor .do_copyright {
+		color: #8c8e8f;
+		text-align: right;
+	}
+	.do_list2_con .do_family_site {
+		width: 200px;
+		height: 30px;
+		line-height: 26px;
+		border: 2px solid #d0cfcd;
+		font-size: 14px;
+		position: absolute;
+		top: 25px;
+		right: 2%;
+	}
+	.do_list2_con .do_family_site p {
+		color: #8c8e8f;
+		margin-left: 10px;
+		display: block;
+		cursor: pointer;
+		background:
+			url(/documents/20143/161603/family_dot.png/79f93208-ca27-836b-4e81-752a72b00599?t=1528961228976)
+			no-repeat 90% 10px
+	}
+	.do_list2_con .do_family_site p.do_on {
+		background:
+			url(/documents/20143/161603/family_dot.png/79f93208-ca27-836b-4e81-752a72b00599?t=1528961228976)
+			no-repeat 90% -5px
+	}
+	.do_list2_con .do_fmsite_list {
+		position: absolute;
+		top: -91px;
+		right: 2%;
+		border: 2px solid #d0cfcd;
+		display: none
+	}
+	.do_list2_con .do_fmsite_list.do_on {
+		display: block
+	}
+	.do_list2_con .do_fmsite_list ul li {
+		width: 196px;
+		height: 26px;
+		background-color: #2a2a2a;
+		padding-left: 10px;
+	}
+	.do_list2_con .do_fmsite_list ul li:hover {
+		background-color: #1a1a1a
+	}
+	.do_list2_con .do_fmsite_list ul li a {
+		color: #fff;
+		font-size: 14px
+	}
+	.TA_socialButtonBubbles {
+		float: right;
+	}
+	.do_footer_sns {
+		float: right;
+		margin-top: 19px;
+		margin-left: 20px;
+	}
+	.do_footer_sns>li {
+		float: left;
+	}
+	.do_footer_sns>li img {
+		width: 20px;
+		height: 20px;
+	}
+	.do_footer_mobile {
+		overflow: hidden;
+	}
+	.do_foot_infor .TA_socialButtonBubbles {
+		position: static;
+		margin-top: 19px;
+	}
+	.do_footer .socialWidgetContainer {
+		margin-top: -19px;
+	}
+	.socialWidgetContainer {
+		display: block;
+	}
+}
+/**************************************************
+
+
+                        모바일
+
+
+ ***************************************************/
+@media ( max-width :767px) {
+	.do_footer {
+		display: none;
+	}
+	.do_footer_mobile {
+		overflow: hidden;
+	}
+	.do_footer_mobile ul li {
+		list-style: none;
+	}
+	.do_footer_mobile .do_mo_list2_con {
+		background-color: #fff;
+	}
+	.do_footer_mobile {
+		border-top: 1px solid #bebfbf;
+	}
+	.do_footer_mobile .do_mo_list1_con ul li {
+		float: left;
+		margin: 5px 1%;
+		list-style: none;
+	}
+	.do_footer_mobile .do_mo_list1_con ul:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_footer_mobile .do_mo_list1_con .do_mo_list1_con1 {
+		background-color: #1a1a1a
+	}
+	.do_footer_mobile .do_mo_list2_con:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	.do_footer_mobile .do_mo_list2_con .do_mo_lang {
+		float: right
+	}
+	.do_footer_mobile .do_mo_list2_con .do_mo_lang {
+		float: right;
+		margin: -55px 10px 0 0;
+		width: 30%;
+	}
+	.do_footer_mobile .do_mo_list2_con .do_mo_lang p {
+		width: 100%;
+		height: 28px;
+		font-size: 13px;
+		font-family: "gtbook";
+		border: 1px solid #b2b2b2;
+		color: #b2b2b2;
+		line-height: 28px;
+		background:
+			url(/documents/20143/33310/mo_updown.png/357c9454-1a58-b3e1-0546-6a6b17190504?t=1529038601182)
+			no-repeat 95% -19px;
+		background-size: 12px
+	}
+	.do_footer_mobile .do_mo_list2_con .do_mo_lang p img {
+		width: 15px;
+		margin: 0 5px;
+		vertical-align: text-top;
+	}
+	.do_footer_mobile .do_mo_list3_con ul {
+		width: 100%;
+		margin: 15px auto 25px;
+		padding: 0;
+	}
+	.do_footer_mobile .do_mo_list3_con ul li {
+		padding-left: 2%;
+	}
+	.do_footer_mobile .do_mo_list3_con ul:after {
+		content: '';
+		display: block;
+		clear: both
+	}
+	.do_footer_mobile .do_mo_list3_con ul li {
+		float: left;
+		box-sizing: border-box;
+		font-size: 12px;
+		text-align: center
+	}
+	.do_footer_mobile .do_mo_list3_con ul li a {
+		color: #949393
+	}
+	.do_footer_mobile .do_mo_list3_con p {
+		font-size: 13px;
+		color: #949393;
+		text-align: left;
+		padding-left: 1.8%;
+	}
+	.TA_socialButtonBubbles {
+		float: right;
+	}
+	.do_footer_mobile .do_mo_list3_con .do_footer_sns {
+		float: right;
+		width: 65px;
+	}
+	.do_footer_mobile .do_mo_list3_con .do_footer_sns>li {
+		float: left;
+		margin-left: 10px;
+	}
+	.do_footer_sns>li img {
+		width: 20px;
+		height: 20px;
+	}
+	.do_adress {
+		width: 50%;
+		float: left;
+	}
+	.do_mo_list3_con {
+		overflow: hidden;
+	}
+	.do_footer_mobile .TA_socialButtonBubbles {
+		float: right;
+	}
+	.do_footer_sns {
+		float: right;
+		margin-top: 0px;
+		margin-left: 10px;
+	}
+	.do_footer_sns>li {
+		float: left;
+		margin-right: 10px;
+	}
+	.do_footer_sns>li img {
+		width: 20px;
+		height: 20px;
+	}
+	.do_footer_mobile {
+		overflow: hidden;
+	}
+	.do_footer_mobile .TA_socialButtonBubbles {
+		position: static;
+	}
+	.do_footer_mobile .socialWidgetContainer {
+		margin-top: -19px;
+	}
+	.socialWidgetContainer {
+		display: block;
+	}
+}
+
+.do_foot_infor ul li .do_footer_point {
+	font-weight: bold;
+	color: #456984;
+}
+</style>
+			<footer class="do_footer">
+				<div class="do_foot_list1">&nbsp;</div>
+				<div class="do_foot_list2">
+					<div class="do_list2_con">
+						<h2>
+							<img
+								src="stayView/images/footer_main.png"
+								style="height: 40px;" />
+						</h2>
+						<div class="do_foot_infor">
+							<div class="do_mo_list3_con">
+								<ul>
+									<li>|</li>
+									<li><a href="/web/mapo/35"
+										style="color: #456984; font-weight: bold;" target="_blank">개인정보처리방침</a></li>
+									<li>|</li>
+									<li><a href="/web/mapo/29"
+										style="color: #456984; font-weight: bold;" target="_blank">영상정보처리기기
+											운영방침</a></li>
+									<li>|</li>
+									<li><a href="https://glad-hotels.com/web/gate/hotel-list"
+										target="_blank">지점별 연락처</a></li>
+									<li>|</li>
+								</ul>
+								<address>
+									서울특별시 마포구 마포대로 92<br /> Copyright &copy; 2018. BY 글래드 마포.
+								</address>
+								<ul class="do_footer_sns" id="Ay7eofOMcQI">
+									<li><a href="https://www.facebook.com/gladhotels"
+										target="_blank"><img alt="facebook"
+											src="https://gladlive-hotels.com/documents/58497/172739/images.png/158bd083-9e7a-39b3-1a38-5bc780a16a1c?t=1529398646894" /></a></li>
+									<li><a href="https://www.instagram.com/gladhotels/"
+										target="_blank"><img alt="instargram"
+											src="https://gladlive-hotels.com/documents/58497/172739/facebook-logo-vector.png/f5b8b575-7a00-df78-0f00-40ab93939475?t=1529398646838" /></a></li>
+								</ul>
+								<div class="TA_socialButtonBubbles"
+									id="TA_socialButtonBubbles872">
+									<ul class="TA_links JSizO36Zl" id="Ay7eofOMcQI">
+										<li class="Rk7nxIpFbg" id="HfSuwx"><a
+											href="https://www.tripadvisor.co.kr/Hotel_Review-g294197-d13819581-Reviews-Glad_Mapo-Seoul.html"
+											target="_blank"><img
+												src="https://www.tripadvisor.co.kr/img/cdsi/img2/branding/socialWidget/20x28_green-21693-2.png" /></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- 모바일 footer -->
+			<div class="do_footer_mobile do_mo_list2_con">
+				<div class="do_mo_list1_con">&nbsp;</div>
+				<div class="do_mo_list3_con">
+					<div class="do_mo_list3_con">
+						<ul>
+							<li>|</li>
+							<li><a href="/web/mapo/35"
+								style="color: #456984; font-weight: bold;" target="_blank">개인정보처리방침</a></li>
+							<li>|</li>
+							<li><a href="/web/mapo/29"
+								style="color: #456984; font-weight: bold;" target="_blank">영상정보처리기기
+									운영방침</a></li>
+							<li>|</li>
+							<li><a href="https://glad-hotels.com/web/gate/hotel-list"
+								target="_blank">지점별 연락처</a></li>
+							<li>|</li>
+						</ul>
+						<p>서울특별시 마포구 마포대로 92</p>
+						<p>&copy; 2018. BY 글래드 마포.</p>
+					</div>
+					<ul class="do_footer_sns" id="Ay7eofOMcQI">
+						<li><a href="https://www.facebook.com/gladhotels"
+							target="_blank"><img alt="facebook"
+								src="https://gladlive-hotels.com/documents/58497/172739/images.png/158bd083-9e7a-39b3-1a38-5bc780a16a1c?t=1529398646894" /></a></li>
+						<li><a href="https://www.Instagram.com/glad_live/?hl=ko"
+							target="_blank"><img alt="instargram"
+								src="https://gladlive-hotels.com/documents/58497/172739/facebook-logo-vector.png/f5b8b575-7a00-df78-0f00-40ab93939475?t=1529398646838" /></a></li>
+					</ul>
+					<div class="TA_socialButtonBubbles" id="TA_socialButtonBubbles668">
+						<ul class="TA_links 1ujfMScO" id="KOYzXF2Tqf">
+							<li class="D70rXx6f6" id="6U7jjS304Sd8"><a
+								href="https://www.tripadvisor.co.kr/Hotel_Review-g294197-d13819581-Reviews-Glad_Mapo-Seoul.html"
+								target="_blank"><img
+									src="https://www.tripadvisor.co.kr/img/cdsi/img2/branding/socialWidget/20x28_green-21693-2.png" /></a></li>
+						</ul>
+					</div>
+					<script async
+						src="https://www.jscache.com/wejs?wtype=socialButtonBubbles&amp;uniq=668&amp;locationId=13819581&amp;color=green&amp;size=rect&amp;lang=ko&amp;display_version=2"></script>
+				</div>
+				<!-- //모바일 footer -->
+			</div>
+		</div>
 		<script type="text/javascript">
-		wn_so_pid(32);
-	</script>
+// <![CDATA[
 
 	
-	<jsp:include page="../stayView/includer/footer.jsp"></jsp:include>
-</div>
-	<!-- N2S 스크립트 광고  수집용 Start --> 
-<!-- N2S 스크립트 광고  수집용 End --> 
+		
+
+			
+
+			
+		
+	
+
+	Liferay.BrowserSelectors.run();
+
+// ]]>
+</script>
+		<script type="text/javascript">
+	// <![CDATA[
+
+		
+
+		Liferay.currentURL = '\x2f';
+		Liferay.currentURLEncoded = '\x252F';
+
+	// ]]>
+</script>
+		<script type="text/javascript">
+		// <![CDATA[
+			$(function(){
+            $(".do_nav_membership ul li:nth-of-type(2) a").attr('href','tel:02-2197-5000');
+$('.do_tm_member').children().attr('href', 'https://glad-hotels.com/ko/web/gate');
+$('.do_tm_lang > .do_select_lang li').eq(1).children().attr('href', 'https://gladyeouido-hotels.com/ko/web/yeouido');
+$('.do_tm_lang > .do_select_lang li').eq(5).children().attr('href', 'https://maisongladjeju-hotels.com/ko/web/maison');
+        });
+
+			
+		// ]]>
+	</script>
+		<script type="text/javascript">
+// <![CDATA[
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_mainpopup_INSTANCE_aLaH3U4q8JgG_',
+			portletId: 'mainpopup_INSTANCE_aLaH3U4q8JgG',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dmainpopup_INSTANCE_aLaH3U4q8JgG\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	if (Liferay.Data.ICONS_INLINE_SVG) {
+		svg4everybody(
+			{
+				attributeName: 'data-href',
+				polyfill: true
+			}
+		);
+	}
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 4,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_Slider_INSTANCE_UGRi0acdNWgS_',
+			portletId: 'Slider_INSTANCE_UGRi0acdNWgS',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dSlider_INSTANCE_UGRi0acdNWgS\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d4\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet_',
+			portletId: 'com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 3,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw_',
+			portletId: 'ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dImageCoverThreeBoard_INSTANCE_NkWiq766nMOw\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d3\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 5,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_maingallery_INSTANCE_foCPHrNrr3EK_',
+			portletId: 'maingallery_INSTANCE_foCPHrNrr3EK',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dmaingallery_INSTANCE_foCPHrNrr3EK\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d5\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 1,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_Slider_INSTANCE_q24GQWjojKZg_',
+			portletId: 'Slider_INSTANCE_q24GQWjojKZg',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dSlider_INSTANCE_q24GQWjojKZg\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 2,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_ReservationIndexIndex_INSTANCE_ZSOx0846ZBpK_',
+			portletId: 'ReservationIndexIndex_INSTANCE_ZSOx0846ZBpK',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dReservationIndexIndex_INSTANCE_ZSOx0846ZBpK\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d2\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_',
+			portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_',
+			portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+AUI().use('aui-tooltip', 'liferay-menu', 'liferay-notice', 'aui-base', 'liferay-session', 'liferay-poller', function(A) {(function() {var $ = AUI.$;var _ = AUI._;
+
+	AUI().ready(function() {
+		initEvent();
+	});
+	function initEvent() {
+		var pid = $("#p_p_id_mainpopup_INSTANCE_aLaH3U4q8JgG_").attr("id");
+		var popupData = getCookie(pid);
+		if(popupData == "on")
+			$('#'+pid).css("display", "none");		
+		else {
+			$('#'+pid).css({
+				"display":"block",
+				"z-index":"99",
+				"top":$("#"+pid+" .do_popup_images #p_top").val()+"px",
+				"left":$("#"+pid+" .do_popup_images #p_left").val()+"px",
+				"width":$("#"+pid+" .do_popup_images #p_width").val()+"%",
+				"height":$("#"+pid+" .do_popup_images #p_height").val()+"%"
+			});
+			$('#'+pid+' .portlet-title-text').css("display", "none");
+			$('#'+pid+' .do_popup_images .do_popup').css("border", "2px solid"+$("#"+pid+" .do_popup_images #p_back_color").val());
+			$('#'+pid+' .do_popup_images .do_popup').css("background-color", $("#"+pid+" .do_popup_images #p_back_color").val());
+			$('#'+pid+' .do_popup_images .do_popup > p').css("color", $("#"+pid+" .do_popup_images #p_font_color").val());
+		}	
+	}
+	
+	$(".p_close").click(function() {
+		var target = $(this).parent().parent().parent().parent().parent().parent().parent().attr("id");
+		$('#'+target).css("display", "none");
+		setCookie(target, "on", 2);
+	});
+	$(".p_top_close").click(function() {
+		var target = $(this).parent().parent().parent().parent().parent().parent().parent().attr("id");
+		$('#'+target).css("display", "none");
+	});
+	
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	if (A.UA.mobile) {
+		Liferay.Util.addInputCancel();
+	}
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	if (!Liferay.Data.LFR_PORTAL_TOOLTIP) {
+		Liferay.Data.LFR_PORTAL_TOOLTIP = new A.TooltipDelegate(
+			{
+				constrain: true,
+				opacity: 1,
+				trigger: '.lfr-portal-tooltip',
+				triggerHideEvent: ['click', 'mouseleave', 'MSPointerUp', 'touchend'],
+				triggerShowEvent: ['mouseenter', 'MSPointerDown', 'touchstart'],
+				visible: false,
+				zIndex: Liferay.zIndex.TOOLTIP
+			}
+		);
+	}
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	new Liferay.Menu();
+
+	var liferayNotices = Liferay.Data.notices;
+
+	for (var i = 1; i < liferayNotices.length; i++) {
+		new Liferay.Notice(liferayNotices[i]);
+	}
+
+	
+})();(function() {var $ = AUI.$;var _ = AUI._;
+			Liferay.Session = new Liferay.SessionBase(
+				{
+					autoExtend: true,
+					redirectOnExpire: false,
+					redirectUrl: 'https\x3a\x2f\x2fgladmapo-hotels\x2ecom\x2fweb\x2fmapo',
+					sessionLength: 1800,
+					warningLength: 0
+				}
+			);
+
+			
+		})();});
+// ]]>
+</script>
+		<script
+			src="https://gladmapo-hotels.com/o/PropertyTheme/js/main.js?browserId=other&amp;minifierType=js&amp;languageId=ko_KR&amp;b=7003&amp;t=1574503366281"
+			type="text/javascript"></script>
+		<script type="text/javascript">
+	// <![CDATA[
+		AUI().use(
+			'aui-base',
+			function(A) {
+				var frameElement = window.frameElement;
+
+				if (frameElement && frameElement.getAttribute('id') === 'simulationDeviceIframe') {
+					A.getBody().addClass('lfr-has-simulation-panel');
+				}
+			}
+		);
+	// ]]>
+</script>
+		<script>
+	var PATH_PORTLET_CONFIGURATION_CSS_WEB = '/o/portlet-configuration-css-web';
+
+	AUI().applyConfig(
+		{
+			groups: {
+				portlet_css: {
+					base: PATH_PORTLET_CONFIGURATION_CSS_WEB + '/js/',
+					modules: {
+						'liferay-look-and-feel': {
+							path: 'look_and_feel.js',
+							requires: [
+								'aui-color-picker-popover',
+								'aui-io-plugin-deprecated',
+								'aui-io-request',
+								'aui-tabview',
+								'liferay-portlet-url',
+								'liferay-util-window',
+								'liferay-widget-zindex'
+							]
+						}
+					},
+					root: PATH_PORTLET_CONFIGURATION_CSS_WEB + '/js/'
+				}
+			}
+		}
+	);
+
+	Liferay.provide(
+		Liferay.Portlet,
+		'loadCSSEditor',
+		function(portletId, baseActionURL, baseRenderURL, baseResourceURL) {
+			Liferay.PortletCSS.init(portletId, baseActionURL, baseRenderURL, baseResourceURL);
+		},
+		['liferay-look-and-feel']
+	);
+</script>
+	</div>
+	<!-- MAPO -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-136088491-1"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136088491-1', {
+    'linker': {
+      'domains': ['gladmapo-hotels.com', 'be.synxis.com']	// change highlighted text to the actual
+    }				// booking page's host name
+  });
+
+  gtag('config', 'UA-136103634-1', {
+    'linker': {
+      'domains': ['glad-hotels.com', 'gladmapo-hotels.com', 'gladyeouido-hotels.com', 'gladlive-hotels.com', 'gladgangnamcoex-hotels.com', 'maisongladjeju-hotels.com', 'be.synxis.com', 'gc.synxis.com', 'book-secure.com']
+    }				
+  });
+</script>
+	<!-- -->
+	</div>
 </body>
 </html>

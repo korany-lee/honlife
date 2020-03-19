@@ -14,10 +14,10 @@ Vue.component('user-menu-pc', {
     template:'\
     <ul class="list_menu">\
         <li class="menu none_sub menu_join" v-if="!loginCheck">\
-            <a href="/shop/member/join.php" class="link_menu">회원가입</a>\
+            <a href="shopJoin" class="link_menu">회원가입</a>\
         </li>\
         <li class="menu none_sub" v-if="!loginCheck">\
-            <a href="/shop/member/login.php" class="link_menu" v-if="!returnUrl">로그인</a>\
+            <a href="/main/member/login.php" class="link_menu" v-if="!returnUrl">로그인</a>\
             <a :href="\'/shop/member/login.php?return_url=\' + returnUrl" class="link_menu" v-if="returnUrl">로그인</a>\
         </li>\
         <li class="menu menu_user" v-if="loginCheck">\
