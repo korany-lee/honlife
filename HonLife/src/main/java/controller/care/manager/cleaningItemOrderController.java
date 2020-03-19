@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class cleanManagerMainController {
-	@RequestMapping("/careManager")
-	public String main() {
+public class cleaningItemOrderController {
+@RequestMapping ("/cleanorder")
+public String Corder() {
 
-		return "careView/caremanager/care_managermain";
-	}
-
+	
+	return "careView/caremanager/order_cleaningitem";
+}
 }
