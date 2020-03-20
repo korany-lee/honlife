@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>   
 <!DOCTYPE html>
 <html class="ltr" style="width: 100%;" dir="ltr" lang="ko-KR">
 <head>
@@ -30,7 +29,7 @@
 
 <script src="stayView/js/js_bundle_config" type="text/javascript"></script>
 
-</style>
+
 <link class="lfr-css-file" data-senna-track="temporary" href="stayView/css/main.css" id="liferayThemeCSS" rel="stylesheet" type="text/css" />
 <style data-senna-track="temporary" type="text/css">
 
@@ -213,39 +212,16 @@ body {
 																		
 																	</ul>
 																</li>
-																<li class="lfr-nav-item open">객실
+																<li class="lfr-nav-item open">객실예약
 																	<ul class="layouts level-2">
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/standard-double">스탠다드
-																				더블</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/superior-double">수페리어
-																				더블</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/deluxe-double">디럭스
-																				더블</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/deluxe-twin">디럭스
-																				트윈</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/jumbo-twin">점보
-																				트윈</a></li>
-																		<li class="lfr-nav-item open"><a
-																			class="lfr-nav-item open"
-																			href="https://gladmapo-hotels.com/web/mapo/glad-house">글래드
-																				하우스</a></li>
-																		<li class="lfr-nav-item open">콜라보레이션
-																			<ul class="layouts level-3">
-																				<li class="lfr-nav-item open"><a
-																					class="lfr-nav-item open"
-																					href="https://gladmapo-hotels.com/web/mapo/collaboration/slou">슬로우</a>
-																				</li>
-																			</ul>
+																		<li class="lfr-nav-item open">
+																			<a class="lfr-nav-item open"href="./room/size">면적별 객실</a>
+																		</li>
+																		<li class="lfr-nav-item open">
+																			<a class="lfr-nav-item open"href="./room/floor">층별 객실</a>
+																		</li>
+																		<li class="lfr-nav-item open">
+																			<a class="lfr-nav-item open"href="./room/view">뷰별 객실</a>
 																		</li>
 																	</ul>
 																</li>

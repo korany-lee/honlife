@@ -20,6 +20,7 @@
   			classpath:manager-controller.xml
   			classpath:spring-commonController.xml
 			classpath:stay-introduceController.xml
+			classpath:stay-roomController.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

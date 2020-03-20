@@ -363,5 +363,347 @@ body {
 			
 </div>
 </div>
+<style>
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+	margin-top: -35px;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ img {
+	display: block;
+	width: 100%;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper {
+	width: 100%;
+	border: none;
+	box-shadow: none;
+}
+
+#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .bx-controls-direction a
+	{
+	z-index: 1000;
+}
+
+@media screen and (min-width:1025px) {
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+		height: 22vw;
+	}
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .do_m_img {
+		display: none;
+	}
+}
+
+@media screen and (max-width:1024px) {
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ {
+		height: 58vw;
+	}
+	#p_p_id_Slider_INSTANCE_q24GQWjojKZg_ .bx-wrapper .do_pc_img {
+		display: none;
+	}
+}
+</style>
+<script type="text/javascript">
+// <![CDATA[
+
+	
+		
+
+			
+
+			
+		
+	
+
+	Liferay.BrowserSelectors.run();
+
+// ]]>
+</script>
+		<script type="text/javascript">
+	// <![CDATA[
+
+		
+
+		Liferay.currentURL = '\x2f';
+		Liferay.currentURLEncoded = '\x252F';
+
+	// ]]>
+</script>
+		<script type="text/javascript">
+		// <![CDATA[
+			$(function(){
+            $(".do_nav_membership ul li:nth-of-type(2) a").attr('href','tel:02-2197-5000');
+$('.do_tm_member').children().attr('href', 'https://glad-hotels.com/ko/web/gate');
+$('.do_tm_lang > .do_select_lang li').eq(1).children().attr('href', 'https://gladyeouido-hotels.com/ko/web/yeouido');
+$('.do_tm_lang > .do_select_lang li').eq(5).children().attr('href', 'https://maisongladjeju-hotels.com/ko/web/maison');
+        });
+
+			
+		// ]]>
+	</script>
+		<script type="text/javascript">
+// <![CDATA[
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_mainpopup_INSTANCE_aLaH3U4q8JgG_',
+			portletId: 'mainpopup_INSTANCE_aLaH3U4q8JgG',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dmainpopup_INSTANCE_aLaH3U4q8JgG\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	if (Liferay.Data.ICONS_INLINE_SVG) {
+		svg4everybody(
+			{
+				attributeName: 'data-href',
+				polyfill: true
+			}
+		);
+	}
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 4,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_Slider_INSTANCE_UGRi0acdNWgS_',
+			portletId: 'Slider_INSTANCE_UGRi0acdNWgS',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dSlider_INSTANCE_UGRi0acdNWgS\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d4\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet_',
+			portletId: 'com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationUserPersonalBarPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 3,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw_',
+			portletId: 'ImageCoverThreeBoard_INSTANCE_NkWiq766nMOw',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dImageCoverThreeBoard_INSTANCE_NkWiq766nMOw\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d3\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 5,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_maingallery_INSTANCE_foCPHrNrr3EK_',
+			portletId: 'maingallery_INSTANCE_foCPHrNrr3EK',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dmaingallery_INSTANCE_foCPHrNrr3EK\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d5\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 1,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_Slider_INSTANCE_q24GQWjojKZg_',
+			portletId: 'Slider_INSTANCE_q24GQWjojKZg',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dSlider_INSTANCE_q24GQWjojKZg\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 2,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_ReservationIndexIndex_INSTANCE_ZSOx0846ZBpK_',
+			portletId: 'ReservationIndexIndex_INSTANCE_ZSOx0846ZBpK',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dReservationIndexIndex_INSTANCE_ZSOx0846ZBpK\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d2\x26p_p_col_count\x3d6\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_',
+			portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_',
+			portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d57708\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dnull\x26p_p_col_pos\x3dnull\x26p_p_col_count\x3dnull\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F\x26settingsScope\x3dportletInstance'
+		}
+	);
+AUI().use('aui-tooltip', 'liferay-menu', 'liferay-notice', 'aui-base', 'liferay-session', 'liferay-poller', function(A) {(function() {var $ = AUI.$;var _ = AUI._;
+
+	AUI().ready(function() {
+		initEvent();
+	});
+	function initEvent() {
+		var pid = $("#p_p_id_mainpopup_INSTANCE_aLaH3U4q8JgG_").attr("id");
+		var popupData = getCookie(pid);
+		if(popupData == "on")
+			$('#'+pid).css("display", "none");		
+		else {
+			$('#'+pid).css({
+				"display":"block",
+				"z-index":"99",
+				"top":$("#"+pid+" .do_popup_images #p_top").val()+"px",
+				"left":$("#"+pid+" .do_popup_images #p_left").val()+"px",
+				"width":$("#"+pid+" .do_popup_images #p_width").val()+"%",
+				"height":$("#"+pid+" .do_popup_images #p_height").val()+"%"
+			});
+			$('#'+pid+' .portlet-title-text').css("display", "none");
+			$('#'+pid+' .do_popup_images .do_popup').css("border", "2px solid"+$("#"+pid+" .do_popup_images #p_back_color").val());
+			$('#'+pid+' .do_popup_images .do_popup').css("background-color", $("#"+pid+" .do_popup_images #p_back_color").val());
+			$('#'+pid+' .do_popup_images .do_popup > p').css("color", $("#"+pid+" .do_popup_images #p_font_color").val());
+		}	
+	}
+	
+	$(".p_close").click(function() {
+		var target = $(this).parent().parent().parent().parent().parent().parent().parent().attr("id");
+		$('#'+target).css("display", "none");
+		setCookie(target, "on", 2);
+	});
+	$(".p_top_close").click(function() {
+		var target = $(this).parent().parent().parent().parent().parent().parent().parent().attr("id");
+		$('#'+target).css("display", "none");
+	});
+	
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	if (A.UA.mobile) {
+		Liferay.Util.addInputCancel();
+	}
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	if (!Liferay.Data.LFR_PORTAL_TOOLTIP) {
+		Liferay.Data.LFR_PORTAL_TOOLTIP = new A.TooltipDelegate(
+			{
+				constrain: true,
+				opacity: 1,
+				trigger: '.lfr-portal-tooltip',
+				triggerHideEvent: ['click', 'mouseleave', 'MSPointerUp', 'touchend'],
+				triggerShowEvent: ['mouseenter', 'MSPointerDown', 'touchstart'],
+				visible: false,
+				zIndex: Liferay.zIndex.TOOLTIP
+			}
+		);
+	}
+})();(function() {var $ = AUI.$;var _ = AUI._;
+	new Liferay.Menu();
+
+	var liferayNotices = Liferay.Data.notices;
+
+	for (var i = 1; i < liferayNotices.length; i++) {
+		new Liferay.Notice(liferayNotices[i]);
+	}
+
+	
+})();(function() {var $ = AUI.$;var _ = AUI._;
+			Liferay.Session = new Liferay.SessionBase(
+				{
+					autoExtend: true,
+					redirectOnExpire: false,
+					redirectUrl: 'https\x3a\x2f\x2fgladmapo-hotels\x2ecom\x2fweb\x2fmapo',
+					sessionLength: 1800,
+					warningLength: 0
+				}
+			);
+
+			
+		})();});
+// ]]>
+</script>
+		<script
+			src="https://gladmapo-hotels.com/o/PropertyTheme/js/main.js?browserId=other&amp;minifierType=js&amp;languageId=ko_KR&amp;b=7003&amp;t=1574503366281"
+			type="text/javascript"></script>
+		<script type="text/javascript">
+	// <![CDATA[
+		AUI().use(
+			'aui-base',
+			function(A) {
+				var frameElement = window.frameElement;
+
+				if (frameElement && frameElement.getAttribute('id') === 'simulationDeviceIframe') {
+					A.getBody().addClass('lfr-has-simulation-panel');
+				}
+			}
+		);
+	// ]]>
+</script>
+		<script>
+	var PATH_PORTLET_CONFIGURATION_CSS_WEB = '/o/portlet-configuration-css-web';
+
+	AUI().applyConfig(
+		{
+			groups: {
+				portlet_css: {
+					base: PATH_PORTLET_CONFIGURATION_CSS_WEB + '/js/',
+					modules: {
+						'liferay-look-and-feel': {
+							path: 'look_and_feel.js',
+							requires: [
+								'aui-color-picker-popover',
+								'aui-io-plugin-deprecated',
+								'aui-io-request',
+								'aui-tabview',
+								'liferay-portlet-url',
+								'liferay-util-window',
+								'liferay-widget-zindex'
+							]
+						}
+					},
+					root: PATH_PORTLET_CONFIGURATION_CSS_WEB + '/js/'
+				}
+			}
+		}
+	);
+
+	Liferay.provide(
+		Liferay.Portlet,
+		'loadCSSEditor',
+		function(portletId, baseActionURL, baseRenderURL, baseResourceURL) {
+			Liferay.PortletCSS.init(portletId, baseActionURL, baseRenderURL, baseResourceURL);
+		},
+		['liferay-look-and-feel']
+	);
+</script>
+	</div>
+	<!-- MAPO -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-136088491-1"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136088491-1', {
+    'linker': {
+      'domains': ['gladmapo-hotels.com', 'be.synxis.com']	// change highlighted text to the actual
+    }				// booking page's host name
+  });
+
+  gtag('config', 'UA-136103634-1', {
+    'linker': {
+      'domains': ['glad-hotels.com', 'gladmapo-hotels.com', 'gladyeouido-hotels.com', 'gladlive-hotels.com', 'gladgangnamcoex-hotels.com', 'maisongladjeju-hotels.com', 'be.synxis.com', 'gc.synxis.com', 'book-secure.com']
+    }				
+  });
+</script>
 </body>
 </html>
