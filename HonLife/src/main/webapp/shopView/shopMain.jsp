@@ -1,875 +1,2250 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-
-<meta charset="euc-kr" />
-	<meta name="title" content="HON SHOP :: 혼자서도 멋지게, 모두의 혼 #" />
-	<meta name="description" content="모두가 사랑하는 장보기, 혼 샵! 대량으로 구매하고 매일 아침 문 앞에서 만나요!" />
-	
-<meta property="og:title" content="HON SHOP :: 혼자서도 멋지게, 모두의 혼 #" />
-<meta property="og:description" content="모두가 사랑하는 장보기, 혼 샵! 대량으로 구매하고 매일 아침 문 앞에서 만나요!" />
-<meta property="og:image" content="https://res.kurly.com/images/marketkurly/logo_sns_marketkurly_180810.png" />
-<meta property="og:url" content="https://www.kurly.com/shop/main/index.php?" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="www.kurly.com" />
-<meta name="keywords" content="다이어트, 식단, 닭가슴살, 요리, 치아바타, 레시피, 요리, 상차림, 다이어트음식, 이유식, 건강이유식" />
-<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
-
-<script type="text/javascript" src="https://res.kurly.com/js/lib/jquery-1.10.2.min.js"></script>
-
-
-
-<script>
-var jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYXJ0X2lkIjoiYzM3ODA5NDVhNjNiYmVlOTY5OWU3YTg1ZTAwZTA4NzQiLCJpc19ndWVzdCI6dHJ1ZSwidXVpZCI6bnVsbCwic3ViIjpudWxsLCJpc3MiOiJodHRwOi8vbWt3ZWIuYXBpLmt1cmx5LnNlcnZpY2VzL3YxL3VzZXJzL2F1dGgvZ3Vlc3QiLCJpYXQiOjE1ODQzNDAzMjAsImV4cCI6MTU4NDM0MzkyMCwibmJmIjoxNTg0MzQwMzIwLCJqdGkiOiJjRzVGdVhzeVRJa25LM0JkIn0.SXYs564GVUsVhUFsa4VlmOM9Whs6Wv7R6lLhHUvLJtg';
-var apiDomain = 'https://api.kurly.com';
-var GD_ISMEMBER = !!Number('0');
-var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추가 생성.앱에서 불필요한 호출제거
-</script>
-
-
-
-<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?ver=202003161543"></script>
-<script src="/shop/data/skin/designgj/thefarmers.js?ver=202003161543"></script>
-<script src="/shop/data/skin/designgj/common.js?ver=202003161543"></script>
-<script src="/shop/data/skin/designgj/polify.js?ver=202003161543"></script>
-<script src="/shop/data/skin/designgj/ui_v2.js?ver=202003161543"></script>
-
-
-<!-- ie9_axios -->
-<script src="//res.kurly.com/js/vue/xdomain.min.js" slave="https://api.kurly.com/xdomain"></script>
-<!-- Automatically provides/replaces `Promise` if missing or broken. -->
-<script src="//res.kurly.com/js/vue/es6-promise.min.js"></script>
-<script src="//res.kurly.com/js/vue/es6-promise.auto.min.js"></script>
-<!-- json import -->
-<script type="text/javascript" src="//res.kurly.com/js/vue/axios.min.js"></script>
-<!-- vue.js -->
-<!--<script src="https://res.kurly.com/js/vue/vue.js"></script>-->
-
-<script src="//res.kurly.com/js/vue/vue.min.js"></script>
-<script src="shopView/js/axios.js"></script>
-
-<link rel="styleSheet" href="shopView/css/normalize.css?ver=202003161543">
-<link rel="styleSheet" href="shopView/css/section1.css?ver=202003161543">
-<link rel="styleSheet" href="shopView/css/common.css?ver=202003161543">
-<link rel="styleSheet" href="shopView/css/shop.css">
-<link rel="styleSheet" href="shopView/css/shopmain.css">
-
-<!-- 네이버 트레커 -->
-
-			<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-			<script type="text/javascript" src="/shop/lib/js/naverCommonInflowScript.js?Path=main/index.php&amp;Referer=&amp;AccountID=s_4f41b5625072&amp;Inflow=" id="naver-common-inflow-script"></script>
-			
-<!-- // 네이버 트레커 -->
-
-<!-- 카카오 픽셀 -->
-<script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
-<script type="text/javascript">
-	kakaoPixel('4255794279014838741').pageView();
-</script>
-<!-- // 카카오 픽셀-->
-
-<style>.async-hide { opacity: 0 !important} </style>
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), 
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-90734988-1', 'auto');//'UA-90734988-1'
-<!-- KM-201 장차석 : 구글 옵티마이즈&태그 메니저 -->
-ga('require', 'GTM-MRW9DRV');
-(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-MRW9DRV':true});
-
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NJDKR7R');
-<!-- End KM-201 장차석 : 구글 옵티마이즈&태그 메니저 -->
-
-var uuidCheck = "";
-var cookie_uuid = null;
-
-function setCookieGa(cookieName, value){
-	var exdays = 365;
-	var exdate = new Date();
-	exdate.setDate(exdate.getDate() + exdays);
-	var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-	document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-}
-
-function getCookieGa(cookieName) {
-	cookieName = cookieName + '=';
-	var cookieData = document.cookie;
-	var start = cookieData.indexOf(cookieName);
-	var cookieValue = '';
-	if(start != -1){
-		start += cookieName.length;
-		var end = cookieData.indexOf(';', start);
-		if(end == -1)end = cookieData.length;
-		cookieValue = cookieData.substring(start, end);
-	}
-	return unescape(cookieValue);
-}
-
-function deleteCookieGa(cookieName){
-	var expireDate = new Date();
-	//어제 날짜를 쿠키 소멸 날짜로 설정한다.
-	expireDate.setDate( expireDate.getDate() - 1 );
-	document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + "; path=/";
-}
-
-
-/* 로그인 */
-if(uuidCheck !== "") {
-	if( !getCookieGa('ga_uuid') ){
-		setCookieGa('ga_uuid', uuidCheck);
-	}else{
-		if( getCookieGa('ga_uuid') !== uuidCheck){
-			deleteCookieGa('ga_uuid');
-			setCookieGa('ga_uuid', uuidCheck); /* 로그인 사용자쿠키 추가 */
-		}
-	}
-	ga('set', 'userId', uuidCheck);
-	ga('send', 'pageview',{'dimension1':  uuidCheck});
-}else{
-	ga('send', 'pageview');
-}
-
-//edge browser correspondence
-var enableSelection = true;
-$(function(){
-    $('input, textarea').on('focus', function(){
-        enableSelection = false;
-    }).on('blur', function(){
-        enableSelection = true;
-    });
-});
-</script>
-
-<!-- Facebook Pixel Code -->
-<!-- End Facebook Pixel Code -->
-
-<script>
-(function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
-;r.type="text/javascript"
-;r.integrity="sha384-vYYnQ3LPdp/RkQjoKBTGSq0X5F73gXU3G2QopHaIfna0Ct1JRWzwrmEz115NzOta"
-;r.crossOrigin="anonymous";r.async=true
-;r.src="https://cdn.amplitude.com/libs/amplitude-5.8.0-min.gz.js"
-;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
-	console.log("[Amplitude] Error: could not load SDK")}}
-;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
-;function s(e,t){e.prototype[t]=function(){
-	this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
-	var o=function(){this._q=[];return this}
-	;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
-	;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
-			;return this}
-	;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
-	;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
-	;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId", "enableTracking", "setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
-	;function v(e){function t(t){e[t]=function(){
-		e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
-		for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
-		e=(!e||e.length===0?"$default_instance":e).toLowerCase()
-		;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
-	;e.amplitude=n})(window,document);
-
-var amplitudeUid = uuidCheck;
-if(amplitudeUid === null){
-	amplitudeUid = 'c3780945a63bbee9699e7a85e00e0874';
-}
-var appResult = {
-	is_release_build : false
-};
-<!---->
-appResult.is_release_build = true;
-<!---->
-amplitude.getInstance().init("65bebb55595beb82e78d5d1ae808702c", amplitudeUid);
-</script>
-<!-- KM-1483 : amplitude 트래킹 -->
-<script src="shopView/js/kurlytracker.js"></script>
-	
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="plugins/slick/slick/slick.css">
+    <link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-
-<body class="main-index"  oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection">
-
-<!-- KM-201 장차석 : Google Tag Manager (noscript) -->
-<!-- End Google Tag Manager (noscript) -->
-
-
-<div id="wrap" class="">
-	<div id="pos_scroll"></div>
-
-	<div id="container">
-		<div id="header"><!-- ie8 이하 브라우져 띠배너 -->
-<style type="text/css">
-    .notice_ie8{display:none;width:100%;height:70px;padding-top:23px;background-color:#d5586f;font-weight:400;font-size:16px;font-family:'Noto Sans';color:#fff;letter-spacing:-0.4px;text-align:center}
-    .notice_ie8 .inner_noticeie8{display:block;width:1050px;margin:0 auto}
-    .notice_ie8 .emph{padding:0 16px 0 11px;background:url(https://res.kurly.com/pc/ico/1801/ico_arrow_noticeie8.png) no-repeat 100% 55%;font-family:'Noto Sans';font-weight:700}
-</style>
-<a target="_blank" href="https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads" id="noticeIe8" class="notice_ie8">
-    <span class="inner_noticeie8">
-        고객님의 브라우저에서는 마켓컬리가 정상 동작하지 않습니다. 최신버전의 인터넷 익스플로러를 이용해주세요.    
-        <span class="emph">설치하기</span>
-    </span>
-</a>
-<script type="text/javascript">
-if( (document.all && !document.querySelector) || (document.all && document.querySelector && !document.addEventListener) ){
-    $('#noticeIe8').css({'display':'block'});
-}
-</script>
-<!-- // ie8 이하 브라우져 띠배너 -->
-
-<div class="bnr_header" id="top-message">
-<!-- 상단 띠배너 -->
-        <!-- 신규회원이벤트 -->
-        <a href="http://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_200226" id="eventLanding">
-            지금 가입하고 정기배송 서비스 <b>10회 무료</b> 체험하세요<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
-            <div class="bnr_top">
-                <div class="inner_top_close">
-                    <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
+<body>
+    <header class="header header--1" data-sticky="true">
+        <div class="header__top">
+            <div class="ps-container">
+                <div class="header__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span>전체 카테고리</span></div>
+                        <div class="menu__content">
+                             <ul class="menu--dropdown">
+                                <li class="current-menu-item "><a href="#"><i class="icon-star"></i> 제일 HOT한 상품</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-bread"></i> 과자 &amp; 빵</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>과자<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Home Audio &amp; Theathers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">TV &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Camera, Photos &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Cellphones &amp; Accessories</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Headphones</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Videosgames</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Wireless Speakers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Office Electronic</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu__column">
+                                            <h4>빵<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Digital Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Audio &amp; Video Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Batteries</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-pills"></i> 건강식품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-glass2"></i> 생수 &amp; 음료</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cheese"></i> 유제품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-diamond2"></i> 라면 &amp; 통조림</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-platter"></i> 반찬 &amp; 조미료</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>반찬 &amp; 조미료<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Computer &amp; Tablets</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Monitors</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Networking</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Drive &amp; Storages</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Computer Components</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Security &amp; Protection</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Gaming Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-grapes"></i> 과일 &amp; 채소</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chicken"></i> 쌀 &amp; 정육 &amp; 수산</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-tissue"></i> 화장지 &amp; 세제</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-haircut"></i> 뷰티</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chef"></i> 주방</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i> 문구 &amp; 사무</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-bone"></i> 반려동물</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-car-wash2"></i> 자동차용품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cart-full"></i> 대용량 알뜰상품</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><a class="ps-logo" href="index.html"><img src="img/honshop_main.png" alt="혼샵 메인 로고"></a>
                 </div>
-            </div>
-        </a>
-        <script>
-            // PROM-476 장차석 : GA) 이벤트 트래킹
-            $('#eventLanding').on('click', function(){
-                ga('send', 'event', 'click', 'general_header_sighup', location.href);
-            });
-        </script>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#top-message-close").on("click",function(){
-            setCookie('top_msg_banner2','set_cookie',1)
-        });
-        if(getCookie('top_msg_banner2') == 'set_cookie'){
-            $("#top-message").hide()
-        }else{
-            $("#top-message").show() ;
-        }
-    });
-
-    function setCookie(cookieName, value, exdays){
-        var exdate = new Date();
-        exdate.setDate(exdate.getDate() + exdays);
-        var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-        document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-        cookieName = cookieName + '=';
-        var cookieData = document.cookie;
-        var start = cookieData.indexOf(cookieName);
-        var cookieValue = '';
-        if(start != -1){
-            start += cookieName.length;
-            var end = cookieData.indexOf(';', start);
-            if(end == -1)end = cookieData.length;
-            cookieValue = cookieData.substring(start, end);
-        }
-        return unescape(cookieValue);
-    }
-</script>
-
-
-<!-- 탑 네비게이션 바 -->
-<div id="userMenu">
-    <user-menu-pc
-            :login-check="loginCheck"
-            :notification-item="notificationItem"
-            :user-info="userInfo"
-            :return-url="returnUrl"
-    ></user-menu-pc>
-</div>
-
-<script src="shopView/js/usermenu_v1.js"></script>
-<script>
-$(document).ready(function(){
-    
-    userMenu.loginCheck = false;
-});
-</script>
-<!-- // 탑 네비게이션 바 -->
-
-
-
-<div id="headerLogo" class="layout-wrapper">
-    <h1 class="logo">
-        <a href="/" class="link_main">
-            <span id="gnbLogoContainer"></span>
-            <img src="shopView/images/honshop_main.png" alt="마켓컬리 로고">
-        </a>
-    </h1>
-    <a href="/shop/board/view.php?id=notice&no=64" onclick="ga('send','event','etc','main_gif_btn_click');" class="bnr_delivery">
-        <img src="shopView/images/delivery_190819.png" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송" >
-    </a>
-</div>
-
-<div id="gnb">
-    <h2 class="screen_out">메뉴</h2>
-    <div id="gnbMenu" class="gnb_kurly">
-        <div class="inner_gnbkurly">
-            <div class="gnb_main">
-                <ul class="gnb">
-                    <li class="menu1"><a href="#none"><span class="ico"></span><span class="txt">전체 카테고리</span></a></li>
-                    <li><a class="link new " href="/shop/goods/goods_list.php?category=038"><span class="txt">신상품</span></a></li>
-                    <li><a class="link best " href="/shop/goods/goods_list.php?category=029"><span class="txt">베스트</span></a></li>
-                    <li><a class="link bargain " href="/shop/goods/goods_list.php?list=sale"><span class="txt">대량상품</span></a></li>
-                    <li class="lst"><a class="link event " href="/shop/goods/event.php?&"><span class="txt">이벤트</span></a></li>
-                </ul>
-                
-                <div id="side_search" class="gnb_search">
-                    <form action="/shop/goods/goods_search.php?&" onsubmit="return searchTracking(this)">
-                        <input type=hidden name=searched value="Y">
-                        <input type=hidden name=log value="1">
-                        <input type=hidden name=skey value="all">
-                        <input type="hidden" name="hid_pr_text" value="봄맞이 비타민 기획전" />
-                        <input type="hidden" name="hid_link_url" value="https://www.kurly.com/shop/goods/goods_list.php?category=656" />
-                        <input type="hidden" id="edit" name="edit" value=""/>
-                                                <input name=sword type=text id="sword" class="inp_search" value="봄맞이 비타민 기획전" required label="검색어">
-
-                        <input type=image src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search">
+                <div class="header__center">
+                    <form class="ps-form--quick-search" action="index.html" method="get">
+                        <div class="form-group--icon"><i class="icon-chevron-down"></i>
+                            <select class="form-control">
+                                <option value="0" selected="selected">전체</option>
+                                <option class="level-0" value="bread">과자 & 빵</option>
+                                <option class="level-0" value="pills">건강식품</option>
+                                <option class="level-0" value="drink">생수 & 음료 </option>
+                                <option class="level-0" value="cheese">유제품</option>
+                                <option class="level-0" value="noodles">라면 & 통조림</option>
+                                <option class="level-0" value="food">반찬 & 조미료</option>
+                                <option class="level-0" value="fruits">과일 & 채소</option>
+                                <option class="level-0" value="meats">쌀 & 정육 & 수산</option>
+                                <option class="level-0" value="tissue">화장지 & 세제</option>
+                                <option class="level-0" value="beauty">뷰티</option>
+                                <option class="level-0" value="kitchen">주방</option>
+                                <option class="level-0" value="office">문구 & 사무</option>
+                                <option class="level-0" value="pet">반려동물</option>
+                                <option class="level-0" value="car">자동차용품</option>
+                                <option class="level-0" value="bigmarket">대용량 알뜰상품</option>
+                            </select>
+                        </div>
+                        <input class="form-control" type="text" placeholder="혼자사는 사람을 위한 추천템">
+                        <button>Search</button>
                     </form>
-                    <script>
-                        // KM-1483 Amplitude 연동
-                        function searchTracking(form){
-                            var _searchTrackingData = {
-                                selection_type : 'keyword',
-                                keyword : $(form).find('[name = sword]').val(),
-                                package_id : null,
-                                package_name : null,
-                                position : null,
-                            }
-                            KurlyTracker.setEventInfo(_searchTrackingData.selection_type);
-                            KurlyTracker.setAction('select_search', _searchTrackingData).sendData();
-                            return chkForm(form);
-                        }
-                    </script>
                 </div>
-
-                <div class="cart_count">
-                    <div class="inner_cartcount">
-                                                <a href="/shop/goods/goods_cart.php" class="btn_cart">
-                            <img src="https://res.kurly.com/pc/ico/1908/ico_cart_x2_v2.png" alt="장바구니">
-<span class="num realtime_cartcount" id="cart_item_count"></span>                        </a>
-                    </div>
-
-                    <div id="addMsgCart" class="msg_cart">
-                        <span class="point"></span>
-                        <div class="inner_msgcart">
-                            <img src="https://res.kurly.com/images/common/bg_1_1.gif" alt="" class="thumb">
-                            <p class="desc">
-                                <span class="tit"></span>
-                                <span class="txt">장바구니에 담겼습니다.</span>
-                            </p>
+                <div class="header__right">
+                    <div class="header__actions"><a class="header__extra" href="#"><i class="icon-chart-bars"></i><span><i>0</i></span></a><a class="header__extra" href="#"><i class="icon-heart"></i><span><i>0</i></span></a>
+                        <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                            <div class="ps-cart__content">
+                                <div class="ps-cart__items">
+                                    <div class="ps-product--cart-mobile">
+                                        <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt=""></a></div>
+                                        <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                            <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-product--cart-mobile">
+                                        <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/5.jpg" alt=""></a></div>
+                                        <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                            <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ps-cart__footer">
+                                    <h3>Sub Total:<strong>$59.99</strong></h3>
+                                    <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-block--user-header">
+                            <div class="ps-block__left"><i class="icon-user"></i></div>
+                            <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원가입</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="gnb_sub">
-                <div class="inner_sub">
-                    <ul class="gnb_menu" data-default="219" data-min="219" data-max="731"><!-- 배경사이즈 -->
-                        <gnb-menu-pc v-for="(item, idx) in dataGnb"
-                                     :main-menu="item"
-                                     :sub-menu="item.categories"
-                                     :sub-open="item.subOpen"
-                                     :get-category-num="getCategoryNum"
-                                     :key="'gnb'+idx"
-                                     :idx="idx"
-                        ></gnb-menu-pc>
+        </div>
+        <nav class="navigation">
+            <div class="ps-container">
+                <div class="navigation__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span>전체 카테고리</span></div>
+                        <div class="menu__content">
+                            <ul class="menu--dropdown">
+                                <li class="current-menu-item "><a href="#"><i class="icon-star"></i> 제일 HOT한 상품</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-bread"></i> 과자 &amp; 빵</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>과자<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Home Audio &amp; Theathers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">TV &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Camera, Photos &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Cellphones &amp; Accessories</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Headphones</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Videosgames</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Wireless Speakers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Office Electronic</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu__column">
+                                            <h4>빵<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Digital Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Audio &amp; Video Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Batteries</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-pills"></i> 건강식품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-glass2"></i> 생수 &amp; 음료</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cheese"></i> 유제품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-diamond2"></i> 라면 &amp; 통조림</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-platter"></i> 반찬 &amp; 조미료</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>반찬 &amp; 조미료<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Computer &amp; Tablets</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Monitors</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Networking</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Drive &amp; Storages</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Computer Components</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Security &amp; Protection</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Gaming Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-grapes"></i> 과일 &amp; 채소</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chicken"></i> 쌀 &amp; 정육 &amp; 수산</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-tissue"></i> 화장지 &amp; 세제</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-haircut"></i> 뷰티</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chef"></i> 주방</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i> 문구 &amp; 사무</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-bone"></i> 반려동물</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-car-wash2"></i> 자동차용품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cart-full"></i> 대용량 알뜰상품</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation__right">
+                    <ul class="menu">
+                        <li class="menu-item-has-children"><a href="index.html">신상품</a><span class="sub-toggle"></span>
+                            <ul class="sub-menu">
+                                <li class="current-menu-item "><a href="index.html">Marketplace Full Width</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-2.html">Home Auto Parts</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-10.html">Home Technology</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-9.html">Home Organic</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-3.html">Home Marketplace V1</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-4.html">Home Marketplace V2</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-5.html">Home Marketplace V3</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-6.html">Home Marketplace V4</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-7.html">Home Electronic</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-8.html">Home Furniture</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-kids.html">Home Kids</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-photo-and-video.html">Home photo and picture</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="shop-default.html">베스트</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Catalog Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-default.html">Shop Fullwidth</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-categories.html">Shop Categories</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-sidebar.html">Shop Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-sidebar-without-banner.html">Shop Without Banner</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-carousel.html">Shop Carousel</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Product Layout<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="product-default.html">Default</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-extend.html">Extended</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-full-content.html">Full Content</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-box.html">Boxed</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-sidebar.html">Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-default.html">Fullwidth</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Product Types<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="product-default.html">Simple</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-default.html">Color Swatches</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-image-swatches.html">Images Swatches</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-countdown.html">Countdown</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-multi-vendor.html">Multi-Vendor</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-instagram.html">Instagram</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-affiliate.html">Affiliate</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-on-sale.html">On sale</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-video.html">Video Featured</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-groupped.html">Grouped</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-out-stock.html">Out Of Stock</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Woo Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="shopping-cart.html">Shopping Cart</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="checkout.html">Checkout</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="compare.html">Compare</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="order-tracking.html">Order Tracking</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="my-account.html">My Account</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="#">대량상품</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Basic Page<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="contact-us.html">Contact</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="faqs.html">Faqs</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="comming-soon.html">Comming Soon</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="404-page.html">404 Page</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Vendor Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="become-a-vendor.html">Become a Vendor</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-store.html">Vendor Store</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-dashboard-free.html">Vendor Dashboard Free</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-dashboard-pro.html">Vendor Dashboard Pro</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-list.html">Store List</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-list.html">Store List 2</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-detail.html">Store Detail</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="#">이벤트</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Blog Layout<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="blog-grid.html">Grid</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-list.html">Listing</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-small-thumb.html">Small Thumb</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-left-sidebar.html">Left Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-right-sidebar.html">Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Single Blog<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="blog-detail.html">Single 1</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-2.html">Single 2</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-3.html">Single 3</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-4.html">Single 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
+                    <ul class="navigation__extra">
+                        <li><a href="#">Sell on Martfury</a></li>
+                        <li><a href="#">Tract your order</a></li>
+                        <li>
+                            <div class="ps-dropdown"><a href="#">US Dollar</a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="#">Us Dollar</a></li>
+                                    <li><a href="#">Euro</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
+                                    <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <header class="header header--mobile" data-sticky="true">
+        <div class="header__top">
+            <div class="header__left">
+                <p>Welcome to Martfury Online Shopping Store !</p>
+            </div>
+            <div class="header__right">
+                <ul class="navigation__extra">
+                    <li><a href="#">Sell on Martfury</a></li>
+                    <li><a href="#">Tract your order</a></li>
+                    <li>
+                        <div class="ps-dropdown"><a href="#">US Dollar</a>
+                            <ul class="ps-dropdown-menu">
+                                <li><a href="#">Us Dollar</a></li>
+                                <li><a href="#">Euro</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
+                            <ul class="ps-dropdown-menu">
+                                <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
+                                <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navigation--mobile">
+            <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="img/honshop.png" alt=""></a></div>
+            <div class="navigation__right">
+                <div class="header__actions">
+                    <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                        <div class="ps-cart__content">
+                            <div class="ps-cart__items">
+                                <div class="ps-product--cart-mobile">
+                                    <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt=""></a></div>
+                                    <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                        <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                    </div>
+                                </div>
+                                <div class="ps-product--cart-mobile">
+                                    <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/5.jpg" alt=""></a></div>
+                                    <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                        <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ps-cart__footer">
+                                <h3>Sub Total:<strong>$59.99</strong></h3>
+                                <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ps-block--user-header">
+                        <div class="ps-block__left"><i class="icon-user"></i></div>
+                        <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원등록</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-search--mobile">
+            <form class="ps-form--search-mobile" action="index.html" method="get">
+                <div class="form-group--nest">
+                    <input class="form-control" type="text" placeholder="Search something...">
+                    <button><i class="icon-magnifier"></i></button>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="ps-panel--sidebar" id="cart-mobile">
+        <div class="ps-panel__header">
+            <h3>Shopping Cart</h3>
+        </div>
+        <div class="navigation__content">
+            <div class="ps-cart--mobile">
+                <div class="ps-cart__content">
+                    <div class="ps-product--cart-mobile">
+                        <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt=""></a></div>
+                        <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                            <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-cart__footer">
+                    <h3>Sub Total:<strong>$59.99</strong></h3>
+                    <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<script src="shopView/js/gnb_v1.js"></script>
-<script type="text/javascript">
-//
-gnbMenu.update();
-
-// 검색창 클래스 추가/삭제
-$(document).ready(function(){
-    $('#gnb .inp_search').focus(function(){
-        $(this).addClass('focus');
-    });
-    $('#gnb .inp_search').blur(function(){
-        $(this).removeClass('focus');
-    });
-    // 검색창기능 수정
-    $('[name=sword]').on('keyup', function(){
-        if($('#edit').length > 0) $('#edit').val('Y');
-        var str = $(this).val();
-        //var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
-        var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%\\\=\(\'\"]/gi; // & 제거 B&O 검색어 이슈
-        if(regExp.test(str)){
-            var result = str.replace(regExp, "");
-            $(this).val(result);
-        }
-    });
-});
-// 로고 클릭 이벤트
-$('#header .link_main').on('click', function(e){
-    e.preventDefault();
-    KurlyTracker.setAction('select_main_logo').sendData();
-    location.href = $(this).attr('href');
-});
-
-$('#gnb .gnb .link').on('click', function(e){
-    e.preventDefault();
-    var _event_name, _event_info;
-    if($(this).hasClass('new')){
-        _event_name = 'select_new_product_subtab';
-    }else if($(this).hasClass('best')){
-        _event_name = 'select_popular_product_subtab';
-    }else if($(this).hasClass('bargain')){
-        _event_name = 'select_bargain_subtab';
-    }else if($(this).hasClass('event')){
-        _event_name = 'select_event_list_subtab';
-    }
-    _event_info = $(this).attr('href');
-
-    KurlyTracker.setEventInfo(_event_info).setAction(_event_name).sendData();
-    location.href = _event_info;
-});
-
-// 장바구니 아이콘 클릭이벤트
-$('#gnbMenu .btn_cart').on('click', function(e){
-    e.preventDefault();
-    KurlyTracker.setAction('select_cart').sendData();
-    location.href = $(this).attr('href');
-});
-</script>
-
-
-
-</div>
-
-
-		<div id="main">
-			<div id="content">
-
-		    <!-- 퀵 메뉴 -->
-			<div id="qnb" class="quick-navigation">
-
-
-<!-- 이벤트 배너영역 -->
-<div class="bnr_qnb" id="brnQuick"></div>
-<script>
-    var brnQuick = {
-        nowTime : '1584340981205',
-        update : function(){
-            $.ajax({
-                url : campaginUrl + 'pc/service/bnr_quick.html'
-            }).done(function(result){
-                $('#brnQuick').html(result);
-            });    
-        }
-    }
-    brnQuick.update();
-</script>
-<!-- // 이벤트 배너영역 -->
-
-<div class="side_menu">
-    <a href="/shop/event/kurlyEvent.php?htmid=event/lovers/lovers_200301" class="link_menu ">등급별 혜택</a>
-    <a href="/shop/board/list.php?id=recipe" class="link_menu ">레시피</a>
-    <a href="/shop/goods/goods_review_best.php" class="link_menu ">베스트 후기</a>
-</div>
-<div class="side_recent" style="display:none">
-    <strong class="tit">최근 본 상품</strong>
-    <div class="list_goods" data-height="209">
-        <ul class="list"></ul>
+    <div class="ps-panel--sidebar" id="navigation-mobile">
+        <div class="ps-panel__header">
+            <h3>Categories</h3>
+        </div>
+        <div class="ps-panel__content">
+            <ul class="menu--mobile">
+                <li class="current-menu-item "><a href="#">Hot Promotions</a>
+                </li>
+                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#">Consumer Electronic</a><span class="sub-toggle"></span>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <h4>Electronic<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="#">Home Audio &amp; Theathers</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">TV &amp; Videos</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Camera, Photos &amp; Videos</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Cellphones &amp; Accessories</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Headphones</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Videosgames</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Wireless Speakers</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Office Electronic</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Accessories &amp; Parts<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="#">Digital Cables</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Audio &amp; Video Cables</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Batteries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="current-menu-item "><a href="#">Clothing &amp; Apparel</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Home, Garden &amp; Kitchen</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Health &amp; Beauty</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Yewelry &amp; Watches</a>
+                </li>
+                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#">Computer &amp; Technology</a><span class="sub-toggle"></span>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <h4>Computer &amp; Technologies<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="#">Computer &amp; Tablets</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Laptop</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Monitors</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Networking</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Drive &amp; Storages</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Computer Components</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Security &amp; Protection</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Gaming Laptop</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#">Accessories</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="current-menu-item "><a href="#">Babies &amp; Moms</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Sport &amp; Outdoor</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Phones &amp; Accessories</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Books &amp; Office</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Cars &amp; Motocycles</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Home Improments</a>
+                </li>
+                <li class="current-menu-item "><a href="#">Vouchers &amp; Services</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <button type="button" class="btn btn_up off">최근 본 상품 위로 올리기</button>
-    <button type="button" class="btn btn_down">최근 본 상품 아래로 내리기</button>
-</div>
-<script>
-/**
- * 상품상세일때 현재 보고 있는 상품 담기. 상품URL & 상품이미지
- * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
- */
-var getGoodsRecent = (function(){
-    var i, len, getGoodsRecent, item, _nowTime = '1584340981205';
-
-    _goodsRecent();
-    function _goodsRecent(){
-        if(localStorage.getItem('goodsRecent') === null){
-            return false;
-        }
-        
-        try{
-            getGoodsRecent = JSON.parse(localStorage.getItem("goodsRecent"));
-            len = getGoodsRecent.length;
-            if(addDays(getGoodsRecent[len - 1].time, 1) < _nowTime){
-                localStorage.removeItem('goodsRecent');
-            }else{
-                for(i = 0; i < len; i++){
-                    item = '<li><a class="link_goods" href="/shop/goods/goods_view.php?goodsno=' + getGoodsRecent[i].no + '"><img src="' + getGoodsRecent[i].thumb + '" alt=""></a></li>';
-                    $('.side_recent .list').append(item);
-                }
-                $('.side_recent').show();
-            }
-        } catch(e){
-            console.log("JSON parse error from the Quick menu goods list!!!", e);
-        }
-    }
-
-    function addDays(date, days){
-        var result = new Date(date);
-        result.setDate(result.getDate() + days);
-        return result.getTime();
-    }
-    
-    // return {
-    // }
-})();
-</script>
-
-			</div>
-
-
-<!-- 메인공지팝업 -->
-<div id="mainNotice">
-    <div id="mainNoticePop">
-        <pop-view-pc v-for="(popup, idx) in popList" v-if="!noData"
-                     :popup-id="popupId"
-                     :key="'popup'+idx"
-                     :idx="idx"
-                     :item="popup"
-                     @popup-close="popupClose"
-        ></pop-view-pc>
+    <div class="navigation--list">
+        <div class="navigation__content"><a class="navigation__item ps-toggle--sidebar" href="#menu-mobile"><i class="icon-menu"></i><span> Menu</span></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-list4"></i><span> Categories</span></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="icon-magnifier"></i><span> Search</span></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i class="icon-bag2"></i><span> Cart</span></a></div>
     </div>
+    <div class="ps-panel--sidebar" id="search-sidebar">
+        <div class="ps-panel__header">
+            <form class="ps-form--search-mobile" action="index.html" method="get">
+                <div class="form-group--nest">
+                    <input class="form-control" type="text" placeholder="Search something...">
+                    <button><i class="icon-magnifier"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="navigation__content"></div>
+    </div>
+    <div class="ps-panel--sidebar" id="menu-mobile">
+        <div class="ps-panel__header">
+            <h3>Menu</h3>
+        </div>
+        <div class="ps-panel__content">
+            <ul class="menu--mobile">
+                <li class="menu-item-has-children"><a href="index.html">Home</a><span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li class="current-menu-item "><a href="index.html">Marketplace Full Width</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-2.html">Home Auto Parts</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-10.html">Home Technology</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-9.html">Home Organic</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-3.html">Home Marketplace V1</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-4.html">Home Marketplace V2</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-5.html">Home Marketplace V3</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-6.html">Home Marketplace V4</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-7.html">Home Electronic</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-8.html">Home Furniture</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-kids.html">Home Kids</a>
+                        </li>
+                        <li class="current-menu-item "><a href="homepage-photo-and-video.html">Home photo and picture</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children has-mega-menu"><a href="shop-default.html">Shop</a><span class="sub-toggle"></span>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <h4>Catalog Pages<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
+                                </li>
+                                <li class="current-menu-item "><a href="shop-default.html">Shop Fullwidth</a>
+                                </li>
+                                <li class="current-menu-item "><a href="shop-categories.html">Shop Categories</a>
+                                </li>
+                                <li class="current-menu-item "><a href="shop-sidebar.html">Shop Sidebar</a>
+                                </li>
+                                <li class="current-menu-item "><a href="shop-sidebar-without-banner.html">Shop Without Banner</a>
+                                </li>
+                                <li class="current-menu-item "><a href="shop-carousel.html">Shop Carousel</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Product Layout<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="product-default.html">Default</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-extend.html">Extended</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-full-content.html">Full Content</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-box.html">Boxed</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-sidebar.html">Sidebar</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-default.html">Fullwidth</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Product Types<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="product-default.html">Simple</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-default.html">Color Swatches</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-image-swatches.html">Images Swatches</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-countdown.html">Countdown</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-multi-vendor.html">Multi-Vendor</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-instagram.html">Instagram</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-affiliate.html">Affiliate</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-on-sale.html">On sale</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-video.html">Video Featured</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-groupped.html">Grouped</a>
+                                </li>
+                                <li class="current-menu-item "><a href="product-out-stock.html">Out Of Stock</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Woo Pages<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="shopping-cart.html">Shopping Cart</a>
+                                </li>
+                                <li class="current-menu-item "><a href="checkout.html">Checkout</a>
+                                </li>
+                                <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
+                                </li>
+                                <li class="current-menu-item "><a href="compare.html">Compare</a>
+                                </li>
+                                <li class="current-menu-item "><a href="order-tracking.html">Order Tracking</a>
+                                </li>
+                                <li class="current-menu-item "><a href="my-account.html">My Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item-has-children has-mega-menu"><a href="">Pages</a><span class="sub-toggle"></span>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <h4>Basic Page<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="about-us.html">About Us</a>
+                                </li>
+                                <li class="current-menu-item "><a href="contact-us.html">Contact</a>
+                                </li>
+                                <li class="current-menu-item "><a href="faqs.html">Faqs</a>
+                                </li>
+                                <li class="current-menu-item "><a href="comming-soon.html">Comming Soon</a>
+                                </li>
+                                <li class="current-menu-item "><a href="404-page.html">404 Page</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Vendor Pages<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="become-a-vendor.html">Become a Vendor</a>
+                                </li>
+                                <li class="current-menu-item "><a href="vendor-store.html">Vendor Store</a>
+                                </li>
+                                <li class="current-menu-item "><a href="vendor-dashboard-free.html">Vendor Dashboard Free</a>
+                                </li>
+                                <li class="current-menu-item "><a href="vendor-dashboard-pro.html">Vendor Dashboard Pro</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item-has-children has-mega-menu"><a href="">Blogs</a><span class="sub-toggle"></span>
+                    <div class="mega-menu">
+                        <div class="mega-menu__column">
+                            <h4>Blog Layout<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="blog-grid.html">Grid</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-list.html">Listing</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-small-thumb.html">Small Thumb</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-left-sidebar.html">Left Sidebar</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-right-sidebar.html">Right Sidebar</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__column">
+                            <h4>Single Blog<span class="sub-toggle"></span></h4>
+                            <ul class="mega-menu__list">
+                                <li class="current-menu-item "><a href="blog-detail.html">Single 1</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-detail-2.html">Single 2</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-detail-3.html">Single 3</a>
+                                </li>
+                                <li class="current-menu-item "><a href="blog-detail-4.html">Single 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="homepage-1">
+        <div class="ps-home-banner ps-home-banner--1">
+            <div class="ps-container">
+                <div class="ps-section__left">
+                    <div class="ps-carousel--nav-inside owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-1.jpg" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-2.jpg" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-3.jpg" alt=""></a></div>
+                    </div>
+                </div>
+                <div class="ps-section__right"><a class="ps-collection" href="#"><img src="img/slider/home-1/promotion-1.jpg" alt=""></a><a class="ps-collection" href="#"><img src="img/slider/home-1/promotion-2.jpg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="ps-site-features">
+            <div class="ps-container">
+                <div class="ps-block--site-features">
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-rocket"></i></div>
+                        <div class="ps-block__right">
+                            <h4>Free Delivery</h4>
+                            <p>For all oders over $99</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-sync"></i></div>
+                        <div class="ps-block__right">
+                            <h4>90 Days Return</h4>
+                            <p>If goods have problems</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-credit-card"></i></div>
+                        <div class="ps-block__right">
+                            <h4>Secure Payment</h4>
+                            <p>100% secure payment</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-bubbles"></i></div>
+                        <div class="ps-block__right">
+                            <h4>24/7 Support</h4>
+                            <p>Dedicated support</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-gift"></i></div>
+                        <div class="ps-block__right">
+                            <h4>Gift Service</h4>
+                            <p>Support gift service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-deal-of-day">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <div class="ps-block--countdown-deal">
+                        <div class="ps-block__left">
+                            <h3>Deals of the day</h3>
+                        </div>
+                        <div class="ps-block__right">
+                            <figure>
+                                <figcaption>End in:</figcaption>
+                                <ul class="ps-countdown" data-time="July 21, 2020 15:37:25">
+                                    <li><span class="days"></span></li>
+                                    <li><span class="hours"></span></li>
+                                    <li><span class="minutes"></span></li>
+                                    <li><span class="seconds"></span></li>
+                                </ul>
+                            </figure>
+                        </div>
+                    </div><a href="#">View all</a>
+                </div>
+                <div class="ps-section__content">
+                    <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="4" data-owl-item-lg="5" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/1.jpg" alt=""></a>
+                                <div class="ps-product__badge">-16%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price sale">$567.99 <del>$670.00 </del><small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Long Sofa Fabric In Blue Navy Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="94">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:16</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/2.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price">$101.99<small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Aroma Rice Cooker</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="64">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:99</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/3.jpg" alt=""></a>
+                                <div class="ps-product__badge">-25%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price sale">$42.00 <del>$60.00 </del><small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Simple Plastice Chair In White Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="9">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:96</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/4.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price">$320.00<small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Fabric Chair In Brown Colorr</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="22">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:87</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/5.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price">$85.00<small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Set 14-Piece Knife From KichiKit</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="80">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/6.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price">$92.00<small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Magic Bullet NutriBullet Pro 900 Series Blender</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="77">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:57</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/7.jpg" alt=""></a>
+                                <div class="ps-product__badge">-46%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container">
+                                <p class="ps-product__price sale">$42.00 <del>$60.00 </del><small>18% off</small></p>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <div class="ps-product__progress-bar ps-progress" data-value="41">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:32</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-home-ads">
+            <div class="ps-container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="img/collection/home-1/1.jpg" alt=""></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="img/collection/home-1/2.jpg" alt=""></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="img/collection/home-1/3.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-top-categories">
+            <div class="ps-container">
+                <h3>Top categories of the month</h3>
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/1.jpg" alt="">
+                            <p>Electronics</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/2.jpg" alt="">
+                            <p>Clothings</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/3.jpg" alt="">
+                            <p>Computers</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/4.jpg" alt="">
+                            <p>Home & Kitchen</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/5.jpg" alt="">
+                            <p>Health & Beauty</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/6.jpg" alt="">
+                            <p>Health & Beauty</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/7.jpg" alt="">
+                            <p>Jewelry & Watch</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 ">
+                        <div class="ps-block--category"><a class="ps-block__overlay" href="shop-default.html"></a><img src="img/categories/8.jpg" alt="">
+                            <p>Technology Toys</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-product-list ps-clothings">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <h3>Consumer Electronics</h3>
+                    <ul class="ps-section__links">
+                        <li><a href="shop-grid.html">New Arrivals</a></li>
+                        <li><a href="shop-grid.html">Best seller</a></li>
+                        <li><a href="shop-grid.html">Must Popular</a></li>
+                        <li><a href="shop-grid.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="ps-section__content">
+                    <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/1.jpg" alt=""></a>
+                                <div class="ps-product__badge">-16%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Marshall Kilburn Portable Wireless</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Marshall Kilburn Portable Wireless</a>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/2.jpg" alt=""></a>
+                                <div class="ps-product__badge hot">hot</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/3.jpg" alt=""></a>
+                                <div class="ps-product__badge">-25%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Sound Intone I65 Earphone White Version</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Sound Intone I65 Earphone White Version</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/4.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/5.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Samsung UHD TV 24inch</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung UHD TV 24inch</a>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/6.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Store</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">EPSION Plaster Printer</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">EPSION Plaster Printer</a>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/7.jpg" alt=""></a>
+                                <div class="ps-product__badge">-46%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">LG White Front Load Steam Washer</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">LG White Front Load Steam Washer</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/8.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Edifier Powered Bookshelf Speakers</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Edifier Powered Bookshelf Speakers</a>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/9.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/10.jpg" alt=""></a>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
+                                    <p class="ps-product__price">$42.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-product-list ps-clothings">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <h3>Apparels & Clothings</h3>
+                    <ul class="ps-section__links">
+                        <li><a href="shop-grid.html">New Arrivals</a></li>
+                        <li><a href="shop-grid.html">Best seller</a></li>
+                        <li><a href="shop-grid.html">Must Popular</a></li>
+                        <li><a href="shop-grid.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="ps-section__content">
+                    <div class="ps-carousel--responsive owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="2" data-owl-item-lg="4" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/1.jpg" alt=""></a>
+                                <div class="ps-product__badge">-16%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Herschel Leather Duffle Bag In Brown Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Herschel Leather Duffle Bag In Brown Color</a>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/2.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Unero Military Classical Backpack</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Unero Military Classical Backpack</a>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/3.jpg" alt=""></a>
+                                <div class="ps-product__badge">-25%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Rayban Rounded Sunglass Brown Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Rayban Rounded Sunglass Brown Color</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/4.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/5.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Men’s Sports Runnning Swim Board Shorts</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Men’s Sports Runnning Swim Board Shorts</a>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/6.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Store</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Paul’s Smith Sneaker InWhite Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Paul’s Smith Sneaker InWhite Color</a>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/clothing/7.jpg" alt=""></a>
+                                <div class="ps-product__badge">-46%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-product-list ps-garden-kitchen">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <h3>Home, Garden & Kitchen</h3>
+                    <ul class="ps-section__links">
+                        <li><a href="shop-grid.html">New Arrivals</a></li>
+                        <li><a href="shop-grid.html">Best seller</a></li>
+                        <li><a href="shop-grid.html">Must Popular</a></li>
+                        <li><a href="shop-grid.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="ps-section__content">
+                    <div class="ps-carousel--responsive owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/1.jpg" alt=""></a>
+                                <div class="ps-product__badge">-16%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Long Sofa Fabric In Blue Navy Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Korea Long Sofa Fabric In Blue Navy Color</a>
+                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/2.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Aroma Rice Cooker</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Aroma Rice Cooker</a>
+                                    <p class="ps-product__price">$101.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/3.jpg" alt=""></a>
+                                <div class="ps-product__badge">-25%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Simple Plastice Chair In White Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Simple Plastice Chair In White Color</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/4.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Fabric Chair In Brown Colorr</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Korea Fabric Chair In Brown Colorr</a>
+                                    <p class="ps-product__price">$320.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/5.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Set 14-Piece Knife From KichiKit</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Set 14-Piece Knife From KichiKit</a>
+                                    <p class="ps-product__price">$85.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/6.jpg" alt=""></a>
+                                <div class="ps-product__badge out-stock">Out Of Stock</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Store</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Magic Bullet NutriBullet Pro 900 Series Blender</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Magic Bullet NutriBullet Pro 900 Series Blender</a>
+                                    <p class="ps-product__price">$92.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/7.jpg" alt=""></a>
+                                <div class="ps-product__badge">-46%</div>
+                                <ul class="ps-product__actions">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Young Shop</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
+                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-home-ads">
+            <div class="ps-container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="img/collection/home-1/ad-1.jpg" alt=""></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="img/collection/home-1/ad-2.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-download-app">
+            <div class="ps-container">
+                <div class="ps-block--download-app">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                <div class="ps-block__thumbnail"><img src="img/app.png" alt=""></div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                <div class="ps-block__content">
+                                    <h3>Download Martfury App Now!</h3>
+                                    <p>Shopping fastly and easily more with our app. Get a link to download the app on your phone</p>
+                                    <form class="ps-form--download-app" action="do_action" method="post">
+                                        <div class="form-group--nest">
+                                            <input class="form-control" type="Email" placeholder="Email Address">
+                                            <button class="ps-btn">Subscribe</button>
+                                        </div>
+                                    </form>
+                                    <p class="download-link"><a href="#"><img src="img/google-play.png" alt=""></a><a href="#"><img src="img/app-store.png" alt=""></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-product-list ps-new-arrivals">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <h3>Hot New Arrivals</h3>
+                    <ul class="ps-section__links">
+                        <li><a href="shop-grid.html">Technologies</a></li>
+                        <li><a href="shop-grid.html">Electronic</a></li>
+                        <li><a href="shop-grid.html">Furnitures</a></li>
+                        <li><a href="shop-grid.html">Clothing & Apparel</a></li>
+                        <li><a href="shop-grid.html">Health & Beauty</a></li>
+                        <li><a href="shop-grid.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="ps-section__content">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 32GB</a>
+                                    <p class="ps-product__price">$990.50</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 64GB</a>
+                                    <p class="ps-product__price">$1120.50</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 128GB</a>
+                                    <p class="ps-product__price">$1220.50</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/2.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Marshall Kilburn Portable Wireless Speaker</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price">$36.78 – $56.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/3.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Herschel Leather Duffle Bag In Brown Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price">$125.30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/4.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price">$55.30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/5.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Grand Slam Indoor Of Show Jumping Novel</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>02</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$41.27 <del>$52.99 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-product--horizontal">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/6.jpg" alt=""></a></div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Sound Intone I65 Earphone White Version</a>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div>
+                                    <p class="ps-product__price sale">$41.27 <del>$62.39 </del></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-newsletter">
+            <div class="ps-container">
+                <form class="ps-form--newsletter" action="do_action" method="post">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="ps-form__left">
+                                <h3>Newsletter</h3>
+                                <p>Subcribe to get information about products and coupons</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="ps-form__right">
+                                <div class="form-group--nest">
+                                    <input class="form-control" type="email" placeholder="Email address">
+                                    <button class="ps-btn">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="ps-footer">
+        <div class="ps-container">
+            <div class="ps-footer__widgets">
+                <aside class="widget widget_footer widget_contact-us">
+                    <h4 class="widget-title">Contact us</h4>
+                    <div class="widget_content">
+                        <p>Call us 24/7</p>
+                        <h3>1800 97 97 69</h3>
+                        <p>502 New Design Str, Melbourne, Australia <br><a href="mailto:contact@martfury.co">contact@martfury.co</a></p>
+                        <ul class="ps-list--social">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Quick links</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Term & Condition</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Company</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#">Affilate</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Bussiness</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Our Press</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="my-account.html">My account</a></li>
+                        <li><a href="shop-default.html">Shop</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="ps-footer__links">
+                <p><strong>Consumer Electric:</strong><a href="#">Air Conditioners</a><a href="#">Audios &amp; Theaters</a><a href="#">Car Electronics</a><a href="#">Office Electronics</a><a href="#">TV Televisions</a><a href="#">Washing Machines</a>
+                </p>
+                <p><strong>Clothing &amp; Apparel:</strong><a href="#">Printers</a><a href="#">Projectors</a><a href="#">Scanners</a><a href="#">Store &amp; Business</a><a href="#">4K Ultra HD TVs</a><a href="#">LED TVs</a><a href="#">OLED TVs</a>
+                </p>
+                <p><strong>Home, Garden &amp; Kitchen:</strong><a href="#">Cookware</a><a href="#">Decoration</a><a href="#">Furniture</a><a href="#">Garden Tools</a><a href="#">Garden Equipments</a><a href="#">Powers And Hand Tools</a><a href="#">Utensil &amp; Gadget</a>
+                </p>
+                <p><strong>Health &amp; Beauty:</strong><a href="#">Hair Care</a><a href="#">Decoration</a><a href="#">Hair Care</a><a href="#">Makeup</a><a href="#">Body Shower</a><a href="#">Skin Care</a><a href="#">Cologine</a><a href="#">Perfume</a>
+                </p>
+                <p><strong>Jewelry &amp; Watches:</strong><a href="#">Necklace</a><a href="#">Pendant</a><a href="#">Diamond Ring</a><a href="#">Sliver Earing</a><a href="#">Leather Watcher</a><a href="#">Gucci</a>
+                </p>
+                <p><strong>Computer &amp; Technologies:</strong><a href="#">Desktop PC</a><a href="#">Laptop</a><a href="#">Smartphones</a><a href="#">Tablet</a><a href="#">Game Controller</a><a href="#">Audio &amp; Video</a><a href="#">Wireless Speaker</a><a href="#">Done</a>
+                </p>
+            </div>
+            <div class="ps-footer__copyright">
+                <p>© 2018 Martfury. All Rights Reserved</p>
+                <p><span>We Using Safe Payment For:</span><a href="#"><img src="img/payment-method/1.jpg" alt=""></a><a href="#"><img src="img/payment-method/2.jpg" alt=""></a><a href="#"><img src="img/payment-method/3.jpg" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
+            </div>
+        </div>
+    </footer>
+    <div class="ps-popup" id="subscribe" data-time="500">
+        <div class="ps-popup__content bg--cover" data-background="img/bg/subscribe.jpg"><a class="ps-popup__close" href="#"><i class="icon-cross"></i></a>
+            <form class="ps-form--subscribe-popup" action="index.html" method="get">
+                <div class="ps-form__content">
+                    <h4>Get <strong>25%</strong> Discount</h4>
+                    <p>Subscribe to the Martfury mailing list <br /> to receive updates on new arrivals, special offers <br /> and our promotions.</p>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Email Address" required>
+                            <button class="ps-btn">Subscribe</button>
+                        </div>
+                        <div class="ps-checkbox">
+                            <input class="form-control" type="checkbox" id="not-show" name="not-show">
+                            <label for="not-show">Don't show this popup again</label>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
+        <div class="ps-search__content">
+            <form class="ps-form--primary-search" action="do_action" method="post">
+                <input class="form-control" type="text" placeholder="Search for...">
+                <button><i class="aroma-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+    <script src="plugins/jquery-1.12.4.min.js"></script>
+    <script src="plugins/popper.min.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="plugins/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="plugins/masonry.pkgd.min.js"></script>
+    <script src="plugins/isotope.pkgd.min.js"></script>
+    <script src="plugins/jquery.matchHeight-min.js"></script>
+    <script src="plugins/slick/slick/slick.min.js"></script>
+    <script src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+    <script src="plugins/slick-animation.min.js"></script>
+    <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+    <script src="plugins/jquery.slimscroll.min.js"></script>
+    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="plugins/gmap3.min.js"></script>
+    <!-- custom scripts-->
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxflHHc5FlDVI-J71pO7hM1QJNW1dRp4U&amp;region=GB"></script>
+</body>
 
-
-</div>
-<script src="shopView/js/main_notice_v1.js"></script>
-<script>
-    mainNotice.type='pc';
-</script>
-<!-- // 메인공지팝업 -->
-
-
-
-<div id="kurlyMain" class="page_aticle page_main" v-cloak>
-    <h2 class="screen_out">마켓컬리 메인</h2>
-    <component-printer
-            v-for="section in mainData"
-            :section="section"
-            :type="type"
-            :component-name="typeToComponent(section.section_type)"
-    ></component-printer>
-</div>
-
-<div class="bg_loading" id="bgLoading" style="display:block">
-    <div class="loading_show"></div>
-</div>
-
-<script src="https://res.kurly.com/js/lib/moment.min.js"></script>
-<script src="https://res.kurly.com/js/lib/jquery.bxslider.min.js"></script>
-<script src="shopView/js/common_filter.js"></script>
-<script src="shopView/js/main_v1.js"></script>
-
-<script>
-$(document).ready(function(){
-    kurlyMain.type = 'pc';
-    kurlyMain.update();
-
-    // GNB Logo checking
-    chkGNBLogo('pc');
-});
-</script>
-
-
-</div><!-- #content -->
-		</div><!-- #container -->
-
-
-		<!-- 배송지역 검색 결과 -->
-		<div id="layerDSR"><!-- layer delivery search result -->
-			<div class="bg_dim"></div>
-			
-			<div class="in_layer">
-				<div class="inner_layer layer_star">
-					<strong class="dsr_result">샛별배송 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_kurly.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="샛별배송 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">오늘 밤 11시 전</strong>까지 주문시<br>
-						<strong class="emph">다음날 아침 7시</strong> 이전 도착합니다!
-					</p>
-					<p class="dsr_notice">샛별배송은 휴무 없이 매일 배송 합니다</p>
-				</div>
-
-				<div class="inner_layer layer_normal">
-					<strong class="dsr_result">택배배송 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_car.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="택배배송 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">밤 8시 전</strong>까지 주문시<br>
-						<strong class="emph">다음날</strong> 도착합니다!
-					</p>
-					<p class="dsr_notice">일요일은 배송 휴무로 토요일에는 주문 불가</p>
-				</div>
-
-				<div class="inner_layer layer_none">
-					<strong class="dsr_result">배송 불가 지역입니다.</strong>
-					<div class="ani">
-						<img data-src="https://res.kurly.com/mobile/img/1908/img_delivery_none.png" src="https://res.kurly.com/mobile/service/common/bg_1x1.png" alt="배송불가 이미지">
-					</div>
-					<p class="dsr_desc">
-						<strong class="emph">도로명 주소</strong>로 검색하셨다면,<br>
-						<strong class="emph">지번 주소(구 주소)</strong>로 다시 시도해 주세요.
-					</p>
-					<p class="dsr_notice">배송지역을 확장하도록 노력하겠습니다!</p>
-				</div>
-
-				<div class="layer_btn1">
-					<button type="button" class="btn_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();">확인</button>
-				</div>
-				<button type="button" class="layer_close" onclick="$('#layerDSR').hide();$(this).parent().find('.inner_layer').hide();"></button>
-			</div>
-		</div>
-
-		<div id="footer">
-			<div class="inner_footer">
-				<div class="footer_cc">
-					<h2 class="tit_cc">고객행복센터</h2>
-					<div class="cc_view cc_call">
-						<h3><span class="tit">1644-1100</span></h3>
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_kakao">
-						<h3><a class="tit" href="#none">카카오톡 문의</a></h3>
-						<script type="text/javascript">
-							$('.cc_kakao .tit').on('click',function(e){
-								e.preventDefault();
-								$.ajax({
-									type: "GET",
-									url: apiDomain+'/v1/mypage/asks/confirm/kakao',
-									dataType: 'json',
-									success: function(data) {
-										if(data.data.ok_button_action_url.indexOf('https://api.happytalk.io/') > -1){
-											if(confirm('['+data.data.title+'] '+data.data.message)) window.open(data.data.ok_button_action_url,'_blank');
-										}else{
-											alert(data.data.title+'\n'+data.data.message);
-										}
-									}
-								})
-							});
-						</script>
-	
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_qna">
-						<h3><a href="/shop/mypage/mypage_qna_register.php?mode=add_qna" class="tit">1:1 문의</a></h3>
-						<dl class="list">
-							<dt>24시간 접수 가능</dt>
-							<dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
-						</dl>
-					</div>
-				</div>
-				<div class="company">
-					<ul class="list">
-						<li><a class="link" href="/shop/introduce/about_kurly.php">혼샵소개</a></li><!-- 2018-09-06 어바웃컬리 장아름 수정 -->
-						<li><a class="link" href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&showinfo=0&wmode=opaque&enablejsapi=1" onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">혼샵소개영상</a></li>
-						<li><a class="link" href="https://marketkurly.recruiter.co.kr/appsite/company/index" target="_blank">인재채용</a></li>
-						<li><a class="link" href="/shop/service/agreement.php">이용약관</a></li>
-						<li><a class="link emph" href="/shop/service/private.php">개인정보처리방침</a></li>
-						<li><a class="link" href="/shop/service/guide.php">이용안내</a></li>
-					</ul>
-					
-					혼 라이프 주식회사 <span class="bar">I</span> 사업자등록번호 : 210-86-40254 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&apv_perm_no=" target="_blank" class="link">사업자정보 확인</a>
-					<br>
-					통신판매업 : 제 2018-서울영등포-01646 호 <span class="bar">I</span> 개인정보보호책임자 : 이고은
-					<br>
-					주소 : 서울특별시 영등포구 양산로 53(우:07271) <span class="bar">I</span> 대표이사 : 강노이
-					<br>
-					입점문의 : <a href="https://forms.gle/NJNBNmtYeKQyX5Rn9" target="_blank" class="link">입점문의하기</a> <span class="bar">I</span> 제휴문의 : <a href="mailto:business@honlife.com" class="link">business@honlife.com</a>
-					<br>
-					채용문의 : <a href="mailto:recruit@honlife.com" class="link">recruit@honlife.com</a>
-					<br>
-					팩스: 070 - 7500 - 6098 <span class="bar">I</span> 이메일 : <a href="mailto:help@honlife.com" class="link">help@honlife.com</a>
-
-					<em class="copy">&copy; HON LIFE CO.LTD. ALL RIGHTS RESERVED</em>
-				</div>
-			</div>
-			
-			
-		</div>
-			
-	</div><!-- #main -->
-</div><!-- #wrap -->
-
-
-<!-- page Top -->
-<a href="#top" id="pageTop">맨 위로가기</a>
-<script>
-	$(document).ready(function(){
-		var pageTop = {
-			$target : $('#pageTop'),
-			$targetDefault : 0,
-			$scrollTop : 0,
-			$window : $(window),
-			$windowHeight : 0,
-			setTime : 500,
-			saveHeight : 0,
-			init:function(){
-			},
-			action:function(){
-				var $self = this;
-				$self.$windowHeight = parseInt($self.$window.height());
-				$self.$window.on('scroll', function(){
-					$self.$scrollTop = parseInt($self.$window.scrollTop());
-					if($self.$scrollTop >= $self.$windowHeight){
-						if(!$self.$target.hasClass('on')){
-							$self.position();
-							$self.$target.addClass('on');
-							$self.showAction();
-						}
-					}else{
-						if($self.$target.hasClass('on')){
-							$self.position();
-							$self.$target.removeClass('on');
-							$self.hideAction();
-						}
-					}
-				});
-                
-				$self.$target.on('click', function(e){
-					e.preventDefault();
-					$self.topAction();
-				});
-			},
-			showAction:function(){
-				var $self = this;
-				$self.$target.stop().animate({
-					opacity:1,
-					bottom:$self.saveHeight
-				}, $self.setTime);
-			},
-			hideAction:function(){
-				var $self = this;
-				$self.$target.stop().animate({
-					opacity:0,
-					bottom:-$self.$target.height()
-				}, $self.setTime);
-			},
-			topAction:function(){
-				var $self = this;
-				$self.hideAction();
-				$('html,body').animate({
-					scrollTop:0
-				}, $self.setTime);
-			},
-			position:function(){
-				var $self = this;
-				$self.saveHeight = 15;
-				if($('#sectionView').length > 0){
-					$self.saveHeight = 25;
-				}
-				if($('#branch-banner-iframe').length > 0 && parseInt( $('#branch-banner-iframe').css('bottom') ) > 0){
-					$('#footer').addClass('bnr_app');
-					$self.saveHeight += $('#branch-banner-iframe').height();
-				}
-			}
-		}
-		pageTop.action();
-	});
-</script>
-<!-- // page Top -->
-
-
-			
-<script>
-// 클릭인인경우(푸터에 있으나, 아직공용작업은 못함) => bgLoading 이부분 처리필요
-var bodyScroll = {
-	winScrollTop : 0,
-	body : $('body'),
-	gnb : $('#gnb'),
-	bg : $('#bgLoading'),
-	bodyFixed : function(){
-		var $self = this;
-		var gnbCheck = false;
-		$self.gnb = $('#gnb');
-		if($self.gnb.hasClass('gnb_stop')){
-			gnbCheck = true;
-		}
-		$self.body = $('body');
-		$self.bg = $('#bgLoading');
-		$self.winScrollTop = $(window).scrollTop();
-		$self.bg.show();
-		$self.body.addClass('noBody').css({
-			'top' : -$self.winScrollTop
-		});
-	},
-	bodyDefault : function(type){
-		var $self = this;
-		$self.body.removeClass('noBody').removeAttr('style');
-		$self.bg.hide();
-		if(type === undefined){
-			window.scrollTo(0, $self.winScrollTop);
-		}
-	}
-}
-</script>
-			
-
-
-<!-- 절대! 지우지마세요 : Start -->
-<iframe name="ifrmHidden" id="ifrmHidden" src="about:blank" style="display:none;width:100%;height:600px;"></iframe>
-<script>
-(function (theFrame) {
-  theFrame.contentWindow.location.href = theFrame.src;
-}(document.getElementById("ifrmHidden")));
-</script>
-<!-- 절대! 지우지마세요 : End -->
-
-<!-- PROM-316 [Branch] 트래킹 -->
-<script src="https://res.kurly.com/js/polifill/customeEvent.js"></script><!-- polifll -->
-<script>
-	window.addEventListener('load', function () {
-		// KM-1238 branch
-		(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-		branch.init('key_live_meOgzIdffiVWvdquf7Orkacksxa2LneN');
-		// branch.init('key_test_joIkrHgomhL3qaEreXL5QdigzEn6Ucd4');
-		branch.setIdentity(uuidCheck);
-		branch.track("pageview");
-
-		// branchReady
-		var _eventBranchReady = new CustomEvent("branchReady", {
-			detail:{ // 전달 할께 있으면 반드시 detail 오브젝트에 넣어야 함
-				val:'1',
-			}
-		});
-		document.dispatchEvent(_eventBranchReady);
-		// END branchReady
-	}, false);
-</script>
-<!-- // PROM-316 [Branch] 트래킹 -->
-
-			
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaWFUPWx5aDVYHSRoSXUU=","queueTime":0,"applicationTime":43,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

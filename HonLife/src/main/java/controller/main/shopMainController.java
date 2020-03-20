@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class shopMainController {
-	@RequestMapping("/shopMain")
+	@RequestMapping("/shopView/shopMain")
 	public String shopMain() {
 		return "shopView/shopMain";
 	}
-	@RequestMapping("/shopJoin")
+	@RequestMapping("/shopView/shopJoin")
 	public String shopJoin() {
 		return "shopView/shop/shop_join";
 	}
