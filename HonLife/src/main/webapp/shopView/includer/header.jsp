@@ -5,27 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <link href="shopView/css/header.css" rel="stylesheet" type="text/css">
+<link rel="styleSheet" href="shopView/css/normalize.css?ver=202003161543">
+<link rel="styleSheet" href="shopView/css/section1.css?ver=202003161543">
+<link rel="styleSheet" href="shopView/css/common.css?ver=202003161543">
+<script src="shopView/js/main_v1.js"></script>
+<script src="shopView/js/main_notice_v1.js"></script>
+<script src="shopView/js/kurlytracker.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 
-<div id="header"><!-- ie8 이하 브라우져 띠배너 -->
-<style type="text/css">
-    .notice_ie8{display:none;width:100%;height:70px;padding-top:23px;background-color:#d5586f;font-weight:400;font-size:16px;font-family:'Noto Sans';color:#fff;letter-spacing:-0.4px;text-align:center}
-    .notice_ie8 .inner_noticeie8{display:block;width:1050px;margin:0 auto}
-    .notice_ie8 .emph{padding:0 16px 0 11px;background:url(https://res.kurly.com/pc/ico/1801/ico_arrow_noticeie8.png) no-repeat 100% 55%;font-family:'Noto Sans';font-weight:700}
-</style>
-<a target="_blank" href="https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads" id="noticeIe8" class="notice_ie8">
-    <span class="inner_noticeie8">
-        고객님의 브라우저에서는 마켓컬리가 정상 동작하지 않습니다. 최신버전의 인터넷 익스플로러를 이용해주세요.    
-        <span class="emph">설치하기</span>
-    </span>
-</a>
-<script type="text/javascript">
-if( (document.all && !document.querySelector) || (document.all && document.querySelector && !document.addEventListener) ){
-    $('#noticeIe8').css({'display':'block'});
-}
-</script>
+<div id="header">
+
+
 <!-- // ie8 이하 브라우져 띠배너 -->
 
 <div class="bnr_header" id="top-message">
@@ -39,48 +31,7 @@ if( (document.all && !document.querySelector) || (document.all && document.query
                 </div>
             </div>
         </a>
-        <script>
-            // PROM-476 장차석 : GA) 이벤트 트래킹
-            $('#eventLanding').on('click', function(){
-                ga('send', 'event', 'click', 'general_header_sighup', location.href);
-            });
-        </script>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#top-message-close").on("click",function(){
-            setCookie('top_msg_banner2','set_cookie',1)
-        });
-        if(getCookie('top_msg_banner2') == 'set_cookie'){
-            $("#top-message").hide()
-        }else{
-            $("#top-message").show() ;
-        }
-    });
-
-    function setCookie(cookieName, value, exdays){
-        var exdate = new Date();
-        exdate.setDate(exdate.getDate() + exdays);
-        var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-        document.cookie = cookieName + "=" + cookieValue +"; path=/;"
-    }
-
-    function getCookie(cookieName) {
-        cookieName = cookieName + '=';
-        var cookieData = document.cookie;
-        var start = cookieData.indexOf(cookieName);
-        var cookieValue = '';
-        if(start != -1){
-            start += cookieName.length;
-            var end = cookieData.indexOf(';', start);
-            if(end == -1)end = cookieData.length;
-            cookieValue = cookieData.substring(start, end);
-        }
-        return unescape(cookieValue);
-    }
-</script>
-
 
 <!-- 탑 네비게이션 바 -->
 <div id="userMenu">
@@ -88,17 +39,12 @@ if( (document.all && !document.querySelector) || (document.all && document.query
             :login-check="loginCheck"
             :notification-item="notificationItem"
             :user-info="userInfo"
-            :return-url="returnUrl"
-    ></user-menu-pc>
+            :return-url="returnUrl">
+    </user-menu-pc>
 </div>
 
 <script src="shopView/js/usermenu_v1.js"></script>
-<script>
-$(document).ready(function(){
-    
-    userMenu.loginCheck = false;
-});
-</script>
+
 <!-- // 탑 네비게이션 바 -->
 
 
@@ -107,7 +53,7 @@ $(document).ready(function(){
     <h1 class="logo">
         <a href="/" class="link_main">
             <span id="gnbLogoContainer"></span>
-            <img src="shopView/images/honshop_main.png" alt="마켓컬리 로고">
+            <img src="shopView/images/honshop_main.png" alt="마켓컬리 로고" >
         </a>
     </h1>
     <a href="/shop/board/view.php?id=notice&no=64" onclick="ga('send','event','etc','main_gif_btn_click');" class="bnr_delivery">

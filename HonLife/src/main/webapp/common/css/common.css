@@ -233,7 +233,7 @@ only screen and (min-resolution: 1.5dppx) {
 #userMenu .lst:before,
 #userMenu .lst:after{display:none}
 #userMenu .none_sub .link_menu{padding-right:10px}
-#userMenu .menu_join .link_menu{color:#5f0080}
+#userMenu .menu_join .link_menu{color:#D2B65C}
 #userMenu .lst .link_menu{padding-right:0}
 /* SNB怨듯�� */
 #snb{float:left;width:200px}

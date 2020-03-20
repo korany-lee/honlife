@@ -30,10 +30,7 @@
 	margin-left: -100px
 }
 
-#headerLogo .logo img {
 
-	margin: 0 auto
-}
 
 #headerLogo .logo #gnbLogoContainer {
 	margin: 0 auto
@@ -537,7 +534,6 @@
  /* override */
     #content{padding-bottom:0}
     #qnb{top:516px}
-    #headerLogo .logo img {display: none}
 
     
 .bnr_header{position:relative;min-width:1050px;text-align:center;line-height:42px;font-size:14px}
