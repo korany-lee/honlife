@@ -64,7 +64,7 @@ input[type='text']::-ms-clear,
 input[type='number']::-ms-clear{display:none}
 
 /* old_湲곕낯���� ���댁���� �대���� */
-.layout-wrapper{position:relative;width:1050px;height:100%;margin:0 auto}
+.layout-wrapper{position:relative;width:1050px;margin:0 auto;height: 63px;}
 .layout-wrapper.goods-view-area{padding-right:40px}
 .layout-pagination{margin:60px 0 0 0;text-align:center}
 .layout-pagination-button {display:inline-block;width:34px;height:34px;border:1px solid #ddd;border-left:0 none;vertical-align:top}
