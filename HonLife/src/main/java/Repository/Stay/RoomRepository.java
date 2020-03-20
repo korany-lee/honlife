@@ -8,9 +8,9 @@ import Model.DTO.RoomDTO;
 
 @Repository
 public class RoomRepository {
-	@Autowired
-	SqlSession sqlSession;
 	
+	@Autowired
+	private SqlSession sqlSession;	
 	private final String namespace="roomMapper";
 	
 	public void roomInsert(RoomDTO dto) {

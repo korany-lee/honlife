@@ -1,5 +1,6 @@
 package Model.DTO;
 
+
 public class RoomDTO {
 	String roomNo;
 	Integer roomSize;
