@@ -6,7 +6,7 @@
 
 <head>
 
-<jsp:include page="../includer/managerheader.jsp"/>
+<jsp:include page="../../../common/manager/managerheader.jsp"/>
 	<link rel="icon" type="image/png" href="careView/contactform/images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="careView/contactform/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="careView/contactform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="careView/contactform/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="careView/contactform/vendor/noui/nouislider.min.css">
 	<link rel="stylesheet" type="text/css" href="careView/contactform/css/util.css">
-	<link rel="stylesheet" type="text/css" href="careView/contactform/css/main.css">
+
 
 
 <link href="careView/css/managercss/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
 
 		<div class="col-left contact-info">
 
-			<jsp:include page="../includer/sidemenu.jsp" />
+			<jsp:include page="../../../common/manager/sidemenu.jsp" />
 		
 			
 		</div>
@@ -79,31 +79,76 @@
 				</div>
 	
 	<div>	
+	<script type="text/javascript">
+
+	$('#itemAdd').click(function(){
+		//alert("aa");
+		var contents = '';
+		
+		contents += '<tr>';
+		contents +=		'<td><input type="text" name="item_name" /></td>';
+		contents +=		'<td><input type="text" name="price" class="price" /></td>';
+		contents +=		'<td><input type="text" name="qty" class="qty" /></td>';
+		contents +=		'<td><input type="text" name="sumPrice" class="sumPrice" /></td>';
+		contents +=		'<td><input type="button" name="delRow" class="delRow" value=" X " /></td>';
+		contents += '</tr>';
+
+		$('#addOption').append(contents); // 추가기능
+
+		$('.delRow').click(function(){ // 삭제기능
+			$(this).parent().parent().remove();	
+			//alert("aaa");
+		});
+
+		$('.price, .qty, .sumPrice').keyup(function(){			
+			$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
+		});
+
+		$('.price').keyup(function(){
+			var num = $(".price").index(this);
+			$('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+		});
+
+		$('.qty').keyup(function(){
+			var num = $(".qty").index(this);
+			$('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+
+		});
+
+		$('.sumPrice').keyup(function(){
+			var num = $(".sumPrice").index(this);
+			$('.sumPrice').eq(num).val($('.price').eq(num).val() * $('.qty').eq(num).val());
+		});
+
+
+		
+	});
+
+</script>
+
+
+
 	
-	<script type="text/javascript" >
-	  $('#btn-add-row').click(function() {
-	    var time = new Date().toLocaleTimeString();
-	    $('#mytable > tbody:last').append('<tr ><td rowspan=3>안녕ㅋ 친구들ㅋ </td><td>' + time + '</td></tr>');
-	  });
-	  $('#btn-delete-row').click(function() {
-	    $('#mytable > tbody').remove();
-	  });
-	</script>
 	
 				<table style="undefined;table-layout: fixed; width: 293px"  id="dynamicTable">
 		<colgroup>
 				<col style="width: 160px">
 				<col style="width: 120px">
 				<col style="width: 120px">
+				<col style="width: 100px">
+				<col style="width: 95px">
 			</colgroup>
 			<thead>
   			<tr>
     			<th>품명</th>
     			<th>단가</th>
     			<th>수량</th>
+    			<th>총 단가 </th>
+    			<th><input type="button" value="추가" id="itemAdd"/></th>
+
  			</tr>
  			</thead>
-  				<tbody id="dynamicTbody">
+  				<tbody id="addOption">
   				
   				
   				</tbody>
@@ -112,11 +157,8 @@
 				
 				</div>
 				<div>
-						<input type="text" placeholder="발주 물품" id="cleanItem">
-						<input type="text" placeholder="단가" id="cleanPrice"> 
-						<input type="text" placeholder="수량" id="qty">
+				
 						
-						<button id="#btn-add-row">발주 물품 추가</button>
 		</div>
 					
 		

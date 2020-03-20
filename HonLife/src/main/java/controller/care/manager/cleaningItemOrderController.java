@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class cleaningItemOrderController {
-@RequestMapping ("/cleanorder")
+@RequestMapping ("/manager/cleanorder")
 public String Corder() {
 
 	
-	return "careView/caremanager/order_cleaningitem";
+	return "common/manager/managerview/order_cleaningitem";
 }
 }
