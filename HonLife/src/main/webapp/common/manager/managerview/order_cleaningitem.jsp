@@ -124,7 +124,10 @@
   				</tbody>
  			
 				</table>
-				
+				<hr>
+				 <div style="margin: 0px 40px 0px 500px;">
+				 		<span style="font-family: 'Do Hyeon', sans-serif  ; text-align: right;">총 발주 금액: </span>
+				 </div>
 				</div>
 				<div>
 				
@@ -180,7 +183,7 @@
 			var num = $(".input1001s").index(this);
 			$('.input1001s').eq(num).val($('.input1001p').eq(num).val() * $('.input1001q').eq(num).val());
 		});
-
+	
 
 		
 	});

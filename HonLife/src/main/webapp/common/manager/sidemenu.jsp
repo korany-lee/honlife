@@ -74,8 +74,8 @@ $(function(){
 			<li>
 			<a href="#">재고관리 </a>
 				<ul class="submenu">
-					<li><a href="cleanorder">청소 물품 발주 </a></li>
-					<li><a href="cleanItemList">발주 리스트 </a>
+					<li><a href="../manager/cleanorder">청소 물품 발주 </a></li>
+					<li><a href="../manager/cleanItemList">발주 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>						
 					<li><a href="#">입고확인 </a></li>								
