@@ -22,6 +22,7 @@
 			classpath:stay-introduceController.xml
 			classpath:stay-roomController.xml
 			classpath:spring-jdbc.xml
+			classpath:mybatis-config.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
