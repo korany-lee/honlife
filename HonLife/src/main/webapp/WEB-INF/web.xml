@@ -16,10 +16,17 @@
   		<param-value>
   			classpath:spring-context.xml
   			classpath:spring-mainController.xml
+
+  			classpath:care-controller.xml
+
+
   			classpath:care-controller.xml
 
   			classpath:manager-controller.xml
   			classpath:spring-commonController.xml
+
+
+			classpath:stay-introduceController.xml
 
   		</param-value>
   	</init-param>
