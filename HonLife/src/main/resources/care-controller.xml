@@ -6,6 +6,13 @@
                      ">
                   
 <bean class="controller.care.laundry.laundryAmountInfoController"/>     
-<bean class="controller.care.clean.cleanAmountInfoController" />               
+<bean class="controller.care.clean.cleanAmountInfoController" />  
+
+
+
+
+
+
+             
                      
 </beans>

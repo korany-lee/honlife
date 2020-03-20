@@ -23,12 +23,6 @@
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <link rel="canonical" href="https://www.voxverticalvillage.ro/en/residences/" />
 <link rel="next" href="https://www.voxverticalvillage.ro/en/residences/page/2/" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="object" />
-<meta property="og:title" content="Apartamente &ndash; Vox Vertical Village" />
-<meta property="og:url" content="https://www.voxverticalvillage.ro/en/residences/" />
-<meta property="og:site_name" content="Vox Vertical Village" />
-<meta property="og:image" content="http://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-hero-opt.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Apartamente &ndash; Vox Vertical Village" />
 <meta name="twitter:image" content="http://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-hero-opt.jpg" />
@@ -180,10 +174,11 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<div class="section-content clearfix">
 
 				<div class="col-right">
-
-					<h1 style="font-size: 35px;">
-	Hon Care로 워라벨을 즐기세요!</h1>
-
+				
+						<h1 style="font-size: 35px;">Hon Care로 워라벨을 즐기세요!</h1>
+						
+						<h1 style="font-size: 35px;">관리자 페이지 입니다!</h1>
+						
 				</div>
 
 			</div>
