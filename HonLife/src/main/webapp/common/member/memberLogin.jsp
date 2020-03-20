@@ -7,7 +7,7 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <title>Hon Life - 로그인</title>
 </head>
-<jsp:include page="../stayView/includer/header1.jsp"></jsp:include>
+
 <body>
 <div id="content">
 

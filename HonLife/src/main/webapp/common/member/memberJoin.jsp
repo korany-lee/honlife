@@ -7,7 +7,7 @@
 <title>HON LIFE - 회원가입</title>
 </head>
 
-<jsp:include page="stayView/includer/header1.jsp"></jsp:include>
+
 <body class="member-join" oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection" style="">
 
 <!-- KM-201 장차석 : Google Tag Manager (noscript) -->
