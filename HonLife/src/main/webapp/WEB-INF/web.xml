@@ -26,7 +26,12 @@
   			classpath:spring-commonController.xml
 
 
+
 			classpath:stay-introduceController.xml
+
+
+			classpath:stay-introduceController.xml
+			classpath:stay-roomController.xml
 
   		</param-value>
   	</init-param>
