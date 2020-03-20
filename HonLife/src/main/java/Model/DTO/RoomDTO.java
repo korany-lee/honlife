@@ -1,7 +1,9 @@
 package Model.DTO;
 
+import java.io.Serializable;
 
-public class RoomDTO {
+@SuppressWarnings("serial")
+public class RoomDTO implements Serializable {
 	String roomNo;
 	Integer roomSize;
 	Integer roomFee;
