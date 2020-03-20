@@ -71,7 +71,7 @@ svg.align-right{margin-left:5px}.minimal-btn{border:0;background-color:transpare
 .animating{opacity:1;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);transition:opacity .7s cubic-bezier(.694,0,.335,1),transform .7s cubic-bezier(.694,0,.335,1),-webkit-transform .7s cubic-bezier(.694,0,.335,1)}
 .page-title,.sticky-nav,header{background-color:#fff}
 .hero,.page-title,header,main{position:relative;z-index:1}header{z-index:200}main{background-color:#2f2f2f;margin-bottom:345px}
-.article-content,.bottom,.footer-content,.header-content,.no-results,.section-content,.sticky-nav-content,.tr-content{max-width:1280px;margin:0 40px}
+.article-content,.bottom,.footer-content,.header-content,.no-results,.section-content,.sticky-nav-content,.tr-content{max-width:1280px;margin:0px 120px}
 .section-content-large{max-width:1360px}.article-content,.section-content{}
 .page-template-page-building .section-content{padding-top:50px;padding-bottom:50px}.section-content-row{padding-top:80px}
 .section-content-row:first-child{padding-top:0}.col-left{float:left}.col-right,.nav-toggle{float:right}.col-left,.col-right{width:70%}
@@ -174,7 +174,7 @@ header .col-right .register-btn{float:left}
 .img-collage-elem-2{width:61.865%;position:absolute;top:18%;left:0}
 #map,.articles-carousel .article-thumb a,.map-tab-1,.map-tab-1 img,.map-tabs-nav{width:100%}
 .home h2{margin-bottom:20px}.home .articles-layout-style-2 article,.related-articles .articles-layout-style-2 article{margin-bottom:20px}
-.page-template-page-building .main-section-6 h3{margin-bottom:50px}.page-title h1{font-size:28px;line-height:34px}
+.page-template-page-building .main-section-6 h3{margin-bottom:50px}.page-title h1{font-size:28px;line-height:25px}
 .article-content h1,.col-left h2,.col-left h3,.home h2,.home h3,.page-title-style-normal h1,.section-content-row h3{font-size:24px;line-height:32px}
 .contact-info h3{font-size:20px}
 .home h2,.home h3,.page-template-page-building .col-left h2,.page-template-page-building .col-left h3{max-width:340px}

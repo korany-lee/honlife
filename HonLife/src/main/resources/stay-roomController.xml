@@ -5,13 +5,11 @@
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      ">
                      
-
-<bean class="controller.main.mainController" />
-<bean class="controller.care.manager.managerMainController"/>
+<bean class="controller.stay.room.RoomController" />
 
 
-<bean class="controller.main.shopMainController" />
-<bean class="controller.main.careMainController"/>
-<bean class="controller.main.stayMainController"/>
+
+
 
 </beans>
+

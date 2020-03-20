@@ -149,7 +149,7 @@
 									<div class="col-right" style="margin-right: 260px;">
 										<div class="ap-description">
 											<p style="font-size: 50px;">맨투맨, 후드티</p>											
-											<p style="font-size: 30px;">3,900원</p>
+											<p style="font-size: 30px;">3,900</p>
 											</div>		
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>

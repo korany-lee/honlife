@@ -51,8 +51,9 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='wp-block-library-css'  href='careView/css/style.library.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='careView/css/managercss/managerheader.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../common/manager/managercss/style.library.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='../common/manager/managercss/managerheader.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" href="../common/manager/contactform/css/main.css">
 <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
@@ -112,7 +113,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<div class="header-content clearfix">
 
 			<div class="col-left">
-				<a class="logo" href="careManager" title="Vox Vertical Village"></a>
+				<a class="logo" href="manager/main" title="LOGO"></a>
 			</div>
 
 			<div class="col-right">
@@ -130,7 +131,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 				<div class="col-right">
 						
-						<h1 style="font-size: 35px; font-family: 'Do Hyeon', sans-serif; color:#666262;">관리자 페이지 입니다!</h1>
+						<h1 style="font-size: 55px; font-family: 'Do Hyeon', sans-serif; color:#666262;">관리자 페이지 입니다!</h1>
 						
 				</div>
 
