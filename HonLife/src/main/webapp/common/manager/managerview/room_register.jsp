@@ -47,22 +47,22 @@
 				<table border="1">
 					<tr>
 						<td>호실</td>
-						<td><input type="text" id="roomNum" name="roomNum" placeholder="호실을 입력하세요">호<div>${roomNumError }</div></td>
+						<td><input type="text" id="roomNo" name="roomNo" placeholder="호실을 입력하세요">호<div>${roomNumError }</div></td>
 					</tr>
 					<tr>
 						<td>평수</td>
 						<td>
 							<select name="roomSize">
-								<option value="8평" selected="selected">8평</option>
-								<option value="10평">10평</option>
-								<option value="13평">13평</option>
-								<option value="16평">16평</option>
+								<option value="8" selected="selected">8평</option>
+								<option value="10">10평</option>
+								<option value="13">13평</option>
+								<option value="16">16평</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>1일 숙박비</td>
-						<td><input type="text" id="rentalfee" name="rentalfee" placeholder="금액을 입력하세요">원<div>${rentalfeeError }</div></td>
+						<td><input type="text" id="rentalFee" name="rentalFee" placeholder="금액을 입력하세요">원<div>${rentalfeeError }</div></td>
 						<td>*관리비는 숙박비의 10%입니다</td>
 					</tr>
 					<tr>
@@ -83,8 +83,8 @@
 						<td>예비용</td>
 						<td>
 							<select name="roomExtra">
-								<option value="8평" selected="selected">일반</option>
-								<option value="10평">예비</option>
+								<option value="일반" selected="selected">일반</option>
+								<option value="예비">예비</option>
 							</select>
 						</td>
 					</tr>
@@ -122,7 +122,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 		</div>
-</main>
+
 
 
 	

@@ -23,6 +23,7 @@ public class RoomInsertService {
 		dto.setRoomNo(roomCommand.getRoomNo());
 		dto.setRoomSize(roomCommand.getRoomSize());
 		dto.setRoomFee(roomCommand.getRentalFee());
+		dto.setRoomManageFee((int)(roomCommand.getRentalFee()*0.1));
 		dto.setRoomView(roomCommand.getRoomView());
 		dto.setRoomCallNum(roomCommand.getCallNum());
 		dto.setRoomUsage(roomCommand.getRoomExtra());
