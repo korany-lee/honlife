@@ -84,14 +84,37 @@
 					<div class="wrap-input100 bg1 rs1-wrap-input100D">				
 					<input class="input100" type="date" name="phone" placeholder="납기일을 입력하세요">
 				</div>
-				
-				
-				
-				
-				
-	
 	<div>	
 	
+	<!-- <table class="order-list">
+    <thead>
+        <tr><td>Product</td><td>Price</td><td>Qty</td><td>Total</td></tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><input type="text" name="product" /></td>
+            <td>$<input type="text" name="price" /></td>
+            <td><input type="text" name="qty" /></td>
+            <td>$<input type="text" name="linetotal" readonly="readonly" /></td>
+            <td><a class="deleteRow"> x </a></td>
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="5" style="text-align: center;">
+                <input type="button" id="addrow" value="Add Product" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="5">
+                Grand Total: $<span id="grandtotal"></span>
+            </td>
+        </tr>
+    </tfoot>
+</table> -->
 	
 
 	
@@ -100,7 +123,7 @@
 
 	
 	
-				<table style="undefined;table-layout: fixed; width: 293px;   "  >
+	<table style="undefined;table-layout: fixed; width: 293px; " class="order"  >
 		<colgroup>
 				<col style="width: 160px">
 				<col style="width: 140px">
@@ -118,16 +141,23 @@
  			</tr>
  			
  			</thead>
-  				<tbody id="addOption">
-  				
-  				
-  				</tbody>
- 			
+  			
+  			
+  			 <tfoot>
+        
+        
+        <tr>
+            <td colspan="5">
+                Grand Total: <span id="grandtotal"></span>
+            </td>
+        </tr>
+    </tfoot>
 				</table>
 				<hr>
-				 <div style="margin: 0px 40px 0px 500px;">
-				 		<span style="font-family: 'Do Hyeon', sans-serif  ; text-align: right;">총 발주 금액: </span>
-				 </div>
+	
+				
+				 
+				 
 				</div>
 				<div>
 				
@@ -136,28 +166,78 @@
 					
 <script type="text/javascript">
 
+ $(document).ready(function () {
+    var counter = 1;
+    
+    $("#itemAdd").on("click", function () {
+        counter++;
+        
+        var newRow = $("<tr>");
+        var cols = "";
 
+        
+        
+        cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="item_name' +counter+' "  placeholder="품명"/></div></td>';					     
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="item_price' +counter+' "  placeholder="단가"/></div></td>';				
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="item_qty' +counter+' "   placeholder="수량"/></div></td>';			
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="item_sum' +counter+' "  placeholder="총액"/></div></td>';			
+        cols += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
+        
+        
+        newRow.append(cols);
+        
+        $("table.order").append(newRow);
+    });
+    
+    $("table.order").on("change", 'input[name^="item_name"], input[name^="item_qty"]', function (event) {
+        calculateRow($(this).closest("tr"));
+        calculateGrandTotal();
+    });
+    
+    $("table.order").on("click", "input.contact100-form-btn2", function (event) {
+        $(this).closest("tr").remove();
+        calculateGrandTotal();
+    });
+});
+    
+function calculateRow(row) {
+    var price = +row.find('input[name^="item_price"]').val();
+    var qty = +row.find('input[name^="item_qty"]').val();
+    row.find('input[name^="item_sum"]').val((price * qty));
+}
+    
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order").find('input[name^="item_sum"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal);
+}
+
+ 
+
+
+
+
+
+
+ 	/* 	var counter = "1";
 	$('#itemAdd').click(function(){
-		//alert("aa");
+		counter++
 		var contents = '';
+	
 		
 		contents += '<tr>';		
-		contents +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="item_name" placeholder="품명"/></div></td>';
-						     
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="item_name" placeholder="단가"/></div></td>';	
-			
-			
-			
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="item_name" placeholder="수량"/></div></td>';
-			
-			
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="item_name" placeholder="총액"/></div></td>';	
-
-			
+		contents +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="item_name' +counter+' "  placeholder="품명"/></div></td>';					     
+		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="item_price' +counter+' "  placeholder="단가"/></div></td>';				
+		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="item_qty' +counter+' "   placeholder="수량"/></div></td>';			
+		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="item_sum' +counter+' "  placeholder="총액"/></div></td>';			
 		contents += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
 		contents += '</tr>';
+		
 
 		$('#addOption').append(contents); // 추가기능
+		
 
 		$('.contact100-form-btn2').click(function(){ // 삭제기능
 			$(this).parent().parent().remove();	
@@ -183,10 +263,11 @@
 			var num = $(".input1001s").index(this);
 			$('.input1001s').eq(num).val($('.input1001p').eq(num).val() * $('.input1001q').eq(num).val());
 		});
-	
-
 		
 	});
+	 */
+
+
 
 </script>
 
