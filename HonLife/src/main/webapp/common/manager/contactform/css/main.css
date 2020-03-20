@@ -223,9 +223,37 @@ iframe {
   margin-bottom: 20px;
 }
 
-.rs1-wrap-input100 {
-  width: calc((100% - 100px) / 3);
+.wrap-input1001 {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #e6e6e6;
+  border-radius: 13px;
+  padding: 4px 0px 3px 5px;
+  margin-bottom: 5px;
 }
+
+.rs1-wrap-input100 {
+  width: calc((100% - 120px) / 2);
+}
+.rs1-wrap-input1001 {
+  width: 137px;
+}
+.rs1-wrap-input10011 {
+  width: 157px;
+}
+.rs1-wrap-input100D {
+	width:310px;
+	
+}
+.rs1-wrap-input100i {
+	width:260px;
+	
+}
+.rs1-wrap-input100m {
+	width:130px;
+	
+}
+
 
 .label-input100 {
   font-family: 'Do Hyeon', sans-serif;
@@ -236,6 +264,20 @@ iframe {
 }
 
 .input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family:'Do Hyeon', sans-serif;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+  padding-right: 15px;
+}
+th {
+	text-align: center;
+	
+}
+.input1001n, .input1001p, .input1001q, .input1001s {
   display: block;
   width: 100%;
   background: transparent;
@@ -283,6 +325,7 @@ textarea.input100 {
   width: 100%;
 }
 
+
 .contact100-form-btn {
   display: -webkit-box;
   display: -webkit-flex;
@@ -316,8 +359,34 @@ textarea.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  margin-left: 27px;
+  height: 35px;
+  width: 100px;
+  background-color: #333333;
+  border-radius: 25px;
 
-  height: 50px;
+  font-family:'Do Hyeon', sans-serif;;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact100-form-btn2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-left: 30px;
+  height: 35px;
   background-color: #333333;
   border-radius: 25px;
 
