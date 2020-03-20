@@ -43,6 +43,6 @@ public class RoomController {
 			return "common/manager/managerview/room_register";
 		}
 		roomInsertService.roomInsert(roomCommand,request);
-		return "common/manager/managerview/room_list";
+		return "common/manager/managerview/managermain";
 	}
 }

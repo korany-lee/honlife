@@ -71,7 +71,8 @@ $(function(){
 						</li>
 					</ul>
 			</li>			
-			<li><a href="#">재고관리 </a>
+			<li>
+			<a href="#">재고관리 </a>
 				<ul class="submenu">
 					<li><a href="cleanorder">청소 물품 발주 </a></li>
 					<li><a href="cleanItemList">발주 리스트 </a>
@@ -82,6 +83,16 @@ $(function(){
 					<li><a href="#">반출 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 					</li>				
+				</ul>
+			</li>		
+			<li>
+			<a href="#">객실관리 </a>
+				<ul class="submenu">
+					<li><a href="../room/register">객실 등록 </a></li>
+					<li><a href="#">객실 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					
 				</ul>
 			</li>		
 			 <li>

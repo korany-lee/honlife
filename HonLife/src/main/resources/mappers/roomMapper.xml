@@ -3,14 +3,14 @@
 	"-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
-<mapper namespace="goodsMapper">
+<mapper namespace="roomMapper">
 <cache />
 <sql id="basecolumn">
 	room_no,room_size,room_fee,room_managefee,room_view,room_explantion,room_photo
 	room_score,room_usage,room_callnum,room_state
 </sql>
 
-<insert id="roomInsert" parameterType="rooms">
+<insert id="roomInsert" parameterType="Model.DTO.RoomDTO">
 	insert into room(<include refid="basecolumn" />)
 	values(#{roomNo},#{roomSize},#{roomFee},#{roomManageFee},#{roomView},
 	#{roomExplantion},#{roomPhoto},0,#{roomUsage},#{roomCallNum},"미사용")
