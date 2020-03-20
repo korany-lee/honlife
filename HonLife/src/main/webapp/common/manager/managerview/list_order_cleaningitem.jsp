@@ -20,14 +20,15 @@
 		<div class="col-right">
 		<section class="animate-in-view">
 
-			<div class="table-filters">
+	
 
 			<div class="section-content clearfix">
-	</div>
+			
+			<span  style="font-size: 40px;"> 발주 리스트</span>
+	        </div>
 
-</div>
 
-	<div class="table">
+	<div class="table" style="position:relative;right: 20px;">
 
 		<div class="table-head">
 
