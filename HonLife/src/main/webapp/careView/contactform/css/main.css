@@ -233,9 +233,25 @@ iframe {
   margin-bottom: 5px;
 }
 
+.wrap-input1002{
+    width: 24%;
+    height: 30px;
+    border: 0px solid #ffffff;
+    border-radius: 13px;
+    padding: 1px 0px 9px 2px;
+    margin-bottom: 5px;
+}
+
 .rs1-wrap-input100 {
   width: calc((100% - 120px) / 2);
 }
+.rs1-wrap-input100e {
+  width: calc((185% - 120px) / 2);
+}
+.rs1-wrap-input100f {
+  width: calc((185% - 120px) / 2);
+}
+
 .rs1-wrap-input1001 {
   width: 130px;
 }
@@ -582,7 +598,7 @@ textarea.input100 {
 }
 
 .select2-selection__arrow::before {
-  content: '\f312';
+  
   font-family:'Do Hyeon', sans-serif;;
   font-size: 18px;
   color: #555555;
@@ -593,7 +609,7 @@ textarea.input100 {
 [ Dropdown option ]*/
 .select2-container--open .select2-dropdown {
   z-index: 1251;
-  width: calc(100% + 2px);
+  width: calc(20% + 2px);
   border: 0px solid transparent;
   border-radius: 10px;
   overflow: hidden;
@@ -617,9 +633,9 @@ textarea.input100 {
 .select2-dropdown--below {top: 10px;}
 
 .select2-container .select2-results__option[aria-selected] {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 24px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 
 @media (max-width: 576px) {
@@ -655,7 +671,7 @@ textarea.input100 {
 }
 
 .wrap-input100 .dropDownSelect2 .select2-container--open {
-  width: 100% !important;
+  width: 10% !important;
 }
 
 .wrap-input100 .dropDownSelect2 .select2-dropdown {
