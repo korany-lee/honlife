@@ -5,82 +5,96 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="shopView/css/footer.css" rel="stylesheet" type="text/css">
+<link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<div id="footer">
-			<div class="inner_footer">
-				<div class="footer_cc">
-					<h2 class="tit_cc">고객행복센터</h2>
-					<div class="cc_view cc_call">
-						<h3><span class="tit">1644-1100</span></h3>
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_kakao">
-						<h3><a class="tit" href="#none">카카오톡 문의</a></h3>
-						<script type="text/javascript">
-							$('.cc_kakao .tit').on('click',function(e){
-								e.preventDefault();
-								$.ajax({
-									type: "GET",
-									url: apiDomain+'/v1/mypage/asks/confirm/kakao',
-									dataType: 'json',
-									success: function(data) {
-										if(data.data.ok_button_action_url.indexOf('https://api.happytalk.io/') > -1){
-											if(confirm('['+data.data.title+'] '+data.data.message)) window.open(data.data.ok_button_action_url,'_blank');
-										}else{
-											alert(data.data.title+'\n'+data.data.message);
-										}
-									}
-								})
-							});
-						</script>
-	
-						<dl class="list">
-							<dt>365고객센터</dt>
-							<dd>오전 7시 - 오후 7시</dd>
-						</dl>
-					</div>
-					<div class="cc_view cc_qna">
-						<h3><a href="/shop/mypage/mypage_qna_register.php?mode=add_qna" class="tit">1:1 문의</a></h3>
-						<dl class="list">
-							<dt>24시간 접수 가능</dt>
-							<dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
-						</dl>
-					</div>
-				</div>
-				<div class="company">
-					<ul class="list">
-						<li><a class="link" href="/shop/introduce/about_kurly.php">혼샵소개</a></li><!-- 2018-09-06 어바웃컬리 장아름 수정 -->
-						<li><a class="link" href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&showinfo=0&wmode=opaque&enablejsapi=1" onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">혼샵소개영상</a></li>
-						<li><a class="link" href="https://marketkurly.recruiter.co.kr/appsite/company/index" target="_blank">인재채용</a></li>
-						<li><a class="link" href="/shop/service/agreement.php">이용약관</a></li>
-						<li><a class="link emph" href="/shop/service/private.php">개인정보처리방침</a></li>
-						<li><a class="link" href="/shop/service/guide.php">이용안내</a></li>
-					</ul>
-					
-					혼 라이프 주식회사 <span class="bar">I</span> 사업자등록번호 : 210-86-40254 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&apv_perm_no=" target="_blank" class="link">사업자정보 확인</a>
-					<br>
-					통신판매업 : 제 2018-서울영등포-01646 호 <span class="bar">I</span> 개인정보보호책임자 : 이고은
-					<br>
-					주소 : 서울특별시 영등포구 양산로 53(우:07271) <span class="bar">I</span> 대표이사 : 강노이
-					<br>
-					입점문의 : <a href="https://forms.gle/NJNBNmtYeKQyX5Rn9" target="_blank" class="link">입점문의하기</a> <span class="bar">I</span> 제휴문의 : <a href="mailto:business@honlife.com" class="link">business@honlife.com</a>
-					<br>
-					채용문의 : <a href="mailto:recruit@honlife.com" class="link">recruit@honlife.com</a>
-					<br>
-					팩스: 070 - 7500 - 6098 <span class="bar">I</span> 이메일 : <a href="mailto:help@honlife.com" class="link">help@honlife.com</a>
-
-					<em class="copy">&copy; HON LIFE CO.LTD. ALL RIGHTS RESERVED</em>
-				</div>
-			</div>
-			
-			
-		</div>
+<footer class="ps-footer">
+        <div class="ps-container">
+            <div class="ps-footer__widgets">
+                <aside class="widget widget_footer widget_contact-us">
+                    <h4 class="widget-title">Contact us</h4>
+                    <div class="widget_content">
+                        <p>Call us 24/7</p>
+                        <h3>1800 97 97 69</h3>
+                        <p>502 New Design Str, Melbourne, Australia <br><a href="mailto:contact@martfury.co">contact@martfury.co</a></p>
+                        <ul class="ps-list--social">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Quick links</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Term & Condition</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Company</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#">Affilate</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget widget_footer">
+                    <h4 class="widget-title">Bussiness</h4>
+                    <ul class="ps-list--link">
+                        <li><a href="#">Our Press</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="my-account.html">My account</a></li>
+                        <li><a href="shop-default.html">Shop</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="ps-footer__links">
+                <p><strong>Consumer Electric:</strong><a href="#">Air Conditioners</a><a href="#">Audios &amp; Theaters</a><a href="#">Car Electronics</a><a href="#">Office Electronics</a><a href="#">TV Televisions</a><a href="#">Washing Machines</a>
+                </p>
+                <p><strong>Clothing &amp; Apparel:</strong><a href="#">Printers</a><a href="#">Projectors</a><a href="#">Scanners</a><a href="#">Store &amp; Business</a><a href="#">4K Ultra HD TVs</a><a href="#">LED TVs</a><a href="#">OLED TVs</a>
+                </p>
+                <p><strong>Home, Garden &amp; Kitchen:</strong><a href="#">Cookware</a><a href="#">Decoration</a><a href="#">Furniture</a><a href="#">Garden Tools</a><a href="#">Garden Equipments</a><a href="#">Powers And Hand Tools</a><a href="#">Utensil &amp; Gadget</a>
+                </p>
+                <p><strong>Health &amp; Beauty:</strong><a href="#">Hair Care</a><a href="#">Decoration</a><a href="#">Hair Care</a><a href="#">Makeup</a><a href="#">Body Shower</a><a href="#">Skin Care</a><a href="#">Cologine</a><a href="#">Perfume</a>
+                </p>
+                <p><strong>Jewelry &amp; Watches:</strong><a href="#">Necklace</a><a href="#">Pendant</a><a href="#">Diamond Ring</a><a href="#">Sliver Earing</a><a href="#">Leather Watcher</a><a href="#">Gucci</a>
+                </p>
+                <p><strong>Computer &amp; Technologies:</strong><a href="#">Desktop PC</a><a href="#">Laptop</a><a href="#">Smartphones</a><a href="#">Tablet</a><a href="#">Game Controller</a><a href="#">Audio &amp; Video</a><a href="#">Wireless Speaker</a><a href="#">Done</a>
+                </p>
+            </div>
+            <div class="ps-footer__copyright">
+                <p>© 2018 Martfury. All Rights Reserved</p>
+                <p><span>We Using Safe Payment For:</span><a href="#"><img src="img/payment-method/1.jpg" alt=""></a><a href="#"><img src="img/payment-method/2.jpg" alt=""></a><a href="#"><img src="img/payment-method/3.jpg" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
+            </div>
+        </div>
+    </footer>
+    
+       <script src="plugins/jquery-1.12.4.min.js"></script>
+    <script src="plugins/popper.min.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="plugins/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="plugins/masonry.pkgd.min.js"></script>
+    <script src="plugins/isotope.pkgd.min.js"></script>
+    <script src="plugins/jquery.matchHeight-min.js"></script>
+    <script src="plugins/slick/slick/slick.min.js"></script>
+    <script src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+    <script src="plugins/slick-animation.min.js"></script>
+    <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+    <script src="plugins/jquery.slimscroll.min.js"></script>
+    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="plugins/gmap3.min.js"></script>
+    <!-- custom scripts-->
+    <script src="js/main.js"></script>
 
 </body>
 </html>

@@ -153,7 +153,7 @@
                             </select>
                         </div>
                         <input class="form-control" type="text" placeholder="혼자사는 사람을 위한 추천템">
-                        <button>Search</button>
+                        <button>검색</button>
                     </form>
                 </div>
                 <div class="header__right">
@@ -474,21 +474,20 @@
                         </li>
                     </ul>
                     <ul class="navigation__extra">
-                        <li><a href="#">Sell on Martfury</a></li>
-                        <li><a href="#">Tract your order</a></li>
+                        <li><a href="#">선물하기</a></li>
+                        <li><a href="#">배송확인</a></li>
                         <li>
-                            <div class="ps-dropdown"><a href="#">US Dollar</a>
+                            <div class="ps-dropdown"><a href="#">원화</a>
                                 <ul class="ps-dropdown-menu">
-                                    <li><a href="#">Us Dollar</a></li>
-                                    <li><a href="#">Euro</a></li>
+                                    <li><a href="#">원화</a></li>
+                                    <li><a href="#">dollar</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
+                            <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">한국어</a>
                                 <ul class="ps-dropdown-menu">
-                                    <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
-                                    <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
+                                    <li><a href="#"><img src="img/flag/en.png" alt=""> English</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -685,13 +684,21 @@
         </div>
     </div>
     <div class="navigation--list">
-        <div class="navigation__content"><a class="navigation__item ps-toggle--sidebar" href="#menu-mobile"><i class="icon-menu"></i><span> Menu</span></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-list4"></i><span> Categories</span></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="icon-magnifier"></i><span> Search</span></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i class="icon-bag2"></i><span> Cart</span></a></div>
+        <div class="navigation__content">
+        <a class="navigation__item ps-toggle--sidebar" href="#menu-mobile">
+        	<i class="icon-menu"></i><span> 메뉴</span></a>
+        <a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile">
+        	<i class="icon-list4"></i><span> 카테고리</span></a>
+        <a class="navigation__item ps-toggle--sidebar" href="#search-sidebar">
+        	<i class="icon-magnifier"></i><span> 검색</span></a>
+        <a class="navigation__item ps-toggle--sidebar" href="#cart-mobile">
+        	<i class="icon-bag2"></i><span> 장바구니</span></a></div>
     </div>
     <div class="ps-panel--sidebar" id="search-sidebar">
         <div class="ps-panel__header">
             <form class="ps-form--search-mobile" action="index.html" method="get">
                 <div class="form-group--nest">
-                    <input class="form-control" type="text" placeholder="Search something...">
+                    <input class="form-control" type="text" placeholder="혼자사는 내게 꼭 필요한 혼#">
                     <button><i class="icon-magnifier"></i></button>
                 </div>
             </form>
@@ -700,7 +707,7 @@
     </div>
     <div class="ps-panel--sidebar" id="menu-mobile">
         <div class="ps-panel__header">
-            <h3>Menu</h3>
+            <h3>메뉴</h3>
         </div>
         <div class="ps-panel__content">
             <ul class="menu--mobile">
@@ -886,12 +893,17 @@
             <div class="ps-container">
                 <div class="ps-section__left">
                     <div class="ps-carousel--nav-inside owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
-                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-1.jpg" alt=""></a></div>
-                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-2.jpg" alt=""></a></div>
-                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/slide-3.jpg" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/main-slider1.png" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/main-slider2.png" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/main-slider3.png" alt=""></a></div>
+                   		<div class="ps-banner"><a href="#"><img src="img/slider/home-1/main-slider4.jpg" alt=""></a></div>
+                        <div class="ps-banner"><a href="#"><img src="img/slider/home-1/main-slider5.jpg" alt=""></a></div>                   		
                     </div>
                 </div>
-                <div class="ps-section__right"><a class="ps-collection" href="#"><img src="img/slider/home-1/promotion-1.jpg" alt=""></a><a class="ps-collection" href="#"><img src="img/slider/home-1/promotion-2.jpg" alt=""></a></div>
+                <div class="ps-section__right">
+                <a class="ps-collection" href="#"><img src="img/slider/home-1/main-right1.png" alt=""></a>
+                <a class="ps-collection" href="#"><img src="img/slider/home-1/main-right2.jpg" alt=""></a>
+                </div>
             </div>
         </div>
         <div class="ps-site-features">
@@ -900,36 +912,36 @@
                     <div class="ps-block__item">
                         <div class="ps-block__left"><i class="icon-rocket"></i></div>
                         <div class="ps-block__right">
-                            <h4>Free Delivery</h4>
-                            <p>For all oders over $99</p>
+                            <h4>정기배송 서비스</h4>
+                            <p>첫 10회 무료</p>
                         </div>
                     </div>
                     <div class="ps-block__item">
                         <div class="ps-block__left"><i class="icon-sync"></i></div>
                         <div class="ps-block__right">
-                            <h4>90 Days Return</h4>
-                            <p>If goods have problems</p>
+                            <h4>책임환불서비스</h4>
+                            <p>제품 보증기간 최대 90일</p>
                         </div>
                     </div>
                     <div class="ps-block__item">
                         <div class="ps-block__left"><i class="icon-credit-card"></i></div>
                         <div class="ps-block__right">
-                            <h4>Secure Payment</h4>
-                            <p>100% secure payment</p>
+                            <h4>간편한 결제시스템</h4>
+                            <p>맞춤 결제서비스로 한번에! 손쉽게!</p>
                         </div>
                     </div>
                     <div class="ps-block__item">
                         <div class="ps-block__left"><i class="icon-bubbles"></i></div>
                         <div class="ps-block__right">
-                            <h4>24/7 Support</h4>
-                            <p>Dedicated support</p>
+                            <h4>24시간 상담서비스</h4>
+                            <p>전직원 항시대기</p>
                         </div>
                     </div>
                     <div class="ps-block__item">
                         <div class="ps-block__left"><i class="icon-gift"></i></div>
                         <div class="ps-block__right">
-                            <h4>Gift Service</h4>
-                            <p>Support gift service</p>
+                            <h4>선물 서비스</h4>
+                            <p>혼라이프 고객과 선물을 주고받으세요</p>
                         </div>
                     </div>
                 </div>

@@ -3,30 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="common/css/main.css" rel="stylesheet" type="text/css">
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-<link href="common/css/section1.css" rel="stylesheet" type="text/css">
-<link href="common/css/normalize.css" rel="stylesheet" type="text/css">
-<title>HON LIFE - 회원가입</title>
-<script src="shopView/js/vue.min.js"></script>
+<link href="./../common/css/main.css" rel="stylesheet" type="text/css">
+<link href="./../common/css/common.css" rel="stylesheet" type="text/css">
+<link href="./../common/css/section1.css" rel="stylesheet" type="text/css">
+<link href="./../common/css/normalize.css" rel="stylesheet" type="text/css">
+<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
+
 </head>
 
-<body class="member-join" oncontextmenu="return false"
-	ondragstart="return false" onselectstart="return !enableSelection"
-	style="">
+<body>
 
-	<!-- KM-201 장차석 : Google Tag Manager (noscript) -->
-	<!-- End Google Tag Manager (noscript) -->
-
-
-	<div id="wrap" class="">
-		<div id="pos_scroll"></div>
-
-		<div id="container">
-			<div id="header">
 
 
 <jsp:include page="../includer/header.jsp"></jsp:include>
+	<div id="wrap" class="">
+		<div id="container">
 
 				
 			<div id="main">
@@ -256,21 +247,13 @@
 			<!-- #main -->
 
 
-	
-
-			<!-- footer영역 -->
-			<jsp:include page="../includer/footer.jsp"></jsp:include>
-			<!-- #footer -->
-
-
 		</div>
 		<!-- #container -->
 	</div>
 	<!-- #wrap  -->
 
+	<jsp:include page="../includer/footer.jsp"></jsp:include>
 
-
-	<!-- page Top -->
-	<a href="#top" id="pageTop">맨 위로가기</a>
+	
 </body>
 </html>

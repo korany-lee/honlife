@@ -4,205 +4,556 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="shopView/css/header.css" rel="stylesheet" type="text/css">
-<link rel="styleSheet" href="shopView/css/normalize.css?ver=202003161543">
-<link rel="styleSheet" href="shopView/css/section1.css?ver=202003161543">
-<link rel="styleSheet" href="shopView/css/common.css?ver=202003161543">
-<script src="shopView/js/main_v1.js"></script>
-<script src="shopView/js/main_notice_v1.js"></script>
-<script src="shopView/js/kurlytracker.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+<link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
+<link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="plugins/slick/slick/slick.css">
+<link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+<link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="css/style.css">
 <title>Insert title here</title>
 </head>
 <body>
-
-<div id="header">
-
-
-<!-- // ie8 이하 브라우져 띠배너 -->
-
-<div class="bnr_header" id="top-message">
-<!-- 상단 띠배너 -->
-        <!-- 신규회원이벤트 -->
-        <a href="http://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_200226" id="eventLanding">
-            지금 가입하고 정기배송 서비스 <b>10회 무료</b> 체험하세요<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
-            <div class="bnr_top">
-                <div class="inner_top_close">
-                    <button id="top-message-close" class="btn_top_bnr">가입하고 혜택받기</button>
+    <header class="header header--1" data-sticky="true">
+        <div class="header__top">
+            <div class="ps-container">
+                <div class="header__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span>전체 카테고리</span></div>
+                        <div class="menu__content">
+                             <ul class="menu--dropdown">
+                                <li class="current-menu-item "><a href="#"><i class="icon-star"></i> 제일 HOT한 상품</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-bread"></i> 과자 &amp; 빵</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>과자<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Home Audio &amp; Theathers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">TV &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Camera, Photos &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Cellphones &amp; Accessories</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Headphones</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Videosgames</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Wireless Speakers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Office Electronic</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu__column">
+                                            <h4>빵<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Digital Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Audio &amp; Video Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Batteries</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-pills"></i> 건강식품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-glass2"></i> 생수 &amp; 음료</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cheese"></i> 유제품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-diamond2"></i> 라면 &amp; 통조림</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-platter"></i> 반찬 &amp; 조미료</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>반찬 &amp; 조미료<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Computer &amp; Tablets</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Monitors</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Networking</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Drive &amp; Storages</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Computer Components</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Security &amp; Protection</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Gaming Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-grapes"></i> 과일 &amp; 채소</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chicken"></i> 쌀 &amp; 정육 &amp; 수산</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-tissue"></i> 화장지 &amp; 세제</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-haircut"></i> 뷰티</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chef"></i> 주방</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i> 문구 &amp; 사무</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-bone"></i> 반려동물</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-car-wash2"></i> 자동차용품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cart-full"></i> 대용량 알뜰상품</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><a class="ps-logo" href="index.html"><img src="img/honshop_main.png" alt="혼샵 메인 로고"></a>
                 </div>
-            </div>
-        </a>
-</div>
-
-<!-- 탑 네비게이션 바 -->
-<div id="userMenu">
-    <user-menu-pc
-            :login-check="loginCheck"
-            :notification-item="notificationItem"
-            :user-info="userInfo"
-            :return-url="returnUrl">
-    </user-menu-pc>
-</div>
-
-<script src="shopView/js/usermenu_v1.js"></script>
-
-<!-- // 탑 네비게이션 바 -->
-
-
-
-<div id="headerLogo" class="layout-wrapper">
-    <h1 class="logo">
-        <a href="/" class="link_main">
-            <span id="gnbLogoContainer"></span>
-            <img src="shopView/images/honshop_main.png" alt="마켓컬리 로고" >
-        </a>
-    </h1>
-    <a href="/shop/board/view.php?id=notice&no=64" onclick="ga('send','event','etc','main_gif_btn_click');" class="bnr_delivery">
-        <img src="shopView/images/delivery_190819.png" alt="서울, 경기, 인천 샛별배송, 수도권 이외 지역 택배배송" >
-    </a>
-</div>
-
-<div id="gnb">
-    <h2 class="screen_out">메뉴</h2>
-    <div id="gnbMenu" class="gnb_kurly">
-        <div class="inner_gnbkurly">
-            <div class="gnb_main">
-                <ul class="gnb">
-                    <li class="menu1"><a href="#none"><span class="ico"></span><span class="txt">전체 카테고리</span></a></li>
-                    <li><a class="link new " href="/shop/goods/goods_list.php?category=038"><span class="txt">신상품</span></a></li>
-                    <li><a class="link best " href="/shop/goods/goods_list.php?category=029"><span class="txt">베스트</span></a></li>
-                    <li><a class="link bargain " href="/shop/goods/goods_list.php?list=sale"><span class="txt">대량상품</span></a></li>
-                    <li class="lst"><a class="link event " href="/shop/goods/event.php?&"><span class="txt">이벤트</span></a></li>
-                </ul>
-                
-                <div id="side_search" class="gnb_search">
-                    <form action="/shop/goods/goods_search.php?&" onsubmit="return searchTracking(this)">
-                        <input type=hidden name=searched value="Y">
-                        <input type=hidden name=log value="1">
-                        <input type=hidden name=skey value="all">
-                        <input type="hidden" name="hid_pr_text" value="봄맞이 비타민 기획전" />
-                        <input type="hidden" name="hid_link_url" value="https://www.kurly.com/shop/goods/goods_list.php?category=656" />
-                        <input type="hidden" id="edit" name="edit" value=""/>
-                                                <input name=sword type=text id="sword" class="inp_search" value="봄맞이 비타민 기획전" required label="검색어">
-
-                        <input type=image src="https://res.kurly.com/pc/service/common/1908/ico_search_x2.png" class="btn_search">
+                <div class="header__center">
+                    <form class="ps-form--quick-search" action="index.html" method="get">
+                        <div class="form-group--icon"><i class="icon-chevron-down"></i>
+                            <select class="form-control">
+                                <option value="0" selected="selected">전체</option>
+                                <option class="level-0" value="bread">과자 & 빵</option>
+                                <option class="level-0" value="pills">건강식품</option>
+                                <option class="level-0" value="drink">생수 & 음료 </option>
+                                <option class="level-0" value="cheese">유제품</option>
+                                <option class="level-0" value="noodles">라면 & 통조림</option>
+                                <option class="level-0" value="food">반찬 & 조미료</option>
+                                <option class="level-0" value="fruits">과일 & 채소</option>
+                                <option class="level-0" value="meats">쌀 & 정육 & 수산</option>
+                                <option class="level-0" value="tissue">화장지 & 세제</option>
+                                <option class="level-0" value="beauty">뷰티</option>
+                                <option class="level-0" value="kitchen">주방</option>
+                                <option class="level-0" value="office">문구 & 사무</option>
+                                <option class="level-0" value="pet">반려동물</option>
+                                <option class="level-0" value="car">자동차용품</option>
+                                <option class="level-0" value="bigmarket">대용량 알뜰상품</option>
+                            </select>
+                        </div>
+                        <input class="form-control" type="text" placeholder="혼자사는 사람을 위한 추천템">
+                        <button>검색</button>
                     </form>
-                    <script>
-                        // KM-1483 Amplitude 연동
-                        function searchTracking(form){
-                            var _searchTrackingData = {
-                                selection_type : 'keyword',
-                                keyword : $(form).find('[name = sword]').val(),
-                                package_id : null,
-                                package_name : null,
-                                position : null,
-                            }
-                            KurlyTracker.setEventInfo(_searchTrackingData.selection_type);
-                            KurlyTracker.setAction('select_search', _searchTrackingData).sendData();
-                            return chkForm(form);
-                        }
-                    </script>
                 </div>
-
-                <div class="cart_count">
-                    <div class="inner_cartcount">
-                                                <a href="/shop/goods/goods_cart.php" class="btn_cart">
-                            <img src="https://res.kurly.com/pc/ico/1908/ico_cart_x2_v2.png" alt="장바구니">
-<span class="num realtime_cartcount" id="cart_item_count"></span>                        </a>
-                    </div>
-
-                    <div id="addMsgCart" class="msg_cart">
-                        <span class="point"></span>
-                        <div class="inner_msgcart">
-                            <img src="https://res.kurly.com/images/common/bg_1_1.gif" alt="" class="thumb">
-                            <p class="desc">
-                                <span class="tit"></span>
-                                <span class="txt">장바구니에 담겼습니다.</span>
-                            </p>
+                <div class="header__right">
+                    <div class="header__actions"><a class="header__extra" href="#"><i class="icon-chart-bars"></i><span><i>0</i></span></a><a class="header__extra" href="#"><i class="icon-heart"></i><span><i>0</i></span></a>
+                        <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                            <div class="ps-cart__content">
+                                <div class="ps-cart__items">
+                                    <div class="ps-product--cart-mobile">
+                                        <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt=""></a></div>
+                                        <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                            <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                        </div>
+                                    </div>
+                                    <div class="ps-product--cart-mobile">
+                                        <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/5.jpg" alt=""></a></div>
+                                        <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                            <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ps-cart__footer">
+                                    <h3>Sub Total:<strong>$59.99</strong></h3>
+                                    <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-block--user-header">
+                            <div class="ps-block__left"><i class="icon-user"></i></div>
+                            <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원가입</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="gnb_sub">
-                <div class="inner_sub">
-                    <ul class="gnb_menu" data-default="219" data-min="219" data-max="731"><!-- 배경사이즈 -->
-                        <gnb-menu-pc v-for="(item, idx) in dataGnb"
-                                     :main-menu="item"
-                                     :sub-menu="item.categories"
-                                     :sub-open="item.subOpen"
-                                     :get-category-num="getCategoryNum"
-                                     :key="'gnb'+idx"
-                                     :idx="idx"
-                        ></gnb-menu-pc>
+        </div>
+        <nav class="navigation">
+            <div class="ps-container">
+                <div class="navigation__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span>전체 카테고리</span></div>
+                        <div class="menu__content">
+                            <ul class="menu--dropdown">
+                                <li class="current-menu-item "><a href="#"><i class="icon-star"></i> 제일 HOT한 상품</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-bread"></i> 과자 &amp; 빵</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>과자<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Home Audio &amp; Theathers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">TV &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Camera, Photos &amp; Videos</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Cellphones &amp; Accessories</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Headphones</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Videosgames</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Wireless Speakers</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Office Electronic</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu__column">
+                                            <h4>빵<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Digital Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Audio &amp; Video Cables</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Batteries</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-pills"></i> 건강식품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-glass2"></i> 생수 &amp; 음료</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cheese"></i> 유제품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-diamond2"></i> 라면 &amp; 통조림</a>
+                                </li>
+                                <li class="current-menu-item menu-item-has-children has-mega-menu"><a href="#"><i class="icon-platter"></i> 반찬 &amp; 조미료</a>
+                                    <div class="mega-menu">
+                                        <div class="mega-menu__column">
+                                            <h4>반찬 &amp; 조미료<span class="sub-toggle"></span></h4>
+                                            <ul class="mega-menu__list">
+                                                <li class="current-menu-item "><a href="#">Computer &amp; Tablets</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Monitors</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Networking</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Drive &amp; Storages</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Computer Components</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Security &amp; Protection</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Gaming Laptop</a>
+                                                </li>
+                                                <li class="current-menu-item "><a href="#">Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-grapes"></i> 과일 &amp; 채소</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chicken"></i> 쌀 &amp; 정육 &amp; 수산</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-tissue"></i> 화장지 &amp; 세제</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-haircut"></i> 뷰티</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-chef"></i> 주방</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-book2"></i> 문구 &amp; 사무</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-bone"></i> 반려동물</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-car-wash2"></i> 자동차용품</a>
+                                </li>
+                                <li class="current-menu-item "><a href="#"><i class="icon-cart-full"></i> 대용량 알뜰상품</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation__right">
+                    <ul class="menu">
+                        <li class="menu-item-has-children"><a href="index.html">신상품</a><span class="sub-toggle"></span>
+                            <ul class="sub-menu">
+                                <li class="current-menu-item "><a href="index.html">Marketplace Full Width</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-2.html">Home Auto Parts</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-10.html">Home Technology</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-9.html">Home Organic</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-3.html">Home Marketplace V1</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-4.html">Home Marketplace V2</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-5.html">Home Marketplace V3</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-6.html">Home Marketplace V4</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-7.html">Home Electronic</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-8.html">Home Furniture</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-kids.html">Home Kids</a>
+                                </li>
+                                <li class="current-menu-item "><a href="homepage-photo-and-video.html">Home photo and picture</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="shop-default.html">베스트</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Catalog Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-default.html">Shop Fullwidth</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-categories.html">Shop Categories</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-sidebar.html">Shop Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-sidebar-without-banner.html">Shop Without Banner</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="shop-carousel.html">Shop Carousel</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Product Layout<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="product-default.html">Default</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-extend.html">Extended</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-full-content.html">Full Content</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-box.html">Boxed</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-sidebar.html">Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-default.html">Fullwidth</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Product Types<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="product-default.html">Simple</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-default.html">Color Swatches</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-image-swatches.html">Images Swatches</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-countdown.html">Countdown</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-multi-vendor.html">Multi-Vendor</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-instagram.html">Instagram</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-affiliate.html">Affiliate</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-on-sale.html">On sale</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-video.html">Video Featured</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-groupped.html">Grouped</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="product-out-stock.html">Out Of Stock</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Woo Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="shopping-cart.html">Shopping Cart</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="checkout.html">Checkout</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="compare.html">Compare</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="order-tracking.html">Order Tracking</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="my-account.html">My Account</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="#">대량상품</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Basic Page<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="contact-us.html">Contact</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="faqs.html">Faqs</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="comming-soon.html">Comming Soon</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="404-page.html">404 Page</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Vendor Pages<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="become-a-vendor.html">Become a Vendor</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-store.html">Vendor Store</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-dashboard-free.html">Vendor Dashboard Free</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="vendor-dashboard-pro.html">Vendor Dashboard Pro</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-list.html">Store List</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-list.html">Store List 2</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="store-detail.html">Store Detail</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item-has-children has-mega-menu"><a href="#">이벤트</a><span class="sub-toggle"></span>
+                            <div class="mega-menu">
+                                <div class="mega-menu__column">
+                                    <h4>Blog Layout<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="blog-grid.html">Grid</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-list.html">Listing</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-small-thumb.html">Small Thumb</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-left-sidebar.html">Left Sidebar</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-right-sidebar.html">Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu__column">
+                                    <h4>Single Blog<span class="sub-toggle"></span></h4>
+                                    <ul class="mega-menu__list">
+                                        <li class="current-menu-item "><a href="blog-detail.html">Single 1</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-2.html">Single 2</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-3.html">Single 3</a>
+                                        </li>
+                                        <li class="current-menu-item "><a href="blog-detail-4.html">Single 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navigation__extra">
+                        <li><a href="#">선물하기</a></li>
+                        <li><a href="#">배송확인</a></li>
+                        <li>
+                            <div class="ps-dropdown"><a href="#">원화</a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="#">원화</a></li>
+                                    <li><a href="#">dollar</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">한국어</a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="#"><img src="img/flag/en.png" alt=""> English</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </nav>
+    </header>
+    <header class="header header--mobile" data-sticky="true">
+        <div class="header__top">
+            <div class="header__left">
+                <p>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</p>
+            </div>
+            <div class="header__right">
+                <ul class="navigation__extra">
+                    <li><a href="#">Sell on Martfury</a></li>
+                    <li><a href="#">Tract your order</a></li>
+                    <li>
+                        <div class="ps-dropdown"><a href="#">US Dollar</a>
+                            <ul class="ps-dropdown-menu">
+                                <li><a href="#">Us Dollar</a></li>
+                                <li><a href="#">Euro</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
+                            <ul class="ps-dropdown-menu">
+                                <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
+                                <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</div>
-
-<script src="shopView/js/gnb_v1.js"></script>
-<script type="text/javascript">
-//
-gnbMenu.update();
-
-// 검색창 클래스 추가/삭제
-$(document).ready(function(){
-    $('#gnb .inp_search').focus(function(){
-        $(this).addClass('focus');
-    });
-    $('#gnb .inp_search').blur(function(){
-        $(this).removeClass('focus');
-    });
-    // 검색창기능 수정
-    $('[name=sword]').on('keyup', function(){
-        if($('#edit').length > 0) $('#edit').val('Y');
-        var str = $(this).val();
-        //var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
-        var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%\\\=\(\'\"]/gi; // & 제거 B&O 검색어 이슈
-        if(regExp.test(str)){
-            var result = str.replace(regExp, "");
-            $(this).val(result);
-        }
-    });
-});
-// 로고 클릭 이벤트
-$('#header .link_main').on('click', function(e){
-    e.preventDefault();
-    KurlyTracker.setAction('select_main_logo').sendData();
-    location.href = $(this).attr('href');
-});
-
-$('#gnb .gnb .link').on('click', function(e){
-    e.preventDefault();
-    var _event_name, _event_info;
-    if($(this).hasClass('new')){
-        _event_name = 'select_new_product_subtab';
-    }else if($(this).hasClass('best')){
-        _event_name = 'select_popular_product_subtab';
-    }else if($(this).hasClass('bargain')){
-        _event_name = 'select_bargain_subtab';
-    }else if($(this).hasClass('event')){
-        _event_name = 'select_event_list_subtab';
-    }
-    _event_info = $(this).attr('href');
-
-    KurlyTracker.setEventInfo(_event_info).setAction(_event_name).sendData();
-    location.href = _event_info;
-});
-
-// 장바구니 아이콘 클릭이벤트
-$('#gnbMenu .btn_cart').on('click', function(e){
-    e.preventDefault();
-    KurlyTracker.setAction('select_cart').sendData();
-    location.href = $(this).attr('href');
-});
-</script>
-
-
-
-</div>
-
-
-</body>
-</html>
+        <div class="navigation--mobile">
+            <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="img/honshop.png" alt=""></a></div>
+            <div class="navigation__right">
+                <div class="header__actions">
+                    <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                        <div class="ps-cart__content">
+                            <div class="ps-cart__items">
+                                <div class="ps-product--cart-mobile">
+                                    <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt=""></a></div>
+                                    <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                        <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                    </div>
+                                </div>
+                                <div class="ps-product--cart-mobile">
+                                    <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/5.jpg" alt=""></a></div>
+                                    <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                        <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ps-cart__footer">
+                                <h3>Sub Total:<strong>$59.99</strong></h3>
+                                <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ps-block--user-header">
+                        <div class="ps-block__left"><i class="icon-user"></i></div>
+                        <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원등록</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-search--mobile">
+            <form class="ps-form--search-mobile" action="index.html" method="get">
+                <div class="form-group--nest">
+                    <input class="form-control" type="text" placeholder="Search something...">
+                    <button><i class="icon-magnifier"></i></button>
+                </div>
+            </form>
+        </div>
+    </header>
