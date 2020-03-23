@@ -106,7 +106,7 @@ $(function(){
 			<a href="#">가구관리 </a>
 				<ul class="submenu">
 					<li><a href="../funiture/register">가구 등록 </a></li>
-					<li><a href="#">가구 리스트 </a>
+					<li><a href="../funiture/list">가구 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
 		  			<li><a href="#">가구 정비 </a>

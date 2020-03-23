@@ -11,6 +11,7 @@
 
 
 <bean id="furnitureInsertService" class="service.stay.furniture.FurnitureInsertService" />
+<bean id="furnitureListService" class="service.stay.furniture.FurnitureListService" />
 
 
 

@@ -17,6 +17,26 @@
 	
 </insert>
 
+<resultMap type="Model.DTO.FurnitureDTO" id="furnitures">
+	<id column="furniture_no" jdbcType="VARCHAR" property="furnitureNo" />
+	<result column="furniture_photo" jdbcType="VARCHAR" property="furniturePhoto" />
+	<result column="furniture_color" jdbcType="VARCHAR" property="furnitureColor" />
+	<result column="furniture_type" jdbcType="VARCHAR"  property="furnitureType" />
+	<result column="furniture_point" jdbcType="VARCHAR"  property="furniturePoint" />
+	<result column="furniture_buydate" jdbcType="VARCHAR"  property="furnitureBuydate" />
+	<result column="furniture_state" jdbcType="VARCHAR"  property="furnitureState" />
+	<result column="furniture_score" jdbcType="BIGINT"  property="furnitureScore" />
+	<result column="furniture_rentalfee" jdbcType="BIGINT"  property="furnitureRentalFee" />
+	<result column="furniture_usage" jdbcType="VARCHAR"  property="furnitureUsage" />
+	<result column="funiture_name" jdbcType="VARCHAR"  property="furnitureName" />
+	
+</resultMap>
+
+<select id="furnitureList" resultMap="furnitures">
+select <include refid="basecolumn" /> from furniture
+</select>
+
+
 
 
 </mapper>

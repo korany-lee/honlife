@@ -100,7 +100,7 @@
 				</table>
 
 				<div class="container-contact100-form-btn">
-					<input class="contact100-form-btn" type="submit"  value="발주 전송" style="cursor:pointer">
+					<input class="contact100-form-btn" type="submit"  value="객실등록" style="cursor:pointer">
 				</div>
 			</form>
 		</div>
