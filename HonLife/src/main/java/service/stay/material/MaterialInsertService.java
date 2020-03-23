@@ -1,4 +1,4 @@
-package Service.Stay.Room;
+package service.stay.material;
 
 import java.io.File;
 import java.util.UUID;
@@ -9,36 +9,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import Command.Stay.Room.RoomCommand;
-import Model.DTO.RoomDTO;
-import Repository.Stay.RoomRepository;
+import Model.DTO.MaterialDTO;
+import command.stay.material.MaterialCommand;
+import repository.stay.MaterialRepository;
 
 @Service
-public class RoomInsertService {
+public class MaterialInsertService {
 	@Autowired
-	RoomRepository roomRepository;
+	MaterialRepository materialRepository;
 	
-	public String roomInsert(RoomCommand roomCommand,HttpServletRequest request) {
-		RoomDTO dto = new RoomDTO();
-		dto.setRoomNo(roomCommand.getRoomNo());
-		dto.setRoomSize(roomCommand.getRoomSize());
-		dto.setRoomFee(roomCommand.getRentalFee());
-		dto.setRoomManageFee((int)(roomCommand.getRentalFee()*0.1));
-		dto.setRoomView(roomCommand.getRoomView());
-		dto.setRoomCallNum(roomCommand.getCallNum());
-		dto.setRoomUsage(roomCommand.getRoomExtra());
-		dto.setRoomExplantion(roomCommand.getRoomContent());
+	public String materialInsert(MaterialCommand materialCommand,HttpServletRequest request) {
+		MaterialDTO dto = new MaterialDTO();
+		dto.setMaterialNo(materialCommand.getMaterialNo());
+		dto.setMaterialType(materialCommand.getMaterialType());
+		dto.setMaterialUsage(materialCommand.getMaterialUsage());
 		
 		//사진저장 위해서
 		String storeTotal = "";
-		
-		for(MultipartFile mf :roomCommand.getRoomImage()) {
+				
+		for(MultipartFile mf :materialCommand.getMaterialImage()) {
 			String original = mf.getOriginalFilename();// 파일 업로드할때 탐색창에서 나오는 이름
 			String originalFileExtension = original.substring(original.lastIndexOf("."));
 			String store = UUID.randomUUID().toString().replace("-", "") + originalFileExtension;   //시스템에 저장되는거
-		
+				
 			storeTotal += store+"-";
-			
+					
 			String path = request.getServletContext().getRealPath("/");  // webapp까지만...
 			path +="command\\manager\\update\\";
 			
@@ -50,10 +45,10 @@ public class RoomInsertService {
 				e.printStackTrace();
 			}    
 		}
-		dto.setRoomPhoto(storeTotal);
-		roomRepository.roomInsert(dto);
+		dto.setMaterialPhoto(storeTotal);
+		materialRepository.materialInsert(dto);
+		
 		
 		return null;
 	}
-	
 }

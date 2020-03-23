@@ -8,4 +8,13 @@
 
 <bean class="controller.stay.funiture.FunitureController" />
 
+
+
+<bean id="furnitureInsertService" class="service.stay.furniture.FurnitureInsertService" />
+
+
+
+
+<bean id="furnitureRepository" class="repository.stay.FurnitureRepository" />
+
 </beans>

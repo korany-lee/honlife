@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="furnitureMapper">
+<cache />
+<sql id="basecolumn">
+	furniture_no,furniture_photo,furniture_color,furniture_type,furniture_point,furniture_buydate,furniture_state,furniture_score,
+	furniture_rentalfee,furniture_usage,funiture_name
+</sql>
+
+<insert id="furnitureInsert" parameterType="Model.DTO.FurnitureDTO">
+	insert into furniture(<include refid="basecolumn" />)
+	values(#{furnitureNo},#{furniturePhoto},#{furnitureColor},#{furnitureType},#{furniturePoint},#{furnitureBuydate}
+	,'사용대기',0,#{furnitureRentalFee},#{furnitureUsage},#{furnitureName})
+	
+</insert>
+
+
+
+</mapper>

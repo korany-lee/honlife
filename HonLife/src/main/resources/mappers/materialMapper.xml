@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="materialMapper">
+<cache />
+<sql id="basecolumn">
+	material_no,material_type,material_quantity,material_usage,material_photo
+</sql>
+
+<insert id="materialInsert" parameterType="Model.DTO.MaterialDTO">
+	insert into material(<include refid="basecolumn" />)
+	values(#{materialNo},#{materialType},0,#{materialUsage},#{materialPhoto})
+	
+</insert>
+
+
+
+</mapper>

@@ -4,10 +4,10 @@
 
 
 <html >
-<title>Hon Life - 객실 등록</title>
+<title>Hon Life - 가구 등록</title>
 <head>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
+<jsp:include page="../../common/manager/managerheader.jsp"/>
 	<link rel="icon" type="image/png" href="../common/manager/contactform/images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -20,6 +20,13 @@
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/vendor/noui/nouislider.min.css">
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/css/util.css">
 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    
+<link rel="stylesheet"
+   href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 
 
 <link href="../common/manager/managercss/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
@@ -33,74 +40,80 @@
 
 <body>
 		<div class="col-left contact-info">
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
+			<jsp:include page="../../common/manager/sidemenu.jsp" />
 		
 		</div>
 		<div class="col-right">
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="roomRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
+			<form class="contact100-form" action="furnitureRegisterAction" method="post" enctype="multipart/form-data" name="furnitureForm">
 				<span class="contact100-form-title">
-				객실을 등록하세요
+				가구를 등록하세요
 				</span>
 				
 				<table border="1">
 					<tr>
-						<td>호실</td>
-						<td><input type="text" id="roomNo" name="roomNo" placeholder="호실을 입력하세요">호<div>${roomNumError }</div></td>
+						<td>가구번호</td>
+						<td><input type="text" id="furnitureNo" name="furnitureNo" placeholder="가구번호를 입력하세요"><div>${roomNumError }</div></td>
 					</tr>
 					<tr>
-						<td>평수</td>
+						<td>가구종류</td>
 						<td>
-							<select name="roomSize">
-								<option value="8" selected="selected">8평</option>
-								<option value="10">10평</option>
-								<option value="13">13평</option>
-								<option value="16">16평</option>
+							<select name="furnitureType">
+								<option value="거실용품" selected="selected">거실용품</option>
+								<option value="주방용품">주방용품</option>
+								<option value="생활용품">생활용품</option>
+								<option value="침실용품">침실용품</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<td>1일 숙박비</td>
+						<td>1일 대여비</td>
 						<td><input type="text" id="rentalFee" name="rentalFee" placeholder="금액을 입력하세요">원<div>${rentalfeeError }</div></td>
-						<td>*관리비는 숙박비의 10%입니다</td>
 					</tr>
 					<tr>
-						<td>뷰</td>
+						<td>색상</td>
 						<td>
-							<select name="roomView">
-								<option value="시티" selected="selected">시티뷰</option>
-								<option value="마운틴">마운틴뷰</option>
-								<option value="리버">리버뷰</option>
+							<select name="funitureColor">
+								<option value="화이트" selected="selected">화이트</option>
+								<option value="블랙">블랙</option>
+								<option value="브라운">브라운</option>
+								<option value="기타">기타</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<td>내선번호</td>
-						<td><input type="text" id="callNum" name="callNum" placeholder="내선번호를 입력하세요"><div>${rentalfeeError }</div></td>
+						<td>가구이름</td>
+						<td><input type="text" id="furnitureName" name="furnitureName" placeholder="가구명칭을 입력하세요"><div>${rentalfeeError }</div></td>
 					</tr>
+					<tr>
+						<td>구입년월</td>
+						<td>  <input type="date" name="buyDate" id="buyDate" >  </td>
+						
+    				
+    				</tr>
 					<tr>
 						<td>예비용</td>
 						<td>
-							<select name="roomExtra">
+							<select name="furnitureExtra">
 								<option value="일반" selected="selected">일반</option>
 								<option value="예비">예비</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<td>방 사진 등록<br>(사진은 최소 6장 입력하셔야 합니다)</td>
-						<td><input type="file" name="roomImage" id="roomImage" multiple="multiple"><div>${fileError }</div></td>
+						<td>가구 사진 등록<br>(사진은 최소 6장 입력하셔야 합니다)</td>
+						<td><input type="file" name="furnitureImage" id="furnitureImage" multiple="multiple"><div>${fileError }</div></td>
 					</tr>
 					<tr>
-						<td>방 설명</td>
-						<td><textarea rows="13" cols="56" name="roomContent" id="goodsContent"></textarea></td>
+						<td>가구 설명</td>
+						<td><textarea rows="13" cols="56" name="furnitureContent" id="furnitureContent"></textarea></td>
 					</tr>
 				</table>
 
 				<div class="container-contact100-form-btn">
-					<input class="contact100-form-btn" type="submit"  value="발주 전송" style="cursor:pointer">
+					<input class="contact100-form-btn" type="submit"  value="가구 등록" style="cursor:pointer">
 				</div>
 			</form>
 		</div>

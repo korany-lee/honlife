@@ -8,9 +8,9 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import Command.Stay.Room.RoomCommand;
-import Service.Stay.Room.RoomInsertService;
+import service.stay.room.RoomInsertService;
 import Validator.roomCommandValidator;
+import command.stay.room.RoomCommand;
 
 @Controller
 public class RoomController {

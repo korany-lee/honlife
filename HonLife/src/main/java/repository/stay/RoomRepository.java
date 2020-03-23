@@ -1,4 +1,4 @@
-package Repository.Stay;
+package repository.stay;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +15,6 @@ public class RoomRepository {
 	
 	public void roomInsert(RoomDTO dto) {
 		String statement = namespace + ".roomInsert";
-		System.out.println(dto.getRoomNo());
-		System.out.println(dto.getRoomSize());
-		System.out.println(dto.getRoomFee());
-		System.out.println(dto.getRoomManageFee());
-		System.out.println(dto.getRoomView());
-		System.out.println(dto.getRoomExplantion());
-		System.out.println(dto.getRoomPhoto());
-		System.out.println(dto.getRoomUsage());
-		System.out.println(dto.getRoomCallNum());
 		sqlSession.insert(statement, dto);
 	}
 }

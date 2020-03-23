@@ -8,4 +8,9 @@
 
 <bean class="controller.stay.material.MaterialController" />
 
+
+<bean id="materialInsertService" class="service.stay.material.MaterialInsertService" />
+
+<bean id="materialRepository" class="repository.stay.MaterialRepository" />
+
 </beans>

@@ -9,11 +9,11 @@
 
 
 
-<bean id="roomInsertService" class="Service.Stay.Room.RoomInsertService" />
+<bean id="roomInsertService" class="service.stay.room.RoomInsertService" />
 
 
 
 
-<bean id="roomRepository" class="Repository.Stay.RoomRepository" />
+<bean id="roomRepository" class="repository.stay.RoomRepository" />
 </beans>
 

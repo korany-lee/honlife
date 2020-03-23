@@ -4,10 +4,10 @@
 
 
 <html >
-<title>Hon Life - 객실 등록</title>
+<title>Hon Life - 자재 등록</title>
 <head>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
+<jsp:include page="../../common/manager/managerheader.jsp"/>
 	<link rel="icon" type="image/png" href="../common/manager/contactform/images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -33,74 +33,47 @@
 
 <body>
 		<div class="col-left contact-info">
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
+			<jsp:include page="../../common/manager/sidemenu.jsp" />
 		
 		</div>
 		<div class="col-right">
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="roomRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
+			<form class="contact100-form" action="materialRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
 				<span class="contact100-form-title">
-				객실을 등록하세요
+				자재를 등록하세요
 				</span>
 				
 				<table border="1">
 					<tr>
-						<td>호실</td>
-						<td><input type="text" id="roomNo" name="roomNo" placeholder="호실을 입력하세요">호<div>${roomNumError }</div></td>
+						<td>자재번호</td>
+						<td><input type="text" id="materialNo" name="materialNo" placeholder="자재번호을 입력하세요"><div>${roomNumError }</div></td>
 					</tr>
 					<tr>
-						<td>평수</td>
+						<td>자재종류</td>
 						<td>
-							<select name="roomSize">
-								<option value="8" selected="selected">8평</option>
-								<option value="10">10평</option>
-								<option value="13">13평</option>
-								<option value="16">16평</option>
+							<select name="materialType">
+								<option value="조립용" selected="selected">조립용</option>
+								<option value="도색용">도색용</option>
+								<option value="기타장비">기타장비</option>
+								<option value="기타 소모용품">기타 소모용품</option>
 							</select>
 						</td>
 					</tr>
+					
 					<tr>
-						<td>1일 숙박비</td>
-						<td><input type="text" id="rentalFee" name="rentalFee" placeholder="금액을 입력하세요">원<div>${rentalfeeError }</div></td>
-						<td>*관리비는 숙박비의 10%입니다</td>
+						<td>자재 사진 등록</td>
+						<td><input type="file" name="materialImage" id="materialImage" multiple="multiple"><div>${fileError }</div></td>
 					</tr>
 					<tr>
-						<td>뷰</td>
-						<td>
-							<select name="roomView">
-								<option value="시티" selected="selected">시티뷰</option>
-								<option value="마운틴">마운틴뷰</option>
-								<option value="리버">리버뷰</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>내선번호</td>
-						<td><input type="text" id="callNum" name="callNum" placeholder="내선번호를 입력하세요"><div>${rentalfeeError }</div></td>
-					</tr>
-					<tr>
-						<td>예비용</td>
-						<td>
-							<select name="roomExtra">
-								<option value="일반" selected="selected">일반</option>
-								<option value="예비">예비</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>방 사진 등록<br>(사진은 최소 6장 입력하셔야 합니다)</td>
-						<td><input type="file" name="roomImage" id="roomImage" multiple="multiple"><div>${fileError }</div></td>
-					</tr>
-					<tr>
-						<td>방 설명</td>
-						<td><textarea rows="13" cols="56" name="roomContent" id="goodsContent"></textarea></td>
+						<td>자재 설명</td>
+						<td><textarea rows="13" cols="56" name="materialUsage" id="materialUsage"></textarea></td>
 					</tr>
 				</table>
 
 				<div class="container-contact100-form-btn">
-					<input class="contact100-form-btn" type="submit"  value="발주 전송" style="cursor:pointer">
+					<input class="contact100-form-btn" type="submit"  value="자재등록" style="cursor:pointer">
 				</div>
 			</form>
 		</div>
