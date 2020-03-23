@@ -6,12 +6,6 @@
                      ">
                      
 
-<bean class="controller.main.mainController" />
-<bean class="controller.care.manager.managerMainController"/>
-
-
-<bean class="controller.main.shopMainController" />
-<bean class="controller.main.careMainController"/>
-<bean class="controller.main.stayMainController"/>
+<bean class="controller.stay.funiture.FunitureController" />
 
 </beans>
