@@ -130,9 +130,9 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<div class="section-content clearfix">
 
 				<div class="col-right">
-						
+					<a href="main">	
 						<h1 style="font-size: 55px; font-family: 'Do Hyeon', sans-serif; color:#666262;">관리자 페이지 입니다!</h1>
-						
+						</a>
 				</div>
 
 			</div>

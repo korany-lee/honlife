@@ -8,7 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>SIDE</title>
 
+
+
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+<link href="../common/manager/managercss/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
+<link href="../common/manager/managercss/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<script src="../common/manager/managerjs/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="../common/manager/managerjs/jquery-accordion-menu.js" type="text/javascript"></script>
 
 <style type="text/css">
 *{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; }
@@ -64,10 +71,11 @@ $(function(){
 						</li>
 					</ul>
 			</li>			
-			<li><a href="#">재고관리 </a>
+			<li>
+			<a href="#">재고관리 </a>
 				<ul class="submenu">
-					<li><a href="manager/cleaningitem">청소 물품 발주 </a></li>
-					<li><a href="#">발주 리스트 </a>
+					<li><a href="../manager/cleanorder">청소 물품 발주 </a></li>
+					<li><a href="../manager/cleanItemList">발주 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>						
 					<li><a href="#">입고확인 </a></li>								
@@ -75,6 +83,16 @@ $(function(){
 					<li><a href="#">반출 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 					</li>				
+				</ul>
+			</li>		
+			<li>
+			<a href="#">객실관리 </a>
+				<ul class="submenu">
+					<li><a href="../room/register">객실 등록 </a></li>
+					<li><a href="#">객실 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					
 				</ul>
 			</li>		
 			 <li>

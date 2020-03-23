@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="roomMapper">
+<cache />
+<sql id="basecolumn">
+	room_no,room_size,room_fee,room_managefee,room_view,room_explantion,room_photo,
+	room_score,room_usage,room_callnum,room_state
+</sql>
+
+<insert id="roomInsert" parameterType="Model.DTO.RoomDTO">
+	insert into room(<include refid="basecolumn" />)
+	values(#{roomNo},#{roomSize},#{roomFee},#{roomManageFee},#{roomView},
+	#{roomExplantion},#{roomPhoto},0,#{roomUsage},#{roomCallNum},'미사용')
+	
+</insert>
+
+<resultMap type="Model.DTO.RoomDTO" id="rooms">
+	<id column="room_no" jdbcType="VARCHAR" property="roomNo" />
+	<result column="room_size" jdbcType="BIGINT" property="roomSize" />
+	<result column="room_fee" jdbcType="BIGINT" property="roomFee" />
+	<result column="room_managefee" jdbcType="BIGINT"  property="roomManageFee" />
+	<result column="room_view" jdbcType="VARCHAR"  property="roomView" />
+	<result column="room_explantion" jdbcType="VARCHAR"  property="roomExplantion" />
+	<result column="room_photo" jdbcType="VARCHAR"  property="roomPhoto" />
+	<result column="room_score" jdbcType="BIGINT"  property="roomScore" />
+	<result column="room_usage" jdbcType="VARCHAR"  property="roomUsage" />
+	<result column="room_callnum" jdbcType="BIGINT"  property="roomCallNum" />
+	<result column="room_state" jdbcType="VARCHAR"  property="roomState" />
+	
+</resultMap>
+
+</mapper>
