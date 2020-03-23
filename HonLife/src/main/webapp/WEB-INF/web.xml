@@ -24,6 +24,8 @@
 			classpath:spring-jdbc.xml
 			classpath:mybatis-config.xml
 			classpath:log4j.xml
+			classpath:stay-materialController.xml
+			classpaath:stay-funitureController.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

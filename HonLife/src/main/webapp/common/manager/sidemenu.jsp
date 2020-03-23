@@ -91,10 +91,46 @@ $(function(){
 					<li><a href="../room/register">객실 등록 </a></li>
 					<li><a href="#">객실 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">객실 정비 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">객실 건의사항 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  								
+					
+				</ul>
+			</li>
+			<li>
+			<a href="#">가구관리 </a>
+				<ul class="submenu">
+					<li><a href="../funiture/register">가구 등록 </a></li>
+					<li><a href="#">가구 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">가구 정비 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">가구 건의사항 </a>
+						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>						
 					
 				</ul>
-			</li>		
+			</li>
+			<li>
+			<a href="#">자재관리 </a>
+				<ul class="submenu">
+					<li><a href="../material/register">자재 등록 </a></li>
+					<li><a href="#">자재 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">자재 사용현황 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					
+				</ul>
+			</li>	
 			 <li>
 				<a href="#">사원관리 </a>
 				<ul class="submenu">
@@ -113,6 +149,12 @@ $(function(){
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
 						<li><a href="#">세탁 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
+						<li><a href="#">객실 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
+						<li><a href="#">가구 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>					
 				</ul>
