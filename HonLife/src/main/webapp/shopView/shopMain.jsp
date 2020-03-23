@@ -13,6 +13,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../main/images/WEB.png" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="fonts/Linearicons/Linearicons/Font/demo-files/demo.css">

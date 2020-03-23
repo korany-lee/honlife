@@ -14,7 +14,7 @@
 
 .member_join .boardWrite {
 	padding: 9px 0 19px;
-	border: 2px solid #D2B65C;
+	border: 1px solid #D2B65C;
 	background-color: #fff;
 	border-radius: 4px 4px 4px 4px
 }
@@ -1306,7 +1306,7 @@ only screen and (min-resolution: 1.5dppx) {
 .member_join .boardWrite .member_pwd .memberCols1{padding:20px 0 0 29px}
 .member_join .boardWrite .member_pwd .memberCols2{padding:10px 0 0 0}
 .member_join .boardWrite input[type="text"],
-.member_join .boardWrite input[type="password"]{width:300px;height:40px;padding:0 9px;border:1px solid #ccc;font-size:14px;color:#333;line-height:20px;border-radius:3px;background:#fff;outline:none}
+.member_join .boardWrite input[type="password"]{width:300px;height:40px;padding:0 9px;border:1px solid #ccc;font-size:14px;color:#D2B65C;line-height:20px;border-radius:3px;background:#fff;outline:none}
 .member_join .boardWrite input[type="text"]:focus,
 .member_join .boardWrite input[type="password"]:focus{border:1px solid #333}
 .member_join .pw_check .memberCols1{padding-top:20px}

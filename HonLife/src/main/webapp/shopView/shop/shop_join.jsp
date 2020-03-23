@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" type="image/x-icon" href="./../main/images/WEB.png" />
 <link href="./../common/css/main.css" rel="stylesheet" type="text/css">
 <link href="./../common/css/common.css" rel="stylesheet" type="text/css">
 <link href="./../common/css/section1.css" rel="stylesheet" type="text/css">
@@ -136,22 +137,15 @@
 
 												</td>
 											</tr>
-
+											
 											<tr>
 												<td class="memberCols1">배송 주소</td>
 												<td class="memberCols2">
 													<div class="field_address">
-														<input type="hidden" name="zonecode" id="zonecode"
-															size="5" readonly value="" label="주소를 선택해 주세요.">
-														<input type="hidden" name=zipcode[] id="zipcode0" size=3
-															readonly value="" label="주소를 선택해 주세요."> <input
-															type="hidden" name=zipcode[] id="zipcode1" size=3
-															readonly value="" label="주소를 선택해 주세요."> <input
-															type="hidden" name=address id="address" readonly value=""
-															label="주소를 선택해 주세요."> <input type="hidden"
-															name="road_address" id="road_address" value=""> <a
-															href="javascript:void(0)" id="btnAddressSearch"
-															onClick="javascript:popup('../proc/popup_address.php',530,500)">
+														 <input type="text"
+															name="roadFullAddr" id="roadFullAddr" placeholder="주소를 입력해주세요."> 
+															<a href="javascript:void(0)" id="btnAddressSearch"
+															onClick="jusoPop();">
 															<span class="bhs_button"> <span class="ico"></span>
 																<span class="txt">주소 검색</span>
 														</span>
@@ -163,7 +157,25 @@
 															<div class="view_address"></div>
 														</div>
 													</div>
-
+													<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+													<script type="text/javascript">
+													function jusoPop() {
+														var popupWidth = 500;
+														var popupHeight = 530;
+														var popupX = (window.screen.width/2) - (popupWidth/2);
+														var popupY = (window.screen.height/2) - (popupHeight/2);
+														var popUrl = "./../common/manager/jusoPopup.jsp";
+														var popOption = 'height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY +', status=no, location=no, resizable=yes';
+														window.open(popUrl, jusoCallBack, popOption);
+													}
+													
+													function jusoCallBack(roadFullAddr){
+														// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+														document.form.roadFullAddr.value = roadFullAddr;
+													
+												}
+													
+													</script>
 													<div class="field_address lst">
 														<input type="text" name="address_sub" id="address_sub"
 															value="" onkeyup="SameAddressSub(this)"

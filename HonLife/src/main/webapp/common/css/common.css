@@ -1,6 +1,30 @@
 @charset "euc-kr";
 [v-cloak] {display: none}/* vue �ъ�⑹�� ���� */
 
+.member_join {
+	width: 640px;
+	margin: 0 auto
+}
+
+.member_join .boardWrite {
+	padding: 9px 0 19px;
+	border: 1px solid #D2B65C;
+	background-color: #fff;
+	border-radius: 4px 4px 4px 4px
+}
+
+.member_join .field_head.head_type2 {
+	padding: 0 0 29px
+}
+
+.member_join .reg_agree {
+	margin-top: 10px;
+	padding: 29px 0 21px 29px;
+	border: 1px solid #f3f2f4;
+	background-color: #fff
+}
+
+
 /* 湲곕낯 ���댁���� ��移� �↔린 */
 #header,
 #container,
@@ -1111,7 +1135,7 @@ only screen and (min-resolution: 1.5dppx) {
 
 
 /* ######## */
-/* ����媛��� */
+/* ����媛��� */`
 /* ######## */
 /* ���댁����댄�� */
 .page_aticle .head_join{width:1050px;margin:0 auto;padding:17px 0 0;text-align:center}
@@ -1133,7 +1157,7 @@ only screen and (min-resolution: 1.5dppx) {
 .member_join .boardWrite .member_pwd .memberCols1{padding:20px 0 0 29px}
 .member_join .boardWrite .member_pwd .memberCols2{padding:10px 0 0 0}
 .member_join .boardWrite input[type="text"],
-.member_join .boardWrite input[type="password"]{width:300px;height:40px;padding:0 9px;border:1px solid #ccc;font-size:14px;color:#333;line-height:20px;border-radius:3px;background:#fff;outline:none}
+.member_join .boardWrite input[type="password"]{width:300px;height:40px;padding:0 9px;border:1px solid #D2B65C;font-size:14px;color:#333;line-height:20px;border-radius:3px;background:#fff;outline:none}
 .member_join .boardWrite input[type="text"]:focus,
 .member_join .boardWrite input[type="password"]:focus{border:1px solid #333}
 .member_join .pw_check .memberCols1{padding-top:20px}
@@ -1150,7 +1174,7 @@ only screen and (min-resolution: 1.5dppx) {
 .member_join .select_sex td.memberCols1{padding-top:18px}
 .member_join .select_sex td.memberCols2{padding-top:8px}
 .member_join .select_sex .group_radio{padding:10px 0 12px}
-.member_join .birth .birth_day{overflow:hidden;width:300px;padding-left:8px;border:1px solid #ccc;border-radius:3px}
+.member_join .birth .birth_day{overflow:hidden;width:300px;padding-left:8px;border:1px solid #D2B65C;border-radius:3px}
 .member_join .birth .birth_day.on{border:1px solid #333}
 .member_join .birth .birth_day input[type="text"]{float:left;width:80px;height:37px;border:0 none;text-align:center}
 .member_join .birth .birth_day .bar{width:20px;height:38px;padding-top:10px;text-align:center}
