@@ -80,7 +80,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/clean/8.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="../careView/images/clean/8.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -111,7 +111,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/clean/10.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="../careView/images/clean/10.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">
@@ -143,7 +143,7 @@
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/clean/13.jpg" style="width: 300px;"alt="dressphoto" />
+												<img src="../careView/images/clean/13.jpg" style="width: 300px;"alt="dressphoto" />
 											</div>
 										</div>				
 									<div class="col-right" style="margin-right: 260px;">

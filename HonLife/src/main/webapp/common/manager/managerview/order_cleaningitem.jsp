@@ -4,6 +4,29 @@
 
 <html >
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script language="javascript">
+// opener관련 오류가 발생하는 경우 아래 주석을 해지하고, 사용자의 도메인정보를 입력합니다. ("팝업API 호출 소스"도 동일하게 적용시켜야 합니다.)
+//document.domain = "abc.go.kr";
+
+
+
+function goPopup(){
+	// 주소검색을 수행할 팝업 페이지를 호출합니다.
+	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+	var pop = window.open("../common/manager/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	
+	// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+}
+
+
+function jusoCallBack(roadFullAddr){
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.form.roadFullAddr.value = roadFullAddr;
+	
+}
+
+</script>
 
 <head>
 
@@ -58,9 +81,11 @@
 				</div>
 				
 				<span class="label-input100" style="font-size: 20px">주소</span>
-				<div class="wrap-input100 ">
-					<input class="input100" type="text" name="name" placeholder="발주처의 주소를 입력하세요.">
+				<input type="button" onClick="goPopup();" value="우편번호 검색" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"/>
+				<div class="wrap-input100 "> 			
+					<input type="text"  class="input100" style="width:500px;" id="roadFullAddr"  name="roadFullAddr"  placeholder="주소를 입력해주셈"/>				
 				</div>
+				
 			
 				
 				<span class="label-input100" style="font-size: 20px" >연락처</span>
@@ -142,19 +167,19 @@
  			
  			</thead>
   			
-  			
+  
   			 <tfoot>
-        
-        
         <tr>
-            <td colspan="5">
-                Grand Total: <span id="grandtotal"></span>
+        
+      
+            <td colspan="5" style=" font-family: 'Do Hyeon', sans-serif ; padding-left: 380px;" >
+                Grand Total: <span id="all" style=" font-family: 'Do Hyeon', sans-serif ; font-size:18px;"></span>
             </td>
         </tr>
+
     </tfoot>
 				</table>
-				<hr>
-	
+			
 				
 				 
 				 
@@ -187,21 +212,31 @@
         newRow.append(cols);
         
         $("table.order").append(newRow);
+        
+        
+    	$('.input1001p, .input1001q, .input1001s').keyup(function(){			
+    		$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
+    	});
     });
     
+    
+
     $("table.order").on("change", 'input[name^="item_name"], input[name^="item_qty"]', function (event) {
+    
         calculateRow($(this).closest("tr"));
         calculateGrandTotal();
     });
     
     $("table.order").on("click", "input.contact100-form-btn2", function (event) {
         $(this).closest("tr").remove();
+        
         calculateGrandTotal();
     });
 });
     
 function calculateRow(row) {
     var price = +row.find('input[name^="item_price"]').val();
+    
     var qty = +row.find('input[name^="item_qty"]').val();
     row.find('input[name^="item_sum"]').val((price * qty));
 }
@@ -211,7 +246,7 @@ function calculateGrandTotal() {
     $("table.order").find('input[name^="item_sum"]').each(function () {
         grandTotal += +$(this).val();
     });
-    $("#grandtotal").text(grandTotal);
+    $("#all").text(grandTotal);
 }
 
  
@@ -271,28 +306,7 @@ function calculateGrandTotal() {
 
 </script>
 
-				<span class="label-input100" style="font-size: 20px">입고처</span>
-				<div class="wrap-input100 " >			
-					<input class="input100" type="text" name="name" placeholder="입고처를 입력하세요">
-				</div>
-				
-				<span class="label-input100" style="font-size: 20px">주소</span>
-				<div class="wrap-input100 ">
-					<input class="input100" type="text" name="name" placeholder="입고처의 주소를 입력하세요.">
-				</div>
-				
-				
-				<span class="label-input100" style="font-size: 20px" >입고처 연락처</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100i">			
-					<input class="input100" type="text" name="phone" placeholder="연락처를 입력하세요">
-				</div>
-				
-				
-				<span class="label-input100" style="font-size: 20px" >입고처 FAX</span>
-					<div class="wrap-input100 bg1 rs1-wrap-input100i">				
-					<input class="input100" type="text" name="phone" placeholder="팩스번호를 입력하세요">
-				</div>
-				
+			
 				
 				<span class="label-input100" style="font-size: 20px; " >배송방법</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100m">			

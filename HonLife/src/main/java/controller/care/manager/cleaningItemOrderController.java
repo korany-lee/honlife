@@ -11,4 +11,14 @@ public String Corder() {
 	
 	return "common/manager/managerview/order_cleaningitem";
 }
+
+	/*
+	 * public String insertOrder() {
+	 * 
+	 * 
+	 * return }
+	 * 
+	 */
+
+
 }

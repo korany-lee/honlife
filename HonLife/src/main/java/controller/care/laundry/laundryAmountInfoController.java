@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class laundryAmountInfoController {
-	@RequestMapping("/laundryAmountInfo")
+	@RequestMapping("/care/laundryAmountInfo")
 	public String amountInfo() {
 		
 		return "careView/care/laundry_amountinfo";

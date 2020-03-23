@@ -52,17 +52,17 @@
 var wpcf7 = {"apiSettings":{"root":"https:\/\/www.voxverticalvillage.ro\/en\/wp-json\/contact-form-7\/v1\/","namespace":"contact-form-7\/v1"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.6'></script>
+<script type='text/javascript' src='../careView/js/script-5.1.6.js'></script>
 
 
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/slick.min.js'></script>
+<script type='text/javascript' src='../careView/js/voxslick.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
+<script type='text/javascript' src='../careView/js/vox_script.min.js'></script>
+<script type='text/javascript' src='../careView/js/vox-embed.min.js'></script>
 
 </body>
 </html>

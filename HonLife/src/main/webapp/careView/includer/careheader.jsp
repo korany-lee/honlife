@@ -16,8 +16,6 @@
 
 	<link rel="stylesheet" href="https://webfonts.fontstand.com/WF-026657-6cb79b36cbe5ad0503277ac805eb4f67.css" type="text/css"/>
 
-	<link rel="alternate" hreflang="ro" href="https://www.voxverticalvillage.ro/apartamente/" />
-<link rel="alternate" hreflang="en" href="https://www.voxverticalvillage.ro/en/residences/" />
 
 <!-- This site is optimized with the Yoast SEO plugin v12.8.1 - https://yoast.com/wordpress/plugins/seo/ -->
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
@@ -51,22 +49,31 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='wp-block-library-css'  href='careView/css/style.library.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='careView/css/style.header.css' type='text/css' media='all' />
+
+
+
+
+
+<link rel='stylesheet' id='wp-block-library-css'  href='../careView/css/style.library.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='../careView/css/style.header.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" href="../careView/contactform/css/main.css">
 <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/cookie-notice/js/front.min.js?ver=1.2.48'></script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/wp-retina-2x-pro/js/picturefill.min.js?ver=3.0.2'></script>
-<link rel='https://api.w.org/' href='https://www.voxverticalvillage.ro/en/wp-json/' />
+
+
+<script type='text/javascript' src='../careView/js/picturefill-3.0.2.min.js'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.voxverticalvillage.ro/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.voxverticalvillage.ro/wp-includes/wlwmanifest.xml" />
 	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet"> 
 <meta name="generator" content="WordPress 5.3.2" />
 <meta name="generator" content="WPML ver:4.0.7 stt:1,45;" />
+
+
+
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -105,14 +112,15 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 	</script>
 
 </head>
-</head>
+
+
 <body>
 <header >
 
 		<div class="header-content clearfix">
 
 			<div class="col-left">
-				<a class="logo" href="careMain" title="Vox Vertical Village"></a>
+				<a class="logo" href="../careMain" title=""></a>
 			</div>
 
 			<div class="col-right">
@@ -141,7 +149,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 <li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="laundryAmountInfo">세탁요금안내</a></li>
 <li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
 <li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
-<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
+<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="../care/recruitment">모집요강</a></li>
 
 <li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
 </ul>
@@ -175,9 +183,9 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 				<div class="col-right">
 				
-						<h1 style="font-size: 35px;">Hon Care로 워라벨을 즐기세요!</h1>
+						<h1 style="font-size: 35px; font-family: 'Do Hyeon', sans-serif;">Hon Care로 워라벨을 즐기세요!</h1>
 						
-						<h1 style="font-size: 35px;">관리자 페이지 입니다!</h1>
+						<h1 style="font-size: 35px;font-family: 'Do Hyeon', sans-serif;">Hon Care에서 새 가족을 모집합니다! </h1>
 						
 				</div>
 

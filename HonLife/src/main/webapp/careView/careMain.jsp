@@ -111,11 +111,11 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 
 			<ul id="menu-header-nav-en" class="menu list-style-none">
-				<li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="cleanAmountInfo">청소요금안내</a></li>
-				<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="laundryAmountInfo">세탁요금안내</a></li>
+				<li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="care/cleanAmountInfo">청소요금안내</a></li>
+				<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="care/laundryAmountInfo">세탁요금안내</a></li>
 				<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
 				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
-				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="#">입사지원</a></li>
+				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="care/recruitment">모집요강</a></li>
 				<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
 </ul>
 		
@@ -179,7 +179,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 <br> 전문교육을 통해 든든하게 지원해드리겠습니다!</p>
 
 
-				<a class="light-color elem-line-before" href="#">모집요강</a>
+				<a class="light-color elem-line-before" href="care/recruitment">모집요강</a>
 			</div>
 
 			<div class="col-right img-col">

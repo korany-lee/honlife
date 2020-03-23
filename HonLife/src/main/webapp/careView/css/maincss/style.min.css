@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5,h6{font-family: 'Do Hyeon', sans-serif;font-size:20px;line-height
 .page-title-style-normal h3,.page-title-style-normal h4,.page-title-style-normal h5,
 .page-title-style-normal h6,.related-articles h3,body,footer h6{font-family:'Do Hyeon', sans-serif;}
 p:last-child{margin-bottom:0}a{font-family: 'Do Hyeon', sans-serif;background-color:transparent;text-decoration:none}
-a,a:active,a:link,input:focus,textarea:focus{outline:0}p>a{text-decoration:underline}
+a,a:active,a:link,input:focus,textarea:focus{outline:0}p>a{text-decoration:underline ;cursor:pointer;}
 button{outline:0}img{border-style:none;height:100%; width: 100%}
 .pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .pace-inactive{display:none}.contact-info-col span,.logo,main{display:block}
