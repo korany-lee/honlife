@@ -36,6 +36,13 @@
 select <include refid="basecolumn" /> from furniture
 </select>
 
+<select id="selectType" resultMap="furnitures" parameterType="string">
+select * from furniture where furniture_type= #{furnitureType}
+</select>
+
+<select id="oneSelect" resultMap="furnitures" parameterType="string">
+select * from furniture where furniture_no = #{furnitureNo}
+</select>
 
 
 

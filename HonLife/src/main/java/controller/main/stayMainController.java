@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class stayMainController {
 	@RequestMapping("/stayMain")
 	public String headerTest() {
-		return "stayView/stayMain";
+		return "stayView/view/stayMain";
 	}
 }
