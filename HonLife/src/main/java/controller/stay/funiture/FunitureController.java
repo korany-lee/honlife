@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import command.stay.furniture.FurnitureCommand;
 import service.stay.furniture.FurnitureInsertService;
@@ -43,6 +44,27 @@ public class FunitureController {
 		furnitureListService.allSelect(model);
 		
 		return "stayView/funiture/funiture_list";
+	}
+	
+	@RequestMapping("/funiture/selectFurniture")   //선택된 가구 타입만 출력
+	public String selectFurniture(@RequestParam(value="type")String type,Model model) {
+		if(type=="전체보기") {
+			System.out.println("type=" + type);
+			furnitureListService.allSelect(model);
+			return "stayView/funiture/furniture_selectedType";
+		}else {
+			System.out.println("type=" + type);
+			furnitureListService.selectType(type,model);
+			return "stayView/funiture/furniture_selectedType";
+		}
+	
+		
+	}
+	@RequestMapping("/funiture/detail") //가구 상세보기
+	public String detail(@RequestParam(value="no")String no, Model model) {	
+		System.out.println("Aaaaaaaaaaaaaaa");
+		furnitureListService.oneSelect(no,model);
+		return "stayView/funiture/furniture_detail";
 	}
 	
 }

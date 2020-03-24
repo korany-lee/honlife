@@ -67,48 +67,50 @@ $(function(){
 		<div class="wrap-contact100">
 			
 				<span class="contact100-form-title">
-				가구 리스트
+				가구 상세보기
 				</span>
-				<div class="selector">
-				<form id="aaa">
-					<select id="furnitureType">
-						<option value="전체보기" selected="selected">전체보기</option>
-						<option value="거실용품">거실용품</option>
-						<option value="주방용품">주방용품</option>
-						<option value="생활용품">생활용품</option>
-						<option value="침실용품">침실용품</option>
-						<option value="기타">기타</option>
-					</select>
-					
-				</form>
-				</div>	
-				<div id="bdto">
-				<table >
-				<colgroup>
-					<col style="width: 250px">
-					<col style="width: 250px">
-					<col style="width: 250px">
-					<col style="width: 250px">
-				</colgroup>
-				<tr align="center" valign="middle">
-				<c:forEach var="list" items="${furniture }" varStatus="Eachstatus">
-					
-						<td><c:forTokens items="${list.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
+				<table border="1">
+						<tr>
+						<td colspan="2" height="0">
+						<c:forTokens items="${furniture.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
 							<c:if test="${status.count ==1 }">
-								<img class="furniture" src="/project/common/manager/update/${furniturePhoto }" />
+								<div style="height:100%;"><img class="furniture" src="/project/common/manager/update/${furniturePhoto }" height="100%"/></div>
 							</c:if>
-							</c:forTokens><br/>
-							<a href="detail?no=${list.furnitureNo }" class="a2">${list.furnitureName }</a>
+							</c:forTokens>
 						</td>
-					<c:if test="${Eachstatus.count % 4 == 0 }">
+						<td>정비현황</td>
 					</tr>
-					<tr align="center" valign="middle">
-					</c:if>		
-			
-	</c:forEach>	
-	</tr>
-</table>
-</div>	
+					<tr>
+						<td>번호</td>
+						<td>${furniture.furnitureNo }</td>
+						<td rowspan="7"></td>
+					</tr>
+					<tr>
+						<td>가구종류</td>
+						<td>${furniture.furnitureType }</td>
+					</tr>
+					<tr>
+						<td>가구명</td>
+						<td>${furniture.furnitureName }</td>
+					</tr>
+					<tr>
+						<td>가구평점</td>
+						<td>${furniture.furnitureScore }</td>
+					</tr>
+					
+					<tr>
+						<td>구매날짜</td>
+						<td><fmt:formatDate value="${furniture.furnitureBuydate }" pattern="yyyy-MM-dd"/></td>
+					</tr>
+					<tr>
+						<td>현재상태</td>
+						<td>${furniture.furnitureState }</td>
+					</tr>
+					<tr>
+						<td>상세설명</td>
+						<td>${furniture.furniturePoint }</td>
+					</tr>
+				</table>
 				
 			
 		</div>

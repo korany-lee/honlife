@@ -24,4 +24,14 @@ public class FurnitureRepository {
 		String statement = namespace +".furnitureList";
 		return sqlSession.selectList(statement);
 	}
+	
+	public List<FurnitureDTO> selectType(String furnitureType){
+		String statement = namespace +".selectType";
+		return sqlSession.selectList(statement,furnitureType);
+	}
+	
+	public FurnitureDTO oneSelect(String furnitureNo) {
+		String statement = namespace +".oneSelect";
+		return sqlSession.selectOne(statement,furnitureNo);
+	}
 }

@@ -61,10 +61,12 @@
 						<td>가구종류</td>
 						<td>
 							<select name="furnitureType">
+							
 								<option value="거실용품" selected="selected">거실용품</option>
 								<option value="주방용품">주방용품</option>
 								<option value="생활용품">생활용품</option>
 								<option value="침실용품">침실용품</option>
+								<option value="기타">기타</option>
 							</select>
 						</td>
 					</tr>
