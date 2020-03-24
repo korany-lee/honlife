@@ -8,14 +8,15 @@
 
 <sql id="baseRecruit">
 RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
-RECRUIT_ADDR, RECRUIT_RESUME, RECRUIT_CLASS, RECRUIT_GENDER
-
+RECRUIT_ADDR, RECRUIT_RESUME, RECRUIT_CLASS, RECRUIT_GENDER, 
+ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE
 </sql>
 
 <insert id="insertRegist">
 		insert into recruit ( <include refid="baseRecruit" />)
 		values(rec_seq.nextval, #{recruitName}, #{recruitPh}, #{recruitJumin}, #{recruitEmail}, 
-				#{recruitAddr}, #{recruitResume}, #{recruitClass}, #{recruitGender} )
+				#{recruitAddr}, #{recruitResume}, #{recruitClass}, #{recruitGender}, 
+				#{originalFileName}, #{storeFileName}, #{fileSize} )
 
 </insert>
 

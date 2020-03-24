@@ -19,7 +19,7 @@ public class RecruitDTO implements Serializable{
 	//파일전송
 	String originalFileName;
 	String storeFileName;
-    Long 	  fileSize;	
+    String fileSize;	
 	
 	public String getOriginalFileName() {
 		return originalFileName;
@@ -33,10 +33,10 @@ public class RecruitDTO implements Serializable{
 	public void setStoreFileName(String storeFileName) {
 		this.storeFileName = storeFileName;
 	}
-	public Long getFileSize() {
+	public String getFileSize() {
 		return fileSize;
 	}
-	public void setFileSize(Long fileSize) {
+	public void setFileSize(String fileSize) {
 		this.fileSize = fileSize;
 	}
 	public String getRecruitGender() {

@@ -91,7 +91,7 @@ function jusoCallBack(roadFullAddr){
 				
 				<span class="label-input100"  style="font-size: 20px" >연락처</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" id="recph"name="recruitPh" placeholder="숫자만 입력해주세요" value="">
+					<input class="input100" type="text" id="recph"name="recruitPh" placeholder="숫자만 입력해주세요" >
 				</div>
 				<span class="label-input100" style="font-size: 20px" >주민번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
