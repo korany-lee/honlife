@@ -89,7 +89,7 @@ $(function(){
 			<a href="#">객실관리 </a>
 				<ul class="submenu">
 					<li><a href="../room/register">객실 등록 </a></li>
-					<li><a href="#">객실 리스트 </a>
+					<li><a href="../room/list">객실 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
 		  			<li><a href="#">객실 정비 </a>

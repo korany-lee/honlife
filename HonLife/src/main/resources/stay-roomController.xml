@@ -10,7 +10,7 @@
 
 
 <bean id="roomInsertService" class="service.stay.room.RoomInsertService" />
-
+<bean id="roomListService" class="service.stay.room.RoomListService" />
 
 
 
