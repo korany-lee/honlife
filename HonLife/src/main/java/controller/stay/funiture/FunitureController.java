@@ -48,7 +48,7 @@ public class FunitureController {
 	
 	@RequestMapping("/funiture/selectFurniture")   //선택된 가구 타입만 출력
 	public String selectFurniture(@RequestParam(value="type")String type,Model model) {
-		if(type=="전체보기") {
+		if(type.equals("전체보기")) {
 			System.out.println("type=" + type);
 			furnitureListService.allSelect(model);
 			return "stayView/funiture/furniture_selectedType";
@@ -62,7 +62,7 @@ public class FunitureController {
 	}
 	@RequestMapping("/funiture/detail") //가구 상세보기
 	public String detail(@RequestParam(value="no")String no, Model model) {	
-		System.out.println("Aaaaaaaaaaaaaaa");
+		
 		furnitureListService.oneSelect(no,model);
 		return "stayView/funiture/furniture_detail";
 	}

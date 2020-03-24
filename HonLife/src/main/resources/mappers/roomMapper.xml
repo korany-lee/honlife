@@ -32,4 +32,15 @@
 	
 </resultMap>
 
+
+<select id="viewSelect" resultMap="rooms" parameterType="string">
+	select <include refid="basecolumn" /> from room where room_view=#{SmallType}
+</select>
+
+<select id="sizeSelect" resultMap="rooms" parameterType="string">
+	select <include refid="basecolumn" /> from room where room_size=#{SmallType}
+</select>
+
+
+
 </mapper>
