@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mappers.careMapper">
+<cache/>
+
+<sql id="baseRecruit">
+RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+RECRUIT_ADDR, RECRUIT_RESUME, RECRUIT_CLASS, RECRUIT_GENDER
+
+</sql>
+
+<insert id="insertRegist">
+		insert into recruit ( <include refid="baseRecruit" />)
+		values(rec_seq.nextval, #{recruitName}, #{recruitPh}, #{recruitJumin}, #{recruitEmail}, 
+				#{recruitAddr}, #{recruitResume}, #{recruitClass}, #{recruitGender} )
+
+</insert>
+
+
+
+
+
+
+
+
+</mapper>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,14 +68,14 @@ function jusoCallBack(roadFullAddr){
 
 <div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="" method="post" name="form">
+			<form class="contact100-form" action="regRecruitmentAction" method="POST" name="form">
 				<span class="contact100-form-title" >
 			입사 지원 양식
 				</span>
 			<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >지원 업무</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="service" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select class="js-select2" name="selctClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="cm">청소 매니저</option>
 							<option value="lm">세탁 운송 매니저</option>			
 						</select>
@@ -84,74 +86,83 @@ function jusoCallBack(roadFullAddr){
 				<span class="label-input100" style="font-size: 20px;     padding-right: 400px;">이름</span>
 				<div class="wrap-input100 " >
 					
-					<input class="input100" type="text" name="name" placeholder="발주처를 입력하세요">
+					<input class="input100" type="text" name="recruitName" placeholder="이름를 입력하세요">
 				</div>
 				
-				<span class="label-input100" style="font-size: 20px" >연락처</span>
+				<span class="label-input100"  style="font-size: 20px" >연락처</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" name="phone" placeholder="연락처를 입력하세요">
+					<input class="input100" type="text" id="recph"name="recruitPh" placeholder="숫자만 입력해주세요" value="">
 				</div>
 				<span class="label-input100" style="font-size: 20px" >주민번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" name="phone" placeholder="주민번호를 입력하세요">
+					<input class="input100" type="text" id="jumin"name="recruitJumin" placeholder="숫자만 입력해주세요">
 				</div>
 				<span class="label-input100" style="font-size: 20px; ">주소</span> 
-							
+						<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >성별</span>
+				<div class="wrap-input1002 input100-select bg1">			
+					<div>
+						<select class="js-select2" name="selctClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+							<option value="M">남자</option>
+							<option value="F">여자</option>			
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>	
 						
 				<input type="button" onClick="goPopup();" value="우편번호 검색" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"/>
 				<div class="wrap-input100 "> 			
-					<input type="text"  class="input100" style="width:500px;" id="roadFullAddr"  name="roadFullAddr"  placeholder="주소를 입력해주세요"/>				
+					<input type="text"  class="input100" style="width:500px;" id="roadFullAddr"  name="recruitAddr"  placeholder="주소를 입력해주세요"/>				
 				</div>
-				
+	
 
 			<span class="label-input100" style="font-size: 20px; " >이메일</span>
 			<div class="wrap-input100 bg1 rs1-wrap-input100e">	
-				 <input type="text" name="str_email01" id="str_email01" placeholder="Email Id입력" style="width:150px;  text-transform: none; background: transparent;">@<input type="text" name="str_email02" id="str_email02" style="width:200px;  background: transparent;border: none;" placeholder="나머지를 입력하세요" disabled value="naver.com">
+				 <input type="text" name="recruitEmali1" id="str_email01" placeholder="Email Id입력" style="width:150px;  text-transform: none; background: transparent;">@<input type="text" name="recruitEmail2" id="str_email02" style="width:200px;  background: transparent;border: none;" placeholder="나머지를 입력하세요" disabled value="naver.com">
 				 <select class="js-select2" name="service"  id="selectEmail" style=" font-family: 'Do Hyeon', sans-serif ;   text-transform: none; background: transparent;border: none;">						
 							<option value="1">직접입력</option> 
 							<option value="naver.com" selected>naver.com</option> 
-							<option value="hanmail.net">hanmail.net</option> 
-							<option value="hotmail.com">hotmail.com</option> 
 							<option value="nate.com">nate.com</option> 
-							<option value="yahoo.co.kr">yahoo.co.kr</option> 
-							<option value="empas.com">empas.com</option>
-							 <option value="dreamwiz.com">dreamwiz.com</option> 
-							 <option value="freechal.com">freechal.com</option> 
-							 <option value="lycos.co.kr">lycos.co.kr</option> 
-							 <option value="korea.com">korea.com</option> 
-							 <option value="gmail.com">gmail.com</option> 
-							 <option value="hanmir.com">hanmir.com</option>
-							  <option value="paran.com">paran.com</option> 
+							<option value="yahoo.co.kr">yahoo.co.kr</option> 				
+							 <option value="gmail.com">gmail.com</option> 			
 							</select>
-						<div class="dropDownSelect2"></div>
-				
-
-				
-				
-				
+						<div class="dropDownSelect2"></div>	
 				</div>
 		
 	
 				
 				<span class="label-input100" style="font-size: 20px" >첨부 이력서</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100f">				
-					<input class="input100" type="file" >
+					<input class="input100" type="file" name="recruitResume">
+					<div>${fileError }</div>
 				</div>
 				
 			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 			 <script type="text/javascript"> 
 			 //이메일 입력방식 선택
-			 $('#selectEmail').change(function(){
-				 $("#selectEmail option:selected").each(function () {
-					 if($(this).val()== '1'){ //직접입력일 경우
-						 $("#str_email02").val(''); //값 초기화 
-						 $("#str_email02").attr("disabled",false); //활성화 
-						 }else{ //직접입력이 아닐경우 
-							 $("#str_email02").val($(this).text()); //선택값 입력 
-							 $("#str_email02").attr("disabled",true); //비활성화 
-			             } 
+		
+			 
+			 
+			  $(".container-contact100").on("click", function () {
+			        
+			    	$('#recph,#jumin').keyup(function(){			
+			    		$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
+			    	});
+			    	
+			    	
+			    	
+			   	 $('#selectEmail').change(function(){
+					 $("#selectEmail option:selected").each(function () {
+						 if($(this).val()== '1'){ //직접입력일 경우
+							 $("#str_email02").val(''); //값 초기화 
+							 $("#str_email02").attr("disabled",false); //활성화 
+							 }else{ //직접입력이 아닐경우 
+								 $("#str_email02").val($(this).text()); //선택값 입력 
+								 $("#str_email02").attr("disabled",true); //비활성화 
+				             } 
+						 }); 
 					 }); 
-				 }); 
+			    });
+			    
 			 </script>
 
 
