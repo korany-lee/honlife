@@ -20,13 +20,16 @@ public class RegistService {
 	RegistRepository registRepository;
 	
 	
-	final String PATH = "webapp\\careView\\care\\resume";
+	final String PATH = "careView\\care\\resume";
 	public void regist(RegistCommand registCommand, ServletRequest request) {
 		RecruitDTO dto = new RecruitDTO();
 		dto.setRecruitName(registCommand.getRecruitName());
 		String registEmail= (registCommand.getRecruitEmail1()+"@"+ registCommand.getRecruitEmail2());
+		
+		
 		dto.setRecruitNo(registCommand.getRecruitNo());
 		dto.setRecruitEmail(registEmail);
+		dto.setRecruitClass(registCommand.getRecruitClass());
 		dto.setRecruitJumin(registCommand.getRecruitJumin());
 		dto.setRecruitPh(registCommand.getRecruitPh());
 		dto.setRecruitAddr(registCommand.getRecruitAddr());
@@ -49,7 +52,7 @@ public class RegistService {
 					
 			         originalTotal += original + "-";
 					 storeTotal += store + "-";
-					 fileSizeTotal += fileSize + "-";	
+					 fileSizeTotal += fileSize;	
 					 
 					 File file = new File(filePath +"\\"+ store);
 					 try {

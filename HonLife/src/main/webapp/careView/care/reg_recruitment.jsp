@@ -68,14 +68,14 @@ function jusoCallBack(roadFullAddr){
 
 <div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="regRecruitmentAction" method="POST" name="form">
+			<form class="contact100-form" action="regRecruitmentAction" method="POST" name="form" enctype="multipart/form-data">
 				<span class="contact100-form-title" >
 			입사 지원 양식
 				</span>
 			<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >지원 업무</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="selctClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select class="js-select2" name="recruitClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="cm">청소 매니저</option>
 							<option value="lm">세탁 운송 매니저</option>			
 						</select>
@@ -101,7 +101,7 @@ function jusoCallBack(roadFullAddr){
 						<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >성별</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="selctClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select class="js-select2" name="recruitGender" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="M">남자</option>
 							<option value="F">여자</option>			
 						</select>
@@ -117,8 +117,8 @@ function jusoCallBack(roadFullAddr){
 
 			<span class="label-input100" style="font-size: 20px; " >이메일</span>
 			<div class="wrap-input100 bg1 rs1-wrap-input100e">	
-				 <input type="text" name="recruitEmali1" id="str_email01" placeholder="Email Id입력" style="width:150px;  text-transform: none; background: transparent;">@<input type="text" name="recruitEmail2" id="str_email02" style="width:200px;  background: transparent;border: none;" placeholder="나머지를 입력하세요" disabled value="naver.com">
-				 <select class="js-select2" name="service"  id="selectEmail" style=" font-family: 'Do Hyeon', sans-serif ;   text-transform: none; background: transparent;border: none;">						
+				 <input type="text" name="recruitEmail1" id="str_email01" placeholder="Email Id입력" style="width:150px;  text-transform: none; background: transparent;">@<input type="text" name="recruitEmail2" id="str_email02" style="width:200px;  background: transparent;border: none;" placeholder="나머지를 입력하세요" disabled value="naver.com">
+				 <select class="js-select2" name="recruitEmail2"  id="selectEmail" style=" font-family: 'Do Hyeon', sans-serif ;   text-transform: none; background: transparent;border: none;">						
 							<option value="1">직접입력</option> 
 							<option value="naver.com" selected>naver.com</option> 
 							<option value="nate.com">nate.com</option> 

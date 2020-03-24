@@ -30,11 +30,23 @@ public String regist_rec() {
 
 @RequestMapping(value="/care/regRecruitmentAction", method = RequestMethod.POST )
 public String regist(RegistCommand registCommand , ServletRequest request) {
-	
+		System.out.println("registCommand=" + registCommand.getRecruitAddr());
+		System.out.println("registCommand=" + registCommand.getRecruitName());
+		System.out.println("registCommand=" + registCommand.getRecruitJumin());
+		System.out.println("registCommand=" + registCommand.getRecruitResume());
+		System.out.println("registCommand=" + registCommand.getRecruitEmail1());
+		System.out.println("registCommand=" + registCommand.getRecruitEmail2());
 	
 			 registService.regist(registCommand, request);
 
-	return "careView/care/sucess"; 
+	return "redirect:/care/success"; 
 			
+}
+
+@RequestMapping(value="/care/success")
+ public String success() {
+	
+	
+	return "careView/care/success";
 }
 }

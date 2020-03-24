@@ -6,10 +6,10 @@ public class RegistCommand {
 	
 
 	private Integer recruitNo;
-	private String selectClass;
+	private String recruitClass;
 	private String recruitName;
 	private Integer recruitPh;
-	private Integer recruitJumin;
+	private Long recruitJumin;
 	private String recruitAddr;
 	private String recruitEmail1;
 	private String recruitEmail2;
@@ -28,11 +28,11 @@ public class RegistCommand {
 	public void setRecruitResume(MultipartFile[] recruitResume) {
 		this.recruitResume = recruitResume;
 	}
-	public String getSelectClass() {
-		return selectClass;
+	public String getRecruitClass() {
+		return recruitClass;
 	}
-	public void setSelectClass(String selectClass) {
-		this.selectClass = selectClass;
+	public void setRecruitClass(String recruitClass) {
+		this.recruitClass = recruitClass;
 	}
 	public String getRecruitName() {
 		return recruitName;
@@ -46,10 +46,10 @@ public class RegistCommand {
 	public void setRecruitPh(Integer recruitPh) {
 		this.recruitPh = recruitPh;
 	}
-	public Integer getRecruitJumin() {
+	public Long getRecruitJumin() {
 		return recruitJumin;
 	}
-	public void setRecruitJumin(Integer recruitJumin) {
+	public void setRecruitJumin(Long recruitJumin) {
 		this.recruitJumin = recruitJumin;
 	}
 	public String getRecruitAddr() {

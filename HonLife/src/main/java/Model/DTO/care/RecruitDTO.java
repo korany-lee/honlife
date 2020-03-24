@@ -10,10 +10,9 @@ public class RecruitDTO implements Serializable{
 	Integer recruitNo;
 	String recruitName;
 	Integer recruitPh;
-	Integer recruitJumin;
+	Long recruitJumin;
 	String recruitEmail;
 	String recruitAddr;
-	String recruitResume;
 	String recruitClass;
 	String recruitGender;
 	//파일전송
@@ -63,10 +62,10 @@ public class RecruitDTO implements Serializable{
 	public void setRecruitPh(Integer recruitPh) {
 		this.recruitPh = recruitPh;
 	}
-	public Integer getRecruitJumin() {
+	public Long getRecruitJumin() {
 		return recruitJumin;
 	}
-	public void setRecruitJumin(Integer recruitJumin) {
+	public void setRecruitJumin(Long recruitJumin) {
 		this.recruitJumin = recruitJumin;
 	}
 	public String getRecruitEmail() {
@@ -81,12 +80,7 @@ public class RecruitDTO implements Serializable{
 	public void setRecruitAddr(String recruitAddr) {
 		this.recruitAddr = recruitAddr;
 	}
-	public String getRecruitResume() {
-		return recruitResume;
-	}
-	public void setRecruitResume(String recruitResume) {
-		this.recruitResume = recruitResume;
-	}
+	
 	public String getRecruitClass() {
 		return recruitClass;
 	}

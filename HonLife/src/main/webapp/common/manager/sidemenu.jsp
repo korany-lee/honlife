@@ -134,7 +134,7 @@ $(function(){
 			 <li>
 				<a href="#">사원관리 </a>
 				<ul class="submenu">
-					<li><a href="#">지원자 리스트 </a>
+					<li><a href="recruit">지원자 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 						</li>
 						<li><a href="#">사원 등록 </a></li>
