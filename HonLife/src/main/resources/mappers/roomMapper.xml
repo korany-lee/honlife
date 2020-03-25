@@ -41,6 +41,13 @@
 	select <include refid="basecolumn" /> from room where room_size=#{SmallType}
 </select>
 
+<select id ="floorSelect" resultMap="rooms" parameterType="string">
+	select <include refid="basecolumn" /> from room where substr(room_no,1,(length(room_no)-2)) = #{floor} order by room_no asc
+</select>
+
+<select id="oneSelect" resultMap="rooms" parameterType="string">
+	select <include refid="basecolumn" /> from room where room_no =#{num}
+</select>
 
 
 </mapper>

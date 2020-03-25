@@ -25,21 +25,42 @@ public class RoomController {
 	
 	
 	//회원용
-	@RequestMapping("/room/size")
-	public String roomSize() {
-		return "stayView/room/room_sizeType";
+	@RequestMapping("/room/size")   //면적별 안내 페이지 이동
+	public String roomSize(String SmallType,Model model) {
+		return "stayView/memberView/room_size";
 	}
-	@RequestMapping("/room/floor")
-	public String roomFloor() {
-		return "stayView/room/room_floorType";
+	@RequestMapping("/room/sizeSelect")   //면적별 안내 페이지에서 면적 선택
+	public String sizeSelect(@RequestParam(value="size")String size,Model model) {
+		roomListService.sizeSelect(size, model);
+		return "stayView/memberView/roomList"; 
 	}
+
 	@RequestMapping("/room/view")
 	public String roomView() {
-		return "stayView/room/room_ViewType";
+		return "stayView/memberView/room_view";
+	}
+	@RequestMapping("/room/viewSelect")
+	public String viewSelect(@RequestParam(value="view")String view,Model model) {      //뷰별 안내 페이지에서 뷰 선택
+		roomListService.viewSelect(view,model);
+		return "stayView/memberView/roomList"; 
 	}
 	
+	@RequestMapping("/room/floor")
+	public String roomFloor() {
+		return "stayView/memberView/room_floor";
+	}
 	
+	@RequestMapping("/room/floorSelect")
+	public String floorSelect(@RequestParam(value="floor")String floor,Model model) {      //뷰별 안내 페이지에서 뷰 선택
+		roomListService.floorSelect(floor,model);
+		return "stayView/memberView/roomList"; 
+	}
 	
+	@RequestMapping("/room/detail")
+	public String roomDetail(@RequestParam(value="roomNo")String num,Model model) {
+		roomListService.oneSelect(num,model);
+		return "stayView/memberView/room_detail";
+	}
 	
 	
 	

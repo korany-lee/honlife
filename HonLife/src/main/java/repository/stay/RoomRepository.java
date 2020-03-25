@@ -24,13 +24,19 @@ public class RoomRepository {
 		return sqlSession.selectList(statement,SmallType );
 	}
 	
-	public List<RoomDTO> floorSelect(String SmallType){
+	public List<RoomDTO> floorSelect(String floor){
+		System.out.println("floor =" + floor);
 		String statement = namespace + ".floorSelect";
-		return sqlSession.selectList(statement,SmallType );
+		return sqlSession.selectList(statement,floor );
 	}
 	
 	public List<RoomDTO> sizeSelect(String SmallType){
 		String statement = namespace + ".sizeSelect";
 		return sqlSession.selectList(statement,SmallType );
+	}
+	
+	public RoomDTO oneSelect(String num) {
+		String statement = namespace + ".oneSelect";
+		return sqlSession.selectOne(statement, num);
 	}
 }

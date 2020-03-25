@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IntroduceController {
-	@RequestMapping("/introduce/room")
+	@RequestMapping("/introduce/honStay")
 	public String room() {
 		
-		return "stayView/introduce/room";
+		return "stayView/memberView/introduce";
 	}
 }

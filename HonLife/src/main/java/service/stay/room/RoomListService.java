@@ -27,4 +27,29 @@ public class RoomListService {
 		}
 		
 	}
+	
+	public void sizeSelect(String size,Model model) {
+		List<RoomDTO> list = roomRepository.sizeSelect(size);
+		model.addAttribute("list",list );
+	}
+	
+	public void viewSelect(String view,Model model) {
+		List<RoomDTO> list = roomRepository.viewSelect(view);
+		model.addAttribute("list",list );
+	}
+	
+	
+	public void floorSelect(String floor,Model model) {
+		List<RoomDTO> list = roomRepository.floorSelect(floor);
+		model.addAttribute("list",list );
+	}
+	
+	public void oneSelect(String num,Model model) {
+		RoomDTO one = roomRepository.oneSelect(num);
+		
+		model.addAttribute("room",one);
+	}
+	
+	
+	
 }
