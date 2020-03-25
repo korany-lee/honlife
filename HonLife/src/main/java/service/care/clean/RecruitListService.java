@@ -16,10 +16,26 @@ public class RecruitListService {
 
 
 	public void recList(Model model) {
+			RecruitDTO Rdto = registRepository.listDetail();
 			List<RecruitDTO> list = 	registRepository.list();
+
+			String[] oriFile = Rdto.getOriginalFileName().split("-");
+		    String[] strFile = Rdto.getStoreFileName().split("-");
+		    String[] fileSize = Rdto.getFileSize().split("-");
+		    
+		    
+		      model.addAttribute("recruit" , list);
+			  model.addAttribute("registCommand" ,Rdto);
+		      model.addAttribute("originalFileName" ,oriFile);
+		      model.addAttribute("storeFileName" ,strFile);
+		      model.addAttribute("fileSize" ,fileSize);
 			
-			model.addAttribute("recruit" , list);
-		
+			
+			
+			
+			
+			
+			
 
 	}
 

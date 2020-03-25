@@ -9,7 +9,7 @@
 <sql id="baseRecruit">
 RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
 RECRUIT_ADDR, RECRUIT_CLASS, RECRUIT_GENDER, 
-ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE
+ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 </sql>
 
 <insert id="insertRegist">
@@ -18,10 +18,45 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE
 					#{recruitJumin}, #{recruitEmail}, 
 				#{recruitAddr}, #{recruitClass}, #{recruitGender}, 
 				#{originalFileName}, #{storeFileName}, 
-				#{fileSize} 
+				#{fileSize}, #{recruitPhoto}
 				)
 
 </insert>
+
+<resultMap type="Model.DTO.care.RecruitDTO" id="recList">
+		<id column="RECRUIT_NO" jdbcType="BIGINT" property="recruitNo" />
+		<result  column="RECRUIT_NAME" jdbcType="VARCHAR" property="recruitName" />
+		<result  column="RECRUIT_PH" jdbcType="BIGINT" property="recruitPh" />
+		<result  column="RECRUIT_JUMIN" jdbcType="BIGINT" property="recruitJumin" />
+		<result  column="RECRUIT_EMAIL" jdbcType="VARCHAR" property="recruitEmail" />
+		<result  column="RECRUIT_ADDR" jdbcType="VARCHAR" property="recruitAddr" />
+		<result  column="RECRUIT_CLASS" jdbcType="VARCHAR" property="recruitClass" />
+		<result  column="RECRUIT_GENDER" jdbcType="VARCHAR" property="recruitGender" />
+		<result  column="ORIGINAL_FILE_NAME" jdbcType="VARCHAR" property="originalFileName" />
+		<result  column="STORE_FILE_NAME" jdbcType="VARCHAR" property="storeFileName" />
+		<result  column="FILE_SIZE" jdbcType="VARCHAR" property="fileSize" />
+		<result  column="RECRUIT_PHOTO" jdbcType="VARCHAR" property="recruitPhoto" />
+</resultMap>
+
+
+
+
+
+<select id="reclistSelect" resultMap="recList"  >
+		select <include refid="baseRecruit" /> from recruit
+		<where>
+				<if test="value != null">
+							RECRUIT_NO = #{recruitNo}			
+				</if>		
+		</where>
+</select>
+
+
+<select id="" >
+
+
+
+</select>
 
 
 

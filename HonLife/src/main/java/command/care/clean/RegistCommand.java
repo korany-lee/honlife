@@ -3,7 +3,6 @@ package command.care.clean;
 import org.springframework.web.multipart.MultipartFile;
 
 public class RegistCommand {
-	
 
 	private Integer recruitNo;
 	private String recruitClass;
@@ -14,9 +13,21 @@ public class RegistCommand {
 	private String recruitEmail1;
 	private String recruitEmail2;
 	private String recruitGender;
+	
+	
+	private MultipartFile [] recruitPhoto;
+	
 	private MultipartFile [] recruitResume;
 	
-		public Integer getRecruitNo() {
+
+	public MultipartFile[] getRecruitPhoto() {
+		return recruitPhoto;
+	}
+	public void setRecruitPhoto(MultipartFile[] recruitPhoto) {
+		this.recruitPhoto = recruitPhoto;
+	}
+	
+	public Integer getRecruitNo() {
 		return recruitNo;
 	}
 	public void setRecruitNo(Integer recruitNo) {
