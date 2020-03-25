@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>HONLIFE - MANAGER PAGE</title>
 <head>
 	
 	<!-- <link rel="manifest" href="/site.webmanifest"> -->

@@ -158,7 +158,15 @@ $(function(){
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>					
 				</ul>
-				</li>	   
+				</li>
+				 <li><a href="#">혼샵 </a>
+					<ul class="submenu">			
+						<li><a href="../shop/register">SSG상품입고</a></li>
+						<li><a href="../shop/list">상품관리</a></li>
+						<li><a href="#">혼샵 배송 관리 </a></li>
+						<li><a href="#">장터 관리 </a></li>					
+				</ul>
+				</li>   
 		</ul>
 	</div>
 </div>
