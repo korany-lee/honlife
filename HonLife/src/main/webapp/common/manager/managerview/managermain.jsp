@@ -1,10 +1,123 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>managermain</title>
+
+
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+<link href="../common/manager/managercss/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
+<link href="../common/manager/managercss/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<script src="../common/manager/managerjs/jquery-1.11.2.min.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript" src="../common/manager/managerjs/jquery.form.js"></script>
+<style type="text/css">
+*{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; }
+body{background:#f0f0f0;}
+.content{width:240px;}
+.filterinput{
+	background-color:rgba(249, 244, 244, 0);
+	border-radius:15px;
+	width:90%;
+	height:30px;
+	border:thin solid #FFF;
+	text-indent:0.5em;
+	font-weight:bold;
+	color:#FFF;
+}
+#demo-list a{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+
+}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(function(){	
+	
+	$('#cleanOrder').click(function(){
+		
+	  $.ajax({	        
+		        type: "post",
+		        url: "cleanorder",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 }); 		 
+	});
+	
+	$('#recruitList').click(function(){
+		
+		  $.ajax({	        
+		        type: "post",
+		        url: "recruit",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 }); 
+
+	});
+	
+	$('#cleanItemList').click(function(){
+		
+		  $.ajax({	        
+		        type: "post",
+		        url: "cleanItemList",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 }); 
+	
+	});
+	
+	$('#roomRegister').click(function(){
+	/* 	location.href="../room/register" */
+		
+		
+		   $.ajax({	        
+		        type: "post",
+		        url: "../room/register",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });  
+	
+	});
+	
+	
+
+	
+	
+	
+	
+	
+});
+
+
+</script>
+
+
+
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
@@ -97,15 +210,190 @@
 
 
 
-		<div class="col-left contact-info">
+<div class="col-left contact-info">
 
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
+	
+
+
+
+
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+	
+});
+
+$(function(){	
+	
+	$("#demo-list li").click(function(){
+		$("#demo-list li.active").removeClass("active")
+		$(this).addClass("active");
+	})	
+})	
+</script>
+
+<div class="content" >
+	<div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+		<ul id="demo-list" style="font-size:25px; ">		    
+		   	<li>
+		   		<a href="#">회원관리 </a>
+					<ul class="submenu">
+						<li><a href="#">회원 리스트 </a>
+								<span class="jquery-accordion-menu-label">count</span>
+						</li>									
+						<li><a href="#">회원 블랙리스트 </a> 
+								<span class="jquery-accordion-menu-label">count</span>
+						</li>
+					</ul>
+			</li>			
+			<li>
+			<a href="#">재고관리 </a>
+				<ul class="submenu">
+					<li><a href="#" id="cleanOrder">청소 물품 발주 </a></li>
+					<li><a href="#" id="cleanItemList">발주 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					<li><a href="#">입고확인 </a></li>								
+					<li><a href="#">청소 물품 반출 </a></li>
+					<li><a href="#">반출 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+					</li>				
+				</ul>
+			</li>		
+			<li>
+			<a href="#">객실관리 </a>
+				<ul class="submenu">
+					<li><a href="#" id="roomRegister">객실 등록 </a></li>
+					<li><a href="../room/list">객실 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">객실 정비 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">객실 건의사항 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  								
+					
+				</ul>
+			</li>
+			<li>
+			<a href="#">가구관리 </a>
+				<ul class="submenu">
+					<li><a href="../funiture/register">가구 등록 </a></li>
+					<li><a href="../funiture/list">가구 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">가구 정비 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">가구 건의사항 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					
+				</ul>
+			</li>
+			<li>
+			<a href="#">자재관리 </a>
+				<ul class="submenu">
+					<li><a href="../material/register">자재 등록 </a></li>
+					<li><a href="#">자재 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>
+		  			<li><a href="#">자재 사용현황 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+		  			</li>						
+					
+				</ul>
+			</li>	
+			 <li>
+				<a href="#">사원관리 </a>
+				<ul class="submenu">
+					<li><a href="#" id="recruitList">지원자 리스트 </a>
+						<span class="jquery-accordion-menu-label">
+						<c:if test="${recruitcount == null }">
+						0
+						</c:if>
+					
+						<c:if test="${recruitcount >0 }">
+							${recruitcount}
+						</c:if>
+						
+						</span>
+						</li>
+						<li><a href="#">사원 등록 </a></li>
+						<li><a href="#">사원 리스트 </a>
+						<span class="jquery-accordion-menu-label">count</span>
+						</li>
+				</ul>
+			</li>		
+				<li><a href="#">예약관리 </a>
+					<ul class="submenu">			
+						<li><a href="#">청소 예약 내역</a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
+						<li><a href="#">세탁 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
+						<li><a href="#">객실 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
+						<li><a href="#">가구 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>					
+				</ul>
+				</li>	   
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+(function($) {
+$.expr[":"].Contains = function(a, i, m) {
+	return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+};
+
+
+function filterList(header, list) {
+	var form = $("<form>").attr({
+		"class":"filterform",
+		action:"#"
+	}), input = $("<input>").attr({
+		"class":"filterinput",
+		type:"text"
+	});
+	$(form).append(input).appendTo(header);
+	$(input).change(function() {
+		var filter = $(this).val();
+		if (filter) {
+			$matches = $(list).find("a:Contains(" + filter + ")").parent();
+			$("li", list).not($matches).slideUp();
+			$matches.slideDown();
+		} else {
+			$(list).find("li").slideDown();
+		}
+		return false;
+	}).keyup(function() {
+		$(this).change();
+	});
+}
+$(function() {
+	filterList($("#form"), $("#demo-list"));
+});
+})(jQuery);	 
+</script>
 		
 			
 		</div>
 
-		<div class="col-right">
+		<div class="col-right" id="maincall">
 		
+		
+		
+		
+		
+	
 		<table class="columns" style="position: relative;right: 215px;top: -5px;">
       <tr>
         <td>
@@ -129,9 +417,24 @@
 
 
 
+
+
+<script src="../common/manager/contactform/vendor/animsition/js/animsition.min.js"></script>
+	<script src="../common/manager/contactform/vendor/bootstrap/js/popper.js"></script>
+	<script src="../common/manager/contactform/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="../common/manager/contactform/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../common/manager/contactform/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="../common/manager/contactform/vendor/countdowntime/countdowntime.js"></script>
+	
+	<script src="../common/manager/contactform/js/main.js"></script>
+
+
+
+
 </main>
 
-
+<script src="../common/manager/managerjs/jquery-accordion-menu.js" type="text/javascript"></script>
 
 
 

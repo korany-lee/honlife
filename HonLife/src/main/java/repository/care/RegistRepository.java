@@ -29,12 +29,5 @@ public class RegistRepository {
 		return 	sqlSession.selectList(statement);
 	}
 	
-	public RecruitDTO listDetail() {
-		
-		String statement = namespace + ".reclistSelect";
-		
-		return sqlSession.selectOne(statement);
-	
-	}
 	
 }

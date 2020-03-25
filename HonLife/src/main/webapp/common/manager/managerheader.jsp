@@ -54,7 +54,7 @@ img.emoji {
 <link rel='stylesheet' id='wp-block-library-css'  href='../common/manager/managercss/style.library.css' type='text/css' media='all' />
 <link rel='stylesheet' id='style-css'  href='../common/manager/managercss/managerheader.css' type='text/css' media='all' />
 <link rel="stylesheet" type="text/css" href="../common/manager/contactform/css/main.css">
-<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
 <script type='text/javascript'>
 /* <![CDATA[ */
 var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};

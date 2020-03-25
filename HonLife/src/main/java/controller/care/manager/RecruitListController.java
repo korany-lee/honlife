@@ -18,7 +18,6 @@ public String recList( Model model ) {
 	
 	recruitListService.recList(model);
 	
-	return "common/manager/manag"
-			+ "erview/list_recruit";
+	return "common/manager/managerview/care/list_recruit";
 }
 }

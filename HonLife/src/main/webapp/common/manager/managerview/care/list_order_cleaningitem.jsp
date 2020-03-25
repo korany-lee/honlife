@@ -8,16 +8,9 @@
 </head>
 <body>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
-<main>
-		<div class="col-left contact-info">
 
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
-		
-			
-		</div>
 
-		<div class="col-right">
+
 		<section class="animate-in-view">
 
 	
@@ -263,7 +256,7 @@
 
 </section>
 		
-		</div>
+	
 		
 			<div id="results" style="display:none;" ></div>
 
@@ -287,6 +280,6 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
 
-</main>
+
 </body>
 </html>

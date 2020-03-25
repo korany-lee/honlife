@@ -9,19 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
-<main>
-		<div class="col-left contact-info">
 
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
-		
-			
-		</div>
 
-		<div class="col-right">
-		
-		
+
 
 		<section class="animate-in-view">
 			<div class="section-content clearfix">
@@ -78,7 +70,7 @@
 											<c:forTokens items="${list.recruitPhoto }" delims="-" var="photo" varStatus="ii">												
 												
 												<img src="../careView/care/recruitPhoto/${photo }" style="width: 300px;"alt="dressphoto" />
-																					
+																			
 											</c:forTokens>										
 											</div>
 										</div>				
@@ -124,20 +116,16 @@
   									<tr>
   										 <td>이력서 첨부내역</td> 
     									 <td>
-    										<c:forEach items="${storeFileName }" var="file" varStatus="status">
-											<a href="../careView/care/resume/${file }">${originalFileName[status.index] }
-											</a>  
-											<p style="font-size: 10px"> ${fileSize[status.index] } </p>
-												</c:forEach>	
+    									<c:forTokens items="${list.storeFileName}" delims="-"  var="file" varStatus="ii">								
+												<c:if test="${ii.index >0 }">
+												<a href="../careView/care/resume/${file }" target="_blank">첨부파일${ii.index} </a>
+												</c:if>
+									</c:forTokens> 
+									
     									 </td>
   									</tr>
 </table>
-										
-										
-										
-										
-										
-										
+								
 										
 										
 										<button class="minimal-btn close-tr elem-line-after">close</button>
@@ -157,12 +145,12 @@
 
 </section>
 		
-		</div>
+	
 	
 		
 			<div id="results" style="display:none;" ></div>
 
-	<style id='wpcf7-wpcf7-5e6f0acff3915-inline-inline-css' type='text/css'>
+<style id='wpcf7-wpcf7-5e6f0acff3915-inline-inline-css' type='text/css'>
 #wpcf7-5e6f0acff3915 {display:none !important; visibility:hidden !important;}
 </style>
 <script type='text/javascript'>
@@ -182,6 +170,6 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
 
-</main>
+
 </body>
 </html>

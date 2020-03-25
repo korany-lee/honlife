@@ -1,6 +1,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -135,7 +139,15 @@ $(function(){
 				<a href="#">사원관리 </a>
 				<ul class="submenu">
 					<li><a href="../manager/recruit">지원자 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+						<span class="jquery-accordion-menu-label">
+						<c:if test="${recruitcount == null }">
+						0
+						</c:if>
+						<c:if test="${recruitcount >0 }">
+							${recruitcount}
+						</c:if>
+						
+						</span>
 						</li>
 						<li><a href="#">사원 등록 </a></li>
 						<li><a href="#">사원 리스트 </a>
