@@ -1,6 +1,7 @@
 package service.care.clean;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 import javax.servlet.ServletRequest;
@@ -32,8 +33,8 @@ public class RegistService {
 		dto.setRecruitClass(registCommand.getRecruitClass());
 		dto.setRecruitJumin(registCommand.getRecruitJumin());
 		dto.setRecruitPh(registCommand.getRecruitPh());
-		dto.setRecruitAddr(registCommand.getRecruitAddr());
-		dto.setRecruitGender(registCommand.getRecruitGender());
+		dto.setRecruitAddr(registCommand.getRecruitAddr());		
+		dto.setRecruitGender(registCommand.getRecruitGender());	
 		
 		// 파일을 담기위한 객체를 생성.
 				String originalTotal = "";
@@ -52,7 +53,7 @@ public class RegistService {
 					
 			         originalTotal += original + "-";
 					 storeTotal += store + "-";
-					 fileSizeTotal += fileSize;	
+					 fileSizeTotal += fileSize + "-";	
 					 
 					 File file = new File(filePath +"\\"+ store);
 					 try {
@@ -68,8 +69,35 @@ public class RegistService {
 			   dto.setOriginalFileName(originalTotal);
 			   dto.setStoreFileName(storeTotal);
 			   dto.setFileSize(fileSizeTotal);
-
-				
+			   String storeTotal1 = "";
+			   
+			   for( MultipartFile mf1 : registCommand.getRecruitPhoto()) {
+				   String original1 = mf1.getOriginalFilename();
+				   
+				   String originalFileExtension1 =    
+							original1.substring(original1.lastIndexOf("."));
+				   
+				   String store1 = UUID.randomUUID().toString().replace("-","")
+							+ originalFileExtension1;
+				   
+				   storeTotal1 += store1 + "-";
+				   String path = request.getServletContext().getRealPath("/");
+				   path += "careView\\care\\recruitPhoto\\";
+			   
+				   File file1 = new File(path+store1);
+				   
+				   try {
+					mf1.transferTo(file1);
+				} catch (IllegalStateException | IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				   
+			   
+			   
+			   }
+				 
+			   dto.setRecruitPhoto(storeTotal1);
 		
 				registRepository.regist(dto);
 									 

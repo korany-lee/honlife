@@ -7,6 +7,8 @@ public class RecruitDTO implements Serializable{
 	
 	
 
+
+
 	Integer recruitNo;
 	String recruitName;
 	Integer recruitPh;
@@ -15,11 +17,21 @@ public class RecruitDTO implements Serializable{
 	String recruitAddr;
 	String recruitClass;
 	String recruitGender;
+	
+	String recruitPhoto;
 	//파일전송
+	
 	String originalFileName;
 	String storeFileName;
     String fileSize;	
 	
+	public String getRecruitPhoto() {
+		return recruitPhoto;
+	}
+	public void setRecruitPhoto(String recruitPhoto) {
+		this.recruitPhoto = recruitPhoto;
+	}
+    
 	public String getOriginalFileName() {
 		return originalFileName;
 	}

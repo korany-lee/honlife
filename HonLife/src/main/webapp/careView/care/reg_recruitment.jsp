@@ -83,6 +83,13 @@ function jusoCallBack(roadFullAddr){
 					</div>
 				</div>
 				
+				
+				<span class="label-input100" style="font-size: 20px" >사진 첨부</span>
+					<div class="wrap-input100 bg1 rs1-wrap-input100f">				
+					<input class="input100" type="file" name="recruitPhoto" >
+					<div>${fileError }</div>
+				</div>
+				
 				<span class="label-input100" style="font-size: 20px;     padding-right: 400px;">이름</span>
 				<div class="wrap-input100 " >
 					
@@ -132,7 +139,7 @@ function jusoCallBack(roadFullAddr){
 				
 				<span class="label-input100" style="font-size: 20px" >첨부 이력서</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100f">				
-					<input class="input100" type="file" name="recruitResume">
+					<input class="input100" type="file" name="recruitResume" multiple="multiple">
 					<div>${fileError }</div>
 				</div>
 				

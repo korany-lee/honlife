@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,39 +43,110 @@
 		</div>
 	
 		<div class="table-body">
-			<div class="table-rows">							
-						<div class="tr reserved">
+			<div class="table-rows">
+			
+			
+			
+				<c:forEach items="${recruit }" var="list" varStatus="status">
+					<div class="tr reserved">
 							<div class="tr-content">
-								<div class="tr-head">
+								<div class="tr-head">															
 									<div class="td">
-										<span>이름</span>
-									</div>
-									<div class="td">
-										<span>성별</span>
+										<span>${list. recruitName}</span>
 									</div>
 									
 									<div class="td">
-										<span>이메일</span>
-										<span class="icon icon-plus"></span>
+									<c:if test="${list.recruitGender == 'M' }">
+										<span>남</span>
+									</c:if>
+									<c:if test="${list.recruitGender == 'F' }">
+										<span>여</span>
+									</c:if>
+									</div>
+									
+						
+									
+									<div class="td">
+										<span>${list.recruitEmail }</span>
+										
 									</div>
 								</div>
-
 								<div class="tr-body">												
 										<div class="col-left">										
 											<div class="img-wrap">
-												<img src="careView/images/laundry/dress/shirt.jpg" style="width: 300px;"alt="dressphoto" />
+											
+											<c:forTokens items="${list.recruitPhoto }" delims="-" var="photo" varStatus="ii">												
+												
+												<img src="../careView/care/recruitPhoto/${photo }" style="width: 300px;"alt="dressphoto" />
+																					
+											</c:forTokens>										
 											</div>
 										</div>				
-									<div class="col-right" style="margin-right: 260px;">
-										<div class="ap-description">
-											<p style="font-size: 50px;">셔츠</p>											
-											<p style="font-size: 30px;">1500원</p>
-											</div>		
+									<div class="col-right" style="margin-right: 200px;">
+										
+									<table style="undefined;table-layout: fixed; width: 275px">
+								<colgroup>
+						<col style="width: 155px">
+						<col style="width: 120px">
+									</colgroup>
+  									<tr>
+    										<td>주민번호</td>
+    									
+   											<td>
+   											
+   									${list.recruitJumin }
+   											
+   											
+   											</td>
+  									</tr>
+  									<tr>
+    									<td>연락처</td>
+   									    <td>${list.recruitPh }</td>
+  											</tr>
+  									<tr>
+    									<td>모집 구분</td>
+    									<c:if test="${list.recruitClass == 'cm' }">
+   										<td>청소매니저</td>
+   										</c:if>
+   										<c:if test="${list.recruitClass == 'lm' }">
+   										<td>세탁 운반 매니저</td>
+   										</c:if>
+  									</tr>
+  								
+  									<tr>
+    									<td>이메일</td>
+    									<td>${list.recruitEmail }</td>
+                                    </tr>
+ 									 <tr>
+   										 <td>주소</td>
+    										<td>${list.recruitAddr }</td>
+  									</tr>
+  									<tr>
+  										 <td>이력서 첨부내역</td> 
+    									 <td>
+    										<c:forEach items="${storeFileName }" var="file" varStatus="status">
+											<a href="../careView/care/resume/${file }">${originalFileName[status.index] }
+											</a>  
+											<p style="font-size: 10px"> ${fileSize[status.index] } </p>
+												</c:forEach>	
+    									 </td>
+  									</tr>
+</table>
+										
+										
+										
+										
+										
+										
+										
+										
 										<button class="minimal-btn close-tr elem-line-after">close</button>
 									</div>
 								</div>
 							</div>
 						</div>
+				</c:forEach>
+				
 							
 			</div>
 

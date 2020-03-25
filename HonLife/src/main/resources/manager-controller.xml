@@ -11,7 +11,7 @@
 <bean class="controller.care.manager.RecruitListController"/>
 
 
-
+<bean class="controller.shop.manager.mainController"/>
 
 
              
