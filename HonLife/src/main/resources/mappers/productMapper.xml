@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="productMapper">
+<cache />
+
+<sql id="basecolumn">
+	PRODUCT_NO, PRODUCT_NAME, PRODUCT_TYPE, PRODUCT_DETAILTYPE, PRODUCT_PHOTO, PRODUCT_PRICE, PRODUCT_COUNT,
+	PRODUCT_USEDATE
+</sql>
+
+<insert id="insertProduct" parameterType="Model.DTO.ProductDTO">
+	insert into product(<include refid="basecolumn" />)
+	 values (productSeq.nextval, #{productName},#{productType},#{productDetailtype},#{productPhoto},#{productPrice},#{productCount},
+	#{productUsedate})
+</insert>
+
+</mapper>

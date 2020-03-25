@@ -13,7 +13,8 @@
 
 <bean class="controller.shop.manager.mainController"/>
 
-
+<bean class="service.shop.productInsertService"/>
+<bean class="repository.shop.productRepository"/>
              
                      
 </beans>
