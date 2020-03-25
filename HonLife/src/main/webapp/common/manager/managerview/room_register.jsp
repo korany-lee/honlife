@@ -30,7 +30,7 @@
 
 <body>
 	
-		<div class="col-right">
+		
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form" action="roomRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
@@ -113,12 +113,11 @@
 	
 	<script src="../common/manager/contactform/js/main.js"></script>
 
-		</div>
-
-
-
-	
 		
+
+
+
+
 	</body>
 
 </html>

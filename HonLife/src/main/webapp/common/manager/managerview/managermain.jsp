@@ -43,6 +43,8 @@ body{background:#f0f0f0;}
 <script type="text/javascript">
 $(function(){	
 	
+	
+	
 	$('#cleanOrder').click(function(){
 		
 	  $.ajax({	        
@@ -104,11 +106,86 @@ $(function(){
 	
 	});
 	
+
+	$('#roomList').click(function(){	
+		   $.ajax({	        
+		        type: "post",
+		        url: "../room/list",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });   
+	
+	});
+	
+	$('#funitureRegister').click(function(){	
+		   $.ajax({	        
+		        type: "post",
+		        url: "../funiture/register",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });   
+	
+	});
+	
+
+	$('#funitureList').click(function(){	
+	
+		
+		   $.ajax({	        
+		        type: "post",
+		        url: "../funiture/list",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });   
+	 
+	});
+	
+
+	$('#shopRegister').click(function(){	
+	
+		
+		   $.ajax({	        
+		        type: "post",
+		        url: "../shop/register",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });   
+	 
+	});
 	
 
 	
-	
-	
+	$('#materialRegister').click(function(){	
+		
+		
+		   $.ajax({	        
+		        type: "post",
+		        url: "../material/register",
+		        dataType:"html",
+		        success : function test(data){ 
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}    
+		     
+		 });   
+	 
+	});
 	
 	
 });
@@ -264,7 +341,7 @@ $(function(){
 			<a href="#">객실관리 </a>
 				<ul class="submenu">
 					<li><a href="#" id="roomRegister">객실 등록 </a></li>
-					<li><a href="../room/list">객실 리스트 </a>
+					<li><a href="#" id="roomList">객실 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
 		  			<li><a href="#">객실 정비 </a>
@@ -280,8 +357,8 @@ $(function(){
 			<li>
 			<a href="#">가구관리 </a>
 				<ul class="submenu">
-					<li><a href="../funiture/register">가구 등록 </a></li>
-					<li><a href="../funiture/list">가구 리스트 </a>
+					<li><a href="#" id="funitureRegister">가구 등록 </a></li>
+					<li><a href="../funiture/list" id="funitureList">가구 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
 		  			<li><a href="#">가구 정비 </a>
@@ -296,7 +373,7 @@ $(function(){
 			<li>
 			<a href="#">자재관리 </a>
 				<ul class="submenu">
-					<li><a href="../material/register">자재 등록 </a></li>
+					<li><a href="#" id="materialRegister">자재 등록 </a></li>
 					<li><a href="#">자재 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
@@ -342,7 +419,15 @@ $(function(){
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>					
 				</ul>
-				</li>	   
+				</li>	
+				 <li><a href="#">혼샵 </a>
+					<ul class="submenu">			
+						<li><a href="#" id="shopRegister">SSG상품입고</a></li>
+						<li><a href="../shop/list" id="shopList">상품관리</a></li>
+						<li><a href="#">혼샵 배송 관리 </a></li>
+						<li><a href="#">장터 관리 </a></li>					
+				</ul>
+				</li>     
 		</ul>
 	</div>
 </div>

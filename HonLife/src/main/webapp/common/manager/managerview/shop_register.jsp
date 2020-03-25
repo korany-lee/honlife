@@ -30,7 +30,7 @@ function jusoCallBack(roadFullAddr){
 
 <head>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
+
 
 	<link rel="icon" type="image/png" href="../common/manager/contactform/images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/vendor/bootstrap/css/bootstrap.min.css">
@@ -52,14 +52,6 @@ function jusoCallBack(roadFullAddr){
 
 
 
-		<div class="col-left contact-info">
-
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
-		
-			
-		</div>
-
-		<div class="col-right">
 
 
 	
@@ -511,7 +503,6 @@ function calculateGrandTotal() {
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
-		</div>
 </main>
 
 
