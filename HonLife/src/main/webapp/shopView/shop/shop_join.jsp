@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="./../main/images/WEB.png" />
 <link href="./../common/css/main.css" rel="stylesheet" type="text/css">
 <link href="./../common/css/common.css" rel="stylesheet" type="text/css">
@@ -137,62 +138,73 @@
 
 												</td>
 											</tr>
-											
-											<tr>
-												<td class="memberCols1">배송 주소</td>
-												<td class="memberCols2">
-													<div class="field_address">
-														 <input type="text"
-															name="roadFullAddr" id="roadFullAddr" placeholder="주소를 입력해주세요."> 
-															<a href="javascript:void(0)" id="btnAddressSearch"
-															onClick="jusoPop();">
-															<span class="bhs_button"> <span class="ico"></span>
-																<span class="txt">주소 검색</span>
-														</span>
-														</a>
-														<p class="txt_guide">
-															<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
-														</p>
-														<div id="addressView">
-															<div class="view_address"></div>
-														</div>
-													</div>
-													<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-													<script type="text/javascript">
-													function jusoPop() {
-														var popupWidth = 500;
-														var popupHeight = 530;
-														var popupX = (window.screen.width/2) - (popupWidth/2);
-														var popupY = (window.screen.height/2) - (popupHeight/2);
-														var popUrl = "./../common/manager/jusoPopup.jsp";
-														var popOption = 'height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY +', status=no, location=no, resizable=yes';
-														window.open(popUrl, jusoCallBack, popOption);
-													}
-													
-													function jusoCallBack(roadFullAddr){
-														// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
-														document.form.roadFullAddr.value = roadFullAddr;
-													
-												}
-													
-													</script>
-													<div class="field_address lst">
-														<input type="text" name="address_sub" id="address_sub"
-															value="" onkeyup="SameAddressSub(this)"
-															oninput="SameAddressSub(this)" label="세부주소"
-															placeholder="세부주소를 입력해주세요." class="byteTotext">
-														<p class="txt_guide">
-															<span class="txt"> <span id="div_road_address"></span>
-																<span id="div_road_address_sub"></span>
-															</span>
-														</p>
+	<script type="text/javascript">
+	var getDeliPoli = function (document, is_alert) {
+    var form = document;
+    var address = form.address.value;
+    var address_sub = form.address_sub.value;
+    var zipcode = form.zonecode.value;
+    var zonecode = "";
 
-														<div class="bytes_wrapper chk_bytes">
-															<span class="bytes">0</span>자 / <span class="limit">50</span>자
-														</div>
-													</div>
-												</td>
-											</tr>
+    $.ajax({
+     if($('#appStyle').length > 0){ // pc와 mw 구분값
+            $('.address_show').show();
+            // 주소검색 => 주소 재검색 으로 워딩 변경
+            $('#addressView').text($('#address').val());    
+            $('.field_address.lst').show();
+            if(!$('#zipcode-btn').hasClass('btn_type2')){
+                $('#zipcode-btn').removeClass('btn_type1');
+                $('#zipcode-btn').addClass('btn_type2').find('.txt_type').text('주소 재검색');                
+            }
+        }else{
+            $('#addressView').parent().find('.txt_guide').hide();
+            $('#addressView').find('.view_address').text($('#address').val() + " [" + $('#zipcode').val()+ "]");
+            $("#addressView").show();
+            $(".field_address.lst").show();
+            $("#btnAddressSearch").addClass('search').find('.txt').text('주소 재검색');
+        }
+        joinDeliveryCheck.default();
+    }).fail(function () {
+        alert("일시적인 장애가 발생하였습니다.\n잠시후 다시시도해주세요.");
+    });
+};
+</script>
+											<tr>
+					<td class="memberCols1">배송 주소</td>
+					<td class="memberCols2">
+						<div class="field_address">
+							<input type="hidden" name="zonecode" id="zonecode" size="5" readonly value="" label="주소를 선택해 주세요.">
+							<input type="hidden" name=address id="address" readonly value="" label="주소를 선택해 주세요.">
+							<input type="hidden" name="road_address" id="road_address" value="">
+							<a href="javascript:void(0)" id="btnAddressSearch" onClick="window.open('./../common/manager/jusoPopup.jsp',530,500)">
+								<span class="bhs_button">
+									<span class="ico"></span>
+									<span class="txt">주소 검색</span>
+								</span>
+							</a>
+							<p class="txt_guide">
+								<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
+							</p>
+							<div id="addressView">
+								<div class="view_address"></div>
+							</div>
+						</div>
+						
+						<div class="field_address lst">
+							<input type="text" name="address_sub" id="address_sub" value="" onkeyup="SameAddressSub(this)" oninput="SameAddressSub(this)" label="세부주소" placeholder="세부주소를 입력해주세요." class="byteTotext">
+							<p class="txt_guide">
+								<span class="txt">
+									<span id="div_road_address"></span>
+									<span id="div_road_address_sub"></span>
+								</span>	
+							</p>
+
+							<div class="bytes_wrapper chk_bytes">
+								<span class="bytes">0</span>자 / <span class="limit">50</span>자
+							</div>
+						</div>
+					</td>
+				</tr>
 
 
 											<tr class="select_sex">
