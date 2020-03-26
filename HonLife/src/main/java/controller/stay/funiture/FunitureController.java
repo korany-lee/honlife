@@ -22,6 +22,29 @@ public class FunitureController {
 	@Autowired
 	FurnitureListService furnitureListService;
 	
+	
+	//회원용
+	@RequestMapping("/funiture/select")
+	public String furnitureSelect() {
+		return "stayView/memberView/furniture_select";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//관리자용
 	@RequestMapping("/funiture/register")
 	public String funitureRegister() {
 		return "stayView/funiture/funiture_register";

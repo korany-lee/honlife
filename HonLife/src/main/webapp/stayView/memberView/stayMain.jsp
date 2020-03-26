@@ -101,18 +101,23 @@
                     </ul>
                   </li>
                  
-                  <li class="nav-item submenu dropdown">
+                 <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false">가구소개 및 예약</a>
-                    <!-- <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
                       <li class="nav-item">
-                        <a class="nav-link" href="tracking.html">Tracking</a>
+                        <a class="nav-link" href="funiture/select">가구선택</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="elements.html">Elements</a>
+                        <a class="nav-link" href="room/floor">층별 안내</a>
                       </li>
-                    </ul> -->
+                      <li class="nav-item">
+                        <a class="nav-link" href="room/view">뷰별 안내</a>
+                      </li>
+                    </ul>
                   </li>
+                  
+           
                  <!--  <li class="nav-item">
                     <a class="nav-link" href="contact.html">오시는길</a>
                   </li>-->

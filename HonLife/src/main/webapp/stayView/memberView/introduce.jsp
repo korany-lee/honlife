@@ -39,7 +39,7 @@
             class="banner_content d-md-flex justify-content-between align-items-center"
           >
             <div class="mb-3 mb-md-0">
-              <h2>Hon Stay 서비스 소개</h2>
+              <h2>Hon Stay만의 서비스를 만나보세요</h2>
               <p>최상의 서비스를 누리세요</p>
             </div>
             <div class="page_link">
@@ -60,199 +60,110 @@
                   <div class="blog_left_sidebar">
                       <article class="blog_item">
                         <div class="blog_item_img">
-                          <img class="card-img rounded-0" src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                          <img class="card-img rounded-0" src="/project/stayView/memberView/img/blog/main-blog/소개용 사진1.png" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>하나</h3>
+                            <p></p>
                           </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>고객님들의 성향에 맞는 맞춤 객실 제공</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                              <li><a href="#"><i class="ti-user"></i> Travel, Lifestyle</a></li>
-                              <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            <p>고객님들 만의 다양한 성향을 반영하고 고려하여 다양한 타입의 객실을 세심하게 선정하고 제공 함으로써 고객님들의 선택의 폭을 넓혀드립니다. 고객님이 원하는 객실을 경험해보세요!
+                            </p>
+                            
                         </div>
                       </article>
                       
                       <article class="blog_item">
                         <div class="blog_item_img">
-                          <img class="card-img rounded-0" src="img/blog/main-blog/m-blog-2.jpg" alt="">
+                          <img class="card-img rounded-0" src="/project/stayView/memberView/img/blog/main-blog/소개용 사진2.jpg" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>둘</h3>
+                            <p></p>
                           </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>가구 임대를 통한 삶의 질 향상</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                              <li><a href="#"><i class="ti-user"></i> Travel, Lifestyle</a></li>
-                              <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            <p>혼자 거주하기 위해 고액의 가구를 구매해야 하는 부담을 지워드립니다. 가구 임대 서비스를 통해 필요한 가구들만 사용하고 반납함으로써 보다 나은 생활을 즐기세요!</p>
+                            
                         </div>
                       </article>
 
                       <article class="blog_item">
                         <div class="blog_item_img">
-                          <img class="card-img rounded-0" src="img/blog/main-blog/m-blog-3.jpg" alt="">
+                          <img class="card-img rounded-0" src="/project/stayView/memberView/img/blog/main-blog/소개용 사진3.jpg" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>셋</h3>
+                            <p></p>
                           </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>홈케어 서비스 제공을 통한 고객님의 시간과 편안함을 보장</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                              <li><a href="#"><i class="ti-user"></i> Travel, Lifestyle</a></li>
-                              <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            <p>혼자 생활함에 있어서 청소나 세탁에 대한 귀찮음을 없애드립니다. 세탁서비스와 홈케어 서비스를 통한 청소를 이용하여 고객님 개인의 시간을 누리세요!</p>
+                           
                         </div>
                       </article>
 
                       <article class="blog_item">
                         <div class="blog_item_img">
-                          <img class="card-img rounded-0" src="img/blog/main-blog/m-blog-4.jpg" alt="">
+                          <img class="card-img rounded-0" src="/project/stayView/memberView/img/blog/main-blog/소개용 사진4.jpg" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>넷</h3>
+                            <p></p>
                           </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>고객님을 미소짓게 하는 친절함</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                              <li><a href="#"><i class="ti-user"></i> Travel, Lifestyle</a></li>
-                              <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            <p>환하고 밝은 미소로 고객님의 지친 일상을 조금이나마 웃게 해드리겠습니다. 정기적인 교육을 통해 항상 고객님의 입장에서 생각하는 Hon Stay 직원들이 고객님을 만나러 갑니다!</p>
+                           
                         </div>
                       </article>
 
                       <article class="blog_item">
                         <div class="blog_item_img">
-                          <img class="card-img rounded-0" src="img/blog/main-blog/m-blog-5.jpg" alt="">
+                          <img class="card-img rounded-0" src="/project/stayView/memberView/img/blog/main-blog/소개용 사진5.jpg" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>다섯</h3>
+                            <p></p>
                           </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>끊임없는 연구와 변화</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                              <li><a href="#"><i class="ti-user"></i> Travel, Lifestyle</a></li>
-                              <li><a href="#"><i class="ti-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            <p>현재에 만족하지 않고 항상 고객님들께 귀 기울이며 더 나은 서비스를 제공하기 위해 끊임없이 노력하겠습니다. 고객님들의 성원에 보답하기 위해 항상 연구하고 노력하는 모습을 보여드리겠습니다.</p>
+                            
                         </div>
                       </article>
                       
 
 
-                      <nav class="blog-pagination justify-content-center d-flex">
-                          <ul class="pagination">
-                              <li class="page-item">
-                                  <a href="#" class="page-link" aria-label="Previous">
-                                      <span aria-hidden="true">
-                                          <span class="ti-arrow-left"></span>
-                                      </span>
-                                  </a>
-                              </li>
-                              <li class="page-item">
-                                  <a href="#" class="page-link">1</a>
-                              </li>
-                              <li class="page-item active">
-                                  <a href="#" class="page-link">2</a>
-                              </li>
-                              <li class="page-item">
-                                  <a href="#" class="page-link" aria-label="Next">
-                                      <span aria-hidden="true">
-                                          <span class="ti-arrow-right"></span>
-                                      </span>
-                                  </a>
-                              </li>
-                          </ul>
-                      </nav>
+                     
                   </div>
               </div>
               <div class="col-lg-4">
                   <div class="blog_right_sidebar">
-                      <aside class="single_sidebar_widget search_widget">
-                          <form action="#">
-                            <div class="form-group">
-                              <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Search Keyword">
-                                <div class="input-group-append">
-                                  <button class="btn" type="button"><i class="ti-search"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <button class="main_btn rounded-0 w-100" type="submit">Search</button>
-                          </form>
-                      </aside>
+                      
 
-                      <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Category</h4>
-                        <ul class="list cat-list">
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Resaurant food</p>
-                                    <p>(37)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Travel news</p>
-                                    <p>(10)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Modern technology</p>
-                                    <p>(03)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Product</p>
-                                    <p>(11)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Inspiration</p>
-                                    <p>21</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Health Care (21)</p>
-                                    <p>09</p>
-                                </a>
-                            </li>
-                        </ul>
-                      </aside>
+                      
 
                       <aside class="single_sidebar_widget popular_post_widget">
                           <h3 class="widget_title">Recent Post</h3>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post1.jpg" alt="post">
+                              <img src="/project/stayView/memberView/img/blog/popular-post/post1.jpg" alt="post">
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>From life was you fish...</h3>
@@ -261,7 +172,7 @@
                               </div>
                           </div>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post2.jpg" alt="post">                              
+                              <img src="/project/stayView/memberView/img/blog/popular-post/post2.jpg" alt="post">                              
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>The Amazing Hubble</h3>
@@ -270,7 +181,7 @@
                               </div>
                           </div>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post3.jpg" alt="post">                              
+                              <img src="/project/stayView/memberView/img/blog/popular-post/post3.jpg" alt="post">                              
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>Astronomy Or Astrology</h3>
@@ -279,7 +190,7 @@
                               </div>
                           </div>
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post4.jpg" alt="post">
+                              <img src="/project/stayView/memberView/img/blog/popular-post/post4.jpg" alt="post">
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>Asteroids telescope</h3>
@@ -288,84 +199,46 @@
                               </div>
                           </div>
                       </aside>
-                      <aside class="single_sidebar_widget tag_cloud_widget">
-                          <h4 class="widget_title">Tag Clouds</h4>
-                          <ul class="list">
-                              <li>
-                                  <a href="#">project</a>
-                              </li>
-                              <li>
-                                  <a href="#">love</a>
-                              </li>
-                              <li>
-                                  <a href="#">technology</a>
-                              </li>
-                              <li>
-                                  <a href="#">travel</a>
-                              </li>
-                              <li>
-                                  <a href="#">restaurant</a>
-                              </li>
-                              <li>
-                                  <a href="#">life style</a>
-                              </li>
-                              <li>
-                                  <a href="#">design</a>
-                              </li>
-                              <li>
-                                  <a href="#">illustration</a>
-                              </li>
-                          </ul>
-                      </aside>
-
+                    
 
                       <aside class="single_sidebar_widget instagram_feeds">
                         <h4 class="widget_title">Instagram Feeds</h4>
                         <ul class="instagram_row flex-wrap">
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i1.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i1.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i2.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i2.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i3.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i3.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i4.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i4.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i5.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i5.png" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                  <img class="img-fluid" src="img/instagram/widget-i6.png" alt="">
+                                  <img class="img-fluid" src="/project/stayView/memberView/img/instagram/widget-i6.png" alt="">
                                 </a>
                             </li>
                         </ul>
                       </aside>
 
 
-                      <aside class="single_sidebar_widget newsletter_widget">
-                        <h4 class="widget_title">Newsletter</h4>
-
-                        <form action="#">
-                          <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Enter email" required>
-                          </div>
-                          <button class="main_btn rounded-0 w-100" type="submit">Subscribe</button>
-                        </form>
-                      </aside>
+                      
                   </div>
               </div>
           </div>
