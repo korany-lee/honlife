@@ -9,6 +9,9 @@
 <bean class="controller.care.clean.cleanAmountInfoController" />  
 <bean class="controller.care.clean.cleanRecController"/>
 <bean class="controller.care.clean.personalityController"/>
+<bean class="controller.care.clean.CleanRecDeleteController"/>
+
+
 
 
 

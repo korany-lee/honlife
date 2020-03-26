@@ -140,12 +140,7 @@ $(function(){
 				<ul class="submenu">
 					<li><a href="../manager/recruit">지원자 리스트 </a>
 						<span class="jquery-accordion-menu-label">
-						<c:if test="${recruitcount == null }">
-						0
-						</c:if>
-						<c:if test="${recruitcount >0 }">
-							${recruitcount}
-						</c:if>
+					
 						
 						</span>
 						</li>

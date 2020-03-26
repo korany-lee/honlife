@@ -31,6 +31,7 @@ function jusoCallBack(roadFullAddr){
 	
 }
 
+
 </script>
 
 <title>입사지원</title>
@@ -172,24 +173,6 @@ function jusoCallBack(roadFullAddr){
 			    
 			 </script>
 
-
-
-	
-	
-
-	
-
-
-
-
-			
-				
-	
-			
-			
-				
-				
-				
 				
 				
 				
@@ -237,27 +220,12 @@ function jusoCallBack(roadFullAddr){
 			});
 		})
 	</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-	
 
 	</section>
-
-
-
-
 
 </section>
 
 </main>
-
-
-
-
-
-
-
 
 <jsp:include page="../includer/carefooter.jsp"/>
 </body>

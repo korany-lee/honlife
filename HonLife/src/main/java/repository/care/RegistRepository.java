@@ -29,5 +29,17 @@ public class RegistRepository {
 		return 	sqlSession.selectList(statement);
 	}
 	
+	public void recDel(RecruitDTO dto) {
+		String statement = namespace + ".recruitDelete";
+		
+		 sqlSession.delete(statement,dto);
+	}
+	
+	public RecruitDTO oneSelect(RecruitDTO dto) {
+		String statement = namespace + ".recruitOneSelect";
+		
+		return sqlSession.selectOne(statement,dto);
+	}
+	
 	
 }

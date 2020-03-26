@@ -5,12 +5,18 @@
                                             http://www.springframework.org/schema/beans/spring-beans.xsd" >
         <bean id="registService" class="service.care.clean.RegistService" />
         <bean id="recruitListService" class="service.care.clean.RecruitListService"/>
+        <bean id="recruitDeleteService" class="service.care.clean.RecruitDeleteService" />
+        <bean id="recruitDetailService" class="service.care.clean.RecruitDetailService" />
+         
         <bean id="listCountService" class="service.manager.ListCountService" />
         
         
         
+        
+         
+        
         <bean id="countRepository" class="repository.manager.CountRepository" />
         <bean id="registRepository" class="repository.care.RegistRepository"/>          
-          
+         
           
 </beans>

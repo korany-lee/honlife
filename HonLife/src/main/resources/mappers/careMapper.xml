@@ -52,11 +52,12 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 </select>
 
 
-<select id="" >
+<delete id="recruitDelete" parameterType="Model.DTO.care.RecruitDTO">
+	delete from recruit
+	 where recruit_no = #{recruitNo}
+	
 
-
-
-</select>
+</delete>
 
 
 

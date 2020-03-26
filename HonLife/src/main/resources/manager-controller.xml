@@ -9,7 +9,7 @@
 <bean class="controller.care.manager.cleaningItemListController"/>
 
 <bean class="controller.care.manager.RecruitListController"/>
-
+<bean class="controller.care.manager.RecruitDetailController" />
 
 <bean class="controller.shop.manager.mainController"/>
 

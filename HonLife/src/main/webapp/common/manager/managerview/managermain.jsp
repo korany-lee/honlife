@@ -41,12 +41,29 @@ body{background:#f0f0f0;}
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+
+
 $(function(){	
 	
-	
-	
-	$('#cleanOrder').click(function(){
+	$(document).on('click','#recruitDelete',function(){	
 		
+		$.ajax({	        
+		        type: "post",
+		        url: "../care/recruitDel",
+		        data: "recNum=" + $("#recNum").val(),						
+		        dataType:"html",
+		        success : function test(data){	 
+		        	
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}         
+		 }); 
+	
+	})	;
+	
+	
+	
+	$('#cleanOrder').click(function(){		
 	  $.ajax({	        
 		        type: "post",
 		        url: "cleanorder",
@@ -58,6 +75,8 @@ $(function(){
 		     
 		 }); 		 
 	});
+	
+	
 	
 	$('#recruitList').click(function(){
 		
@@ -73,6 +92,11 @@ $(function(){
 		 }); 
 
 	});
+	
+
+	
+
+	
 	
 	$('#cleanItemList').click(function(){
 		
@@ -122,7 +146,10 @@ $(function(){
 	});
 	
 	$('#funitureRegister').click(function(){	
-		   $.ajax({	        
+		
+	/* 	location.href="../funiture/register" */
+		
+	    $.ajax({	        
 		        type: "post",
 		        url: "../funiture/register",
 		        dataType:"html",
@@ -131,7 +158,7 @@ $(function(){
 		        		},
 		        error : function error(){alert("error");}    
 		     
-		 });   
+		 });    
 	
 	});
 	
@@ -191,9 +218,8 @@ $(function(){
 });
 
 
+
 </script>
-
-
 
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -388,6 +414,7 @@ $(function(){
 				<ul class="submenu">
 					<li><a href="#" id="recruitList">지원자 리스트 </a>
 						<span class="jquery-accordion-menu-label">
+						
 						<c:if test="${recruitcount == null }">
 						0
 						</c:if>
