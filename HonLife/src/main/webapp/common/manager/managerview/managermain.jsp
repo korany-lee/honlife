@@ -59,8 +59,27 @@ $(function(){
 		        error : function error(){alert("error");}         
 		 }); 
 	
+	});
+	
+	
+	$(document).on('click','#recruitMail',function(){	
+		
+		
+		$.ajax({	        
+		        type: "post",
+		        url: "mail",
+		        data: "recNum="+$('#recNum').val+"&reciver="+$('#reciver').val+"&name"+$('#name').val,						
+		        dataType:"html",
+		        success : function test(data){	 
+		        	
+		        		$("#maincall").html(data); 
+		        		},
+		        error : function error(){alert("error");}         
+		 });  
+	
 	})	;
 	
+
 	
 	
 	$('#cleanOrder').click(function(){		

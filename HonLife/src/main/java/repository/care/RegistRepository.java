@@ -41,5 +41,12 @@ public class RegistRepository {
 		return sqlSession.selectOne(statement,dto);
 	}
 	
+	public void mailChkUpdate(RecruitDTO dto) {
+		String statement = namespace + ".chkUp";
+		
+		sqlSession.update(statement, dto);
+		
+	}
+	
 	
 }

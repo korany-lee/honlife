@@ -34,6 +34,7 @@
 				<div class="th"><span>성별</span></div>
 				<div class="th"><span>지원업무</span></div>
 				<div class="th"><span>이메일</span></div>
+				<div class="th"><span>인성검사 합격여부</span></div>
 			</div>
 
 		</div>
@@ -43,6 +44,10 @@
 				<c:forEach items="${recruit }" var="list" varStatus="status">
 															
 				<input type="hidden" value="${list.recruitNo }" id="recNum"/>
+				<input type="hidden" value="${list.recruitEmail }" id="reciver"/>
+				<input type="hidden" value="${list.recruitName }" id="name"/>
+		
+				
 					<div class="tr reserved">
 								
 							<div class="tr-content">
@@ -154,6 +159,12 @@
 											
 									
 											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
+
+
+											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
+											
+											<a href="#" class="minimal-btn close-tr2 "  id="recruitMail" style="margin-right: 10px">인성 검사 메일발송</a>
+											
 									</div>
 								</div>
 							</div>
