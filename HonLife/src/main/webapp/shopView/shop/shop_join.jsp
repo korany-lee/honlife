@@ -2,13 +2,22 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+        }
+    }).open();
+</script>
 <head>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link rel="shortcut icon" type="image/x-icon" href="./../main/images/WEB.png" />
-<link href="./../common/css/main.css" rel="stylesheet" type="text/css">
-<link href="./../common/css/common.css" rel="stylesheet" type="text/css">
-<link href="./../common/css/section1.css" rel="stylesheet" type="text/css">
-<link href="./../common/css/normalize.css" rel="stylesheet" type="text/css">
+
+<link rel="shortcut icon" type="image/x-icon" href="./main/images/WEB.png" />
+<link href="./common/css/main.css" rel="stylesheet" type="text/css">
+<link href="./common/css/common.css" rel="stylesheet" type="text/css">
+<link href="./common/css/section1.css" rel="stylesheet" type="text/css">
+<link href="./common/css/normalize.css" rel="stylesheet" type="text/css">
 <title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
 
 </head>
@@ -41,22 +50,7 @@
 							<div class="">
 								<form id="form" name="frmMember" method="post"
 									action="/shop/member/indb.php" onsubmit="return chkForm2(this)">
-									<input type=hidden name=mode value="joinMember"> <input
-										type="hidden" name="check_mobile" value="" /> <input
-										type="hidden" name="auth_finish_code" value="" /> <input
-										type=hidden name=rncheck value=""> <input type=hidden
-										name=dupeinfo value=""> <input type=hidden name=pakey
-										value=""> <input type=hidden name=foreigner value="">
-									<input type=hidden name=passwordSkin value="Y">
-									<!-- 비밀번호 작성 규칙 보완 스킨패치 여부 -->
-
-									<input type=hidden name=private2 value=""> <input
-										type=hidden name=private3 value=""> <input type=hidden
-										name='return_url' value="">
-
-									<!-- 네이버체크아웃(회원연동) -->
-
-
+									
 									<div class="field_head head_type1">
 										<h3 class="tit">
 											<span class="screen_out">기본정보</span>
@@ -68,7 +62,7 @@
 										<table class="tbl_comm">
 											<tr>
 												<td class="memberCols1">아이디*</td>
-												<td class="memberCols2"><input type="text" name="m_id"
+												<td class="memberCols2"><input type="text" name="memId"
 													value="" maxlength="16" required fld_esssential
 													option=regId label="아이디"
 													placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"> <input
@@ -137,46 +131,15 @@
 													</div>
 
 												</td>
+				
 											</tr>
-	<script type="text/javascript">
-	var getDeliPoli = function (document, is_alert) {
-    var form = document;
-    var address = form.address.value;
-    var address_sub = form.address_sub.value;
-    var zipcode = form.zonecode.value;
-    var zonecode = "";
 
-    $.ajax({
-     if($('#appStyle').length > 0){ // pc와 mw 구분값
-            $('.address_show').show();
-            // 주소검색 => 주소 재검색 으로 워딩 변경
-            $('#addressView').text($('#address').val());    
-            $('.field_address.lst').show();
-            if(!$('#zipcode-btn').hasClass('btn_type2')){
-                $('#zipcode-btn').removeClass('btn_type1');
-                $('#zipcode-btn').addClass('btn_type2').find('.txt_type').text('주소 재검색');                
-            }
-        }else{
-            $('#addressView').parent().find('.txt_guide').hide();
-            $('#addressView').find('.view_address').text($('#address').val() + " [" + $('#zipcode').val()+ "]");
-            $("#addressView").show();
-            $(".field_address.lst").show();
-            $("#btnAddressSearch").addClass('search').find('.txt').text('주소 재검색');
-        }
-        joinDeliveryCheck.default();
-    }).fail(function () {
-        alert("일시적인 장애가 발생하였습니다.\n잠시후 다시시도해주세요.");
-    });
-};
-</script>
 											<tr>
 					<td class="memberCols1">배송 주소</td>
 					<td class="memberCols2">
 						<div class="field_address">
-							<input type="hidden" name="zonecode" id="zonecode" size="5" readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name=address id="address" readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name="road_address" id="road_address" value="">
-							<a href="javascript:void(0)" id="btnAddressSearch" onClick="window.open('./../common/manager/jusoPopup.jsp',530,500)">
+							<a href="javascript:goPopup()" id="btnAddressSearch" >
+							<input type="text" name="roadFullAddr" id="roadFullAddr" placeholder="주소를 입력해주세요." class="byteTotext">
 								<span class="bhs_button">
 									<span class="ico"></span>
 									<span class="txt">주소 검색</span>
@@ -185,24 +148,10 @@
 							<p class="txt_guide">
 								<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
 							</p>
-							<div id="addressView">
-								<div class="view_address"></div>
-							</div>
+							
 						</div>
 						
-						<div class="field_address lst">
-							<input type="text" name="address_sub" id="address_sub" value="" onkeyup="SameAddressSub(this)" oninput="SameAddressSub(this)" label="세부주소" placeholder="세부주소를 입력해주세요." class="byteTotext">
-							<p class="txt_guide">
-								<span class="txt">
-									<span id="div_road_address"></span>
-									<span id="div_road_address_sub"></span>
-								</span>	
-							</p>
-
-							<div class="bytes_wrapper chk_bytes">
-								<span class="bytes">0</span>자 / <span class="limit">50</span>자
-							</div>
-						</div>
+						
 					</td>
 				</tr>
 
@@ -227,7 +176,7 @@
 															value="">
 													</div>
 												</td>
-											</tr>
+											</tr>	
 											
 
 											<tr class="birth field_birth">

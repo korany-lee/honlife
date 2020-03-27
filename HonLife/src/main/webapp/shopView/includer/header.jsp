@@ -2,20 +2,21 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
-<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
-<link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
-<link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
-<link rel="stylesheet" href="plugins/slick/slick/slick.css">
-<link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
-<link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-<link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
-<link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="shopView/plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="shopView/fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+<link rel="stylesheet" href="shopView/plugins/bootstrap4/css/bootstrap.min.css">
+<link rel="stylesheet" href="shopView/plugins/owl-carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="shopView/plugins/slick/slick/slick.css">
+<link rel="stylesheet" href="shopView/plugins/lightGallery-master/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="shopView/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+<link rel="stylesheet" href="shopView/plugins/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="shopView/plugins/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="shopView/css/style.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -120,7 +121,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div><a class="ps-logo" href="index.html"><img src="img/honshop_main.png" alt="혼샵 메인 로고"></a>
+                    </div><a class="ps-logo" href="index.html"><img src="shopView/img/honshop_main.png" alt="혼샵 메인 로고"></a>
                 </div>
                 <div class="header__center">
                     <form class="ps-form--quick-search" action="index.html" method="get">
