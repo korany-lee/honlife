@@ -11,11 +11,12 @@ import Model.DTO.care.RecruitDTO;
 @Repository
 public class RegistRepository {
 	@Autowired
-	 private SqlSession sqlSession;
+	private SqlSession sqlSession;
 	private final String namespace="mappers.careMapper";
+	
+	
 	public void regist(RecruitDTO DTO) {
-		System.out.println("size=" + DTO.getFileSize());
-		System.out.println("email" + DTO.getRecruitEmail());
+
 		String statement = namespace + ".insertRegist";
 		
 		sqlSession.insert(statement,DTO);
@@ -24,7 +25,6 @@ public class RegistRepository {
 	
 	public List<RecruitDTO> list() {
 		String statement = namespace + ".reclistSelect";
-	
 		
 		return 	sqlSession.selectList(statement);
 	}
@@ -41,12 +41,7 @@ public class RegistRepository {
 		return sqlSession.selectOne(statement,dto);
 	}
 	
-	public void mailChkUpdate(RecruitDTO dto) {
-		String statement = namespace + ".chkUp";
-		
-		sqlSession.update(statement, dto);
-		
-	}
+
 	
 	
 }

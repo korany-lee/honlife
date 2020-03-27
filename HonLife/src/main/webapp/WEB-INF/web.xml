@@ -27,6 +27,7 @@
 			classpath:log4j.xml
 			classpath:stay-materialController.xml
 			classpath:stay-funitureController.xml
+			classpath:mail-config.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

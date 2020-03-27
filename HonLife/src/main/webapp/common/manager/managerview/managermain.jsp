@@ -61,21 +61,21 @@ $(function(){
 	
 	});
 	
-	
+
 	$(document).on('click','#recruitMail',function(){	
 		
 		
 		$.ajax({	        
 		        type: "post",
 		        url: "mail",
-		        data: "recNum="+$('#recNum').val+"&reciver="+$('#reciver').val+"&name"+$('#name').val,						
+		        data: "recNum="+$('#recNum').val()+"&reciver="+$('#reciver').val()+"&name="+$('#name').val(),						
 		        dataType:"html",
 		        success : function test(data){	 
-		        	
+		        		alert("메일을 전송하였습니다.")
 		        		$("#maincall").html(data); 
 		        		},
 		        error : function error(){alert("error");}         
-		 });  
+		 });   
 	
 	})	;
 	

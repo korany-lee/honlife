@@ -40,57 +40,12 @@
 	
 		<div class="table-body">
 			<div class="table-rows">	
-				<c:forEach items="${recruit }" var="list" varStatus="status">
+				<c:forEach items="${recruitOne }" var="one" varStatus="status">
 															
-				<input type="hidden" value="${list.recruitNo }" id="recNum"/>
-					<div class="tr reserved">
-								
+				<input type="hidden" value="${one.recruitNo }" id="recNum"/>
+					<div class="tr reserved">								
 							<div class="tr-content">
-								<div class="tr-head">
-								<div class="td">
-								<span>
-									<input type="checkbox" name="chkbox" >
-								</span>
-								
-								</div>															
-									<div class="td">
-										<span>${list. recruitName}</span>
-									</div>
-									
-									<div class="td">
-									<c:if test="${list.recruitGender == 'M' }">
-										<span>남</span>
-									</c:if>
-									<c:if test="${list.recruitGender == 'F' }">
-										<span>여</span>
-									</c:if>
-									</div>
-									
-									<div class="td">
-									<c:if test="${list.recruitClass == 'cm' }">
-   										<td>청소매니저</td>
-   										</c:if>
-   										<c:if test="${list.recruitClass == 'lm' }">
-   										<td>세탁 운반 매니저</td>
-   										</c:if>
-									</div>					
-									<div class="td">
-										<span>${list.recruitEmail }</span>
-										
-									</div>
-									
-								</div>
-								<div class="tr-body">												
-										<div class="col-left">										
-											<div class="img-wrap">
-											
-											<c:forTokens items="${list.recruitPhoto }" delims="-" var="photo" varStatus="ii">												
-												
-												<img src="../careView/care/recruitPhoto/${photo }" style="width: 300px;"alt="dressphoto" />
-																			
-											</c:forTokens>										
-											</div>
-										</div>				
+								<div class="tr-body">																					
 									<div class="col-right" style="margin-right: 200px;">
 										
 									<table style="undefined;table-layout: fixed; width: 275px">
@@ -103,37 +58,37 @@
     									
    											<td>
    											
-   									${list.recruitJumin }
+   									${one.recruitJumin }
    											
    											
    											</td>
   									</tr>
   									<tr>
     									<td>연락처</td>
-   									    <td>${list.recruitPh }</td>
+   									    <td>${one.recruitPh }</td>
   											</tr>
   									<tr>
     									<td>모집 구분</td>
-    									<c:if test="${list.recruitClass == 'cm' }">
+    									<c:if test="${one.recruitClass == 'cm' }">
    										<td>청소매니저</td>
    										</c:if>
-   										<c:if test="${list.recruitClass == 'lm' }">
+   										<c:if test="${one.recruitClass == 'lm' }">
    										<td>세탁 운반 매니저</td>
    										</c:if>
   									</tr>
   								
   									<tr>
     									<td>이메일</td>
-    									<td>${list.recruitEmail }</td>
+    									<td>${one.recruitEmail }</td>
                                     </tr>
  									 <tr>
    										 <td>주소</td>
-    										<td>${list.recruitAddr }</td>
+    										<td>${one.recruitAddr }</td>
   									</tr>
   									<tr>
   										 <td>이력서 첨부내역</td> 
     									 <td>
-    									<c:forTokens items="${list.storeFileName}" delims="-"  var="file" varStatus="ii">								
+    									<c:forTokens items="${storeFileName}" delims="-"  var="file" varStatus="ii">								
 												<c:if test="${ii.index >0 }">
 												<a href="../careView/care/resume/${file }" target="_blank">첨부파일${ii.index} </a>
 												</c:if>
@@ -154,6 +109,7 @@
 											
 									
 											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
+											<a href="#" class="minimal-btn close-tr2 " id="recruitDetail" style="margin-right: 10px"> Detail</a>
 									</div>
 								</div>
 							</div>

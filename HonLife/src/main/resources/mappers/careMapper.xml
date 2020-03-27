@@ -59,14 +59,17 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 
 </delete>
 
+<select id="recruitOneSelect" parameterType="Model.DTO.care.RecruitDTO">
+	select <include refid="baseRecruit" /> from recruit
+		<where>
+				<if test="value != null">
+							RECRUIT_NO = #{recruitNo}			
+				</if>		
+		</where>
 
-<update id="chkUp" parameterType="Model.DTO.care.RecruitDTO">
-	update recruit
-	set mailChk = #{mailChk}
-	where recruit_no = #{recruitNo} and recruit_email = #{recruitEmail}
-	and mailChk is null
+</select>
 
-</update>
+
 
 
 

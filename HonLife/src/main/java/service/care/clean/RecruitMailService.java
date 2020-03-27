@@ -16,7 +16,9 @@ public class RecruitMailService {
 	
 	public void mail(Integer recNum, String reciver, String name) {
 
-	
+		System.out.println("service recNum=" + recNum);
+		 System.out.println("service reciver=" + reciver);
+		 System.out.println("service name=" + name);
 		RecruitMailSand.sendMail(recNum, reciver, name);
 		
 		

@@ -13,8 +13,6 @@
 <body>
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
-
-
 	
 		<section class="animate-in-view">
 			<div class="section-content clearfix">
@@ -27,9 +25,8 @@
 
 		<div class="table-head">
 
-			<div class="table-head-content section-content clearfix">
-			
-				<div class="th"><span>선택</span></div>
+			<div class="table-head-content section-content clearfix">		
+				<div class="th"><span>선택 </span></div>
 				<div class="th"><span>이름</span></div>
 				<div class="th"><span>성별</span></div>
 				<div class="th"><span>지원업무</span></div>
@@ -44,10 +41,7 @@
 				<c:forEach items="${recruit }" var="list" varStatus="status">
 															
 				<input type="hidden" value="${list.recruitNo }" id="recNum"/>
-				<input type="hidden" value="${list.recruitEmail }" id="reciver"/>
-				<input type="hidden" value="${list.recruitName }" id="name"/>
-		
-				
+	
 					<div class="tr reserved">
 								
 							<div class="tr-content">
@@ -58,8 +52,10 @@
 								</span>
 								
 								</div>															
-									<div class="td">
-										<span>${list. recruitName}</span>
+									<div class="td">								
+										<span>
+									<input style="background-color: transparent; cursor:pointer;color: #9fa7a7 " class="boardList"  id="name" type="text" value="${list.recruitName}" readonly="readonly">	
+										</span>
 									</div>
 									
 									<div class="td">
@@ -80,8 +76,17 @@
    										</c:if>
 									</div>					
 									<div class="td">
-										<span>${list.recruitEmail }</span>
+										<span >
+											<input style="background-color: transparent; cursor:pointer; color: #9fa7a7" id="reciver" class="boardList" type="text" value="${list.recruitEmail}" readonly="readonly">
+										</span>
 										
+									</div>
+										<div class="td">
+										<c:if test="${list.recruitClass == 'lm' }">
+										<span >
+											대상이 아닙니다.
+										</span>
+										</c:if>
 									</div>
 									
 								</div>
@@ -160,10 +165,11 @@
 									
 											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
 
-
+										<c:if test="${list.recruitClass == 'cm' }">
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
 											<a href="#" class="minimal-btn close-tr2 "  id="recruitMail" style="margin-right: 10px">인성 검사 메일발송</a>
+										</c:if>
 											
 									</div>
 								</div>

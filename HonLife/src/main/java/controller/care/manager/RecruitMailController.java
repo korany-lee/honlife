@@ -18,7 +18,7 @@ RecruitMailService recruitMailService;
 	  public String mail(
 			  			 @RequestParam(value="recNum") Integer recNum ,
 			  			 @RequestParam(value="reciver") String reciver,			  	
-			  			 @RequestParam(value="name") String name) {
+			  			 @RequestParam(value="name" ,required=false) String name ){
 		 
 		 
 		 recruitMailService.mail(recNum,reciver,name);

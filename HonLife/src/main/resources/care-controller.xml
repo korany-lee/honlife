@@ -8,19 +8,13 @@
 <bean class="controller.care.laundry.laundryAmountInfoController"/>     
 <bean class="controller.care.clean.cleanAmountInfoController" />  
 <bean class="controller.care.clean.cleanRecController"/>
-<bean class="controller.care.clean.personalityController"/>
+<bean class="controller.care.clean.PersonalityController"/>
 <bean class="controller.care.clean.CleanRecDeleteController"/>
 
 
 
 
 
-
-
-
-
-
-
-             
+ 
                      
 </beans>
