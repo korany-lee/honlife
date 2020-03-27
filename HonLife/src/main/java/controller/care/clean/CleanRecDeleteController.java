@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import service.care.clean.RecruitDeleteService;
-import service.care.clean.RecruitDetailService;
-import service.care.clean.RecruitListService;
+
 
 
 @Controller
