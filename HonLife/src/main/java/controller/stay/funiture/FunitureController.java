@@ -24,12 +24,45 @@ public class FunitureController {
 	
 	
 	//회원용
+	
+	
+	
 	@RequestMapping("/funiture/select")
-	public String furnitureSelect() {
-		return "stayView/memberView/furniture_select";
+	public String furnitureSelect(@RequestParam("type")String furnitureType,Model model) {
+		if(furnitureType.equals("거실용품")) {
+			furnitureListService.selectType(furnitureType, model);
+			return "stayView/memberView/furniture_living";
+		}else if(furnitureType.equals("주방용품")) {
+			furnitureListService.selectType(furnitureType, model);
+			return "stayView/memberView/furniture_kitchen";
+		}else if(furnitureType.equals("침실용품")) {
+			furnitureListService.selectType(furnitureType, model);
+			return "stayView/memberView/furniture_bedroom";
+		}else {
+			furnitureListService.selectType(furnitureType, model);
+			return "stayView/memberView/furniture_etc";
+		}
+		
+		
 	}
 	
+	@RequestMapping("/funiture/choice")
+	public String furnitureChoice(@RequestParam("type")String furnitureType,Model model) {
+		furnitureListService.selectType(furnitureType, model);
+		return "stayView/memberView/furniture_List";
+	}
 	
+	@RequestMapping("funiture/oneSelect")
+	public String oneSelect(@RequestParam("content")String content, @RequestParam("type")String type,Model model) {
+		furnitureListService.searchSelect(content,type,model);
+		return "stayView/memberView/furniture_List";
+	}
+	
+	@RequestMapping("/funiture/furnitureDetail")
+	public String furnitureDetail(@RequestParam("furnitureNo")String num,Model model) {
+		furnitureListService.oneSelect(num, model);
+		return "stayView/memberView/furniture_detail";
+	}
 	
 	
 	

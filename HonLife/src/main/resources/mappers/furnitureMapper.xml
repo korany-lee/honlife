@@ -44,6 +44,9 @@ select * from furniture where furniture_type= #{furnitureType}
 select * from furniture where furniture_no = #{furnitureNo}
 </select>
 
+<select id="searchSelect" resultMap="furnitures" parameterType="Model.DTO.SearchDTO">
+select * from furniture where funiture_name Like '%'||#{content}||'%' and furniture_type =#{type}
+</select>
 
 
 </mapper>

@@ -95,26 +95,31 @@
                         <a class="nav-link" href="../room/floor">층별 안내</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="../room/view">뷰별 안내</a>
+                        <a class="nav-link" href="../room/view">전망별 안내</a>
                       </li>
                     </ul>
                   </li>
                  
-                  <li class="nav-item submenu dropdown">
+                 <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false">가구소개 및 예약</a>
-                    <!-- <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
                       <li class="nav-item">
-                        <a class="nav-link" href="tracking.html">Tracking</a>
+                        <a class="nav-link" href="../funiture/select?type=거실용품" >거실용 가구</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="elements.html">Elements</a>
+                        <a class="nav-link" href="../funiture/select?type=주방용품">주방용 가구</a>
                       </li>
-                    </ul> -->
+                      <li class="nav-item">
+                        <a class="nav-link" href="../funiture/select?type=침실용품">주방용 가구</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../funiture/select?type=기타">기타 가구</a>
+                      </li>
+                      
+                    </ul>
                   </li>
-                 <!--  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">오시는길</a>
-                  </li>-->
+                
                 </ul> 
               </div>
 

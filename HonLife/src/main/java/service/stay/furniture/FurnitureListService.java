@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Model.DTO.FurnitureDTO;
+import Model.DTO.SearchDTO;
 import repository.stay.FurnitureRepository;
 
 @Service
@@ -31,6 +32,14 @@ public class FurnitureListService {
 		FurnitureDTO dto = furnitureRepository.oneSelect(no);
 		model.addAttribute("furniture", dto);
 	}
+	
+	public void searchSelect(String content,String type,Model model) {
+		SearchDTO sdto = new SearchDTO();
+		sdto.setContent(content);
+		sdto.setType(type);
+		List<FurnitureDTO> dto = furnitureRepository.searchSelect(sdto);
+		model.addAttribute("furniture", dto);
+	} 
 	
 	
 }

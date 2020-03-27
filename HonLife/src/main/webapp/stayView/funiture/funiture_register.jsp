@@ -43,7 +43,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="furnitureRegisterAction" method="post" enctype="multipart/form-data" name="furnitureForm">
+			<form class="contact100-form" action="../funiture/furnitureRegisterAction" method="post" enctype="multipart/form-data" name="furnitureForm">
 				<span class="contact100-form-title">
 				가구를 등록하세요
 				</span>
