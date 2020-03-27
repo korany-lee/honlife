@@ -60,7 +60,13 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 </delete>
 
 
+<update id="chkUp" parameterType="Model.DTO.care.RecruitDTO">
+	update recruit
+	set mailChk = #{mailChk}
+	where recruit_no = #{recruitNo} and recruit_email = #{recruitEmail}
+	and mailChk is null
 
+</update>
 
 
 

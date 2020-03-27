@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import service.manager.ListCountService;
 
 @Controller
 public class managerMainController {
 	@Autowired
- private	ListCountService listCountService;
+ private	ListCountService listCountService;	
 	@RequestMapping("/manager/main")
 	public String main(Model model) {
 		
@@ -18,5 +19,6 @@ public class managerMainController {
 		
 		return "common/manager/managerview/managermain";
 	}
+	
 
 }

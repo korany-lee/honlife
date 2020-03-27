@@ -25,6 +25,16 @@ public class RecruitDTO implements Serializable{
 	String storeFileName;
     String fileSize;	
 	
+    //메일체크
+    String mailChk;
+    
+    
+	public String getMailChk() {
+		return mailChk;
+	}
+	public void setMailChk(String mailChk) {
+		this.mailChk = mailChk;
+	}
 	public String getRecruitPhoto() {
 		return recruitPhoto;
 	}

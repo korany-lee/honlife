@@ -10,7 +10,9 @@
          
         <bean id="listCountService" class="service.manager.ListCountService" />
         
-        
+        <bean id="recruitMailSand" class="service.care.clean.RecruitMailSand" />
+        <bean id="recruitMailService" class="service.care.clean.RecruitMailService" />
+       
         
         
          

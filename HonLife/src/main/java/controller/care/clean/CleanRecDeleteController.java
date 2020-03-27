@@ -20,7 +20,7 @@ public class CleanRecDeleteController {
 
 		recruitDeleteService.recDel(recNum);
 
-		return "redirect:/manager/main";
+		return "redirect:/manager/recruit";
 	}
 	
 	
