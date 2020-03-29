@@ -23,6 +23,7 @@
 <section class="animate-in-view">
 	<div class="section-content clearfix">
 	<form  method="post">
+	<input type="hidden" value="${recNum }" name="recNum">
 			<table style="table-layout: fixed; width: 900px; text-align: center;margin-left: 200px; ">
 <colgroup>
 <col style="width: 40px">

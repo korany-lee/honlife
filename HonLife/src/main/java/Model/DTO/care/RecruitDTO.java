@@ -19,16 +19,31 @@ public class RecruitDTO implements Serializable{
 	String recruitGender;
 	
 	String recruitPhoto;
+
+	Integer interview;
+	Integer points;
 	//파일전송
 	
 	String originalFileName;
+	
 	String storeFileName;
     String fileSize;	
 	
     //메일체크
     String mailChk;
     
-    
+    public Integer getPoints() {
+		return points;
+	}
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
+	public Integer getInterview() {
+		return interview;
+	}
+	public void setInterview(Integer interview) {
+		this.interview = interview;
+	}
 	public String getMailChk() {
 		return mailChk;
 	}

@@ -27,20 +27,19 @@
 
 			<div class="table-head-content section-content clearfix">		
 				<div class="th"><span>선택 </span></div>
-				<div class="th"><span>이름</span></div>
-				<div class="th"><span>성별</span></div>
-				<div class="th"><span>지원업무</span></div>
+				<div class="th"><span>이름</span></div>		
 				<div class="th"><span>이메일</span></div>
-				<div class="th"><span>인성검사 합격여부</span></div>
+				<div class="th"><span>면접메일 발송여부</span></div>
+				<div class="th"><span>면접메일 발송하기</span></div>
 			</div>
 
 		</div>
 	
 		<div class="table-body">
 			<div class="table-rows">	
-				<c:forEach items="${recruit }" var="list" varStatus="status">
+				<c:forEach items="${interview }" var="list" varStatus="status">
 															
-				
+				<input type="hidden" value="${list.recruitNo }" id="recNum"/>
 	
 					<div class="tr reserved">
 								
@@ -48,7 +47,7 @@
 								<div class="tr-head">
 								<div class="td">
 								<span>
-									<input type="text" value="${list.recruitNo }" id="recNum"/>
+									<input type="checkbox" name="chkbox" >
 								</span>
 								
 								</div>															
@@ -56,108 +55,32 @@
 										<span>
 									<input style="background-color: transparent; cursor:pointer;color: #9fa7a7 " class="boardList"  id="name" type="text" value="${list.recruitName}" readonly="readonly">	
 										</span>
-									</div>
-									
-									<div class="td">
-									<c:if test="${list.recruitGender == 'M' }">
-										<span>남</span>
-									</c:if>
-									<c:if test="${list.recruitGender == 'F' }">
-										<span>여</span>
-									</c:if>
-									</div>
-									
-									<div class="td">
-									<c:if test="${list.recruitClass == 'cm' }">
-   										<td>청소매니저</td>
-   										</c:if>
-   										<c:if test="${list.recruitClass == 'lm' }">
-   										<td>세탁 운반 매니저</td>
-   										</c:if>
-									</div>					
+									</div>																									
 									<div class="td">
 										<span >
 											<input style="background-color: transparent; cursor:pointer; color: #9fa7a7" id="reciver" class="boardList" type="text" value="${list.recruitEmail}" readonly="readonly">
 										</span>
 										
 									</div>
-										<div class="td">
-										<c:if test="${list.recruitClass == 'lm' }">
-										<span >
-											대상이 아닙니다.
-										</span>
-										</c:if>
-										<c:if test="${list.points == null && list.recruitClass == 'cm' }"> <span>검사 전</span> </c:if>
-										<c:if test="${list.points > 60 && list.recruitClass == 'cm' }"> <span>합격</span> </c:if>
-										<c:if test="${list.points < 60 && list.recruitClass == 'cm' }"> <span>불합격</span></c:if>
+									<div class="td">
+									 발송 전 
+				                                              
+									</div>
+									<div class="td">
+									
+										
+															<a href="#" id="interviewMail" style="margin-right: 10px">면접 메일발송</a>
+										
+										
 									</div>
 									
 								</div>
 								<div class="tr-body">												
 										<div class="col-left">										
-											<div class="img-wrap">
-											
-											<c:forTokens items="${list.recruitPhoto }" delims="-" var="photo" varStatus="ii">												
-												
-												<img src="../careView/care/recruitPhoto/${photo }" style="width: 300px;"alt="dressphoto" />
-																			
-											</c:forTokens>										
-											</div>
+										
 										</div>				
 									<div class="col-right" style="margin-right: 200px;">
-										
-									<table style="undefined;table-layout: fixed; width: 275px">
-								<colgroup>
-						<col style="width: 155px">
-						<col style="width: 120px">
-									</colgroup>
-  									<tr>
-    										<td>주민번호</td>
-    									
-   											<td>
-   											
-   									${list.recruitJumin }
-   											
-   											
-   											</td>
-  									</tr>
-  									<tr>
-    									<td>연락처</td>
-   									    <td>${list.recruitPh }</td>
-  											</tr>
-  									<tr>
-    									<td>모집 구분</td>
-    									<c:if test="${list.recruitClass == 'cm' }">
-   										<td>청소매니저</td>
-   										</c:if>
-   										<c:if test="${list.recruitClass == 'lm' }">
-   										<td>세탁 운반 매니저</td>
-   										</c:if>
-  									</tr>
-  								
-  									<tr>
-    									<td>이메일</td>
-    									<td>${list.recruitEmail }</td>
-                                    </tr>
- 									 <tr>
-   										 <td>주소</td>
-    										<td>${list.recruitAddr }</td>
-  									</tr>
-  									<tr>
-  										 <td>이력서 첨부내역</td> 
-    									 <td>
-    									<c:forTokens items="${list.storeFileName}" delims="-"  var="file" varStatus="ii">								
-												<c:if test="${ii.index >0 }">
-												<a href="../careView/care/resume/${file }" target="_blank">첨부파일${ii.index} </a>
-												</c:if>
-									</c:forTokens> 
-									
-    									 </td>
-   
-  									</tr>
-  								
-  								
-</table>
+				
 								
 									
 										<button class="minimal-btn close-tr elem-line-after">상세 닫기</button> 
@@ -168,10 +91,10 @@
 									
 											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
 
-										<c:if test="${list.points == null && list.recruitClass == 'cm' }">
+										<c:if test="${list.recruitClass == 'cm' }">
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
-											<a href="#" class="minimal-btn close-tr2 "  id="recruitMail" style="margin-right: 10px">인성 검사 메일발송</a>
+											<a href="#" class="minimal-btn close-tr2 "  id="interviewMail" style="margin-right: 10px">면접 메일발송</a>
 										</c:if>
 											
 									</div>

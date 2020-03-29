@@ -41,6 +41,17 @@ public class RegistRepository {
 		return sqlSession.selectOne(statement,dto);
 	}
 	
+	public List<RecruitDTO> interviewList() {
+		String statement = namespace + ".interviewListSelect";
+		
+		return 	sqlSession.selectList(statement);
+	}
+	
+	public Integer updatePoint(RecruitDTO dto) {
+		String statement = namespace + ".upPoint";
+		
+		return sqlSession.update(statement,dto);
+	}
 
 	
 	

@@ -3,6 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://www.springframework.org/schema/beans 
                                             http://www.springframework.org/schema/beans/spring-beans.xsd" >
+                                            
         <bean id="registService" class="service.care.clean.RegistService" />
         <bean id="recruitListService" class="service.care.clean.RecruitListService"/>
         <bean id="recruitDeleteService" class="service.care.clean.RecruitDeleteService" />
@@ -10,11 +11,12 @@
          
         <bean id="listCountService" class="service.manager.ListCountService" />
         																		
-        <bean id="recruitMailSand" class="service.care.clean.RecruitMailSand" />
-        <bean id="recruitMailService" class="service.care.clean.RecruitMailService" />
-
+        <bean id="mailSand" class="service.care.clean.MailSand" />
+        <bean id="mailService" class="service.care.clean.MailService" />
+  
+		
        	<bean id="personalityService" class="service.care.clean.PersonalityService" />
-        
+        <bean id="interviewListService" class="service.care.clean.InterviewListService"/>
         
          
         

@@ -7,12 +7,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+/* $(function(){	
+	$(document).ready(function(){	
+		
+		$.ajax({	        
+	        type: "post",
+	        url: "mail",
+	        data: "recNum="+$('#recNum').val()+"&reciver="+$('#reciver').val()+"&name="+$('#name').val(),						
+	        dataType:"html",
+	        success : function test(data){	 
+	        	
+	        		$("#maincall").html(data); 
+	        		},
+	        error : function error(){alert("error");}         
+	 }); 
+	
+		
+		
+	});
+}); */
+</script>
+
 </head>
+
+
 
 
 <body>
 
-<script src="https://code.jquery.com/jquery-latest.js"></script>
+
 
 
 	
@@ -40,7 +66,7 @@
 	
 		<div class="table-body">
 			<div class="table-rows">	
-				<c:forEach items="${recruitOne }" var="one" varStatus="status">
+				
 															
 				<input type="hidden" value="${one.recruitNo }" id="recNum"/>
 					<div class="tr reserved">								
@@ -56,11 +82,8 @@
   									<tr>
     										<td>주민번호</td>
     									
-   											<td>
-   											
-   									${one.recruitJumin }
-   											
-   											
+   											<td>											
+   									${one.recruitJumin }											
    											</td>
   									</tr>
   									<tr>
@@ -85,18 +108,6 @@
    										 <td>주소</td>
     										<td>${one.recruitAddr }</td>
   									</tr>
-  									<tr>
-  										 <td>이력서 첨부내역</td> 
-    									 <td>
-    									<c:forTokens items="${storeFileName}" delims="-"  var="file" varStatus="ii">								
-												<c:if test="${ii.index >0 }">
-												<a href="../careView/care/resume/${file }" target="_blank">첨부파일${ii.index} </a>
-												</c:if>
-									</c:forTokens> 
-									
-    									 </td>
-   
-  									</tr>
   								
   								
 </table>
@@ -114,7 +125,7 @@
 								</div>
 							</div>
 						</div>
-				</c:forEach>
+				
 
 							
 			</div>

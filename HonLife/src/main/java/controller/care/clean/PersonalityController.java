@@ -3,6 +3,7 @@ package controller.care.clean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,14 +26,15 @@ public class PersonalityController {
 
 	@RequestMapping(method = RequestMethod.POST)
 										
-	public String personAct(@ModelAttribute("personPoint") PersonalityPoint point) {
+	public String personAct(@ModelAttribute("personPoint") PersonalityPoint point, Integer recNum ,Model model) {
 		
 	
-		System.out.println( "point=" + point);
-		System.out.println("ControllerPoint="+ point.getPersonResponse());
-			
+		System.out.println( "Controller point=" + point);
+		System.out.println("Controller list point="+ point.getPersonResponse());
+		System.out.println("Controller recNum" + recNum);
 		
-			return personalityService.action(point);
+		
+			return personalityService.action(point, recNum, model);
 		
 	
 		
