@@ -13,12 +13,28 @@ public class RecruitDetailController {
 	@Autowired
 	RecruitDetailService recruitDetailService;
 	
-	@RequestMapping("/manager/detail")
+	@RequestMapping("/manager/recDetail")
 	public String oneSel(@RequestParam("recNum") Integer recNum, Model model) {
 		
 		recruitDetailService.detail(recNum, model);
 		
 		return "common/manager/managerview/care/recDetail";
 	}
+	
+	@RequestMapping("/manager/intDetail")
+	public String oneSel1(@RequestParam("recNum") Integer recNum, Model model) {
+		
+		recruitDetailService.detail(recNum, model);
+		
+		return "common/manager/managerview/care/intDetail";
+	}
+	@RequestMapping("/manager/mail")
+	public String oneSel2(@RequestParam("recNum") Integer recNum, Model model) {
+		
+		recruitDetailService.detail(recNum, model);
+		return "common/manager/managerview/care/mailDel";
+	}
+	
+	
 	
 }

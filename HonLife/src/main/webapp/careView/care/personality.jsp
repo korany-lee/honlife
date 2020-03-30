@@ -5,6 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>인성검사 문항</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(function(){	
+	
+	$('#Sbtn').click(
+			function() {
+
+				var t = 0;
+				for (t = 0; t <=9; t++) {
+					var chkRadio2 = document
+							.getElementsByName("personResponse["+t+"]");
+					var selType2 = null;
+					var isCheck = true
+					for (var i = 0; i < chkRadio2.length; i++) {
+						if (chkRadio2[i].checked == true) {
+							isCheck = false;
+							break;
+						}
+					}
+					if (isCheck == true) {
+						alert(t+1 + "번째 항목이 누락 되었습니다.");
+						chkRadio2[0].focus();
+						return false;
+					}
+				}
+			});
+	
+});
+</script>
 </head>
 <style type="text/css" >
     tr td { 
@@ -24,6 +53,7 @@
 	<div class="section-content clearfix">
 	<form  method="post">
 	<input type="hidden" value="${recNum }" name="recNum">
+	<input type="hidden" value="" name="reciver" >
 			<table style="table-layout: fixed; width: 900px; text-align: center;margin-left: 200px; ">
 <colgroup>
 <col style="width: 40px">
@@ -143,7 +173,7 @@
   </tr>
 </table>
   			<div class="container-contact100-form-btn">
-					<input class="contact100-form-btn" type="submit"  value="검사정보 전송" style="cursor:pointer; font-size: 25px; width: 900px">
+					<input id ="Sbtn" class="contact100-form-btn" type="submit"  value="검사내용접수" style="cursor:pointer; font-size: 25px; width: 900px">
 				</div>
 
 	 </form>

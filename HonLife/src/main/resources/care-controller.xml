@@ -10,7 +10,7 @@
 <bean class="controller.care.clean.cleanRecController"/>
 <bean class="controller.care.clean.PersonalityController"/>
 <bean class="controller.care.clean.CleanRecDeleteController"/>
-
+<bean class="controller.care.clean.EmpRegistController" />
 
 
 

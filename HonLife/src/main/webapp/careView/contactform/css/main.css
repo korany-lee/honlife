@@ -220,7 +220,7 @@ iframe {
   height: 35px;
   border: 1px solid #e6e6e6;
   border-radius: 13px;
-  padding: 5px 30px 4px 22px;
+  padding: 5px 30px 4px 35px;
   margin-bottom: 20px;
 }
 
@@ -246,7 +246,7 @@ iframe {
   width: calc((100% - 120px) / 2);
 }
 .rs1-wrap-input100e {
-  width: calc((185% - 120px) / 2);
+  width: calc((218% - 120px) / 2);
 }
 .rs1-wrap-input100f {
   width: calc((185% - 120px) / 2);

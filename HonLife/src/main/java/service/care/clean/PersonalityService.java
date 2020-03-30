@@ -18,24 +18,35 @@ public class PersonalityService {
 	
 	@Autowired
 	RegistRepository registRepository;
-	public String action(PersonalityPoint point, Integer recruitNo, Model model) {
+	
+	@Autowired 
+	MailService mailService;
+	
+	
+	public String action(PersonalityPoint point, Integer recruitNo, String reciver, Model model) {
 		RecruitDTO dto = new RecruitDTO();
 		System.out.println("Service point=" + point);
 		System.out.println("Service num=" + recruitNo);
 		Integer result = 0;
 		System.out.println(point.getPersonResponse());
-				
+		dto.setRecruitNo(recruitNo);
 		for(String answer : point.getPersonResponse()) {
 			
 			result += Integer.parseInt(answer);
 			System.out.println("answer= " +answer);
 			System.out.println("result="+result);
 		}
-		System.out.println("ServiceResult="+result);
-		dto.setRecruitNo(recruitNo);
+		
+		if(result < 60) {
+		registRepository.recDel(dto);	
+		return "redirect:/care/person?recNum="+recruitNo+"&reciver="+reciver;
+		}else {
+
 		dto.setPoints(result);
 		model.addAttribute("recNum",recruitNo);
 		registRepository.updatePoint(dto);
+		}
+		
 		
 		return 	"careView/care/personality/next";	
 	

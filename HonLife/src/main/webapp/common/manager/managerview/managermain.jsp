@@ -62,28 +62,10 @@ $(function(){
 	});
 	
 
-	$(document).on('click','#recruitMail',function(){	
-		location.href= "detatil?recNum="+$('#recNum').val();
-		
-		$.ajax({	        
-		        type: "get",
-		        url: "detail",
-		        data: "recNum="+$('#recNum').val(),						
-		        dataType:"html",
-		        success : function test(data){	 
-		        		alert("메일을 전송하였습니다.")
-		        		$("#maincall").html(data); 
-		        		},
-		        error : function error(){alert("error");}         
-		 });   
-	})	;
 
 	
 	
 	$('#interview').click(function(){	
-		
-		
-		
 	  $.ajax({	        
 		        type: "post",
 		        url: "interview",
@@ -95,6 +77,20 @@ $(function(){
 		     
 		 }); 		 
 	});
+	
+	
+	$('#empRegMail').click(function(){	
+		  $.ajax({	        
+			        type: "post",
+			        url: "empRegistMail",
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#maincall").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 		 
+		});
 	
 
 	

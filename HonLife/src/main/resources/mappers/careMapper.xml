@@ -9,7 +9,7 @@
 <sql id="baseRecruit">
 RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
 RECRUIT_ADDR, RECRUIT_CLASS, RECRUIT_GENDER, 
-ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
+ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS 
 </sql>
 
 <insert id="insertRegist">
@@ -18,7 +18,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 					#{recruitJumin}, #{recruitEmail}, 
 				#{recruitAddr}, #{recruitClass}, #{recruitGender}, 
 				#{originalFileName}, #{storeFileName}, 
-				#{fileSize}, #{recruitPhoto}
+				#{fileSize}, #{recruitPhoto},#{postcode},0
 				)
 
 </insert>
@@ -37,7 +37,9 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 		<result  column="FILE_SIZE" jdbcType="VARCHAR" property="fileSize" />
 		<result  column="RECRUIT_PHOTO" jdbcType="VARCHAR" property="recruitPhoto" />
 		<result  column="INTERVIEW" jdbcType="BIGINT" property="interview"/>
+		<result column="POSTCODE" jdbcType="VARCHAR" property="postcode"/>
 		<result  column="POINTS" jdbcType="BIGINT" property="points" />
+		
 </resultMap>
 
 
@@ -49,7 +51,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 RECRUIT_ADDR, RECRUIT_CLASS, RECRUIT_GENDER, 
 ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO, POINTS, INTERVIEW from recruit
 		<where>
-				points > 60 
+				points >= 60 
 				
 		</where>
 </select>
@@ -75,7 +77,8 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO, POINTS, INTERVIEW
 </delete>
 
 <select id="recruitOneSelect" parameterType="Model.DTO.care.RecruitDTO" resultMap="recList">
-	select <include refid="baseRecruit" /> from recruit
+	select RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+			RECRUIT_ADDR, RECRUIT_CLASS, RECRUIT_GENDER from recruit
 	where RECRUIT_NO = #{recruitNo}			
 
 </select>
@@ -85,8 +88,16 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO, POINTS, INTERVIEW
 	update recruit 
 		set points = #{points}
 	where recruit_no = #{recruitNo}
-	and points is null
+	and points = 0
 	
+</update>
+
+<update id="intChkUp" parameterType="Model.DTO.care.RecruitDTO">
+	update recruit 
+	set interview = 1
+	where recruit_no = #{recruitNo}
+	and interview is null
+
 </update>
 
 
