@@ -10,7 +10,7 @@
 
 <bean class="controller.care.manager.RecruitListController"/>
 <bean class="controller.care.manager.RecruitDetailController" />
-<bean class="controller.care.manager.RecruitMailController" />
+<bean class="controller.care.manager.MailController" />
 
 
 <bean class="controller.shop.manager.mainController"/>

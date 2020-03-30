@@ -9,28 +9,28 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Hon Life - 뷰별 객실안내</title>
+    <title>Hon Life - 주방용 가구</title>
     
   <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
  	<script type="text/javascript">
-	$(function() {
-		$("#viewSelect").change(function() {
-			/*  location.href = "sizeSelect?size="+$("#sizeSelect").val(); */  
+	  $(function() {
+		$("#searchBtn").click(function() {
+			  
 			  $("#bdto").innerHTML = "";  
 			 	
 			 $.ajax({
 				type : "POST",
-				url : "viewSelect",
-				data : "view=" + $("#viewSelect").val(),
+				url : "oneSelect",
+				data : {"content" :  $("#search").val() , "type" : $("#type").val() } ,
 				datatype : "html",
 				success : function(data1) {
 					$("#bdto").html(data1);
 				}
 			});  
 		});  
-	});
-
+	}); 
+ 
 	</script>
   <body>
    <jsp:include page="/stayView/memberView/header.jsp" />
@@ -42,13 +42,13 @@
         <div class="container">
           <div class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
-              <h2>객실소개/예약</h2>
-              <p>고객님에게 맞는 다양한 객실을 만나보세요</p>
+              <h2>가구소개/예약</h2>
+              <p>고객님의 스타일에 맞는 가구를 만나보세요</p>
             </div>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="category.html">객실소개/예약</a>
-              <a href="category.html">전망별 안내</a>
+              <a href="category.html">가구소개/예약</a>
+              <a href="category.html">주방용품</a>
             </div>
           </div>
         </div>
@@ -63,17 +63,17 @@
           <div class="col-lg-9">
             <div class="product_top_bar">
               <div class="left_dorp">
-                <select class="sorting" id="viewSelect">
-                  <option value="시티">시티뷰</option>
-                  <option value="마운틴">마운틴뷰</option>
-                  <option value="리버">리버뷰</option>
-                </select>
-                
+              	<input type="hidden" id="type" value="주방용품" >
+                <input type="text" id="search" name="search" placeholder="상품 키워드를 입력하세요 ex)TV, 벽걸이" style="width:300px;">
+                <input type="button" class="genric-btn success circle" value="검색" id="searchBtn">
               </div>
             </div>
-            
             <div class="latest_product_inner">
               <div class="row" id="bdto">
+              
+              
+             
+              
               
               
               </div>
@@ -84,18 +84,21 @@
             <div class="left_sidebar_area">
               <aside class="left_widgets p_filter_widgets">
                 <div class="l_w_title">
-                  <h3>객실소개/예약</h3>
+                  <h3>가구소개/예약</h3>
                 </div>
                 <div class="widgets_inner">
                   <ul class="list">
                     <li>
-                      <a href="size">면적별 안내</a>
+                      <a href="select?type=거실용품">거실용 가구</a>
                     </li>
                     <li>
-                      <a href="floor">층별안내</a>
+                      <a href="select?type=주방용품">주방용 가구</a>
                     </li>
                     <li>
-                      <a href="view">뷰별안내</a>
+                      <a href="select?type=침실용품">침실용 가구</a>
+                    </li>
+                    <li>
+                      <a href="select?type=기타">기타 가구</a>
                     </li>
                     
                   </ul>
@@ -196,8 +199,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type="text/javascript">
 $.ajax({
 	type : "POST",
-	url : "viewSelect",
-	data : "view=시티",
+	url : "choice",
+	data : "type=주방용품",
 	datatype : "html",
 	success : function(data1) {
 		$("#bdto").html(data1);

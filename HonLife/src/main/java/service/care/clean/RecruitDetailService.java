@@ -17,9 +17,9 @@ public class RecruitDetailService {
 		
 			dto.setRecruitNo(recNum);
 		
-			dto =	 registRepository.oneSelect(dto);
+			dto = registRepository.oneSelect(dto);
 		
-			model.addAttribute("recruitOne" , dto);
+			model.addAttribute("One" , dto);
 			
 			  String[] oriFile = dto.getOriginalFileName().split("-");
 		      String[] strFile = dto.getStoreFileName().split("-");

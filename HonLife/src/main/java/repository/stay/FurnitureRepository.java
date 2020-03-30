@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.DTO.FurnitureDTO;
+import Model.DTO.SearchDTO;
 
 
 @Repository
@@ -33,5 +34,10 @@ public class FurnitureRepository {
 	public FurnitureDTO oneSelect(String furnitureNo) {
 		String statement = namespace +".oneSelect";
 		return sqlSession.selectOne(statement,furnitureNo);
+	}
+	
+	public List<FurnitureDTO> searchSelect(SearchDTO dto) {
+		String statement = namespace +".searchSelect";
+		return sqlSession.selectList(statement,dto);
 	}
 }

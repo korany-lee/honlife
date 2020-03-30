@@ -36,9 +36,23 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 		<result  column="STORE_FILE_NAME" jdbcType="VARCHAR" property="storeFileName" />
 		<result  column="FILE_SIZE" jdbcType="VARCHAR" property="fileSize" />
 		<result  column="RECRUIT_PHOTO" jdbcType="VARCHAR" property="recruitPhoto" />
+		<result  column="INTERVIEW" jdbcType="BIGINT" property="interview"/>
+		<result  column="POINTS" jdbcType="BIGINT" property="points" />
 </resultMap>
 
 
+
+
+
+<select id="interviewListSelect" resultMap="recList"  >
+		select  RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+RECRUIT_ADDR, RECRUIT_CLASS, RECRUIT_GENDER, 
+ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO, POINTS, INTERVIEW from recruit
+		<where>
+				points > 60 
+				
+		</where>
+</select>
 
 
 
@@ -46,7 +60,8 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 		select <include refid="baseRecruit" /> from recruit
 		<where>
 				<if test="value != null">
-							RECRUIT_NO = #{recruitNo}			
+							RECRUIT_NO = #{recruitNo}	
+							and interview is null		
 				</if>		
 		</where>
 </select>
@@ -59,16 +74,20 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO
 
 </delete>
 
-<select id="recruitOneSelect" parameterType="Model.DTO.care.RecruitDTO">
+<select id="recruitOneSelect" parameterType="Model.DTO.care.RecruitDTO" resultMap="recList">
 	select <include refid="baseRecruit" /> from recruit
-		<where>
-				<if test="value != null">
-							RECRUIT_NO = #{recruitNo}			
-				</if>		
-		</where>
+	where RECRUIT_NO = #{recruitNo}			
 
 </select>
 
+<update id="upPoint" parameterType="Model.DTO.care.RecruitDTO">
+		
+	update recruit 
+		set points = #{points}
+	where recruit_no = #{recruitNo}
+	and points is null
+	
+</update>
 
 
 

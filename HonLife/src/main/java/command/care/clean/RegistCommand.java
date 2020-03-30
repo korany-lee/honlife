@@ -13,8 +13,22 @@ public class RegistCommand {
 	private String recruitEmail1;
 	private String recruitEmail2;
 	private String recruitGender;
+	private String interview;
+	private String points;
 	
 	
+	public String getPoints() {
+		return points;
+	}
+	public void setPoints(String points) {
+		this.points = points;
+	}
+	public String getInterview() {
+		return interview;
+	}
+	public void setInterview(String interview) {
+		this.interview = interview;
+	}
 	private MultipartFile [] recruitPhoto;
 	
 	private MultipartFile [] recruitResume;
