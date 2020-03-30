@@ -19,14 +19,13 @@
 			
 			<span  style="font-size: 40px;"> 지원자 리스트</span>
 	        </div>
-
+	
 
 	<div class="table" style="position:relative;right: 20px;">
 
 		<div class="table-head">
 
 			<div class="table-head-content section-content clearfix">		
-				<div class="th"><span>선택 </span></div>
 				<div class="th"><span>이름</span></div>
 				<div class="th"><span>성별</span></div>
 				<div class="th"><span>지원업무</span></div>
@@ -46,12 +45,7 @@
 								
 							<div class="tr-content">
 								<div class="tr-head">
-								<div class="td">
-								<span>
-									<input type="text" value="${list.recruitNo }" id="recNum"/>
-								</span>
-								
-								</div>															
+																					
 									<div class="td">								
 										<span>
 									<input style="background-color: transparent; cursor:pointer;color: #9fa7a7 " class="boardList"  id="name" type="text" value="${list.recruitName}" readonly="readonly">	
@@ -87,9 +81,9 @@
 											대상이 아닙니다.
 										</span>
 										</c:if>
-										<c:if test="${list.points == null && list.recruitClass == 'cm' }"> <span>검사 전</span> </c:if>
-										<c:if test="${list.points > 60 && list.recruitClass == 'cm' }"> <span>합격</span> </c:if>
-										<c:if test="${list.points < 60 && list.recruitClass == 'cm' }"> <span>불합격</span></c:if>
+										<c:if test="${list.points eq 0 && list.recruitClass == 'cm'}"> <span>검사 전</span> </c:if>
+										<c:if test="${list.points != null && list.points >= 60 }"> <span>합격</span> </c:if>
+										<c:if test="${list.points != 0 && list.points < 60 }"> <span>불합격</span></c:if>
 									</div>
 									
 								</div>
@@ -112,19 +106,17 @@
 						<col style="width: 120px">
 									</colgroup>
   									<tr>
-    										<td>주민번호</td>
-    									
-   											<td>
-   											
-   									${list.recruitJumin }
-   											
-   											
+    										<td>주민번호</td>  									
+   											<td>   											
+   									${list.recruitJumin } 											
    											</td>
   									</tr>
+  									
   									<tr>
     									<td>연락처</td>
    									    <td>${list.recruitPh }</td>
-  											</tr>
+  									</tr>
+  									
   									<tr>
     									<td>모집 구분</td>
     									<c:if test="${list.recruitClass == 'cm' }">
@@ -139,10 +131,20 @@
     									<td>이메일</td>
     									<td>${list.recruitEmail }</td>
                                     </tr>
+                                    
  									 <tr>
-   										 <td>주소</td>
-    										<td>${list.recruitAddr }</td>
+   										 	<td>우편번호</td>
+   										 	<td>${list.postcode}</td>
   									</tr>
+  									
+  									 <tr>
+   										 	<td>주소</td>
+   										 	<td>${list.recruitAddr }</td>
+  									</tr>
+  									
+  									
+  									
+  									
   									<tr>
   										 <td>이력서 첨부내역</td> 
     									 <td>
@@ -168,11 +170,14 @@
 									
 											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
 
-										<c:if test="${list.points == null && list.recruitClass == 'cm' }">
+										<c:if test="${list.points == 0 && list.recruitClass == 'cm' }">
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
-											<a href="#" class="minimal-btn close-tr2 "  id="recruitMail" style="margin-right: 10px">인성 검사 메일발송</a>
+											<a href="recDetail?recNum=${list.recruitNo }" class="minimal-btn close-tr2 "  id="recruitMail"  style="margin-right: 10px">인성 검사 메일발송</a>
+											
 										</c:if>
+											
+										
 											
 									</div>
 								</div>

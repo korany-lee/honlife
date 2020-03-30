@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import Model.DTO.care.RecruitDTO;
+import command.care.clean.EmployeeCommand;
 import command.care.clean.RegistCommand;
 import repository.care.RegistRepository;
 
@@ -21,7 +22,8 @@ public class RegistService {
 	RegistRepository registRepository;
 	
 	
-	final String PATH = "careView\\care\\resume";
+	final String recPATH = "careView\\care\\resume";
+	final String empPATH = "careView\\care\\empPhoto";
 	public void regist(RegistCommand registCommand, ServletRequest request) {
 		RecruitDTO dto = new RecruitDTO();
 		dto.setRecruitName(registCommand.getRecruitName());
@@ -33,14 +35,19 @@ public class RegistService {
 		dto.setRecruitClass(registCommand.getRecruitClass());
 		dto.setRecruitJumin(registCommand.getRecruitJumin());
 		dto.setRecruitPh(registCommand.getRecruitPh());
-		dto.setRecruitAddr(registCommand.getRecruitAddr());		
+		
+		String addr = registCommand.getRoadAddress()+"\t"+  registCommand.getDetailAddress();
+		dto.setRecruitAddr(addr);
+		dto.setPostcode(registCommand.getPostcode());
+		
+		System.out.println("postCode ="+ registCommand.getPostcode());
 		dto.setRecruitGender(registCommand.getRecruitGender());	
 		
 		// 파일을 담기위한 객체를 생성.
 				String originalTotal = "";
 				String storeTotal = "";
 				String fileSizeTotal = "";
-				String filePath = request.getServletContext().getRealPath(PATH);
+				String filePath = request.getServletContext().getRealPath(recPATH);
 				System.out.println();
 				System.out.println("filepath: " + filePath);
 				
@@ -100,11 +107,21 @@ public class RegistService {
 			   dto.setRecruitPhoto(storeTotal1);
 		
 				registRepository.regist(dto);
-									 
-	
-	
+									
 		
 	}
+	
+	
+	
+	public void empRegist(Integer recNum,EmployeeCommand employeeCommand) {
+		
+		
+		
+		
+		
+		
+	}
+	
 	
 	
 }

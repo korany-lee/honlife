@@ -19,18 +19,8 @@ public class RecruitDetailService {
 		
 			dto = registRepository.oneSelect(dto);
 		
-			model.addAttribute("One" , dto);
-			
-			  String[] oriFile = dto.getOriginalFileName().split("-");
-		      String[] strFile = dto.getStoreFileName().split("-");
-		      String[] fileSize = dto.getFileSize().split("-");
-			
-			  
-		      model.addAttribute("originalFileName" ,oriFile);
-		      model.addAttribute("storeFileName" ,strFile);
-		      model.addAttribute("fileSize" ,fileSize);
+			model.addAttribute("one" , dto);
 
-		
 		
 		
 	}

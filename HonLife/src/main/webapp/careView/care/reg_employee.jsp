@@ -50,10 +50,12 @@
 				<span class="contact100-form-title" >
 			입사 지원 양식
 				</span>
+				
+			<input type="hidden"  value="${recNum }">
 			<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >지원 업무</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="recruitClass" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select class="js-select2" name="employeeWorkField" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="cm">청소 매니저</option>
 							<option value="lm">세탁 운송 매니저</option>			
 						</select>
@@ -64,29 +66,29 @@
 				
 				<span class="label-input100" style="font-size: 20px" >사진 첨부</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100f">				
-					<input class="input100" type="file" name="recruitPhoto" >
+					<input class="input100" type="file" name="employeePhoto" >
 					<div>${fileError }</div>
 				</div>
 				
 				<span class="label-input100" style="font-size: 20px;     padding-right: 400px;">이름</span>
 				<div class="wrap-input100 " >
 					
-					<input class="input100" type="text" name="recruitName" placeholder="이름를 입력하세요">
+					<input class="input100" type="text" name="employeeName" placeholder="이름를 입력하세요">
 				</div>
 				
-				<span class="label-input100"  style="font-size: 20px" >연락처</span>
+				<span class="label-input100"  style="font-size: 20px" >유선번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" id="recph"name="recruitPh" placeholder="숫자만 입력해주세요" >
+					<input class="input100" type="text" id="recph"name="employeeCallnum" placeholder="숫자만 입력해주세요" >
 				</div>
 				<span class="label-input100" style="font-size: 20px" >주민번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" id="jumin"name="recruitJumin" placeholder="숫자만 입력해주세요">
+					<input class="input100" type="text" id="jumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
 				</div>
 				<span class="label-input100" style="font-size: 20px; ">주소</span> 
 						<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >성별</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="recruitGender" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select class="js-select2" name="employeeGender" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="M">남자</option>
 							<option value="F">여자</option>			
 						</select>
@@ -96,14 +98,14 @@
 				
 				<input class="input100" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"> <br>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="postcode" name="postcode" placeholder="우편번호">
+				<input class="input100" type="text" id="postcode" name="addrPost" placeholder="우편번호">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소">
+				<input class="input100" type="text" id="roadAddress" name="addr1" placeholder="도로명주소">
 				</div>
 				<span id="guide" style="color:#999;display:none"></span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="margin-left: 115px"> 	
-				<input class="input100" type="text" id="detailAddress" name="detailAddress" placeholder="상세주소">
+				<input class="input100" type="text" id="detailAddress" name="addr2" placeholder="상세주소">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
 				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">

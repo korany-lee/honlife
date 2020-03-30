@@ -52,6 +52,12 @@ public class RegistRepository {
 		
 		return sqlSession.update(statement,dto);
 	}
+	
+	public void intChkUp(RecruitDTO dto) {
+		String statement = namespace + ".intChkUp";
+		
+		sqlSession.update(statement, dto);
+	}
 
 	
 	

@@ -4,6 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class RegistCommand {
 
+	
 	private Integer recruitNo;
 	private String recruitClass;
 	private String recruitName;
@@ -13,10 +14,31 @@ public class RegistCommand {
 	private String recruitEmail1;
 	private String recruitEmail2;
 	private String recruitGender;
+	private String postcode;
+	private String roadAddress;
+	private String detailAddress;
+	
 	private String interview;
 	private String points;
 	
-	
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	public String getRoadAddress() {
+		return roadAddress;
+	}
+	public void setRoadAddress(String roadAddress) {
+		this.roadAddress = roadAddress;
+	}
+	public String getDetailAddress() {
+		return detailAddress;
+	}
+	public void setDetailAddress(String detailAddress) {
+		this.detailAddress = detailAddress;
+	}
 	public String getPoints() {
 		return points;
 	}

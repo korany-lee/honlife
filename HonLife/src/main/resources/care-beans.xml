@@ -11,7 +11,7 @@
          
         <bean id="listCountService" class="service.manager.ListCountService" />
         																		
-        <bean id="mailSand" class="service.care.clean.MailSand" />
+        <bean id="mailSend" class="service.care.clean.MailSend" />
         <bean id="mailService" class="service.care.clean.MailService" />
   
 		

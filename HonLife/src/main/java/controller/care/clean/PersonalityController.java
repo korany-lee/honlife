@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import command.care.clean.PersonalityPoint;
 import service.care.clean.PersonalityService;
@@ -26,15 +26,20 @@ public class PersonalityController {
 
 	@RequestMapping(method = RequestMethod.POST)
 										
-	public String personAct(@ModelAttribute("personPoint") PersonalityPoint point, Integer recNum ,Model model) {
+	public String personAct(@ModelAttribute("personPoint") PersonalityPoint point,
+									@RequestParam(value="recNum") Integer recNum , 
+									@RequestParam(value="reciver") String reciver,
+																									
+			
+			Model model) {
 		
 	
 		System.out.println( "Controller point=" + point);
 		System.out.println("Controller list point="+ point.getPersonResponse());
-		System.out.println("Controller recNum" + recNum);
+		System.out.println("Controller recNum=" + recNum);
 		
 		
-			return personalityService.action(point, recNum, model);
+			return personalityService.action(point, recNum,reciver , model);
 		
 	
 		

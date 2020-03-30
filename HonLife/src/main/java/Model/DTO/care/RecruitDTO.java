@@ -9,6 +9,12 @@ public class RecruitDTO implements Serializable{
 
 
 
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
 	Integer recruitNo;
 	String recruitName;
 	Integer recruitPh;
@@ -17,7 +23,7 @@ public class RecruitDTO implements Serializable{
 	String recruitAddr;
 	String recruitClass;
 	String recruitGender;
-	
+	String postcode;
 	String recruitPhoto;
 
 	Integer interview;

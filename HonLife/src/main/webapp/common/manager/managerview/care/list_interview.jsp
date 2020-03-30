@@ -29,8 +29,8 @@
 				<div class="th"><span>선택 </span></div>
 				<div class="th"><span>이름</span></div>		
 				<div class="th"><span>이메일</span></div>
-				<div class="th"><span>면접메일 발송여부</span></div>
-				<div class="th"><span>면접메일 발송하기</span></div>
+				<div class="th"><span>지원자 확인 여부</span></div>
+	
 			</div>
 
 		</div>
@@ -63,42 +63,27 @@
 										
 									</div>
 									<div class="td">
-									 발송 전 
-				                                              
+							<c:if test="${list.interview == 1 }">
+									  확인
+				             </c:if>   
+				             <c:if test="${list.interview != 1 }">
+									  미확인
+				             </c:if> 
+				                                           
 									</div>
 									<div class="td">
-									
-										
-															<a href="#" id="interviewMail" style="margin-right: 10px">면접 메일발송</a>
-										
-										
+									 						<c:if test="${list.interview != 1}">
+																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
+															</c:if>
+															<c:if test="${list.interview == 1}">
+															    <a href="intDetail?recNum=${list.recruitNo }" id="empRegMail" style="margin-right: 10px">사원 등록메일 발송</a>
+															</c:if>
+															<a href="#" id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
+																							
 									</div>
 									
 								</div>
-								<div class="tr-body">												
-										<div class="col-left">										
-										
-										</div>				
-									<div class="col-right" style="margin-right: 200px;">
-				
 								
-									
-										<button class="minimal-btn close-tr elem-line-after">상세 닫기</button> 
-									
-											
-											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
-											
-									
-											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
-
-										<c:if test="${list.recruitClass == 'cm' }">
-											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
-											
-											<a href="#" class="minimal-btn close-tr2 "  id="interviewMail" style="margin-right: 10px">면접 메일발송</a>
-										</c:if>
-											
-									</div>
-								</div>
 							</div>
 						</div>
 				</c:forEach>

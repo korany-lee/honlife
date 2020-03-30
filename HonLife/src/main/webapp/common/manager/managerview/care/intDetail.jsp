@@ -14,7 +14,7 @@
 	$(document).ready(function(){	
 		$.ajax({	        
 	        type: "post",
-	        url: "recMail",
+	        url: "intMail",
 	        data: "recNum="+$('#recNum').val()+"&reciver="+$('#reciver').val()+"&name="+$('#name').val(),						
 	        dataType:"html",
 	        success : function test(data){

@@ -12,14 +12,15 @@ public class MailService {
 	@Autowired
 	RegistRepository registRepository;
 	@Autowired
-	MailSand mailSand;
+	MailSend mailSend;
+	
 	
 	public void recruitMail(Integer recNum, String reciver, String name) {
 
 		System.out.println("service recNum=" + recNum);
 		 System.out.println("service reciver=" + reciver);
 		 System.out.println("service name=" + name);
-		mailSand.sendRecruitMail(recNum, reciver, name);
+		mailSend.sendRecruitMail(recNum, reciver, name);
 		
 		
 	}
@@ -27,8 +28,23 @@ public class MailService {
 	public void interviewMail(Integer recNum, String reciver, String name) {
 		
 		
-		mailSand.sendInterviewMail(recNum, reciver, name);
+		mailSend.sendInterviewMail(recNum, reciver, name);
 		
+	}
+	
+	public void intChk(Integer recNum){
+		RecruitDTO dto = new RecruitDTO();
+		dto.setRecruitNo(recNum);
+
+		
+		registRepository.intChkUp(dto);
+		
+	}
+	
+	public void failMail(Integer recNum, String reciver) {
+
+		mailSend.fail(recNum, reciver);	
+	
 	}
 	
 	

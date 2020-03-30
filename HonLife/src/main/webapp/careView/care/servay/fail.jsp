@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-제발!!!
+<p style="font-size: 100px">너 탈락임 </p>
 </body>
 </html>
