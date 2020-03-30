@@ -6,7 +6,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
-public class productCommand {
+public class ProductCommand {
 	private String productNo;
 	private String productName;
 	private String productType;

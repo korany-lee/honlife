@@ -15,8 +15,9 @@
 
 <bean class="controller.shop.manager.mainController"/>
 
-<bean class="service.shop.productInsertService"/>
-<bean class="repository.shop.productRepository"/>
-             
+<bean id="pis" class="service.shop.ProductInsertService"/>
+<bean id="pr" class="repository.shop.ProductRepository"/>
+<bean id="mjs" class="service.shop.MemberJoinService"/>
+<bean id="mr" class="repository.shop.MemberRepository"/>        
                      
 </beans>

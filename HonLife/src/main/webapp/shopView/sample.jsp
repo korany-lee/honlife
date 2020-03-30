@@ -38,7 +38,7 @@
 	
 
 <script>
-var jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYXJ0X2lkIjoiNWQyMDYyMjRiZTczN2I2NTlmMDdlZmZhZmJiOTRmMTkiLCJpc19ndWVzdCI6dHJ1ZSwidXVpZCI6bnVsbCwic3ViIjpudWxsLCJpc3MiOiJodHRwOi8vbWt3ZWIuYXBpLmt1cmx5LnNlcnZpY2VzL3YxL3VzZXJzL2F1dGgvZ3Vlc3QiLCJpYXQiOjE1ODUxMDAxNjgsImV4cCI6MTU4NTEwMzc2OCwibmJmIjoxNTg1MTAwMTY4LCJqdGkiOiJ2anpsZ2JPZmd3V3JzYTU4In0.ryRbHC52inxtEJFk8o3ifw4ipkpfgLQwGjl8SFMT_R4';
+var jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYXJ0X2lkIjoiNjM5OTczOTMwOWFiODM4OWQ3NjU1ZWE5OWU3ZGIwMjgiLCJpc19ndWVzdCI6dHJ1ZSwidXVpZCI6bnVsbCwic3ViIjpudWxsLCJpc3MiOiJodHRwOi8vbWt3ZWIuYXBpLmt1cmx5LnNlcnZpY2VzL3YxL3VzZXJzL2F1dGgvZ3Vlc3QiLCJpYXQiOjE1ODU1MjgyNDUsImV4cCI6MTU4NTUzMTg0NSwibmJmIjoxNTg1NTI4MjQ1LCJqdGkiOiJoanF6dDFpbllSNzF1cXJEIn0.7oG2x6g5spjFnu1p_D8DbE9f4kJOPZx0FvzjIZrDx94';
 var apiDomain = 'https://api.kurly.com';
 var GD_ISMEMBER = !!Number('0');
 var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추가 생성.앱에서 불필요한 호출제거
@@ -46,11 +46,11 @@ var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추
 
 
 
-<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?ver=202003251038"></script>
-<script src="/shop/data/skin/designgj/thefarmers.js?ver=202003251038"></script>
-<script src="/shop/data/skin/designgj/common.js?ver=202003251038"></script>
-<script src="/shop/data/skin/designgj/polify.js?ver=202003251038"></script>
-<script src="/shop/data/skin/designgj/ui_v2.js?ver=202003251038"></script>
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?ver=202003300931"></script>
+<script src="/shop/data/skin/designgj/thefarmers.js?ver=202003300931"></script>
+<script src="/shop/data/skin/designgj/common.js?ver=202003300931"></script>
+<script src="/shop/data/skin/designgj/polify.js?ver=202003300931"></script>
+<script src="/shop/data/skin/designgj/ui_v2.js?ver=202003300931"></script>
 
 
 <!-- ie9_axios -->
@@ -64,11 +64,11 @@ var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추
 <!--<script src="https://res.kurly.com/js/vue/vue.js"></script>-->
 
 <script src="//res.kurly.com/js/vue/vue.min.js"></script>
-<script src="/common_js/axios.js?ver=202003251038"></script>
+<script src="/common_js/axios.js?ver=202003300931"></script>
 
-<link rel="styleSheet" href="/shop/data/skin/designgj/normalize.css?ver=202003251038">
-<link rel="styleSheet" href="/shop/data/skin/designgj/section1.css?ver=202003251038">
-<link rel="styleSheet" href="/shop/data/skin/designgj/common.css?ver=202003251038">
+<link rel="styleSheet" href="/shop/data/skin/designgj/normalize.css?ver=202003300931">
+<link rel="styleSheet" href="/shop/data/skin/designgj/section1.css?ver=202003300931">
+<link rel="styleSheet" href="/shop/data/skin/designgj/common.css?ver=202003300931">
 
 <!-- 네이버 트레커 -->
 
@@ -195,7 +195,7 @@ src="https://www.facebook.com/tr?id=526625657540055&ev=PageView&noscript=1"
 
 var amplitudeUid = uuidCheck;
 if(amplitudeUid === null){
-	amplitudeUid = '5d206224be737b659f07effafbb94f19';
+	amplitudeUid = '6399739309ab8389d7655ea99e7db028';
 }
 var appResult = {
 	is_release_build : false
@@ -206,7 +206,7 @@ appResult.is_release_build = true;
 amplitude.getInstance().init("65bebb55595beb82e78d5d1ae808702c", amplitudeUid);
 </script>
 <!-- KM-1483 : amplitude 트래킹 -->
-<script src="/common_js/kurlytracker/kurlytracker.js?ver=202003251038"></script>
+<script src="/common_js/kurlytracker/kurlytracker.js?ver=202003300931"></script>
 	
 
 
@@ -246,7 +246,7 @@ if( (document.all && !document.querySelector) || (document.all && document.query
 <div class="bnr_header" id="top-message">
 <!-- 상단 띠배너 -->
         <!-- 신규회원이벤트 -->
-        <a href="http://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_200226" id="eventLanding">
+        <a href="http://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/join/join_200325" id="eventLanding">
             지금 가입하고 인기상품 <b>100원</b>에 받아가세요!<img src="https://res.kurly.com/pc/ico/1908/ico_arrow_fff_84x84.png" class="bnr_arr">
             <div class="bnr_top">
                 <div class="inner_top_close">
@@ -307,7 +307,7 @@ if( (document.all && !document.querySelector) || (document.all && document.query
     ></user-menu-pc>
 </div>
 
-<script src="/common_js/usermenu_v1.js?ver=202003251038"></script>
+<script src="/common_js/usermenu_v1.js?ver=202003300931"></script>
 <script>
 $(document).ready(function(){
     
@@ -507,7 +507,7 @@ only screen and (min-resolution: 1.5dppx) {
     </div>
 </div>
 
-<script src="/common_js/gnb_v1.js?ver=202003251038"></script>
+<script src="/common_js/gnb_v1.js?ver=202003300931"></script>
 <script type="text/javascript">
 //
 gnbMenu.update();
@@ -620,7 +620,7 @@ $('#gnbMenu .btn_cart').on('click', function(e){
 <div class="bnr_qnb" id="brnQuick"></div>
 <script>
     var brnQuick = {
-        nowTime : '1585100280568',
+        nowTime : '1585528263684',
         update : function(){
             $.ajax({
                 url : campaginUrl + 'pc/service/bnr_quick.html'
@@ -652,7 +652,7 @@ $('#gnbMenu .btn_cart').on('click', function(e){
  * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
  */
 var getGoodsRecent = (function(){
-    var i, len, getGoodsRecent, item, _nowTime = '1585100280568';
+    var i, len, getGoodsRecent, item, _nowTime = '1585528263684';
 
     _goodsRecent();
     function _goodsRecent(){
@@ -693,7 +693,7 @@ var getGoodsRecent = (function(){
 <div class="page_aticle"><!-- Start indiv -->
 
 <script src="/shop/data/skin/designgj/godo.password_strength.js" type="text/javascript"></script>
-<script src="/common_js/join_v1.js?ver=202003251038"></script>
+<script src="/common_js/join_v1.js?ver=202003300931"></script>
 
 <style type="text/css">
 	#content{margin-bottom:30px;padding-bottom:70px;background-color:#f9f9f9}
@@ -1133,8 +1133,8 @@ var getGoodsRecent = (function(){
 
 <iframe id="ifrmRnCheck" name="ifrmRnCheck" style="display:none;"></iframe>
 <iframe id="ifrmHpauth" name="ifrmHpauth" style="display:none;"></iframe>
-<script src="/shop/data/skin/designgj/js/pw_validate.js?ver=202003251038"></script>
-<script src="/shop/data/skin/designgj/js/delivery_address.js?ver=202003251038"></script>
+<script src="/shop/data/skin/designgj/js/pw_validate.js?ver=202003300931"></script>
+<script src="/shop/data/skin/designgj/js/delivery_address.js?ver=202003300931"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('input[name=name]').on('keyup keydown blur', function(){
@@ -1438,268 +1438,6 @@ var getGoodsRecent = (function(){
                 $('[name=password2]').trigger('keyup');    
 			}
         });
-
-        // ----모바일 인증 v2 start ----
-        var checkCertBtn = false; // 인증 하기 버튼 활성화 여부
-        var confirmCertBtn = false; // 인증 확인 버튼 활성화 여부
-        var stopTimer = false; // 타이머 정지
-
-        var mobile0 = $('input[name="mobile[]"]').eq(0);
-        var mobile1 = $('input[name="mobile[]"]').eq(1);
-        var mobile2 = $('input[name="mobile[]"]').eq(2);
-
-        /* 인증번호 체크 확인용 전역변수선언 */
-        var confirmTxt = $('.mobile .txt_guide .txt');
-
-        /* 인증번호 체크 타입별 노출문구*/
-        function confNotice(type){
-            var resultText, classAdd;
-            if(type === 'receive'){
-                classAdd = 'receive';
-                resultText = '인증번호가 오지 않는다면, 통신사 스팸 차단 서비스 혹은 휴대폰 번호 차단 여부를 확인해주세요. (마켓컬리 1644-1107)';
-            }else if(type === 'fail'){
-                classAdd = 'bad';
-                resultText = '인증번호를 확인해주세요';
-            }else if(type === 'conf'){
-                classAdd = 'good';
-                resultText = '인증번호 확인완료.';
-            }
-            confirmTxt.removeClass('receive bad good').addClass(classAdd);
-            confirmTxt.text(resultText);
-        }
-
-
-        // 인증번호 받기 활성화
-        $('[name=mobileInp]').on('keyup blur',function(e){
-            var inputText = $(this).val();
-            var number = inputText.replace(/[^0-9]/g,'');
-            $(this).val(number);
-            number = $(this).val();
-			
-            if($(this).val().length > 11){
-                $(this).val(number.substring(0,11));
-            }
-            mobile0.val(number.substring(0,3));
-            mobile1.val(number.substring(3,7));
-            mobile2.val(number.substring(7,11));
-            var checkNum = '010';
-            if( ( mobile0.val().indexOf(checkNum) !== 0 && $(this).val().length >= 10) || (mobile0.val().indexOf(checkNum) === 0 && $(this).val().length >= 11) ){
-                if(confirmCertBtn == false){
-                    if($('#btn_cert span').hasClass('disabled')) $('#btn_cert span').removeClass('disabled');
-                    checkCertBtn = true;
-				}
-            }else{
-                if(!$('#btn_cert span').hasClass('disabled')) $('#btn_cert span').addClass('disabled');
-                checkCertBtn = false;
-            }
-        });
-
-        function countdown(elementId, seconds) {
-            var element, endTime, hours, mins, msLeft, time;
-            function updateTimer() {
-                if (stopTimer == true) {
-                    $('#countdown').hide();
-                    return;
-                }
-
-                $('#countdown').show();
-                msLeft = endTime - (+new Date);
-                if (msLeft < 0) {
-                    count_down_stop();
-                    alert('인증 제한 시간이 지났습니다');
-                } else {
-                    time = new Date(msLeft);
-                    hours = time.getUTCHours();
-                    mins = time.getUTCMinutes();
-                    element.innerHTML = (hours ? hours + ':' + ('0' + mins).slice(-2) : mins) + ' : ' + ('0' + time.getUTCSeconds()).slice(-2);
-                    certifyTime = setTimeout(updateTimer, time.getUTCMilliseconds());
-
-                    checkCertBtn = false;
-                    confirmCertBtn = true;
-                }
-            }
-
-            element = document.getElementById(elementId);
-            endTime = (+new Date) + 1000 * seconds;
-            updateTimer();
-        }
-
-        // 카운트 다운 시작
-        function count_down_start(count_time) {
-            stopTimer = false;
-            checkCertBtn == false;
-            confirmCertBtn = true;
-            countdown('countdown', count_time);
-            $('#btn_cert .bhs_button').addClass('disabled'); // [인증번호 받기] 비활성화
-            $('#btn_cert_confirm .bhs_button').removeClass('disabled'); // [인증번호 확인] 활성화
-            $('.inp_confirm').prop("disabled", false);
-            $('[name=mobileInp]').attr('readonly',true);
-        }
-
-        // 카운트 다운 정지
-        function count_down_stop() {
-            stopTimer = true;
-            checkCertBtn = true;
-            confirmCertBtn = false;
-            $('#countdown').hide();
-            $('#btn_cert .bhs_button').removeClass('disabled'); // [인증번호 받기] 활성화
-            $('#btn_cert_confirm .bhs_button').addClass('disabled'); // [인증번호 확인] 비활성화
-            $('.inp_confirm').prop("disabled", true);
-            $('[name=mobileInp]').attr('readonly',false);
-        }
-
-        // 인증 완료
-        function mobile_auth_finished(showAlert)
-        {
-            stopTimer = true;
-            checkCertBtn = true;
-            confirmCertBtn = false;
-            $('#btn_cert .bhs_button').removeClass('disabled'); // [인증번호 받기] 활성화
-            $('#btn_cert_confirm .bhs_button').addClass('disabled'); // [인증번호 확인] 비활성화
-            $('.inp_confirm').prop("disabled", true);
-            $('#btn_cert .bhs_button').text('다른 번호 인증');
-            $("[name=check_mobile]").val('1');
-
-            $('[name=mobileInp]').attr("readonly", true);
-
-            if (showAlert == true)
-            {
-                alert('인증이 완료 되었습니다.');
-                confNotice('conf');
-            }
-        }
-
-        // [인증 번호 받기] 버튼 클릭
-        $('#btn_cert').on('click', function() {
-            if (checkCertBtn == false) {
-                return;
-            }
-            $('.mobile .txt_guide').show();
-            confNotice('receive');
-
-            if ($('#btn_cert .bhs_button').text() == '다른 번호 인증')
-            {
-                $('#btn_cert .bhs_button').text('인증 번호 받기');
-                $('#btn_cert .bhs_button').addClass('disabled');
-                checkCertBtn = false;
-            }
-
-            mobile = mobile0.val() + "-" + mobile1.val() + "-" + mobile2.val();
-            auth_code = $('input[name="auth_code"]');
-
-            if ($("[name=check_mobile]").val() == 1) {
-                $('#btn_cert .bhs_button').text('인증 번호 받기');
-                $('[name=mobileInp]').val('').attr("readonly", false);
-                mobile0.val('');
-                mobile1.val('');
-                mobile2.val('');
-                auth_code.val('');
-                $("[name=check_mobile]").val('');
-                return;
-            }
-
-            if (mobile0.val() == "" || mobile1.val() == "" || mobile2.val() == "") {
-                alert('정확한 휴대폰 번호를 입력해 주세요.');
-                return;
-            }
-
-            // 인증 번호 요청
-            $.ajax({
-                url: '/shop/proc/auth_code.php',
-                type: 'POST',
-                data: {
-                    "mode": "get_auth_code",
-                    "mobile": mobile
-                },
-                dataType: 'json',
-                async: false
-            }).success(function(data) {
-                if (data.result == false) {
-                    alert(data.message);
-                } else {
-                    alert(data.message);
-                    count_down_start(parseInt(data.data.count_time));
-                }
-            }).fail(function() {
-                alert("일시적인 장애가 발생하였습니다.\n잠시후 다시시도해주세요.");
-            });
-        });
-
-        // [인증 번호 확인] 버튼 클릭
-        $('#btn_cert_confirm').on('click', function() {
-            if (confirmCertBtn == false) {
-                return;
-            }
-
-            mobile = mobile0.val() + "-" + mobile1.val() + "-" + mobile2.val();
-            auth_code = $('input[name="auth_code"]').val();
-
-            if( auth_code.length < 6){
-                confNotice('fail');
-                return;
-            }
-
-            // 인증 번호 확인 요청
-            $.ajax({
-                url: '/shop/proc/auth_code.php',
-                type: 'POST',
-                data: {
-                    "mode": "check_auth_code",
-                    "mobile": mobile,
-                    "auth_code": auth_code
-                },
-                dataType: 'json',
-                async: false
-            }).success(function(data) {
-                if (data.result == false) {
-                    //alert(data.message);
-                    confNotice('fail');
-                } else {
-                    $('input[name="auth_finish_code"]').val(data.data.auth_finish_code);
-                    mobile_auth_finished(true);
-                }
-            }).fail(function() {
-                alert("일시적인 장애가 발생하였습니다.\n잠시후 다시시도해주세요.");
-            });
-        });
-
-        // ----모바일 인증 v2 end ----
-
-		$("#selectRecommend .label_radio").on('click', function (e) {
-			e.preventDefault();
-		    var target = $(e.target)
-			var wrapper = target.closest('.group_radio')
-
-			var inputOptions = wrapper.find('.label_radio')
-			var targetInput = target.closest('.radio_wrapper').find('.label_radio')
-
-            var selectOption = targetInput.find('input').attr('name')
-			var inputWrapper = wrapper.siblings('.input_wrapper')
-            var textBox = inputWrapper.find('input')
-            var defaultMessage = {
-                'recommendId': '추천인 아이디를 입력해주세요.',
-                'eventName': '참여 이벤트명을 입력해주세요.'
-            }
-            var placeholderMessage = defaultMessage[selectOption]
-
-            // 라디오버튼 토글
-            inputOptions.not(targetInput).removeClass('checked')
-            targetInput.addClass('checked')
-
-			// 기존 텍스트 리셋
-            textBox.val("")
-
-            // placeholder 텍스트 변경
-			textBox.attr('placeholder', placeholderMessage)
-
-			// input name, value값 변경
-			var nameOptions = {
-                'recommendId': 'recommid',
-                'eventName': 'ex2'
-			}
-			textBox.attr('name', nameOptions[selectOption])
-            inputWrapper.addClass('selected')
-        })
 
         // 라디오버튼 토글-성별
         $('.select_sex .group_radio .label_radio').on('click', function (e){
@@ -2287,5 +2025,5 @@ var bodyScroll = {
 <!-- // PROM-316 [Branch] 트래킹 -->
 
 			
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaWFELV1RBTFgNWFpMRV1E","queueTime":0,"applicationTime":40,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaWFELV1RBTFgNWFpMRV1E","queueTime":0,"applicationTime":36,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

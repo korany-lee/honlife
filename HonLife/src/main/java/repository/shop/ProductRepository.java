@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import Model.DTO.ProductDTO;
 
 @Repository
-public class productRepository {
+public class ProductRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	

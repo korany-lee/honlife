@@ -11,17 +11,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import Model.DTO.ProductDTO;
-import command.shop.productCommand;
+import command.shop.ProductCommand;
 import oracle.sql.TIMESTAMP;
-import repository.shop.productRepository;
+import repository.shop.ProductRepository;
 
 @Service
-public class productInsertService {
+public class ProductInsertService {
 	@Autowired
-	productRepository pr;
+	ProductRepository pr;
 	
-	public String productInsert(productCommand pc, HttpServletRequest request) {
-		System.out.println("실행2--service");
+	public String productInsert(ProductCommand pc, HttpServletRequest request) {
 		ProductDTO dto = new ProductDTO();
 		dto.setProductName(pc.getProductName());
 		dto.setProductType(pc.getProductType());

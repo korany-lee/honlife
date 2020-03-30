@@ -4,6 +4,124 @@
 <html>
 
 
+
+<head>
+
+<link rel="shortcut icon" type="image/x-icon"
+	href="./main/images/WEB.png" />
+<link href="./common/css/main.css" rel="stylesheet" type="text/css">
+<link href="./common/css/common.css" rel="stylesheet" type="text/css">
+<link href="./common/css/section1.css" rel="stylesheet" type="text/css">
+<link href="./common/css/normalize.css" rel="stylesheet" type="text/css">
+<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
+
+</head>
+
+<body>
+
+
+
+	<jsp:include page="../includer/header.jsp"></jsp:include>
+
+	<div id="wrap" class="">
+		<div id="container">
+
+
+			<div id="main">
+				<div id="content">
+
+					<!-- 퀵 메뉴 -->
+
+					<div class="page_aticle">
+						<!-- Start indiv -->
+
+						<div class="page_location"></div>
+						<div class="head_section head_join">
+							<h2 class="tit">회원가입</h2>
+						</div>
+
+						<div class="member_join">
+							<!-- 회원가입일때만 스타일 적용 -->
+
+							<div class="">
+							<!-- onsubmit="return chkForm2(this)" 되면 유효성 검사 진행 -->
+								<form id="form" name="frmMember" method="post"
+									action="JoinAccess">
+
+									<div class="field_head head_type1">
+										<h3 class="tit">
+											<span class="screen_out">기본정보</span>
+										</h3>
+										<p class="sub">*필수입력사항</p>
+									</div>
+
+									<div class="boardWrite">
+										<table class="tbl_comm">
+											<tr>
+												<td class="memberCols1">아이디*</td>
+												<td class="memberCols2">
+													<input type="text" name="memId" value="" maxlength="16" 
+													required fld_esssential option=regId label="아이디"
+													placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"> 
+													<input type="hidden" name="chk_id" required fld_esssential label="아이디중복체크" value=""> 
+													<a href="javascript:chkId()"><span class="bhs_button">중복확인</span></a>
+													<p class="txt_guide">
+														<span class="txt txt_case1">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
+														<span class="txt txt_case2">아이디 중복확인</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<td class="memberCols1">비밀번호*</td>
+												<td class="memberCols2">
+													<input type=password name=password required fld_esssential option=regPass
+													label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
+													<p class="txt_guide">
+														<span class="txt txt_case1">10자 이상 입력</span> 
+														<span class="txt txt_case2">영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span> 
+														<span class="txt txt_case3">동일한 숫자 3개 이상 연속 사용 불가</span>
+													</p>
+												</td>
+											</tr>
+											<tr class="member_pwd">
+												<td class="memberCols1">비밀번호확인*</td>
+												<td class="memberCols2"><input type=password name=password2 required fld_esssential option=regPass
+													label="비밀번호" maxlength="16" class="confirm_pw"	placeholder="비밀번호를 한번 더 입력해주세요">
+													<p class="txt_guide">
+														<span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<td class="memberCols1">이름*</td>
+												<td class="memberCols2">
+													<input type="text" name=name value="" required fld_esssential label="이름" placeholder="고객님의 이름을 입력해주세요">
+												</td>
+											</tr>
+
+											<tr>
+												<td class="memberCols1">이메일*</td>
+												<td class="memberCols2">
+													<input type="text" name=email value="" size=30 required fld_esssential option=regEmail
+													label="이메일" placeholder="예: honshop@honlife.com">
+													<input type=hidden name=chk_email required fld_esssential label="이메일중복체크"> <a href="javascript:void(0)"
+													onClick="chkEmail()"><span class="bhs_button">이메일 중복확인</span></a>
+												</td>
+											</tr>
+
+
+											<tr class="mobile">
+												<td class="memberCols1">휴대폰*</td>
+												<td class="memberCols2">
+													<div class="phone_num">
+														<input type="text" value="" pattern="[0-9]*"
+															name="mobile" placeholder="숫자만 입력해주세요" class="inp">
+													</div>
+
+												</td>
+
+											</tr>
+
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -33,8 +151,7 @@
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('sample4_postcode').value = data.zonecode;
-                document.getElementById("sample4_roadAddress").value = roadAddr;
-
+                document.getElementById("sample4_roadAddress").value = roadAddr;                
                 
                 // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
                 if(roadAddr !== ''){
@@ -58,192 +175,62 @@
         }).open();
     }
 </script>
-<head>
-
-<link rel="shortcut icon" type="image/x-icon" href="./main/images/WEB.png" />
-<link href="./common/css/main.css" rel="stylesheet" type="text/css">
-<link href="./common/css/common.css" rel="stylesheet" type="text/css">
-<link href="./common/css/section1.css" rel="stylesheet" type="text/css">
-<link href="./common/css/normalize.css" rel="stylesheet" type="text/css">
-<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
-
-</head>
-
-<body>
-
-
-
-<jsp:include page="../includer/header.jsp"></jsp:include>
-	<div id="wrap" class="">
-		<div id="container">
-
-				
-			<div id="main">
-				<div id="content">
-
-					<!-- 퀵 메뉴 -->
-					
-					<div class="page_aticle">
-						<!-- Start indiv -->
-
-						<div class="page_location"></div>
-						<div class="head_section head_join">
-							<h2 class="tit">회원가입</h2>
-						</div>
-
-						<div class="member_join">
-							<!-- 회원가입일때만 스타일 적용 -->
-
-							<div class="">
-								<form id="form" name="frmMember" method="post"
-									action="/shop/member/indb.php" onsubmit="return chkForm2(this)">
-									
-									<div class="field_head head_type1">
-										<h3 class="tit">
-											<span class="screen_out">기본정보</span>
-										</h3>
-										<p class="sub">*필수입력사항</p>
-									</div>
-
-									<div class="boardWrite">
-										<table class="tbl_comm">
-											<tr>
-												<td class="memberCols1">아이디*</td>
-												<td class="memberCols2"><input type="text" name="memId"
-													value="" maxlength="16" required fld_esssential
-													option=regId label="아이디"
-													placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"> <input
-													type="hidden" name="chk_id" required fld_esssential
-													label="아이디중복체크" value=""> 
-													<a href="javascript:chkId()"><span class="bhs_button">중복확인</span></a>
-													<p class="txt_guide">
-														<span class="txt txt_case1">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
-														<span class="txt txt_case2">아이디 중복확인</span>
-													</p></td>
-											</tr>
-											<tr>
-												<td class="memberCols1">비밀번호*</td>
-												<td class="memberCols2"><input type=password
-													name=password required fld_esssential option=regPass
-													label="비밀번호" maxlength="16" class="reg_pw"
-													placeholder="비밀번호를 입력해주세요">
-													<p class="txt_guide">
-														<span class="txt txt_case1">10자 이상 입력</span> <span
-															class="txt txt_case2">영문/숫자/특수문자(공백 제외)만 허용하며, 2개
-															이상 조합</span> <span class="txt txt_case3">동일한 숫자 3개 이상 연속
-															사용 불가</span>
-													</p></td>
-											</tr>
-											<tr class="member_pwd">
-												<td class="memberCols1">비밀번호확인*</td>
-												<td class="memberCols2"><input type=password
-													name=password2 required fld_esssential option=regPass
-													label="비밀번호" maxlength="16" class="confirm_pw"
-													placeholder="비밀번호를 한번 더 입력해주세요">
-													<p class="txt_guide">
-														<span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
-													</p></td>
-											</tr>
-											<tr>
-												<td class="memberCols1">이름*</td>
-												<td class="memberCols2"><input type="text" name=name
-													value="" required fld_esssential label="이름"
-													placeholder="고객님의 이름을 입력해주세요"></td>
-											</tr>
 
 											<tr>
-												<td class="memberCols1">이메일*</td>
-												<td class="memberCols2"><input type="text" name=email
-													value="" size=30 required fld_esssential option=regEmail
-													label="이메일" placeholder="예: honshop@honlife.com">
-													<input type=hidden name=chk_email required fld_esssential
-													label="이메일중복체크"> <a href="javascript:void(0)"
-													onClick="chkEmail()"><span class="bhs_button">이메일
-															중복확인</span></a></td>
-											</tr>
-
-
-											<tr class="mobile">
-												<td class="memberCols1">휴대폰*</td>
+												<td class="memberCols1">배송 주소</td>
 												<td class="memberCols2">
-													<div class="phone_num">
-														<input type="text" value="" pattern="[0-9]*"
-															name="mobileInp" placeholder="숫자만 입력해주세요" class="inp">
-														<input type="hidden" name="mobile[]" id="mobile0" value=""
-															required fld_esssential option=regNum label="휴대폰">
-														<input type="hidden" name="mobile[]" id="mobile1" value=""
-															required fld_esssential option=regNum label="휴대폰">
-														<input type="hidden" name="mobile[]" id="mobile2" value=""
-															required fld_esssential option=regNum label="휴대폰">
+													<div class="field_address">
+														<input type="text" name="zonecode" id="sample4_postcode" placeholder="우편번호"> 
+														<input type="text" name="roadAddress" id="sample4_roadAddress" placeholder="도로명주소">
+															<span id="guide" style="color: #999; display: none"></span>
+															<input type="text" name="detailAddress" placeholder="상세주소"> 
+															<input type="hidden" name="dongAddress" id="sample4_extraAddress" placeholder="참고항목"> 
+														<a href="javascript:sample4_execDaumPostcode()" id="btnAddressSearch">
+															<span class="bhs_button" style="margin-left: 10px;"> 
+																<span class="ico"></span> 
+																<span class="txt">주소 검색</span>
+															</span>
+														</a>
+														<p class="txt_guide">
+															<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
+														</p>
 													</div>
-
 												</td>
-				
 											</tr>
-
-											<tr>
-					<td class="memberCols1">배송 주소</td>
-					<td class="memberCols2">
-						<div class="field_address">
-							<a href="javascript:sample4_execDaumPostcode()" id="btnAddressSearch" >
-							<input type="text" id="sample4_postcode" placeholder="우편번호">
-<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-<span id="guide" style="color:#999;display:none"></span> 
-<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-<input type="text" id="sample4_extraAddress" placeholder="참고항목">
-							
-								<span class="bhs_button">
-									<span class="ico"></span>
-									<span class="txt">주소 검색</span>
-								</span>
-							</a>
-							<p class="txt_guide">
-								<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
-							</p>
-							
-						</div>
-						
-						
-					</td>
-				</tr>
-
 
 											<tr class="select_sex">
 												<td class="memberCols1">성별</td>
 												<td class="memberCols2">
 													<div class="group_radio">
 														<label class="label_radio"> 
-														<input type=radio name=sex_option label="성별" value="m"> 
+															<input type=radio name=sex label="성별" value="m"> 
 															<span class="text_position">남자</span>
 														</label> 
 														<label class="label_radio"> 
-														<input type=radio name=sex_option label="성별" value="w"> 
+															<input type=radio name=sex label="성별" value="w"> 
 															<span class="text_position">여자</span>
 														</label> 
 														<label class="label_radio"> 
-														<input type=radio name=sex_option label="성별" value="n"> 
-														<span class="text_position">선택안함</span>
-														</label> 
-														<input type="hidden" type=radio name=sex label="성별"
-															value="">
+															<input type=radio name=sex label="성별" value="n"> 
+															<span class="text_position">선택안함</span>
+														</label>															
 													</div>
 												</td>
-											</tr>	
-											
+											</tr>
+
 
 											<tr class="birth field_birth">
 												<td class="memberCols1">생년월일</td>
 												<td class="memberCols2">
 													<div class="birth_day">
-														<input type="text" name=birth_year id="birth_year"
-															pattern="[0-9]*" value="" label="생년월일" size=4 maxlength=4
-															placeholder="YYYY"> <span class="bar"><span>/</span></span>
-														<input type="text" name=birth[] id="birth_month"
-															pattern="[0-9]*" value="" label="생년월일" size=2 maxlength=2
-															placeholder="MM"> <span class="bar"><span>/</span></span>
-														<input type="text" name=birth[] id="birth_day"
-															pattern="[0-9]*" value="" label="생년월일" size=2 maxlength=2
-															placeholder="DD">
+														<input type="text" name=year id="birth_year" pattern="[0-9]*" value="" 
+															label="생년월일" size=4 maxlength=4 placeholder="YYYY"> 
+															<span class="bar"><span>/</span></span>
+														<input type="text" name=month id="birth_month" pattern="[0-9]*" value="" 
+															label="생년월일" size=2 maxlength=2 placeholder="MM"> 
+															<span class="bar"><span>/</span></span>
+														<input type="text" name=day id="birth_day" pattern="[0-9]*" value="" 
+															label="생년월일" size=2 maxlength=2 placeholder="DD">
 													</div>
 													<p class="txt_guide">
 														<span class="txt bad"></span>
@@ -261,8 +248,6 @@
 							</div>
 
 						</div>
-
-						
 					</div>
 					<!-- End indiv -->
 
@@ -279,6 +264,6 @@
 
 	<jsp:include page="../includer/footer.jsp"></jsp:include>
 
-	
+
 </body>
 </html>
