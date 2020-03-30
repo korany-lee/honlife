@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.DTO.RoomDTO;
+import Model.DTO.TimeCheckDTO;
 
 @Repository
 public class RoomRepository {
@@ -39,4 +40,13 @@ public class RoomRepository {
 		String statement = namespace + ".oneSelect";
 		return sqlSession.selectOne(statement, num);
 	}
+	
+
+	public String dateCheck(TimeCheckDTO dto) {
+		System.out.println("레퍼지토리 들어옴");
+		String statement = namespace +"dateCheck"; 
+		return sqlSession.selectOne(statement,dto);
+	}
+	
+	
 }

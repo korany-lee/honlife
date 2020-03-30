@@ -49,5 +49,10 @@
 	select <include refid="basecolumn" /> from room where room_no =#{num}
 </select>
 
+<select id="dateCheck" resultType="string" parameterType="Model.DTO.TimeCheckDTO" >
+	select room_no from roomrev where room_no=#{roomNo}
+	
+	
+</select>
 
 </mapper>

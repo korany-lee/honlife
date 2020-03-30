@@ -36,11 +36,11 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-*,
+ *,
 ::after,
 ::before {
     box-sizing: border-box
-}
+} 
 
 html {
     font-family: sans-serif;
@@ -6803,6 +6803,17 @@ button.bg-dark:hover {
     -ms-flex-direction: row-reverse !important;
     flex-direction: row-reverse !important
 }
+
+.flex-row-reverse1 {
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+    z-index:1;
+    background-image: url('/project/stayView/memberView/img/ccc.jpg'); 
+    background-size : cover;
+    
+}
+
+
 
 .flex-column-reverse {
     -ms-flex-direction: column-reverse !important;

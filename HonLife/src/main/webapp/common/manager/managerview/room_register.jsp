@@ -33,7 +33,7 @@
 		
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="roomRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
+			<form class="contact100-form" action="../room/roomRegisterAction" method="post" enctype="multipart/form-data" name="roomForm">
 				<span class="contact100-form-title">
 				객실을 등록하세요
 				</span>

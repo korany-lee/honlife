@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Validator.roomCommandValidator;
 import command.stay.room.RoomCommand;
+import service.stay.room.DateCheckService;
 import service.stay.room.RoomInsertService;
 import service.stay.room.RoomListService;
 
@@ -22,6 +23,9 @@ public class RoomController {
 	
 	@Autowired
 	RoomListService roomListService;
+	
+	@Autowired
+	DateCheckService dateCheckService;
 	
 	
 	//회원용
@@ -62,8 +66,18 @@ public class RoomController {
 		return "stayView/memberView/room_detail";
 	}
 	
+	@RequestMapping("/room/dateCheck")     //예약날짜 설정
+	public String dateSelect(@RequestParam(value="room") String roomNo,HttpServletRequest request) {
+		request.setAttribute("roomNo", roomNo);
+		return "stayView/memberView/TimeCheck";
+	}
 	
-	
+	@RequestMapping("/room/ReservationTimeCheck")
+	public String dateCheck(@RequestParam(value="startdate")String start,@RequestParam(value="enddate")String end,
+			@RequestParam(value="roomNo")String room) {
+		dateCheckService.check(start,end,room);
+		return null;
+	}
 	
 	
 	
@@ -114,6 +128,7 @@ public class RoomController {
 		roomInsertService.roomInsert(roomCommand,request);
 		return "common/manager/managerview/managermain";
 	}
+	
 	
 	
 }

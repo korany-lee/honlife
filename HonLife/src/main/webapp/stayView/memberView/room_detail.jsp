@@ -26,10 +26,57 @@
     main css
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" /> -->
+<style type="text/css">
+   .fc-sun {color:#e31b23}
+.fc-sat {color:#007dc3}
+</style>
+
+
+
+
+<link href='/project/stayView/memberView/css/main.css' rel='stylesheet' />
+<link href='/project/stayView/memberView/css/main2.css' rel='stylesheet' />
+<script src='/project/stayView/memberView/js/main.js'></script>
+<script src='/project/stayView/memberView/js/main2.js'></script>
+<script src='/project/stayView/memberView/js/main3.js'></script>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid' ],
+      locale : 'ko' ,
+      defaultDate: '2020-03-29',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: '예약완료',
+          start: '2020-03-01'
+        },
+      
+        {
+          title: '예약완료',
+          start: '2020-03-11',
+          end: '2020-03-13'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+
+
+
+
   </head>
 
   <body>
-
+	
  	 <jsp:include page="/stayView/memberView/header.jsp" />
     <!--================Header Menu Area =================-->
   
@@ -94,14 +141,14 @@
                 <c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                   <c:if test="${status.count == 1 }">
                  	 <div class="carousel-item active">
-                   		 <img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="First slide" width="555px" height="600px"/>
+                   		 <img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="First slide" width="555px" height="700px"/>
                  	 </div>
                   </c:if>
                 </c:forTokens>
                 <c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                 	<c:if test="${status.count > 1 }">
                   		<div class="carousel-item">
-                    		<img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="" width="555px" height="600px"/>
+                    		<img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="" width="555px" height="700px"/>
                   		</div>
                   	</c:if>
                 </c:forTokens>
@@ -123,9 +170,13 @@
                   <span>뷰</span> : ${room.roomView }
                 </li>
               </ul>
-              <p>
+              <%-- <p>
                 ${room.roomExplantion }
-              </p>
+              </p> --%>
+              <h3>예약현황</h3>
+              <div id="calendar">
+              </div>
+             
               <div class="product_count">
                 <!-- <label for="qty">Quantity:</label>
                 <input
@@ -153,13 +204,8 @@
                 </button>
               </div>
               <div class="card_area">
-                <a class="main_btn" href="#">예약하기</a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-diamond"></i>
-                </a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-heart"></i>
-                </a>
+                <a class="main_btn"  onclick="window.open('dateCheck?room=${room.roomNo}','예약날짜 설정','width=700,height=300')">예약하기</a>
+                <a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
               </div>
             </div>
           </div>
@@ -181,7 +227,7 @@
               role="tab"
               aria-controls="home"
               aria-selected="true"
-              >Description</a
+              >객실소개</a
             >
           </li>
           <li class="nav-item">
@@ -229,34 +275,9 @@
             aria-labelledby="home-tab"
           >
             <p>
-              Beryl Cook is one of Britain’s most talented and amusing artists
-              .Beryl’s pictures feature women of all shapes and sizes enjoying
-              themselves .Born between the two world wars, Beryl Cook eventually
-              left Kendrick School in Reading at the age of 15, where she went
-              to secretarial school and then into an insurance office. After
-              moving to London and then Hampton, she eventually married her next
-              door neighbour from Reading, John Cook. He was an officer in the
-              Merchant Navy and after he left the sea in 1956, they bought a pub
-              for a year before John took a job in Southern Rhodesia with a
-              motor company. Beryl bought their young son a box of watercolours,
-              and when showing him how to use it, she decided that she herself
-              quite enjoyed painting. John subsequently bought her a child’s
-              painting set for her birthday and it was with this that she
-              produced her first significant work, a half-length portrait of a
-              dark-skinned lady with a vacant expression and large drooping
-              breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+              ${room.roomExplantion }
             </p>
-            <p>
-              It is often frustrating to attempt to plan meals that are designed
-              for one. Despite this fact, we are seeing more and more recipe
-              books and Internet websites that are dedicated to the act of
-              cooking for one. Divorce and the death of spouses or grown
-              children leaving for college are all reasons that someone
-              accustomed to cooking for more than one would suddenly need to
-              learn how to adjust all the cooking practices utilized before into
-              a streamlined plan of cooking that is more efficient for one
-              person creating less
-            </p>
+           
           </div>
           <div
             class="tab-pane fade"
