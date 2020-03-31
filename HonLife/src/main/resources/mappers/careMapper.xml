@@ -113,35 +113,39 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 
 
 <resultMap type="Model.DTO.care.EmployeeDTO" id="empList">
-		<id column="EMPLOYEE_NO" jdbcType="BIGINT" property="recruitNo" />
-		<result  column="EMPLOYEE_NAME" jdbcType="VARCHAR" property="recruitName" />
-		<result  column="EMPLOYEE_WORKFIELD" jdbcType="BIGINT" property="recruitPh" />
-		<result  column="EMPLOYEE_CALLNUM" jdbcType="BIGINT" property="recruitJumin" />
-		<result  column="EMPLOYEE_JUMIN" jdbcType="VARCHAR" property="recruitEmail" />
-		<result  column="EMPLOYEE_PHOTO" jdbcType="VARCHAR" property="recruitAddr" />
-		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="recruitAddrDetail"/>
-		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="recruitClass" />
-		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="recruitGender" />
-		<result  column="EMPLOYEE_PH" jdbcType="VARCHAR" property="originalFileName" />
-		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="storeFileName" />	
-		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="storeFileName" />	
+		<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
+		<result  column="EMPLOYEE_NAME" jdbcType="VARCHAR" property="employeeName" />
+		<result  column="EMPLOYEE_WORKFIELD" jdbcType="VARCHAR" property="employeeWorkField" />
+		<result  column="EMPLOYEE_CALLNUM" jdbcType="BIGINT" property="employeeCallnum" />
+		<result  column="EMPLOYEE_JUMIN" jdbcType="INTEGER" property="employeeJumin" />
+		<result  column="EMPLOYEE_PHOTO" jdbcType="VARCHAR" property="employeePhoto" />
+		<result column="EMPLOYEE_SCORE" jdbcType="BIGINT" property="employeeScore" />
+		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="employeeBad"/>	
+		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="employeeAddr" />
+		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="employeeGender" />
+		<result  column="EMPLOYEE_PH" jdbcType="BIGINT" property="employeePh" />
+		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
+		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
 </resultMap>
 
 <insert id="empRegist">
 	insert into employee (<include refid="empBase" />)
-	values(employee_no 
-	          employee_name
-	          employee_workfield
-	          employee_callnum
-	          employee_jumin
-	          employee_photo
-	          employee_score
-	          employee_bad
-	          employee_addr
-
-	          )
-
+	values(#{employeeNo},#{employeeName},#{employeeWorkField},#{employeeCallnum}, 
+		   #{employeeJumin},#{employeePhoto},0,'N', 
+		   #{employeeAddr},#{employeeGender},#{employeePh},#{employeeAddrPost},
+		   #{employeeAddrDetail})
 </insert>
+
+
+<select id="empListSelect" resultMap="empList"  >
+		select <include refid="empBase" /> from employee
+		<where>
+				<if test="value != null">
+							EMPLOYEE_NO = #{employeeNo}	
+									
+				</if>		
+		</where>
+</select>
 
 
 

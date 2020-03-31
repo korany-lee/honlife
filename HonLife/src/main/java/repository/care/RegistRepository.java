@@ -66,6 +66,13 @@ public class RegistRepository {
 		sqlSession.insert(statement,dto);
 		
 	}
+	
+	public List<EmployeeDTO> empList() {
+		String statement = namespace + ".empListSelect";
+		
+		return sqlSession.selectList(statement);
+		
+	}
 
 	
 	

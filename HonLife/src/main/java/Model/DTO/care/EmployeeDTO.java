@@ -16,7 +16,7 @@ public class EmployeeDTO implements Serializable{
 	String employeeName;
 	String employeeWorkField;
 	Integer employeeCallnum;
-	Integer employeeJumin;
+	Long employeeJumin;
 	String employeePhoto;
 	Integer employeeScore;	
 	String employeeBad;
@@ -79,10 +79,10 @@ public class EmployeeDTO implements Serializable{
 	public void setEmployeeCallnum(Integer employeeCallnum) {
 		this.employeeCallnum = employeeCallnum;
 	}
-	public Integer getEmployeeJumin() {
+	public Long getEmployeeJumin() {
 		return employeeJumin;
 	}
-	public void setEmployeeJumin(Integer employeeJumin) {
+	public void setEmployeeJumin(Long employeeJumin) {
 		this.employeeJumin = employeeJumin;
 	}
 	public String getEmployeePhoto() {

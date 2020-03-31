@@ -55,9 +55,13 @@
 				<span class="contact100-form-title" >
 			매니저를 등록하세요!
 				</span>
+					<span class="contact100-form-title" style="font-size: 15px;" >
+			처음 지원하실때 입력하신 정보입니다 변경사항이 있으실경우 바꿔주세요!
+				</span>
 				
 				
-				<form class="contact100-form" action="empRegist" method="POST" name="form" enctype="multipart/form-data">
+				
+				<form class="contact100-form" action="empRegAct" method="POST" name="form" enctype="multipart/form-data">
 			
 				<input type="hidden" value="${one.recruitNo }" name="employeeNo" >
 				<input type="hidden" value="${one.recruitClass }" name="employeeWorkField">
@@ -135,11 +139,11 @@
 				<input class="input100" type="text" value="${one.postcode }" id="postcode" name="addrPost" placeholder="우편번호">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="address" value="${one.recruitAddr }"name="addrMain" placeholder="선택주소">
+				<input class="input100" type="text" id="address" value="${one.recruitAddr }" name="addrMain" placeholder="선택주소">
 				</div>
 				<span id="guide" style="color:#999;display:none"></span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="margin-left: 115px"> 	
-				<input class="input100" type="text" value="" id="detailAddress" value="${recruitAddrDetail }" name="addrDetail" placeholder="상세주소">
+				<input class="input100" type="text"  id="detailAddress" value="${one.recruitAddrDetail }" name="addrDetail" placeholder="상세주소">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
 				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">

@@ -1,7 +1,24 @@
 package command.care.clean;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class EmployeeCommand {
 	
+
+	private String employeeNo;
+	private String employeeName;
+	private Integer employeePh;
+	private String employeeGender;
+	private String employeeWorkField;
+	private Integer employeeCallnum;
+	private Long employeeJumin;
+	private Integer employeeScore;
+	private String employeeBad;
+	private String addrPost;
+	private String addrMain;
+	private String addrDetail;
+	
+	private MultipartFile [] employeePhoto;
 	public String getAddrMain() {
 		return addrMain;
 	}
@@ -33,21 +50,6 @@ public class EmployeeCommand {
 	public void setEmployeeGender(String employeeGender) {
 		this.employeeGender = employeeGender;
 	}
-	String employeeNo;
-	String employeeName;
-	Integer employeePh;
-	String employeeGender;
-	String employeeWorkField;
-	Integer employeeCallnum;
-	Integer employeeJumin;
-	String employeePhoto;
-	Integer employeeScore;
-	String employeeBad;
-	String addrPost;
-	String addrMain;
-	String addrDetail;
-	
-	
 	
 	public String getEmployeeNo() {
 		return employeeNo;
@@ -73,16 +75,17 @@ public class EmployeeCommand {
 	public void setEmployeeCallnum(Integer employeeCallnum) {
 		this.employeeCallnum = employeeCallnum;
 	}
-	public Integer getEmployeeJumin() {
+	public Long getEmployeeJumin() {
 		return employeeJumin;
 	}
-	public void setEmployeeJumin(Integer employeeJumin) {
+	public void setEmployeeJumin(Long employeeJumin) {
 		this.employeeJumin = employeeJumin;
 	}
-	public String getEmployeePhoto() {
+	
+	public MultipartFile[] getEmployeePhoto() {
 		return employeePhoto;
 	}
-	public void setEmployeePhoto(String employeePhoto) {
+	public void setEmployeePhoto(MultipartFile[] employeePhoto) {
 		this.employeePhoto = employeePhoto;
 	}
 	public Integer getEmployeeScore() {
