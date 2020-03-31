@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -13,25 +14,7 @@
     
   <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
- 	<script type="text/javascript">
-	$(function() {
-		$("#sizeSelect").change(function() {
-			/*  location.href = "sizeSelect?size="+$("#sizeSelect").val(); */  
-			  $("#bdto").innerHTML = "";  
-			 	
-			 $.ajax({
-				type : "POST",
-				url : "sizeSelect",
-				data : "size=" + $("#sizeSelect").val(),
-				datatype : "html",
-				success : function(data1) {
-					$("#bdto").html(data1);
-				}
-			});  
-		});  
-	});
-
-	</script>
+ 	
   <body>
    <jsp:include page="/stayView/memberView/header.jsp" />
     <!--================Header Menu Area =================-->
@@ -60,9 +43,11 @@
     
      <section class="cat_product_area section_gap" >
       <div class="container">
+      <form method="post" action="payment">
         <div class="row flex-row-reverse">
         	<div class="row flex-row-reverse1">
         	<!-- 값 입력 -->
+        	
         	<div class="col-md-12">
                  <div class="form-group">
                  <Br><br>
@@ -70,28 +55,28 @@
                         <h2>필수정보 입력</h2><br><br>
                         
                         <h5>예약자명</h5>
-                        	<input type="text" class="form-control" id="name" name="name" placeholder="예약하시는 분 성함을 입력하세요" style="width:300px;"/>
+                        	<input type="text" class="form-control" id="revName" name="revName" placeholder="예약하시는 분 성함을 입력하세요" style="width:300px;"/>
                   </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>입주자명</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="실제 입주 하시는 분 성함을 입력하세요" style="width:300px;" />
+                        <input type="text" class="form-control" id="livingName" name="livingName" placeholder="실제 입주 하시는 분 성함을 입력하세요" style="width:300px;" />
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>입주자연락처</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="숫자만 입력하세요" style="width:300px;" />
+                        <input type="text" class="form-control" id="ph" name="ph" placeholder="숫자만 입력하세요" style="width:300px;" />
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>이메일 (*예약정보가 발송됩니다.)</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:500px;" > @<input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:200px;" /> 
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:500px;" >
                  </div>
             </div>
-           
+     
             
            
             
@@ -100,39 +85,48 @@
             <div class="col-md-12">
                  <div class="form-group">
                  <Br><br>
-                        <h2>필수정보 입력</h2><br><br>
+                        <h2>예약정보</h2>&nbsp;&nbsp;&nbsp;<h3>총 ${liveDay }일 거주</h3><br><br>
                         
-                        <h5>예약자명</h5>
-                        	<input type="text" class="form-control" id="name" name="name" placeholder="예약하시는 분 성함을 입력하세요" style="width:300px;"/>
+                        <h5>호실번호</h5>
+                        <input type="hidden" id="roomNo" name="roomNo" value="${rev.roomNo }">
+                        	${rev.roomNo }호
                   </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
-                      	<h5>입주자명</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="실제 입주 하시는 분 성함을 입력하세요" style="width:300px;" />
+                      	<h5>입실날짜</h5>
+                      	<input type="hidden" id="startDate" name="startDate" value="${rev.start }">
+                       <fmt:formatDate value="${rev.start }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 2:00
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
-                      	<h5>입주자연락처</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="숫자만 입력하세요" style="width:300px;" />
+                      	<h5>퇴실날짜</h5>
+                      	<input type="hidden" id="endDate" name="endDate" value="${rev.end }">
+                       <fmt:formatDate value="${rev.end }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; AM 11:00
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
-                      	<h5>이메일 (*예약정보가 발송됩니다.)</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:500px;" > @<input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:200px;" /> 
+                      	<h5>총 임대비용</h5>
+                        <fmt:formatNumber value="${rental }" pattern="#,###" />원
+                 </div>      
+               </div>
+               <div class="col-md-12">
+                 <div class="form-group">
+                      	<h5>총 관리비용(관리비는 임대비용의 10%입니다.)</h5>
+                        <fmt:formatNumber value="${manage }" pattern="#,###" />원
                  </div>      
                </div>
              </div>      
+             <input type="hidden" value="${total }" id="price" name="price">
          		<div class="col-md-12 text-right">
-					<button type="submit" value="submit" class="btn submit_btn">결제하기</button>
-				</div>
-           </div>
-        
-        
-        
-          
+					<button type="submit" value="submit" class="btn submit_btn"><fmt:formatNumber value="${total }" pattern="#,###" />원 결제하기</button>
+					     
+				</div>	
+				
+           </div>   
+           </form>     
         </div>
         
       

@@ -40,7 +40,7 @@ public class RoomInsertService {
 			storeTotal += store+"-";
 			
 			String path = request.getServletContext().getRealPath("/");  // webapp까지만...
-			path +="common\\manager\\update\\";
+			path +="stayView\\memberView\\update\\";
 			
 			File file = new File(path+store);
 			try {

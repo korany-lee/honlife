@@ -91,14 +91,38 @@ $(function(){
                return false;
             }
          
-         var fromDate =$('#fromDate').val();
-         var toDate = $('#toDate').val();
-         var roomNo = $('#roomNo').val();
-         window.opener.location.href="ReservationTimeCheck?startdate="+fromDate+"&&enddate="+toDate+"&&roomNo="+roomNo;
-         window.self.close();
+      
+          
+        /*    $.ajax({
+				type : "POST",
+				url : "ReservationTimeCheck",
+				data : {"startdate=": $("#fromDate").val(), "enddate=":$("#toDate").val(),"roomNo=":$("#roomNo").val()} ,
+				datatype : "html",
+				success : dateCheck
+				
+			});  */   
+         	 var fromDate =$("#fromDate").val();
+			var toDate =$("#toDate").val();
+			var roomNo =$("#roomNo").val();
+			
+			
+         
+          window.opener.location.href="ReservationTimeCheck?startdate="+fromDate+"&&enddate="+toDate+"&&roomNo="+roomNo;
+          window.self.close();   
          
         
       });
+      
+/*   function dateCheck(responseText,statusText,xhr,$form){
+	if(responseText.trim()=="0"){   //겹치는 예약 없을때
+		window.opener.location.href="ReservationPage?startdate="+fromDate+"&&enddate="+toDate+"&&roomNo="+roomNo ;
+		window.self.close();
+	}else{// 예약이 겹칠때
+		location.href="dateFail";
+	}
+} */  
+
+
 });
 
 </script>
