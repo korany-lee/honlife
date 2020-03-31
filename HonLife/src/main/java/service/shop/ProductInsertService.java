@@ -55,6 +55,7 @@ public class ProductInsertService {
 		dto.setProductPhoto(storeTotal);
 		
 		pr.productInsert(dto);
+		System.out.println("실행2---------");
 		
 		return null;
 		

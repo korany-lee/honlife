@@ -24,6 +24,8 @@
 			classpath:stay-roomController.xml
 			classpath:spring-jdbc.xml
 			classpath:mybatis-config.xml
+			classpath:shop-beans.xml
+			classpath:shop-controller.xml
 			classpath:log4j.xml
 			classpath:stay-materialController.xml
 			classpath:stay-funitureController.xml

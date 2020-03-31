@@ -47,10 +47,11 @@
 						<div class="menu__toggle">
 							<i class="icon-menu"></i><span>전체 카테고리</span>
 						</div>
+						<!-- 스크롤바 내렸을때 나오는 메뉴 -->
 						<div class="menu__content">
 							<ul class="menu--dropdown">
 								<li class="current-menu-item ">
-									<a href="#"><i class="icon-star"></i> 제일 HOT한 상품</a>
+									<a href="shopView/HOT"><i class="icon-star"></i> 제일 HOT한 상품</a>
 								</li>
 								<li class="current-menu-item menu-item-has-children has-mega-menu">
 									<a href="#"><i class="icon-bread"></i> 과자 &amp; 빵</a>
@@ -2943,7 +2944,7 @@
 			</div>
 		</div>
 	</footer>
-	<div class="ps-popup" id="subscribe" data-time="500">
+<!-- 	<div class="ps-popup" id="subscribe" data-time="500">
 		<div class="ps-popup__content bg--cover"
 			data-background="shopView/img/bg/subscribe.jpg">
 			<a class="ps-popup__close" href="#"><i class="icon-cross"></i></a>
@@ -2970,7 +2971,7 @@
 				</div>
 			</form>
 		</div>
-	</div>
+	</div> -->
 	<div id="back2top">
 		<i class="pe-7s-angle-up"></i>
 	</div>

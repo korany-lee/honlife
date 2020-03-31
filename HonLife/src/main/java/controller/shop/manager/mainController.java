@@ -28,8 +28,9 @@ public class mainController {
 	}
 	
 	//혼샵 제품 등록 폼 보내기
-	@RequestMapping(value="/shop/shopRegister", method=RequestMethod.POST)
+	@RequestMapping(value="/manager/shopRegister", method=RequestMethod.POST)
 	public String productRegist(ProductCommand pc, HttpServletRequest request) {
+		System.out.println("실행1---------");
 		pis.productInsert(pc, request);
 		return "common/manager/managerview/managermain";
 	}
