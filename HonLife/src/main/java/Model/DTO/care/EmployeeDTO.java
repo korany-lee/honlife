@@ -1,16 +1,59 @@
 package Model.DTO.care;
 
-public class EmployeeDTO {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class EmployeeDTO implements Serializable{
 	
 	
+	public String getEmployeeAddrDetail() {
+		return employeeAddrDetail;
+	}
+	public void setEmployeeAddrDetail(String employeeAddrDetail) {
+		this.employeeAddrDetail = employeeAddrDetail;
+	}
 	String employeeNo;
 	String employeeName;
 	String employeeWorkField;
 	Integer employeeCallnum;
 	Integer employeeJumin;
 	String employeePhoto;
-	Integer employeeScore;
+	Integer employeeScore;	
 	String employeeBad;
+	String employeeAddr;
+	String employeeGender;
+	Integer employeePh;
+	String employeeAddrPost;
+	String employeeAddrDetail;
+	
+	
+
+	
+	
+	public String getEmployeeAddr() {
+		return employeeAddr;
+	}
+	public void setEmployeeAddr(String employeeAddr) {
+		this.employeeAddr = employeeAddr;
+	}
+	public String getEmployeeGender() {
+		return employeeGender;
+	}
+	public void setEmployeeGender(String employeeGender) {
+		this.employeeGender = employeeGender;
+	}
+	public Integer getEmployeePh() {
+		return employeePh;
+	}
+	public void setEmployeePh(Integer employeePh) {
+		this.employeePh = employeePh;
+	}
+	public String getEmployeeAddrPost() {
+		return employeeAddrPost;
+	}
+	public void setEmployeeAddrPost(String employeeAddrPost) {
+		this.employeeAddrPost = employeeAddrPost;
+	}
 	
 	public String getEmployeeNo() {
 		return employeeNo;

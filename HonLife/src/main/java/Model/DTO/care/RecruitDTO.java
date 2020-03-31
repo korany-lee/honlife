@@ -9,6 +9,12 @@ public class RecruitDTO implements Serializable{
 
 
 
+	public String getRecruitAddrDetail() {
+		return recruitAddrDetail;
+	}
+	public void setRecruitAddrDetail(String recruitAddrDetail) {
+		this.recruitAddrDetail = recruitAddrDetail;
+	}
 	public String getPostcode() {
 		return postcode;
 	}
@@ -21,6 +27,7 @@ public class RecruitDTO implements Serializable{
 	Long recruitJumin;
 	String recruitEmail;
 	String recruitAddr;
+	String recruitAddrDetail;
 	String recruitClass;
 	String recruitGender;
 	String postcode;

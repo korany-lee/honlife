@@ -17,7 +17,7 @@
 			
 			m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";	// 남은 시간 계산
 			
-			var msg = " < font color='red' size='30px'>" + m + "</font>후에 메인화면으로 넘어갑니다.";
+			var msg = "<font color='red' size='30px'>" + m + "</font>후에 메인화면으로 넘어갑니다.";
 			
 			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
 					

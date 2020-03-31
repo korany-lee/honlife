@@ -9,9 +9,13 @@
 
 <meta charset="UTF-8">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
 
 
-<title>입사지원</title>
+
+</script>
+
+<title>매니저 등록</title>
 <head>
 	<jsp:include page="../includer/careheader.jsp"/>
 <link rel="icon" type="image/png" href="../careView/contactform/images/icons/favicon.ico"/>
@@ -46,22 +50,37 @@
 
 <div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="regRecruitmentAction" method="POST" name="form" enctype="multipart/form-data">
-				<span class="contact100-form-title" >
-			입사 지원 양식
-				</span>
-																								
-					<img src="../careView/care/recruitPhoto/${one.storeFileName}" style="width: 300px;"alt="dressphoto" />
-
 			
-			<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >지원 업무</span>
+				
+				<span class="contact100-form-title" >
+			매니저를 등록하세요!
+				</span>
+				
+				
+				<form class="contact100-form" action="empRegist" method="POST" name="form" enctype="multipart/form-data">
+			
+				<input type="hidden" value="${one.recruitNo }" name="employeeNo" >
+				<input type="hidden" value="${one.recruitClass }" name="employeeWorkField">
+				<input type="hidden" value="${one.recruitGender }" name="employeeGender">
+			
+		
+				
+		
+			
+			<span class="label-input100" style="font-size: 20px;    padding-left: 420px;" >지원 업무</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select  class="js-select2" name="employeeWorkField" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
-							<option value="cm">청소 매니저</option>
-							<option value="lm">세탁 운송 매니저</option>			
-						</select>
-						<div class="dropDownSelect2"></div>
+					
+					<c:if test="${one.recruitClass == 'lm' }" >
+						
+						<input type="text" name="class" value="세탁운송매니저" readonly="readonly">
+					</c:if>
+					
+					<c:if test="${one.recruitClass == 'cm' }">
+					
+						<input type="text" name="class" value="청소매니저" readonly="readonly">
+					</c:if>
+			
 					</div>
 				</div>
 				
@@ -80,88 +99,99 @@
 				
 				<span class="label-input100"  style="font-size: 20px" >연락처</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
-					<input class="input100" type="text" id="recph"name="employeePh" placeholder="숫자만 입력해주세요" >
+					<input class="input100" type="text" value="${one.recruitPh }" id="employeePh"name="employeePh" placeholder="숫자만 입력해주세요" >
 				</div>
 				
 				<span class="label-input100"  style="font-size: 20px" >유선번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
-					<input class="input100" type="text" id="recph"name="employeeCallnum" placeholder="숫자만 입력해주세요" >
+					<input class="input100" type="text"value="" id="employeeCallnum"name="employeeCallnum" placeholder="숫자만 입력해주세요" >
 				</div>
 				<span class="label-input100" style="font-size: 20px" >주민번호</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width: calc((191% - 120px) / 2);">			
-					<input class="input100" type="text" id="jumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
+					<input class="input100" type="text" value="${one.recruitJumin }" id="employeeJumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
 				</div>
 				<span class="label-input100" style="font-size: 20px; ">주소</span> 
 						<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >성별</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="employeeGender" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
-							<option value="M">남자</option>
-							<option value="F">여자</option>			
-						</select>
-						<div class="dropDownSelect2"></div>
+						<c:if test="${one.recruitGender == 'M' }" >						
+						<input type="text" name="name" value="남자" readonly="readonly">
+						</c:if>
+					
+						<c:if test="${one.recruitGender == 'F' }">						
+						<input type="text" name="name" value="여자" readonly="readonly">
+						</c:if>
 					</div>
 				</div>	
 				
-				<input class="input100" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"> <br>
+
+				
+				
+				<div class="container-contact100-form-btn" style="width: 16%;">
+				<input class="contact100-form-btn" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="font-weight:20; margin-bottom: 5px;width: 100px;height: 30px;cursor:pointer"> <br>
+                 </div>
+				
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="postcode" name="addrPost" placeholder="우편번호">
+				<input class="input100" type="text" value="${one.postcode }" id="postcode" name="addrPost" placeholder="우편번호">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="roadAddress" name="addr1" placeholder="도로명주소">
+				<input class="input100" type="text" id="address" value="${one.recruitAddr }"name="addrMain" placeholder="선택주소">
 				</div>
 				<span id="guide" style="color:#999;display:none"></span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="margin-left: 115px"> 	
-				<input class="input100" type="text" id="detailAddress" name="addr2" placeholder="상세주소">
+				<input class="input100" type="text" value="" id="detailAddress" value="${recruitAddrDetail }" name="addrDetail" placeholder="상세주소">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
 				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">
 				</div>
 
+
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 참고 항목 변수
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
 
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                    extraRoadAddr += data.bname;
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
                 }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
-                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraRoadAddr !== ''){
-                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("extraAddress").value = '';
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('postcode').value = data.zonecode;
-                document.getElementById("roadAddress").value = roadAddr;
-    
-                            
-
-                var guideTextBox = document.getElementById("guide");
-                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-                if(data.autoRoadAddress) {
-                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-                    guideTextBox.style.display = 'block';
-
-                  } else {
-                    guideTextBox.innerHTML = '';
-                    guideTextBox.style.display = 'none';
-                }
+                document.getElementById("address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("detailAddress").focus();
             }
         }).open();
     }
@@ -176,25 +206,11 @@
 
 			<span class="label-input100" style="font-size: 20px; margin-right: 100px; " >이메일</span>
 			<div class="wrap-input100 bg1 rs1-wrap-input100e">	
-				 <input type="text" name="recruitEmail1" id="str_email01" placeholder="Email Id입력" style="width:150px;  text-transform: none; background: transparent;">@<input type="text" name="recruitEmail2" id="str_email02" style="width:200px;  background: transparent;border: none;" placeholder="나머지를 입력하세요" disabled value="naver.com">
-				 <select class="js-select2" name="recruitEmail2"  id="selectEmail" style=" font-family: 'Do Hyeon', sans-serif ;   text-transform: none; background: transparent;border: none;">						
-							<option value="1">직접입력</option> 
-							<option value="naver.com" selected>naver.com</option> 
-							<option value="nate.com">nate.com</option> 
-							<option value="yahoo.co.kr">yahoo.co.kr</option> 				
-							 <option value="gmail.com">gmail.com</option> 			
-							</select>
-						<div class="dropDownSelect2"></div>	
+				 <input type="text" name="employeeEmail" id="employeeEmail" value="${one.recruitEmail }" style="width:300px;  text-transform: none; background: transparent;">
+				
 				</div>
 		
 	
-				
-				<span class="label-input100" style="font-size: 20px; margin-right: 100px;" >첨부 이력서</span>
-					<div class="wrap-input100 bg1 rs1-wrap-input100f">				
-					<input class="input100" type="file" name="recruitResume" multiple="multiple">
-					<div>${fileError }</div>
-				</div>
-				
 			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 			 <script type="text/javascript"> 
 			 //이메일 입력방식 선택

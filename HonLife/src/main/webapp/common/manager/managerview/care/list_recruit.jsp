@@ -139,7 +139,7 @@
   									
   									 <tr>
    										 	<td>주소</td>
-   										 	<td>${list.recruitAddr }</td>
+   										 	<td>${list.recruitAddr } ${list.recruitAddrDetail }</td>
   									</tr>
   									
   									

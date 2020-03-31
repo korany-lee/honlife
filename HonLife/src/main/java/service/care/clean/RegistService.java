@@ -8,9 +8,9 @@ import javax.servlet.ServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
+import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.RecruitDTO;
 import command.care.clean.EmployeeCommand;
 import command.care.clean.RegistCommand;
@@ -35,9 +35,10 @@ public class RegistService {
 		dto.setRecruitClass(registCommand.getRecruitClass());
 		dto.setRecruitJumin(registCommand.getRecruitJumin());
 		dto.setRecruitPh(registCommand.getRecruitPh());
-		
-		String addr = registCommand.getRoadAddress()+"\t"+  registCommand.getDetailAddress();
-		dto.setRecruitAddr(addr);
+		dto.setRecruitAddr(registCommand.getAddr());
+		dto.setRecruitAddrDetail(registCommand.getAddrDetail());
+	
+	
 		dto.setPostcode(registCommand.getPostcode());
 		
 		System.out.println("postCode ="+ registCommand.getPostcode());
@@ -113,9 +114,24 @@ public class RegistService {
 	
 	
 	
-	public void empRegist(Integer recNum,EmployeeCommand employeeCommand) {
+	public void empRegist(Integer recNum,EmployeeCommand employeeCommand, ServletRequest request) {
+		EmployeeDTO dto = new EmployeeDTO();
+		String EmpNum =  "2020" + recNum.toString();
+		dto.setEmployeeNo(EmpNum);
+		dto.setEmployeeName(employeeCommand.getEmployeeName());
+		dto.setEmployeeWorkField(employeeCommand.getEmployeeWorkField());
+		dto.setEmployeeCallnum(employeeCommand.getEmployeeCallnum());
+		dto.setEmployeeJumin(employeeCommand.getEmployeeJumin());
+		dto.setEmployeePhoto(employeeCommand.getEmployeePhoto());
+		dto.setEmployeeAddr(employeeCommand.getAddrMain());
+		dto.setEmployeeGender(employeeCommand.getEmployeeGender());
+		dto.setEmployeePh(employeeCommand.getEmployeePh());
+		dto.setEmployeeAddrPost(employeeCommand.getAddrPost());
+		dto.setEmployeeAddrDetail(employeeCommand.getAddrDetail());
+		 
 		
 		
+		registRepository.empRegist(dto);
 		
 		
 		

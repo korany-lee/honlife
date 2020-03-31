@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.RecruitDTO;
 
 @Repository
@@ -57,6 +58,13 @@ public class RegistRepository {
 		String statement = namespace + ".intChkUp";
 		
 		sqlSession.update(statement, dto);
+	}
+	
+	public void empRegist(EmployeeDTO dto) {
+	String statement = namespace + ".empRegist";
+		
+		sqlSession.insert(statement,dto);
+		
 	}
 
 	

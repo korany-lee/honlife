@@ -15,8 +15,8 @@ public class RegistCommand {
 	private String recruitEmail2;
 	private String recruitGender;
 	private String postcode;
-	private String roadAddress;
-	private String detailAddress;
+	private String addr;
+	private String addrDetail;
 	
 	private String interview;
 	private String points;
@@ -33,17 +33,17 @@ public class RegistCommand {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	public String getRoadAddress() {
-		return roadAddress;
+	public String getAddr() {
+		return addr;
 	}
-	public void setRoadAddress(String roadAddress) {
-		this.roadAddress = roadAddress;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
-	public String getDetailAddress() {
-		return detailAddress;
+	public String getAddrDetail() {
+		return addrDetail;
 	}
-	public void setDetailAddress(String detailAddress) {
-		this.detailAddress = detailAddress;
+	public void setAddrDetail(String addrDetail) {
+		this.addrDetail = addrDetail;
 	}
 	public String getPoints() {
 		return points;

@@ -67,12 +67,19 @@
 				                                           
 									</div>
 									<div class="td">
-									 						<c:if test="${list.interview != 1}">
+															<c:if test="${list.interview == null && list.recruitClass=='cm'}">
 																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
-															<c:if test="${list.interview == 1}">
+									
+									 						<c:if test="${list.interview == null && list.recruitClass == 'lm'}">
+																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
+															</c:if>
+															
+															<c:if test="${list.interview == 1 }">
 															    <a href="#" onclick="javascript:sendRegMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')" style="margin-right: 10px">사원 등록메일 발송</a>
-															</c:if>					    
+																</c:if>
+															
+																		    
 															<a href="#" onclick="javascript:deletelist(${list.recruitNo})" style="margin-right: 10px"> 리스트 삭제</a>
 																							
 									</div>
@@ -118,7 +125,7 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 
 <script type="text/javascript">
 	function sendRegMail(data1,data2,data3){
-		alert(data2 + '로메일이 전송 중입니다');	
+		
 		$.ajax({	        
 	        type: "post",
 	        dataType:"html",

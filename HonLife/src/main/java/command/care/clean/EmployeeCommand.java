@@ -2,6 +2,25 @@ package command.care.clean;
 
 public class EmployeeCommand {
 	
+	public String getAddrMain() {
+		return addrMain;
+	}
+	public void setAddrMain(String addrMain) {
+		this.addrMain = addrMain;
+	}
+	public String getAddrPost() {
+		return addrPost;
+	}
+	public void setAddrPost(String addrPost) {
+		this.addrPost = addrPost;
+	}
+	
+	public String getAddrDetail() {
+		return addrDetail;
+	}
+	public void setAddrDetail(String addrDetail) {
+		this.addrDetail = addrDetail;
+	}
 	public Integer getEmployeePh() {
 		return employeePh;
 	}
@@ -25,8 +44,8 @@ public class EmployeeCommand {
 	Integer employeeScore;
 	String employeeBad;
 	String addrPost;
-	String addr1;
-	String addr2;
+	String addrMain;
+	String addrDetail;
 	
 	
 	
@@ -78,7 +97,7 @@ public class EmployeeCommand {
 	public void setEmployeeBad(String employeeBad) {
 		this.employeeBad = employeeBad;
 	}
-
+	
 	
 	
 	

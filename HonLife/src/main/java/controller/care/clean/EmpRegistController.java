@@ -1,5 +1,7 @@
 package controller.care.clean;
 
+import javax.servlet.ServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +22,11 @@ RecruitDetailService recruitDetailService;
 
 
 @RequestMapping("/care/empRegist")
-	public String empReg(@RequestParam(value="recNum") Integer recNum, EmployeeCommand employeeCommand, Model model ) {
+	public String empReg(@RequestParam(value="recNum") Integer recNum, EmployeeCommand employeeCommand, Model model,
+			 ServletRequest request) {
 	
 	recruitDetailService.detail(recNum, model);
-	registService.empRegist(recNum,employeeCommand);
+	registService.empRegist(recNum,employeeCommand,request);
 		return "careView/care/reg_employee";
 	}
 }
