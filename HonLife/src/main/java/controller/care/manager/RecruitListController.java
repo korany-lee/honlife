@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import service.care.clean.InterviewListService;
+import service.care.clean.RecruitDetailService;
 import service.care.clean.RecruitListService;
 import service.manager.ListCountService;
 
@@ -16,13 +17,14 @@ public class RecruitListController {
 	
 	@Autowired
 	private InterviewListService interviewListService;
+	
 
 
 	@RequestMapping("/manager/recruit")
 	public String recList( Model model ) {
-
+		
 		recruitListService.recList(model);
-
+	
 		return "common/manager/managerview/care/list_recruit";
 	}
 

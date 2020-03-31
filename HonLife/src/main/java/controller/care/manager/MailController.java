@@ -54,6 +54,19 @@ public class MailController {
 		return  "careView/care/chk";
 	}
 	
+	@RequestMapping("/manager/regMail")
+	public String regMail(@RequestParam(value="recNum") Integer recNum, 
+								   @RequestParam(value="reciver") String reciver,
+								   @RequestParam(value="name") String name) {
+		 System.out.println("regMailnum=" + recNum);
+		 System.out.println("regMailreciver=" + reciver);
+		 System.out.println("regMailname=" + name);
+		 
+		mailService.regMail(recNum,reciver,name);
+		return "redirect:/manager/interview";
+		        
+	}				
+	
 	@RequestMapping("/care/person")
 	public String fail(@RequestParam(value="recNum") Integer recNum, 
 							@RequestParam(value="reciver") String reciver ) {

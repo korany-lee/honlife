@@ -21,6 +21,12 @@ public class RegistCommand {
 	private String interview;
 	private String points;
 	
+	private MultipartFile [] recruitPhoto;
+	
+	private MultipartFile [] recruitResume;
+	
+
+	
 	public String getPostcode() {
 		return postcode;
 	}
@@ -51,11 +57,7 @@ public class RegistCommand {
 	public void setInterview(String interview) {
 		this.interview = interview;
 	}
-	private MultipartFile [] recruitPhoto;
 	
-	private MultipartFile [] recruitResume;
-	
-
 	public MultipartFile[] getRecruitPhoto() {
 		return recruitPhoto;
 	}

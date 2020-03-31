@@ -38,7 +38,7 @@
 		<div class="table-body">
 			<div class="table-rows">	
 				<c:forEach items="${recruit }" var="list" varStatus="status">
-															
+					<input type="hidden" value="${list.recruitNo }" id="recNum" name="recruitNo[$]"/>
 				
 	
 					<div class="tr reserved">
@@ -168,7 +168,7 @@
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
 									
-											<a href="#" class="minimal-btn close-tr2 " id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
+											<a href="#" class="minimal-btn close-tr2 " onclick="javascript:deletelist('${list.recruitNo }')" style="margin-right: 10px"> 리스트 삭제</a>
 
 										<c:if test="${list.points == 0 && list.recruitClass == 'cm' }">
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
@@ -220,6 +220,20 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
 
-
+<script type="text/javascript">
+	function deletelist(data){
+		$.ajax({	        
+	        type: "post",
+	        url: "../care/recruitDel",
+	        data: "recNum=" + data,						
+	        dataType:"html",
+	        success : function test(data){	 
+	        	
+	        		$("#maincall").html(data); 
+	        		},
+	        error : function error(){alert("error");}         
+	 }); 
+	}
+</script>
 </body>
 </html>

@@ -41,6 +41,12 @@ public class MailService {
 		
 	}
 	
+	public void regMail(Integer recNum, String reciver, String name) {
+		
+		
+		mailSend.empReg(recNum, reciver, name);
+	}
+	
 	public void failMail(Integer recNum, String reciver) {
 
 		mailSend.fail(recNum, reciver);	

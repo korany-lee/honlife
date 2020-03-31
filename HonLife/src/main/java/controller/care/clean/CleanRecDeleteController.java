@@ -18,7 +18,7 @@ public class CleanRecDeleteController {
 	@RequestMapping("/care/recruitDel")	
 	public String recDelete(@RequestParam(value="recNum") Integer recNum, Model model) {
 
-		recruitDeleteService.recDel(recNum);
+		recruitDeleteService.recDel(recNum,model);
 
 		return "redirect:/manager/recruit";
 	}

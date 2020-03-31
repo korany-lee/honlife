@@ -44,8 +44,13 @@ body{background:#f0f0f0;}
 
 
 $(function(){	
+
 	
-	$(document).on('click','#recruitDelete',function(){	
+	
+	
+	
+	
+	/* $(document).on('click','#recruitDelete',function(){	
 		
 		$.ajax({	        
 		        type: "post",
@@ -59,11 +64,7 @@ $(function(){
 		        error : function error(){alert("error");}         
 		 }); 
 	
-	});
-	
-
-
-	
+	}); */
 	
 	$('#interview').click(function(){	
 	  $.ajax({	        

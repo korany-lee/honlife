@@ -17,10 +17,8 @@
 	        url: "intMail",
 	        data: "recNum="+$('#recNum').val()+"&reciver="+$('#reciver').val()+"&name="+$('#name').val(),						
 	        dataType:"html",
-	        success : function test(data){
-	        	
-	        		location.href="main"
-	        		},
+	        success : function test(data){	        	
+	        		location.href="main"},
 	        error : function error(){alert("error");}         
 	 }); 
 			

@@ -111,7 +111,7 @@ public class MailSend {
 				+ "<a href = 'http://192.168.4.111:8080/project/care/empRegist?recNum="+recNum+" '>매니저 등록하기</a>"  ; 
 		
 		
-		String subject = "인성검사에 탈락하셧습니다 ㅠㅠ";
+		String subject = name+ "님 ㅊㅋㅊㅋ 사원등록하셈";
 		
 		try {			
 			msg.setHeader("context-type", "text/html; charset=UTF-8");		

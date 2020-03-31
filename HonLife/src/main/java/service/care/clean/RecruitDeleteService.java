@@ -2,7 +2,7 @@ package service.care.clean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.ui.Model;
 
 import Model.DTO.care.RecruitDTO;
 import repository.care.RegistRepository;
@@ -13,12 +13,12 @@ public class RecruitDeleteService {
 	@Autowired
 	RegistRepository registRepository;
 	CountRepository countRepository;
-	public void recDel(Integer recNum) {
+	public void recDel(Integer recNum, Model model) {
 		RecruitDTO dto = new RecruitDTO();
 		dto.setRecruitNo(recNum);
-	
-		registRepository.recDel(dto);
 
+		registRepository.recDel(dto);
+	
 	
 	}
 	

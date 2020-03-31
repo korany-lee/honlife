@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -50,12 +50,14 @@
 				<span class="contact100-form-title" >
 			입사 지원 양식
 				</span>
-				
-			<input type="hidden"  value="${recNum }">
+																								
+					<img src="../careView/care/recruitPhoto/${one.storeFileName}" style="width: 300px;"alt="dressphoto" />
+
+			
 			<span class="label-input100" style="font-size: 20px; padding-left: 430px;" >지원 업무</span>
 				<div class="wrap-input1002 input100-select bg1">			
 					<div>
-						<select class="js-select2" name="employeeWorkField" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+						<select  class="js-select2" name="employeeWorkField" style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="cm">청소 매니저</option>
 							<option value="lm">세탁 운송 매니저</option>			
 						</select>
@@ -73,15 +75,20 @@
 				<span class="label-input100" style="font-size: 20px;     padding-right: 400px;">이름</span>
 				<div class="wrap-input100 " >
 					
-					<input class="input100" type="text" name="employeeName" placeholder="이름를 입력하세요">
+					<input class="input100" type="text" name="employeeName" value="${one.recruitName }" placeholder="이름를 입력하세요">
+				</div>
+				
+				<span class="label-input100"  style="font-size: 20px" >연락처</span>
+				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
+					<input class="input100" type="text" id="recph"name="employeePh" placeholder="숫자만 입력해주세요" >
 				</div>
 				
 				<span class="label-input100"  style="font-size: 20px" >유선번호</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100">			
+				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
 					<input class="input100" type="text" id="recph"name="employeeCallnum" placeholder="숫자만 입력해주세요" >
 				</div>
 				<span class="label-input100" style="font-size: 20px" >주민번호</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100">			
+				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width: calc((191% - 120px) / 2);">			
 					<input class="input100" type="text" id="jumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
 				</div>
 				<span class="label-input100" style="font-size: 20px; ">주소</span> 

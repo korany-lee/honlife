@@ -26,7 +26,7 @@
 		<div class="table-head">
 
 			<div class="table-head-content section-content clearfix">		
-				<div class="th"><span>선택 </span></div>
+			
 				<div class="th"><span>이름</span></div>		
 				<div class="th"><span>이메일</span></div>
 				<div class="th"><span>지원자 확인 여부</span></div>
@@ -45,12 +45,7 @@
 								
 							<div class="tr-content">
 								<div class="tr-head">
-								<div class="td">
-								<span>
-									<input type="checkbox" name="chkbox" >
-								</span>
-								
-								</div>															
+																				
 									<div class="td">								
 										<span>
 									<input style="background-color: transparent; cursor:pointer;color: #9fa7a7 " class="boardList"  id="name" type="text" value="${list.recruitName}" readonly="readonly">	
@@ -76,9 +71,9 @@
 																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
 															<c:if test="${list.interview == 1}">
-															    <a href="intDetail?recNum=${list.recruitNo }" id="empRegMail" style="margin-right: 10px">사원 등록메일 발송</a>
-															</c:if>
-															<a href="#" id="recruitDelete" style="margin-right: 10px"> 리스트 삭제</a>
+															    <a href="#" onclick="javascript:sendRegMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')" style="margin-right: 10px">사원 등록메일 발송</a>
+															</c:if>					    
+															<a href="#" onclick="javascript:deletelist(${list.recruitNo})" style="margin-right: 10px"> 리스트 삭제</a>
 																							
 									</div>
 									
@@ -119,6 +114,37 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/www.voxverticalvillage.ro\/en\/wp-
 /* <![CDATA[ */
 var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"};
 /* ]]> */
+</script>
+
+<script type="text/javascript">
+	function sendRegMail(data1,data2,data3){
+		alert(data2 + '로메일이 전송 중입니다');	
+		$.ajax({	        
+	        type: "post",
+	        dataType:"html",
+	        url: "regMail",
+	        data:{"recNum": data1,"reciver": data2, "name": data3}, 						
+	        success : function test(data){	
+	        		alert("전송되었습니다.")
+	        		$("#maincall").html(data); 
+	        		},
+	        error : function error(){alert("error");}         
+	 }); 
+};
+
+
+	function deletelist(data){
+		$.ajax({	        
+	        type: "post",
+	        url: "../care/recruitDel",
+	        data: "recNum=" + data,						
+	        dataType:"html",
+	        success : function test(data){	         	
+	        		$("#maincall").html(data); 
+	        		},
+	        error : function error(){alert("error");}         
+	 }); 
+};
 </script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
