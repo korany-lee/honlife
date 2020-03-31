@@ -1,6 +1,7 @@
 package controller.shop.manager;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,8 +36,8 @@ public class mainController {
 	
 	//혼샵에서 멤버 가입
 	@RequestMapping(value="/JoinAccess", method=RequestMethod.POST)
-	public String memberJoin(MemberCommand mc) {
-		mjs.joinMem(mc);
+	public String memberJoin(MemberCommand mc, HttpServletResponse response) {
+		mjs.joinMem(mc, response);
 		return "shopView/shopMain";
 	}
 	

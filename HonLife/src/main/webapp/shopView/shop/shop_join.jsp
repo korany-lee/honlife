@@ -103,7 +103,7 @@
 												<td class="memberCols1">이메일*</td>
 												<td class="memberCols2">
 													<input type="text" name=email value="" size=30 required fld_esssential option=regEmail
-													label="이메일" placeholder="예: honshop@honlife.com">
+													label="이메일" placeholder="예: hon@honlife.com">
 													<input type=hidden name=chk_email required fld_esssential label="이메일중복체크"> <a href="javascript:void(0)"
 													onClick="chkEmail()"><span class="bhs_button">이메일 중복확인</span></a>
 												</td>

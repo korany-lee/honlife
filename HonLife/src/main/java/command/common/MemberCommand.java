@@ -6,7 +6,7 @@ public class MemberCommand {
 	private String name;
 	private String email;
 	private String mobile;
-	private Integer zonecode;
+	private String zonecode;
 	private String roadAddress;
 	private String detailAddress;
 	private String dongAddress;
@@ -47,10 +47,10 @@ public class MemberCommand {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	public Integer getZonecode() {
+	public String getZonecode() {
 		return zonecode;
 	}
-	public void setZonecode(Integer zonecode) {
+	public void setZonecode(String zonecode) {
 		this.zonecode = zonecode;
 	}
 	public String getRoadAddress() {

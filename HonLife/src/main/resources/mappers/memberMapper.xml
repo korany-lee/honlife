@@ -17,7 +17,7 @@
 			<arg column="USER_PH" javaType="string"/>
 			<arg column="USER_EMAIL" javaType="string"/>
 			<arg column="USER_ADDR" javaType="string"/>
-			<arg column="USER_ZONE" javaType="INTEGER"/>
+			<arg column="USER_ZONE" javaType="string"/>
 			<arg column="USER_GENDER" javaType="string"/>
 			<arg column="USER_BIRTH" javaType="java.util.Date"/>
 			<arg column="USER_REGIST" javaType="java.sql.Timestamp"/>

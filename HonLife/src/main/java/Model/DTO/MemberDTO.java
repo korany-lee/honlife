@@ -13,7 +13,7 @@ public class MemberDTO implements Serializable{
 	String userPh;
 	String userEmail;
 	String userAddr;
-	Integer userZone;
+	String userZone;
 	String userGender;
 	Date userBirth;
 	Timestamp userResist;
@@ -37,10 +37,10 @@ public class MemberDTO implements Serializable{
 	public void setUserPw(String userPw) {
 		this.userPw = userPw;
 	}
-	public Integer getUserZone() {
+	public String getUserZone() {
 		return userZone;
 	}
-	public void setUserZone(Integer userZone) {
+	public void setUserZone(String userZone) {
 		this.userZone = userZone;
 	}
 	public String getUserName() {
