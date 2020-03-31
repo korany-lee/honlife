@@ -12,8 +12,12 @@
 <bean id="roomInsertService" class="service.stay.room.RoomInsertService" />
 <bean id="roomListService" class="service.stay.room.RoomListService" />
 <bean id="dateCheckService" class="service.stay.room.DateCheckService" />
+<bean id="roomRevInsertService" class="service.stay.room.RoomRevInsertService" />
+<bean id="roomRevListService" class="service.stay.room.RoomRevListService" />
+
 
 
 <bean id="roomRepository" class="repository.stay.RoomRepository" />
+<bean id="reservationRepository" class="repository.stay.ReservationRepository" />
 </beans>
 

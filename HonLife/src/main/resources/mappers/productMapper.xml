@@ -11,10 +11,27 @@
 	PRODUCT_USEDATE
 </sql>
 
-<insert id="insertProduct" parameterType="Model.DTO.ProductDTO">
+<resultMap type="pro" id="ProMap">
+		<id column="PRODUCT_NO" jdbcType="VARCHAR" property="productNo"/>
+		<result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName"/>
+		<result column="PRODUCT_TYPE" jdbcType="VARCHAR" property="productType"/>
+		<result column="PRODUCT_DETAILTYPE" jdbcType="VARCHAR" property="productDetailtype"/>
+		<result column="PRODUCT_PHOTO" jdbcType="VARCHAR" property="productPhoto"/>
+		<result column="PRODUCT_PRICE" jdbcType="BIGINT" property="productPrice"/>
+		<result column="PRODUCT_COUNT" jdbcType="BIGINT" property="productCount"/>
+		<result column="PRODUCT_USEDATE" jdbcType="TIMESTAMP" property="productUsedate"/>
+</resultMap>
+
+<insert id="insertProduct" parameterType="pro">
 	insert into product(<include refid="basecolumn" />)
 	 values (productSeq.nextval, #{productName},#{productType},#{productDetailtype},#{productPhoto},#{productPrice},#{productCount},
 	#{productUsedate})
 </insert>
+
+<select id="selectPro" parameterType="pro" resultMap="ProMap">
+	select <include refid="basecolumn" /> from product
+</select>
+
+
 
 </mapper>

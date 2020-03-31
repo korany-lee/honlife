@@ -43,8 +43,11 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
+    
+	  
+	  
+	var calendarEl = document.getElementById('calendar');
+	
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
       locale : 'ko' ,
@@ -52,16 +55,14 @@
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
+    	 	<c:forEach items="${revState}" var="state">
         {
           title: '예약완료',
-          start: '2020-03-01'
+          start:  '<fmt:formatDate value="${state.roomRevStartDate}" pattern="yyyy-MM-dd" />',
+          end: '<fmt:formatDate value="${state.roomRevEndDate}" pattern="yyyy-MM-dd" />'
         },
-      
-        {
-          title: '예약완료',
-          start: '2020-03-11',
-          end: '2020-03-13'
-        }
+        	</c:forEach>
+        
       ]
     });
 
@@ -116,7 +117,7 @@
                 	<c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                 	
                   <li data-target="#carouselExampleIndicators" data-slide-to="${status.index }" class="active">
-                    <img src="/project/common/manager/update/${roomPhoto }" alt="" width="60px" height="60px"/>
+                    <img src="/project/stayView/memberView/update/${roomPhoto }" alt="" width="60px" height="60px"/>
                   </li>
                 	
                 	</c:forTokens>
@@ -141,14 +142,14 @@
                 <c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                   <c:if test="${status.count == 1 }">
                  	 <div class="carousel-item active">
-                   		 <img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="First slide" width="555px" height="700px"/>
+                   		 <img class="d-block w-100" src="/project/stayView/memberView/update/${roomPhoto}" alt="First slide" width="555px" height="700px"/>
                  	 </div>
                   </c:if>
                 </c:forTokens>
                 <c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                 	<c:if test="${status.count > 1 }">
                   		<div class="carousel-item">
-                    		<img class="d-block w-100" src="/project/common/manager/update/${roomPhoto}" alt="" width="555px" height="700px"/>
+                    		<img class="d-block w-100" src="/project/stayView/memberView/update/${roomPhoto}" alt="" width="555px" height="700px"/>
                   		</div>
                   	</c:if>
                 </c:forTokens>

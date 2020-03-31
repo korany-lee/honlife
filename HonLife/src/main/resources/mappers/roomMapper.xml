@@ -50,7 +50,7 @@
 </select>
 
 <select id="dateCheck" resultType="string" parameterType="Model.DTO.TimeCheckDTO" >
-	select room_no from roomrev where room_no=#{roomNo}
+	select room_no from roomrev where #{start} between roomrev_startdate and roomrev_enddate or #{end} between roomrev_startdate and roomrev_enddate and room_no=#{roomNo}
 	
 	
 </select>

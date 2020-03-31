@@ -44,7 +44,7 @@ public class RoomRepository {
 
 	public String dateCheck(TimeCheckDTO dto) {
 		System.out.println("레퍼지토리 들어옴");
-		String statement = namespace +"dateCheck"; 
+		String statement = namespace +".dateCheck"; 
 		return sqlSession.selectOne(statement,dto);
 	}
 	

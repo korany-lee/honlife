@@ -16,7 +16,7 @@
                     <div class="product-img">
                     <c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                     	<c:if test="${status.count ==1 }">
-                      <img class="aaaa" src="/project/common/manager/update/${roomPhoto }" alt="" width="250px" height="250px"/>
+                      <img class="aaaa" src="/project/stayView/memberView/update/${roomPhoto }" alt="" width="250px" height="250px"/>
                       	</c:if>
                       </c:forTokens>
                       <div class="p_icon">
