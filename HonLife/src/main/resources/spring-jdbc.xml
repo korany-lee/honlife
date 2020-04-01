@@ -11,8 +11,8 @@
          value="oracle.jdbc.driver.OracleDriver" />
       <property name="jdbcUrl"
          value="jdbc:oracle:thin:@192.168.4.104:1521:XE" />
-      <property name="user" value="Honlife" />
-      <property name="password" value="Honlife" />
+      <property name="user" value="HonLife" />
+      <property name="password" value="HonLife" />
       </bean>
       
       
