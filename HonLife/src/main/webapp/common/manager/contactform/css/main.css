@@ -256,7 +256,11 @@ iframe {
 }
 
 .rs1-wrap-input100 {
-  width: calc((100% - 120px) / 2);
+  width: calc((110% - 120px) / 2);
+}
+.rs1-wrap-input1006{
+	
+	  width: calc((98% - 120px) / 2);
 }
 .rs1-wrap-input1001 {
   width: 130px;

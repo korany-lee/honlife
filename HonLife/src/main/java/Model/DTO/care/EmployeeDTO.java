@@ -6,6 +6,13 @@ import java.io.Serializable;
 public class EmployeeDTO implements Serializable{
 	
 	
+
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
 	public String getEmployeeAddrDetail() {
 		return employeeAddrDetail;
 	}
@@ -25,6 +32,8 @@ public class EmployeeDTO implements Serializable{
 	Integer employeePh;
 	String employeeAddrPost;
 	String employeeAddrDetail;
+	String employeeEmail;
+
 	
 	
 

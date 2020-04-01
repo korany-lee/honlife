@@ -16,6 +16,11 @@ public class CountRepository {
 		return sqlSession.selectOne(statement);
 	}
 	
+	public Integer employeeCount() {
+		String statement = namespace +".employeeCount";		
+		return  sqlSession.selectOne(statement);
+	}
+	
 	
 	
 }

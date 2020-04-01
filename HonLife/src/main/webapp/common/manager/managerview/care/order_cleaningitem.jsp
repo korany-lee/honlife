@@ -4,29 +4,7 @@
 
 <html >
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script language="javascript">
-// opener관련 오류가 발생하는 경우 아래 주석을 해지하고, 사용자의 도메인정보를 입력합니다. ("팝업API 호출 소스"도 동일하게 적용시켜야 합니다.)
-//document.domain = "abc.go.kr";
 
-
-
-function goPopup(){
-	// 주소검색을 수행할 팝업 페이지를 호출합니다.
-	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-	var pop = window.open("../common/manager/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-	
-	// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
-    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
-}
-
-
-function jusoCallBack(roadFullAddr){
-		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
-		document.form.roadFullAddr.value = roadFullAddr;
-	
-}
-
-</script>
 
 <head>
 
@@ -58,149 +36,125 @@ function jusoCallBack(roadFullAddr){
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form" action="" method="post" name="form">
+			<input type="hidden" id=""  name=""/>
 				<span class="contact100-form-title">
 				발주 내용을 입력하세요!
 				</span>
+				<span class="label-input100" style="font-size: 20px">발주사원번호</span>
+				<div class="wrap-input100 " >
+					
+					<input class="input100" type="text" name="employeeNo" placeholder="발주하는 사원의 이름을 입력해주세요">
+				</div>
 				<span class="label-input100" style="font-size: 20px">발주처</span>
 				<div class="wrap-input100 " >
 					
-					<input class="input100" type="text" name="name" placeholder="발주처를 입력하세요">
+					<input class="input100" type="text" name="cleanorderCompanyName" placeholder="발주처를 입력하세요">
+				</div>
+				<div>
+				<span class="label-input100" style="font-size: 20px">주소</span>
 				</div>
 				
-				<span class="label-input100" style="font-size: 20px">주소</span>
-				
-			<input type="text" id="sample4_postcode" placeholder="우편번호">
-				<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-				<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-				
+				<div class="container-contact100-form-btn" style="width: 16%;margin-left: 300px;">
+				<input class="contact100-form-btn" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"> <br>
+				</div>
+				<div class="wrap-input100 bg1 rs1-wrap-input100">	
+				<input class="input100" type="text" id="postcode" name="cleanoredrPostcode" placeholder="우편번호">
+				</div>
+				<div class="wrap-input100 bg1 rs1-wrap-input100" >	
+				<input class="input100" type="text" id="address" name="cleanorderAddress"  placeholder="선택주소">
+				</div>
 				<span id="guide" style="color:#999;display:none"></span>
-				<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-				<input type="text" id="sample4_extraAddress" placeholder="참고항목">
-
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-    function sample4_execDaumPostcode() {
+				<div class="wrap-input100 bg1 rs1-wrap-input100" > 	
+				<input class="input100" type="text" id="detailAddress" name="cleanorederAddrdetail" placeholder="상세주소">
+				</div>
+				<div class="wrap-input100 bg1 rs1-wrap-input100">	
+				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">
+				</div>
+			
+			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+    function execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 참고 항목 변수
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
 
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                    extraRoadAddr += data.bname;
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
                 }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
-                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraRoadAddr !== ''){
-                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("extraAddress").value = '';
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample4_postcode').value = data.zonecode;
-                document.getElementById("sample4_roadAddress").value = roadAddr;
-    
-                
-                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                if(roadAddr !== ''){
-                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-                } else {
-                    document.getElementById("sample4_extraAddress").value = '';
-                }
-
-                var guideTextBox = document.getElementById("guide");
-                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-                if(data.autoRoadAddress) {
-                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-                    guideTextBox.style.display = 'block';
-
-                  } else {
-                    guideTextBox.innerHTML = '';
-                    guideTextBox.style.display = 'none';
-                }
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("detailAddress").focus();
             }
         }).open();
     }
 </script>
 			
 			
-			
-			
-			
-			
-			
-				
 			<!-- 	<input type="button" onClick="goPopup();" value="우편번호 검색" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"/>
 				<div class="wrap-input100 "> 			
 					<input type="text"  class="input100" style="width:500px;" id="roadFullAddr"  name="roadFullAddr"  placeholder="주소를 입력해주셈"/>		
 				</div> -->
 				
 			
-				
+				<div>
 				<span class="label-input100" style="font-size: 20px" >연락처</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100">			
-					<input class="input100" type="text" name="phone" placeholder="연락처를 입력하세요">
+				</div>
+				<div class="wrap-input100 bg1 rs1-wrap-input1006">			
+					<input class="input100" type="text" name="cleanorderCompanyPh" placeholder="연락처를 입력하세요">
 				</div>
 				
 				
 				<span class="label-input100" style="font-size: 20px" >FAX</span>
-					<div class="wrap-input100 bg1 rs1-wrap-input100">				
-					<input class="input100" type="text" name="phone" placeholder="팩스번호를 입력하세요">
+					<div class="wrap-input100 bg1 rs1-wrap-input1006">				
+					<input class="input100" type="text" name="cleanorderCompanyFax" placeholder="팩스번호를 입력하세요">
 				</div>
 				
 				<span class="label-input100" style="font-size: 20px" >발주일자</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100D">			
-					<input class="input100" type="date" name="phone" placeholder="발주일을 입력하세요">
+					<input class="input100" type="date" name="cleanorderDate" placeholder="발주일을 입력하세요">
 				</div>
 				
 				
 				<span class="label-input100" style="font-size: 20px" >납기일자</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100D">				
-					<input class="input100" type="date" name="phone" placeholder="납기일을 입력하세요">
+					<input class="input100" type="date" name="cleanorderReceiveDate" placeholder="납기일을 입력하세요">
 				</div>
 	<div>	
 	
-	<!-- <table class="order-list">
-    <thead>
-        <tr><td>Product</td><td>Price</td><td>Qty</td><td>Total</td></tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><input type="text" name="product" /></td>
-            <td>$<input type="text" name="price" /></td>
-            <td><input type="text" name="qty" /></td>
-            <td>$<input type="text" name="linetotal" readonly="readonly" /></td>
-            <td><a class="deleteRow"> x </a></td>
-        </tr>
-    </tbody>
-    
-    <tfoot>
-        <tr>
-            <td colspan="5" style="text-align: center;">
-                <input type="button" id="addrow" value="Add Product" />
-            </td>
-        </tr>
-        
-        <tr>
-            <td colspan="5">
-                Grand Total: $<span id="grandtotal"></span>
-            </td>
-        </tr>
-    </tfoot>
-</table> -->
-	
 
-	
 
 
 
@@ -231,7 +185,7 @@ function jusoCallBack(roadFullAddr){
         
       
             <td colspan="5" style=" font-family: 'Do Hyeon', sans-serif ; padding-left: 380px;" >
-                Grand Total: <span id="all" style=" font-family: 'Do Hyeon', sans-serif ; font-size:18px;"></span>
+               발주 총 금액: <input type="number"  name="allsum" id="allsum"  readonly="readonly"/>
             </td>
         </tr>
 
@@ -250,7 +204,7 @@ function jusoCallBack(roadFullAddr){
 <script type="text/javascript">
 
  $(document).ready(function () {
-    var counter = 1;
+    var counter = -1;
     
     $("#itemAdd").on("click", function () {
         counter++;
@@ -260,13 +214,12 @@ function jusoCallBack(roadFullAddr){
 
         
         
-        cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="item_name' +counter+' "  placeholder="품명"/></div></td>';					     
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="item_price' +counter+' "  placeholder="단가"/></div></td>';				
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="item_qty' +counter+' "   placeholder="수량"/></div></td>';			
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="item_sum' +counter+' "  placeholder="총액"/></div></td>';			
+        cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="cleanitemName['+counter+']"  placeholder="품명"/></div></td>';					     
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="cleanitemPrice['+counter+']"  placeholder="단가"/></div></td>';				
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="cleanitemQty['+counter+']"   placeholder="수량"/></div></td>';			
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="cleanitemSum['+counter+']"  placeholder="총액"/></div></td>';			
         cols += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
-        
-        
+    
         newRow.append(cols);
         
         $("table.order").append(newRow);
@@ -279,7 +232,7 @@ function jusoCallBack(roadFullAddr){
     
     
 
-    $("table.order").on("change", 'input[name^="item_name"], input[name^="item_qty"]', function (event) {
+    $("table.order").on("change", 'input[name^="cleanitemName"], input[name^="cleanitemQty"]', function (event) {
     
         calculateRow($(this).closest("tr"));
         calculateGrandTotal();
@@ -293,108 +246,43 @@ function jusoCallBack(roadFullAddr){
 });
     
 function calculateRow(row) {
-    var price = +row.find('input[name^="item_price"]').val();
+    var price = +row.find('input[name^="cleanitemPrice"]').val();
     
-    var qty = +row.find('input[name^="item_qty"]').val();
-    row.find('input[name^="item_sum"]').val((price * qty));
+    var qty = +row.find('input[name^="cleanitemQty"]').val();
+    row.find('input[name^="cleanitemSum"]').val((price * qty));
 }
     
 function calculateGrandTotal() {
     var grandTotal = 0;
-    $("table.order").find('input[name^="item_sum"]').each(function () {
+    $("table.order").find('input[name^="cleanitemSum"]').each(function () {
         grandTotal += +$(this).val();
     });
-    $("#all").text(grandTotal);
+    $("#allsum").val(grandTotal);
 }
 
- 
-
-
-
-
-
-
- 	/* 	var counter = "1";
-	$('#itemAdd').click(function(){
-		counter++
-		var contents = '';
-	
-		
-		contents += '<tr>';		
-		contents +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="item_name' +counter+' "  placeholder="품명"/></div></td>';					     
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="item_price' +counter+' "  placeholder="단가"/></div></td>';				
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="item_qty' +counter+' "   placeholder="수량"/></div></td>';			
-		contents +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="item_sum' +counter+' "  placeholder="총액"/></div></td>';			
-		contents += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
-		contents += '</tr>';
-		
-
-		$('#addOption').append(contents); // 추가기능
-		
-
-		$('.contact100-form-btn2').click(function(){ // 삭제기능
-			$(this).parent().parent().remove();	
-			//alert("aaa");
-		});
-
-		$('.input1001p, .input1001q, .input1001s').keyup(function(){			
-			$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
-		});
-
-		$('.input1001p').keyup(function(){
-			var num = $(".input1001p").index(this);
-			$('.input1001s').eq(num).val($('.input1001p').eq(num).val() * $('.input1001q').eq(num).val());
-		});
-
-		$('.input1001q').keyup(function(){
-			var num = $(".input1001q").index(this);
-			$('.input1001s').eq(num).val($('.input1001p').eq(num).val() * $('.input1001q').eq(num).val());
-
-		});
-
-		$('.input1001s').keyup(function(){
-			var num = $(".input1001s").index(this);
-			$('.input1001s').eq(num).val($('.input1001p').eq(num).val() * $('.input1001q').eq(num).val());
-		});
-		
-	});
-	 */
-
-
-
 </script>
-
-			
-				
+		
 				<span class="label-input100" style="font-size: 20px; " >배송방법</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100m">			
 					<div>
-						<select class="js-select2" name="move"   style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
-							<option>용달</option>
-							<option>퀵서비스</option>
-							<option>컨테이너</option>
+						<select class="js-select2" name="moveHow"   style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
+							<option value="youngdal">용달</option>
+							<option value="quick">퀵서비스</option>
+							<option value="container">컨테이너</option>
 						</select>
 					</div>
 				</div>
-				
-				
+							
 				<span class="label-input100" style="font-size: 20px" >운임 지불방법</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100m">				
 					<div>
-						<select class="js-select2" name="move"   style=" font-family: 'Do Hyeon', sans-serif ; font-size:18px; text-transform: none; background: transparent;border: none;">
-							<option>선불</option>
-							<option>착불</option>
+						<select class="js-select2" name="movePay"   style=" font-family: 'Do Hyeon', sans-serif ; font-size:18px; text-transform: none; background: transparent;border: none;">
+							<option value="sun">선불</option>
+							<option value="chak">착불</option>
 						</select>
 					</div>
 				</div>
-			
 				
-				
-				
-				
-				
-				
-
 				<div class="container-contact100-form-btn">
 					<input class="contact100-form-btn" type="submit"  value="발주 전송" style="cursor:pointer">
 				

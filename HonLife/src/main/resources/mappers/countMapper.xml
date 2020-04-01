@@ -8,7 +8,9 @@
  			select count(*) from recruit
  </select >
 
-
+<select id="employeeCount" resultType="int"> 
+	select count(*) from employee
+</select>
 
 
 

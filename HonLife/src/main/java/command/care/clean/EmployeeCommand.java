@@ -4,7 +4,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class EmployeeCommand {
 	
-
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+	private String employeeEmail;
 	private String employeeNo;
 	private String employeeName;
 	private Integer employeePh;

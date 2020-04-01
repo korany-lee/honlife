@@ -10,7 +10,7 @@
         <bean id="recruitDetailService" class="service.care.clean.RecruitDetailService" />
         
         <bean id="employeeListService" class="service.care.clean.EmployeeListService" />
-        
+        <bean id="itemOrderService" class="service.care.clean.ItemOrderService" />
          
         <bean id="listCountService" class="service.manager.ListCountService" />
         																		

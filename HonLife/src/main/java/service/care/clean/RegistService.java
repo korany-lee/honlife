@@ -126,7 +126,7 @@ public class RegistService {
 		dto.setEmployeeWorkField(employeeCommand.getEmployeeWorkField());
 		dto.setEmployeeCallnum(employeeCommand.getEmployeeCallnum());
 		dto.setEmployeeJumin(employeeCommand.getEmployeeJumin());
-	
+		dto.setEmployeeEmail(employeeCommand.getEmployeeEmail());
 		dto.setEmployeeAddr(employeeCommand.getAddrMain());
 		dto.setEmployeeGender(employeeCommand.getEmployeeGender());
 		dto.setEmployeePh(employeeCommand.getEmployeePh());

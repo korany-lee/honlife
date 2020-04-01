@@ -38,14 +38,20 @@ body{background:#f0f0f0;}
 	white-space:nowrap;
 
 }
+
+
+
+
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 
 
+
 $(function(){	
 
-	
+
+
 	
 	
 	
@@ -261,7 +267,23 @@ $(function(){
 	});
 	
 	
+	
+	 jQuery(document).ready(function() {
+         $('#myModal').show();
+ });
+
+
+		
+		function close_pop(flag) {
+		 $('#myModal').hide();
+		};
+
+
+	
 });
+
+
+
 
 
 
@@ -463,8 +485,7 @@ $(function(){
 						
 						<c:if test="${recruitcount == null }">
 						0
-						</c:if>
-					
+						</c:if>		
 						<c:if test="${recruitcount >0 }">
 							${recruitcount}
 						</c:if>
@@ -474,7 +495,16 @@ $(function(){
 						
 						<li><a href="#" id="interview">면접대기자 </a></li>		
 						<li><a href="#" id="empList">사원 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+						<span class="jquery-accordion-menu-label">
+						<c:if test="${employeecount == null }">
+						0
+						</c:if>
+						<c:if test="${employeecount >0 }">
+							${employeecount}
+						</c:if>
+						
+						
+						</span>
 						</li>
 				</ul>
 			</li>		

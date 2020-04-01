@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.care.CleanOrderDTO;
 import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.RecruitDTO;
 
@@ -72,6 +73,12 @@ public class RegistRepository {
 		
 		return sqlSession.selectList(statement);
 		
+	}
+	
+	public void orderInsert(CleanOrderDTO dto) {
+		
+		String statement = namespace + ".orderInsert";
+		sqlSession.insert(statement,dto);
 	}
 
 	

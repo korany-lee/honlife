@@ -7,6 +7,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+.modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 5; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            
+            
+  
+		}
+        
+    
+        /* Modal Content/Box */
+    .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 40px;
+            border: 1px solid #888;
+            height: 250px;
+            width: 60%; /* Could be more or less, depending on screen size */                          
+        }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+</style>
 </head>
 
 
@@ -68,11 +112,11 @@
 									</div>
 									<div class="td">
 															<c:if test="${list.interview == null && list.recruitClass=='cm'}">
-																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
+																<a href="#" id="interviewMail" onclick="sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
 									
 									 						<c:if test="${list.interview == null && list.recruitClass == 'lm'}">
-																<a href="intDetail?recNum=${list.recruitNo }" id="interviewMail" style="margin-right: 10px">면접 메일 발송</a>
+																<a href="#" id="interviewMail" onclick="sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
 															
 															<c:if test="${list.interview == 1 }">
@@ -97,6 +141,18 @@
 
 	</div>
 
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+ 
+      <div class="modal-content" style="text-align: center;">     
+      <img src="../common/member/image/mail.jpg" style="width: 190px;height: 122px;margin-left: 300px;" />                                                          
+      
+        <p style="font-size: 50px">메일을 전송중입니다 잠시만 기다려주세요! </p>
+      </div>
+ 
+    </div>
 
 </section>
 		
@@ -124,15 +180,32 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 </script>
 
 <script type="text/javascript">
+
+function sendIntMail(data1,data2,data3){
+	modal.style.display = "block";
+	$.ajax({	        
+        type: "post",
+        dataType:"html",
+        url: "intMail",
+        data:{"recNum": data1,"reciver": data2, "name": data3}, 						
+        success : function test(data){
+        	modal.style.display = "none";
+        		$("#maincall").html(data); 
+        		},
+        error : function error(){alert("error");}         
+ }); 
+};
+
+
 	function sendRegMail(data1,data2,data3){
-		
+		modal.style.display = "block";
 		$.ajax({	        
 	        type: "post",
 	        dataType:"html",
 	        url: "regMail",
 	        data:{"recNum": data1,"reciver": data2, "name": data3}, 						
 	        success : function test(data){	
-	        		alert("전송되었습니다.")
+	        	modal.style.display = "none";
 	        		$("#maincall").html(data); 
 	        		},
 	        error : function error(){alert("error");}         
@@ -151,6 +224,28 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 	        		},
 	        error : function error(){alert("error");}         
 	 }); 
+};
+
+
+//Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById('mailModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];                                          
+
+// When the user clicks on the button, open the modal 
+
+// When the user clicks on <span> (x), close the modal
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 };
 </script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>

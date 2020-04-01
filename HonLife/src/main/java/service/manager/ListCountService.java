@@ -11,7 +11,7 @@ public class ListCountService {
 @Autowired
  private CountRepository countRepository;
 	
-	public void count(Model model) {
+	public void recCount(Model model) {
 		
 		int count = countRepository.recruitCount();
 		
@@ -19,6 +19,14 @@ public class ListCountService {
 		model.addAttribute("recruitcount" , count);
 	
 		
+	}
+	
+	public void empCount(Model model) {
+		int count = countRepository.employeeCount();
+		
+		model.addAttribute("employeecount", count);
+		
+
 	}
 	
 	
