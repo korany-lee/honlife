@@ -79,6 +79,19 @@ $(function(){
 		 }); 		 
 	});
 	
+	$('#empList').click(function(){	
+		  $.ajax({	        
+			        type: "post",
+			        url: "empList",
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#maincall").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 		 
+		});
+	
 	
 	$('#empRegMail').click(function(){	
 		  $.ajax({	        
@@ -459,9 +472,8 @@ $(function(){
 						</span>
 						</li>
 						
-						<li><a href="#"id="interview">면접대기자 </a></li>
-						<li><a href="#">사원 등록 </a></li>
-						<li><a href="#">사원 리스트 </a>
+						<li><a href="#" id="interview">면접대기자 </a></li>		
+						<li><a href="#" id="empList">사원 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 						</li>
 				</ul>

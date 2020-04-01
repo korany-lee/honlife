@@ -8,6 +8,7 @@ import javax.servlet.ServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import Model.DTO.care.EmployeeDTO;
@@ -39,6 +40,9 @@ public class RegistService {
 		dto.setRecruitAddrDetail(registCommand.getAddrDetail());
 	
 	
+		
+		
+		System.out.println("registDetail=====" + registCommand.getAddrDetail());
 		dto.setPostcode(registCommand.getPostcode());
 		
 		System.out.println("postCode ="+ registCommand.getPostcode());
@@ -114,21 +118,53 @@ public class RegistService {
 	
 	
 	
-	public void empRegist(Integer recNum,EmployeeCommand employeeCommand, ServletRequest request) {
+	public void empRegist(EmployeeCommand employeeCommand, ServletRequest req) {
 		EmployeeDTO dto = new EmployeeDTO();
-		String EmpNum =  "2020" + recNum.toString();
+		String EmpNum =  "2020" + employeeCommand.getEmployeeNo();
 		dto.setEmployeeNo(EmpNum);
 		dto.setEmployeeName(employeeCommand.getEmployeeName());
 		dto.setEmployeeWorkField(employeeCommand.getEmployeeWorkField());
 		dto.setEmployeeCallnum(employeeCommand.getEmployeeCallnum());
 		dto.setEmployeeJumin(employeeCommand.getEmployeeJumin());
-		dto.setEmployeePhoto(employeeCommand.getEmployeePhoto());
+	
 		dto.setEmployeeAddr(employeeCommand.getAddrMain());
 		dto.setEmployeeGender(employeeCommand.getEmployeeGender());
 		dto.setEmployeePh(employeeCommand.getEmployeePh());
 		dto.setEmployeeAddrPost(employeeCommand.getAddrPost());
 		dto.setEmployeeAddrDetail(employeeCommand.getAddrDetail());
 		 
+		 String storeTotal1 = "";
+		   
+		   for( MultipartFile mf1 : employeeCommand.getEmployeePhoto()) {
+			   String original1 = mf1.getOriginalFilename();
+			   
+			   String originalFileExtension1 =    
+						original1.substring(original1.lastIndexOf("."));
+			   
+			   String store1 = UUID.randomUUID().toString().replace("-","")
+						+ originalFileExtension1;
+			   
+			   storeTotal1 += store1 + "-";
+			   String path = req.getServletContext().getRealPath("/");
+			   path += "careView\\care\\recruitPhoto\\";
+		   
+			   File file1 = new File(path+store1);
+			   
+			   try {
+				mf1.transferTo(file1);
+			} catch (IllegalStateException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			   
+		   
+		   
+		   }
+			 
+		  
+		
+		dto.setEmployeePhoto(storeTotal1);
+		
 		
 		
 		registRepository.empRegist(dto);

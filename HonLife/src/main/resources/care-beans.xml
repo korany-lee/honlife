@@ -8,6 +8,9 @@
         <bean id="recruitListService" class="service.care.clean.RecruitListService"/>
         <bean id="recruitDeleteService" class="service.care.clean.RecruitDeleteService" />
         <bean id="recruitDetailService" class="service.care.clean.RecruitDetailService" />
+        
+        <bean id="employeeListService" class="service.care.clean.EmployeeListService" />
+        
          
         <bean id="listCountService" class="service.manager.ListCountService" />
         																		
