@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mappers.careMapper">
+<cache/>
+
+<sql id="baseRecruit">
+RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+RECRUIT_ADDR, RECRUIT_ADDRDETAIL, RECRUIT_CLASS, RECRUIT_GENDER, 
+ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS 
+</sql>
+
+<insert id="insertRegist">
+		insert into recruit ( <include refid="baseRecruit"/>)
+		values(rec_seq.nextval, #{recruitName}, #{recruitPh}, 
+					#{recruitJumin}, #{recruitEmail}, 
+				#{recruitAddr}, #{recruitAddrDetail}, #{recruitClass}, #{recruitGender}, 
+				#{originalFileName}, #{storeFileName}, 
+				#{fileSize}, #{recruitPhoto},#{postcode},0
+				)
+
+</insert>
+
+<resultMap type="Model.DTO.care.RecruitDTO" id="recList">
+		<id column="RECRUIT_NO" jdbcType="BIGINT" property="recruitNo" />
+		<result  column="RECRUIT_NAME" jdbcType="VARCHAR" property="recruitName" />
+		<result  column="RECRUIT_PH" jdbcType="BIGINT" property="recruitPh" />
+		<result  column="RECRUIT_JUMIN" jdbcType="BIGINT" property="recruitJumin" />
+		<result  column="RECRUIT_EMAIL" jdbcType="VARCHAR" property="recruitEmail" />
+		<result  column="RECRUIT_ADDR" jdbcType="VARCHAR" property="recruitAddr" />
+		<result column="RECRUIT_ADDRDETAIL" jdbcType="VARCHAR" property="recruitAddrDetail"/>
+		<result  column="RECRUIT_CLASS" jdbcType="VARCHAR" property="recruitClass" />
+		<result  column="RECRUIT_GENDER" jdbcType="VARCHAR" property="recruitGender" />
+		<result  column="ORIGINAL_FILE_NAME" jdbcType="VARCHAR" property="originalFileName" />
+		<result  column="STORE_FILE_NAME" jdbcType="VARCHAR" property="storeFileName" />
+		<result  column="FILE_SIZE" jdbcType="VARCHAR" property="fileSize" />
+		<result  column="RECRUIT_PHOTO" jdbcType="VARCHAR" property="recruitPhoto" />
+		<result  column="INTERVIEW" jdbcType="BIGINT" property="interview"/>
+		<result column="POSTCODE" jdbcType="VARCHAR" property="postcode"/>
+		<result  column="POINTS" jdbcType="BIGINT" property="points" />
+		
+</resultMap>
+
+
+
+
+
+<select id="interviewListSelect" resultMap="recList"  >
+		select  RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+		RECRUIT_ADDR, RECRUIT_ADDRDETAIL,  RECRUIT_CLASS, RECRUIT_GENDER, 
+		ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO, POINTS, INTERVIEW from recruit
+		<where>
+				points >= 60 or recruit_Class = 'lm' 
+				
+		</where>
+</select>
+
+
+
+<select id="reclistSelect" resultMap="recList"  >
+		select <include refid="baseRecruit" /> from recruit
+		<where>
+				<if test="value != null">
+							RECRUIT_NO = #{recruitNo}	
+							and interview is null		
+				</if>		
+		</where>
+</select>
+
+
+<delete id="recruitDelete" parameterType="Model.DTO.care.RecruitDTO">
+	delete from recruit
+	 where recruit_no = #{recruitNo}
+	
+
+</delete>
+
+<select id="recruitOneSelect" parameterType="Model.DTO.care.RecruitDTO" resultMap="recList">
+	select RECRUIT_NO, RECRUIT_NAME, RECRUIT_PH, RECRUIT_JUMIN, RECRUIT_EMAIL, 
+			 RECRUIT_ADDR, RECRUIT_ADDRDETAIL, RECRUIT_CLASS, 
+			 RECRUIT_GENDER, ORIGINAL_FILE_NAME, POSTCODE,
+			 STORE_FILE_NAME, RECRUIT_PHOTO  from recruit
+	where RECRUIT_NO = #{recruitNo}			
+
+</select>
+
+<update id="upPoint" parameterType="Model.DTO.care.RecruitDTO">
+		
+	update recruit 
+		set points = #{points}
+	where recruit_no = #{recruitNo}
+	and points = 0
+	
+</update>
+
+<update id="intChkUp" parameterType="Model.DTO.care.RecruitDTO">
+	update recruit 
+	set interview = 1
+	where recruit_no = #{recruitNo}
+	and interview is null
+
+</update>
+
+
+<sql id="empBase">
+	EMPLOYEE_NO, EMPLOYEE_NAME, EMPLOYEE_WORKFIELD, EMPLOYEE_CALLNUM,
+	 EMPLOYEE_JUMIN, EMPLOYEE_PHOTO, EMPLOYEE_SCORE, EMPLOYEE_BAD,
+	EMPLOYEE_ADDR, EMPLOYEE_GENDER, EMPLOYEE_PH, EMPLOYEE_ADDRPOST,
+	EMPLOYEE_ADDRDETAIL
+</sql>
+
+
+<resultMap type="Model.DTO.care.EmployeeDTO" id="empList">
+		<id column="EMPLOYEE_NO" jdbcType="BIGINT" property="recruitNo" />
+		<result  column="EMPLOYEE_NAME" jdbcType="VARCHAR" property="recruitName" />
+		<result  column="EMPLOYEE_WORKFIELD" jdbcType="BIGINT" property="recruitPh" />
+		<result  column="EMPLOYEE_CALLNUM" jdbcType="BIGINT" property="recruitJumin" />
+		<result  column="EMPLOYEE_JUMIN" jdbcType="VARCHAR" property="recruitEmail" />
+		<result  column="EMPLOYEE_PHOTO" jdbcType="VARCHAR" property="recruitAddr" />
+		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="recruitAddrDetail"/>
+		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="recruitClass" />
+		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="recruitGender" />
+		<result  column="EMPLOYEE_PH" jdbcType="VARCHAR" property="originalFileName" />
+		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="storeFileName" />	
+		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="storeFileName" />	
+</resultMap>
+
+<insert id="empRegist">
+	insert into employee (<include refid="empBase" />)
+	values(employee_no 
+	          employee_name
+	          employee_workfield
+	          employee_callnum
+	          employee_jumin
+	          employee_photo
+	          employee_score
+	          employee_bad
+	          employee_addr
+	          )
+
+</insert>
+
+
+
+
+</mapper>
