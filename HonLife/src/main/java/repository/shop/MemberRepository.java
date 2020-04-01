@@ -1,7 +1,6 @@
 package repository.shop;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,5 +22,10 @@ public class MemberRepository{
 		Integer result = sqlSession.insert(statement, member);
 		
 		return result;
+	}
+	
+	public Map<String, Object> selectOneMem(String userId) {
+		String statement = namespace + ".selectOneMem";
+		return sqlSession.selectOne(statement, userId);
 	}
 }

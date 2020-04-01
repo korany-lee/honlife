@@ -3,6 +3,7 @@ package service.shop;
 import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,23 +31,23 @@ public class ProductInsertService {
 		
 		//유통기한이 없는 제품의 경우
 		try {
-			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
-			
+			//SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+			//Date date = sd.parse("2020-04-01");
+			//String noDate = sd.format(date);
+			Timestamp productUsedate;
+			if(pc.getProductUsedate() == null) {
+				//yyyy-mm-dd hh:mm:ss.fffffffff
+				productUsedate = java.sql.Timestamp.valueOf("2020-04-01 00:00:00.000000000");
+				dto.setProductUsedate(productUsedate);
+			}else {
+				productUsedate = new Timestamp(pc.getProductUsedate().getTime());
+				dto.setProductUsedate(productUsedate);			
+			}
+			System.out.println("date출력"+productUsedate);
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
-		String noDate = "0000-00-00 00:00:00";
-		
-		Timestamp productUsedate;
-		
-		if(pc.getProductUsedate()==null) {
-			productUsedate = java.sql.Timestamp.valueOf(noDate);
-			dto.setProductUsedate(productUsedate);
-		}else {
-			productUsedate = new Timestamp(pc.getProductUsedate().getTime());
-			dto.setProductUsedate(productUsedate);			
-		}
-		System.out.println("date출력"+productUsedate);
-		
-		
+	
 		String storeTotal = "";
 		
 		for(MultipartFile mf : pc.getProductPhoto()) {
