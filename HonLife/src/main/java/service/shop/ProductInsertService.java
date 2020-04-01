@@ -2,6 +2,7 @@ package service.shop;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import Model.DTO.ProductDTO;
 import command.shop.ProductCommand;
-import oracle.sql.TIMESTAMP;
 import repository.shop.ProductRepository;
 
 @Service
@@ -27,8 +27,23 @@ public class ProductInsertService {
 		dto.setProductDetailtype(pc.getProductDetailtype());
 		dto.setProductPrice(pc.getProductPrice());
 		dto.setProductCount(pc.getProductCount());
-		Timestamp productUsedate = new Timestamp(pc.getProductUsedate().getTime());
-		dto.setProductUsedate(productUsedate);
+		
+		//유통기한이 없는 제품의 경우
+		try {
+			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+			
+		}
+		String noDate = "0000-00-00 00:00:00";
+		
+		Timestamp productUsedate;
+		
+		if(pc.getProductUsedate()==null) {
+			productUsedate = java.sql.Timestamp.valueOf(noDate);
+			dto.setProductUsedate(productUsedate);
+		}else {
+			productUsedate = new Timestamp(pc.getProductUsedate().getTime());
+			dto.setProductUsedate(productUsedate);			
+		}
 		System.out.println("date출력"+productUsedate);
 		
 		
@@ -48,7 +63,6 @@ public class ProductInsertService {
 			try {
 				mf.transferTo(file);   //파일객체를 생성해서 파일을 저장
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}    
 		}

@@ -39,7 +39,7 @@ public class mainController {
 	@RequestMapping(value="/JoinAccess", method=RequestMethod.POST)
 	public String memberJoin(MemberCommand mc, HttpServletResponse response) {
 		mjs.joinMem(mc, response);
-		return "shopView/shopMain";
+		return "main";
 	}
 	
 }
