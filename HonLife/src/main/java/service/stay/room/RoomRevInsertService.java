@@ -45,14 +45,6 @@ public class RoomRevInsertService {
 			e.printStackTrace();
 		}
 		
-		System.out.println("방번호 =" +cmd.getRoomNo());
-		System.out.println("예약자이름 =" +cmd.getRevName());
-		System.out.println("입주자명 =" +cmd.getLivingName());
-		System.out.println("가격=" +cmd.getPrice());
-		System.out.println("연락처 =" +cmd.getPh());
-		System.out.println("이메일 =" +cmd.getEmail());
-		System.out.println("시작날짜 =" +date1);
-		System.out.println("종료날짜 =" +date2);
 		
 		
 		//회원번호 session값에서 가져오기

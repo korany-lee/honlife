@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MemberController {
 
 	
-	@RequestMapping(method =RequestMethod.GET)     //회원가입 폼 들어가기
+	@RequestMapping(method =RequestMethod.GET)     
 	public String Join() {
 		return "common/memberJoin";	
 	}
 	
-	@RequestMapping(method =RequestMethod.POST) //회원가입 완료
+	@RequestMapping(method =RequestMethod.POST) 
 	public String memberJoinAction() {
 		return "main";
 	}

@@ -51,15 +51,18 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
       locale : 'ko' ,
-      defaultDate: '2020-03-29',
+      defaultDate: '${today}',
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
+    	  
     	 	<c:forEach items="${revState}" var="state">
+    	 	/* var date = ${state.roomRevEndDate};
+    	 	var plusdate = date.setDate(date.getDate()+1); */
         {
           title: '예약완료',
           start:  '<fmt:formatDate value="${state.roomRevStartDate}" pattern="yyyy-MM-dd" />',
-          end: '<fmt:formatDate value="${state.roomRevEndDate}" pattern="yyyy-MM-dd" />'
+          end: '<fmt:formatDate value="${state.roomRevEndDate }" pattern="yyyy-MM-dd" />'
         },
         	</c:forEach>
         

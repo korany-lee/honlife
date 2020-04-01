@@ -10,11 +10,19 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Hon Life - 객실 예약정보 입력</title>
+    <title>Hon Life - 객실 예약 완료</title>
     
   <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
- 	
+ 	<style>
+ 	body {
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Roboto",sans-serif;
+    font-weight: normal;
+    color: #000000;
+}
+ 	</style>
   <body>
    <jsp:include page="/stayView/memberView/header.jsp" />
     <!--================Header Menu Area =================-->
@@ -51,29 +59,35 @@
         	<div class="col-md-12">
                  <div class="form-group">
                  <Br><br>
-                 	
-                        <h2>필수정보 입력</h2><br><br>
-                        
-                        <h5>예약자명</h5>
-                        	<input type="text" class="form-control" id="revName" name="revName" placeholder="예약하시는 분 성함을 입력하세요" style="width:300px;"/>
+                 		
+                        <h2>예약이 완료 되었습니다.  </h2><br><br>
+                        <h3>입력하신 이메일로 예약정보가 전송 되었습니다.</h3>
+                        <h5>예약번호(입실 시 필요한 정보 입니다.)</h5>
+                        	<h6>${RevChk.roomRevNo }</h6>
                   </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
+                      	<h5>예약자명</h5>
+                       <h6> ${RevChk.roomRevName }</h6>
+                 </div>
+            </div>
+            <div class="col-md-12">
+                 <div class="form-group">
                       	<h5>입주자명</h5>
-                        <input type="text" class="form-control" id="livingName" name="livingName" placeholder="실제 입주 하시는 분 성함을 입력하세요" style="width:300px;" />
+                        <h6>${RevChk.roomLiveName }</h6>
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>입주자연락처</h5>
-                        <input type="text" class="form-control" id="ph" name="ph" placeholder="숫자만 입력하세요" style="width:300px;" />
+                        <h6>${RevChk.roomRevPh }</h6>
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>이메일 (*예약정보가 발송됩니다.)</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:500px;" >
+                       <h6>${RevChk.roomRevEmail }</h6>
                  </div>
             </div>
      
@@ -85,44 +99,32 @@
             <div class="col-md-12">
                  <div class="form-group">
                  <Br><br>
-                        <h2>예약정보</h2>&nbsp;&nbsp;&nbsp;<h3>총 ${liveDay }일 거주</h3><br><br>
+                        
                         
                         <h5>호실번호</h5>
-                        <input type="hidden" id="roomNo" name="roomNo" value="${rev.roomNo }">
-                        	${rev.roomNo }호
+                        	<h6>${RevChk.roomNo }호</h6>
                   </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>입실날짜</h5>
-                      	<input type="hidden" id="startDate" name="startDate" value="${rev.start }">
-                       <fmt:formatDate value="${rev.start }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 2:00
+                 
+                       <h6><fmt:formatDate value="${RevChk.roomRevStartDate }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; AM 11:00</h6>
                  </div>
             </div>
             <div class="col-md-12">
                  <div class="form-group">
                       	<h5>퇴실날짜</h5>
-                      	<input type="hidden" id="endDate" name="endDate" value="${rev.end }">
-                       <fmt:formatDate value="${rev.end }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 23:59
+                       <h6><fmt:formatDate value="${RevChk.roomRevEndDate }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 23:59</h6>
                  </div>
             </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>총 임대비용</h5>
-                        <fmt:formatNumber value="${rental }" pattern="#,###" />원
-                 </div>      
-               </div>
-               <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>총 관리비용(관리비는 임대비용의 10%입니다.)</h5>
-                        <fmt:formatNumber value="${manage }" pattern="#,###" />원
-                 </div>      
-               </div>
+           
+               
              </div>      
-             <input type="hidden" value="${total }" id="price" name="price">
+             
          		<div class="col-md-12 text-right">
-					<button type="submit" value="submit" class="btn submit_btn"><fmt:formatNumber value="${total }" pattern="#,###" />원 결제하기</button>
-					     
+					
+					<a href="../stayMain" class ="btn submit_btn">메인으로 가기</a>   
 				</div>	
 				
            </div>   

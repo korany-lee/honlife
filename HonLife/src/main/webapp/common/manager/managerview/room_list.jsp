@@ -6,7 +6,7 @@
 
 <head>
 
-<jsp:include page="../../../common/manager/managerheader.jsp"/>
+<%-- <jsp:include page="../../../../common/manager/managerheader.jsp"/> --%>
 	<link rel="icon" type="image/png" href="../common/manager/contactform/images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../common/manager/contactform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -32,10 +32,10 @@
 
 <body>
 		<div class="col-left contact-info">
-			<jsp:include page="../../../common/manager/sidemenu.jsp" />
+		<%-- 	<jsp:include page="../../../../common/manager/sidemenu.jsp" /> --%>
 		
 		</div>
-		<div class="col-right">
+	
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
@@ -76,7 +76,7 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
-		</div>
+		
 
 
 

@@ -35,9 +35,14 @@
 
 
 <select id="selectRevList" resultMap="roomRev" parameterType="string">
-	select * from roomrev where room_no = #{roomNo}
+	select ROOMREV_NO,USER_NO,ROOM_NO,ROOMREV_REVNAME,ROOMREV_LIVEUSER,ROOMREV_STARTDATE,
+	to_timestamp(ROOMREV_ENDDATE +1) AS ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL from roomrev where room_no = #{roomNo}
 </select>
 
+
+<select id="revChk" resultMap="roomRev">
+select * from roomrev where roomrev_no=(select max(roomrev_no) from roomrev where user_no='18') 
+</select>
 
 
 </mapper>

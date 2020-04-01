@@ -24,4 +24,10 @@ public class ReservationRepository {
 		String statement = namespace + ".selectRevList";
 		return sqlSession.selectList(statement, roomNo);
 	}
+	
+	
+	public RoomRevDTO revChk() {
+		String statement = namespace + ".revChk";
+		return sqlSession.selectOne(statement);
+	}
 }

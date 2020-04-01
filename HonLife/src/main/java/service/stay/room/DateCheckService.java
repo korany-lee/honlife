@@ -48,7 +48,7 @@ public class DateCheckService {
 		long diffDay =(date2.getTime()- date1.getTime());
 		long calDate = diffDay / (24*60*60*1000);
 		calDate = Math.abs(calDate);
-		Integer i = (int) (long)calDate;
+		Integer i = (int) (long)calDate +1;
 		
 		Integer manageFee = (roomDTO.getRoomManageFee())*i;
 		Integer roomFee = (roomDTO.getRoomFee())*i;

@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Hon Life - 객실 리스트</title>
 
-<jsp:include page="../../common/manager/managerheader.jsp" />
+<%-- <jsp:include page="../../common/manager/managerheader.jsp" /> --%>
 <link rel="icon" type="image/png"
 	href="../common/manager/contactform/images/icons/favicon.ico" />
 <link rel="stylesheet" type="text/css"
@@ -87,11 +87,13 @@
 	});
 </script>
 <body>
+
+
 	<div class="col-left contact-info">
-		<jsp:include page="../../common/manager/sidemenu.jsp" />
+		<%-- <jsp:include page="../../common/manager/sidemenu.jsp" /> --%>
 
 	</div>
-	<div class="col-right">
+	
 
 		<div class="container-contact100">
 			<div class="wrap-contact100">
@@ -144,7 +146,7 @@
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	</div>
+
 
 </body>
 </html>

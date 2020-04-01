@@ -104,7 +104,8 @@ public class RoomController {
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
 	public String paySuccess(ReservationCommand revCommand,Model model) {
 		roomRevInsertService.revInsert(revCommand,model);
-		return null;
+		roomRevListService.revChk(model);
+		return "stayView/memberView/reservation_finish";
 	}
 	
 	@RequestMapping("/room/reservationFail")   //예약정보 저장
@@ -112,6 +113,7 @@ public class RoomController {
 		
 		return "stayView/memberView/room_fail";
 	}
+	
 	
 	
 	
