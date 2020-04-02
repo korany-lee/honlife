@@ -7,5 +7,5 @@
                   
 <bean class="controller.member.MemberJoinController"/>     
  
-                     
+                  
 </beans>

@@ -34,17 +34,25 @@ public class MemberJoinController {
 		return "shopView/shop/shop_join";
 	}
 	
-	//stay에서 회원가입 눌렀을때
+	//stay에서 회원가입 완료 눌렀을때
 	@RequestMapping(value="/stayJoinAccess", method=RequestMethod.POST)
 	public String memberJoin(MemberCommand mc, HttpServletResponse response) {
 		mjs.joinMem(mc, response);
 		return "redirect:/stayMain";
 	}
+	//care에서 회원가입 완료 눌렀을때
 	@RequestMapping(value="/careJoinAccess", method=RequestMethod.POST)
 	public String carememberJoin(MemberCommand mc, HttpServletResponse response) {
 		mjs.joinMem(mc, response);
 		return "redirect:/careMain";
 	}
+	//shop에서 회원가입 완료 눌렀을때
+	@RequestMapping(value="/shopJoinAccess", method=RequestMethod.POST)
+	public String shopmemberJoin(MemberCommand mc, HttpServletResponse response) {
+		mjs.joinMem(mc, response);
+		return "redirect:/shopMain";
+	}
+	
 	
 	//아이디 중복체크 창으로 이동
 	@RequestMapping("/userConfirm")
@@ -52,7 +60,7 @@ public class MemberJoinController {
 		model.addAttribute("memId", id);
 		return "common/member/userCheck";
 	}
-	
+	//아이디 중복확인 액션
 	@RequestMapping("/idCheckAction")
 	public String idChkAction(@RequestParam(value="userId")String id,Model model) {
 		mjs.idCheck(id,model);
