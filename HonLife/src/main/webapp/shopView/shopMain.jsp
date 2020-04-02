@@ -235,7 +235,7 @@
 								<i class="icon-user"></i>
 							</div>
 							<div class="ps-block__right">
-								<a href="my-account.html">로그인</a><a href="shopJoin">회원가입</a>
+								<a href="login">로그인</a><a href="shopJoin">회원가입</a>
 							</div>
 						</div>
 					</div>

@@ -6,6 +6,6 @@
                      ">
                   
 <bean class="controller.member.MemberJoinController"/>     
- 
+<bean class="controller.member.LoginController"/>     
                   
 </beans>
