@@ -28,4 +28,9 @@ public class MemberRepository{
 		String statement = namespace + ".selectOneMem";
 		return sqlSession.selectOne(statement, userId);
 	}
+	
+	public String checkId(String id) {
+		String statement = namespace + ".chkId";
+		return sqlSession.selectOne(statement, id);
+	}
 }

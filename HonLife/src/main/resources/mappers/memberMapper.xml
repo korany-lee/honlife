@@ -38,4 +38,10 @@
 	</select>
 
 
+<select id="chkId" parameterType="string" resultType="string">
+select user_id from member where user_id= #{id}
+
+</select>
+
+
 </mapper>

@@ -18,8 +18,7 @@ public class mainController {
 	@Autowired
 	private ProductInsertService pis;
 	
-	@Autowired
-	private MemberJoinService mjs;
+	
 	
 	//혼샵 제품 등록
 	@RequestMapping("/shop/register")
@@ -40,11 +39,6 @@ public class mainController {
 		return "common/manager/managerview/managermain";
 	}
 	
-	//혼샵에서 멤버 가입
-	@RequestMapping(value="/JoinAccess", method=RequestMethod.POST)
-	public String memberJoin(MemberCommand mc, HttpServletResponse response) {
-		mjs.joinMem(mc, response);
-		return "main";
-	}
+	
 	
 }

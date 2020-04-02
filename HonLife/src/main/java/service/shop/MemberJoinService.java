@@ -1,6 +1,5 @@
 package service.shop;
 
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import Model.DTO.MemberDTO;
 import command.common.MemberCommand;
@@ -78,4 +78,32 @@ public class MemberJoinService {
 		mr.insertMem(member, response);
 		
 	}
+	
+	
+	
+	
+	
+	
+	public void idCheck(String id,Model model) {
+		String check = mr.checkId(id);
+		System.out.println("아이디 검사결과 = " + check);
+		if(check != null) {
+			model.addAttribute("msg", "이미 사용중인 아이디 입니다");
+			model.addAttribute("num", "2");
+		}else {
+			model.addAttribute("msg", "사용 가능한 아이디 입니다");
+			model.addAttribute("num", "1");
+			model.addAttribute("memId", id);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

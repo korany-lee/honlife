@@ -11,8 +11,5 @@ public class IntroduceController {
 		return "stayView/memberView/introduce";
 	}
 	
-	@RequestMapping("/stayJoin")
-	public String join() {
-		return "stayView/memberView/memberForm";
-	}
+	
 }

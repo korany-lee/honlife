@@ -9,9 +9,6 @@ public class shopMainController {
 	public String shopMain() {
 		return "shopView/shopMain";
 	}
-	@RequestMapping("/shopJoin")
-	public String shopJoin() {
-		return "shopView/shop/shop_join";
-	}
+	
 
 }

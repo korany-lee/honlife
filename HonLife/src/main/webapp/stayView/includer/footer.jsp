@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="stayView/css/footer.css" rel="stylesheet" type="text/css">
+<link href="/project/stayView/css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="foot hub_foot">		
