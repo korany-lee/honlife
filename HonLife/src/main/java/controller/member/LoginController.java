@@ -65,11 +65,11 @@ public class LoginController {
 				return "redirect:/careMain";
 			}else {//로그인 실패 했을때
 				return "careView/care/care_login";
-			}
+		}
 		
 		
 		
 	
-	
+	}
 	
 }

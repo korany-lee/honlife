@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import Model.DTO.care.CleanOrderDTO;
 import Model.DTO.care.EmployeeDTO;
+import Model.DTO.care.EmptoItemOrderDTO;
 import Model.DTO.care.RecruitDTO;
 
 @Repository
@@ -80,6 +81,19 @@ public class RegistRepository {
 		String statement = namespace + ".orderInsert";
 		sqlSession.insert(statement,dto);
 	}
+	
+	public List<EmptoItemOrderDTO>  orderList() {
+		String statement = namespace + ".orderListSelect";
+		
+		return sqlSession.selectList(statement);
+	}
+	
+	public CleanOrderDTO orderDetail(CleanOrderDTO dto) {
+		String statement = namespace + ".orderTableDetail";
+	
+		return sqlSession.selectOne(statement, dto);
+	}
+
 
 	
 	

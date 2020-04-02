@@ -35,7 +35,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form" action="" method="post" name="form">
+			<form class="contact100-form" action="orderAct" method="post" name="form">
 			<input type="hidden" id=""  name=""/>
 				<span class="contact100-form-title">
 				발주 내용을 입력하세요!
@@ -58,14 +58,14 @@
 				<input class="contact100-form-btn" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"> <br>
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="postcode" name="cleanoredrPostcode" placeholder="우편번호">
+				<input class="input100" type="text" id="postcode" name="cleanorderPostcode" placeholder="우편번호">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" >	
 				<input class="input100" type="text" id="address" name="cleanorderAddress"  placeholder="선택주소">
 				</div>
 				<span id="guide" style="color:#999;display:none"></span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100" > 	
-				<input class="input100" type="text" id="detailAddress" name="cleanorederAddrdetail" placeholder="상세주소">
+				<input class="input100" type="text" id="detailAddress" name="cleanorderAddrdetail" placeholder="상세주소">
 				</div>
 				<div class="wrap-input100 bg1 rs1-wrap-input100">	
 				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">
@@ -73,6 +73,13 @@
 			
 			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
+	
+	document.getElementById('orederDate').value= 
+			new Date().toISOString().substring(0,10);
+	document.getElementById('receiveDate').value= 
+		new Date().toISOString().substring(0,10);
+
+	
     function execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -144,13 +151,13 @@
 				
 				<span class="label-input100" style="font-size: 20px" >발주일자</span>
 				<div class="wrap-input100 bg1 rs1-wrap-input100D">			
-					<input class="input100" type="date" name="cleanorderDate" placeholder="발주일을 입력하세요">
+					<input class="input100" type="date" name="cleanorderDate" id="orederDate" placeholder="발주일을 입력하세요">
 				</div>
 				
 				
 				<span class="label-input100" style="font-size: 20px" >납기일자</span>
 					<div class="wrap-input100 bg1 rs1-wrap-input100D">				
-					<input class="input100" type="date" name="cleanorderReceiveDate" placeholder="납기일을 입력하세요">
+					<input class="input100" type="date" name="cleanorderReceiveDate" id="receiveDate" placeholder="납기일을 입력하세요">
 				</div>
 	<div>	
 	
@@ -191,10 +198,7 @@
 
     </tfoot>
 				</table>
-			
-				
-				 
-				 
+			 
 				</div>
 				<div>
 				
@@ -263,7 +267,7 @@ function calculateGrandTotal() {
 </script>
 		
 				<span class="label-input100" style="font-size: 20px; " >배송방법</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100m">			
+					
 					<div>
 						<select class="js-select2" name="moveHow"   style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="youngdal">용달</option>
@@ -271,17 +275,16 @@ function calculateGrandTotal() {
 							<option value="container">컨테이너</option>
 						</select>
 					</div>
-				</div>
+		
 							
-				<span class="label-input100" style="font-size: 20px" >운임 지불방법</span>
-					<div class="wrap-input100 bg1 rs1-wrap-input100m">				
+				<span class="label-input100" style="font-size: 20px" >운임 지불방법</span>									
 					<div>
 						<select class="js-select2" name="movePay"   style=" font-family: 'Do Hyeon', sans-serif ; font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="sun">선불</option>
 							<option value="chak">착불</option>
 						</select>
 					</div>
-				</div>
+
 				
 				<div class="container-contact100-form-btn">
 					<input class="contact100-form-btn" type="submit"  value="발주 전송" style="cursor:pointer">

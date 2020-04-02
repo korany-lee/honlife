@@ -11,12 +11,12 @@
         
         <bean id="employeeListService" class="service.care.clean.EmployeeListService" />
         <bean id="itemOrderService" class="service.care.clean.ItemOrderService" />
-         
+        <bean id="itemOrderListService" class="service.care.clean.ItemOrderListService"/>
         <bean id="listCountService" class="service.manager.ListCountService" />
         																		
         <bean id="mailSend" class="service.care.clean.MailSend" />
         <bean id="mailService" class="service.care.clean.MailService" />
-  
+  		<bean id="tableDetailService" class="service.care.clean.TableDetailService" />
 		
        	<bean id="personalityService" class="service.care.clean.PersonalityService" />
         <bean id="interviewListService" class="service.care.clean.InterviewListService"/>

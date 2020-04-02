@@ -1,5 +1,6 @@
 package service.care.clean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +17,15 @@ public class ItemOrderService {
 RegistRepository registRepository;
 
 public void orderInsert(ItemOrderCommand itemOrderCommand,Model model) {
-	
-	
-	
-	
+
 	CleanOrderDTO dto = new CleanOrderDTO();	
 	
-	
-	
-	Date orderDate =  new Date(itemOrderCommand.getCleanorderDate().getTime());
-	dto.setCleanorderDate(orderDate);
-	
+	dto.setEmployeeNo(itemOrderCommand.getEmployeeNo());
+	Date orderDate = new Date(itemOrderCommand.getCleanorderDate().getTime());
+	System.out.println("orderDate= " + orderDate);
 	Date receiveDate = new Date(itemOrderCommand.getCleanorderReceiveDate().getTime());
+	System.out.println("receiveDate= " + receiveDate);
+	dto.setCleanorderDate(orderDate);
 	dto.setCleanorderReceiveDate(receiveDate);
 
 	dto.setCleanorderCompanyName(itemOrderCommand.getCleanorderCompanyName());
@@ -48,7 +46,7 @@ public void orderInsert(ItemOrderCommand itemOrderCommand,Model model) {
 	for(String itemPrice : itemOrderCommand.getCleanitemPrice()) { 		
 		allPrice += itemPrice+",";	
 	}
-	dto.setCleanitemprice(allPrice);
+	dto.setCleanitemPrice(allPrice);
 	
 	String allQty = "";
 	for(String itemQty : itemOrderCommand.getCleanitemQty()) {
@@ -69,10 +67,9 @@ public void orderInsert(ItemOrderCommand itemOrderCommand,Model model) {
 
 	registRepository.orderInsert(dto);
 	
-	model.addAttribute("itemName", allName);
-	model.addAttribute("itemPrice", allPrice);
-	model.addAttribute("itemQty", allQty);
-	model.addAttribute("itemSum", allSum);
+
+	
+	
 
 	
 }

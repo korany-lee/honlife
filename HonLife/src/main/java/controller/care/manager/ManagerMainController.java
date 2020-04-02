@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import service.manager.ListCountService;
 
 @Controller
-public class managerMainController {
+public class ManagerMainController {
 	@Autowired
  private	ListCountService listCountService;	
 	@RequestMapping("/manager/main")

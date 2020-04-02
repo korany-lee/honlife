@@ -7,7 +7,7 @@
                      
 
 <bean class="controller.main.mainController" />
-<bean class="controller.care.manager.managerMainController"/>
+<bean class="controller.care.manager.ManagerMainController"/>
 
 
 <bean class="controller.main.shopMainController" />

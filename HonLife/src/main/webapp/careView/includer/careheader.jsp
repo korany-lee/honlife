@@ -54,9 +54,9 @@ img.emoji {
 
 
 
-<link rel='stylesheet' id='wp-block-library-css'  href='../careView/css/style.library.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='../careView/css/style.header.css' type='text/css' media='all' />
-<link rel="stylesheet" type="text/css" href="../careView/contactform/css/main.css">
+<link rel='stylesheet' id='wp-block-library-css'  href='/project/careView/css/style.library.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='/project/careView/css/style.header.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" href="/project/careView/contactform/css/main.css">
 <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */

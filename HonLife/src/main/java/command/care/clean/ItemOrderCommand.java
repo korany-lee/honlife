@@ -3,6 +3,8 @@ package command.care.clean;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ItemOrderCommand {
 	public String getEmployeeNo() {
 		return employeeNo;
@@ -17,7 +19,9 @@ public class ItemOrderCommand {
 	String cleanorderAddrdetail;
 	Integer cleanorderCompanyPh;
 	Integer cleanorderCompanyFax;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	Date cleanorderDate;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	Date cleanorderReceiveDate;
 	Integer allsum;
 	List<String> cleanitemName;

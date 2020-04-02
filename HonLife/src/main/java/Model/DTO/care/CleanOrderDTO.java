@@ -8,6 +8,18 @@ import java.util.Date;
 public class CleanOrderDTO implements Serializable{
 	
 
+	public EmployeeDTO getEmpDTO() {
+		return empDTO;
+	}
+	public void setEmpDTO(EmployeeDTO empDTO) {
+		this.empDTO = empDTO;
+	}
+	public String getCleanitemPrice() {
+		return cleanitemPrice;
+	}
+	public void setCleanitemPrice(String cleanitemPrice) {
+		this.cleanitemPrice = cleanitemPrice;
+	}
 	public String getMoveHow() {
 		return moveHow;
 	}
@@ -33,7 +45,7 @@ public class CleanOrderDTO implements Serializable{
 	String cleanorderCompanyName;
 	
 	String cleanitemName;
-	String cleanitemprice;
+	String cleanitemPrice;
 	String cleanitemQty;
 	String cleanitemSumprice;
 	
@@ -45,7 +57,7 @@ public class CleanOrderDTO implements Serializable{
 	Integer allsum;
 	String moveHow;
 	String movePay;
-	
+	EmployeeDTO empDTO;
 	public String getCleanorderPostcode() {
 		return cleanorderPostcode;
 	}
@@ -95,12 +107,7 @@ public class CleanOrderDTO implements Serializable{
 	public void setCleanitemName(String cleanitemName) {
 		this.cleanitemName = cleanitemName;
 	}
-	public String getCleanitemprice() {
-		return cleanitemprice;
-	}
-	public void setCleanitemprice(String cleanitemprice) {
-		this.cleanitemprice = cleanitemprice;
-	}
+
 	public String getCleanitemQty() {
 		return cleanitemQty;
 	}

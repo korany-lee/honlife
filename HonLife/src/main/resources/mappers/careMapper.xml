@@ -132,7 +132,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 <insert id="empRegist">
 	insert into employee (<include refid="empBase" />)
 
-	values(#{employeeNo},#{employeeName},#{employeeWorkField},#{employeeCallnum}, 
+	values (#{employeeNo},#{employeeName},#{employeeWorkField},#{employeeCallnum}, 
 		   #{employeeJumin},#{employeePhoto},0,'N', 
 		   #{employeeAddr},#{employeeGender},#{employeePh},#{employeeAddrPost},
 		   #{employeeAddrDetail},#{employeeEmail} )
@@ -151,6 +151,61 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 </select>
 
 
+<sql id="cleanOrderBase">
+CLEANORDER_NO, EMPLOYEE_NO ,CLEANORDER_DATE, CLEANORDER_RECEIVE_DATE, 
+CLEANORDER_COMPANY_NAME, CLEANITEM_NAME, CLEANITEM_PRICE, 
+CLEANITEM_QTY, CLEANITEM_SUMPRICE, CLEANORDER_ADDRESS,
+CLEANORDER_COMPANY_HP, CLEANORDER_COMPANY_FAX, CLEANORDER_POSTCODE,
+CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
+</sql>
+
+<resultMap type="Model.DTO.care.CleanOrderDTO" id="orderList" >
+	<id column="CLEANORDER_NO" jdbcType="VARCHAR" property="cleanorderNo"/>
+	<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
+	<result column="CLEANORDER_DATE" jdbcType="DATE" property="cleanorderDate"/>
+	<result column="CLEANORDER_RECEIVE_DATE" jdbcType="DATE" property="cleanorderReceiveDate"/>
+	<result column="CLEANORDER_COMPANY_NAME" jdbcType="VARCHAR" property="cleanorderCompanyName"/>
+	<result column="CLEANITEM_NAME" jdbcType="VARCHAR" property="cleanitemName"/>
+	<result column="CLEANITEM_PRICE" jdbcType="VARCHAR" property="cleanitemPrice"/>
+	<result column="CLEANITEM_QTY" jdbcType="VARCHAR" property="cleanitemQty"/>
+	<result column="CLEANITEM_SUMPRICE" jdbcType="VARCHAR" property="cleanitemSumprice"/>
+	<result column="CLEANORDER_ADDRESS" jdbcType="VARCHAR" property="cleanorderAddress"/>
+	<result column="CLEANORDER_COMPANY_HP" jdbcType="BIGINT" property="cleanorderCompanyPh"/>
+	<result column="CLEANORDER_COMPANY_FAX" jdbcType="BIGINT" property="cleanorderCompanyFax"/>
+	<result column="CLEANORDER_POSTCODE" jdbcType="VARCHAR" property="cleanorderPostcode"/>
+	<result column="CLEANORDER_ADDRDETAIL" jdbcType="VARCHAR" property="cleanorderAddrdetail"/>
+	<result column="ALLSUM" jdbcType="BIGINT" property="allsum"/>
+	<result column="MOVEHOW" jdbcType="VARCHAR" property="moveHow"/>
+	<result column="MOVEPAY" jdbcType="VARCHAR" property="movePay"/>
+</resultMap>
+
+
+<select id="orderInsert" parameterType="Model.DTO.care.CleanOrderDTO">
+	insert into cleanorder (<include refid="cleanOrderBase"/>)
+	
+	values (cleanitem_seq.nextval,#{employeeNo},#{cleanorderDate},#{cleanorderReceiveDate},
+	#{cleanorderCompanyName},#{cleanitemName},#{cleanitemPrice},
+	#{cleanitemQty},#{cleanitemSumprice},#{cleanorderAddress},#{cleanorderCompanyPh},
+	#{cleanorderCompanyFax},#{cleanorderPostcode},#{cleanorderAddrdetail},
+	#{allsum},#{moveHow},#{movePay}
+	)
+</select>
+	<resultMap type="Model.DTO.care.EmptoItemOrderDTO" id="EtoODTO">
+		<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="empList"/>
+		<association property="orderDTO" javaType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"/>
+	</resultMap>
+
+<select id="orderListSelect" resultMap="EtoODTO" > 
+	select e.employee_name,e.employee_Ph,e.employee_Email, c.*
+	from employee e , cleanorder c
+	where e.employee_no = c.employee_no 
+</select>
+
+
+<select id="orderTableDetail" parameterType="Model.DTO.care.CleanOrderDTO" >
+	select  <include refid="cleanOrderBase" />
+		from cleanorder
+</select>
 
 
 </mapper>

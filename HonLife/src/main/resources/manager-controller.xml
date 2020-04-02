@@ -5,9 +5,9 @@
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      ">
                
-<bean class="controller.care.manager.cleaningItemOrderController"/>
-<bean class="controller.care.manager.cleaningItemListController"/>
-
+<bean class="controller.care.manager.CleaningItemOrderController"/>
+<bean class="controller.care.manager.CleaningItemListController"/>
+<bean class="controller.care.manager.OrderTableDetailController" />
 <bean class="controller.care.manager.RecruitListController"/>
 <bean class="controller.care.manager.EmployeeListController" />
 <bean class="controller.care.manager.RecruitDetailController" />
