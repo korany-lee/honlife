@@ -32,6 +32,9 @@ public class ProductInsertService {
 		try {
 			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
 			
+		}catch(Exception e) {
+			
+			
 		}
 		String noDate = "0000-00-00 00:00:00";
 		
