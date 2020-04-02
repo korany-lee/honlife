@@ -31,7 +31,12 @@ public class mainController {
 	@RequestMapping(value="/manager/shopRegister", method=RequestMethod.POST)
 	public String productRegist(ProductCommand pc, HttpServletRequest request) {
 		System.out.println("실행1---------");
-		pis.productInsert(pc, request);
+		try {
+			pis.productInsert(pc, request);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "common/manager/managerview/managermain";
 	}
 	
