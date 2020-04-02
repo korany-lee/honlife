@@ -39,12 +39,12 @@
             <div class="float-right">
               <ul class="right_side">
                 <li>
-                  <a href="cart.html">
+                  <a href="../member/staylogin">
                     	로그인
                   </a>
                 </li>
                 <li>
-                  <a href="tracking.html">
+                  <a href="../member/stayJoin">
                     	회원가입
                   </a>
                 </li>

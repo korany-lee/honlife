@@ -5,11 +5,7 @@
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      ">
                   
-<bean class="controller.member.MemberJoinController"/>     
 <bean class="controller.member.LoginController"/>     
-
-
-
-
-<bean id="loginService" class="service.member.LoginService" />
+ 
+                  
 </beans>

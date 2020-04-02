@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
 
 @Repository
@@ -32,5 +33,15 @@ public class MemberRepository{
 	public String checkId(String id) {
 		String statement = namespace + ".chkId";
 		return sqlSession.selectOne(statement, id);
+	}
+	
+	public String checkPw(LoginDTO dto) {
+		String statement = namespace + ".chkPw";
+		return sqlSession.selectOne(statement,dto);
+	}
+	
+	public String selectNum(LoginDTO dto) {
+		String statement = namespace + ".selectUserNo";
+		return sqlSession.selectOne(statement,dto);
 	}
 }

@@ -8,14 +8,13 @@
 
 
 <head>
-
 <link rel="shortcut icon" type="image/x-icon"
-	href="./main/images/WEB.png" />
-<link href="./common/css/main.css" rel="stylesheet" type="text/css">
-<link href="./common/css/common.css" rel="stylesheet" type="text/css">
-<link href="./common/css/section1.css" rel="stylesheet" type="text/css">
-<link href="./common/css/normalize.css" rel="stylesheet" type="text/css">
-<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
+	href="/project/main/images/WEB.png" />
+<link href="/project/common/css/main.css" rel="stylesheet" type="text/css">
+<link href="/project/common/css/common.css" rel="stylesheet" type="text/css">
+<link href="/project/common/css/section1.css" rel="stylesheet" type="text/css">
+<link href="/project/common/css/normalize.css" rel="stylesheet" type="text/css">
+<title>Hon Stay - 로그인</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -50,11 +49,12 @@ $(function(){
 
 
 
+	
 
 
 <body class="member-login"  oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection">
 <div id="total">
-	<jsp:include page="../includer/header.jsp"></jsp:include>
+	<jsp:include page="/stayView/memberView/header.jsp" />
 
 
 
@@ -72,7 +72,7 @@ $(function(){
 	<div class="write_form">
 		<div class="write_view login_view">
 
-				<form method="post" name="form" id="form" onsubmit="return checkReCaptcha();" action="shopLoginAction">
+				<form method="post" name="form" id="form" onsubmit="return checkReCaptcha();" action="stayLoginAction">
 					<input type=hidden name=returnUrl value="">
 					<input type=hidden name=return_url value="/shop/event/kurlyEvent.php?htmid=event/join/join_200325">
 					<input type=hidden name=close value="">
@@ -116,10 +116,10 @@ $(function(){
 			
 	</div><!-- #main -->
 </div><!-- #wrap -->
+
 	<jsp:include page="../includer/footer.jsp"></jsp:include>
 </div>
 </div>
 </div>
-
 </body>
 </html>

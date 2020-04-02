@@ -43,5 +43,12 @@ select user_id from member where user_id= #{id}
 
 </select>
 
+<select id="chkPw" parameterType="Model.DTO.LoginDTO" resultType="string">
+select user_id from member where user_id=#{userId} and user_pw=#{userPw}
+
+</select>
+<select id="selectUserNo" parameterType="Model.DTO.LoginDTO" resultType="string">
+select user_no from member where user_id=#{userId} and user_pw=#{userPw}
+</select>
 
 </mapper>

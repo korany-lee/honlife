@@ -19,8 +19,9 @@ public class MemberJoinController {
 	private MemberJoinService mjs;
 	
 	 //stay 페이지에서 회원가입 눌렸을 때
-	@RequestMapping("/stayJoin")        
+	@RequestMapping("/member/stayJoin")        
 	public String stayJoin() {
+		System.out.println("aaaa");
 		return "stayView/memberView/memberForm";
 	}
 	//care 페이지에서 회원가입 눌렀을 때
@@ -35,7 +36,7 @@ public class MemberJoinController {
 	}
 	
 	//stay에서 회원가입 완료 눌렀을때
-	@RequestMapping(value="/stayJoinAccess", method=RequestMethod.POST)
+	@RequestMapping(value="/member/stayJoinAccess", method=RequestMethod.POST)
 	public String memberJoin(MemberCommand mc, HttpServletResponse response) {
 		mjs.joinMem(mc, response);
 		return "redirect:/stayMain";
