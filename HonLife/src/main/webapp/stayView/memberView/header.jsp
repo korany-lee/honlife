@@ -41,20 +41,23 @@
               <ul class="right_side">
                 <c:if test="${empty memberInfo }">
                 <li>
-                  <a href="member/staylogin">
+                  <a href="/project/member/staylogin">
                     	로그인
                   </a>
                 </li>
                 <li>
-                  <a href="member/stayJoin">
+                  <a href="/project/member/stayJoin">
                     	회원가입
                   </a>
+                </li>
+                 <li>
+                	<a href="/project/main">Hon Life 메인</a>
                 </li>
                </c:if>
                
                <c:if test="${!empty memberInfo }">
                <li>
-                  <a href="member/stayLogout">
+                  <a href="/project/member/stayLogout">
                     	로그아웃
                   </a>
                 </li>
@@ -62,6 +65,9 @@
                   <a href="contact.html">
                     	마이페이지
                   </a>
+                </li>
+                 <li>
+                	<a href="/project/main">Hon Life 메인</a>
                 </li>
                 </c:if>
               </ul>
@@ -122,7 +128,7 @@
                         <a class="nav-link" href="../funiture/select?type=주방용품">주방용 가구</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="../funiture/select?type=침실용품">주방용 가구</a>
+                        <a class="nav-link" href="../funiture/select?type=침실용품">침실용 가구</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="../funiture/select?type=기타">기타 가구</a>

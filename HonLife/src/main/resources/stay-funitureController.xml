@@ -12,8 +12,8 @@
 
 <bean id="furnitureInsertService" class="service.stay.furniture.FurnitureInsertService" />
 <bean id="furnitureListService" class="service.stay.furniture.FurnitureListService" />
-
-
+<bean id="roomRevMatchService" class="service.stay.furniture.RoomRevMatchService" />
+<bean id="furnitureRevListService" class="service.stay.furniture.FurnitureRevListService" />
 
 
 <bean id="furnitureRepository" class="repository.stay.FurnitureRepository" />

@@ -25,11 +25,23 @@
 	
 </resultMap>
 
+<resultMap type="Model.DTO.FurnitureRevDTO" id="furnitureRev">
+	<id column="furniturerev_no" jdbcType="VARCHAR" property="furnitureRevNo" />
+	<result column="roomrev_no" jdbcType="VARCHAR" property="roomRevNo" />
+	<result column="user_no" jdbcType="VARCHAR" property="userNo" />
+	<result column="room_no" jdbcType="VARCHAR" property="roomNo" />
+	<result column="furniturerev_startdate" jdbcType="TIMESTAMP" property="furnitureRevStartDate" />
+	<result column="furniturerev_enddate" jdbcType="TIMESTAMP" property="furnitureRevEndDate" />
+</resultMap>
+
+
+
+
 
 
 <insert id="roomRevInsert" parameterType="Model.DTO.RoomRevDTO">
 	insert into roomrev(<include refid="basecolumn" />)	
-	values(roomrev_seq.nextval,'19',#{roomNo},#{roomRevName},#{roomLiveName},
+	values(roomrev_seq.nextval,#{userNo},#{roomNo},#{roomRevName},#{roomLiveName},
 	#{roomRevStartDate},#{roomRevEndDate},'사용대기',#{roomRevPrice},#{roomRevPh},#{roomRevEmail})
 </insert>
 
@@ -39,10 +51,18 @@
 	to_timestamp(ROOMREV_ENDDATE +1) AS ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL from roomrev where room_no = #{roomNo}
 </select>
 
-
-<select id="revChk" resultMap="roomRev">
-select * from roomrev where roomrev_no=(select max(roomrev_no) from roomrev where user_no='18') 
+<select id="selectfRevList" resultMap="furnitureRev" parameterType="string">
+	select furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,to_timestamp(furniturerev_enddate+1) as furniturerev_enddate from furniturerev where
+	
 </select>
 
+
+<select id="revChk" resultMap="roomRev" parameterType="string">
+select * from roomrev where roomrev_no=(select max(roomrev_no) from roomrev where user_no=#{userNo}) 
+</select>
+
+<select id="userRev" resultMap="roomRev" parameterType="string">
+select * from roomrev where user_no = #{userNo}
+</select>
 
 </mapper>

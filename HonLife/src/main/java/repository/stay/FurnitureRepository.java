@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.DTO.FurnitureDTO;
+import Model.DTO.FurnitureWishDTO;
 import Model.DTO.SearchDTO;
 
 
@@ -40,4 +41,10 @@ public class FurnitureRepository {
 		String statement = namespace +".searchSelect";
 		return sqlSession.selectList(statement,dto);
 	}
+	
+	public void wishInsert(FurnitureWishDTO dto) {
+		String statement = namespace +".wishInsert";
+		sqlSession.insert(statement, dto);
+	}
+	
 }

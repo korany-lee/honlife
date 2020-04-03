@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.FurnitureRevDTO;
 import Model.DTO.RoomRevDTO;
 
 @Repository
@@ -25,9 +26,22 @@ public class ReservationRepository {
 		return sqlSession.selectList(statement, roomNo);
 	}
 	
-	
-	public RoomRevDTO revChk() {
-		String statement = namespace + ".revChk";
-		return sqlSession.selectOne(statement);
+	public List<FurnitureRevDTO> frevState(String furnitureNo){
+		String statement = namespace + ".selectfRevList";
+		return sqlSession.selectList(statement, furnitureNo);
 	}
+	
+	
+	public RoomRevDTO revChk(String userNo) {
+		String statement = namespace + ".revChk";
+		return sqlSession.selectOne(statement,userNo);
+	}
+	
+	
+	
+	public List<RoomRevDTO> userRev(String userNo) {
+		String statement = namespace + ".userRev"; 
+		return sqlSession.selectList(statement, userNo);
+	}
+	
 }

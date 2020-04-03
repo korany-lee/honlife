@@ -13,19 +13,73 @@
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <title>Hon Life - 가구 상세보기</title>
-    <!--  Bootstrap CSS -->
-<!--        <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="vendors/linericon/style.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css" />
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
-    <link rel="stylesheet" href="vendors/animate-css/animate.css" />
-    <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css" />
-    main css
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" /> -->
+
+<link href='/project/stayView/memberView/css/main.css' rel='stylesheet' />
+<link href='/project/stayView/memberView/css/main2.css' rel='stylesheet' />
+<script src='/project/stayView/memberView/js/main.js'></script>
+<script src='/project/stayView/memberView/js/main2.js'></script>
+<script src='/project/stayView/memberView/js/main3.js'></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+/* $(function(){
+	$("#wish").click(function(){
+		var wishConfirm = confirm('장바구니에 추가 되었습니다. 장바구니로 이동 하시겠습니까?')
+		
+		  location.href="furnitureWish?furnitureNo="+$("#furnitureNo").val();  
+		  $.ajax({
+				type : "POST",
+				url : "furnitureWishInsert",
+				data : {"furnitureNo" : $("#furnitureNo").val(), "photo" : $("#photo").val(), "price" : $("#price"), "name" :$("#name").val()
+					},
+				datatype : "html",
+				success : function(data1) {
+					  if(wishConfirm){
+						  location.href="furnitureWishList";
+					  }else{
+						  return false;
+					  }
+				}
+			});  
+		 
+		
+	
+	
+	});
+}); */
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+	  
+	  
+	var calendarEl = document.getElementById('calendar');
+	
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid' ],
+      locale : 'ko' ,
+      defaultDate: '2020-04-02',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+    	  
+    	 	
+    	 	/* var date = ${state.roomRevEndDate};
+    	 	var plusdate = date.setDate(date.getDate()+1); */
+        {
+          title: '예약완료',
+          start : '2020-04-03',
+          end : '2020-04-04'
+        },
+        	
+        
+      ]
+    });
+
+    calendar.render();
+  });
+
+
+</script>
   </head>
 
   <body>
@@ -69,7 +123,7 @@
                 	<c:forTokens items="${furniture.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
                 	
                   <li data-target="#carouselExampleIndicators" data-slide-to="${status.index }" class="active">
-                    <img src="/project/common/manager/update/${furniturePhoto }" alt="" width="60px" height="60px"/>
+                    <img src="/project/stayView/memberView/update/${furniturePhoto }" alt="" width="60px" height="60px"/>
                   </li>
                 	
                 	</c:forTokens>
@@ -89,19 +143,19 @@
                     <img src="/project/stayView/memberView/img/product/single-product/s-product-s-4.jpg" alt=""/>
                   </li>  -->
                 </ol>
-                
+                <input type="hidden" id="photo" value="${furniture.furniturePhoto }">
                 <div class="carousel-inner">
                 <c:forTokens items="${furniture.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
                   <c:if test="${status.count == 1 }">
                  	 <div class="carousel-item active">
-                   		 <img class="d-block w-100" src="/project/common/manager/update/${furniturePhoto}" alt="First slide" width="555px" height="600px"/>
+                   		 <img class="d-block w-100" src="/project/stayView/memberView/update/${furniturePhoto}" alt="First slide" width="555px" height="700px"/>
                  	 </div>
                   </c:if>
                 </c:forTokens>
                 <c:forTokens items="${furniture.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
                 	<c:if test="${status.count > 1 }">
                   		<div class="carousel-item">
-                    		<img class="d-block w-100" src="/project/common/manager/update/${furniturePhoto}" alt="" width="555px" height="600px"/>
+                    		<img class="d-block w-100" src="/project/stayView/memberView/update/${furniturePhoto}" alt="" width="555px" height="700px"/>
                   		</div>
                   	</c:if>
                 </c:forTokens>
@@ -112,8 +166,11 @@
           </div>
           <div class="col-lg-5 offset-lg-1">
             <div class="s_product_text">
+            <input type="hidden" id="furnitureNo" value="${furniture.furnitureNo }">
               <h3>${furniture.furnitureName }</h3>
+              <input type="hidden" id="name" value="${furniture.furnitureName }" >
               <h2>1일 대여비 : <fmt:formatNumber value="${furniture.furnitureRentalFee }" pattern="#,###" />원</h2>
+              <input type="hidden" value="${furniture.furnitureRentalFee }" id="price">
               <ul class="list">
                 <li>
                   
@@ -126,9 +183,13 @@
                   <span>구매년월</span> : <fmt:formatDate value="${furniture.furnitureBuydate }" pattern="yyyy-MM"/>
                 </li>
               </ul>
-              <p>
+              <br>
+             <%--  <p>
                 ${furniture.furniturePoint }
-              </p>
+              </p> --%>
+              <h3>예약현황</h3>
+              <div id="calendar">
+              </div>
               <div class="product_count">
                 <!-- <label for="qty">Quantity:</label>
                 <input
@@ -156,13 +217,10 @@
                 </button>
               </div>
               <div class="card_area">
-                <a class="main_btn" href="#">예약하기</a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-diamond"></i>
-                </a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-heart"></i>
-                </a>
+              
+              
+             
+                <a class="genric-btn success circle"  href="javascript:history.back();">목록으로 가기</a>
               </div>
             </div>
           </div>
@@ -175,42 +233,9 @@
     <section class="product_description_area">
       <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="home-tab"
-              data-toggle="tab"
-              href="#home"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-              >Description</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="profile-tab"
-              data-toggle="tab"
-              href="#profile"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-              >기본가구 목록</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="contact-tab"
-              data-toggle="tab"
-              href="#contact"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false"
-              >Comments</a
-            >
-          </li>
+         
+         
+          
           <li class="nav-item">
             <a
               class="nav-link active"

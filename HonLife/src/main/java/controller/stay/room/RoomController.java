@@ -1,6 +1,7 @@
 package controller.stay.room;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -102,9 +103,9 @@ public class RoomController {
 	}
 	
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
-	public String paySuccess(ReservationCommand revCommand,Model model) {
-		roomRevInsertService.revInsert(revCommand,model);
-		roomRevListService.revChk(model);
+	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session) {
+		roomRevInsertService.revInsert(revCommand,model,session);
+		roomRevListService.revChk(model,session);
 		return "stayView/memberView/reservation_finish";
 	}
 	

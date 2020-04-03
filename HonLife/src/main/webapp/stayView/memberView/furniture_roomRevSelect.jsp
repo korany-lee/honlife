@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,11 +11,29 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Hon Life - 객실 예약정보 입력</title>
+    <title>Hon Life - 층별 객실안내</title>
     
   <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
- 	
+ 	<script type="text/javascript">
+	$(function() {
+		$("#floorSelect").change(function() {
+			/*  location.href = "sizeSelect?size="+$("#sizeSelect").val(); */  
+			  $("#bdto").innerHTML = "";  
+			 	
+			 $.ajax({
+				type : "POST",
+				url : "floorSelect",
+				data : "floor=" + $("#floorSelect").val(),
+				datatype : "html",
+				success : function(data1) {
+					$("#bdto").html(data1);
+				}
+			});  
+		});  
+	});
+
+	</script>
   <body>
    <jsp:include page="/stayView/memberView/header.jsp" />
     <!--================Header Menu Area =================-->
@@ -25,13 +44,13 @@
         <div class="container">
           <div class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
-              <h2>객실소개/예약하기</h2>
-              <p>Hon Stay와의 약속을 정하세요!</p>
+              <h2>객실소개/예약</h2>
+              <p>고객님에게 맞는 다양한 객실을 만나보세요</p>
             </div>
             <div class="page_link">
               <a href="index.html">Home</a>
               <a href="category.html">객실소개/예약</a>
-              <a href="category.html">예약하기</a>
+              <a href="category.html">층별 안내</a>
             </div>
           </div>
         </div>
@@ -40,96 +59,48 @@
     <!--================End Home Banner Area =================-->
 
     <!--================Category Product Area =================-->
-    
-     <section class="cat_product_area section_gap" >
+     <section class="cat_product_area section_gap">
       <div class="container">
-      <form method="post" action="payment">
-        <div class="row flex-row-reverse">
-        	<div class="row flex-row-reverse1">
-        	<!-- 값 입력 -->
-        	
-        	<div class="col-md-12">
-                 <div class="form-group">
-                 <Br><br>
-                 	
-                        <h2>필수정보 입력</h2><br><br>
-                        
-                        <h5>예약자명</h5>
-                        	<input type="text" class="form-control" id="revName" name="revName" placeholder="예약하시는 분 성함을 입력하세요" style="width:300px;"/>
-                  </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>입주자명</h5>
-                        <input type="text" class="form-control" id="livingName" name="livingName" placeholder="실제 입주 하시는 분 성함을 입력하세요" style="width:300px;" />
-                 </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>입주자연락처</h5>
-                        <input type="text" class="form-control" id="ph" name="ph" placeholder="숫자만 입력하세요" style="width:300px;" />
-                 </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>이메일 (*예약정보가 발송됩니다.)</h5>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"  style="width:500px;" >
-                 </div>
-            </div>
-     
-            
-           
-            
-           
-            <!-- 예약정보 -->
-            <div class="col-md-12">
-                 <div class="form-group">
-                 <Br><br>
-                        <h2>예약정보</h2>&nbsp;&nbsp;&nbsp;<h3>총 ${liveDay }일 거주</h3><br><br>
-                        
-                        <h5>호실번호</h5>
-                        <input type="hidden" id="roomNo" name="roomNo" value="${rev.roomNo }">
-                        	${rev.roomNo }호
-                  </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>입실날짜</h5>
-                      	<input type="hidden" id="startDate" name="startDate" value="${rev.start }">
-                       <fmt:formatDate value="${rev.start }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 2:00
-                 </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>퇴실날짜</h5>
-                      	<input type="hidden" id="endDate" name="endDate" value="${rev.end }">
-                       <fmt:formatDate value="${rev.end }" pattern="yyyy년MM월dd일"/> &nbsp;&nbsp; PM 23:59
-                 </div>
-            </div>
-            <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>총 임대비용</h5>
-                        <fmt:formatNumber value="${rental }" pattern="#,###" />원
-                 </div>      
-               </div>
-               <div class="col-md-12">
-                 <div class="form-group">
-                      	<h5>총 관리비용(관리비는 임대비용의 10%입니다.)</h5>
-                        <fmt:formatNumber value="${manage }" pattern="#,###" />원
-                 </div>      
-               </div>
-             </div>      
-             <input type="hidden" value="${total }" id="price" name="price">
-         		<div class="col-md-12 text-right">
-					 <a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
-					     
-				</div>	
-				
-           </div>   
-           </form>     
-        </div>
         
-      
+          
+            <div class="product_top_bar">
+              <div class="left_dorp">
+              <c:if test="${!empty roomRev  }">
+              <h2>객실 예약을 선택하세요</h2>
+                <select class="sorting" id="roomRevSelect" style="width:400px;">
+                 <c:forEach items="${roomRev }" var="room">
+                  <option value="">예약선택</option>
+                  <option value="${room.roomRevNo }">
+                  	<fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy년 MM월 dd일"/> ~ 
+                  	<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy년 MM월 dd일"/> (${room.roomNo }호)
+                  </option>
+				</c:forEach>
+                </select>
+                </c:if>
+                <c:if test="${empty roomRev }">
+                <h3>선택가능한 객실예약이 없습니다.</h3>
+               
+                </c:if>
+                
+              </div>
+              
+            </div>
+            <div class="col-md-12 text-right">
+					<a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
+					     
+				</div>
+            
+            <div class="latest_product_inner">
+              <div class="row" id="bdto">
+              
+              
+              </div>
+            </div>
+          
+
+         
+        </div>
+     
     </section>
     <!--================End Category Product Area =================-->
 
@@ -212,15 +183,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   </body>
 </html>
 
-<script type="text/javascript">
-$.ajax({
-	type : "POST",
-	url : "sizeSelect",
-	data : "size=8",
-	datatype : "html",
-	success : function(data1) {
-		$("#bdto").html(data1);
-	}
-});	
 
-</script>
