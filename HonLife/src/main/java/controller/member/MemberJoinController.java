@@ -56,13 +56,13 @@ public class MemberJoinController {
 	
 	
 	//아이디 중복체크 창으로 이동
-	@RequestMapping("/userConfirm")
+	@RequestMapping("/member/userConfirm")
 	public String idChk(@RequestParam(value="userId")String id,Model model) {
 		model.addAttribute("memId", id);
 		return "common/member/userCheck";
 	}
 	//아이디 중복확인 액션
-	@RequestMapping("/idCheckAction")
+	@RequestMapping("/member/idCheckAction")
 	public String idChkAction(@RequestParam(value="userId")String id,Model model) {
 		mjs.idCheck(id,model);
 		return "common/member/userCheck";

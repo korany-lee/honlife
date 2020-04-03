@@ -208,7 +208,12 @@
                 </button>
               </div>
               <div class="card_area">
+              <c:if test="${!empty memberInfo }">
                 <a class="main_btn"  onclick="window.open('dateCheck?room=${room.roomNo}','예약날짜 설정','width=700,height=300')">예약하기</a>
+              </c:if>
+              <c:if test="${empty memberInfo }">
+              <span>*로그인 하셔야 예약이 가능합니다</span>
+              </c:if>
                 <a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
               </div>
             </div>

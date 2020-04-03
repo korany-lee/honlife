@@ -1,6 +1,7 @@
 package controller.stay.funiture;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import command.stay.furniture.FurnitureCommand;
 import service.stay.furniture.FurnitureInsertService;
 import service.stay.furniture.FurnitureListService;
+import service.stay.furniture.FurnitureRevListService;
+import service.stay.furniture.RoomRevMatchService;
 
 @Controller
 public class FunitureController {
@@ -22,6 +25,11 @@ public class FunitureController {
 	@Autowired
 	FurnitureListService furnitureListService;
 	
+	@Autowired
+	RoomRevMatchService roomRevMatchService;
+	
+	@Autowired
+	FurnitureRevListService furnitureRevListService;
 	
 	//회원용
 	
@@ -61,7 +69,27 @@ public class FunitureController {
 	@RequestMapping("/funiture/furnitureDetail")
 	public String furnitureDetail(@RequestParam("furnitureNo")String num,Model model) {
 		furnitureListService.oneSelect(num, model);
+		furnitureRevListService.revDate(num,model);
 		return "stayView/memberView/furniture_detail";
+	}
+	
+	@RequestMapping("/funiture/furnitureWishInsert")    //장바구니에 담기
+	public void furnitureWish(@RequestParam(value="furnitureNo") String furnitureNo,HttpSession session) {
+		furnitureInsertService.wishInsert(furnitureNo,session);
+		
+	}
+	@RequestMapping("/funiture/furnitureWishList")
+	public String wishList(HttpSession session) {
+		
+		return "stayView/memberView/furniture_wishList";
+	}
+	
+	
+	
+	@RequestMapping("/funiture/fReservation")  //방 예약선택
+	public String furnitureRev(HttpSession session,Model model) {
+		roomRevMatchService.roomRevFind(session, model);
+		return "stayView/memberView/furniture_roomRevSelect";
 	}
 	
 	

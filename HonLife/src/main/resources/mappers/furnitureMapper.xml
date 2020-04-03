@@ -48,5 +48,10 @@ select * from furniture where furniture_no = #{furnitureNo}
 select * from furniture where funiture_name Like '%'||#{content}||'%' and furniture_type =#{type}
 </select>
 
+<insert id="wishInsert" parameterType="Model.DTO.FurnitureWishDTO">
+insert into furnitureWish(user_no,furniture_no) values(#{userNo},#{furnitureNo})
+</insert>
+
+
 
 </mapper>

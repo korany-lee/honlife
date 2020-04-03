@@ -1,20 +1,21 @@
 package service.stay.furniture;
 
 import java.io.File;
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import Model.DTO.FurnitureDTO;
-import repository.stay.FurnitureRepository;
+import Model.DTO.FurnitureWishDTO;
+import Model.DTO.LoginDTO;
 import command.stay.furniture.FurnitureCommand;
+import repository.stay.FurnitureRepository;
 
 @Service
 public class FurnitureInsertService {
@@ -42,7 +43,7 @@ public class FurnitureInsertService {
 					storeTotal += store+"-";
 					
 					String path = request.getServletContext().getRealPath("/");  // webapp까지만...
-					path +="common\\manager\\update\\";
+					path +="stayView\\memberView\\update\\";
 					
 					File file = new File(path+store);
 					try {
@@ -62,5 +63,28 @@ public class FurnitureInsertService {
 		
 		return null;
 	}
+	
+	
+	public void wishInsert(String furnitureNo,HttpSession session) {
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
+		
+		
+		FurnitureWishDTO dto = new FurnitureWishDTO();
+		dto.setUserNo(login.getUserNo());
+		dto.setFurnitureNo(furnitureNo);
+		
+		furnitureRepository.wishInsert(dto);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -5,10 +5,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import Model.DTO.LoginDTO;
 import Model.DTO.RoomRevDTO;
 import command.stay.room.ReservationCommand;
 import repository.stay.ReservationRepository;
@@ -19,7 +22,7 @@ public class RoomRevInsertService {
 	ReservationRepository reservationRepository;
 	
 	
-	public void revInsert(ReservationCommand cmd, Model model) {
+	public void revInsert(ReservationCommand cmd, Model model,HttpSession session) {
 		RoomRevDTO dto = new RoomRevDTO();
 		
 		//날짜값 변환	
@@ -47,8 +50,9 @@ public class RoomRevInsertService {
 		
 		
 		
-		//회원번호 session값에서 가져오기
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
 		
+		dto.setUserNo(login.getUserNo());
 		dto.setRoomNo(cmd.getRoomNo());
 		dto.setRoomRevName(cmd.getRevName());
 		dto.setRoomLiveName(cmd.getLivingName());

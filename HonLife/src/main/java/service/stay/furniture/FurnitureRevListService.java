@@ -1,26 +1,25 @@
-package service.stay.room;
+package service.stay.furniture;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import Model.DTO.LoginDTO;
-import Model.DTO.RoomRevDTO;
+import Model.DTO.FurnitureRevDTO;
 import repository.stay.ReservationRepository;
 
 @Service
-public class RoomRevListService {
+public class FurnitureRevListService {
 	@Autowired
 	ReservationRepository reservationRepository;
 	
-	public void revDate(String roomNo,Model model) {
-		List<RoomRevDTO> list = reservationRepository.revState(roomNo);
+	
+	public void revDate(String furnitureNo,Model model) {
+		
+		List<FurnitureRevDTO> list = reservationRepository.frevState(furnitureNo);
 		
 		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
 		
@@ -31,13 +30,5 @@ public class RoomRevListService {
 		
 		model.addAttribute("today", today);
 		model.addAttribute("revState", list);
-	}
-	
-	
-	public void revChk(Model model,HttpSession session) {
-		LoginDTO login  = (LoginDTO)session.getAttribute("memberInfo");
-		RoomRevDTO dto = reservationRepository.revChk(login.getUserNo());
-		model.addAttribute("RevChk", dto);
-	
 	}
 }

@@ -95,7 +95,7 @@ $(function(){
 					
 						<td><c:forTokens items="${list.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
 							<c:if test="${status.count ==1 }">
-								<img class="furniture" src="/project/common/manager/update/${furniturePhoto }" />
+								<img class="furniture" src="/project/stayView/memberView/update/${furniturePhoto }" />
 							</c:if>
 							</c:forTokens><br/>
 							<a href="detail?no=${list.furnitureNo }" class="a2">${list.furnitureName }</a>

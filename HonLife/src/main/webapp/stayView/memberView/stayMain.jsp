@@ -50,6 +50,9 @@
                     	회원가입
                   </a>
                 </li>
+                <li>
+                	<a href="main">Hon Life 메인</a>
+                </li>
                </c:if>
                
                <c:if test="${!empty memberInfo }">
@@ -62,6 +65,9 @@
                   <a href="contact.html">
                     	마이페이지
                   </a>
+                </li>
+                 <li>
+                	<a href="main">Hon Life 메인</a>
                 </li>
                 </c:if>
               </ul>
@@ -123,7 +129,7 @@
                         <a class="nav-link" href="funiture/select?type=주방용품">주방용 가구</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="funiture/select?type=침실용품">주방용 가구</a>
+                        <a class="nav-link" href="funiture/select?type=침실용품">침실용 가구</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="funiture/select?type=기타">기타 가구</a>
