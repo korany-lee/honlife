@@ -8,18 +8,19 @@ import java.util.Date;
 public class CleanOrderDTO implements Serializable{
 	
 
+	public String getOrderChk() {
+		return orderChk;
+	}
+	public void setOrderChk(String orderChk) {
+		this.orderChk = orderChk;
+	}
 	public EmployeeDTO getEmpDTO() {
 		return empDTO;
 	}
 	public void setEmpDTO(EmployeeDTO empDTO) {
 		this.empDTO = empDTO;
 	}
-	public String getCleanitemPrice() {
-		return cleanitemPrice;
-	}
-	public void setCleanitemPrice(String cleanitemPrice) {
-		this.cleanitemPrice = cleanitemPrice;
-	}
+
 	public String getMoveHow() {
 		return moveHow;
 	}
@@ -44,11 +45,7 @@ public class CleanOrderDTO implements Serializable{
 	Date cleanorderReceiveDate;
 	String cleanorderCompanyName;
 	
-	String cleanitemName;
-	String cleanitemPrice;
-	String cleanitemQty;
-	String cleanitemSumprice;
-	
+
 	String cleanorderAddress;
 	Integer cleanorderCompanyPh;
 	Integer cleanorderCompanyFax;
@@ -58,6 +55,7 @@ public class CleanOrderDTO implements Serializable{
 	String moveHow;
 	String movePay;
 	EmployeeDTO empDTO;
+	String orderChk;
 	public String getCleanorderPostcode() {
 		return cleanorderPostcode;
 	}
@@ -101,25 +99,7 @@ public class CleanOrderDTO implements Serializable{
 	public void setCleanorderCompanyName(String cleanorderCompanyName) {
 		this.cleanorderCompanyName = cleanorderCompanyName;
 	}
-	public String getCleanitemName() {
-		return cleanitemName;
-	}
-	public void setCleanitemName(String cleanitemName) {
-		this.cleanitemName = cleanitemName;
-	}
-
-	public String getCleanitemQty() {
-		return cleanitemQty;
-	}
-	public void setCleanitemQty(String cleanitemQty) {
-		this.cleanitemQty = cleanitemQty;
-	}
-	public String getCleanitemSumprice() {
-		return cleanitemSumprice;
-	}
-	public void setCleanitemSumprice(String cleanitemSumprice) {
-		this.cleanitemSumprice = cleanitemSumprice;
-	}
+	
 	public String getCleanorderAddress() {
 		return cleanorderAddress;
 	}

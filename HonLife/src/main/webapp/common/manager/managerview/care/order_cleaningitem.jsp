@@ -181,7 +181,8 @@
     			<th style="text-align: center;">단가</th>
     			<th style="text-align: center;">수량</th>
     			<th style="text-align: center;">총 단가 </th>
-    			<th style="text-align: center;">	<input type="button" value="물품 추가" id="itemAdd" class="contact100-form-btn1" style="cursor:pointer" /></th>
+    			<th style="text-align: center;">	
+    			<input type="button" value="물품 추가" id="itemAdd" class="contact100-form-btn1" style="cursor:pointer" /></th>
  			</tr>
  			
  			</thead>
@@ -218,10 +219,10 @@
 
         
         
-        cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text" name="cleanitemName['+counter+']"  placeholder="품명"/></div></td>';					     
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" name="cleanitemPrice['+counter+']"  placeholder="단가"/></div></td>';				
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" name="cleanitemQty['+counter+']"   placeholder="수량"/></div></td>';			
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" name="cleanitemSum['+counter+']"  placeholder="총액"/></div></td>';			
+        cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text"id="cleanitemName" name="cleanitemName['+counter+']"  placeholder="품명"/></div></td>';					     
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" id="cleanitemPrice" name="cleanitemPrice['+counter+']"  placeholder="단가"/></div></td>';				
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" id="cleanitemQty" name="cleanitemQty['+counter+']"   placeholder="수량"/></div></td>';			
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" id="cleanitemSum" name="cleanitemSumprice['+counter+']"  placeholder="총액"/></div></td>';			
         cols += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
     
         newRow.append(cols);
@@ -236,7 +237,7 @@
     
     
 
-    $("table.order").on("change", 'input[name^="cleanitemName"], input[name^="cleanitemQty"]', function (event) {
+    $("table.order").on("change", 'input[id^="cleanitemName"], input[id^="cleanitemQty"]', function (event) {
     
         calculateRow($(this).closest("tr"));
         calculateGrandTotal();
@@ -250,15 +251,15 @@
 });
     
 function calculateRow(row) {
-    var price = +row.find('input[name^="cleanitemPrice"]').val();
+    var price = +row.find('input[id^="cleanitemPrice"]').val();
     
-    var qty = +row.find('input[name^="cleanitemQty"]').val();
-    row.find('input[name^="cleanitemSum"]').val((price * qty));
+    var qty = +row.find('input[id^="cleanitemQty"]').val();
+    row.find('input[id^="cleanitemSum"]').val((price * qty));
 }
     
 function calculateGrandTotal() {
     var grandTotal = 0;
-    $("table.order").find('input[name^="cleanitemSum"]').each(function () {
+    $("table.order").find('input[id^="cleanitemSum"]').each(function () {
         grandTotal += +$(this).val();
     });
     $("#allsum").val(grandTotal);
@@ -272,7 +273,7 @@ function calculateGrandTotal() {
 						<select class="js-select2" name="moveHow"   style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
 							<option value="youngdal">용달</option>
 							<option value="quick">퀵서비스</option>
-							<option value="container">컨테이너</option>
+							<option value="damas">다마스 퀵</option>
 						</select>
 					</div>
 		

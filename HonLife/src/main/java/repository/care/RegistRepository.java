@@ -1,15 +1,19 @@
 package repository.care;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.care.CleanItemDTO;
 import Model.DTO.care.CleanOrderDTO;
+import Model.DTO.care.CleanitemInsert;
 import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.EmptoItemOrderDTO;
 import Model.DTO.care.RecruitDTO;
+import command.care.clean.ItemCommand;
 
 @Repository
 public class RegistRepository {
@@ -93,7 +97,36 @@ public class RegistRepository {
 	
 		return sqlSession.selectOne(statement, dto);
 	}
-
+	
+	public Integer orderChk(CleanOrderDTO dto) {
+		String statement = namespace + ".orderChk";
+		
+		return sqlSession.update(statement, dto);
+	}
+	
+	public void empDetail(EmployeeDTO dto) {
+		
+		String statement = namespace + ".empDetail";
+		sqlSession.selectOne(statement,dto);
+	}
+	
+	public void itemInsert(CleanItemDTO dto) {
+		
+		List<CleanItemDTO> dtos =  new ArrayList<CleanItemDTO>();
+		CleanitemInsert in = new CleanitemInsert();
+		String statement = namespace + ".itemInsert";
+        for(int i = 0 ; i <= dto.getCleanitemPrice().size(); i++) {
+        String price = dto.getCleanitemPrice()[i];
+        	
+        	
+        	in.getCleanitemPrice(price);
+        	
+        	
+        	sqlSession.insert(statement,in);
+        }
+				 
+	
+	}
 
 	
 	

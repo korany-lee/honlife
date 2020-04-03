@@ -76,6 +76,7 @@
 				<div class="th"><span>발주사원 이름</span></div>
 				<div class="th"><span>발주 날짜</span></div>
 				<div class="th"><span>납기 날짜</span></div>
+				<div class="th"><span>입고 확인</span></div>
 			</div>
 
 		</div>
@@ -110,17 +111,26 @@
 									
 									<div class="td">
 									<span>
-								
-											${ list.orderDTO.cleanorderDate}
+								<fmt:formatDate value="${ list.orderDTO.cleanorderDate}" pattern="yyyy-MM-dd" />											
 									</span>
-									</div>					
+									</div>		
+												
 									<div class="td">
 										<span >
-											${ list.orderDTO.cleanorderReceiveDate}
+								<fmt:formatDate value="${ list.orderDTO.cleanorderReceiveDate}" pattern="yyyy-MM-dd"/>											
 										</span>									
 									</div>
-							
 									
+									<div class="td">
+									<c:if test="${list.orderDTO.orderChk != 1 }">			
+										<a href="#"  onclick="javascript:orderchk('${list.empDTO.employeeNo}',${list.orderDTO.cleanorderNo})"  style="margin-right: 10px;font-size: 25px;">입고 확인</a>														
+									</c:if>
+										<c:if test="${list.orderDTO.orderChk == 1 }">
+										<a href="#" style="margin-right: 10px;font-size: 25px;">확인 완료</a>														
+										</c:if>	
+									</div>
+							
+							
 								</div>
 								<div class="tr-body">												
 													
@@ -130,6 +140,7 @@
 								<colgroup>
 						<col style="width: 155px">
 						<col style="width: 300px">
+						
 									</colgroup>
 									
 									<tr>
@@ -169,29 +180,37 @@
    										 	${list.orderDTO.cleanorderAddrdetail }									 	
    										 	</td>
   									 </tr>
+  									   
   									 <tr>
   									 <td colspan ='2'>
-  									 	<a href="#" onclick="showTable(${list.orderDTO.cleanorderNo})" >발주내역 상세보기</a>
+  									 	<a href ="#" onclick="javascript:showTable(${list.orderDTO.cleanorderNo})" style="color: red;" >###발주내역 상세보기</a>
+  									 
+  									 	
   									 	<div id="orderTable">
+  									 	
+  									
   								
   										</div>
-  									 </td>								
-  									 </tr>
-  										<tr >
-  										<td colspan ='3'>
-  										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  										&nbsp;&nbsp;&nbsp;&nbsp;
-  										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total 금액 :${list.orderDTO.allsum}
-  										</td>
-  										</tr>
+  								</td>								
+  								</tr>
+  							
   									 <tr>
    										 	<td>배송방법</td>
-   										 	<td>  ${list.orderDTO.moveHow }   </td>
-   										 
+   										 	<td>  
+   									<c:if test="${list.orderDTO.moveHow == 'youngdal' }"> 용달</c:if>	 	
+   									<c:if test="${list.orderDTO.moveHow == 'quick' }">퀵 서비스</c:if>	
+   									<c:if test="${list.orderDTO.moveHow == 'damas' }"> 다마스 퀵</c:if>	 	
+   										 	</td>					 
   									</tr>
+  									
+  									
+  									
   									<tr>
   											<td>지불방법</td>
-   										 	<td> ${list.orderDTO.movePay }    </td>
+   										 	<td>
+   								<c:if test="${list.orderDTO.movePay == 'sun' }">선불</c:if>
+   								<c:if test="${list.orderDTO.movePay == 'chak' }">착불</c:if>
+   										 	  </td>
   									</tr>
   									
   									
@@ -202,22 +221,14 @@
 </table>
 								
 									
-										<button class="minimal-btn close-tr elem-line-after">상세 닫기</button> 
+					<button class="minimal-btn close-tr elem-line-after">상세 닫기</button> 
 									
 											
-											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
+					<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
 									
-											<a href="#" class="minimal-btn close-tr2 " onclick="" style="margin-right: 10px"> 리스트 삭제</a>
-
-										
-											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
-											
-											<a href="#" class="minimal-btn close-tr2 " onclick=""  style="margin-right: 10px">??</a>
-	
-																				
-											
-										
+					<a href="#" class="minimal-btn close-tr2 " onclick="" style="margin-right: 10px"> 리스트 삭제</a>
+								
 									</div>
 										
 											
@@ -279,9 +290,10 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 </script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/themes/voxverticalvillage/assets/js/scripts.min.js'></script>
 <script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
-
 <script type="text/javascript">
-	function showTable(data1){		
+
+
+function showTable(data1){			
 		$.ajax({	        
 		        type: "post",
 		        dataType:"html",
@@ -291,9 +303,26 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 		        		$("#orderTable").html(data); 
 		        		},
 		        error : function error(){alert("error");}         
-		 });  
+		 });   
 	};
 
+	
+function orderchk(data1,data2){
+	$.ajax({	        
+        type: "post",
+        dataType:"html",
+        url: "orderChk",
+        data:{"empNo" : data1, "orderNo" : data2}, 						
+        success : function test(data){	
+        		$("#chk").html(data); 
+        		},
+        error : function error(){alert("error");}         
+ });    
+};
+	
+	
+	
+	
 
 	function deletelist(data){
 		$.ajax({	        

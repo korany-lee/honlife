@@ -20,8 +20,7 @@ public class ItemOrderListService {
 		List<EmptoItemOrderDTO> list = registRepository.orderList();
 		
 		model.addAttribute("orderList" , list);
-		
-		
-		
 	}
+	
+
 }

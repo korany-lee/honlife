@@ -112,11 +112,11 @@
 									</div>
 									<div class="td">
 															<c:if test="${list.interview == null && list.recruitClass=='cm'}">
-																<a href="#" id="interviewMail" onclick="sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
+																<a href="#" id="interviewMail" onclick="javascript:sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
 									
 									 						<c:if test="${list.interview == null && list.recruitClass == 'lm'}">
-																<a href="#" id="interviewMail" onclick="sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
+																<a href="#" id="interviewMail" onclick="javascript:sendIntMail(${list.recruitNo},'${list.recruitEmail }','${list.recruitName }')"style="margin-right: 10px">면접 메일 발송</a>
 															</c:if>
 															
 															<c:if test="${list.interview == 1 }">

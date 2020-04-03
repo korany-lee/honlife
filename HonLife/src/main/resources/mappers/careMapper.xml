@@ -153,10 +153,9 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 
 <sql id="cleanOrderBase">
 CLEANORDER_NO, EMPLOYEE_NO ,CLEANORDER_DATE, CLEANORDER_RECEIVE_DATE, 
-CLEANORDER_COMPANY_NAME, CLEANITEM_NAME, CLEANITEM_PRICE, 
-CLEANITEM_QTY, CLEANITEM_SUMPRICE, CLEANORDER_ADDRESS,
+CLEANORDER_COMPANY_NAME, CLEANORDER_ADDRESS,
 CLEANORDER_COMPANY_HP, CLEANORDER_COMPANY_FAX, CLEANORDER_POSTCODE,
-CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
+CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY, ORDER_CHK 
 </sql>
 
 <resultMap type="Model.DTO.care.CleanOrderDTO" id="orderList" >
@@ -165,10 +164,6 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
 	<result column="CLEANORDER_DATE" jdbcType="DATE" property="cleanorderDate"/>
 	<result column="CLEANORDER_RECEIVE_DATE" jdbcType="DATE" property="cleanorderReceiveDate"/>
 	<result column="CLEANORDER_COMPANY_NAME" jdbcType="VARCHAR" property="cleanorderCompanyName"/>
-	<result column="CLEANITEM_NAME" jdbcType="VARCHAR" property="cleanitemName"/>
-	<result column="CLEANITEM_PRICE" jdbcType="VARCHAR" property="cleanitemPrice"/>
-	<result column="CLEANITEM_QTY" jdbcType="VARCHAR" property="cleanitemQty"/>
-	<result column="CLEANITEM_SUMPRICE" jdbcType="VARCHAR" property="cleanitemSumprice"/>
 	<result column="CLEANORDER_ADDRESS" jdbcType="VARCHAR" property="cleanorderAddress"/>
 	<result column="CLEANORDER_COMPANY_HP" jdbcType="BIGINT" property="cleanorderCompanyPh"/>
 	<result column="CLEANORDER_COMPANY_FAX" jdbcType="BIGINT" property="cleanorderCompanyFax"/>
@@ -177,6 +172,7 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
 	<result column="ALLSUM" jdbcType="BIGINT" property="allsum"/>
 	<result column="MOVEHOW" jdbcType="VARCHAR" property="moveHow"/>
 	<result column="MOVEPAY" jdbcType="VARCHAR" property="movePay"/>
+	<result column="ORDER_CHK" jdbcType="VARCHAR" property="orderChk" />
 </resultMap>
 
 
@@ -184,10 +180,9 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
 	insert into cleanorder (<include refid="cleanOrderBase"/>)
 	
 	values (cleanitem_seq.nextval,#{employeeNo},#{cleanorderDate},#{cleanorderReceiveDate},
-	#{cleanorderCompanyName},#{cleanitemName},#{cleanitemPrice},
-	#{cleanitemQty},#{cleanitemSumprice},#{cleanorderAddress},#{cleanorderCompanyPh},
+	#{cleanorderCompanyName},#{cleanorderAddress},#{cleanorderCompanyPh},
 	#{cleanorderCompanyFax},#{cleanorderPostcode},#{cleanorderAddrdetail},
-	#{allsum},#{moveHow},#{movePay}
+	#{allsum},#{moveHow},#{movePay},null
 	)
 </select>
 	<resultMap type="Model.DTO.care.EmptoItemOrderDTO" id="EtoODTO">
@@ -201,10 +196,37 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY
 	where e.employee_no = c.employee_no 
 </select>
 
+<update id="orderChk" parameterType="Model.DTO.care.CleanOrderDTO">
+	update cleanorder 
+		set order_chk = 1
+	where cleanorder_no = #{cleanorderNo}
+	and order_chk is null
+</update>
+<sql id="itemBase">
+	CLEANITEM_NO, CLEANITEM_NAME, CLEANITEM_PRICE, CLEANITEM_QTY
+    CLEANITEM_SUMPRICE
+</sql>
 
-<select id="orderTableDetail" parameterType="Model.DTO.care.CleanOrderDTO" >
-	select  <include refid="cleanOrderBase" />
-		from cleanorder
+<insert id="itemInsert" parameterType="Model.DTO.care.CleanItemDTO">
+
+		insert into cleanitem (<include refid="itemBase"/>)
+		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice})
+
+</insert>
+
+
+
+<select id="orderTableDetail" parameterType="Model.DTO.care.CleanOrderDTO"  resultMap="orderList">
+	select  <include refid="cleanOrderBase"   />
+		from cleanorder 
+		where cleanorder_No = #{cleanorderNo}
+</select>
+
+<select id="empDetail" parameterType="Model.DTO.care.EmployeeDTO" resultMap="empList">
+	select <include refid="empBase" />
+	from employee
+	where employee_no = #{employeeNo}
+
 </select>
 
 

@@ -15,8 +15,9 @@ public class OrderTableDetailController {
 	@Autowired
 	TableDetailService tableDetailService;
 	
-	@RequestMapping(value="/manager/tableDetail" ,method = RequestMethod.POST )
-	public String table(@RequestParam(value="orderNo") String orderNo, Model model) {
+	@RequestMapping(value="/manager/tableDetail" )
+	public String table(@RequestParam(value="orderNo") String orderNo,
+								Model model) {
 		System.out.println("orderNo: "+orderNo);
 		tableDetailService.detail(orderNo,model);
 		

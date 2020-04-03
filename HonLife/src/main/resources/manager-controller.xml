@@ -12,7 +12,7 @@
 <bean class="controller.care.manager.EmployeeListController" />
 <bean class="controller.care.manager.RecruitDetailController" />
 <bean class="controller.care.manager.MailController" />
-
+<bean class="controller.care.manager.EmployeeDetailController" />
 
 <bean class="controller.shop.manager.mainController"/>
 

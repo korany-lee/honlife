@@ -50,11 +50,6 @@ body{background:#f0f0f0;}
 
 $(function(){	
 
-
-
-	
-	
-	
 	
 	/* $(document).on('click','#recruitDelete',function(){	
 		
@@ -423,8 +418,7 @@ $(function(){
 					<li><a href="#" id="cleanOrder">청소 물품 발주 </a></li>
 					<li><a href="#" id="cleanItemList">발주 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>						
-					<li><a href="#">입고확인 </a></li>								
+		  			</li>												
 					<li><a href="#">청소 물품 반출 </a></li>
 					<li><a href="#">반출 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>

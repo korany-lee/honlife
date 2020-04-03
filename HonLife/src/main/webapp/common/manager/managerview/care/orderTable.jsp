@@ -14,44 +14,36 @@
 
 <table style="undefined;table-layout: fixed; width: 627px">
 <colgroup>
-<col style="width: 130px">
-<col style="width: 130px">
-<col style="width: 130px">
-<col style="width: 130px">
-<col style="width: 130px">
+<col style="width: 80px">
+<col style="width: 80px">
+<col style="width: 80px">
+<col style="width: 80px">
+
 </colgroup>
   <tr>
     <th>품명</th>
     <th>단가</th>
     <th>수량</th>
     <th>금액</th>
-    <th>총 금액</th>
   </tr>
   
-  
-  <tr>
-  <c:forTokens items="${table.cleanitemName }" delims="," var="name" varStatus="i">
-    <c:if test="${i.index >0 }">
-    <td>${name }</td>
-    </c:if>
-    </c:forTokens>
-    <c:forTokens items="${table.cleanitemPrice }" delims="," var="price" varStatus="i">
-    <c:if test="${i.index >0 }">
-    <td>${price }</td>
-    </c:if>
-    </c:forTokens>
-    <c:forTokens items="${table.cleanitemQty }" delims="," var="qty" varStatus="i">
-   <c:if test="${i.index >0 }">
-    <td>${qty }</td>
-    </c:if>
-    </c:forTokens>
-    <c:forTokens items="${table.cleanitemSumprice }" delims="," var="sumprice" varStatus="i">
-    <c:if test="${i.index >0 }">
-    <td>${sumprice }</td>
-    </c:if>
-    </c:forTokens>
 
-  </tr>
+  	<c:forEach items="${name }" var="name" varStatus="sts">
+
+  <tr align="center">
+    <td>${name}</td>
+ 	<td>${price[sts.index]}<b>원</b></td>
+ 	<td>${qty[sts.index]}<b>개</b></td>
+ 	<td>${sumPrice[sts.index]}<b>원</b></td>
+ </tr>
+ 		
+  </c:forEach>
+  		<tr >
+ 			<td colspan="4" align="right" style="font-size:18px">총 발주금액: &nbsp;&nbsp;${table.allsum }원</td>
+ 		</tr>
+    
+
+
 
   </table>
 

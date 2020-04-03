@@ -13,13 +13,22 @@ public class TableDetailService {
 	RegistRepository registRepository;
 	
 	public void detail(String orderNo, Model model) {
-		CleanOrderDTO dto = new CleanOrderDTO() ;
-
-			dto.setCleanorderNo(orderNo);
-			dto  = registRepository.orderDetail(dto);
-			
-			model.addAttribute("table",dto);
-		
-		
+		/*
+		 * CleanOrderDTO dto = new CleanOrderDTO() ;
+		 * 
+		 * dto.setCleanorderNo(orderNo); CleanOrderDTO orderDTO =
+		 * registRepository.orderDetail(dto);
+		 * 
+		 * String [] name = orderDTO.getCleanitemName().split(","); String [] price =
+		 * orderDTO.getCleanitemPrice().split(","); String [] qty =
+		 * orderDTO.getCleanitemQty().split(","); String [] sumPrice =
+		 * orderDTO.getCleanitemSumprice().split(",");
+		 * 
+		 * model.addAttribute("table",orderDTO); model.addAttribute("name",name);
+		 * model.addAttribute("price",price); model.addAttribute("qty",qty);
+		 * model.addAttribute("sumPrice",sumPrice);
+		 */
 	}
+	
+	
 }
