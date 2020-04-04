@@ -86,10 +86,10 @@ public class RegistRepository {
 		sqlSession.insert(statement,dto);
 	}
 	
-	public List<EmptoItemOrderDTO>  orderList() {
+	public EmptoItemOrderDTO  orderList() {
 		String statement = namespace + ".orderListSelect";
 		
-		return sqlSession.selectList(statement);
+		return sqlSession.selectOne(statement);
 	}
 	
 	public CleanOrderDTO orderDetail(CleanOrderDTO dto) {
@@ -112,18 +112,19 @@ public class RegistRepository {
 	
 	public void itemInsert(CleanItemDTO dto) {
 		
-		List<CleanItemDTO> dtos =  new ArrayList<CleanItemDTO>();
-		CleanitemInsert in = new CleanitemInsert();
+	
+		
 		String statement = namespace + ".itemInsert";
-        for(int i = 0 ; i <= dto.getCleanitemPrice().size(); i++) {
-        String price = dto.getCleanitemPrice()[i];
-        	
-        	
-        	in.getCleanitemPrice(price);
-        	
-        	
+        for(int i = 0 ; i < dto.getCleanitemPrice().size(); i++) {
+        	CleanitemInsert in = new CleanitemInsert();
+     	
+        	in.setCleanitemPrice(dto.getCleanitemPrice().get(i));
+        	in.setCleanitemName(dto.getCleanitemName().get(i));
+        	in.setCleanitemQty(dto.getCleanitemQty().get(i));
+        	in.setCleanitemSumprice(dto.getCleanitemSumprice().get(i));
+              	
         	sqlSession.insert(statement,in);
-        }
+        	}
 				 
 	
 	}

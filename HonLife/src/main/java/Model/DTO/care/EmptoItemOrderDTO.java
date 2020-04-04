@@ -5,14 +5,15 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class EmptoItemOrderDTO implements Serializable{
 
-	public CleanOrderDTO getOrderDTO() {
+
+	public List<CleanOrderDTO> getOrderDTO() {
 		return orderDTO;
 	}
-	public void setOrderDTO(CleanOrderDTO orderDTO) {
+	public void setOrderDTO(List<CleanOrderDTO> orderDTO) {
 		this.orderDTO = orderDTO;
 	}
 	EmployeeDTO empDTO;                        //1
-	CleanOrderDTO orderDTO;  //1
+	List<CleanOrderDTO> orderDTO;  //n
 	
 	
 	public EmployeeDTO getEmpDTO() {

@@ -17,9 +17,9 @@ public class ItemOrderListService {
 	
 	public void list(Model model) {
 		
-		List<EmptoItemOrderDTO> list = registRepository.orderList();
+		EmptoItemOrderDTO orders = registRepository.orderList();
 		
-		model.addAttribute("orderList" , list);
+		model.addAttribute("orders" , orders);
 	}
 	
 

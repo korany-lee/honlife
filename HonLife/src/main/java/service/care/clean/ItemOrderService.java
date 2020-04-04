@@ -52,17 +52,16 @@ public void orderInsert(ItemOrderCommand itemOrderCommand, Model model) {
 
 public void itemInsert(ItemCommand itemCommand) {
 	CleanItemDTO dto1 = new CleanItemDTO();
-	
 
-
-	dto1.setCleanitemName(itemCommand.getCleanitemName());
-
+	dto1.setCleanitemName(itemCommand.getCleanitemName());		
 	dto1.setCleanitemPrice( itemCommand.getCleanitemPrice());
-
-	dto1.setCleanitemQty(itemCommand.getCleanitemQty());
-	
-	
+	dto1.setCleanitemQty(itemCommand.getCleanitemQty());		
 	dto1.setCleanitemSumprice( itemCommand.getCleanitemSumprice());
+
+	System.out.println("dto1==="+dto1.getCleanitemPrice());
+	System.out.println("dto1==="+dto1.getCleanitemName());
+	System.out.println("dto1==="+dto1.getCleanitemQty());
+	System.out.println("dto1==="+dto1.getCleanitemSumprice());
 	
 	
 	registRepository.itemInsert(dto1);

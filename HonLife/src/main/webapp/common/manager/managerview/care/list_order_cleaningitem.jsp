@@ -83,10 +83,8 @@
 	
 		<div class="table-body">
 			<div class="table-rows">	
-				<c:forEach items="${orderList }" var="list" varStatus="status">
-				
-				
-	
+				<c:forEach items="${orders.orderDTO }" var="order" varStatus="status">
+			
 					<div class="tr reserved">
 								
 							<div class="tr-content">
@@ -94,38 +92,38 @@
 																					
 									<div class="td">								
 										<span>
-										${list.orderDTO.cleanorderNo }
+										${order.cleanorderNo }
 										</span>
 									</div>
 									<div class="td">
 										 <span>
-										 ${list.orderDTO.cleanorderCompanyName}
+										 ${orders.empDTO.cleanorderCompanyName}
 										 </span>
 									</div>
 									
 									<div class="td">
 										 <span>
-										 ${list.empDTO.employeeName }
+										 ${order.empDTO.employeeName }
 										 </span>
 									</div>
 									
 									<div class="td">
 									<span>
-								<fmt:formatDate value="${ list.orderDTO.cleanorderDate}" pattern="yyyy-MM-dd" />											
+								<fmt:formatDate value="${ order.cleanorderDate}" pattern="yyyy-MM-dd" />											
 									</span>
 									</div>		
 												
 									<div class="td">
 										<span >
-								<fmt:formatDate value="${ list.orderDTO.cleanorderReceiveDate}" pattern="yyyy-MM-dd"/>											
+								<fmt:formatDate value="${ order.cleanorderReceiveDate}" pattern="yyyy-MM-dd"/>											
 										</span>									
 									</div>
 									
 									<div class="td">
-									<c:if test="${list.orderDTO.orderChk != 1 }">			
-										<a href="#"  onclick="javascript:orderchk('${list.empDTO.employeeNo}',${list.orderDTO.cleanorderNo})"  style="margin-right: 10px;font-size: 25px;">입고 확인</a>														
+									<c:if test="${order.orderChk != 1 }">			
+										<a href="#"  onclick="javascript:orderchk('${orders.empDTO.employeeNo}',${order.cleanorderNo})"  style="margin-right: 10px;font-size: 25px;">입고 확인</a>														
 									</c:if>
-										<c:if test="${list.orderDTO.orderChk == 1 }">
+										<c:if test="${order.orderChk == 1 }">
 										<a href="#" style="margin-right: 10px;font-size: 25px;">확인 완료</a>														
 										</c:if>	
 									</div>
@@ -145,45 +143,45 @@
 									
 									<tr>
 	  										<td>발주사원 연락처</td>
-	  										<td>${list.empDTO.employeePh }</td>
+	  										<td>${orders.empDTO.employeePh }</td>
   									</tr>
   									<tr>
   											<td> 발주사원 이메일</td>
-  											<td>${list.empDTO.employeeEmail }</td>
+  											<td>${orders.empDTO.employeeEmail }</td>
   									</tr>
   									
   									<tr>
     										<td>발주처</td>  									
    											<td>   											
-   												${list.orderDTO.cleanorderCompanyName}						
+   												${order.cleanorderCompanyName}						
    											</td>
   									</tr>
   									
   									<tr>
     									<td>발주처 연락처</td>
-   									    <td>${list.orderDTO.cleanorderCompanyPh }</td>
+   									    <td>${order.cleanorderCompanyPh }</td>
   									</tr>					
   									<tr>
     									<td>발주처 팩스</td>
-    									<td>${list.orderDTO.cleanorderCompanyFax }<td>
+    									<td>${order.cleanorderCompanyFax }<td>
   									</tr>
   								
   									<tr>
     									<td>우편번호</td>
-    									<td>${list.orderDTO.cleanorderPostcode } </td>
+    									<td>${order.cleanorderPostcode } </td>
                                     </tr>
                                     
  									 <tr>
    										 	<td>발주처 주소</td>
    										 	<td> 
-   										 	${list.orderDTO.cleanorderAddress } <br>
-   										 	${list.orderDTO.cleanorderAddrdetail }									 	
+   										 	${order.cleanorderAddress } <br>
+   										 	${order.cleanorderAddrdetail }									 	
    										 	</td>
   									 </tr>
   									   
   									 <tr>
   									 <td colspan ='2'>
-  									 	<a href ="#" onclick="javascript:showTable(${list.orderDTO.cleanorderNo})" style="color: red;" >###발주내역 상세보기</a>
+  									 	<a href ="#" onclick="javascript:showTable(${order.cleanorderNo})" style="color: red;" >###발주내역 상세보기</a>
   									 
   									 	
   									 	<div id="orderTable">
@@ -197,9 +195,9 @@
   									 <tr>
    										 	<td>배송방법</td>
    										 	<td>  
-   									<c:if test="${list.orderDTO.moveHow == 'youngdal' }"> 용달</c:if>	 	
-   									<c:if test="${list.orderDTO.moveHow == 'quick' }">퀵 서비스</c:if>	
-   									<c:if test="${list.orderDTO.moveHow == 'damas' }"> 다마스 퀵</c:if>	 	
+   									<c:if test="${order.moveHow == 'youngdal' }"> 용달</c:if>	 	
+   									<c:if test="${order.moveHow == 'quick' }">퀵 서비스</c:if>	
+   									<c:if test="${order.moveHow == 'damas' }"> 다마스 퀵</c:if>	 	
    										 	</td>					 
   									</tr>
   									
@@ -208,8 +206,8 @@
   									<tr>
   											<td>지불방법</td>
    										 	<td>
-   								<c:if test="${list.orderDTO.movePay == 'sun' }">선불</c:if>
-   								<c:if test="${list.orderDTO.movePay == 'chak' }">착불</c:if>
+   								<c:if test="${order.movePay == 'sun' }">선불</c:if>
+   								<c:if test="${order.movePay == 'chak' }">착불</c:if>
    										 	  </td>
   									</tr>
   									

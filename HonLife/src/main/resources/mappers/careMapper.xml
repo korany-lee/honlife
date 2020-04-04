@@ -187,13 +187,18 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY, ORDER_CHK
 </select>
 	<resultMap type="Model.DTO.care.EmptoItemOrderDTO" id="EtoODTO">
 		<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="empList"/>
-		<association property="orderDTO" javaType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"/>
+		<collection property="orderDTO" ofType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"></collection>
 	</resultMap>
 
 <select id="orderListSelect" resultMap="EtoODTO" > 
 	select e.employee_name,e.employee_Ph,e.employee_Email, c.*
-	from employee e , cleanorder c
-	where e.employee_no = c.employee_no 
+	from employee e left outer join cleanorder c
+	<trim prefix="where" prefixOverrides="AND | OR">
+		
+		<if test="value != null"> 
+		 AND e.employee_no = c.employee_no 
+		</if>
+	</trim>
 </select>
 
 <update id="orderChk" parameterType="Model.DTO.care.CleanOrderDTO">
@@ -203,11 +208,11 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY, ORDER_CHK
 	and order_chk is null
 </update>
 <sql id="itemBase">
-	CLEANITEM_NO, CLEANITEM_NAME, CLEANITEM_PRICE, CLEANITEM_QTY
+	CLEANITEM_NO, CLEANITEM_NAME, CLEANITEM_PRICE, CLEANITEM_QTY,
     CLEANITEM_SUMPRICE
 </sql>
 
-<insert id="itemInsert" parameterType="Model.DTO.care.CleanItemDTO">
+<insert id="itemInsert" parameterType="Model.DTO.care.CleanitemInsert">
 
 		insert into cleanitem (<include refid="itemBase"/>)
 		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice})

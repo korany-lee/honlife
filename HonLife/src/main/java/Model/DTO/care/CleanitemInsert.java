@@ -1,8 +1,9 @@
 package Model.DTO.care;
 
+import java.io.Serializable;
 import java.util.List;
-
-public class CleanitemInsert {
+@SuppressWarnings("serial")
+public class CleanitemInsert implements Serializable{
 	
 	public String getCleanitemNo() {
 		return cleanitemNo;
