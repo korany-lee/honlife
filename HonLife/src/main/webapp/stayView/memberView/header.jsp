@@ -133,6 +133,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="../funiture/select?type=기타">기타 가구</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../funiture/furnitureRev">가구 예약하기</a>
+                      </li>
                       
                     </ul>
                   </li>

@@ -52,6 +52,18 @@ select * from furniture where funiture_name Like '%'||#{content}||'%' and furnit
 insert into furnitureWish(user_no,furniture_no) values(#{userNo},#{furnitureNo})
 </insert>
 
+<select id="fDateChk" parameterType="Model.DTO.TimeCheckDTO" resultMap="furnitures">
+select * from furniture where  furniture_no NOT IN
+(select furniture_no from furniturerev where #{start} between furniturerev_startdate and furniturerev_enddate or #{end} between furniturerev_startdate and furniturerev_enddate)
+</select>
+
+<select id="getNo" parameterType="string" resultType="string">
+select  distinct(furniture_no) from furniturewish where user_no=#{userNo} order by furniture_no
+</select>
+
+<select id="getPrice" parameterType="string" resultType="integer">
+select furniture_rentalfee from furniture where furniture_no = #{furnitureNo}
+</select>
 
 
 </mapper>

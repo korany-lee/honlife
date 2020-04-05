@@ -32,6 +32,7 @@
 	<result column="room_no" jdbcType="VARCHAR" property="roomNo" />
 	<result column="furniturerev_startdate" jdbcType="TIMESTAMP" property="furnitureRevStartDate" />
 	<result column="furniturerev_enddate" jdbcType="TIMESTAMP" property="furnitureRevEndDate" />
+	<result column="furniture_no" jdbcType="VARCHAR" property="furnitureNo" />
 </resultMap>
 
 
@@ -52,7 +53,7 @@
 </select>
 
 <select id="selectfRevList" resultMap="furnitureRev" parameterType="string">
-	select furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,to_timestamp(furniturerev_enddate+1) as furniturerev_enddate from furniturerev where
+	select furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,to_timestamp(furniturerev_enddate+1) as furniturerev_enddate,furniture_no from furniturerev where
 	
 </select>
 
@@ -64,5 +65,23 @@ select * from roomrev where roomrev_no=(select max(roomrev_no) from roomrev wher
 <select id="userRev" resultMap="roomRev" parameterType="string">
 select * from roomrev where user_no = #{userNo}
 </select>
+
+<select id="oneRev" resultMap="roomRev" parameterType="string" >
+select * from roomrev where ROOMREV_NO = #{revNum}
+</select>
+
+<insert id="makeSeq">
+insert into makeSeq values (furniturerev_seq.nextval)
+</insert>
+
+<select id="selectSeq" resultType="string">
+select max(furniture_no) from makeSeq
+</select>
+
+<insert id="frevInsert" parameterType="Model.DTO.FurnitureRevDTO">
+insert into furniturerev(furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,furniturerev_enddate,furniture_no)
+values(#{furnitureRevNo},#{roomRevNo},#{userNo},#{roomNo},#{furnitureRevStartDate},#{furnitureRevEndDate},#{furnitureNo})
+</insert>
+
 
 </mapper>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import Model.DTO.FurnitureDTO;
 import Model.DTO.FurnitureWishDTO;
 import Model.DTO.SearchDTO;
+import Model.DTO.TimeCheckDTO;
 
 
 @Repository
@@ -25,6 +26,7 @@ public class FurnitureRepository {
 	public List<FurnitureDTO> furnitureList() {
 		String statement = namespace +".furnitureList";
 		return sqlSession.selectList(statement);
+	
 	}
 	
 	public List<FurnitureDTO> selectType(String furnitureType){
@@ -45,6 +47,20 @@ public class FurnitureRepository {
 	public void wishInsert(FurnitureWishDTO dto) {
 		String statement = namespace +".wishInsert";
 		sqlSession.insert(statement, dto);
+	}
+	
+	public List<FurnitureDTO> fDateChk(TimeCheckDTO dto) {
+		String statement = namespace + ".fDateChk";
+		return sqlSession.selectList(statement, dto);
+	}
+	
+	public List<String> getFurnitureNo(String userNo){
+		String statement = namespace + ".getNo";
+		return sqlSession.selectList(statement, userNo);
+	}
+	public Integer getPrice(String furnitureNo) {
+		String statement = namespace + ".getPrice";
+		return sqlSession.selectOne(statement, furnitureNo);
 	}
 	
 }

@@ -100,6 +100,9 @@
                     <li>
                       <a href="select?type=기타">기타 가구</a>
                     </li>
+                    <li>
+                      <a href="furnitureRev">가구 예약하기</a>
+                    </li>
                     
                   </ul>
                 </div>

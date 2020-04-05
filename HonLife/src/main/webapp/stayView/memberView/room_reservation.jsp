@@ -121,6 +121,7 @@
              </div>      
              <input type="hidden" value="${total }" id="price" name="price">
          		<div class="col-md-12 text-right">
+         			<input type="submit" class="main_btn" value="<fmt:formatNumber value="${total}" pattern="#,###" /> 원 결제하기">
 					 <a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
 					     
 				</div>	

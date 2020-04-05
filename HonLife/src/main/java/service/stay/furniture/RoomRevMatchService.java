@@ -20,7 +20,7 @@ public class RoomRevMatchService {
 	public void roomRevFind(HttpSession session,Model model) {
 		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
 		List<RoomRevDTO> dto = reservationRepository.userRev(login.getUserNo());
-		System.out.println("예약 몇개? =" + dto.size());
+	
 		
 		model.addAttribute("roomRev", dto);
 		

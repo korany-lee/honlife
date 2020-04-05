@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,29 +44,36 @@
       <div class="container">
         <div class="cart_inner">
           <div class="table-responsive">
+          	<h3>방 예약번호 :${revNo }</h3> <h4>임대 기간 :<fmt:formatDate value="${start }" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${end }" pattern="yyyy-MM-dd"/></h4>
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col">상품정보</th>
-                  <th scope="col">가격</th>
+                  <th scope="col">1일 대여료</th>
                   <th scope="col">수량</th>
-                  <th scope="col">총가격</th>
+                  <th scope="col">총 대여료</th>
                 </tr>
               </thead>
               <tbody>
+             <c:forEach items="${list }" var="wish">
                 <tr>
                   <td>
                     <div class="media">
                       <div class="d-flex">
-                        <img src="img/product/single-product/cart-1.jpg"  alt="" />
+                       <c:forTokens items="${wish.furniturePhoto }" delims="-" var="furniturePhoto" varStatus="status">
+                  			<c:if test="${status.count == 1 }">
+                        <img src="/project/stayView/memberView/update/${furniturePhoto }"  width="150px" height="150px"alt="" />
+                        </c:if>
+                       </c:forTokens>
                       </div>
+                      
                       <div class="media-body">
-                        <p>상품명 들어올곳</p>
+                        <p>${wish.furnitureName }</p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <h5>1일대여비</h5>
+                    <h5><fmt:formatNumber value="${wish.furnitureRentalFee }" pattern="#,###" />원</h5>
                   </td>
                   <td>
                     <div class="product_count">
@@ -84,7 +93,7 @@
                     <h5>1일대여비</h5>
                   </td>
                 </tr>
-                
+                </c:forEach>
                 
                 <tr class="bottom_button">
                   <td>
@@ -103,8 +112,8 @@
                   <td>
                     <h5>총 대여비</h5>
                   </td>
-                  <td>
-                    <h5>$2160.00</h5>
+                  <td width="100px">
+                    <h5><fmt:formatNumber value="${totalprice}" pattern="#,###" />원</h5>
                   </td>
                 </tr>
                 
@@ -115,7 +124,7 @@
                   <td>
                     <div class="checkout_btn_inner">
                       <a class="gray_btn" href="javascript:history.back();">쇼핑 계속하기</a>
-                      <a class="main_btn" href="#">결제하기</a>
+                      <a class="main_btn" href="payment?price=${totalprice }&&rev=${revNo }"><fmt:formatNumber value="${totalprice}" pattern="#,###" />원 결제하기</a>
                     </div>
                   </td>
                 </tr>

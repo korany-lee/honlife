@@ -11,8 +11,16 @@ public class FurnitureRevDTO  implements Serializable{
 	String roomNo;
 	Timestamp furnitureRevStartDate;
 	Timestamp furnitureRevEndDate;
+	String furnitureNo;
 	
 	
+	
+	public String getFurnitureNo() {
+		return furnitureNo;
+	}
+	public void setFurnitureNo(String furnitureNo) {
+		this.furnitureNo = furnitureNo;
+	}
 	public String getFurnitureRevNo() {
 		return furnitureRevNo;
 	}

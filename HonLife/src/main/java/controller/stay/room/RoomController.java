@@ -98,7 +98,6 @@ public class RoomController {
 	@RequestMapping("/room/payment")    //카카오페이 결제창으로
 	public String pay(ReservationCommand revCommand,Model model) {
 		model.addAttribute("rev", revCommand);
-		System.out.println("날짜값=" +revCommand.getStartDate());
 		return "stayView/memberView/kakaoPay";
 	}
 	
@@ -109,7 +108,7 @@ public class RoomController {
 		return "stayView/memberView/reservation_finish";
 	}
 	
-	@RequestMapping("/room/reservationFail")   //예약정보 저장
+	@RequestMapping("/room/reservationFail")   //예약실패
 	public String payFail(@RequestParam(value="roomNo")String roomNo) {
 		
 		return "stayView/memberView/room_fail";

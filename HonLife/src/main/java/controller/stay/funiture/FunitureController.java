@@ -1,5 +1,7 @@
 package controller.stay.funiture;
 
+import java.sql.Timestamp;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import command.stay.furniture.FurnitureCommand;
+import service.stay.furniture.FurnitureDateService;
 import service.stay.furniture.FurnitureInsertService;
 import service.stay.furniture.FurnitureListService;
+import service.stay.furniture.FurnitureRevInsertService;
 import service.stay.furniture.FurnitureRevListService;
+import service.stay.furniture.FurnitureWishListService;
 import service.stay.furniture.RoomRevMatchService;
 
 @Controller
@@ -31,6 +36,14 @@ public class FunitureController {
 	@Autowired
 	FurnitureRevListService furnitureRevListService;
 	
+	@Autowired
+	FurnitureDateService furnitureDateService;
+	
+	@Autowired
+	FurnitureWishListService furnitureWishListService;
+	
+	@Autowired
+	FurnitureRevInsertService furnitureRevInsertService;
 	//회원용
 	
 	
@@ -74,25 +87,44 @@ public class FunitureController {
 	}
 	
 	@RequestMapping("/funiture/furnitureWishInsert")    //장바구니에 담기
-	public void furnitureWish(@RequestParam(value="furnitureNo") String furnitureNo,HttpSession session) {
+	public String furnitureWish(@RequestParam(value="furnitureNo") String furnitureNo,HttpSession session) {
+		System.out.println("장바구니 넣기 컨트롤러 들어옴");
 		furnitureInsertService.wishInsert(furnitureNo,session);
+		return "redirect:/funiture/furnitureRev";
 		
 	}
-	@RequestMapping("/funiture/furnitureWishList")
-	public String wishList(HttpSession session) {
-		
+	@RequestMapping("/funiture/furnitureWishList") //장바구니로 이동
+	public String wishList(@RequestParam(value="start")Timestamp startDate,@RequestParam(value="end")Timestamp endDate,
+			@RequestParam(value="revNum") String revNo,HttpSession session,Model model) {
+		furnitureWishListService.wishList(session,model,startDate,endDate,revNo);
 		return "stayView/memberView/furniture_wishList";
 	}
 	
-	
-	
-	@RequestMapping("/funiture/fReservation")  //방 예약선택
+	@RequestMapping("/funiture/furnitureRev")  //방 예약선택
 	public String furnitureRev(HttpSession session,Model model) {
 		roomRevMatchService.roomRevFind(session, model);
 		return "stayView/memberView/furniture_roomRevSelect";
 	}
 	
+	@RequestMapping("/funiture/furnitureList")  //방 예약 선택 후 예약가능 가구 리스트
+	public String furnitureList(@RequestParam(value="revNo")String revNum,Model model) {
+		furnitureDateService.fRevChk(revNum,model);	
+		return "stayView/memberView/furnitureList";
+	}
 	
+	@RequestMapping("/funiture/payment")  //카카오 페이지로 이동
+	public String payment(@RequestParam(value="price")Integer Fee,@RequestParam(value="rev")String revNum,Model model) {
+		model.addAttribute("price", Fee);	
+		model.addAttribute("revNo", revNum);
+		return "stayView/memberView/furniturePay";
+	}
+	
+	@RequestMapping("/funiture/furnitureRevFinish")//결제 완료되면 insert
+	public String payFinish(@RequestParam(value="revNo")String revNum,Model model) {
+		System.out.println("컨트롤러는 들어왔음");
+		furnitureRevInsertService.furnitureRevInsert(revNum,model);
+		return "redirect:/stayMain";
+	}
 	
 	
 	

@@ -67,7 +67,7 @@ public class FurnitureInsertService {
 	
 	public void wishInsert(String furnitureNo,HttpSession session) {
 		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-		
+		System.out.println("insert 서비스 들어옴");
 		
 		FurnitureWishDTO dto = new FurnitureWishDTO();
 		dto.setUserNo(login.getUserNo());

@@ -11,28 +11,28 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Hon Life - 층별 객실안내</title>
+    <title>Hon Life - 거실용 가구</title>
     
   <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
  	<script type="text/javascript">
-	$(function() {
-		$("#floorSelect").change(function() {
-			/*  location.href = "sizeSelect?size="+$("#sizeSelect").val(); */  
-			  $("#bdto").innerHTML = "";  
+	  $(function() {
+		$("#furnitureRevSelect").change(function() {
+			  
+			  $("#furnitureList").innerHTML = "";  
 			 	
 			 $.ajax({
 				type : "POST",
-				url : "floorSelect",
-				data : "floor=" + $("#floorSelect").val(),
+				url : "furnitureList",
+				data : {"revNo" :  $("#furnitureRevSelect").val() } ,
 				datatype : "html",
 				success : function(data1) {
-					$("#bdto").html(data1);
+					$("#furnitureList").html(data1);
 				}
 			});  
 		});  
-	});
-
+	}); 
+ 
 	</script>
   <body>
    <jsp:include page="/stayView/memberView/header.jsp" />
@@ -44,13 +44,13 @@
         <div class="container">
           <div class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
-              <h2>객실소개/예약</h2>
-              <p>고객님에게 맞는 다양한 객실을 만나보세요</p>
+              <h2>가구소개/예약</h2>
+              <p>고객님의 스타일에 맞는 가구를 만나보세요</p>
             </div>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="category.html">객실소개/예약</a>
-              <a href="category.html">층별 안내</a>
+              <a href="category.html">가구소개/예약</a>
+              <a href="category.html">거실용품</a>
             </div>
           </div>
         </div>
@@ -61,19 +61,22 @@
     <!--================Category Product Area =================-->
      <section class="cat_product_area section_gap">
       <div class="container">
-        
-          
+        <div class="row flex-row-reverse">
+          <div class="col-lg-9">
             <div class="product_top_bar">
               <div class="left_dorp">
-              <c:if test="${!empty roomRev  }">
+              	<c:if test="${!empty roomRev  }">
               <h2>객실 예약을 선택하세요</h2>
-                <select class="sorting" id="roomRevSelect" style="width:400px;">
+                <select class="sorting" id="furnitureRevSelect" style="width:400px;">
                  <c:forEach items="${roomRev }" var="room">
                   <option value="">예약선택</option>
-                  <option value="${room.roomRevNo }">
-                  	<fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy년 MM월 dd일"/> ~ 
+                  <option value="${room.roomRevNo }" >
+                 
+                  	<fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy년 MM월 dd일" /> ~ 
                   	<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy년 MM월 dd일"/> (${room.roomNo }호)
                   </option>
+                   <input type="hidden" id="start" value="${room.roomRevStartDate }">
+                   <input type="hidden" id="end" value="${room.roomRevEndDate }">
 				</c:forEach>
                 </select>
                 </c:if>
@@ -81,26 +84,61 @@
                 <h3>선택가능한 객실예약이 없습니다.</h3>
                
                 </c:if>
-                
               </div>
-              
             </div>
-            <div class="col-md-12 text-right">
-					<a class="main_btn"  href="javascript:history.back();">뒤로가기</a>
-					     
-				</div>
             
             <div class="latest_product_inner">
-              <div class="row" id="bdto">
+              <div class="row" id="furnitureList">
+              
+              
+             
+              
               
               
               </div>
+              
+              
             </div>
-          
+            
+          </div>
 
-         
+          <div class="col-lg-3">
+            <div class="left_sidebar_area">
+              <aside class="left_widgets p_filter_widgets">
+                <div class="l_w_title">
+                  <h3>가구소개/예약</h3>
+                </div>
+                <div class="widgets_inner">
+                  <ul class="list">
+                    <li>
+                      <a href="select?type=거실용품">거실용 가구</a>
+                    </li>
+                    <li>
+                      <a href="select?type=주방용품">주방용 가구</a>
+                    </li>
+                    <li>
+                      <a href="select?type=침실용품">침실용 가구</a>
+                    </li>
+                    <li>
+                      <a href="select?type=기타">기타 가구</a>
+                    </li>
+                    <li>
+                      <a href="furnitureRev">가구 예약하기</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </aside>
+
+              
+
+             
+
+           
+            </div>
+          </div>
         </div>
-     
+      </div>
     </section>
     <!--================End Category Product Area =================-->
 
