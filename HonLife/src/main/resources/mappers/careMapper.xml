@@ -173,35 +173,56 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY, ORDER_CHK
 	<result column="MOVEHOW" jdbcType="VARCHAR" property="moveHow"/>
 	<result column="MOVEPAY" jdbcType="VARCHAR" property="movePay"/>
 	<result column="ORDER_CHK" jdbcType="VARCHAR" property="orderChk" />
+	<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="empList"/>
+	<association property="itemDTO" javaType="Model.DTO.care.CleanitemInsert" resultMap="itemList" />
 </resultMap>
 
 
 <select id="orderInsert" parameterType="Model.DTO.care.CleanOrderDTO">
 	insert into cleanorder (<include refid="cleanOrderBase"/>)
 	
-	values (cleanitem_seq.nextval,#{employeeNo},#{cleanorderDate},#{cleanorderReceiveDate},
+	values (#{cleanorderNo},#{employeeNo},#{cleanorderDate},#{cleanorderReceiveDate},
 	#{cleanorderCompanyName},#{cleanorderAddress},#{cleanorderCompanyPh},
 	#{cleanorderCompanyFax},#{cleanorderPostcode},#{cleanorderAddrdetail},
 	#{allsum},#{moveHow},#{movePay},null
 	)
 </select>
+
+	
+
+
 	<resultMap type="Model.DTO.care.EmptoItemOrderDTO" id="EtoODTO">
+		<association property="orderDTO" javaType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"  />
 		<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="empList"/>
-		<collection property="orderDTO" ofType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"></collection>
+	
 	</resultMap>
 
-<select id="orderListSelect" resultMap="EtoODTO" > 
-	select e.employee_name,e.employee_Ph,e.employee_Email, c.*
-	from employee e left outer join cleanorder c
-	<trim prefix="where" prefixOverrides="AND | OR">
-		
-		<if test="value != null"> 
-		 AND e.employee_no = c.employee_no 
-		</if>
-	</trim>
+<select id="orderListSelect" resultMap="orderList" > 
+select   c.CLEANORDER_NO, c.CLEANORDER_DATE, c.CLEANORDER_RECEIVE_DATE, 
+		    c.CLEANORDER_COMPANY_NAME, c.CLEANORDER_ADDRESS,
+			c.CLEANORDER_COMPANY_HP, c.CLEANORDER_COMPANY_FAX, c.CLEANORDER_POSTCODE,
+			c.CLEANORDER_ADDRDETAIL, c.ALLSUM, c.MOVEHOW, c.MOVEPAY, c.ORDER_CHK,
+			e.EMPLOYEE_NO, e.EMPLOYEE_NAME, e.EMPLOYEE_WORKFIELD, 	  
+	         e.EMPLOYEE_PH, e.EMPLOYEE_EMAIL, t.CLEANITEM_NO, t.CLEANITEM_NAME, t.CLEANITEM_PRICE, 
+	         t.CLEANITEM_QTY, t.CLEANITEM_SUMPRICE , t.EMPLOYEE_NO, t.ClEANORDER_NO
+	         
+from     employee e , cleanorder c , cleanitem t
+where    e.employee_no = c.employee_no
+and        c.cleanorder_no = t.cleanorder_no
+    
 </select>
-
-<update id="orderChk" parameterType="Model.DTO.care.CleanOrderDTO">
+<resultMap type="Model.DTO.care.CleanitemInsert" id="itemList">
+			<id column="CLEANITEM_NO" jdbcType="VARCHAR" property="cleanitemNo"/>
+			<result column="CLEANITEM_NAME" jdbcType="VARCHAR" property="cleanitemName"/>
+			<result column="CLEANITEM_PRICE" jdbcType="VARCHAR" property="cleanitemPrice"/>
+			<result column="CLEANITEM_QTY" jdbcType="VARCHAR" property="cleanitemQty"/>
+			<result column="CLEANITEM_SUMPRICE" jdbcType="VARCHAR" property="cleanitemSumprice"/>
+			<result column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
+			<result column="ClEANORDER_NO" jdbcType="VARCHAR" property="cleanorderNo"/>
+	</resultMap>
+	
+	
+	<update id="orderChk" parameterType="Model.DTO.care.CleanOrderDTO">
 	update cleanorder 
 		set order_chk = 1
 	where cleanorder_no = #{cleanorderNo}
@@ -209,21 +230,22 @@ CLEANORDER_ADDRDETAIL, ALLSUM, MOVEHOW, MOVEPAY, ORDER_CHK
 </update>
 <sql id="itemBase">
 	CLEANITEM_NO, CLEANITEM_NAME, CLEANITEM_PRICE, CLEANITEM_QTY,
-    CLEANITEM_SUMPRICE
+    CLEANITEM_SUMPRICE ,EMPLOYEE_NO,ClEANORDER_NO
 </sql>
 
 <insert id="itemInsert" parameterType="Model.DTO.care.CleanitemInsert">
 
 		insert into cleanitem (<include refid="itemBase"/>)
-		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice})
+		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice},
+					#{employeeNo},#{cleanorderNo})
 
 </insert>
 
 
 
-<select id="orderTableDetail" parameterType="Model.DTO.care.CleanOrderDTO"  resultMap="orderList">
-	select  <include refid="cleanOrderBase"   />
-		from cleanorder 
+<select id="orderTableList" parameterType="string"  resultMap="itemList">
+	select  <include refid="itemBase"   />
+		from cleanitem 
 		where cleanorder_No = #{cleanorderNo}
 </select>
 

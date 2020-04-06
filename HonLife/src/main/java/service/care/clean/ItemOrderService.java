@@ -19,9 +19,11 @@ public class ItemOrderService {
 RegistRepository registRepository;
 
 public void orderInsert(ItemOrderCommand itemOrderCommand, Model model) {
-
-	CleanOrderDTO dto = new CleanOrderDTO();	
 	
+	
+	
+	CleanOrderDTO dto = new CleanOrderDTO();	
+	dto.setCleanorderNo(itemOrderCommand.getCleanorderNo());
 	dto.setEmployeeNo(itemOrderCommand.getEmployeeNo());
 	Date orderDate = new Date(itemOrderCommand.getCleanorderDate().getTime());
 	System.out.println("orderDate= " + orderDate);
@@ -29,7 +31,7 @@ public void orderInsert(ItemOrderCommand itemOrderCommand, Model model) {
 	System.out.println("receiveDate= " + receiveDate);
 	dto.setCleanorderDate(orderDate);
 	dto.setCleanorderReceiveDate(receiveDate);
-
+	
 	dto.setCleanorderCompanyName(itemOrderCommand.getCleanorderCompanyName());
 	dto.setCleanorderAddress(itemOrderCommand.getCleanorderAddress());
 	dto.setCleanorderCompanyPh(itemOrderCommand.getCleanorderCompanyPh());
@@ -50,9 +52,10 @@ public void orderInsert(ItemOrderCommand itemOrderCommand, Model model) {
 	
 }
 
-public void itemInsert(ItemCommand itemCommand) {
+public void itemInsert(ItemCommand itemCommand, ItemOrderCommand itemOrderCommand ) {
 	CleanItemDTO dto1 = new CleanItemDTO();
-
+	dto1.setCleanorderNo(itemOrderCommand.getCleanorderNo());
+	dto1.setEmployeeNo(itemOrderCommand.getEmployeeNo());
 	dto1.setCleanitemName(itemCommand.getCleanitemName());		
 	dto1.setCleanitemPrice( itemCommand.getCleanitemPrice());
 	dto1.setCleanitemQty(itemCommand.getCleanitemQty());		
@@ -62,7 +65,7 @@ public void itemInsert(ItemCommand itemCommand) {
 	System.out.println("dto1==="+dto1.getCleanitemName());
 	System.out.println("dto1==="+dto1.getCleanitemQty());
 	System.out.println("dto1==="+dto1.getCleanitemSumprice());
-	
+	System.out.println("insertService=" + dto1.getEmployeeNo());
 	
 	registRepository.itemInsert(dto1);
 }

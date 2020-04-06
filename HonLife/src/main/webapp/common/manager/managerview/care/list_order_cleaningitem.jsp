@@ -71,7 +71,7 @@
 		<div class="table-head">
 
 			<div class="table-head-content section-content clearfix">		
-				<div class="th"><span>발주 번호</span></div>
+				<div class="th"><span>순번</span></div>
 				<div class="th"><span>발주 처</span></div>
 				<div class="th"><span>발주사원 이름</span></div>
 				<div class="th"><span>발주 날짜</span></div>
@@ -83,7 +83,10 @@
 	
 		<div class="table-body">
 			<div class="table-rows">	
-				<c:forEach items="${orders.orderDTO }" var="order" varStatus="status">
+				<c:forEach items="${orders}" var="list" varStatus="str1">
+				<input type="hidden" value="${str1.count }" id="count"/>
+					
+		
 			
 					<div class="tr reserved">
 								
@@ -92,44 +95,48 @@
 																					
 									<div class="td">								
 										<span>
-										${order.cleanorderNo }
+									${ str1.count }
 										</span>
 									</div>
 									<div class="td">
 										 <span>
-										 ${orders.empDTO.cleanorderCompanyName}
+									${list.cleanorderCompanyName }
 										 </span>
 									</div>
-									
 									<div class="td">
 										 <span>
-										 ${order.empDTO.employeeName }
+									${list.empDTO.employeeName }
 										 </span>
 									</div>
 									
 									<div class="td">
 									<span>
-								<fmt:formatDate value="${ order.cleanorderDate}" pattern="yyyy-MM-dd" />											
+									<fmt:formatDate value="${list.cleanorderDate }"  pattern="yyyy/MM/dd"/>
+															
 									</span>
 									</div>		
 												
 									<div class="td">
 										<span >
-								<fmt:formatDate value="${ order.cleanorderReceiveDate}" pattern="yyyy-MM-dd"/>											
+										<fmt:formatDate value="${list.cleanorderReceiveDate }" pattern="yyyy/MM/dd"/>
+									
 										</span>									
 									</div>
 									
 									<div class="td">
-									<c:if test="${order.orderChk != 1 }">			
-										<a href="#"  onclick="javascript:orderchk('${orders.empDTO.employeeNo}',${order.cleanorderNo})"  style="margin-right: 10px;font-size: 25px;">입고 확인</a>														
+									<c:if test="">			
+										<a href="#"  onclick="javascript:orderchk('${list.empDTO.employeeNo}','${cleanorderNo }')"  style="margin-right: 10px;font-size: 25px;">입고 확인</a>														
 									</c:if>
-										<c:if test="${order.orderChk == 1 }">
+										<c:if test="">
 										<a href="#" style="margin-right: 10px;font-size: 25px;">확인 완료</a>														
 										</c:if>	
 									</div>
 							
 							
 								</div>
+						
+								
+								
 								<div class="tr-body">												
 													
 									<div class="col-right" style="margin-right: 200px;">
@@ -140,54 +147,56 @@
 						<col style="width: 300px">
 						
 									</colgroup>
-									
+					
 									<tr>
 	  										<td>발주사원 연락처</td>
-	  										<td>${orders.empDTO.employeePh }</td>
+	  										<td> ${list.empDTO.employeePh }</td>
   									</tr>
   									<tr>
   											<td> 발주사원 이메일</td>
-  											<td>${orders.empDTO.employeeEmail }</td>
+  											<td>${list.empDTO.employeeEmail }</td>
   									</tr>
   									
   									<tr>
     										<td>발주처</td>  									
    											<td>   											
-   												${order.cleanorderCompanyName}						
+   										${list.cleanorderCompanyName }		
    											</td>
   									</tr>
   									
   									<tr>
     									<td>발주처 연락처</td>
-   									    <td>${order.cleanorderCompanyPh }</td>
+   									    <td>${list.cleanorderCompanyPh }</td>
   									</tr>					
   									<tr>
     									<td>발주처 팩스</td>
-    									<td>${order.cleanorderCompanyFax }<td>
+    									<td>${list.cleanorderCompanyFax }<td>
   									</tr>
   								
   									<tr>
     									<td>우편번호</td>
-    									<td>${order.cleanorderPostcode } </td>
+    									<td>${list.cleanorderPostcode }</td>
                                     </tr>
                                     
  									 <tr>
    										 	<td>발주처 주소</td>
    										 	<td> 
-   										 	${order.cleanorderAddress } <br>
-   										 	${order.cleanorderAddrdetail }									 	
+   										 	 ${list.cleanorderAddress }	<br>
+   										 	 ${list.cleanorderAddrdetail }
+   										
+   										 							 	
    										 	</td>
   									 </tr>
   									   
   									 <tr>
   									 <td colspan ='2'>
-  									 	<a href ="#" onclick="javascript:showTable(${order.cleanorderNo})" style="color: red;" >###발주내역 상세보기</a>
+  									 	<a href ="#" onclick="javascript:showTable('${list.cleanorderNo}')" style="color: red; cursor: pointer;" >###발주내역 상세보기</a>
   									 
   									 	
-  									 	<div id="orderTable">
-  									 	
-  									
-  								
+  									 
+  										
+  										<div>
+  											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	총 발주 금액 : ${list.allsum }원
   										</div>
   								</td>								
   								</tr>
@@ -195,9 +204,9 @@
   									 <tr>
    										 	<td>배송방법</td>
    										 	<td>  
-   									<c:if test="${order.moveHow == 'youngdal' }"> 용달</c:if>	 	
-   									<c:if test="${order.moveHow == 'quick' }">퀵 서비스</c:if>	
-   									<c:if test="${order.moveHow == 'damas' }"> 다마스 퀵</c:if>	 	
+   									<c:if test=""> 용달</c:if>	 	
+   									<c:if test="">퀵 서비스</c:if>	
+   									<c:if test=""> 다마스 퀵</c:if>	 	
    										 	</td>					 
   									</tr>
   									
@@ -206,19 +215,19 @@
   									<tr>
   											<td>지불방법</td>
    										 	<td>
-   								<c:if test="${order.movePay == 'sun' }">선불</c:if>
-   								<c:if test="${order.movePay == 'chak' }">착불</c:if>
+   								<c:if test="">선불</c:if>
+   								<c:if test="">착불</c:if>
    										 	  </td>
   									</tr>
-  									
-  									
+  								
+  					
   									
   									
   								
   								
 </table>
 								
-									
+								
 					<button class="minimal-btn close-tr elem-line-after">상세 닫기</button> 
 									
 											
@@ -234,9 +243,9 @@
 								</div>
 							</div>
 						</div>
-				</c:forEach>
 
-							
+
+								</c:forEach>	
 			</div>
 
 		</div>
@@ -250,9 +259,10 @@
       <!-- Modal content -->
  
       <div class="modal-content" style="text-align: center;">     
-      <img src="../common/member/image/mail.jpg" style="width: 190px;height: 122px;margin-left: 300px;" />                                                          
-      
-        <p style="font-size: 50px">메일을 전송중입니다 잠시만 기다려주세요! </p>
+      		<div id= "orderTable">
+      				
+      		
+      		</div>                                                          
       </div>
  
     </div>
@@ -291,8 +301,9 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 <script type="text/javascript">
 
 
-function showTable(data1){			
-		$.ajax({	        
+	function showTable(data1){		
+		modal.style.display = "block";
+		$.ajax({	        			
 		        type: "post",
 		        dataType:"html",
 		        url: "tableDetail",
@@ -304,7 +315,6 @@ function showTable(data1){
 		 });   
 	};
 
-	
 function orderchk(data1,data2){
 	$.ajax({	        
         type: "post",
@@ -341,7 +351,7 @@ function orderchk(data1,data2){
 	var modal = document.getElementById('myModal');
 
 	// Get the button that opens the modal
-	var btn = document.getElementById('mailModal');
+	var btn = document.getElementById('tableModal');
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName('close')[0];                                          

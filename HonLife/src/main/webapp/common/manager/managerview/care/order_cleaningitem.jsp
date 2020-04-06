@@ -36,14 +36,14 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form" action="orderAct" method="post" name="form">
-			<input type="hidden" id=""  name=""/>
+			<input type="hidden" id="cleanorderNo"  name="cleanorderNo" value="${orderNo }"/>
 				<span class="contact100-form-title">
 				발주 내용을 입력하세요!
 				</span>
 				<span class="label-input100" style="font-size: 20px">발주사원번호</span>
 				<div class="wrap-input100 " >
 					
-					<input class="input100" type="text" name="employeeNo" placeholder="발주하는 사원의 이름을 입력해주세요">
+					<input class="input100" type="text" name="employeeNo" placeholder="발주하는 사원의 번호을 입력해주세요">
 				</div>
 				<span class="label-input100" style="font-size: 20px">발주처</span>
 				<div class="wrap-input100 " >

@@ -6,22 +6,25 @@ import java.util.List;
 public class EmptoItemOrderDTO implements Serializable{
 
 
-	public List<CleanOrderDTO> getOrderDTO() {
-		return orderDTO;
-	}
-	public void setOrderDTO(List<CleanOrderDTO> orderDTO) {
-		this.orderDTO = orderDTO;
-	}
-	EmployeeDTO empDTO;                        //1
-	List<CleanOrderDTO> orderDTO;  //n
-	
-	
+
+
 	public EmployeeDTO getEmpDTO() {
 		return empDTO;
 	}
 	public void setEmpDTO(EmployeeDTO empDTO) {
 		this.empDTO = empDTO;
 	}
+	public CleanOrderDTO getOrderDTO() {
+		return orderDTO;
+	}
+	public void setOrderDTO(CleanOrderDTO orderDTO) {
+		this.orderDTO = orderDTO;
+	}
+	EmployeeDTO empDTO;     //1
+	CleanOrderDTO orderDTO;  //1
+
+	
+	
 
 	
 }

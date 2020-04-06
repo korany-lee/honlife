@@ -5,6 +5,18 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class CleanitemInsert implements Serializable{
 	
+	public String getCleanorderNo() {
+		return cleanorderNo;
+	}
+	public void setCleanorderNo(String cleanorderNo) {
+		this.cleanorderNo = cleanorderNo;
+	}
+	public String getEmployeeNo() {
+		return employeeNo;
+	}
+	public void setEmployeeNo(String employeeNo) {
+		this.employeeNo = employeeNo;
+	}
 	public String getCleanitemNo() {
 		return cleanitemNo;
 	}
@@ -40,6 +52,9 @@ public class CleanitemInsert implements Serializable{
 	String cleanitemPrice;
 	String cleanitemQty;
 	String cleanitemSumprice;
+	String employeeNo;
+	String cleanorderNo;
+	
 
 	
 }

@@ -11,7 +11,7 @@
 <bean class="controller.care.clean.PersonalityController"/>
 <bean class="controller.care.clean.CleanRecDeleteController"/>
 <bean class="controller.care.clean.EmpRegistController" />
-
+<bean class="controller.care.clean.CleanReservationController" />
 
 
 

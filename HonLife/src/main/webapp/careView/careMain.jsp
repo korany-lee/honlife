@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html >
@@ -83,12 +84,20 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<div class="col-left">
 				<a class="logo" href="careMain" title="HON LIFE"></a>			
 			</div>
-
+		
 			<div class="col-right">
-			    <a href="manager/main" class="regist" > 관리자페이지</a> <br>
-			
-				<a  href="careJoin" class="regist" >회원가입</a> <br>
-				
+				<c:if test="">
+			    <a href="manager/main" class="regist" > 관리자페이지</a> 
+			    	</c:if>
+			    <br>
+			<c:if test="${empty memberInfo }">
+				<a  href="careJoin" class="regist" >회원가입</a>		
+				 <br>	
+				<a  href= "carelogin" class="regist"> 로그인</a>
+			</c:if>
+			<c:if test="${!empty memberInfo }">
+				<a href = "care/logout" class="regist" >로그아웃</a>
+			</c:if>
 						
 			</div>
 				
@@ -113,7 +122,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<ul id="menu-header-nav-en" class="menu list-style-none">
 				<li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="care/cleanAmountInfo">청소요금안내</a></li>
 				<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="care/laundryAmountInfo">세탁요금안내</a></li>
-				<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
+				<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="care/cleanRev">청소예약</a></li>
 				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
 				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="care/recruitment">모집요강</a></li>
 				<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
@@ -158,7 +167,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 		<h1 style="font-size: 70px;">Hon Care</h1>
 		<h2>Simple & Comfortable Life</h2>
 
-		<a class="play-btn fancybox" href="#">청소 예약하기</a>
+		<a class="play-btn fancybox" href="care/cleanRev">청소 예약하기</a>
 		<a class="play-btn fancybox" href="#">세탁 예약하기</a>
 
 	</div>
@@ -233,7 +242,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 <p>주방,거실,방,화장실 각 영역별로 표준화된 청소가이드에 맞춰 깔끔하게 청소해드립니다! </p>
 <p>&nbsp;</p>
 
-				<a class="light-color elem-line-before" href="" style="font-size: 20px;">청소요금 안내</a><br>
+				<a class="light-color elem-line-before" href="care/cleanRev" style="font-size: 20px;">청소요금 안내</a><br>
 				<a class="light-color elem-line-before" href="" style="font-size: 20px;">청소예약하기</a>
 			</div>
 

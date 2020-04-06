@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +36,7 @@ public class LoginController {
 	// care에서 로그인 창으로 이동
 	@RequestMapping(value = "/carelogin", method = RequestMethod.GET)
 	public String careLog() {
-		return "shopView/shop/shop_login";
+		return "careView/care/care_login";
 	}
 
 	// stay에서 로그인 검사
@@ -85,5 +86,26 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:/stayMain";
 	}
+	
+	//care에서 로그아웃
+	@RequestMapping("/care/logout")
+	public String careLogout(HttpSession session, HttpServletResponse res) {
+		res.setContentType("text/html; charset=UTF-8");
+		try {
+			PrintWriter out = res.getWriter();
+			out.println("<script>alert('로그아웃 되었습니다.'); location.href='../careMain'; </script>  ");
+			out.close();
+			session.invalidate();	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return "redirect:/careMain";
+	}
+	
+	
+	
 
 }

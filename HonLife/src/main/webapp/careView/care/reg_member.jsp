@@ -49,7 +49,7 @@ function chkId() {
    }
    $("#idDuplication").val("0");
    
-   window.open('userConfirm?userId='+$("#memId").val(),'아이디 중복확인','width=300 ,height=200');
+   window.open('member/userConfirm?userId='+$("#memId").val(),'아이디 중복확인','width=300 ,height=200');
    
 }
 

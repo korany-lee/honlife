@@ -6,12 +6,19 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class ItemOrderCommand {
+	public String getCleanorderNo() {
+		return cleanorderNo;
+	}
+	public void setCleanorderNo(String cleanorderNo) {
+		this.cleanorderNo = cleanorderNo;
+	}
 	public String getEmployeeNo() {
 		return employeeNo;
 	}
 	public void setEmployeeNo(String employeeNo) {
 		this.employeeNo = employeeNo;
 	}
+	String cleanorderNo;
 	String employeeNo;
 	String cleanorderCompanyName;
 	String cleanorderPostcode;

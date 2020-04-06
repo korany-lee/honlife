@@ -2,6 +2,7 @@ package controller.care.manager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,8 @@ public class CleaningItemOrderController {
 	ItemOrderService itemOrderService;
 	@RequestMapping ("/manager/cleanorder")
 public String Corder(Model model) {
-
+	String orderNo = UUID.randomUUID().toString();
+	model.addAttribute("orderNo" , orderNo);
 	
 	return "common/manager/managerview/care/order_cleaningitem";
 }
@@ -33,8 +35,9 @@ public String CorderAct(ItemOrderCommand itemOrderCommand ,ItemCommand itemComma
 	System.out.println("price="+itemCommand.getCleanitemPrice());
 	System.out.println("qty="+itemCommand.getCleanitemQty());
 	System.out.println("sump="+itemCommand.getCleanitemSumprice());
+	System.out.println("no="+ itemOrderCommand.getEmployeeNo());
+	itemOrderService.itemInsert(itemCommand,itemOrderCommand);
 	
-	itemOrderService.itemInsert(itemCommand);
 	itemOrderService.orderInsert(itemOrderCommand,model);
 	return "redirect:/manager/main";
 }

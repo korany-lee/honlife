@@ -8,6 +8,12 @@ import java.util.Date;
 public class CleanOrderDTO implements Serializable{
 	
 
+	public CleanitemInsert getItemDTO() {
+		return itemDTO;
+	}
+	public void setItemDTO(CleanitemInsert itemDTO) {
+		this.itemDTO = itemDTO;
+	}
 	public String getOrderChk() {
 		return orderChk;
 	}
@@ -55,6 +61,7 @@ public class CleanOrderDTO implements Serializable{
 	String moveHow;
 	String movePay;
 	EmployeeDTO empDTO;
+	CleanitemInsert itemDTO;
 	String orderChk;
 	public String getCleanorderPostcode() {
 		return cleanorderPostcode;

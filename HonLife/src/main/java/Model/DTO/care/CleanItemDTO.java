@@ -6,6 +6,19 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class CleanItemDTO  implements Serializable{
 	
+public String getCleanorderNo() {
+		return cleanorderNo;
+	}
+	public void setCleanorderNo(String cleanorderNo) {
+		this.cleanorderNo = cleanorderNo;
+	}
+public String getEmployeeNo() {
+		return employeeNo;
+	}
+	public void setEmployeeNo(String employeeNo) {
+		this.employeeNo = employeeNo;
+	}
+
 public List<String> getCleanitemNo() {
 		return cleanitemNo;
 	}
@@ -41,6 +54,9 @@ List<String> cleanitemName;
 List<String> cleanitemPrice;
 List<String> cleanitemQty;
 List<String> cleanitemSumprice;
+
+String employeeNo;
+String cleanorderNo;
 
 
 

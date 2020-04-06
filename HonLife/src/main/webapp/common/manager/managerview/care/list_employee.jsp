@@ -30,6 +30,7 @@
 				<div class="th"><span>성별</span></div>
 				<div class="th"><span>담당업무</span></div>
 				<div class="th"><span>이메일</span></div>
+				<div class="th"><span>사원번호</span></div>
 				<div class="th"><span>관리</span></div>
 			</div>
 
@@ -72,6 +73,12 @@
 									<div class="td">
 										<span >
 											<input style="background-color: transparent; cursor:pointer; color: #9fa7a7" id="reciver" class="boardList" type="text" value="${list.employeeEmail }" readonly="readonly">
+										</span>
+										
+									</div>
+									<div class="td">
+										<span >
+											${list.employeeNo }
 										</span>
 										
 									</div>
