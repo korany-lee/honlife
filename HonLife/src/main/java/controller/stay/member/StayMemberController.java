@@ -31,4 +31,10 @@ public class StayMemberController {
 	public String review() {
 		return "stayView/memberView/member/MyReview";
 	}
+	
+	@RequestMapping("/member/deleteRev")
+	public String delete(@RequestParam(value="revNo")String no) {
+		myReservationService.allCancel(no);
+		return "redirect:/member/MyReservation";
+	}
 }

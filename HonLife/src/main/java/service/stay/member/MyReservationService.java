@@ -35,17 +35,20 @@ public class MyReservationService {
 	public void detail(String revNum,Model model) {
 		RoomRevDTO dto = rev.oneRev(revNum);
 		List<String> furnitureNo = rev.selectFurnitureNo(revNum);
-		
 		List<FurnitureDTO> list = new ArrayList<>();
 		
 		for(int i=0;i<furnitureNo.size(); i++) {
 			FurnitureDTO furniture = fRev.oneSelect(furnitureNo.get(i));
-			list.add(furniture);
-			
+			list.add(furniture);	
 		}
-		
-		
+
 		model.addAttribute("furniture", list);
 		model.addAttribute("rev", dto);
+	}
+	
+	public void allCancel(String no) {
+		/*
+		 * rev.roomrevCancel(no); rev.frevCancel(no);
+		 */
 	}
 }
