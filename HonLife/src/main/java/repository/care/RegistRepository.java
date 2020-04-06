@@ -7,8 +7,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.care.CleanFeeDTO;
 import Model.DTO.care.CleanItemDTO;
 import Model.DTO.care.CleanOrderDTO;
+import Model.DTO.care.CleanRevDTO;
 import Model.DTO.care.CleanitemInsert;
 import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.EmptoItemOrderDTO;
@@ -130,6 +132,19 @@ public class RegistRepository {
         
 				 
 	
+	}
+	
+	public List<CleanFeeDTO> fee() {
+		String statement = namespace + ".fee";
+		return sqlSession.selectList(statement);
+			
+		
+	}
+	
+	public void revIn(CleanRevDTO cr) {
+		
+		
+		
 	}
 
 	

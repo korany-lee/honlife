@@ -5,7 +5,7 @@
 <cache/>
 
 <sql id="basecolumn">
-		USER_NO,USER_ID,USER_PW,USER_NAME,USER_PH,USER_EMAIL,USER_ADDR,USER_ZONE,USER_GENDER,USER_BIRTH,USER_REGIST,CONNECT_DATE
+		USER_NO,USER_ID,USER_PW,USER_NAME,USER_PH,USER_EMAIL,USER_ADDR,USER_ZONE,USER_GENDER,USER_BIRTH,USER_REGIST,CONNECT_DATE,ROLE
 	</sql>
 	
 	<resultMap type="member" id="baseMember">
@@ -22,6 +22,7 @@
 			<arg column="USER_BIRTH" javaType="java.util.Date"/>
 			<arg column="USER_REGIST" javaType="java.sql.Timestamp"/>
 			<arg column="CONNECT_DATE" javaType="java.sql.Timestamp"/>
+			<arg column="ROLE" javaType="string"/>
 		</constructor>
 	</resultMap>
 	
@@ -31,10 +32,10 @@
 		#{userAddr},#{userZone},#{userGender},#{userBirth},sysdate,null)
 	</insert>
 	
-	<select id="selectOneMem" parameterType="string">
-		select (<include refid="basecolumn" />) 
+	<select id="selectOneMem" parameterType="string" resultMap="baseMember">
+		select <include refid="basecolumn" />
 		from member
-		where user_id = #{user_id}
+		where user_id = #{userId}
 	</select>
 
 

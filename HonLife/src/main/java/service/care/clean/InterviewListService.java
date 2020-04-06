@@ -16,7 +16,7 @@ public class InterviewListService {
 
 	public void interviewList(Model model) {
 			
-			List<RecruitDTO> list = 	registRepository.interviewList();
+			List<RecruitDTO> list = registRepository.interviewList();
 
 			
 		      model.addAttribute("interview" , list);

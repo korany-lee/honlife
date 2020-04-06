@@ -1,5 +1,6 @@
 package repository.shop;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,8 @@ public class MemberRepository{
 	
 	public Map<String, Object> selectOneMem(String userId) {
 		String statement = namespace + ".selectOneMem";
+		
+		
 		return sqlSession.selectOne(statement, userId);
 	}
 	

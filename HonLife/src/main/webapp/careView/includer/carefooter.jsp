@@ -42,27 +42,11 @@
 	
 
 
-	<div id="results" style="display:none;" ></div>
 
-	<style id='wpcf7-wpcf7-5e6f0acff3915-inline-inline-css' type='text/css'>
-#wpcf7-5e6f0acff3915 {display:none !important; visibility:hidden !important;}
-</style>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wpcf7 = {"apiSettings":{"root":"https:\/\/www.voxverticalvillage.ro\/en\/wp-json\/contact-form-7\/v1\/","namespace":"contact-form-7\/v1"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/project/careView/js/script-5.1.6.js'></script>
-
-
-<script type='text/javascript' src='/project/careView/js/voxslick.min.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/project/careView/js/vox_script.min.js'></script>
-<script type='text/javascript' src='/project/careView/js/vox-embed.min.js'></script>
-
 </body>
 </html>

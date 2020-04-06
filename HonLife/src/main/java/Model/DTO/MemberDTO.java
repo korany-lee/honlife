@@ -6,6 +6,7 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class MemberDTO implements Serializable{
+
 	String userNo;
 	String userId;
 	String userPw;
@@ -18,8 +19,31 @@ public class MemberDTO implements Serializable{
 	Date userBirth;
 	Timestamp userResist;
 	Timestamp connectDate;
-	String role;
 
+	String role;
+	public MemberDTO() {};
+	
+	public MemberDTO(String userNo, String userId, String userPw, String userName, String userPh, String userEmail,
+			String userAddr, String userZone, String userGender, Date userBirth, Timestamp userResist,
+			Timestamp connectDate, String role) {
+		super();
+		this.userNo = userNo;
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userName = userName;
+		this.userPh = userPh;
+		this.userEmail = userEmail;
+		this.userAddr = userAddr;
+		this.userZone = userZone;
+		this.userGender = userGender;
+		this.userBirth = userBirth;
+		this.userResist = userResist;
+		this.connectDate = connectDate;
+		this.role = role;
+	}
+
+	
+	
 	public String getRole() {
 		return role;
 	}

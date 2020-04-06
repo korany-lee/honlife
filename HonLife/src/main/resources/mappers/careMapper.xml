@@ -256,5 +256,19 @@ and        c.cleanorder_no = t.cleanorder_no
 
 </select>
 
+<resultMap type="Model.DTO.care.CleanFeeDTO" id="fee">
+	<id column="CLEANFEE_SIZE" jdbcType="BIGINT" property="cleanSize"/>
+	<result column="CLEANFEE_FEE" jdbcType="BIGINT" property="cleanFee"/>
+</resultMap>
+
+<select id="fee" resultMap="fee">
+	select cleanfee_Fee, cleanfee_size 
+   from	cleanfee 
+
+
+</select>
+
+
+
 
 </mapper>
