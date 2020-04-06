@@ -29,6 +29,7 @@ public class FurnitureDateService {
 		
 		dto.setStart(room.getRoomRevStartDate());
 		dto.setEnd(room.getRoomRevEndDate());
+		
 		List<FurnitureDTO> list = furnitureRepository.fDateChk(dto);
 		
 		model.addAttribute("revNum", revNum);

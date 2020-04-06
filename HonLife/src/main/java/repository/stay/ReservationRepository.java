@@ -61,10 +61,23 @@ public class ReservationRepository {
 	}
 	
 	public void furnitureRevInsert(FurnitureRevDTO dto) {
-		System.out.println("레퍼지토리에 가구예약 인서트하러 들어옴");
 		String statement = namespace + ".frevInsert";
 		sqlSession.insert(statement, dto);
 	}
 	
+	public void wishDelete(String userNo) {
+		String statement = namespace + ".deleteWish";
+		sqlSession.delete(statement, userNo);
+	}
+	
+	public List<String> selectFrevNo(String roomRevNo){
+		String statement = namespace + ".selectFrevNo";
+		return sqlSession.selectList(statement, roomRevNo);
+	}
+	
+	public List<String> selectFurnitureNo(String roomRevNo){
+		String statement = namespace + ".selectFno";
+		return sqlSession.selectList(statement, roomRevNo);
+	}
 	
 }

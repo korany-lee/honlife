@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.io.PrintWriter"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,7 +93,7 @@
                     </div>
                   </td>
                   <td>
-                    <h5>1일대여비</h5>
+                    <h5><fmt:formatNumber value="${wish.furnitureRentalFee*date }" pattern="#,###" />원</h5> 
                   </td>
                 </tr>
                 </c:forEach>

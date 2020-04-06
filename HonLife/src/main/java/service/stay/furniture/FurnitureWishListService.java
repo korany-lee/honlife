@@ -36,6 +36,7 @@ public class FurnitureWishListService {
 		long calDate = diffDay / (24*60*60*1000) +1 ;
 		
 		price = price * (int)calDate;
+		model.addAttribute("date", (int)calDate);
 		model.addAttribute("start", startDate);
 		model.addAttribute("end", endDate);
 		model.addAttribute("revNo", revNo);

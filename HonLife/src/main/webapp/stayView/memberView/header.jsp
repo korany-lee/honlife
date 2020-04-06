@@ -62,7 +62,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="contact.html">
+                  <a href="/project/member/MyReservation">
                     	마이페이지
                   </a>
                 </li>

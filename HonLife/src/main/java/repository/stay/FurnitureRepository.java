@@ -39,6 +39,8 @@ public class FurnitureRepository {
 		return sqlSession.selectOne(statement,furnitureNo);
 	}
 	
+	
+	
 	public List<FurnitureDTO> searchSelect(SearchDTO dto) {
 		String statement = namespace +".searchSelect";
 		return sqlSession.selectList(statement,dto);

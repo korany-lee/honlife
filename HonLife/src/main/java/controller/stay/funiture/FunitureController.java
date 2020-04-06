@@ -52,16 +52,16 @@ public class FunitureController {
 	public String furnitureSelect(@RequestParam("type")String furnitureType,Model model) {
 		if(furnitureType.equals("거실용품")) {
 			furnitureListService.selectType(furnitureType, model);
-			return "stayView/memberView/furniture_living";
+			return "stayView/memberView/furniture/furniture_living";
 		}else if(furnitureType.equals("주방용품")) {
 			furnitureListService.selectType(furnitureType, model);
-			return "stayView/memberView/furniture_kitchen";
+			return "stayView/memberView/furniture/furniture_kitchen";
 		}else if(furnitureType.equals("침실용품")) {
 			furnitureListService.selectType(furnitureType, model);
-			return "stayView/memberView/furniture_bedroom";
+			return "stayView/memberView/furniture/furniture_bedroom";
 		}else {
 			furnitureListService.selectType(furnitureType, model);
-			return "stayView/memberView/furniture_etc";
+			return "stayView/memberView/furniture/furniture_etc";
 		}
 		
 		
@@ -70,20 +70,20 @@ public class FunitureController {
 	@RequestMapping("/funiture/choice")
 	public String furnitureChoice(@RequestParam("type")String furnitureType,Model model) {
 		furnitureListService.selectType(furnitureType, model);
-		return "stayView/memberView/furniture_List";
+		return "stayView/memberView/furniture/furniture_List";
 	}
 	
 	@RequestMapping("funiture/oneSelect")
 	public String oneSelect(@RequestParam("content")String content, @RequestParam("type")String type,Model model) {
 		furnitureListService.searchSelect(content,type,model);
-		return "stayView/memberView/furniture_List";
+		return "stayView/memberView/furniture/furniture_List";
 	}
 	
 	@RequestMapping("/funiture/furnitureDetail")
 	public String furnitureDetail(@RequestParam("furnitureNo")String num,Model model) {
 		furnitureListService.oneSelect(num, model);
 		furnitureRevListService.revDate(num,model);
-		return "stayView/memberView/furniture_detail";
+		return "stayView/memberView/furniture/furniture_detail";
 	}
 	
 	@RequestMapping("/funiture/furnitureWishInsert")    //장바구니에 담기
@@ -97,42 +97,34 @@ public class FunitureController {
 	public String wishList(@RequestParam(value="start")Timestamp startDate,@RequestParam(value="end")Timestamp endDate,
 			@RequestParam(value="revNum") String revNo,HttpSession session,Model model) {
 		furnitureWishListService.wishList(session,model,startDate,endDate,revNo);
-		return "stayView/memberView/furniture_wishList";
+		return "stayView/memberView/furniture/furniture_wishList";
 	}
 	
 	@RequestMapping("/funiture/furnitureRev")  //방 예약선택
 	public String furnitureRev(HttpSession session,Model model) {
 		roomRevMatchService.roomRevFind(session, model);
-		return "stayView/memberView/furniture_roomRevSelect";
+		return "stayView/memberView/furniture/furniture_roomRevSelect";
 	}
 	
 	@RequestMapping("/funiture/furnitureList")  //방 예약 선택 후 예약가능 가구 리스트
 	public String furnitureList(@RequestParam(value="revNo")String revNum,Model model) {
 		furnitureDateService.fRevChk(revNum,model);	
-		return "stayView/memberView/furnitureList";
+		return "stayView/memberView/furniture/furnitureList";
 	}
 	
 	@RequestMapping("/funiture/payment")  //카카오 페이지로 이동
 	public String payment(@RequestParam(value="price")Integer Fee,@RequestParam(value="rev")String revNum,Model model) {
 		model.addAttribute("price", Fee);	
 		model.addAttribute("revNo", revNum);
-		return "stayView/memberView/furniturePay";
+		return "stayView/memberView/furniture/furniturePay";
 	}
 	
 	@RequestMapping("/funiture/furnitureRevFinish")//결제 완료되면 insert
 	public String payFinish(@RequestParam(value="revNo")String revNum,Model model) {
-		System.out.println("컨트롤러는 들어왔음");
+		
 		furnitureRevInsertService.furnitureRevInsert(revNum,model);
 		return "redirect:/stayMain";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

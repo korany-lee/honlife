@@ -53,7 +53,8 @@
 </select>
 
 <select id="selectfRevList" resultMap="furnitureRev" parameterType="string">
-	select furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,to_timestamp(furniturerev_enddate+1) as furniturerev_enddate,furniture_no from furniturerev where
+	select furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,to_timestamp(furniturerev_enddate+1) as furniturerev_enddate,furniture_no from furniturerev 
+	where furniture_no =#{furnitureNo}
 	
 </select>
 
@@ -80,8 +81,20 @@ select max(furniture_no) from makeSeq
 
 <insert id="frevInsert" parameterType="Model.DTO.FurnitureRevDTO">
 insert into furniturerev(furniturerev_no,roomrev_no,user_no,room_no,furniturerev_startdate,furniturerev_enddate,furniture_no)
-values(#{furnitureRevNo},#{roomRevNo},#{userNo},#{roomNo},#{furnitureRevStartDate},#{furnitureRevEndDate},#{furnitureNo})
+values(furniturerev_seq.nextval,#{roomRevNo},#{userNo},#{roomNo},#{furnitureRevStartDate},#{furnitureRevEndDate},#{furnitureNo})
 </insert>
+
+<delete id="deleteWish" parameterType="string">
+delete from furniturewish where user_no=#{userNo}
+</delete>
+
+<select id="selectFrevNo" parameterType="string" resultType="string">
+select furniturerev_no from furniturerev where roomrev_no= #{roomRevNo}
+</select>
+
+<select id="selectFno" parameterType="string" resultType="string">
+select furniture_no from furniturerev where roomrev_no=#{roomRevNo}
+</select>
 
 
 </mapper>

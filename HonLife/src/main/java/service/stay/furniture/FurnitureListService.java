@@ -16,7 +16,7 @@ public class FurnitureListService {
 	FurnitureRepository furnitureRepository;
 	public void allSelect(Model model) {
 		List<FurnitureDTO> lists = furnitureRepository.furnitureList();
-		System.out.println("레퍼지토리 들감");
+		
 		
 		model.addAttribute("furniture", lists);
 	}
