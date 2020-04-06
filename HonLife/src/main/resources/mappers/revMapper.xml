@@ -7,7 +7,7 @@
 <cache />
 <sql id="basecolumn">
 	ROOMREV_NO,USER_NO,ROOM_NO,ROOMREV_REVNAME,ROOMREV_LIVEUSER,ROOMREV_STARTDATE,
-	ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL
+	ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL,ROOMREV_REVIEWCHK
 </sql>
 
 <resultMap type="Model.DTO.RoomRevDTO" id="roomRev">
@@ -22,7 +22,7 @@
 	<result column="ROOMREV_PRICE" jdbcType="BIGINT" property="roomRevPrice" />
 	<result column="ROOMREV_PH" jdbcType="VARCHAR" property="roomRevPh" />
 	<result column="ROOMREV_EMAIL" jdbcType="VARCHAR" property="roomRevEmail" />
-	
+	<result column="ROOMREV_REVIEWCHK" jdbcType="VARCHAR" property="roomRevReviewChk" />
 </resultMap>
 
 <resultMap type="Model.DTO.FurnitureRevDTO" id="furnitureRev">
@@ -43,13 +43,13 @@
 <insert id="roomRevInsert" parameterType="Model.DTO.RoomRevDTO">
 	insert into roomrev(<include refid="basecolumn" />)	
 	values(roomrev_seq.nextval,#{userNo},#{roomNo},#{roomRevName},#{roomLiveName},
-	#{roomRevStartDate},#{roomRevEndDate},'사용대기',#{roomRevPrice},#{roomRevPh},#{roomRevEmail})
+	#{roomRevStartDate},#{roomRevEndDate},'사용대기',#{roomRevPrice},#{roomRevPh},#{roomRevEmail},'N')
 </insert>
 
 
 <select id="selectRevList" resultMap="roomRev" parameterType="string">
 	select ROOMREV_NO,USER_NO,ROOM_NO,ROOMREV_REVNAME,ROOMREV_LIVEUSER,ROOMREV_STARTDATE,
-	to_timestamp(ROOMREV_ENDDATE +1) AS ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL from roomrev where room_no = #{roomNo}
+	to_timestamp(ROOMREV_ENDDATE +1) AS ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL,ROOMREV_REVIEWCHK from roomrev where room_no = #{roomNo}
 </select>
 
 <select id="selectfRevList" resultMap="furnitureRev" parameterType="string">

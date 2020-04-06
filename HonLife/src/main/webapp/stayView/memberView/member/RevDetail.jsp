@@ -7,17 +7,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
- 	<script type="text/javascript">
-	  $(function() {
-		$("#see").click(function() {
-			  
-			  $("#date").show();
-		});  
-	}); 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
+<script type="text/javascript">
+$(function() {
+	$("#see").click(function() { 
+		$("#date").show();
+	});  
+});; 
+
+
+$(function() {
+	$("#allcancel").click(function() { 
+		if(confirm('전체예약을 취소 하시겠습니까?')){
+			location.href='deleteRev?no=' + $("#revNo").val();
+		}else{
+			return;
+		}
+	});  
+}); 
  
-	</script>
+</script>
 
 </head>
 <body>
@@ -92,6 +101,9 @@
 	</c:forEach>
 	</div>	
 	<div class="col-md-12 text-right">
+		 <input type="hidden" id="revNo" value="${rev.roomRevNo }">
+		 <button class="main_btn" id="allcancel">전체 예약취소</button>
+		 <button class="main_btn" id="cancel">가구 예약취소</button>
 		 <a class="main_btn"  href="javascript:location.href='MyReservation';">뒤로가기</a>
 	</div>
 </body>
