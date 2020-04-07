@@ -68,16 +68,17 @@
               	<c:if test="${!empty roomRev  }">
               <h2>객실 예약을 선택하세요</h2>
                 <select class="sorting" id="furnitureRevSelect" style="width:400px;">
-                 <c:forEach items="${roomRev }" var="room">
+                 
                   <option value="">예약선택</option>
+                  <c:forEach items="${roomRev }" var="room">
                   <option value="${room.roomRevNo }" >
                  
                   	<fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy년 MM월 dd일" /> ~ 
                   	<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy년 MM월 dd일"/> (${room.roomNo }호)
                   </option>
-                   <input type="hidden" id="start" value="${room.roomRevStartDate }">
-                   <input type="hidden" id="end" value="${room.roomRevEndDate }">
-				</c:forEach>
+                  </c:forEach>
+                  
+				
                 </select>
                 </c:if>
                 <c:if test="${empty roomRev }">

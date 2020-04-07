@@ -3,7 +3,7 @@
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 a,button{transition:color .2s ease-in}
 .regist {font-size: 30px; }
-#mainMenu {font-size: 30px;}
+#mainMenu {font-size: 35px;  margin-left: 551px;}
 img,legend{}body,ol,p,ul{margin:0}a,body{color:#d9d9d9}
 .close-nav:hover svg path,.register-modal .close-modal:hover path,a:hover .stroke path,button:hover .stroke path{stroke:#f0eeee}
 .centered-content,.map-tabs-nav a,.modal-content,.slick-dots{text-align:center}
@@ -29,11 +29,7 @@ fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;white-spa
 [type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 a,body,button,h1,h2,h3,h4,h5,h6,input,label,p,span,textarea,ul{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 details{display:block}summary{display:list-item}[hidden],template{display:none}
-@font-face{font-family: 'Do Hyeon', sans-serif;src:url(../font/basis-grotesque-regular-pro.eot);
-				  src:url(../font/basis-grotesque-regular-pro.eot?#iefix) format('embedded-opentype'),
-					   url(../font/basis-grotesque-regular-pro.woff) format('woff'),
-					   url(../font/basis-grotesque-regular-pro.woff2) format('woff2'),
-					   url(../font/basis-grotesque-regular-pro.ttf) format('truetype');
+@font-face{font-family: 'Do Hyeon', sans-serif;
 			      font-weight:400;font-style:normal}
 *{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 .clearfix:after,.clearfix:before{display:table}
@@ -122,8 +118,8 @@ footer .submit{width:auto;top:0}.subscribe-container p{font-size:13px;color:#4B5
 footer .divider{padding:0 10px}.bottom .up-btn{display:none}.bottom-nav{float:left}
 .bottom-nav a,.copyright{font-size:15px}.copyright{float:right}#cn-accept-cookie,#cn-notice-text,.home .articles-section h3{float:left}
 footer ::-webkit-input-placeholder{color:#787F89}footer ::-moz-placeholder{color:#787F89;opacity:1}footer :-ms-input-placeholder{color:#787F89}
-footer :-moz-placeholder{color:#787F89}.modal-content{width:100%;max-width:540px;padding:24px 30px;background-color:#fff;position:fixed;bottom:-200px;left:50%;transform:translateX(-50%);z-index:101;visibility:hidden;opacity:0;transition:bottom .5s ease-in-out,opacity .5s ease-in-out,visibility .5s ease-in-out}
-.modal-active .modal-content{bottom:90px;opacity:1;visibility:visible}
+footer :-moz-placeholder{color:#787F89}
+
 .modal .row{padding-bottom:50px}.modal .row-1{border-bottom:1px solid #EFEFEF}
 .modal .row-2{padding-top:62px}.modal .row-1 span{display:block;margin-bottom:37px}
 .modal-content a{color:#515F5F}

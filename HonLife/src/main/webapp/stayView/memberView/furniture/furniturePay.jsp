@@ -57,6 +57,7 @@
                     }
                 });
                 //성공시 이동할 페이지
+                	alert('가구예약을 완료 하였습니다. 마이페이지에서 예약을 확인하세요!');
                 	location.href='furnitureRevFinish?revNo='+${revNo};
             } else {
                 msg = '결제에 실패하였습니다.';

@@ -9,40 +9,42 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-$(function(){
-	$("#wish").click(function(){
+/* $(function(){
+	$("#wish").click(function(){ */
 			/* location.href='furnitureWishInsert?furnitureNo=' + $("#furnitureNo").val(); */
-			
-		  /* $.ajax({
-				type : "POST",
-				url : "furnitureWishInsert",
-				data : {"furnitureNo" : $("#furnitureNo").val() },
-				datatype : "html",
-				success:cart_ok,
-				error: function(){
-					alert('로그아웃 되었습니다.\n다시 로그인 해 주세요.');
-					location.href="../stayMain";
-					return;
-				}
-			});  */  
+function wishInsert(n){
+	$.ajax({
+		type : "POST",
+		url : "furnitureWishInsert",
+		data : "furnitureNo=" +n ,
+		datatype : "html",
+		success:cart_ok,
+		error: function(){
+			alert('로그아웃 되었습니다.\n다시 로그인 해 주세요.');
+			location.href="../stayMain";
+			return;
+		}
+	});  
+}					
+		   
 		 
 		
 	
 	
-	});
-});
+
 function cart_ok(responseText, statusText, xhr, $form){
 	if(statusText == "success"){
-		if(confirm("장바구니에 추가 되었습니다.\n 장바구니로 이동하시겠습니까?")){
-			location.href="furnitureWishList";	
-		}
+		alert('장바구니에 추가 되었습니다.');
 	}
+	
+	
 }
+
 
 </script>
 </head>
 <body>
-	
+
 	<c:forEach items="${list }" var="furniture">
 		<div class="col-lg-4 col-md-6">
                   <div class="single-product">
@@ -67,10 +69,9 @@ function cart_ok(responseText, statusText, xhr, $form){
                       </div>
                     </div>
                     <div class="product-btm">
-                    <input type="hidden" id="furnitureNo" value="${furniture.furnitureNo }">
+                    <%-- <input type="hidden" id="furnitureNo" value="${furniture.furnitureNo }"> --%>
                       <!-- <a href="" id="wish" class="d-block"> -->
-                      <a href="furnitureWishInsert?furnitureNo=${furniture.furnitureNo }" 
-                      id ="wish" class="d-block" onclick="alert('장바구니에 추가되었습니다.');">
+                      <a href="#" onclick="javascript:wishInsert('${furniture.furnitureNo}');" class="d-block">
                       ${furniture.furnitureName } 장바구니에 담기
                       </a>
                        	

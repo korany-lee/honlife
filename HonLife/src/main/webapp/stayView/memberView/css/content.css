@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : content.css
+ * description : 서브페이지 컨텐츠 CSS
+ * date : 2017-05-29
+******************************************************** */
+@media all and (max-width:1575px) {
+   .side-menu {opacity:0;filter:Alpha(opacity=0); visibility:hidden;}
+}
+
+#visual {max-width:1904px; height:0px; padding-top: 80px;}
+.visual-txt h2 {font-size:36px; letter-spacing: -0.25px; color:#e62541; font-weight: 300; }
+.visual-txt h2 span {color:#fff; font-weight: 500; background-color:#E2495F; display:inline-block; padding: 5px;}
+.visual-txt p {font-size:18px; line-height: 28px; letter-spacing: -0.25px; color:#454545; font-weight: 300; margin-top: 5px;}
+.visual-txt p strong {font-weight: 600; }
+
+#sidebar li {height:59px; -webkit-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
+#sidebar li:first-child {height:60px}
+#sidebar li:first-child a {border-top: 1px solid #ddd; }
+#sidebar li a {display:block; height:59px; line-height: 59px; padding-left: 120px; border-bottom: 1px solid #DDDDDD; font-size:20px; letter-spacing: -0.25px; color:#525252; -webkit-transition: color 0.3s;-moz-transition: color 0.3s;-ms-transition: color 0.3s;-o-transition: color 0.3s;transition: color 0.3s;}
+#sidebar li.on a, #sidebar li:hover a {background:url("/kr/images/content/sub_arrow.png") no-repeat 155px center; color:#fff; }
+#sidebar li.on, #sidebar li:hover {background-color:#71CD14;}
+
+.sub-location {padding-bottom: 20px; border-bottom: 1px solid #ddd;   margin-bottom: 20px;}
+.sub-location h3 {float:left; font-size:36px; letter-spacing: -0.25px; color:#333333; font-weight: 400;} 
+.sub-location ul {float:right;}
+.sub-location ul li {float:left; font-size:14px; line-height: 26px; letter-spacing: -0.25px; color:#999999}
+.sub-location ul li.arrow {margin:0 3px;}
+.sub-location ul li i {vertical-align: middle;}
+
+/* ******************  대여요금안내 - 공통 ********************** */
+.price-tit {margin-bottom: 20px;}
+.price-tit h3 {float:left; font-size:30px; line-height: 26px; letter-spacing: -0.25px; color:#333333; font-weight: 400; padding-top: 15px; background:url("/kr/images/content/sub_tit_line.jpg") no-repeat left top;}
+.price-tit h3 span.call {color:#fff; font-size:19px; display:inline-block; width:auto; margin-top:0; background-color:#004589; padding:9px 20px; border:none; margin-left: 10px;margin-top: -10px;  -webkit-border-radius:30px;-moz-border-radius:30px;-o-border-radius:30px;border-radius:30px;}
+.price-tit span {float:right; display:inline-block; width:60px; height:25px; text-align:center; font-size:15px; line-height: 25px; letter-spacing: -0.25px; color:#333; font-weight: 500; border:2px solid #333; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; margin-top: 15px;}
+.price-tit p.small-txt {float:right; color:#999; font-size:20px; margin-left:20px;  line-height: 30px; letter-spacing: -0.25px; font-weight: 500;}
+.third-tit {font-size:24px; line-height: 26px; letter-spacing: -0.25px; color:#333333; font-weight: 400; margin-bottom: 15px;}
+.third-tit img {margin-right: 15px; }
+
+
+.price-table {width:100%; border-top: 1px solid #919191; margin-bottom: 80px;}
+.price-table.mar0 {margin-bottom: 0;}
+.price-table tr {border-bottom: 1px solid #ddd;}
+.price-table th {height:52px; font-size:16px; line-height: 52px; letter-spacing: -0.25px; color:#525252; font-weight: 500; background-color:#F3F3F3}
+.price-table td {height:52px; text-align:center; font-size:15px; line-height: 52px; letter-spacing: -0.25px; color:#525252; font-weight: 500;}
+.price-table td span {display:inline-block; }
+.price-table td .point {color:#004589}
+.price-table td .bg-point {line-height: 30px; background-color:#F2F2F2; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding:0 8px; color:#888888}
+.price-table td .bg-point-two {line-height: 30px; background-color:#eee; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding:0 8px; color:#666}
+.price-table td .box-point {line-height: 30px; color:#004589; border:2px solid #004589; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding:0 8px; }
+.price-table td .bg-black {line-height: 30px; color:#fff; background-color:#004589; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding:0 8px;}
+.price-txt p {font-size:15px; line-height: 28px; letter-spacing: -0.25px; color:#004589; }
+.price-txt p span {display:inline-block; color:#fff; line-height: 30x; font-weight: 500; width:118px; height:30px; background-color:#004589; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; text-align:center; margin-right:10px}
+.price-txt i {vertical-align: middle; display:inline-block; margin-right:5px;}
+.price-txt ul {padding-left:15px; margin-top: 15px;}
+.price-txt.peak-txt ul {padding-left: 0;}
+.price-txt ul li:first-child {font-size:15px; line-height: 28px; letter-spacing: -0.25px; color:#525252}
+.price-txt ul li:first-child i {color:#004589; margin-right:0}
+.price-txt ul li {font-size:15px; line-height: 28px; letter-spacing: -0.25px; color:#888888}
+.price-txt ul li span {display:inline-block; margin-left:4px; margin-right: 5px;}
+
+/* ******************  대여요금안내 - 성수기요금안내 ********************** */
+.peak-top {background:url("/kr/images/content/peak_img_1.jpg") no-repeat; height:160px;  width:915px; padding-left: 55px; padding-top: 38px;}
+.peak-top i {vertical-align: middle; display:inline-block; }
+.peak-top h4 i {width:23px; height:23px; text-align:center; line-height: 26px; background-color:#E62541; color:#fff; -webkit-border-radius: 23px; -moz-border-radius: 23px; border-radius: 23px; font-size:18px}
+.peak-top h4 {font-size:20px; line-height: 28px; letter-spacing: -0.25px; color:#525252; font-weight: 500; margin-bottom: 15px;}
+.peak-top h4 span {color:#e62541;}
+.peak-top p {font-size:16px; line-height: 28px; letter-spacing: -0.25px; color:#525252}
+.peak-top p > span {font-weight:500;}
+.peak-top p i {color:#e62541; margin-right:10px}
+.peak-content .price-table {margin-bottom: 25px;}
+.peak-content .price-tit {margin-top: 70px;}
+
+.price-question {background:url("/kr/images/content/peak_img_2.jpg") no-repeat; padding:30px; width:910px;}
+.price-question ul li {float:left; width:170px; /* margin-left: 55px;  */font-size:18px; line-height: 45px; letter-spacing: -0.25px; color:#fff; font-weight: 300; margin-top: 10px; margin-right:10px;}
+/* .price-question ul li:first-child span {background-color:#E62541; border:1px solid #E62541} */
+.price-question ul li.mar0 {margin-left: 0;}
+.price-question ul li.mat0 {margin-top: 0;}
+.price-question ul li span {display:inline-block; width:170px; height:45px; border:1px solid #9FA5AF; text-align:center; line-height: 45px; font-size:18px; letter-spacing: -0.25px; color:#fff; font-weight: 300; margin-right: 10px;}
+.price-question ul li span:hover {background-color:#E62541; border:1px solid #E62541;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
+.price-question p.call {color:#333f57; line-height:26px; font-size:20px; font-weight:500; margin-top:30px; padding:10px 12px; background-color:rgba(255,255,255,0.8); display:inline-block;}
+.material-icons.call {font-size:18px; vertical-align:middle; padding-right:2px; padding-left:6px;}
+.price-question ul {width:900px; margin:0 auto;}
+
+
+/* ******************  지점안내  ********************** */
+.branch-content .branch-call li {float:left; font-size:15px; letter-spacing: -0.25px; color:#525252; border:1px solid #D4D4D4; -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px; width:162px; height:57px; text-align:center; line-height: 57px;}
+.branch-content .branch-call li:first-child {margin-right:7px;}
+.branch-content .branch-call li span {display:inline-block; width:32px; height:32px; border:2px solid #E62541; -webkit-border-radius: 32px; -moz-border-radius: 32px; border-radius: 32px; text-align:center; line-height: 32px; margin-right:10px}
+.branch-content .branch-call li i {vertical-align: middle; color:#E62541;}
+
+.branch-info {margin-top: 30px; margin-bottom: 20px;}
+.branch-info li {float:left; font-size:15px; line-height: 28px; letter-spacing: -0.25px; color:#525252; margin-right: 30px;}
+.branch-info li:first-child {margin-right:10px; }
+.branch-info li i {vertical-align: middle;font-size:15px}
+.branch-info span {display:inline-block; width:95px; height:29px; background-color:#E62541; text-align:center; color:#fff; -webkit-border-radius: 32px; -moz-border-radius: 32px; border-radius: 32px; line-height: 29px;}
+.branch-info strong {font-size:15px; line-height: 29px; letter-spacing: -0.25px; color:#e62541; font-weight: 500;}
+.branch-address {margin-top: 30px; margin-bottom: 10px; font-size:15px; color:#525252;}
+.branch-address.two {margin-top:20px; margin-bottom:20px;}
+.branch-address i {vertical-align: middle; font-size:20px;}
+.branch-address span {width:90px; display:inline-block; padding:0px 10px; height:30px; background-color:#E62541; text-align:center; color:#fff; -webkit-border-radius: 32px; -moz-border-radius: 32px; border-radius: 32px; font-size:15px; line-height: 30px; letter-spacing: -0.25px; font-weight: 500;}
+.branch-address.two span {background-color:#333}
+.branch-address p {font-size:15px; line-height: 28px; letter-spacing: -0.25px; color:#525252; margin-top: 10px;}
+
+/* ******************  대여/예약절차 - 대여절차 안내 ********************** */
+.process-content dl {display:table; width:100%; }
+.process-content dt {display:table-cell; width:125px; border-right:1px solid #ddd; padding-top: 40px; height:220px; }
+.process-content dt p {font-size:24px; line-height: 43px; letter-spacing: -0.25px; color:#0080ff; font-weight: 500; background:url("/kr/images/content/process_line.jpg") no-repeat right; position:relative; left:2px;}
+.process-content dt img {margin-left: 32px;}
+.process-content dd {display:table-cell; padding-left: 45px;}
+.process-content dd h4 {font-size:20px; line-height: 28px; letter-spacing: -0.25px; color:#525252; font-weight: 500;}
+.process-content dd p {font-size:15px;   line-height: 26px; letter-spacing: -0.25px; color:#777777; margin-left: 35px; margin-top: 10px;}
+.process-content dd p span {color:#0080ff; }
+.process-content dd p span i {vertical-align: middle;}
+.process-content dd p.mat0 {margin-top: 0;}
+
+/* ******************  대여/예약절차 - 예약방법 안내 ********************** */
+.reser-content .reser-bx {border:1px solid #ddd; border-left: 2px solid #0080ff; height:103px; margin-bottom: 14px; padding:0 35px; padding-top: 45px; width:898px;}
+.reser-content .reser-bx p {float:left; font-size:20px; line-height: 23px; letter-spacing: -0.25px; color:#525252; font-weight: 300; width:425px; margin-top: 20px;}
+.reser-content .reser-bx p strong {font-weight: 500;}
+.reser-content .reser-bx p img {margin-right:15px; }
+.reser-content .reser-bx > img {float:left; margin-left: 70px; margin-top: 27px;}
+.reser-content .reser-bx a {float:right; display:inline-block; width:305px; height:55px; text-align:center; font-size:20px; line-height: 55px; letter-spacing: -0.25px; color:#fff; font-weight: 300; background-color:#0080ff; -webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;}
+.reser-content .reser-bx a strong {font-weight: 500;}
+.reser-content .reser-bx a i {vertical-align: middle; display:inline-block; margin-right:10px}
+.reser-content > p {font-size:15px; line-height: 26px; letter-spacing: -0.25px; color:#525252; margin-top: 30px;}
+.reser-content > p i {vertical-align: middle;display:inline-block; margin-right:10px; color:#0080ff}
+.reser-content > p span {display:inline-block; margin-left:33px; color:#888888; }
+
+/* ******************  대여/예약절차 - 유의사항 확인 ********************** */
+.note-content em {color:#0080ff;}
+.note-content ul li p {margin-left: 48px;}
+.note-content ul li p span {color:#888888}
+.note-content > p {font-size:15px; line-height: 28px; letter-spacing: -0.25px; }
+.note-content > p span {display:inline-block; width:84px; height:30px; text-align:center; color:#fff; font-size:15px; line-height: 30px; letter-spacing: -0.25px; background-color:#0080ff; -webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px; margin-right:5px}
+.note-content > p span i {vertical-align: middle; display:inline-block; }
+
+/* ******************  대여/예약절차 - 보험/대여약관  ********************** */
+.rental-tit-wrap {border-bottom: 1px solid #DDDDDD; margin-bottom: 20px;}
+.rental-tit-wrap h3 {font-size:20px; line-height: 28px; letter-spacing: -0.25px; color:#525252; font-weight: 500;}
+.rental-tit-wrap h3 span {display:inline-block; font-size:24px; line-height: 43px; letter-spacing: -0.25px; color:#0080ff; font-weight: 500; padding-bottom: 5px; background:url("/kr/images/content/sub_tit_line.jpg") no-repeat left bottom; position:relative; top:2px; margin-right: 10px;}
+
+.rental-list {margin-bottom: 45px;}
+.rental-list li {font-size:15px; line-height: 26px; letter-spacing: -0.25px; color:#525252; }
+.rental-list li i {vertical-align: middle; display:inline-block; margin-right:10px; margin-left: 10px; color:#0080ff;}
+
+.rental-info {height:243px; overflow-y:scroll; border:1px solid #DDDDDD; background-color:#F8F8F8; padding:0 50px; padding-top: 35px; width:868px;}
+.rental-content .price-txt {padding-left: 40px;}
+.rental-content .price-txt ul {margin-top: 0;}

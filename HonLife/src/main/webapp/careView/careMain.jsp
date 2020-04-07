@@ -8,69 +8,18 @@
 <head>
 	<meta charset="UTF-8" />
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 	<title>HON CARE</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-	<!-- <link rel="manifest" href="/site.webmanifest"> -->
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="apple-mobile-web-app-title" content="Vox Vertical Village">
-	<meta name="application-name" content="Vox Vertical Village">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-
 	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
-
+<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 	
-<!-- This site is optimized with the Yoast SEO plugin v12.8.1 - https://yoast.com/wordpress/plugins/seo/ -->
-<meta name="description" content="We bring you a collection of 120 contemporary apartments designed to offer you an incredible experience. Suspended gardens, private cinema and many more."/>
-<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.voxverticalvillage.ro/en/#website","url":"https://www.voxverticalvillage.ro/en/","name":"Vox Vertical Village","description":"Apartment building in Timisoara, Romania","potentialAction":{"@type":"SearchAction","target":"https://www.voxverticalvillage.ro/en/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.voxverticalvillage.ro/en/#primaryimage","url":"https://www.voxverticalvillage.ro/wp-content/uploads/2018/10/vox-vertical-village-hero-opt-1.jpg","width":2592,"height":1404,"caption":"Apartamente premium Vox Vertical Village Timisoara"},{"@type":"WebPage","@id":"https://www.voxverticalvillage.ro/en/#webpage","url":"https://www.voxverticalvillage.ro/en/","inLanguage":"en-US","name":"Premium apartments in Timisoara &ndash; Vox Vertical Village","isPartOf":{"@id":"https://www.voxverticalvillage.ro/en/#website"},"primaryImageOfPage":{"@id":"https://www.voxverticalvillage.ro/en/#primaryimage"},"datePublished":"2018-08-23T00:59:57+00:00","dateModified":"2018-12-05T11:57:29+00:00","description":"We bring you a collection of 120 contemporary apartments designed to offer you an incredible experience. Suspended gardens, private cinema and many more."}]}</script>
-<!-- / Yoast SEO plugin. -->
 
-<link rel='dns-prefetch' href='//www.google.com' />
-<link rel='dns-prefetch' href='//code.jquery.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Vox Vertical Village &raquo; Home Comments Feed" href="https://www.voxverticalvillage.ro/en/acasa/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.voxverticalvillage.ro\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
-			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
+
 	
 <link rel='stylesheet' id='style-css'  href='careView/css/maincss/style.min.css' type='text/css' media='all' />
-<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/cookie-notice/js/front.min.js?ver=1.2.48'></script>
-<script type='text/javascript' src='https://www.voxverticalvillage.ro/wp-content/plugins/wp-retina-2x-pro/js/picturefill.min.js?ver=3.0.2'></script>
-<link rel='https://api.w.org/' href='https://www.voxverticalvillage.ro/en/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.voxverticalvillage.ro/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.voxverticalvillage.ro/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 5.3.2" />
-<link rel='shortlink' href='https://www.voxverticalvillage.ro/en/' />
-<link rel="alternate" type="application/json+oembed" href="https://www.voxverticalvillage.ro/en/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Fwww.voxverticalvillage.ro%2Fen%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.voxverticalvillage.ro/en/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Fwww.voxverticalvillage.ro%2Fen%2F&#038;format=xml" />
-<meta name="generator" content="WPML ver:4.0.7 stt:1,45;" />
+
+
+
 
 
 </head>
@@ -93,7 +42,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			<c:if test="${empty memberInfo }">
 				<a  href="careJoin" class="regist" >회원가입</a>		
 				 <br>	
-				<a  href= "carelogin" class="regist"> 로그인</a>
+				<a  href="carelogin"  class="regist"> 로그인</a>
 			</c:if>
 			<c:if test="${!empty memberInfo }">
 				<a href = "care/logout" class="regist" >로그아웃</a>
@@ -294,6 +243,9 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 	<a class="more light-color elem-line-after" href="#">후기게시판</a>
 
 </article>
+ 
+
+
 
 
 
@@ -341,13 +293,13 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 
 	
 	
+	
+	
+	
+	
 
 
-	<div id="results" style="display:none;" ></div>
 
-	<style id='wpcf7-wpcf7-5e6f0acff3915-inline-inline-css' type='text/css'>
-#wpcf7-5e6f0acff3915 {display:none !important; visibility:hidden !important;}
-</style>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wpcf7 = {"apiSettings":{"root":"https:\/\/www.voxverticalvillage.ro\/en\/wp-json\/contact-form-7\/v1\/","namespace":"contact-form-7\/v1"}};

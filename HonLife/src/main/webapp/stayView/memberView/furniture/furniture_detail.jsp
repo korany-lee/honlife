@@ -57,20 +57,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid' ],
       locale : 'ko' ,
-      defaultDate: '2020-04-02',
+      defaultDate: '${today}',
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
     	  
+    	  <c:forEach items="${revState}" var="state">
     	 	
-    	 	/* var date = ${state.roomRevEndDate};
-    	 	var plusdate = date.setDate(date.getDate()+1); */
         {
           title: '예약완료',
-          start : '2020-04-03',
-          end : '2020-04-04'
+          start : '<fmt:formatDate value="${state.furnitureRevStartDate}" pattern="yyyy-MM-dd" />',
+          end : '<fmt:formatDate value="${state.furnitureRevEndDate}" pattern="yyyy-MM-dd" />'
         },
-        	
+        </c:forEach>
         
       ]
     });

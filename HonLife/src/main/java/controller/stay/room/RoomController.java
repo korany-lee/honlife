@@ -41,46 +41,46 @@ public class RoomController {
 	//회원용
 	@RequestMapping("/room/size")   //면적별 안내 페이지 이동
 	public String roomSize(String SmallType,Model model) {
-		return "stayView/memberView/room_size";
+		return "stayView/memberView/room/room_size";
 	}
 	@RequestMapping("/room/sizeSelect")   //면적별 안내 페이지에서 면적 선택
 	public String sizeSelect(@RequestParam(value="size")String size,Model model) {
 		roomListService.sizeSelect(size, model);
-		return "stayView/memberView/roomList"; 
+		return "stayView/memberView/room/roomList"; 
 	}
 
 	@RequestMapping("/room/view")
 	public String roomView() {
-		return "stayView/memberView/room_view";
+		return "stayView/memberView/room/room_view";
 	}
 	@RequestMapping("/room/viewSelect")
 	public String viewSelect(@RequestParam(value="view")String view,Model model) {      //뷰별 안내 페이지에서 뷰 선택
 		roomListService.viewSelect(view,model);
-		return "stayView/memberView/roomList"; 
+		return "stayView/memberView/room/roomList"; 
 	}
 	
 	@RequestMapping("/room/floor")
 	public String roomFloor() {
-		return "stayView/memberView/room_floor";
+		return "stayView/memberView/room/room_floor";
 	}
 	
 	@RequestMapping("/room/floorSelect")
 	public String floorSelect(@RequestParam(value="floor")String floor,Model model) {      //뷰별 안내 페이지에서 뷰 선택
 		roomListService.floorSelect(floor,model);
-		return "stayView/memberView/roomList"; 
+		return "stayView/memberView/room/roomList"; 
 	}
 	
 	@RequestMapping("/room/detail")
 	public String roomDetail(@RequestParam(value="roomNo")String num,Model model) {
 		roomListService.oneSelect(num,model);
 		roomRevListService.revDate(num,model);
-		return "stayView/memberView/room_detail";
+		return "stayView/memberView/room/room_detail";
 	}
 	
 	@RequestMapping("/room/dateCheck")     //예약날짜 설정
 	public String dateSelect(@RequestParam(value="room") String roomNo,HttpServletRequest request) {
 		request.setAttribute("roomNo", roomNo);
-		return "stayView/memberView/TimeCheck";
+		return "stayView/memberView/room/TimeCheck";
 	}
 	
 	@RequestMapping("/room/ReservationTimeCheck")  //방 예약 여부 확인
@@ -88,30 +88,30 @@ public class RoomController {
 			@RequestParam(value="roomNo")String room, Model model) {
 			String abc = dateCheckService.check(start,end,room,model);
 			if(abc==null) {
-				return "stayView/memberView/room_reservation";		
+				return "stayView/memberView/room/room_reservation";		
 			}else {
 				model.addAttribute("roomNo", room);
-				return "stayView/memberView/room_fail";
+				return "stayView/memberView/room/room_fail";
 			}		
 	}
 	
 	@RequestMapping("/room/payment")    //카카오페이 결제창으로
 	public String pay(ReservationCommand revCommand,Model model) {
 		model.addAttribute("rev", revCommand);
-		return "stayView/memberView/kakaoPay";
+		return "stayView/memberView/room/kakaoPay";
 	}
 	
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
 	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session) {
 		roomRevInsertService.revInsert(revCommand,model,session);
 		roomRevListService.revChk(model,session);
-		return "stayView/memberView/reservation_finish";
+		return "stayView/memberView/room/reservation_finish";
 	}
 	
 	@RequestMapping("/room/reservationFail")   //예약실패
 	public String payFail(@RequestParam(value="roomNo")String roomNo) {
 		
-		return "stayView/memberView/room_fail";
+		return "stayView/memberView/room/room_fail";
 	}
 	
 	

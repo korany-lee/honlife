@@ -105,7 +105,7 @@ $(function(){
                <button type="submit" class="btn_type1"><span class="txt_type">로그인</span></button>
             </form>
    
-            <a href="stayJoin" class="btn_type2 btn_member"><span class="txt_type">회원가입</span></a>
+            <a href="careJoin" class="btn_type2 btn_member"><span class="txt_type">회원가입</span></a>
    
 
       </div>
