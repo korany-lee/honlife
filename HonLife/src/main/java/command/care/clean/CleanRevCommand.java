@@ -6,15 +6,29 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class CleanRevCommand {
+	public String getRevPay() {
+		return revPay;
+	}
+	public void setRevPay(String revPay) {
+		this.revPay = revPay;
+	}
+	public String getCleanrevTime() {
+		return cleanrevTime;
+	}
+	public void setCleanrevTime(String cleanrevTime) {
+		this.cleanrevTime = cleanrevTime;
+	}
 	String cleanrevNo;
-	String		userNo;
+	String userNo;
 	String employeeNo;
 	Integer cleanfeeSize;
 	String cleanrevDemand;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	Date cleanrevDate;
-	Timestamp cleanrevTime;
+	String cleanrevTime;
 	String cleanrevAddr;
+	String revPay;
+	
 	
 	public String getCleanrevNo() {
 		return cleanrevNo;
@@ -52,12 +66,7 @@ public class CleanRevCommand {
 	public void setCleanrevDate(Date cleanrevDate) {
 		this.cleanrevDate = cleanrevDate;
 	}
-	public Timestamp getCleanrevTime() {
-		return cleanrevTime;
-	}
-	public void setCleanrevTime(Timestamp cleanrevTime) {
-		this.cleanrevTime = cleanrevTime;
-	}
+
 	public String getCleanrevAddr() {
 		return cleanrevAddr;
 	}

@@ -26,10 +26,9 @@ public class MemberRepository{
 		return result;
 	}
 	
-	public Map<String, Object> selectOneMem(String userId) {
+	public MemberDTO selectOneMem(String userId) {
 		String statement = namespace + ".selectOneMem";
-		
-		
+	
 		return sqlSession.selectOne(statement, userId);
 	}
 	

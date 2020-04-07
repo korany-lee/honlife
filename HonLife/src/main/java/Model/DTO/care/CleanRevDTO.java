@@ -8,6 +8,14 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class CleanRevDTO implements Serializable{
+
+	
+	public String getCleanrevTime() {
+		return cleanrevTime;
+	}
+	public void setCleanrevTime(String cleanrevTime) {
+		this.cleanrevTime = cleanrevTime;
+	}
 	String cleanrevNo;
 	String userNo;
 	String employeeNo;
@@ -15,9 +23,9 @@ public class CleanRevDTO implements Serializable{
 	String cleanrevDemand;
 	
 	Date cleanrevDate;
-	Timestamp cleanrevTime;
+	String cleanrevTime;
 	String cleanrevAddr;
-	
+    Integer revPay;
 	
 	public String getCleanrevNo() {
 		return cleanrevNo;
@@ -55,19 +63,20 @@ public class CleanRevDTO implements Serializable{
 	public void setCleanrevDate(Date cleanrevDate) {
 		this.cleanrevDate = cleanrevDate;
 	}
-	public Timestamp getCleanrevTime() {
-		return cleanrevTime;
-	}
-	public void setCleanrevTime(Timestamp cleanrevTime) {
-		this.cleanrevTime = cleanrevTime;
-	}
+
 	public String getCleanrevAddr() {
 		return cleanrevAddr;
 	}
 	public void setCleanrevAddr(String cleanrevAddr) {
 		this.cleanrevAddr = cleanrevAddr;
 	}
-	
+
+	public Integer getRevPay() {
+		return revPay;
+	}
+	public void setRevPay(Integer revPay) {
+		this.revPay = revPay;
+	}
 	
 
 }

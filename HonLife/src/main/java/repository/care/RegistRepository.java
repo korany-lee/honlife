@@ -143,6 +143,19 @@ public class RegistRepository {
 	
 	public void revIn(CleanRevDTO cr) {
 		
+		String statement = namespace + ".revIn";
+		
+		sqlSession.insert(statement,cr);
+		
+	}
+	public CleanRevDTO revDetail(CleanRevDTO cr) {
+		String statement = namespace + ".revDetail";
+		return sqlSession.selectOne(statement,cr);
+	}
+	
+	public void revDel(CleanRevDTO cr) {
+		String statement = namespace + ".revDel";
+		sqlSession.delete(statement,cr);
 		
 		
 	}

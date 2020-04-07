@@ -12,6 +12,9 @@
 <bean class="controller.care.clean.CleanRecDeleteController"/>
 <bean class="controller.care.clean.EmpRegistController" />
 <bean class="controller.care.clean.CleanReservationController" />
+<bean class="controller.care.clean.CleanPaymentController" />
+<bean class="controller.care.clean.CleanRevDeleteController" />
+ 
 
 
 

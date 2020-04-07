@@ -263,12 +263,50 @@ and        c.cleanorder_no = t.cleanorder_no
 
 <select id="fee" resultMap="fee">
 	select cleanfee_Fee, cleanfee_size 
-   from	cleanfee 
-
-
+    from	cleanfee 
 </select>
 
 
+
+<sql id="baseRev">
+CLEANREV_NO, USER_NO, EMPLOYEE_NO, CLEANFEE_SIZE,
+CLEANREV_DEMAND, CLEANREV_DATE, CLEANREV_TIME, CLEANREV_ADDR,
+REV_PAY
+</sql>
+
+
+<resultMap type="Model.DTO.care.CleanRevDTO" id="rev">
+	<id column="CLEANREV_NO" jdbcType="VARCHAR" property="cleanrevNo" />
+	<id column="USER_NO" jdbcType="VARCHAR" property="userNo" />
+	<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
+	<id column="CLEANFEE_SIZE" jdbcType="BIGINT" property="cleanfeeSize" />
+     <result column="CLEANREV_DEMAND" jdbcType="VARCHAR" property="cleanrevDemand"/>
+	<result column="CLEANREV_DATE" jdbcType="DATE" property="cleanrevDate"/>
+	<result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>
+	<result column="CLEANREV_ADDR" jdbcType="VARCHAR" property="cleanrevAddr"/>
+	<result column="REV_PAY" jdbcType="BIGINT" property="revPay"/>
+</resultMap>
+
+
+<insert id="revIn">
+	insert into cleanrev (<include refid="baseRev" />)
+	values(#{cleanrevNo},#{userNo},#{employeeNo},#{cleanfeeSize},#{cleanrevDemand},
+			  #{cleanrevDate},#{cleanrevTime},#{cleanrevAddr}, #{revPay} )
+</insert>
+
+<select id="revDetail" parameterType="Model.DTO.care.CleanRevDTO" resultMap="rev" >
+	select <include refid="baseRev" />
+	from cleanrev 
+	where user_no = #{userNo} and
+				cleanrev_no = #{cleanrevNo} 
+</select>
+
+<delete id="revDel" parameterType="Model.DTO.care.CleanRevDTO">
+	delete from cleanrev
+	where cleanrev_no = #{cleanrevNo} 
+
+
+</delete>
 
 
 </mapper>

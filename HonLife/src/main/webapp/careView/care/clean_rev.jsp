@@ -65,17 +65,22 @@
 	
 				
 				
-			<form class="col s12">	
+	<form class="col s12" method="POST" name= "frm">	
 
+<div class="input-field col s6">
+    <label>예약번호</label>
+          <input  id="name" type="text" name="cleanrevNo"value="${revNo}" readonly="readonly">
+  
+</div>
     <input type="hidden" value="${userNo}" name="userNo" />
       <div class="row">
         <div class="input-field col s6">
-          <input  id="first_name" type="text" name="userName"class="validate" value="${mdto.userName }" readonly="readonly">
-          <label for="이름">이름</label>
+          <input  id="name" type="text" name="userName"value="${member.userName }" readonly="readonly">
+          <label for="name">이름</label>
         </div>
         <div class="input-field col s6" >
-          <input id="last_name" type="text" class="validate" name="userPh"  value="${mdto.userPh }" readonly="readonly">
-          <label for="연락처">연락처</label>
+          <input id="ph" type="text"name="userPh"  value="${member.userPh }" readonly="readonly">
+          <label for="ph">연락처</label>
         </div>
       
       </div>
@@ -83,92 +88,48 @@
      
      <div class="row">
      <div class="input-field col s6">
-     
-      <input type="text" class="datepicker">
-      <label for="연락처">예약 날짜</label>
+     <label>예약 날짜</label>
+      <input type="text" class="datepicker" id="cleanrevDate"name="cleanrevDate" placeholder="예약날짜">
+  
 		</div>
 	<div class="input-field col s6">
-  		<input type="text" class="timepicker">
-  		<label for="연락처">예약 시간</label>
+	   <label>예약 시간</label>
+  		<input type="text" class="timepicker" id="cleanrevTime" name="cleanrevTime"placeholder="예약시간">
+  		
      </div>
      </div>
    
-      
-
-				
-				
-				
-				
-				<span class="label-input100" style="font-size: 20px;     padding-right: 400px;">이름</span>
-				<div class="wrap-input100 " >
-					
-					<input class="input100" type="text" name="employeeName" value="" placeholder="이름를 입력하세요">
-				</div>
-				
-				<span class="label-input100"  style="font-size: 20px" >연락처</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
-					<input class="input100" type="text" value="" id="employeePh"name="employeePh" placeholder="숫자만 입력해주세요" >
-				</div>
-				
-				<span class="label-input100"  style="font-size: 20px" >유선번호</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width:  calc((97% - 120px) / 2);">			
-					<input class="input100" type="text"value="" id="employeeCallnum"name="employeeCallnum" placeholder="숫자만 입력해주세요" >
-				</div>
-				<span class="label-input100" style="font-size: 20px" >주민번호</span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width: calc((191% - 120px) / 2);">			
-					<input class="input100" type="text" value="" id="employeeJumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
-				</div>
-					<span class="label-input100" style="font-size: 20px; ">예약 시간 선택</span> 
-				
-				<div class="container-contact100-form-btn" style="width: 16%;">
-				  <input type="text" class="datepicker"> 
-				</div>
-				
-				
-				
-				
-				<span class="label-input100" style="font-size: 20px; ">주소</span> 
-				
-					
-				<div class="container-contact100-form-btn" style="width: 16%;">
-				<input class="contact100-form-btn" type="button" onclick="execDaumPostcode()" value="우편번호 찾기" class="contact100-form-btn" style="font-weight:20; margin-bottom: 5px;width: 100px;height: 30px;cursor:pointer"> <br>
-                 </div>
-				
-				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" value="" id="postcode" name="addrPost" placeholder="우편번호">
-				</div>
-				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="address" value="" name="addrMain" placeholder="선택주소">
-				</div>
-				<span id="guide" style="color:#999;display:none"></span>
-				<div class="wrap-input100 bg1 rs1-wrap-input100" style="margin-left: 115px"> 	
-				<input class="input100" type="text"  id="detailAddress" value="" name="addrDetail" placeholder="상세주소">
-				</div>
-				<div class="wrap-input100 bg1 rs1-wrap-input100">	
-				<input class="input100" type="text" id="extraAddress" placeholder="참고항목">
-				</div>
-
-
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-  
-  
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>		
+			$( document ).ready( function() {
+				$( 'select#size' ).change( function() {
+					if( $( 'select#size' ).val() == 8 ){
+						$('#pay').val(40000+'원');				
+					}else if($( 'select#size' ).val() == 10 ){
+						$('#pay').val(46000+'원');								
+					}else if($( 'select#size' ).val() == 13) {
+						$('#pay').val(55000+'원');								
+					}else if($( 'select#size' ).val() == 16 ){
+						$('#pay').val(64000+'원');							
+					}				
+				} );
+			} );		
+		</script>
     <div class="row">
   <div class="input-field col s6">
   
-  <select class="browser-default">
-    <option value="" disabled selected name="cleanSize">청소 평수를 선택해주세요</option>
-    <c:forEach items="${ fee}" var="f" varStatus="">
-    <option value="${f.cleanSize }">${f.cleanSize}평 / ${f.cleanFee}원</option>
+  <select class="browser-default" name="cleanfeeSize" id="size" >
+      <option value="" disabled selected >청소 평수를 선택해주세요</option>
+    <c:forEach items="${ fee}" var="f" varStatus="ii">
+    <option  value="${f.cleanSize }">${f.cleanSize}평</option>
     </c:forEach>
   </select>
  
   </div>
   
     <div class="input-field col s6">
-  
-  <select class="browser-default">
-    <option value="" disabled selected name="employeeNo">청소 근무자를 선택해주세요</option>
+  <select class="browser-default" name="employeeNo">
+    <option value="" disabled selected >청소 근무자를 선택해주세요</option>
 	<c:forEach items="${empList }" var="emp" varStatus="ii"> 
     <option value="${emp.employeeNo }">${emp.employeeName }</option>
  </c:forEach>
@@ -176,6 +137,17 @@
  
   </div>
   </div>
+  
+  <div class="row">
+      <div class="row">
+      <label style="font-size: 20px;"> 총 결제금액</label>
+        <div class="input-field col s12">
+         <input  id="pay" type="text" name="revPay"readonly="readonly" style="font-size: 35px;" > 
+         
+        </div>
+      </div>  
+  </div>
+  
   
   
   <a class="waves-effect waves-light btn-small" onclick="execDaumPostcode()"style="border-radius: 30px; background-color: black;">주소 검색</a>
@@ -188,15 +160,7 @@
   
   <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
         
-  <div class="row">
-   
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" name="cleanrevDemand"></textarea>
-          <label for="textarea1">요청 사항을 입력해주세요!</label>
-        </div>
-      </div>  
-  </div>
+	
   
   
   
@@ -206,7 +170,7 @@
 	
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0737b58e3113159018b3cc43d251a2a&libraries=services"></script>
->>>>>>> branch 'master' of https://github.com/korany-lee/honlife.git
+
 <script>
 	function aa(){
 		alert('주소 검색버튼을 눌러주세요!');		
@@ -264,19 +228,95 @@
     }
 </script>
 						
-			<!-- 	<input type="button" onClick="goPopup();" value="우편번호 검색" class="contact100-form-btn" style="margin-bottom: 5px;width: 100px;height: 30px;"/>
-				<div class="wrap-input100 "> 			
-					<input type="text"  class="input100" style="width:500px;" id="roadFullAddr"  name="recruitAddr"  placeholder="주소를 입력해주세요"/>				
-				</div> -->
-	
 
-	
+
+      <div class="row">
+       <label style="font-size: 20px;">특별히 신경써줘야 할부분이 있으시면 적어주세요!</label>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" name="cleanrevDemand"></textarea>
+          
+        </div>
+      </div>  
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var form = document.frm;
+	//첫번째 라디오 버튼을 선택한 경우
+	if(form.payment[0].checked == true){
 		
-				
-				
-				
+		$("#sub").on("click", function(){
+		    window.open("cleanpayKG", "popup_window", "width=500, height=300, scrollbars=no");
+		    $("#frm").submit();
+		  });
+		form.action = "cleanpayKG";
+	}
+	//두번째 라디오 버튼을 선택한 경우
+	else if(form.payment[1].checked == true){
+		
+		$("#sub").on("click", function(){
+		    window.open("cleanpayKakao", "popup_window", "width=500, height=300, scrollbars=no");
+		    $("#frm").submit();
+		  });
+		window.open("cleanpayKakao","Kakaopay","width=600,height=700, left=250, top=50");
+	}
+	else{
+		
+		$("#sub").on("click", function(){
+		    window.open("cleanpayDanal", "popup_window", "width=500, height=300, scrollbars=no");
+		    $("#frm").submit();
+		  });
+		form.action = "cleanpayDanal";
+	}
+	form.submit();
+});
 
- <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%; border-radius: 30px; background-color: black">예약하기
+	/* function check(){
+		var form = document.frm;
+		//첫번째 라디오 버튼을 선택한 경우
+		if(form.payment[0].checked == true){
+			
+			form.action = "cleanpayKG";
+		}
+		//두번째 라디오 버튼을 선택한 경우
+		else if(form.payment[1].checked == true){
+			window.open("cleanpayKakao","Kakaopay","width=600,height=700, left=250, top=50");
+		}
+		else{
+			form.action = "cleanpayDanal";
+		}
+		form.submit();
+	}
+ */
+	</script>
+ <div class="row" >
+        <div class="input-field col s4">
+   <p>
+      <label>
+        <input class="with-gap" name="payment" type="radio" value="1"  />
+        <span>이니시스</span>
+      </label>  
+    </p> 
+    </div>
+          <div class="input-field col s4">
+    <p>
+      <label>
+        <input class="with-gap" name="payment" type="radio"  value="2"   />
+        <span>카카오페이</span>
+      </label>
+    </p> 
+       </div>      
+   <div class="input-field col s4"> 
+    <p>
+      <label>
+        <input class="with-gap" name="payment" type="radio"   value="3"  />
+        <span>다날 휴대폰결제</span>
+      </label>
+    </p>    
+    </div>
+</div>
+
+ <button class="btn waves-effect waves-light"  id="sub" onclick ="javascript:check()"style="width: 100%; border-radius: 30px; background-color: black">예약하기
     <i class="material-icons right">send</i>
   </button>
 				       
@@ -288,7 +328,7 @@
 
 	
 
-<<<<<<< HEAD
+
 	<script src="../careView/contactform/vendor/daterangepicker/moment.min.js"></script>
 	<script src="../careView/contactform/vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="../careView/contactform/vendor/countdowntime/countdowntime.js"></script>
@@ -321,8 +361,7 @@
 			});
 		})
 	</script>
-=======
->>>>>>> branch 'master' of https://github.com/korany-lee/honlife.git
+
 
 	</section>
 

@@ -7,10 +7,13 @@
         <bean id="registService" class="service.care.clean.RegistService" />
         <bean id="recruitListService" class="service.care.clean.RecruitListService"/>
         <bean id="recruitDeleteService" class="service.care.clean.RecruitDeleteService" />
+        <bean id="revDeleteService" class="service.care.clean.RevDeleteService" />
+        
+        
         <bean id="recruitDetailService" class="service.care.clean.RecruitDetailService" />
 		<bean id="cleanFeeService" class="service.care.clean.CleanFeeService" />
 		<bean id="cleanRevService" class="service.care.clean.CleanRevService" />
-		
+		<bean id="cleanRevDetailService" class="service.care.clean.CleanRevDetailService"/>
 		<bean id="employeeDetailService" class="service.care.clean.EmployeeDetailService" />
         <bean id="employeeListService" class="service.care.clean.EmployeeListService" />
         <bean id="itemOrderService" class="service.care.clean.ItemOrderService" />

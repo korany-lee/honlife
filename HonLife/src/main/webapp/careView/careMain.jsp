@@ -34,8 +34,10 @@
 				<a class="logo" href="careMain" title="HON LIFE"></a>			
 			</div>
 		
+		
+		
 			<div class="col-right">
-				<c:if test=" }">
+				<c:if test="${!empty memberInfo }">
 			    <a href="manager/main" class="regist" > 관리자페이지</a> 
 			    	</c:if>
 			    <br>
