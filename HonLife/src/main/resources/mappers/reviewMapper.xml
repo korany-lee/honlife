@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 	
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="reviewMapper">
+<cache />
+<resultMap type="Model.DTO.ReviewDTO" id="review">
+	<id column="roomreview_no" jdbcType="VARCHAR" property="roomReviewNo" />
+	<result column="roomrev_no" jdbcType="VARCHAR" property="roomRevNo" />
+	<result column="user_no" jdbcType="VARCHAR" property="userNo" />
+	<result column="room_no" jdbcType="VARCHAR" property="roomNo" />
+	<result column="roomreview_content" jdbcType="TIMESTAMP" property="review" />
+	<result column="roomreview_date" jdbcType="TIMESTAMP" property="reviewDate" />
+	<result column="roomreview_writer" jdbcType="VARCHAR" property="writer" />
+	<result column="roomreview_score" jdbcType="INTEGER" property="score" />
+</resultMap>
+
+
+<insert id="reviewInsert" parameterType="Model.DTO.ReviewDTO">
+insert into roomreview(roomreview_no,roomrev_no,user_no,room_no,roomreview_content,roomreview_date,roomreview_writer,roomreview_score)
+values(review_seq.nextval,#{roomRevNO},#{userNo},#{roomNo},#{review},sysdate,#{writer},#{score})
+</insert>
+
+
+<select id="reviewList" parameterType="string" resultMap="review">
+select * from roomreview where room_no = #{roomNo}
+
+</select>
+
+<select id="totalReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo}
+</select>
+<select id="fiveReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo} and roomreview_score=5
+</select>
+<select id="fourReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo} and roomreview_score=4
+</select>
+<select id="threeReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo} and roomreview_score=3
+</select>
+<select id="twoReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo} and roomreview_score=2
+</select>
+<select id="oneReview" parameterType="string" resultType="integer">
+select count(*) from roomreview where room_no= #{roomNo} and roomreview_score=1
+</select>
+
+<select id="totalScore" parameterType="string" resultType="integer" >
+select roomreview_score from roomreview where room_no =#{roomNo}
+</select>
+
+</mapper>

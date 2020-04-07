@@ -8,7 +8,9 @@
 <bean class="controller.stay.member.StayMemberController" />
 
 
-
+<bean id="reviewService" class="service.stay.member.ReviewService" />
 <bean id="myReservationService" class="service.stay.member.MyReservationService" />
 
+
+<bean id="reviewRepository" class="repository.stay.ReviewRepository" />
 </beans>

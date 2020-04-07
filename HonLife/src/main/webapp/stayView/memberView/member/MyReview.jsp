@@ -10,19 +10,14 @@
 <script type="text/javascript"
 src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
 <script type="text/javascript">
-function revDetail(n){
-	$("#content").innerHTML = "";  
+function review(n,a){
+	if(n=='사용대기'){
+		alert('입실 전 예약입니다.');
+	}else{
+		location.href='writeReview?no=' +a;
+	}
 	
-	$.ajax({
-		type : "POST",
-		url : "revDetail",
-		data : "revNum=" +n ,
-		datatype : "html",
-		success : function(data1) {
-			$("#content").html(data1);
-		}
 	
-	});  
 }	
 
 
@@ -88,20 +83,22 @@ function revDetail(n){
 					<table class="price-table">
 						<thead>
 							<tr align="center">
-								<th style="width:33%">대여기간</th>
-								<th style="width:33%">예약번호</th>
-								<th style="width:33%">예약 호실</th>
+								<th style="width:25%">대여기간</th>
+								<th style="width:25%">예약번호</th>
+								<th style="width:25%">예약 호실</th>
+								<th style="width:25%">후기작성</th>
 							</tr>
 						</thead>
 						<tbody>
 						
 						
 						<c:forEach items="${rev }" var="room">
-						<c:if test="${room.roomRevState eq '사용대기' }">
+						<c:if test="${room.roomRevReviewChk eq 'N' }">
 							<tr>
-								<td><span class="box-point"><a href="#" onclick="javascript:revDetail('${room.roomRevNo }');"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/></a> </td>
+								<td><span class="box-point"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/> </td>
 								<td><span class="point">${room.roomRevNo }</span></td>
 								<td><span class="point">${room.roomNo }</span>  <input type="hidden" id="revNum" value="${room.roomRevNo }"></td>
+								<td><a href="#" onclick="javascript:review('${room.roomRevState}','${room.roomRevNo }')"class="genric-btn info-border circle arrow">후기작성하기<span class="lnr lnr-arrow-right"></span></a></td>
 							</tr>
 						</c:if>	
 						</c:forEach>
@@ -115,21 +112,23 @@ function revDetail(n){
 					<table class="price-table">
 						<thead>
 							<tr align="center">
-								<th style="width:33%">대여기간</th>
-								<th style="width:33%">예약번호</th>
-								<th style="width:33%">예약 호실</th>
+								<th style="width:25%">대여기간</th>
+								<th style="width:25%">예약번호</th>
+								<th style="width:25%">예약 호실</th>
+								<th style="width:25%">후기확인</th>
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach items="${rev }" var="room">
-						<c:if test="${room.roomRevState ne '사용대기' }">
+					    <c:forEach items="${rev }" var="room">
+						<c:if test="${room.roomRevReviewChk ne 'N' }">
 							<tr>
-								<td><span class="box-point"><a href="#" onclick="javascript:revDetail('${room.roomRevNo }');"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/></a> </td>
+								<td><span class="box-point"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/></td>
 								<td><span class="point">${room.roomRevNo }</span></td>
 								<td><span class="point">${room.roomNo }</span></td>
+								<td><a href="#" class="genric-btn primary circle arrow">후기 확인<span class="lnr lnr-arrow-right"></span></a></td>
 							</tr>
 						</c:if>	
-						</c:forEach>
+						</c:forEach> 
 						</tbody>
 					</table>
 					<div class="price-txt">
