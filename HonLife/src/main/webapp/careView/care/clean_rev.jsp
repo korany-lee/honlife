@@ -19,6 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="../careView/contactform/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="../careView/contactform/vendor/noui/nouislider.css">
 	<link rel="stylesheet" type="text/css" href="../careView/contactform/css/util.css">
+	
+            
 </head>
 <body>
 	<jsp:include page="../includer/careheader.jsp"/>
@@ -76,6 +78,15 @@
 				<div class="wrap-input100 bg1 rs1-wrap-input100" style="width: calc((191% - 120px) / 2);">			
 					<input class="input100" type="text" value="" id="employeeJumin"name="employeeJumin" placeholder="숫자만 입력해주세요">
 				</div>
+					<span class="label-input100" style="font-size: 20px; ">예약 시간 선택</span> 
+				
+				<div class="container-contact100-form-btn" style="width: 16%;">
+				  <input type="text" class="datepicker"> 
+				</div>
+				
+				
+				
+				
 				<span class="label-input100" style="font-size: 20px; ">주소</span> 
 				
 					
@@ -218,6 +229,11 @@
 	<script src="../careView/contactform/js/main.js"></script>
 	<script src="../careView/contactform/vendor/select2/select2.min.js"></script>
 	<script>
+	 $(document).ready(function(){
+		    $('.datepicker').datepicker();
+		  });
+	
+	
 		$(".js-select2").each(function(){
 			$(this).select2({
 				minimumResultsForSearch: 20,

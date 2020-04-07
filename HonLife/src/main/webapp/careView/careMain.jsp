@@ -86,7 +86,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.voxverticalvillage.ro\/wp-admin\/admin-aj
 			</div>
 		
 			<div class="col-right">
-				<c:if test="">
+				<c:if test=" }">
 			    <a href="manager/main" class="regist" > 관리자페이지</a> 
 			    	</c:if>
 			    <br>
