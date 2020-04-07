@@ -48,7 +48,7 @@ public class CleanReservationController {
 		return "careView/care/clean_rev";
 	}
 
-@RequestMapping(value="/care/cleanpayKG",method = RequestMethod.GET)
+@RequestMapping(value="/care/cleanpayKG")
 	public String revAct(CleanRevCommand cleanRevCommand,HttpSession session) {
 	cleanRevService.revIn(cleanRevCommand);
 	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
@@ -60,12 +60,12 @@ public class CleanReservationController {
 	return "redirect:/care/paymentKG?userId="+userId+"&userNo="+userNo+"&revNo="+revNo;
 }
 
-@RequestMapping(value="/care/cleanpayKakao",method = RequestMethod.GET)
+@RequestMapping(value="/care/cleanpayKakao")
 
 public String revkakao(CleanRevCommand cleanRevCommand,HttpSession session) {
 	cleanRevService.revIn(cleanRevCommand);
 	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-	
+	System.out.println("cleanCommand/pay"+ cleanRevCommand.getRevPay());
 	String userId = login.getUserId();
 	String userNo = login.getUserNo();
 	String revNo = cleanRevCommand.getCleanrevNo();
@@ -74,7 +74,7 @@ public String revkakao(CleanRevCommand cleanRevCommand,HttpSession session) {
 	
 }
 
-@RequestMapping(value="/care/cleanpayDanal" ,method = RequestMethod.GET)
+@RequestMapping(value="/care/cleanpayDanal")
 public String revDanal(CleanRevCommand cleanRevCommand,HttpSession session) {
 	cleanRevService.revIn(cleanRevCommand);
 	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");

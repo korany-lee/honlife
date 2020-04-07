@@ -26,9 +26,8 @@ public class CleanRevDetailService {
 		cdto.setUserNo(userNo);
 		
 		cdto = registRepository.revDetail(cdto);
-	
 		mdto = memberRepository.selectOneMem(userId);
-	
+			
 			
 	
 		

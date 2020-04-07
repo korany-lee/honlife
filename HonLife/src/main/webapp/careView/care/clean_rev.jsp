@@ -31,8 +31,15 @@
      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
      
      <script>
+     var today = new Date();
      $(document).ready(function(){
-    	    $('.datepicker').datepicker();    	
+    	    $('.datepicker').datepicker({
+    	    	
+    	    	
+    	    	
+    	    });    	
+    	    
+    	    
     	    $('.timepicker').timepicker();
     	   
     	  });
@@ -65,7 +72,7 @@
 	
 				
 				
-	<form class="col s12" method="POST" name= "frm">	
+	<form class="col s12" method="POST" name="frm" id="frm">	
 
 <div class="input-field col s6">
     <label>예약번호</label>
@@ -73,6 +80,7 @@
   
 </div>
     <input type="hidden" value="${userNo}" name="userNo" />
+     <input type="hidden" value="${userId}" name="useId" />
       <div class="row">
         <div class="input-field col s6">
           <input  id="name" type="text" name="userName"value="${member.userName }" readonly="readonly">
@@ -240,38 +248,8 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){
-	var form = document.frm;
-	//첫번째 라디오 버튼을 선택한 경우
-	if(form.payment[0].checked == true){
-		
-		$("#sub").on("click", function(){
-		    window.open("cleanpayKG", "popup_window", "width=500, height=300, scrollbars=no");
-		    $("#frm").submit();
-		  });
-		form.action = "cleanpayKG";
-	}
-	//두번째 라디오 버튼을 선택한 경우
-	else if(form.payment[1].checked == true){
-		
-		$("#sub").on("click", function(){
-		    window.open("cleanpayKakao", "popup_window", "width=500, height=300, scrollbars=no");
-		    $("#frm").submit();
-		  });
-		window.open("cleanpayKakao","Kakaopay","width=600,height=700, left=250, top=50");
-	}
-	else{
-		
-		$("#sub").on("click", function(){
-		    window.open("cleanpayDanal", "popup_window", "width=500, height=300, scrollbars=no");
-		    $("#frm").submit();
-		  });
-		form.action = "cleanpayDanal";
-	}
-	form.submit();
-});
 
-	/* function check(){
+	 function check(){
 		var form = document.frm;
 		//첫번째 라디오 버튼을 선택한 경우
 		if(form.payment[0].checked == true){
@@ -280,17 +258,19 @@ $(document).ready(function(){
 		}
 		//두번째 라디오 버튼을 선택한 경우
 		else if(form.payment[1].checked == true){
-			window.open("cleanpayKakao","Kakaopay","width=600,height=700, left=250, top=50");
+			form.action = "cleanpayKakao";
 		}
 		else{
 			form.action = "cleanpayDanal";
 		}
 		form.submit();
 	}
- */
+ 
 	</script>
+ <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
+	
  <div class="row" >
-        <div class="input-field col s4">
+ <div class="input-field col s4">
    <p>
       <label>
         <input class="with-gap" name="payment" type="radio" value="1"  />
@@ -298,7 +278,7 @@ $(document).ready(function(){
       </label>  
     </p> 
     </div>
-          <div class="input-field col s4">
+  <div class="input-field col s4">
     <p>
       <label>
         <input class="with-gap" name="payment" type="radio"  value="2"   />
@@ -315,8 +295,8 @@ $(document).ready(function(){
     </p>    
     </div>
 </div>
-
- <button class="btn waves-effect waves-light"  id="sub" onclick ="javascript:check()"style="width: 100%; border-radius: 30px; background-color: black">예약하기
+ 
+ <button class="btn waves-effect waves-light"  id="sub" onclick="javascript:check()" style="width: 100%; border-radius: 30px; background-color: black">예약하기
     <i class="material-icons right">send</i>
   </button>
 				       

@@ -16,7 +16,7 @@ import service.care.clean.CleanRevService;
 public class CleanPaymentController {
 	@Autowired
 	CleanRevDetailService  cleanRevDetailService;
-	@RequestMapping(value="/care/paymentKG",method = RequestMethod.GET)
+	@RequestMapping(value="/care/paymentKG")
 	public String pay(HttpSession session,@RequestParam("userId") String userId,
 															@RequestParam("userNo") String userNo,
 															@RequestParam("revNo") String revNo ,Model model) {

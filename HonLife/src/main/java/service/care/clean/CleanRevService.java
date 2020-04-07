@@ -19,12 +19,15 @@ public class CleanRevService {
  RegistRepository registRepository;
 	public void revIn(CleanRevCommand crc) {
 		CleanRevDTO cr = new CleanRevDTO();
+		
 		cr.setCleanrevNo(crc.getCleanrevNo());
 		cr.setUserNo(crc.getUserNo());
 		cr.setEmployeeNo(crc.getEmployeeNo());
 	    cr.setCleanfeeSize(crc.getCleanfeeSize());
 	    String pay= crc.getRevPay().replace("원","");
 	    cr.setRevPay(Integer.parseInt(pay));
+	    
+	    System.out.println(pay);
 	    Date revDate = new Date(crc.getCleanrevDate().getTime());
 	    cr.setCleanrevDate(revDate);
 	

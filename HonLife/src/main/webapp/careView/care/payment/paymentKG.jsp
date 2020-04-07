@@ -52,7 +52,7 @@ IMP.request_pay({
     		}
     	});
     	
-	location.href='careMain';
+	location.href='../careMain';
     } else {
         var msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;   
@@ -64,13 +64,6 @@ IMP.request_pay({
 });
 
 </script>
-<input type="hidden" value="${rev.cleanrevNo}" id="revNo">
-<input type="hidden" value="${rev.revPay }" id="revPay">
-<input type="hidden" value="${member.userEmail}" id="email">
-
-<input type="hidden" value="${member.userName}" id="name">
-<input type="hidden" value="${member.userPh}" id="ph">
-<input type="hidden" value="${rev.cleanrevAddr}" id="addr">
 
 
 

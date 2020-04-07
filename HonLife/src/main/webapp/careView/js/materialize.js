@@ -2220,7 +2220,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     container: null,
     coverTrigger: true,
     closeOnClick: true,
-    hover: false,
+    hover: true,
     inDuration: 150,
     outDuration: 250,
     onOpenStart: null,
@@ -8728,7 +8728,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
   var _defaults = {
     // Close when date is selected
-    autoClose: false,
+    autoClose: true,
 
     // the default output format for the input field value
     format: 'yyyy-mm-dd',
@@ -8742,7 +8742,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     // Make the `defaultDate` the initial selected value
     setDefaultDate: false,
 
-    disableWeekends: false,
+    disableWeekends: true,
 
     disableDayFn: null,
 
@@ -8750,7 +8750,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     firstDay: 0,
 
     // The earliest date that can be selected
-    minDate: null,
+    minDate: new Date(),
     // Thelatest date that can be selected
     maxDate: null,
 
@@ -8758,7 +8758,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     yearRange: 10,
 
     // used internally (don't config outside)
-    minYear: 0,
+    minYear: 1980,
     maxYear: 9999,
     minMonth: undefined,
     maxMonth: undefined,
@@ -8769,7 +8769,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     isRTL: false,
 
     // Render the month after year in the calendar title
-    showMonthAfterYear: false,
+    showMonthAfterYear: true,
 
     // Render days of the calendar grid that fall in the next or previous month
     showDaysInNextAndPreviousMonths: false,
@@ -9658,7 +9658,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     tickRadius: 20,
     duration: 350,
     container: null,
-    defaultTime: 'now', // default time, 'now' or '13:14' e.g.
+    defaultTime: '0:14', // default time, 'now' or '13:14' e.g.
     fromNow: 0, // Millisecond offset from the defaultTime
     showClearBtn: false,
 
@@ -9669,7 +9669,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       done: 'Ok'
     },
 
-    autoClose: false, // auto close when minute is selected
+    autoClose: true, // auto close when minute is selected
     twelveHour: false, // change to 12 hour AM/PM clock from 24 hour
     vibrate: true, // vibrate the device when dragging clock hand
 
@@ -10136,7 +10136,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         }
 
         // Once hours or minutes changed, vibrate the device
-        if (this[this.currentView] !== value) {
+   if (this[this.currentView] !== value) {
           if (this.vibrate && this.options.vibrate) {
             // Do not vibrate too frequently
             if (!this.vibrateTimer) {
