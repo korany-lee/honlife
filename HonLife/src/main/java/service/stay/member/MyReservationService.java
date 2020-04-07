@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Model.DTO.FurnitureDTO;
+import Model.DTO.FurnitureRevDTO;
 import Model.DTO.LoginDTO;
 import Model.DTO.RoomRevDTO;
 import repository.stay.FurnitureRepository;
@@ -47,8 +48,15 @@ public class MyReservationService {
 	}
 	
 	public void allCancel(String no) {
-		/*
-		 * rev.roomrevCancel(no); rev.frevCancel(no);
-		 */
+		rev.frevCancel(no);
+		rev.roomrevCancel(no); 
+		 
 	}
+	public void oneFrevCancel(String fNum,String rNum) {
+		FurnitureRevDTO dto = new FurnitureRevDTO();
+		dto.setFurnitureNo(fNum);
+		dto.setRoomRevNo(rNum);
+		rev.oneFrevCancel(dto);
+	}
+	
 }

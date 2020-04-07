@@ -97,4 +97,22 @@ select furniture_no from furniturerev where roomrev_no=#{roomRevNo}
 </select>
 
 
+<delete id="onefrevCancel" parameterType="Model.DTO.FurnitureRevDTO">
+delete from furniturerev where furniture_no=#{furnitureNo} and roomrev_no=#{roomRevNo}
+
+</delete>
+
+<delete id="roomrrevDelete">
+delete from roomrev where roomrev_no = #{no}
+</delete>
+<delete id="frevDelete">
+delete from furniturerev where roomrev_no=#{no}
+</delete>
+
+<update id="updateReviewChk" parameterType="string">
+update roomrev set ROOMREV_REVIEWCHK ='Y' where roomrev_no=#{num}
+</update>
+
+
+
 </mapper>

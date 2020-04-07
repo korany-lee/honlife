@@ -80,4 +80,25 @@ public class ReservationRepository {
 		return sqlSession.selectList(statement, roomRevNo);
 	}
 	
+	public void oneFrevCancel(FurnitureRevDTO dto) {  //하나의 가구 예약 취소
+		String statement = namespace + ".onefrevCancel";
+		sqlSession.delete(statement, dto);
+	}
+	
+	public void roomrevCancel(String no) {  //방 예약 취소
+		String statement = namespace + ".roomrrevDelete";
+		sqlSession.delete(statement, no);
+	}
+	
+	public void frevCancel(String no) {
+		String statement = namespace + ".frevDelete";
+		sqlSession.delete(statement, no);
+		
+	}
+	
+	public void updateReviewChk(String num) {
+		String statement = namespace +".updateReviewChk"; 
+		sqlSession.update(statement,num);
+	}
+	
 }

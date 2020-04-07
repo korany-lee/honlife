@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import Model.DTO.ReviewDTO;
 import Model.DTO.RoomDTO;
+import repository.stay.ReviewRepository;
 import repository.stay.RoomRepository;
 
 @Service
 public class RoomListService {
 	@Autowired
 	RoomRepository roomRepository;
+	
+	@Autowired
+	ReviewRepository reviewRepository;
 	
 	public void execute(String BigType,String SmallType,Model model) {
 		if(BigType.equals("view")) {
@@ -46,8 +51,35 @@ public class RoomListService {
 	
 	public void oneSelect(String num,Model model) {
 		RoomDTO one = roomRepository.oneSelect(num);
+		List<ReviewDTO> list = reviewRepository.roomReview(num);
 		
-		model.addAttribute("room",one);
+		List<Integer> totalScore = reviewRepository.sumScore(num);
+		
+		Integer total = 0;
+		for(int i=0;i<totalScore.size();i++) {
+			total = total + totalScore.get(i);
+		}
+		
+		Integer totalReview = totalScore.size();  //총 리뷰 개수
+		Integer five = reviewRepository.five(num);
+		Integer four = reviewRepository.four(num);
+		Integer three = reviewRepository.three(num);
+		Integer two = reviewRepository.two(num);
+		Integer low = reviewRepository.one(num);
+		Long average = (long) (total / totalReview);
+		
+		
+		model.addAttribute("total", total);
+		model.addAttribute("five", five);
+		model.addAttribute("four", four);
+		model.addAttribute("three", three);
+		model.addAttribute("two", two);
+		model.addAttribute("one", low);
+		model.addAttribute("totalReview", totalReview);
+		model.addAttribute("average", average);
+		
+		model.addAttribute("room",one); // 객실 하나 정보
+		model.addAttribute("review", list);  // 리뷰 정보들
 	}
 	
 	

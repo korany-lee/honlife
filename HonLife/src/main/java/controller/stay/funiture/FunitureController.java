@@ -88,7 +88,6 @@ public class FunitureController {
 	
 	@RequestMapping("/funiture/furnitureWishInsert")    //장바구니에 담기
 	public String furnitureWish(@RequestParam(value="furnitureNo") String furnitureNo,HttpSession session) {
-		System.out.println("장바구니 넣기 컨트롤러 들어옴");
 		furnitureInsertService.wishInsert(furnitureNo,session);
 		return "redirect:/funiture/furnitureRev";
 		

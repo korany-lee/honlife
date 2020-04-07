@@ -251,18 +251,7 @@
               >기본가구 목록</a
             >
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="contact-tab"
-              data-toggle="tab"
-              href="#contact"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false"
-              >Comments</a
-            >
-          </li>
+          
           <li class="nav-item">
             <a
               class="nav-link active"
@@ -299,68 +288,53 @@
                 <tbody>
                   <tr>
                     <td>
-                      <h5>Width</h5>
+                      <h5>1인용침대</h5>
                     </td>
                     <td>
-                      <h5>128mm</h5>
+                      <h5>침실등</h5>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h5>Height</h5>
+                      <h5>개인옷장</h5>
                     </td>
                     <td>
-                      <h5>508mm</h5>
+                      <h5>간의의자</h5>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h5>Depth</h5>
+                      <h5>화장대</h5>
                     </td>
                     <td>
-                      <h5>85mm</h5>
+                      <h5>전기밥솥</h5>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h5>Weight</h5>
+                      <h5>인덕션</h5>
                     </td>
                     <td>
-                      <h5>52gm</h5>
+                      <h5>13인치 TV</h5>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h5>Quality checking</h5>
+                      <h5>미니 테이블</h5>
                     </td>
                     <td>
-                      <h5>yes</h5>
+                      <h5>1인용 쇼파</h5>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <h5>Freshness Duration</h5>
+                      <h5>에어컨</h5>
                     </td>
                     <td>
-                      <h5>03days</h5>
+                      <h5>벽걸이 시계</h5>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <h5>When packeting</h5>
-                    </td>
-                    <td>
-                      <h5>Without touch of hand</h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <h5>Each Box contains</h5>
-                    </td>
-                    <td>
-                      <h5>60pcs</h5>
-                    </td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -439,72 +413,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="review_box">
-                  <h4>Post a comment</h4>
-                  <form
-                    class="row contact_form"
-                    action="contact_process.php"
-                    method="post"
-                    id="contactForm"
-                    novalidate="novalidate"
-                  >
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Your Full name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="Email Address"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="number"
-                          name="number"
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea
-                          class="form-control"
-                          name="message"
-                          id="message"
-                          rows="1"
-                          placeholder="Message"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-right">
-                      <button
-                        type="submit"
-                        value="submit"
-                        class="btn submit_btn"
-                      >
-                        Submit Now
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              
             </div>
           </div>
           <div
@@ -515,66 +424,59 @@
           >
             <div class="row">
               <div class="col-lg-6">
-                <div class="row total_rate">
+                <div class="row total_rate" style="margin-left:300px; width:535px;">
                   <div class="col-6">
                     <div class="box_total">
-                      <h5>Overall</h5>
-                      <h4>4.0</h4>
-                      <h6>(03 Reviews)</h6>
+                      <h5>평균점수</h5>
+                      <h4>${average }</h4>
+                      <h6>객실 점수 평가</h6>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="rating_list">
-                      <h3>Based on 3 Reviews</h3>
+                      <h3>${totalReview }개의 후기</h3>
                       <ul class="list">
                         <li>
                           <a href="#"
-                            >5 Star
+                            >5점
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
+                            <i class="fa fa-star"></i> ${five }명</a
                           >
                         </li>
                         <li>
                           <a href="#"
-                            >4 Star
+                            >4점  
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
+                            <i class="fa fa-star"></i> ${four }명</a
                           >
                         </li>
                         <li>
                           <a href="#"
-                            >3 Star
+                            >3점
+                            
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
+                            <i class="fa fa-star"></i> ${three }명</a
                           >
                         </li>
                         <li>
                           <a href="#"
-                            >2 Star
+                            >2점
+                           
                             <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
+                            <i class="fa fa-star"></i> ${two }명</a
                           >
                         </li>
                         <li>
                           <a href="#"
-                            >1 Star
+                            >1점
                             <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
+                             ${one }명</a
                           >
                         </li>
                       </ul>
@@ -590,167 +492,47 @@
                           alt=""
                         />
                       </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
+                      
+                      <c:forEach items="${review }" var="r">
+                      <div class="media-body" style="margin-left:300px; width:535px;">
+                        <h4>${r.writer }&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${r.reviewDate }" pattern="yyyy-MM-dd hh:mm"/></h4>
+                        
+                        <c:if test="${r.score ==5 }">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
+                        </c:if>
+                        <c:if test="${r.score ==4 }">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        </c:if>
+                        <c:if test="${r.score ==3 }">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        </c:if>
+                        <c:if test="${r.score ==2 }">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        </c:if>
+                        <c:if test="${r.score ==1 }">
+                        <i class="fa fa-star"></i>
+                        </c:if>
                       </div>
                     </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
+                    <p style="margin-left:310px; width:535px;">
+                      	${r.review }
                     </p>
                   </div>
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-2.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-3.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
+                  </c:forEach>
+                  
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="review_box">
-                  <h4>Add a Review</h4>
-                  <p>Your Rating:</p>
-                  <ul class="list">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <p>Outstanding</p>
-                  <form
-                    class="row contact_form"
-                    action="contact_process.php"
-                    method="post"
-                    id="contactForm"
-                    novalidate="novalidate"
-                  >
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Your Full name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="Email Address"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="number"
-                          name="number"
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea
-                          class="form-control"
-                          name="message"
-                          id="message"
-                          rows="1"
-                          placeholder="Review"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-right">
-                      <button
-                        type="submit"
-                        value="submit"
-                        class="btn submit_btn"
-                      >
-                        Submit Now
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -20,14 +20,38 @@ $(function() {
 	$("#allcancel").click(function() { 
 		if(confirm('전체예약을 취소 하시겠습니까?')){
 			location.href='deleteRev?no=' + $("#revNo").val();
+			alert('삭제 되었습니다');
 		}else{
 			return;
 		}
 	});  
 }); 
  
-</script>
+ 
+ 
+function thisDelete(n){
+	if(confirm('취소 하시겠습니까?')){
+		location.href="oneFrevCancel?furnitureNo=" + n+"&&revNo=" +$("#revNo").val();
+		alert('삭제 되었습니다.');
+		location.href='MyReservation'
+	}else{
+		return;
+	}
+	  
+}	
 
+function delete_ok(responseText, statusText, xhr, $form){
+	if(statusText == "success"){
+		alert('삭제 되었습니다.');
+		
+	}
+	
+	
+}
+ 
+ 
+ 
+</script>
 </head>
 <body>
 	<table class="price-table">
@@ -98,12 +122,15 @@ $(function() {
 				<td style="width:66%" >${fff.furnitureType }</td>
 			</tr>
 	</table>
+	<div class="col-md-12 text-right">
+	<a href="#"class="main_btn" onclick="javascript:thisDelete('${fff.furnitureNo}')">해당가구 예약취소</a>
+	</div>
 	</c:forEach>
 	</div>	
+	<br><br><br>
 	<div class="col-md-12 text-right">
 		 <input type="hidden" id="revNo" value="${rev.roomRevNo }">
 		 <button class="main_btn" id="allcancel">전체 예약취소</button>
-		 <button class="main_btn" id="cancel">가구 예약취소</button>
 		 <a class="main_btn"  href="javascript:location.href='MyReservation';">뒤로가기</a>
 	</div>
 </body>
