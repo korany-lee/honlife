@@ -123,14 +123,19 @@ function delete_ok(responseText, statusText, xhr, $form){
 			</tr>
 	</table>
 	<div class="col-md-12 text-right">
+	<c:if test="${rev.roomRevState eq '사용대기' }">
 	<a href="#"class="main_btn" onclick="javascript:thisDelete('${fff.furnitureNo}')">해당가구 예약취소</a>
+	</c:if>
 	</div>
+	
 	</c:forEach>
 	</div>	
 	<br><br><br>
 	<div class="col-md-12 text-right">
 		 <input type="hidden" id="revNo" value="${rev.roomRevNo }">
+		 <c:if test="${rev.roomRevState eq '사용대기' }">
 		 <button class="main_btn" id="allcancel">전체 예약취소</button>
+		 </c:if>
 		 <a class="main_btn"  href="javascript:location.href='MyReservation';">뒤로가기</a>
 	</div>
 </body>

@@ -52,6 +52,11 @@ public class ReservationRepository {
 		return sqlSession.selectOne(statement,revNum);
 	}
 	
+	public List<RoomRevDTO> oneRev1(String revNum) {
+		String statement = namespace + ".oneRev1";
+		return sqlSession.selectList(statement,revNum);
+	}
+	
 	public String makeSeq() {
 		String statement = namespace + ".makeSeq";
 		sqlSession.insert(statement);
@@ -99,6 +104,36 @@ public class ReservationRepository {
 	public void updateReviewChk(String num) {
 		String statement = namespace +".updateReviewChk"; 
 		sqlSession.update(statement,num);
+	}
+	
+	public List<RoomRevDTO> allRoomRev(){
+		String statement = namespace +".allRoomRev";
+		return sqlSession.selectList(statement);
+	}
+	
+	public List<FurnitureRevDTO> allFurnitureRev() {
+		String statement = namespace +".allFurnitureRev";
+		return sqlSession.selectList(statement);
+	}
+	
+	public void checkIn(String revNo) {
+		String statement = namespace +".chkIn";
+		sqlSession.update(statement, revNo);
+	}
+	
+	public void checkOut(String revNo) {
+		String statement = namespace +".chkOut";
+		sqlSession.update(statement, revNo);
+	}
+	
+	public void frevTrue(String revNo) {
+		String statement = namespace +".frevTrue";
+		sqlSession.update(statement, revNo);
+	}
+	
+	public List<RoomRevDTO> today() {
+		String statement = namespace +".todayRev";
+		return sqlSession.selectList(statement);
 	}
 	
 }

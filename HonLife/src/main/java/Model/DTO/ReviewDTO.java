@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class ReviewDTO implements Serializable {
-	String roomRevNO;
+	String roomRevNo;
 	String userNo;
 	String roomNo;
 	String review;
@@ -20,11 +20,11 @@ public class ReviewDTO implements Serializable {
 	public void setRoomReviewNo(String roomReviewNo) {
 		this.roomReviewNo = roomReviewNo;
 	}
-	public String getRoomRevNO() {
-		return roomRevNO;
+	public String getRoomRevNo() {
+		return roomRevNo;
 	}
-	public void setRoomRevNO(String roomRevNO) {
-		this.roomRevNO = roomRevNO;
+	public void setRoomRevNO(String roomRevNo) {
+		this.roomRevNo = roomRevNo;
 	}
 	public String getUserNo() {
 		return userNo;

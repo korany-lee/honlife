@@ -66,7 +66,11 @@ public class RoomListService {
 		Integer three = reviewRepository.three(num);
 		Integer two = reviewRepository.two(num);
 		Integer low = reviewRepository.one(num);
-		Long average = (long) (total / totalReview);
+		if(totalReview!=0) {
+			Long average = (long) (total / totalReview);
+			model.addAttribute("average", average);
+		}
+		
 		
 		
 		model.addAttribute("total", total);
@@ -76,7 +80,7 @@ public class RoomListService {
 		model.addAttribute("two", two);
 		model.addAttribute("one", low);
 		model.addAttribute("totalReview", totalReview);
-		model.addAttribute("average", average);
+		
 		
 		model.addAttribute("room",one); // 객실 하나 정보
 		model.addAttribute("review", list);  // 리뷰 정보들

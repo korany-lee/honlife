@@ -47,6 +47,15 @@ public class RoomRepository {
 		return sqlSession.selectOne(statement,dto);
 	}
 	
+	public void changeState(String roomNo) {
+		String statement = namespace +".stateChange";
+		sqlSession.update(statement, roomNo);
+	}
+	
+	public void changeState1(String roomNo) {
+		String statement = namespace +".stateChange1";
+		sqlSession.update(statement, roomNo);
+	}
 	
 	
 }

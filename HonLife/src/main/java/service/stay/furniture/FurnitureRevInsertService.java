@@ -24,6 +24,8 @@ public class FurnitureRevInsertService {
 	public void furnitureRevInsert(String revNum,Model model) {
 		RoomRevDTO dto = revRepository.oneRev(revNum);
 		
+		revRepository.frevTrue(revNum);
+		
 		List<String> furnitureNo = furnitureRepository.getFurnitureNo(dto.getUserNo()); //장바구니에서 내 가구번호를 가져옴
 		
 		/*

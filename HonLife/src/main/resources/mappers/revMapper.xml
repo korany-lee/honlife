@@ -7,7 +7,7 @@
 <cache />
 <sql id="basecolumn">
 	ROOMREV_NO,USER_NO,ROOM_NO,ROOMREV_REVNAME,ROOMREV_LIVEUSER,ROOMREV_STARTDATE,
-	ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL,ROOMREV_REVIEWCHK
+	ROOMREV_ENDDATE,ROOMREV_STATE,ROOMREV_PRICE,ROOMREV_PH,ROOMREV_EMAIL,ROOMREV_REVIEWCHK,ROOMREV_FREVCHK
 </sql>
 
 <resultMap type="Model.DTO.RoomRevDTO" id="roomRev">
@@ -23,6 +23,7 @@
 	<result column="ROOMREV_PH" jdbcType="VARCHAR" property="roomRevPh" />
 	<result column="ROOMREV_EMAIL" jdbcType="VARCHAR" property="roomRevEmail" />
 	<result column="ROOMREV_REVIEWCHK" jdbcType="VARCHAR" property="roomRevReviewChk" />
+	<result column="ROOMREV_FREVCHK" jdbcType="VARCHAR" property="roomRevFrevchk" />
 </resultMap>
 
 <resultMap type="Model.DTO.FurnitureRevDTO" id="furnitureRev">
@@ -43,7 +44,7 @@
 <insert id="roomRevInsert" parameterType="Model.DTO.RoomRevDTO">
 	insert into roomrev(<include refid="basecolumn" />)	
 	values(roomrev_seq.nextval,#{userNo},#{roomNo},#{roomRevName},#{roomLiveName},
-	#{roomRevStartDate},#{roomRevEndDate},'사용대기',#{roomRevPrice},#{roomRevPh},#{roomRevEmail},'N')
+	#{roomRevStartDate},#{roomRevEndDate},'사용대기',#{roomRevPrice},#{roomRevPh},#{roomRevEmail},'N','해당없음')
 </insert>
 
 
@@ -68,6 +69,9 @@ select * from roomrev where user_no = #{userNo}
 </select>
 
 <select id="oneRev" resultMap="roomRev" parameterType="string" >
+select * from roomrev where ROOMREV_NO = #{revNum}
+</select>
+<select id="oneRev1" resultMap="roomRev" parameterType="string" >
 select * from roomrev where ROOMREV_NO = #{revNum}
 </select>
 
@@ -113,6 +117,28 @@ delete from furniturerev where roomrev_no=#{no}
 update roomrev set ROOMREV_REVIEWCHK ='Y' where roomrev_no=#{num}
 </update>
 
+<select id="allRoomRev" resultMap="roomRev">
+select * from roomrev
+</select>
 
+<update id="chkIn" parameterType="string">
+update roomrev set roomrev_state='사용중' where roomrev_no =#{revNo}
+</update>
+
+<update id="chkOut" parameterType="string">
+update roomrev set roomrev_state='퇴실완료' where roomrev_no =#{revNo}
+</update>
+
+<update id="frevTrue" parameterType="string">
+update roomrev set roomrev_frevchk ='준비미완료' where roomrev_no=#{revNo}
+</update>
+
+<select id="todayRev" resultMap="roomRev">
+select * from roomrev where roomrev_startdate =sysdate
+</select>
+
+<select id="allFurnitureRev" resultMap="furnitureRev">
+select * from furniturerev
+</select>
 
 </mapper>

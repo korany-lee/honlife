@@ -108,6 +108,31 @@ function revDetail(n){
 						
 						</tbody>
 					</table>
+					
+					<div class="price-tit clearfix">
+						<h3 class="sub-tit">사용중</h3>
+						
+					</div>
+					<table class="price-table">
+						<thead>
+							<tr align="center">
+								<th style="width:33%">대여기간</th>
+								<th style="width:33%">예약번호</th>
+								<th style="width:33%">예약 호실</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${rev }" var="room">
+						<c:if test="${room.roomRevState eq '사용중' }">
+							<tr>
+								<td><span class="box-point"><a href="#" onclick="javascript:revDetail('${room.roomRevNo }');"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/></a> </td>
+								<td><span class="point">${room.roomRevNo }</span></td>
+								<td><span class="point">${room.roomNo }</span></td>
+							</tr>
+						</c:if>	
+						</c:forEach>
+						</tbody>
+					</table>
 					<div class="price-tit clearfix">
 						<h3 class="sub-tit">퇴실완료</h3>
 						
@@ -122,7 +147,7 @@ function revDetail(n){
 						</thead>
 						<tbody>
 						<c:forEach items="${rev }" var="room">
-						<c:if test="${room.roomRevState ne '사용대기' }">
+						<c:if test="${room.roomRevState eq '퇴실완료' }">
 							<tr>
 								<td><span class="box-point"><a href="#" onclick="javascript:revDetail('${room.roomRevNo }');"><fmt:formatDate value="${room.roomRevStartDate }" pattern="yyyy-MM-dd"/> ~<fmt:formatDate value="${room.roomRevEndDate }" pattern="yyyy-MM-dd"/></a> </td>
 								<td><span class="point">${room.roomRevNo }</span></td>

@@ -17,8 +17,16 @@ public class RoomRevDTO  implements Serializable{
 	String roomRevPh;
 	String roomRevEmail;
 	String roomRevReviewChk;
+	String roomRevFrevchk;
 	
 	
+	
+	public String getRoomRevFrevchk() {
+		return roomRevFrevchk;
+	}
+	public void setRoomRevFrevchk(String roomRevFrevchk) {
+		this.roomRevFrevchk = roomRevFrevchk;
+	}
 	public String getRoomRevReviewChk() {
 		return roomRevReviewChk;
 	}

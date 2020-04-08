@@ -28,6 +28,7 @@
 				classpath:mail-config.xml
 				classpath:member-controller.xml
 				classpath:stay-memberController.xml
+				classpath:stay-managerController.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

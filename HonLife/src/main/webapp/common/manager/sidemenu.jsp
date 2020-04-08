@@ -158,7 +158,7 @@ $(function(){
 						<li><a href="#">세탁 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
-						<li><a href="#">객실 예약 내역 </a>
+						<li><a href="../manager/roomRevList">객실 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
 						<li><a href="#">가구 예약 내역 </a>

@@ -65,7 +65,7 @@ function review(n,a){
 			<!-- content -->
 			<section id="content">
 				<div class="sub-location clearfix">
-					<h3>방 예약내역</h3>
+					<h3>나의 후기</h3>
 					<ul class="clearfix">
 						<li><i class="material-icons">&#xE88A;</i></li>
 						<li class="arrow"> > </li>
@@ -131,14 +131,7 @@ function review(n,a){
 						</c:forEach> 
 						</tbody>
 					</table>
-					<div class="price-txt">
-						<!--<p><span><i class="material-icons">&#xE5CA;</i> 기본옵션</span> CDP 기본장착 + 요청시 GPS, 네비게이션무료장착, AUX선 설치</p>-->
-						<ul>
-							<li><i class="material-icons">&#xE5CA;</i> 상기 요금은 각 지점으로의 직접 배/반차 요금입니다. / 배회차 서비스를 받으시려면 1만원 추가됩니다. / 드라이버 이용요금은 포함되지 않은 금액입니다.</li>
-							<li><span>①</span> 차량을 결정하셨다면, 가까운 지점으로 전화하여 차량재고 유무를 확인하시기 바랍니다.</li>
-							<li><span>②</span> 예약시에는 차량 대여요금의 10%를 해당 지점으로 입금하시면 됩니다</li>
-						</ul>
-					</div>
+					
 				</div>
 		</section>
 </div>
