@@ -30,15 +30,15 @@ public class EmployeeListService {
 		
 		List<EmployeeDTO> empList = registRepository.empList();
 		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-				String userId = login.getUserId();
-			    
-	
-       MemberDTO mdto =  memberRepository.selectOneMem(userId);
-	
+		
+
+		String userId = login.getUserId();
+        MemberDTO mdto =  memberRepository.selectOneMem(userId);
+       	model.addAttribute("empList",empList);
         model.addAttribute("member" ,mdto);
         model.addAttribute("userId",userId);
 		model.addAttribute("userNo",login.getUserNo());
-		model.addAttribute("empList",empList);
+
 		
 	}
 	

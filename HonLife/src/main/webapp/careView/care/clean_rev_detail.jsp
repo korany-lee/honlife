@@ -191,30 +191,30 @@
 
 	
 	function payKG(data1,data2,data3){		
-		modal.style.display = "block";
-		 $.ajax({	        
+	
+		  $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentKG",
 		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
 		        success : function test(data){	
-		            modal.style.display = "none";
+		  
 		        		$("#paycall").html(data); 
 		        		},
 		        error : function error(){alert("error");}         
-		 });   
+		 });    
 	
 	};
 	
 	function payKakao(data1,data2,data3){		
-		modal.style.display = "block";
+		
 		 $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentKakao",
 		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
 		        success : function test(data){	
-		            modal.style.display = "none";
+		      
 		        		$("#paycall").html(data); 
 		        		},
 		        error : function error(){alert("error");}         
@@ -223,14 +223,14 @@
 	};
 	
 	function payDanal(data1,data2,data3){		
-		modal.style.display = "block";
+
 		 $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentDanal",
 		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
 		        success : function test(data){	
-		            modal.style.display = "none";
+		          
 		        		$("#paycall").html(data); 
 		        		},
 		        error : function error(){alert("error");}         

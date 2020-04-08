@@ -73,7 +73,9 @@
 			
 				<div class="th"><span>이름</span></div>		
 				<div class="th"><span>이메일</span></div>
+				<div class="th"><span>모집구분</span></div>
 				<div class="th"><span>지원자 확인 여부</span></div>
+				
 	
 			</div>
 
@@ -101,6 +103,18 @@
 										</span>
 										
 									</div>
+									<div class="td">
+									<c:if test="${list.recruitClass == 'cm' }">
+										청소매니저
+									</c:if>
+									<c:if test="${list.recruitClass == 'lm' }">
+									세탁 운송매니저
+									</c:if>
+										
+									</div>
+									
+									
+									
 									<div class="td">
 							<c:if test="${list.interview == 1 }">
 									  확인
@@ -193,7 +207,7 @@ function sendIntMail(data1,data2,data3){
         		$("#maincall").html(data); 
         		},
         error : function error(){alert("error");}         
- }); 
+ });  
 };
 
 

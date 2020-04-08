@@ -28,22 +28,8 @@
    
    
     
-     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-     
-     <script>
-     var today = new Date();
-     $(document).ready(function(){
-    	    $('.datepicker').datepicker({
-    	    	
-    	    	
-    	    	
-    	    });    	
-    	    
-    	    
-    	    $('.timepicker').timepicker();
-    	   
-    	  });
-     </script>
+ 
+    
 
 
 
@@ -52,7 +38,28 @@
 	<jsp:include page="../includer/careheader.jsp"/>
 
 <main>
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
 
+	    $('.datepicker').datepicker();    	
+	    
+	    
+	    $('.timepicker').timepicker();
+   
+	  });
+
+
+</script>
+
+<script type="text/javascript">
+function aaa(){
+var str = document.getElementById('cleanrevTime');
+var aa = str.substr(0,2);
+alert(aa);
+}
+
+</script>
 
 
 <section>
@@ -70,6 +77,8 @@
 			청소예약
 				</span>
 	
+				
+				<input type="button" onclick="aaa()" value="aa">
 				
 				
 	<form class="col s12" method="POST" name="frm" id="frm" action="cleanAct" >	
@@ -103,7 +112,7 @@
 		</div>
 	<div class="input-field col s6">
 	   <label>예약 시간</label>
-  		<input type="text" class="timepicker" id="cleanrevTime" name="cleanrevTime"placeholder="예약시간">
+  		<input type="text" class="timepicker" id="cleanrevTime" name="cleanrevTime"  placeholder="예약시간">
   		
      </div>
      </div>

@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<script type="text/javascript">
 
+
+
+<script type="text/javascript">
 var IMP = window.IMP; // 생략가능
 IMP.init('imp44470519');
 
