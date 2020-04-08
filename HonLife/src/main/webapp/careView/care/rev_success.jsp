@@ -96,15 +96,13 @@
 			
 				
 				<span class="contact100-form-title" >
-			예약 상세 내용
+		예약이 완료되었습니다 ! 내용을 확인해주세염.
 				</span>
 	
 				
 				
 
 				<table style="undefined;table-layout: fixed; width: 690px">
-				
-				
 <colgroup>
 <col style="width: 118px">
 <col style="width: 231px">
@@ -113,63 +111,53 @@
 </colgroup>
   <tr>
     <td>예약번호</td>
-    <td colspan="3">${rev.cleanrevNo }</td>
+    <td colspan="3">${suc.cleanrevNo }</td>
   </tr>
   <tr>
     <td>성명</td>
-    <td>${rev.userName }</td>
+    <td>${suc.memDTO.userName }</td>
     <td>연락처</td>
-    <td>${rev.userPh }</td>
+    <td>${suc.memDTO.userPh }</td>
   </tr>
   <tr>
     <td>이메일</td>
-    <td colspan="3">${rev.userEmail }</td>
+    <td colspan="3">${suc.memDTO.userEmail }</td>
   </tr>
   <tr>
     <td>예약 주소</td>
-    <td colspan="3">${rev.cleanrevAddr }</td>
+    <td colspan="3">${suc.cleanrevAddr }</td>
   </tr>
   <tr>
     <td>예약시간</td>
-    <td colspan="3"><fmt:formatDate value="${rev.cleanrevDate }" pattern="yyyy/MM/dd"/> / ${rev.cleanrevTime  }</td>
+    <td colspan="3">
+    	<fmt:formatDate value="${suc.cleanrevDate }" pattern="yyyy/MM/dd"/>/${suc.cleanrevTime  }</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
-    <td>${emp.employeeName }</td>
+    <td>${suc.empDTO.employeeName }</td>
     <td>담당매니저 연락처</td>
-    <td>${emp.employeePh }</td>
+    <td>${suc.empDTO.employeePh }</td>
   </tr>
   <tr>
     <td>청소면적</td>
-    <td colspan="3">${rev.cleanfeeSize }평</td>
+    <td colspan="3">${suc.cleanfeeSize }평</td>
   </tr>
   <tr>
     <td colspan="4">요청사항</td>
   
   </tr>
   <tr>
-    <td colspan="4">  ${rev.cleanrevDemand }</td>
+    <td colspan="4">  ${suc.cleanrevDemand }</td>
   </tr>
   <tr>
     <td colspan="2"></td>
     <td>총 결제 금액</td>
-    <td>${rev.revPay }</td>
+    <td>${suc.revPay }</td>
   </tr>
 </table>
 
 
- <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
- <div id=row>
- <button class="btn waves-effect waves-light"  onclick="javascript:payKG('${userId}','${userNo}','${rev.cleanrevNo}')"  style="width: 30%; border-radius: 30px; background-color: black">이니시스
-    <i class="material-icons right">send</i>
-  </button>
-  <button class="btn waves-effect waves-light" onclick="javascript:payKakao('${userId}','${userNo}','${rev.cleanrevNo}')"  
-  style="width: 30%; border-radius: 30px; background-color: black">카카오페이<i class="material-icons right">send</i>
-  </button>
-  <button class="btn waves-effect waves-light"  onclick="javascript:payDanal('${userId}','${userNo}','${rev.cleanrevNo}')"  style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
-    <i class="material-icons right">send</i>
-  </button>
-</div>
+ 
 		</div>
 	</div>
 
@@ -187,82 +175,7 @@
       </div>
  
     </div>
-	<script type="text/javascript">
-
 	
-	function payKG(data1,data2,data3){		
-		modal.style.display = "block";
-		 $.ajax({	        
-		        type: "post",
-		        dataType:"html",
-		        url: "paymentKG",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
-		        success : function test(data){	
-		            modal.style.display = "none";
-		        		$("#paycall").html(data); 
-		        		},
-		        error : function error(){alert("error");}         
-		 });   
-	
-	};
-	
-	function payKakao(data1,data2,data3){		
-		modal.style.display = "block";
-		 $.ajax({	        
-		        type: "post",
-		        dataType:"html",
-		        url: "paymentKakao",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
-		        success : function test(data){	
-		            modal.style.display = "none";
-		        		$("#paycall").html(data); 
-		        		},
-		        error : function error(){alert("error");}         
-		 });   
-	
-	};
-	
-	function payDanal(data1,data2,data3){		
-		modal.style.display = "block";
-		 $.ajax({	        
-		        type: "post",
-		        dataType:"html",
-		        url: "paymentDanal",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
-		        success : function test(data){	
-		            modal.style.display = "none";
-		        		$("#paycall").html(data); 
-		        		},
-		        error : function error(){alert("error");}         
-		 });   
-	
-	};
-	
-	
-	//Get the modal
-	var modal = document.getElementById('myModal');
-
-	// Get the button that opens the modal
-	var btn = document.getElementById('mailModal');
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName('close')[0];                                          
-
-	// When the user clicks on the button, open the modal 
-	
-	// When the user clicks on <span> (x), close the modal
- 	 span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-	// When the user clicks anywhere outside of the modal, close it
-	
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-</script>
 	<script src="../careView/contactform/vendor/daterangepicker/moment.min.js"></script>
 	<script src="../careView/contactform/vendor/daterangepicker/daterangepicker.js"></script>
 	<script src="../careView/contactform/vendor/countdowntime/countdowntime.js"></script>

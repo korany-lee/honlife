@@ -4,12 +4,27 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import Model.DTO.MemberDTO;
+
 
 
 @SuppressWarnings("serial")
 public class CleanRevDTO implements Serializable{
 
 	
+
+	public MemberDTO getMemDTO() {
+		return memDTO;
+	}
+	public void setMemDTO(MemberDTO memDTO) {
+		this.memDTO = memDTO;
+	}
+	public EmployeeDTO getEmpDTO() {
+		return empDTO;
+	}
+	public void setEmpDTO(EmployeeDTO empDTO) {
+		this.empDTO = empDTO;
+	}
 	public String getCleanrevTime() {
 		return cleanrevTime;
 	}
@@ -21,11 +36,13 @@ public class CleanRevDTO implements Serializable{
 	String employeeNo;
 	Integer cleanfeeSize;
 	String cleanrevDemand;
-	
 	Date cleanrevDate;
 	String cleanrevTime;
 	String cleanrevAddr;
     Integer revPay;
+    MemberDTO memDTO;
+    EmployeeDTO empDTO;
+    
 	
 	public String getCleanrevNo() {
 		return cleanrevNo;

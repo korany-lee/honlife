@@ -20,6 +20,11 @@ public class CleanPaymentController {
 	public String pay(HttpSession session,@RequestParam("userId") String userId,
 															@RequestParam("userNo") String userNo,
 															@RequestParam("revNo") String revNo ,Model model) {
+		
+		System.out.println("kguserId=" + userId);
+		System.out.println("kguserNo=" + userNo);
+		System.out.println("kgrevNo=" + revNo);
+		
 		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
 		return "careView/care/payment/paymentKG";
 	}
@@ -27,8 +32,14 @@ public class CleanPaymentController {
 	public String payKakao(HttpSession session,@RequestParam("userId") String userId,
 																	@RequestParam("userNo") String userNo,
 																	@RequestParam("revNo") String revNo ,Model model) {
+		System.out.println("kakaouserId=" + userId);
+		System.out.println("kakaouserNo=" + userNo);
+		System.out.println("kakaorevNo=" + revNo);
+		
 		
 		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
+		
+		
 		return "careView/care/payment/paymentKakao";
 		
 	}
@@ -36,6 +47,10 @@ public class CleanPaymentController {
 	public String payDanal(HttpSession session,@RequestParam("userId") String userId,
 																	@RequestParam("userNo") String userNo,
 																	@RequestParam("revNo") String revNo ,Model model) {
+		System.out.println("danaluserId=" + userId);
+		System.out.println("danaluserNo=" + userNo);
+		System.out.println("danalrevNo=" + revNo);
+		
 		
 		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
 		return "careView/care/payment/paymentDanal";

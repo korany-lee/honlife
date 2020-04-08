@@ -17,15 +17,14 @@ RegistRepository registRepository;
 			
 			CleanOrderDTO orderDTO = new CleanOrderDTO();
 			orderDTO.setCleanorderNo(orderNo);
-			registRepository.orderChk(orderDTO);
+			registRepository.orderChk(orderNo);
 			
 			
 			
-			EmployeeDTO dto  = new EmployeeDTO();
-			dto.setEmployeeNo(empNo);
+			
 		
-			registRepository.empDetail(dto);
-			model.addAttribute("chk" ,dto);
+		EmployeeDTO empDTO	= registRepository.empDetail(empNo);
+			model.addAttribute("chk" ,empDTO);
 		}
 		
 

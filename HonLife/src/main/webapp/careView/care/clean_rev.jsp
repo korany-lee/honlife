@@ -72,18 +72,19 @@
 	
 				
 				
-	<form class="col s12" method="POST" name="frm" id="frm" action="revDetail" >	
+	<form class="col s12" method="POST" name="frm" id="frm" action="cleanAct" >	
 
 <div class="input-field col s6">
     <label>예약번호</label>
-          <input  id="name" type="text" name="cleanrevNo"value="${revNo}" readonly="readonly">
-  
+          <input  id="name" type="text" name="cleanrevNo" value="${revNo}" readonly="readonly">
 </div>
     <input type="hidden" value="${userNo}" name="userNo" />
      <input type="hidden" value="${userId}" name="useId" />
+      <input type ="hidden" value="${member.userEmail}" name="userEmail">
+      
       <div class="row">
         <div class="input-field col s6">
-          <input  id="name" type="text" name="userName"value="${member.userName }" readonly="readonly">
+          <input  id="name" type="text" name="userName" value="${member.userName }" readonly="readonly">
           <label for="name">이름</label>
         </div>
         <div class="input-field col s6" >
@@ -247,56 +248,9 @@
       </div>  
 
 
-<!-- <script type="text/javascript">
 
-	 function check(){
-		var form = document.frm;
-		//첫번째 라디오 버튼을 선택한 경우
-		if(form.payment[0].checked == true){
-			
-			form.action = "cleanpayKG";
-		}
-		//두번째 라디오 버튼을 선택한 경우
-		else if(form.payment[1].checked == true){
-			form.action = "cleanpayKakao";
-		}
-		else{
-			form.action = "cleanpayDanal";
-		}
-		form.submit();
-	}
- 
-	</script> -->
-<!--  <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
-	
- <div class="row" >
- <div class="input-field col s4">
-   <p>
-      <label>
-        <input class="with-gap" name="payment" type="radio" value="1"  />
-        <span>이니시스</span>
-      </label>  
-    </p> 
-    </div>
-  <div class="input-field col s4">
-    <p>
-      <label>
-        <input class="with-gap" name="payment" type="radio"  value="2"   />
-        <span>카카오페이</span>
-      </label>
-    </p> 
-       </div>      
-   <div class="input-field col s4"> 
-    <p>
-      <label>
-        <input class="with-gap" name="payment" type="radio"   value="3"  />
-        <span>다날 휴대폰결제</span>
-      </label>
-    </p>    
-    </div>
-</div> -->
  																				<!-- onclick="javascript:check()"  -->
- <button class="btn waves-effect waves-light"  id="sub"  style="width: 100%; border-radius: 30px; background-color: black">예약하기
+ <button class="btn waves-effect waves-light"  id="sub" type="submit" style="width: 100%; border-radius: 30px; background-color: black">예약하기
     <i class="material-icons right">send</i>
   </button>
 				       

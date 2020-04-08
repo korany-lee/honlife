@@ -100,16 +100,15 @@ public class RegistRepository {
 	
 	}
 	
-	public Integer orderChk(CleanOrderDTO dto) {
+	public Integer orderChk(String orderNo) {
 		String statement = namespace + ".orderChk";
 		
-		return sqlSession.update(statement, dto);
+		return sqlSession.update(statement, orderNo);
 	}
 	
-	public void empDetail(EmployeeDTO dto) {
-		
+	public EmployeeDTO empDetail(String empNo) {		
 		String statement = namespace + ".empDetail";
-		sqlSession.selectOne(statement,dto);
+		return sqlSession.selectOne(statement,empNo);
 	}
 	
 	public void itemInsert(CleanItemDTO dto) {
@@ -157,6 +156,15 @@ public class RegistRepository {
 		String statement = namespace + ".revDel";
 		sqlSession.delete(statement,cr);
 		
+		
+	}
+	
+	public CleanRevDTO successDetail(CleanRevDTO cd) {
+		
+		String statement = namespace + ".sucDetail";
+		
+		
+		return sqlSession.selectOne(statement, cd);
 		
 	}
 

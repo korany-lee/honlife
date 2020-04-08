@@ -6,6 +6,25 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class CleanRevCommand {
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserPh() {
+		return userPh;
+	}
+	public void setUserPh(String userPh) {
+		this.userPh = userPh;
+	}
+
 	public String getRevPay() {
 		return revPay;
 	}
@@ -18,9 +37,12 @@ public class CleanRevCommand {
 	public void setCleanrevTime(String cleanrevTime) {
 		this.cleanrevTime = cleanrevTime;
 	}
+	String userName;
+	String userPh;
 	String cleanrevNo;
 	String userNo;
 	String employeeNo;
+	String userEmail;
 	Integer cleanfeeSize;
 	String cleanrevDemand;
 	@DateTimeFormat(pattern="yyyy-MM-dd")

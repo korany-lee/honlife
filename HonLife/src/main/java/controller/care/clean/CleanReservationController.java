@@ -11,12 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Model.DTO.LoginDTO;
-import Model.DTO.care.CleanRevDTO;
 import command.care.clean.CleanRevCommand;
 import service.care.clean.CleanFeeService;
+import service.care.clean.CleanRevDetailService;
 import service.care.clean.CleanRevService;
+import service.care.clean.EmployeeDetailService;
 import service.care.clean.EmployeeListService;
 
 @Controller
@@ -27,9 +29,13 @@ public class CleanReservationController {
 	private CleanFeeService cleanFeeService;
 	@Autowired
 	private CleanRevService cleanRevService;
+	@Autowired
+	private CleanRevDetailService cleanRevDetailService;
+	
 	
 @RequestMapping("/care/cleanRev")
 	public String cleanRev(Model model, HttpSession session) {
+
 	SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
 	Calendar cal = Calendar.getInstance();
 	String today = null;
@@ -42,51 +48,26 @@ public class CleanReservationController {
 	 model.addAttribute("revNo" , dd);
 	
 	
-
+	
 	employeeListService.empList(model,session);
 	cleanFeeService.fee(model);
 		return "careView/care/clean_rev";
 	}
 
-@RequestMapping(value="/care/cleanpayKG")
-	public String revAct(CleanRevCommand cleanRevCommand,HttpSession session) {
-	cleanRevService.revIn(cleanRevCommand);
-	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
+@RequestMapping(value="/care/cleanAct")
+	public String revAct(CleanRevCommand cleanRevCommand,Model model,HttpSession session) {
+	cleanRevService.revIn(cleanRevCommand, model, session);
 	
-	String userId = login.getUserId();
-	String userNo = login.getUserNo();
-	String revNo = cleanRevCommand.getCleanrevNo();
-	
-	return "redirect:/care/paymentKG?userId="+userId+"&userNo="+userNo+"&revNo="+revNo;
+
+	return "careView/care/clean_rev_detail";
 }
 
-@RequestMapping(value="/care/cleanpayKakao")
-
-public String revkakao(CleanRevCommand cleanRevCommand,HttpSession session) {
-	cleanRevService.revIn(cleanRevCommand);
-	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-	System.out.println("cleanCommand/pay"+ cleanRevCommand.getRevPay());
-	String userId = login.getUserId();
-	String userNo = login.getUserNo();
-	String revNo = cleanRevCommand.getCleanrevNo();
-	
-	return "redirect:/care/paymentKakao?userId="+userId+"&userNo="+userNo+"&revNo="+revNo;
-	
+@RequestMapping(value="/care/success")
+public String success(	@RequestParam("revNo") String revNo ,Model model,HttpSession ses) {
+		
+	cleanRevDetailService.sucDetail(revNo , model,ses);
+	return "careView/care/rev_success";
 }
-
-@RequestMapping(value="/care/cleanpayDanal")
-public String revDanal(CleanRevCommand cleanRevCommand,HttpSession session) {
-	cleanRevService.revIn(cleanRevCommand);
-	LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-	
-	String userId = login.getUserId();
-	String userNo = login.getUserNo();
-	String revNo = cleanRevCommand.getCleanrevNo();
-	
-	return "redirect:/care/paymentDanal?userId="+userId+"&userNo="+userNo+"&revNo="+revNo;
-	
-}
-
 
 
 }

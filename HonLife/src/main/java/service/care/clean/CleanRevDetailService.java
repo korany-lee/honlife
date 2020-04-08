@@ -18,10 +18,13 @@ public class CleanRevDetailService {
 	RegistRepository registRepository;
 	@Autowired
 	MemberRepository memberRepository;
+	@Autowired 
+	EmployeeDetailService employeeDetailService;
 	
 	public void detail(HttpSession session,String userId,String userNo, String revNo,Model model) {
 		CleanRevDTO cdto = new CleanRevDTO();	
 		MemberDTO mdto =	new MemberDTO();
+		
 		cdto.setCleanrevNo(revNo);
 		cdto.setUserNo(userNo);
 		
@@ -33,7 +36,18 @@ public class CleanRevDetailService {
 		
 		model.addAttribute("rev", cdto);
 		model.addAttribute("member", mdto);
+	}
+	
+	public void sucDetail(String revNo ,Model model, HttpSession ses ) {
+		LoginDTO login = (LoginDTO)ses.getAttribute("memberInfo");
 		
+		
+		CleanRevDTO  cd = new CleanRevDTO();
+		cd.setCleanrevNo(revNo);
+		cd.setUserNo(login.getUserNo());
+		cd = registRepository.successDetail(cd);
+		
+		model.addAttribute("suc",cd);
 		
 	}
 	

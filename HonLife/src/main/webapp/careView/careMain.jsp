@@ -65,7 +65,14 @@
 	
 
 		</div> <!-- END .header-content -->
-
+	<script type="text/javascript">
+		function rev(){
+			alert("로그인 해주세요");
+			location.href="carelogin"			
+		}
+	
+	
+	</script>
 		<nav>
 			<button class="close-nav minimal-btn">Close<svg class="icon stroke" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.056 1L1 17.056m16.056 0L1 1" stroke="#b7c0c4" stroke-width="1.2" fill="none" fill-rule="evenodd"/></svg></button>
 
@@ -73,7 +80,12 @@
 			<ul id="menu-header-nav-en" class="menu list-style-none">
 				<li id="menu-item-4281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4281"><a href="care/cleanAmountInfo">청소요금안내</a></li>
 				<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="care/laundryAmountInfo">세탁요금안내</a></li>
+				<c:if test="${!empty memberInfo }">
 				<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="care/cleanRev">청소예약</a></li>
+				</c:if>
+				<c:if test="${empty memberInfo }">
+				<li id="menu-item-1804" onclick ="javascript:rev()"class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
+				</c:if>
 				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
 				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="care/recruitment">모집요강</a></li>
 				<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>

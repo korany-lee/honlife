@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
 <script type="text/javascript">
 
 var IMP = window.IMP; // 생략가능
@@ -41,8 +40,8 @@ IMP.request_pay({
     	}).done(function(data) {
     		//[2] 서버에서 REST API로 결제정보확인 및 서비스루틴이 정상적인 경우
     		if ( everythings_fine ) {
-    			var msg = '결제가 완료되었습니다.';
-    			msg += '\n고유ID : ' + rsp.imp_uid;
+    			var msg = '예약이 완료되었습니다.';
+    			msg += '예약 번호 : ' + rsp.imp_uid;
     			msg += '\n상점 거래ID : ' + rsp.merchant_uid;
     			msg += '\n결제 금액 : ' + rsp.paid_amount;
     			msg += '카드 승인번호 : ' + rsp.apply_num;
@@ -54,7 +53,7 @@ IMP.request_pay({
     		}
     	});
     	
-    location.href="../careMain";
+    location.href="../care/success?userNo="+'${userNo}'+"&revNo="+'${rev.cleanrevNo}' ;
     } else {
         var msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;
