@@ -72,7 +72,7 @@
 	
 				
 				
-	<form class="col s12" method="POST" name="frm" id="frm">	
+	<form class="col s12" method="POST" name="frm" id="frm" action="revDetail" >	
 
 <div class="input-field col s6">
     <label>예약번호</label>
@@ -247,7 +247,7 @@
       </div>  
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 	 function check(){
 		var form = document.frm;
@@ -266,8 +266,8 @@
 		form.submit();
 	}
  
-	</script>
- <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
+	</script> -->
+<!--  <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
 	
  <div class="row" >
  <div class="input-field col s4">
@@ -294,9 +294,9 @@
       </label>
     </p>    
     </div>
-</div>
- 
- <button class="btn waves-effect waves-light"  id="sub" onclick="javascript:check()" style="width: 100%; border-radius: 30px; background-color: black">예약하기
+</div> -->
+ 																				<!-- onclick="javascript:check()"  -->
+ <button class="btn waves-effect waves-light"  id="sub"  style="width: 100%; border-radius: 30px; background-color: black">예약하기
     <i class="material-icons right">send</i>
   </button>
 				       

@@ -14,7 +14,7 @@
 <bean class="controller.care.clean.CleanReservationController" />
 <bean class="controller.care.clean.CleanPaymentController" />
 <bean class="controller.care.clean.CleanRevDeleteController" />
- 
+<bean class="controller.care.clean.CleanRevDetailController" /> 
 
 
 
