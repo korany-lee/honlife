@@ -62,7 +62,6 @@ public class MyReservationService {
 	
 	public void managerRevDetail(String revNum,Model model) {
 		List<RoomRevDTO> dto = rev.oneRev1(revNum);
-		System.out.println("레퍼지토리 갔다옴");
 		
 		List<String> furnitureNo = rev.selectFurnitureNo(revNum);
 		List<FurnitureDTO> list = new ArrayList<>();
@@ -74,6 +73,20 @@ public class MyReservationService {
 
 		model.addAttribute("furniture", list);
 		model.addAttribute("rev", dto);
+	}
+	
+	public void settingFinsish(String revNum) {
+		rev.settingOk(revNum);
+		
+		List<String> furnitureNo = rev.selectFurnitureNo(revNum);
+		
+		
+		for(int i=0;i<furnitureNo.size(); i++) {
+			fRev.stateChange(furnitureNo.get(i));
+				
+		}
+
+		
 	}
 	
 }

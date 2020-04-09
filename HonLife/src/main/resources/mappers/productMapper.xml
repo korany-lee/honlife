@@ -32,6 +32,10 @@
 	select <include refid="basecolumn" /> from product
 </select>
 
+<select id="detailPro" resultMap="ProMap" parameterType="string">
+select * from product where product_no = #{productNo}
+</select>
+
 
 
 </mapper>

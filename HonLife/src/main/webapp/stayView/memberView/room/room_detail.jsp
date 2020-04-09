@@ -483,17 +483,17 @@
                     </div>
                   </div>
                 </div>
+                
+                
+                
                 <div class="review_list">
+                   <c:forEach items="${review }" var="r">\
                   <div class="review_item">
+                  
                     <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-1.png"
-                          alt=""
-                        />
-                      </div>
+                     
                       
-                      <c:forEach items="${review }" var="r">
+                      
                       <div class="media-body" style="margin-left:300px; width:535px;">
                         <h4>${r.writer }&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${r.reviewDate }" pattern="yyyy-MM-dd hh:mm"/></h4>
                         

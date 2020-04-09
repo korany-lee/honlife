@@ -29,7 +29,7 @@
 	<insert id="insertMember" parameterType="member">
 		insert into member (<include refid="basecolumn" />) 
 		 values (memseq.nextval,#{userId},#{userPw},#{userName},#{userPh},#{userEmail},
-		#{userAddr},#{userZone},#{userGender},#{userBirth},sysdate,null)
+		#{userAddr},#{userZone},#{userGender},#{userBirth},sysdate,null,null)
 	</insert>
 	
 	<select id="selectOneMem" parameterType="string" resultMap="baseMember">

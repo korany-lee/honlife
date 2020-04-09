@@ -19,7 +19,7 @@
 
 <insert id="reviewInsert" parameterType="Model.DTO.ReviewDTO">
 insert into roomreview(roomreview_no,roomrev_no,user_no,room_no,roomreview_content,roomreview_date,roomreview_writer,roomreview_score)
-values(review_seq.nextval,#{roomRevNO},#{userNo},#{roomNo},#{review},sysdate,#{writer},#{score})
+values(review_seq.nextval,#{roomRevNo},#{userNo},#{roomNo},#{review},sysdate,#{writer},#{score})
 </insert>
 
 

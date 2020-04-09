@@ -102,9 +102,10 @@ public class RoomController {
 	}
 	
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
-	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session) {
+	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session,HttpServletRequest request) throws Exception {
 		roomRevInsertService.revInsert(revCommand,model,session);
-		roomRevListService.revChk(model,session);
+		roomRevListService.revChk(model,session,revCommand.getStartDate());
+		roomRevListService.sendSMS(revCommand,request);
 		return "stayView/memberView/room/reservation_finish";
 	}
 	
@@ -125,10 +126,7 @@ public class RoomController {
 	
 	
 	//관리자용
-	@RequestMapping("/room/list")   //객실 리스트 이동
-	public String roomList() {
-		return "stayView/room/room_list";
-	}
+	
 	@RequestMapping("/room/selectBigType")
 	public String bigType(@RequestParam(value="BigType")String BigType,Model model) {
 		if(BigType.equals("floor")) {
@@ -149,10 +147,7 @@ public class RoomController {
 	}
 	
 	
-	@RequestMapping("/room/register")
-	public String roomRegister() {
-		return "common/manager/managerview/room_register";
-	}
+	
 	
 	@RequestMapping(value="/room/roomRegisterAction" ,method=RequestMethod.POST)
 	public String roomRegisterAction(RoomCommand roomCommand,Errors errors,HttpServletRequest request) {

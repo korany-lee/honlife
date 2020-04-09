@@ -23,7 +23,7 @@ public class ReviewDTO implements Serializable {
 	public String getRoomRevNo() {
 		return roomRevNo;
 	}
-	public void setRoomRevNO(String roomRevNo) {
+	public void setRoomRevNo(String roomRevNo) {
 		this.roomRevNo = roomRevNo;
 	}
 	public String getUserNo() {

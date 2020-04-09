@@ -30,6 +30,13 @@
 		<property name="maxInMemorySize" value = "100000000" />
 	</bean>
 	
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/manager/**" />
+			<bean class="Interceptor.AuthCheckInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	
 	

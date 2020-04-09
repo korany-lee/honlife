@@ -10,7 +10,7 @@
 
 <bean id="reviewService" class="service.stay.member.ReviewService" />
 <bean id="myReservationService" class="service.stay.member.MyReservationService" />
-
+<bean id="memberRegMailService" class="service.stay.room.MemberRegMailService" />
 
 <bean id="reviewRepository" class="repository.stay.ReviewRepository" />
 </beans>

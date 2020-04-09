@@ -67,8 +67,9 @@ public class RoomListService {
 		Integer two = reviewRepository.two(num);
 		Integer low = reviewRepository.one(num);
 		if(totalReview!=0) {
-			Long average = (long) (total / totalReview);
-			model.addAttribute("average", average);
+			Double average = (double) total /(double) totalReview;
+			Double average1 = Math.round(average*10)/10.0;
+			model.addAttribute("average", average1);
 		}
 		
 		

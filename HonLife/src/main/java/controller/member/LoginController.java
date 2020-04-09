@@ -100,11 +100,27 @@ public class LoginController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		return "redirect:/careMain";
 	}
 	
+	
+	//shop 에서 로그아웃
+		@RequestMapping("/logout")
+		public String shopLogout(HttpSession session, HttpServletResponse res) {
+			res.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = res.getWriter();
+				out.println("<script>alert('로그아웃 되었습니다.'); location.href='./shopMain'; </script>  ");
+				out.close();
+				session.invalidate();	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			return "redirect:shopView/shopMain";
+		}
+		
 	
 	
 

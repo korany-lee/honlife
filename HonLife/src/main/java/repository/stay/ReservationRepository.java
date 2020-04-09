@@ -136,4 +136,8 @@ public class ReservationRepository {
 		return sqlSession.selectList(statement);
 	}
 	
+	public void settingOk(String revNum) {
+		String statement = namespace +".setting";
+		sqlSession.update(statement, revNum);
+	}
 }

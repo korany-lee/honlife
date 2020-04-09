@@ -89,38 +89,14 @@
 <body>
 
 
-	<div class="col-left contact-info">
-		<%-- <jsp:include page="../../common/manager/sidemenu.jsp" /> --%>
-
-	</div>
+	
 	
 
 		<div class="container-contact100">
 			<div class="wrap-contact100">
 
 				<span class="contact100-form-title"> 객실 리스트 </span>
-				<div class="selector">
-					<select id="BigType">
-
-						<option value="view">뷰별</option>
-						<option value="floor">층별</option>
-						<option value="size">면적별</option>
-					</select> * 검색 유형을 선택하세요 <br /> <br />
-					<div id="bdto">
-						<select id="SmallType">
-							<option value="리버">리버뷰</option>
-							<option value="마운틴">마운틴뷰</option>
-							<option value="시티">시티뷰</option>
-						</select>
-
-					</div>
-						<br><br>
-						<div id="cdto">
-						
-						
-						</div>
-
-				</div>
+				
 			</div>
 		</div>
 

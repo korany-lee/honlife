@@ -112,10 +112,7 @@ function detail(n){
 			<br>
 			<span  style="font-size: 40px;"> 가구 예약현황</span><br><br>
 	    <!--     </div> -->
-	         <input type="text" id="search" name="search" placeholder="예약번호를 입력하세요" style="width:300px;">
-                <input type="button"  value="검색" id="searchBtn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        
 			<input type="button" value="오늘 입실예약보기" id="today">
 
 	<div class="table" style="position:relative;right: 20px;" id="detail">

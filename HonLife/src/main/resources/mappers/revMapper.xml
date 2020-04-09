@@ -141,4 +141,8 @@ select * from roomrev where roomrev_startdate =sysdate
 select * from furniturerev
 </select>
 
+<update id="setting" parameterType="string">
+update roomrev set ROOMREV_FREVCHK='준비완료' where roomrev_no=#{revNum}
+</update>
+
 </mapper>

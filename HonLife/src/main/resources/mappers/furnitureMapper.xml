@@ -65,5 +65,10 @@ select  distinct(furniture_no) from furniturewish where user_no=#{userNo} order 
 select furniture_rentalfee from furniture where furniture_no = #{furnitureNo}
 </select>
 
+<update id="stateChange" parameterType="string">
+update furniture set furniture_state='사용중' where furniture_no=#{fNo}
+
+</update>
+
 
 </mapper>
