@@ -15,8 +15,16 @@ public class ShopListRepository {
 
 	private final String namespace = "productMapper";
 
+	//리스트 출력
 	public List<ProductDTO> listProducts() {
 		String statement = namespace+".selectPro";
 		return sqlSession.selectList(statement);
 	}
+	
+	//디테일 출력
+	public ProductDTO detail(String ProductNo) {
+		String statement = namespace + ".detailPro";
+		return sqlSession.selectOne(statement, ProductNo);
+	}
+	
 }

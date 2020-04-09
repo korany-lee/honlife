@@ -18,4 +18,9 @@ public class ShopListService {
 		List<ProductDTO> pro = slr.listProducts();
 		model.addAttribute("shopList", pro);
 	}
+	
+	public void detailView(String productNo, Model model) {
+		ProductDTO dto = slr.detail(productNo);
+		model.addAttribute("product", dto);
+	}
 }

@@ -3,7 +3,6 @@
 >>>>>>>=branch 'master' of https\://github.com/korany-lee/honlife.git
 eclipse.preferences.version=1
 encoding//src/main/java=utf-8
-encoding//src/main/webapp/careView/careMain.jsp=UTF-8
 encoding//src/main/webapp/common/css/common.css=UTF-8
 encoding//src/main/webapp/common/member/memberJoin.jsp=UTF-8
 encoding//src/main/webapp/shopView/css/common.css=UTF-8

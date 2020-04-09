@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -234,9 +236,16 @@
 							<div class="ps-block__left">
 								<i class="icon-user"></i>
 							</div>
+							 <c:if test="${empty memberInfo }">
 							<div class="ps-block__right">
 								<a href="login">로그인</a><a href="shopJoin">회원가입</a>
 							</div>
+							</c:if>
+							<c:if test="${!empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="logout">로그아웃</a><a href="myShop">마이페이지</a>
+							</div>
+							</c:if>
 						</div>
 					</div>
 				</div>
@@ -667,9 +676,16 @@
 						<div class="ps-block__left">
 							<i class="icon-user"></i>
 						</div>
-						<div class="ps-block__right">
-							<a href="my-account.html">로그인</a><a href="shopJoin">회원등록</a>
-						</div>
+							 <c:if test="${empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="login">로그인</a><a href="shopJoin">회원가입</a>
+							</div>
+							</c:if>
+							<c:if test="${!empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="logout">로그아웃</a><a href="myShop">마이페이지</a>
+							</div>
+							</c:if>
 					</div>
 				</div>
 			</div>

@@ -10,7 +10,7 @@
 <meta property="og:title" content="마켓컬리 :: 내일의 장보기, 마켓컬리" />
 <meta property="og:description" content="모두가 사랑하는 장보기, 마켓컬리! 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!" />
 <meta property="og:image" content="https://res.kurly.com/images/marketkurly/logo_sns_marketkurly_180810.png" />
-<meta property="og:url" content="https://www.kurly.com/shop/member/join.php?" />
+<meta property="og:url" content="https://www.kurly.com/shop/goods/goods_cart.php?" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="www.kurly.com" />
 <meta name="keywords" content="다이어트, 식단, 닭가슴살, 요리, 치아바타, 레시피, 요리, 상차림, 다이어트음식, 이유식, 건강이유식" />
@@ -38,7 +38,7 @@
 	
 
 <script>
-var jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYXJ0X2lkIjoiNjM5OTczOTMwOWFiODM4OWQ3NjU1ZWE5OWU3ZGIwMjgiLCJpc19ndWVzdCI6dHJ1ZSwidXVpZCI6bnVsbCwic3ViIjpudWxsLCJpc3MiOiJodHRwOi8vbWt3ZWIuYXBpLmt1cmx5LnNlcnZpY2VzL3YxL3VzZXJzL2F1dGgvZ3Vlc3QiLCJpYXQiOjE1ODU1MjgyNDUsImV4cCI6MTU4NTUzMTg0NSwibmJmIjoxNTg1NTI4MjQ1LCJqdGkiOiJoanF6dDFpbllSNzF1cXJEIn0.7oG2x6g5spjFnu1p_D8DbE9f4kJOPZx0FvzjIZrDx94';
+var jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYXJ0X2lkIjoiYmFkMThiNTlmYTJiNjI1MTg3MTc5YTJlZDk1MzU2NDEiLCJpc19ndWVzdCI6dHJ1ZSwidXVpZCI6bnVsbCwic3ViIjpudWxsLCJpc3MiOiJodHRwOi8vbWt3ZWIuYXBpLmt1cmx5LnNlcnZpY2VzL3YxL3VzZXJzL2F1dGgvZ3Vlc3QiLCJpYXQiOjE1ODYyMzQ0NzIsImV4cCI6MTU4NjIzODA3MiwibmJmIjoxNTg2MjM0NDcyLCJqdGkiOiJ3dExUakxNZ29TS3c5SFpLIn0.q6zmy2v92miPyOTVDpENQNFCF-e_UIt6zxuWyEac5Hw';
 var apiDomain = 'https://api.kurly.com';
 var GD_ISMEMBER = !!Number('0');
 var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추가 생성.앱에서 불필요한 호출제거
@@ -46,11 +46,11 @@ var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추
 
 
 
-<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?ver=202003300931"></script>
-<script src="/shop/data/skin/designgj/thefarmers.js?ver=202003300931"></script>
-<script src="/shop/data/skin/designgj/common.js?ver=202003300931"></script>
-<script src="/shop/data/skin/designgj/polify.js?ver=202003300931"></script>
-<script src="/shop/data/skin/designgj/ui_v2.js?ver=202003300931"></script>
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?ver=1.8.3"></script>
+<script src="/shop/data/skin/designgj/thefarmers.js?ver=1.8.3"></script>
+<script src="/shop/data/skin/designgj/common.js?ver=1.8.3"></script>
+<script src="/shop/data/skin/designgj/polify.js?ver=1.8.3"></script>
+<script src="/shop/data/skin/designgj/ui_v2.js?ver=1.8.3"></script>
 
 
 <!-- ie9_axios -->
@@ -64,16 +64,16 @@ var checkIsApp = true;// 해당스크립트관련으로 앱체크공용변수추
 <!--<script src="https://res.kurly.com/js/vue/vue.js"></script>-->
 
 <script src="//res.kurly.com/js/vue/vue.min.js"></script>
-<script src="/common_js/axios.js?ver=202003300931"></script>
+<script src="/common_js/axios.js?ver=1.8.3"></script>
 
-<link rel="styleSheet" href="/shop/data/skin/designgj/normalize.css?ver=202003300931">
-<link rel="styleSheet" href="/shop/data/skin/designgj/section1.css?ver=202003300931">
-<link rel="styleSheet" href="/shop/data/skin/designgj/common.css?ver=202003300931">
+<link rel="styleSheet" href="/shop/data/skin/designgj/normalize.css?ver=1.8.3">
+<link rel="styleSheet" href="/shop/data/skin/designgj/section1.css?ver=1.8.3">
+<link rel="styleSheet" href="/shop/data/skin/designgj/common.css?ver=1.8.3">
 
 <!-- 네이버 트레커 -->
 
 			<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-			<script type="text/javascript" src="/shop/lib/js/naverCommonInflowScript.js?Path=member/join.php&amp;Referer=&amp;AccountID=s_4f41b5625072&amp;Inflow=" id="naver-common-inflow-script"></script>
+			<script type="text/javascript" src="/shop/lib/js/naverCommonInflowScript.js?Path=goods/goods_cart.php&amp;Referer=&amp;AccountID=s_4f41b5625072&amp;Inflow=" id="naver-common-inflow-script"></script>
 			
 <!-- // 네이버 트레커 -->
 
@@ -151,23 +151,6 @@ $(function(){
 });
 </script>
 
-<!-- Facebook Pixel Code -->
-<!-- KM-819 장차석 : alert 창이 열렸다가 자동으로 닫히는 버그발생으로 분기처리 -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','//connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '526625657540055');
-fbq('track', "PageView");
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=526625657540055&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
 <script>
 (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
 ;r.type="text/javascript"
@@ -195,7 +178,7 @@ src="https://www.facebook.com/tr?id=526625657540055&ev=PageView&noscript=1"
 
 var amplitudeUid = uuidCheck;
 if(amplitudeUid === null){
-	amplitudeUid = '6399739309ab8389d7655ea99e7db028';
+	amplitudeUid = 'bad18b59fa2b625187179a2ed9535641';
 }
 var appResult = {
 	is_release_build : false
@@ -206,15 +189,17 @@ appResult.is_release_build = true;
 amplitude.getInstance().init("65bebb55595beb82e78d5d1ae808702c", amplitudeUid);
 </script>
 <!-- KM-1483 : amplitude 트래킹 -->
-<script src="/common_js/kurlytracker/kurlytracker.js?ver=202003300931"></script>
-	
+<script src="/common_js/kurlytracker/kurlytracker.js?ver=1.8.3"></script>
+
+<!-- KM-2251 Facebook Pixel 트래킹 -->
+<script src="/common_js/kurlytracker/facebookPixel.js?ver=1.8.3"></script>
 
 
 </head>
 
 
 
-<body class="member-join"  oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection">
+<body class="goods-goods_cart"  oncontextmenu="return false" ondragstart="return false" onselectstart="return !enableSelection">
 
 <!-- KM-201 장차석 : Google Tag Manager (noscript) -->
 <!-- End Google Tag Manager (noscript) -->
@@ -307,7 +292,7 @@ if( (document.all && !document.querySelector) || (document.all && document.query
     ></user-menu-pc>
 </div>
 
-<script src="/common_js/usermenu_v1.js?ver=202003300931"></script>
+<script src="/common_js/usermenu_v1.js?ver=1.8.3"></script>
 <script>
 $(document).ready(function(){
     
@@ -507,7 +492,7 @@ only screen and (min-resolution: 1.5dppx) {
     </div>
 </div>
 
-<script src="/common_js/gnb_v1.js?ver=202003300931"></script>
+<script src="/common_js/gnb_v1.js?ver=1.8.3"></script>
 <script type="text/javascript">
 //
 gnbMenu.update();
@@ -567,6 +552,17 @@ $('#gnbMenu .btn_cart').on('click', function(e){
 
 
 
+    <div class="layout-wrapper">
+        <p class="goods-list-position"></p>
+    </div>
+
+    <!-- 서브페이지 위치 및 제목 작성 -->
+    <div class="layout-page-header">
+        <h2 class="layout-page-title">장바구니</h2>
+        <div class="pg_sub_desc">
+            <p>주문하실 상품명 및 수량을 정확하게 확인해 주세요.</p>
+        </div>
+    </div>
 </div>
 
 		<div id="main">
@@ -620,7 +616,7 @@ $('#gnbMenu .btn_cart').on('click', function(e){
 <div class="bnr_qnb" id="brnQuick"></div>
 <script>
     var brnQuick = {
-        nowTime : '1585528263684',
+        nowTime : '1586236510152',
         update : function(){
             $.ajax({
                 url : campaginUrl + 'pc/service/bnr_quick.html'
@@ -634,7 +630,7 @@ $('#gnbMenu .btn_cart').on('click', function(e){
 <!-- // 이벤트 배너영역 -->
 
 <div class="side_menu">
-    <a href="/shop/event/kurlyEvent.php?htmid=event/lovers/lovers_200301" class="link_menu ">등급별 혜택</a>
+    <a href="/shop/event/kurlyEvent.php?htmid=event/lovers/lovers_200401" class="link_menu ">등급별 혜택</a>
     <a href="/shop/board/list.php?id=recipe" class="link_menu ">레시피</a>
     <a href="/shop/goods/goods_review_best.php" class="link_menu ">베스트 후기</a>
 </div>
@@ -652,7 +648,7 @@ $('#gnbMenu .btn_cart').on('click', function(e){
  * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
  */
 var getGoodsRecent = (function(){
-    var i, len, getGoodsRecent, item, _nowTime = '1585528263684';
+    var i, len, getGoodsRecent, item, _nowTime = '1586236510152';
 
     _goodsRecent();
     function _goodsRecent(){
@@ -689,1022 +685,128 @@ var getGoodsRecent = (function(){
 </script>
 
 			</div>
-
-<div class="page_aticle"><!-- Start indiv -->
-
-<script src="/shop/data/skin/designgj/godo.password_strength.js" type="text/javascript"></script>
-<script src="/common_js/join_v1.js?ver=202003300931"></script>
-
 <style type="text/css">
-	#content{margin-bottom:30px;padding-bottom:70px;background-color:#f9f9f9}
-	.member_join{width:640px;margin:0 auto}
-	.member_join .boardWrite{padding:9px 0 19px;border:1px solid #f3f2f4;background-color:#fff}
-	.member_join .field_head.head_type2{padding:0 0 29px}
-	.member_join .reg_agree{margin-top:10px;padding:29px 0 21px 29px;border:1px solid #f3f2f4;background-color:#fff}
+    /* 장바구니에서만 전용 */
+    .layout-page-header{padding-bottom:10px}
 </style>
 
-<script language="javascript">
-    function checkSubmit() {
-        var oForm = document.getElementById("form");
+<div class="user_form section_cart">
+    <form id="viewCart" name="frmCart" method="post" action="/shop/order/order.php">
+        <input type="hidden" name="mode" value="setOrder">
+        <div class="tbl_comm cart_goods">
+            <table class="tbl_comm tbl_header">
+                <caption>장바구니 목록 제목</caption>
+                <colgroup>
+                    <col style="width:375px">
+                    <col style="width:432px">
+                    <col style="width:115px">
+                    <col style="width:110px">
+                    <col style="width:auto">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th id="thSelect">
+                            <div class="all_select">
+                                <label class="label_check" :class="{checked : allChecked}">
+                                    <input type="checkbox" name="allCheck" class="ico_check" v-model="allChecked" @change="onClickAllChecked">
+                                </label>
+                                <span class="tit">
+                                    전체선택 (<span class="num_count" v-text="checkedCount"></span>/<span class="num_total" v-text="totalCount"></span>)
+                                </span>
+                            </div>            
+                        </th>
+                        <th id="thInfo">상품 정보</th>
+                        <th id="thCount">수량</th>
+                        <th id="thCost">상품금액</th>
+                        <th id="thDelete"><span class="screen_out">삭제선택</span></th>
+                    </tr>
+                </thead>
+            </table>
+            
+            <div id="viewGoods">
+                <template v-for="product in products" v-if="!noData">
+                    <cart-item v-if="!product.is_package"
+                               :bus="bus"
+                               :parent-product="product"
+                               :product="product"
+                               :key="product.no"
+                               :type="type"
+                               :tag-name="product.tags.names"
+                               :tag-type="product.tags.tagType"
+                               @on-change-checked="onChangeChecked($event, product)"
+                               @update-price="updatePrice($event, product, false)"
+                               @on-delete="onDelete"
+                    ></cart-item>
+                    <cart-item v-if="product.is_package"
+                               v-for="(childProduct,idx) in product.products"
+                               :bus="bus"
+                               :name="product.name"
+                               :idx="idx"
+                               :parent-product="product"
+                               :product="childProduct"
+                               :key="childProduct.no"
+                               :type="type"
+                               :tag-name="childProduct.tags.names"
+                               :tag-type="childProduct.tags.tagType"
+                               :is-last-product="idx===product.products.length-1"
+                               @on-change-checked="onChangeChecked($event,childProduct)"
+                               @update-price="updatePrice($event, product, idx)"
+                               @on-delete="onDelete"
+                    ></cart-item>
+                </template>
+                <div v-if="noData" class="no_data">장바구니에 담긴 상품이 없습니다.</div>
+            </div>
+        </div>
 
-        var rdo_jumin		= document.getElementById("RnCheckType_jumin");
-        var rdo_ipin		= document.getElementById("RnCheckType_ipin");
-        var rdo_hpauthDream = document.getElementById("RnCheckType_hpauthDream");
+        <div class="all_select select_option">
+            <label class="label_check"  :class="{checked : allChecked}">
+                <input type="checkbox" name="allCheck" class="ico_check" v-model="allChecked" @change="onClickAllChecked">
+            </label>
+            <span class="tit">
+                전체선택 (<span class="num_count" v-text="checkedCount"></span>/<span class="num_total" v-text="totalCount"></span>)
+            </span>
+            <button type="button" class="btn_delete" @click="onCheckItem('selectDel')">선택 삭제</button>
+            <button type="button" class="btn_delete" @click="onCheckItem('soldout')">품절 상품 삭제</button>
+        </div>
 
-        if (rdo_ipin && rdo_ipin.checked)  {
-            goIDCheckIpin();
-        } else if (rdo_hpauthDream && rdo_hpauthDream.checked) {
-            gohpauthDream();
-        } else if (rdo_jumin && rdo_jumin.checked) {
-            if(chkagreement(oForm)) {
-                if (chkForm2(oForm)) {
-                    oForm.submit();
-                }
-            }
-        }else {
-            if (chkagreement(oForm)) oForm.submit();
-        }
-    }
+        <cart-result :original-sum-amount="originalSumAmount"
+                     :goods-dc-amount="goodsDcAmount"
+                     :class-dc-amount="classDcAmount"
+                     :shipping-charges="shippingCharges"
+                     :delivery-free-amout="deliveryFreeAmout"
+                     :delivery-free-limit="deliveryFreeLimit"
+                     :amount-money="amountMoney"
+                     :footer-message="footerMessage"
+                     :no-data="noData"
+                     :total-count="totalCount"
+                     :point-result="pointResult"
+                     :login-check="loginCheck"
+                     :member-dc="memberDc"
+                     :checked-count="checkedCount"
+                     :kurly-pass="kurlyPass"
+                     :user-grade="userGrade"
+                     :type="type"
+                     @on-check-item="onCheckItem('submit')"
+        ></cart-result>
+        <p class="info_notice" v-html="headerMessage"></p>
+    </form>
+</div>
+
+<div class="bg_loading" id="bgLoading">
+    <div class="loading_show"></div>
+</div>
+
+<script src="/common_js/common_filter.js?ver=1.8.3"></script>
+<script src="/common_js/cart_v2.js?ver=1.8.3"></script>
+<script>
+viewCart.userGrade = "";
+
+// KM-1483 Amplitude
+KurlyTracker.setScreenName('cart')
 </script>
-
-<div class="page_location">
-	<a class="link" href="/">홈</a>
-	>
-	<strong class="current">회원가입</strong>
-</div>
-<div class="head_section head_join">
-	<h2 class="tit">회원가입</h2>
-</div>
-
-<div class="member_join"><!-- 회원가입일때만 스타일 적용 -->
-
-
-	
-	
-<div class="">
-	<form id=form name=frmMember method=post action="/shop/member/indb.php" onsubmit="return chkForm2(this)">
-		<input type=hidden name=mode value="joinMember">
-		<input type="hidden" name="check_mobile" value="" />
-		<input type="hidden" name="auth_finish_code" value="" />
-		<input type=hidden name=rncheck value="">
-		<input type=hidden name=dupeinfo value="">
-		<input type=hidden name=pakey value="">
-		<input type=hidden name=foreigner value="">
-		<input type=hidden name=passwordSkin value="Y"><!-- 비밀번호 작성 규칙 보완 스킨패치 여부 -->
-
-		<input type=hidden name=private2 value="">
-		<input type=hidden name=private3 value="">
-		<input type=hidden name='return_url' value="">
-
-		<!-- 네이버체크아웃(회원연동) -->
-		
-
-		<div class="field_head head_type1">
-			<h3 class="tit"><span class="screen_out">기본정보</span></h3>
-			<p class="sub">*필수입력사항</p>	
-		</div>
-		
-		<div class="boardWrite">
-			<table class="tbl_comm">
-				<tr>
-					<td class="memberCols1">아이디*</td>
-					<td class="memberCols2">
-						<input type="text" name="m_id" value="" maxlength="16" required fld_esssential option=regId label="아이디" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
-						<input type="hidden" name="chk_id" required fld_esssential label="아이디중복체크" value="">
-						<a href="javascript:chkId()"><span class="bhs_button">중복확인</span></a>
-						<p class="txt_guide">
-							<span class="txt txt_case1">6자 이상의 영문 혹은 영문과 숫자를 조합</span>
-							<span class="txt txt_case2">아이디 중복확인</span>
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td class="memberCols1"> 비밀번호*</td>
-					<td class="memberCols2">
-						<input type=password name=password required fld_esssential option=regPass label="비밀번호" maxlength="16" class="reg_pw" placeholder="비밀번호를 입력해주세요">
-						<p class="txt_guide">
-							<span class="txt txt_case1">10자 이상 입력</span>
-							<span class="txt txt_case2">영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span>
-							<span class="txt txt_case3">동일한 숫자 3개 이상 연속 사용 불가</span>
-						</p>
-					</td>
-				</tr>
-				<tr class="member_pwd">
-					<td class="memberCols1">비밀번호확인*</td>
-					<td class="memberCols2">
-						<input type=password name=password2 required fld_esssential option=regPass label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
-						<p class="txt_guide">
-							<span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td class="memberCols1">이름*</td>
-					<td class="memberCols2">
-						<input type="text" name=name value="" required fld_esssential label="이름" placeholder="고객님의 이름을 입력해주세요">
-					</td>
-				</tr>
-
-				<tr>
-					<td class="memberCols1">  이메일*</td>
-					<td class="memberCols2">
-						<input type="text" name=email value="" size=30 required fld_esssential option=regEmail label="이메일"  placeholder="예: marketkurly@kurly.com">
-<input type=hidden name=chk_email required fld_esssential label="이메일중복체크">						<a href="javascript:void(0)" onClick="chkEmail()"><span class="bhs_button">이메일 중복확인</span></a>
-					</td>
-				</tr>
-				
-
-				<tr class="mobile">
-					<td class="memberCols1">  휴대폰*</td>
-					<td class="memberCols2">
-						<div class="phone_num">
-							<input type="text" value="" pattern="[0-9]*" name="mobileInp" placeholder="숫자만 입력해주세요" class="inp"  >
-							<input type="hidden" name="mobile[]" id="mobile0" value="" required fld_esssential option=regNum label="휴대폰" >
-							<input type="hidden" name="mobile[]" id="mobile1" value="" required fld_esssential option=regNum label="휴대폰" >
-							<input type="hidden" name="mobile[]" id="mobile2" value="" required fld_esssential option=regNum label="휴대폰" >
-							<a href="javascript:void(0)"  id="btn_cert" ><span class="bhs_button disabled">인증번호받기</span></a>
-						</div>
-						<div class="cert_confirm_row">
-							<input type="text" name="auth_code" id="auth_code" value='' size='' maxlength='6' label="인증번호 확인"  disabled class="inp_confirm" >
-							<a href="javascript:void(0)" id="btn_cert_confirm" return false><span class="bhs_button disabled">인증번호 확인</span></a>
-							<p id="countdown" class="count_down"></p>
-						</div>
-						<p class="txt_guide">
-							<span class="txt txt_case1"></span>
-						</p>
-
-					</td>
-				</tr>
-
-				<tr>
-					<td class="memberCols1">배송 주소</td>
-					<td class="memberCols2">
-						<div class="field_address">
-							<input type="hidden" name="zonecode" id="zonecode" size="5" readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name=zipcode[] id="zipcode0" size=3 readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name=zipcode[] id="zipcode1" size=3 readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name=address id="address" readonly value="" label="주소를 선택해 주세요.">
-							<input type="hidden" name="road_address" id="road_address" value="">
-							<a href="javascript:void(0)" id="btnAddressSearch" onClick="javascript:popup('../proc/popup_address.php',530,500)">
-								<span class="bhs_button">
-									<span class="ico"></span>
-									<span class="txt">주소 검색</span>
-								</span>
-							</a>
-							<p class="txt_guide">
-								<span class="txt txt_case1">배송가능여부를 확인할 수 있습니다.</span>
-							</p>
-							<div id="addressView">
-								<div class="view_address"></div>
-							</div>
-						</div>
-						
-						<div class="field_address lst">
-							<input type="text" name="address_sub" id="address_sub" value="" onkeyup="SameAddressSub(this)" oninput="SameAddressSub(this)" label="세부주소" placeholder="세부주소를 입력해주세요." class="byteTotext">
-							<p class="txt_guide">
-								<span class="txt">
-									<span id="div_road_address"></span>
-									<span id="div_road_address_sub"></span>
-								</span>	
-							</p>
-
-							<div class="bytes_wrapper chk_bytes">
-								<span class="bytes">0</span>자 / <span class="limit">50</span>자
-							</div>
-						</div>
-					</td>
-				</tr>
-
-
-				<tr class="select_sex">
-					<td class="memberCols1">성별</td>
-					<td class="memberCols2">
-						<div class="group_radio">
-							<label class="label_radio">
-								<input type=radio name=sex_option label="성별" value="m">
-								<span class="text_position">남자</span>
-							</label>
-							<label class="label_radio">
-								<input type=radio name=sex_option label="성별" value="w">
-								<span class="text_position">여자</span>
-							</label>
-							<label class="label_radio">
-								<input type=radio name=sex_option label="성별" value="n">
-								<span class="text_position">선택안함</span>
-							</label>
-							<input type="hidden" type=radio name=sex label="성별" value="">
-						</div>
-					</td>
-				</tr>
-
-				<tr class="birth field_birth">
-					<td class="memberCols1">생년월일</td>
-					<td class="memberCols2">
-						<div class="birth_day">
-							<input type="text" name=birth_year id="birth_year" pattern="[0-9]*" value="" label="생년월일" size=4 maxlength=4 placeholder="YYYY">
-							<span class="bar"><span>/</span></span>
-							<input type="text" name=birth[] id="birth_month" pattern="[0-9]*" value="" label="생년월일" size=2 maxlength=2 placeholder="MM">
-							<span class="bar"><span>/</span></span>
-							<input type="text" name=birth[] id="birth_day" pattern="[0-9]*"value="" label="생년월일" size=2 maxlength=2 placeholder="DD">
-						</div>
-						<p class="txt_guide">
-							<span class="txt bad"></span>
-						</p>
-						
-					</td>
-				</tr>
-				
-				<tr class="route" id="selectRecommend">
-					<td class="memberCols1">추가입력 사항</td>
-					<td class="memberCols2">
-						<div class="group_radio">
-							<span class="radio_wrapper">
-								<label id="labelRecomm" class="label_radio">
-									<input type="radio" name="recommendId" label="추천인아이디">
-									<span class="text_position">추천인 아이디</span>
-								</label>
-							</span>
-							<span class="radio_wrapper">
-								<label class="label_radio">
-									<input type="radio" name="eventName" label="참여이벤트명">
-									<span class="text_position">참여 이벤트명</span>
-								</label>
-							</span>
-						</div>
-						<div class="input_wrapper">
-							<input type="text" name="recommid" value="" class="inp" placeholder="추천인 아이디를 입력해주세요.">
-							<p class="txt">- 추천인 아이디와 참여 이벤트명 중 하나만 선택 가능합니다.</p>
-							<p class="txt">- 가입 이후, 추가 수정이 불가합니다. 대소문자 및 띄어쓰기에 유의해주세요.</p>
-						</div>
-					</td>
-				</tr>
-
-
-			</table>
-
-		</div>
-
-		<div class="reg_agree">
-			<div class="bg_dim"></div>
-			<div class="field_head head_type2">
-				<h3 class="tit">이용약관동의*</h3>
-				<p class="sub">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
-			</div>
-				<div class="check">
-					<label class="inp_check check_agree label_all_check">
-						<input type=checkbox class="styled-checkbox-black" name="agree_allcheck">
-						<span class="txt_checkbox">전체동의</span>
-					</label>
-				</div>
-				<div class="check_view">
-					<label class="select_check check_agree">
-						<input type="checkbox" value="" name="agree" required class="styled-checkbox-black">
-						<span class="txt_checkbox">이용약관 <span class="sub">(필수)</span></span>
-					</label>
-					<a href="#none" class="link btn_link btn_agreement">약관보기 </a>
-				</div>
-				<!--레이어-->
-				<div class="layer layer_agreement">
-					<div class="inner_layer">
-						<h4 class="tit_layer">이용약관</h4>
-						<div class="box_tbl" id="serviceView"></div>
-						<script>
-                            var serviceView = new Vue({
-                                el: '#serviceView',
-                                data: {
-                                    pageUrl : campaginUrl + 'pc/service/agreement.html',
-                                    storagetObj : null,
-                                    eventStart : false, // 딱 한번만실행
-                                },
-                                methods: {
-                                    update:function(){
-                                        var $self = this;
-                                        $.ajax({
-                                            url : $self.pageUrl
-                                        }).done(function(result){
-                                            $('#serviceView').html(result);
-                                            $self.storagetObj = JSON.parse(sessionStorage.getItem("agreement"));
-                                            if(!$self.eventStart){
-                                                $self.eventStart = true;
-                                                $self.pageUrl = campaginUrl + 'pc/service/' + $self.storagetObj[$self.storagetObj.length-1].name + '.html'
-                                                $self.update();
-                                            }
-                                        });
-                                    }
-                                }
-                            });
-                            serviceView.update();
-						</script>
-						<button type="button" class="btn_ok">확인</button>
-						<button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
-					</div>
-				</div>
-				<!--//레이어-->
-				<div class="check_view">
-					<label class="select_check check_agree">
-						<input type="checkbox" id="private1" name="private1" value="" required class="styled-checkbox-black">
-						<span class="txt_checkbox">개인정보처리방침 <span class="sub">(필수)</span></span>
-					</label>
-					<a href="#none" class="link btn_link btn_link2 btn_essential">약관보기 </a>
-				</div>
-				<!--레이어-->
-				<div class="layer layer_essential">
-					<div class="inner_layer">
-						<h4 class="tit_layer">개인정보 수집·이용 동의 (필수)</h4>
-						<div class="box_tbl">
-							<table cellpadding="0" cellspacing="0" width="100%">
-								<caption class="screen_out">개인정보 수집·이용 동의 (필수)</caption>
-								<colgroup>
-									<col width="45%">
-									<col width="30%">
-									<col width="25%">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="row">수집 목적</th>
-										<th scope="row">수집 항목</th>
-										<th scope="row">보유 기간</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>이용자 식별 및 본인여부</td>
-										<td rowspan="3">아이디, 비밀번호, 이름, 휴대폰번호, 이메일</td>
-										<td rowspan="3">회원 탈퇴 후 30일 내</td>
-									</tr>
-									<tr>
-										<td>계약 이행 및 약관변경 등의 고지를 위한 연락, 본인의사 확인 및 민원 등의 고객 고충 처리</td>
-									</tr><tr>
-										<td>부정 이용 방지, 비인가 사용방지 및 서비스 제공 및 계약의 이행</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<p class="txt_service">* 서비스 제공을 위해서 필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.</p>
-						<button type="button" class="btn_ok">확인</button>
-						<button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
-					</div>
-				</div>
-				<!--//레이어-->
-				<div class="check_view">
-					<input type="hidden" id="consentHidden" name="consent[1]" value="">
-					<label class="select_check check_agree">
-						<input type="checkbox" name="hiddenCheck" class="styled-checkbox-black">
-						<span class="txt_checkbox no_pd">개인정보처리방침 <span class="sub">(선택)</span></span>
-					</label>
-					<a href="#none" class="link btn_link btn_link3 btn_choice">약관보기 </a>
-				</div>
-				<!--레이어-->
-				<div class="layer layer_choice">
-					<div class="inner_layer">
-						<h4 class="tit_layer">개인정보 수집·이용 동의 (선택)</h4>
-						<div class="box_tbl">
-							<table cellpadding="0" cellspacing="0" width="100%">
-								<caption class="screen_out">개인정보의 수집 및 이용목적</caption>
-								<colgroup>
-									<col width="40%">
-									<col width="25%">
-									<col width="35%">
-								</colgroup>
-								<thead>
-								<tr>
-									<th scope="row">수집 목적</th>
-									<th scope="row">수집 항목</th>
-									<th scope="row">보유 기간</th>
-								</tr>
-								</thead>
-								<tbody>
-								<tr>
-									<td>맞춤형 회원 서비스 제공</td>
-									<td>성별, 생년월일</td>
-									<td>회원 탈퇴 후 30일 내</td>
-								</tr>
-								<tr>
-									<td>거점 기반 서비스 제공</td>
-									<td>주소</td>
-									<td>회원 탈퇴 후 30일 내</td>
-								</tr>
-								</tbody>
-							</table>
-						</div>
-						<p class="txt_service">※ 동의를 거부하시는 경우에도 서비스는 이용하실 수 있습니다.</p>
-						<button type="button" class="btn_ok">확인</button>
-						<button type="button" class="btn_close"><span class="screen_out">레이어 닫기</span></button>
-					</div>
-				</div>
-				<!--//레이어-->
-
-			<div class="check_view">
-				<label class="select_check check_agree ">
-					<input type="checkbox" name="marketing" class="styled-checkbox-black" >
-					<span class="txt_checkbox no_pd">무료배송, 할인쿠폰 등 혜택/정보 수신 <span class="sub">(선택)</span></span>
-				</label>
-				<div class="check_event email_sms">
-					<label class="select_check check_agree ">
-						<input type="checkbox" name="sms" class="styled-checkbox-black" value="n">
-						<span class="txt_checkbox no_pd">SMS</span>
-					</label>
-					<label class="select_check check_agree ">
-						<input type="checkbox" name="mailling" class="styled-checkbox-black" value="n">
-						<span class="txt_checkbox no_pd">이메일</span>
-					</label>
-				</div>
-				<div class="sms_info">
-					<img src="https://res.kurly.com/pc/img/1901/img_event_check_x2.png" alt="동의 시 한 달간 [5%적립]과 [무료배송](첫 구매 후 1주일 내 적용)">
-				</div>
-			</div>
-
-			<div class="check_view">
-				<label class="select_check check_agree check_fourteen">
-					<input type="checkbox" value="n" name="fourteen_chk" required class="styled-checkbox-black">
-					<span class="txt_checkbox">본인은 만 14세 이상입니다. <span class="sub">(필수)</span></span>
-				</label>
-			</div>
-		</div>		
-
-		<div id="avoidDbl">
-			<button type="submit" class="btn_submit">가입하기</button>
-		</div>
-	</form>
-</div>
-
-</div>
-
-
-<iframe id="ifrmRnCheck" name="ifrmRnCheck" style="display:none;"></iframe>
-<iframe id="ifrmHpauth" name="ifrmHpauth" style="display:none;"></iframe>
-<script src="/shop/data/skin/designgj/js/pw_validate.js?ver=202003300931"></script>
-<script src="/shop/data/skin/designgj/js/delivery_address.js?ver=202003300931"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('input[name=name]').on('keyup keydown blur', function(){
-	        preventSpecialChars($(this), 'write');	
-        });
-            
-        $("#avoidDbl .btn_submit").click(function(){
-            $("input[type='text']").each(function(){
-                var input_txt = $(this).val();
-                var input_trim_txt = input_txt.replace(/(^\s*)|(\s*$)/gi, "");
-                $(this).val(input_trim_txt);
-            })
-        });
-
-        // PRDPJ-159 장차석 : 사용자 아이디와 추처인 아이디 중복 안되도록 처리
-		var $nameRecommid = $('[name=recommid]');
-		var $nameMId = $('[name=m_id]');
-		$($nameRecommid , $nameMId).blur(function(){
-			if ($.trim($nameMId.val()) !== '' && $.trim($nameRecommid.val()) !== '' &&
-					($nameRecommid.val() === $nameMId.attr('data-id') || $nameRecommid.val() === $nameMId.val())) {
-				$nameRecommid.val('');
-				alert('추천인 아이디에는 본인 아이디를 입력할 수 없습니다.');
-			}
-		});
-
-        //개인정보처리방침
-        function getAgreement() {
-           jQuery.ajax({
-                url: "/shop/service/private.php",
-                cache: false,
-                dataType: "html",
-                type: "GET",
-                contentType: 'text/html; charset=euc-kr',
-                success: function(data) {
-                    jQuery(".agreement_box").html( jQuery(data).find('.hundred'));
-                }
-            });
-        }
-        getAgreement();
-
-        // 레이어 열기,닫기
-        $('.check_view .btn_link').on('click',function(e){
-            e.preventDefault();
-            var $layer1 = $(this).is('.btn_agreement');
-            var $layer2 = $(this).is('.btn_essential');
-            var $layer3 = $(this).is('.btn_choice');
-            var bgDimd = $('.bg_dim');
-            var $target = $(this).parents('.reg_agree').find('.layer');
-
-            var $agreement = $(this).parents('.reg_agree').find('.layer_agreement');
-            var $essential = $(this).parents('.reg_agree').find('.layer_essential');
-            var $choice = $(this).parents('.reg_agree').find('.layer_choice');
-            var topResult = null;
-
-            if($layer1 == true){
-                bgDimd.show();
-                $agreement.show();
-                $essential.hide();
-                $choice.hide();
-                topResult = $agreement;
-            }else if($layer2 == true){
-                bgDimd.show();
-                $essential.show();
-                $agreement.hide();
-                $choice.hide();
-                topResult = $essential;
-            }else if($layer3 == true){
-                bgDimd.show();
-				$choice.show();
-                $essential.hide();
-                $agreement.hide();
-                topResult = $choice;
-            }
-            topResult.css({
-                /*top: $(window).scrollTop() - $('#content').offset().top + ($(window).height()/2) - (topResult.height()/2) - 50,*/
-                'margin-top':-topResult.height() / 2
-            });
-        });
-        $('.reg_agree .btn_ok,.reg_agree .btn_close').on('click',function(e){
-            e.preventDefault();
-            $(this).parents('.layer').hide();
-            $('.bg_dim').hide();
-        });
-
-        // 이용약관전체동의
-		var agree = $('.reg_agree');
-        $('.check_agree input[name = agree_allcheck]').change(function(){
-            if($(this).is(':checked') === true){
-                $('.check_agree').addClass('checked')
-                agree.find('input[type=checkbox]').attr('checked','checked');
-                agree.find('input[type=checkbox]').prop('checked','checked');
-                agree.find('input[type=checkbox]').val('y');
-                $('#consentHidden').val('y');
-            }else{
-                $('.check_agree').removeClass('checked')
-                agree.find('input[type=checkbox]').attr('checked','');
-                agree.find('input[type=checkbox]').prop('checked','');
-                agree.find('input[type=checkbox]').val('n');
-                $('#consentHidden').val('n');
-            }
-        });
-        $('.reg_agree').find('input[type=checkbox]').change(function(){
-            if($(this).is(':checked')){
-				$(this).parent().addClass('checked');
-                $(this).attr('checked','checked');
-                $(this).prop('checked','checked');
-                $(this).val('y');
-                if($(this).attr('name') == 'hiddenCheck') $('#consentHidden').val('y');
-			}else{
-                $(this).parent().removeClass('checked');
-                $(this).attr('checked','');
-                $(this).prop('checked','');
-                $(this).val('n');
-                if($(this).attr('name') == 'hiddenCheck') $('#consentHidden').val('n');
-			}
-            $('.reg_agree').find('input[type=checkbox]').each(function(){
-                if($(this).is(':checked') === false){
-                    $('.label_all_check').removeClass('checked');
-                    return false;
-                }
-            });
-            if($(this).attr('name') === 'marketing'){
-                if($(this).is(':checked')){
-                    $('.email_sms').find('.check_agree').addClass('checked');
-                    $('.email_sms').find('input').attr('checked','checked');
-                    $('.email_sms').find('input').prop('checked','checked');
-                    $('.email_sms').find('input').val('y');
-                }else{
-                    $('.email_sms').find('.check_agree').removeClass('checked');
-                    $('.email_sms').find('input').attr('checked','');
-                    $('.email_sms').find('input').prop('checked','');
-                    $('.email_sms').find('input').val('n');
-                }
-            }
-            if($(this).attr('name') === 'mailling' || $(this).attr('name') === 'sms'){
-                var emailSmsCount = 0;
-                $(this).parents('.email_sms').find('input').each(function(){
-                    if($(this).is(':checked')) emailSmsCount++;
-                });
-                if(emailSmsCount === 2){
-                    $('input[name=marketing]').parent().addClass('checked');
-                    $('input[name=marketing]').attr('checked','checked');
-                    $('input[name=marketing]').prop('checked','checked');
-                }else{
-                    $('input[name=marketing]').parent().removeClass('checked');
-                    $('input[name=marketing]').attr('checked','');
-                    $('input[name=marketing]').prop('checked','');
-                }
-            }
-
-            // 전체동의
-            if($('.reg_agree').find('.checked').length >= 7){
-                $('.check_agree input[name = agree_allcheck]').parent().addClass('checked');
-                $('.check_agree input[name = agree_allcheck]').prop('checked','checked');
-            }else{
-                $('.check_agree input[name = agree_allcheck]').parent().removeClass('checked');
-                $('.check_agree input[name = agree_allcheck]').prop('checked','');
-			}
-        });
-
-        function inputFocus() {
-            $('#form input').focus(function () {
-                var element = $(this);
-                if (element.offset().top - $(window).scrollTop() < 80)
-                {
-                    $('html, body').animate({
-                        scrollTop: element.offset().top - 80
-                    }, 0);
-                }
-            });
-        }
-        inputFocus();
-
-
-        // 글자 갯수확인 + 문장조합확인
-        var checkType1 = false;// 갯수
-        var checkType2 = false;// 문자
-        var checkType3 = false;// 문자만
-        function check_confirm(characterReg, minNum){
-            if(characterReg.length < minNum){
-                checkType1 = false;
-            }else{
-                checkType1 = true;
-            }
-
-            var checkNumber = characterReg.search(/[0-9]/g); // 숫자
-            var checkEnglish = characterReg.search(/[a-zA-Z]/ig); // 대소문자
-            var checkSpecial = characterReg.search(/[~`!>@?/<#"'\$;:\]%\.\^,&\[*()_\+\-=|\\{}]/ig); // 특수문자
-            var checkAscii = characterReg.search(/[^a-zA-Z0-9~`!>@?/<#"'\$;:\]%\.\^,&\[*()_\+\-=|\\{}]/ig); // 아스키 특수문자
-
-            if(checkNumber >= 0 && checkEnglish >= 0 && checkAscii === -1) {
-                checkType2 = true;
-                checkType3 = true;
-                if(checkSpecial !== -1) checkType3 = false;
-            }else if(checkNumber >= 0 && checkSpecial !== -1 && checkAscii === -1){
-                checkType2 = true;
-                checkType3 = false;
-            }else if(checkEnglish >= 0 && checkSpecial !== -1 && checkAscii === -1) {
-                checkType2 = true;
-                checkType3 = false;
-            }else if( checkEnglish >= 0 && checkSpecial === -1 && checkAscii === -1) {
-                checkType3 = true;
-                if (checkNumber === -1) checkType2 = false;
-            }else{
-                checkType2 = false;
-                checkType3 = false;
-            }
-        }
-
-
-        // 아이디검증
-        var saveId;
-        $('[name=m_id]').on('focus',function(){
-            saveId = $(this).val();
-            $(this).parent().find('.txt_guide').show();
-        });
-        $('[name=m_id]').on('keyup', function(){
-            var $target = $(this).parent().find('.txt_guide');
-            var $chkVal =  $(this).val();
-            var $numMin = 6;
-            if(saveId !== $chkVal) class_change($target.eq(1),'bad');// 중복확인후 수정될때
-            check_confirm($chkVal,$numMin);
-            if(checkType1 === true && checkType3 === true){
-                class_change($target.find('.txt_case1'), 'good');
-                $(this).attr('data-validator',"true");
-            }else{
-                class_change($target.find('.txt_case1'),'bad');
-                $(this).attr('data-validator',"false");
-            }
-            if($('[name=chk_id]').val() == 1){
-                $('[name=chk_id]').val('');
-                class_change($target.find('.txt_case2'),'bad');
-			}
-        });
-
-        // 비밀번호검증
-        $('[name=password], [name=newPassword], [name=password2], [name=confirmPassword]').on('focus',function(){
-            $(this).parent().find('.txt_guide').show();
-        });
-        $('[name=password], [name=newPassword], [name=password2], [name=confirmPassword]').on('blur', function () {
-            if ($(this).parent().find('.txt').hasClass('bad') || $.trim($(this).val()) === "" ){
-                if (!$(this).hasClass('bad')) $(this).addClass('bad');
-            } else {
-                if ($(this).hasClass('bad')) $(this).removeClass('bad')
-            }
-        });
-        $('input[name=password2], [name=confirmPassword]').on('keyup', function(){
-            var $target = $(this).parent().find('.txt_guide');
-
-            if( ( $("[name=password]").val() === $('[name=password2]').val() && $.trim($("[name=password]").val()) != "") || ( $("[name=newPassword]").val() === $('[name=confirmPassword]').val() && $.trim($("[name=newPassword]").val()) != "") ) {
-                class_change($target.find('.txt_case1'),'good');
-            }else{
-                class_change($target.find('.txt_case1'),'bad');
-            }
-        });
-
-        $('input[name=password], [name=newPassword]').on('keyup', function(e){
-            var $target = $(this).parent().find('.txt_guide');
-            var $chkVal =  $(this).val();
-            var $numMin = 10;
-
-            check_confirm($chkVal,$numMin);
-
-            if(checkType1 === false && checkType2 === false){
-                class_change($target.find('.txt_case1'),'bad');
-                class_change($target.find('.txt_case2'),'bad');
-            }
-            if(checkType1 === true && checkType2 === false){
-                class_change($target.find('.txt_case1'),'good');
-                class_change($target.find('.txt_case2'),'bad');
-            }
-            if(checkType1 === false && checkType2 === true){
-                class_change($target.find('.txt_case1'),'bad');
-                class_change($target.find('.txt_case2'),'good');
-            }
-            if(checkType1 === true && checkType2 === true){
-                class_change($target.find('.txt_case1'),'good');
-                class_change($target.find('.txt_case2'),'good');
-            }
-
-			var hasThreeOrMoreConsecutiveNumbers = pwValidate.hasThreeOrMoreConsecutiveNumbers($chkVal)
-            if (hasThreeOrMoreConsecutiveNumbers) {
-                class_change($target.find('.txt_case3'),'bad');
-            } else {
-                class_change($target.find('.txt_case3'),'good');
-			}
-            
-            if($(this).attr('id') == 'newPassword'){
-                if($('[name=originalPassword]').val() == $('[name=newPassword]').val() ){
-                    class_change($target.find('.txt_case4'),'bad');
-				}else{
-                    class_change($target.find('.txt_case4'),'good');
-				}
-                $('[name=confirmPassword]').trigger('keyup');
-                var newPasswordCheckNum = 0;
-                $target.find('.txt').each(function(){
-                   if($(this).hasClass('good')) newPasswordCheckNum++;
-                   $('[name=newPasswordCheck]').val(newPasswordCheckNum);
-				});
-			}else{
-                $('[name=password2]').trigger('keyup');    
-			}
-        });
-
-        // 라디오버튼 토글-성별
-        $('.select_sex .group_radio .label_radio').on('click', function (e){
-            e.preventDefault();
-            var target = $(this);
-            var radioTarget = target.find('input[name=radio]');
-            var selectedVal = target.find('input').val();
-            radioTarget.prop('checked',true);
-            target.addClass('checked').siblings().removeClass('checked');
-			target.siblings("input").val(selectedVal)
-        });
-    });
-
-    // 클래스변경
-    function class_change(obj,state){
-        if(state === 'good') {
-            if (obj.hasClass('bad')) obj.removeClass('bad');
-            obj.addClass('good');
-        }else{
-            if(obj.hasClass('good')) obj.removeClass('good');
-            obj.addClass('bad');
-        }
-    }
-
-    function defaultRnCheckType() {
-        var authtype = document.getElementsByName("RnCheckType");
-
-        if (authtype.item(0) != null) {
-            var div_jumin		= document.getElementById("div_RnCheck_jumin");
-            var div_ipin		= document.getElementById("div_RnCheck_ipin");
-            var div_hpauthDream = document.getElementById("div_RnCheck_hpauthDream");
-
-            if (authtype.item(0).value == 'jumin')
-            {
-                div_jumin.style.display='';
-            } else if(authtype.item(0).value == 'ipin') {
-                div_ipin.style.display='';
-            } else if(authtype.item(0).value == 'hpauthDream') {
-                div_hpauthDream.style.display='';
-            }
-            authtype.item(0).checked = true;
-        }
-    }
-
-    function selectRnCheckType(){
-        var div_jumin		= document.getElementById("div_RnCheck_jumin");
-        var div_ipin		= document.getElementById("div_RnCheck_ipin");
-        var div_hpauthDream = document.getElementById("div_RnCheck_hpauthDream");
-
-        var rdo_jumin		= document.getElementById("RnCheckType_jumin");
-        var rdo_ipin		= document.getElementById("RnCheckType_ipin");
-        var rdo_hpauthDream = document.getElementById("RnCheckType_hpauthDream");
-
-        if(rdo_jumin && rdo_jumin.checked == true){
-            if (div_jumin != null) { div_jumin.style.display=''; }
-            if (div_ipin != null) { div_ipin.style.display='none'; }
-            if (div_hpauthDream != null) { div_hpauthDream.style.display='none'; }
-        }
-        if(rdo_ipin && rdo_ipin.checked == true){
-            if (div_jumin != null)	{ div_jumin.style.display='none'; }
-            if (div_ipin != null)	{ div_ipin.style.display=''; }
-            if (div_hpauthDream != null) { div_hpauthDream.style.display='none'; }
-        }
-        if(rdo_hpauthDream && rdo_hpauthDream.checked == true){
-            if (div_jumin != null)	{ div_jumin.style.display='none'; }
-            if (div_ipin != null)	{ div_ipin.style.display='none'; }
-            if (div_hpauthDream != null) { div_hpauthDream.style.display=''; }
-        }
-    }
-
-    function checkCurrentPassword(el) {
-        var currentPassword = $(el).val();
-        var errorMessage = $(el).parent().find(".txt_guide");
-        if (currentPassword.trim() === "") {
-            errorMessage.show();
-            return false;
-        }
-        var req = {password:currentPassword};
-        kurlyApi({
-            method:'post',
-            url:'/v1/users/check/password',
-			data:req
-        }).then(function (response) {
-            if (response) {
-                if (response.status === 200 && response.data.hasOwnProperty('data')) {
-                    errorMessage.hide();
-                    return true;
-                }
-            }
-            errorMessage.show();
-			return false;
-        });
-	}
-
-    function chkId()
-    {
-        var alertMsg = "아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다";
-        var $target = $("[name='m_id']").parent().find('.txt_case2');
-        var id_txt = $("[name='m_id']").val();
-        var id_trim_txt = id_txt.replace(/(^\s*)|(\s*$)/gi, "");
-        $("input[name='m_id']").val(id_trim_txt);
-        var form = document.frmMember;
-        if ($("input[name='m_id']").val() === "") {
-            alert("아이디를 입력해 주세요.");
-            return;
-        }
-        if($("input[name='m_id']").val().length < 6){alert("아이디는 6자 이상의 영문 혹은 영문과 숫자 조합만 가능합니다");return;}
-        if (!chkText(form.m_id,form.m_id.value,"아이디를 입력해주세요")) return;
-        var idPattern = /^[a-zA-Z0-9]{1}[^"']{3,15}$/; // chkPatten 메소드에서 가져옴
-        var isValidId = eval(idPattern);
-        if (!isValidId.test(form.m_id.value)) {
-            alert(alertMsg);
-			return;
-        }
-        var $idValidator = $("[name='m_id']").attr('data-validator');
-        if($idValidator === "false"){
-            $("[name=id_chk]").val('');
-            alert(alertMsg);
-            if($target.hasClass('good')) $target.removeClass('good');
-            $target.addClass('bad');
-        }else{
-            ifrmHidden.location.href = "indb.php?mode=chkId&m_id=" + form.m_id.value;
-		}
-    }
-    function chkId2(num){
-        var $target = $("[name='m_id']").parent().find('.txt_case2');
-        var id_txt = $("[name='m_id']").val();
-        if(num == 1){
-            if($target.hasClass('bad')) $target.removeClass('bad');
-            $target.addClass('good');
-            $("[name='m_id']").attr('data-id',id_txt);
-        }else{
-            if($target.hasClass('good')) $target.removeClass('good');
-            $target.addClass('bad');
-        }
-    }
-
-    function chkEmail()
-    {
-        var email_txt = $("input[name='email']").val();
-        var trim_txt = email_txt.replace(/(^\s*)|(\s*$)/gi, "");
-        var email_regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-        $("input[name='email']").val(trim_txt)
-        if ($("input[name='email']").val() === "") {
-            alert("이메일 주소를 입력해 주세요.");
-            return false;
-        }
-		if(email_regex.test(trim_txt) === false) {
-            alert("잘못된 이메일 형식입니다.");
-            return false;
-        }
-
-        var form = document.frmMember;
-        if (!chkText(form.email,form.email.value,"이메일을 입력해주세요")) return;
-        if (!chkPatten(form.email,form.email.getAttribute('option'),"정상적인 이메일 주소를 입력해주세요.")) return;
-        var chkUrl = "indb.php?mode=chkEmail&email=" + form.email.value + "&m_id=";
-        ifrmHidden.location.href = chkUrl;
-    }
-
-    $("input[name='mobile[]']").change(function() {
-        $("input[name='check_mobile']").val("0");
-    });
-
-    
-	// 생년월일 입력시 폼 포커스 이벤트
-	$('.birth_day input').focus(function(){
-		$(this).parent().addClass('on');
-		
-	}).keyup(function(){
-		var inputText = $(this).val();
-		var number = $(this).val().replace(/[^0-9]/g,'');
-		$(this).val(number);
-	}).blur(function(){
-		$(this).parent().removeClass('on');
-		// KM-1261 회원가입 14세 인증
-		birthCheckAction.validatorText();
-	});
-	
-
-    function chkForm2(f) {
-        if ($("input[name='chk_id']").val() != "1")
-        {
-            alert("아이디 중복확인을 완료해 주세요.", function () {
-                $("input[name='chk_id']").focus();
-            });
-            return false;
-        }
-
-	    if(! preventSpecialChars($('input[name=name]'), 'result')){
-		    return false;
-	    }
-		
-        if ($("input[name='check_mobile']").val() != "1")
-        {
-            alert("휴대폰 인증을 완료해 주세요.", function () {
-                $('#btn_cert').focus();
-            });
-            return false;
-        }
-
-        
-        if (document.getElementById('avoidDbl')) btn = document.getElementById('avoidDbl').innerHTML;
-
-        var email_txt = $("input[name='email']").val();
-        var trim_txt = email_txt.replace(/(^\s*)|(\s*$)/gi, "");
-        var email_regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-        $("input[name='email']").val(trim_txt)
-        if(email_regex.test(trim_txt) === false) {
-            alert('잘못된 이메일 형식입니다.', function () {
-                $('input[name=email]').focus();
-            });
-            return false;
-        }
-
-        if($('[name=agree]').attr('checked') != 'checked'){
-            alert('[(필수) 이용약관 동의]에 동의를 하셔야 회원가입이 가능합니다.', function () {
-                $('#agree').focus();
-            });
-            return false;
-        }
-		if($('[name=private1]').attr('checked') != 'checked'){
-            alert('[(필수) 개인정보취급방침 동의]에 동의를 하셔야 회원가입이 가능합니다.', function () {
-                $('#private1').focus();
-            });
-            return false;
-        }
-		if($('[name=fourteen_chk]').attr('checked') != 'checked'){
-            alert('[(필수) 본인은 만 14세 이상입니다.]에 동의를 하셔야 회원가입이 가능합니다.', function () {
-                $('#fourteenChk').focus();
-            });
-            return false;
-        }
-
-		// KM-1261 회원가입 14세 인증
-		if(! birthCheckAction.validatorForm()){
-			return false;
-		}
-        
-        if (chkForm(f) === false) {
-            return false;
-        }
-        return true;
-    }
-
-    function goIDCheckIpin() {
-
-        return;
-    }
-
-
-    $(document).ready(function() {
-        // 추천인 자동 설정
-        var recommRegExp = new RegExp("recommid=([^&]+)", "i");
-        var match = location.search.match(recommRegExp);
-        if(match !== null && match.length === 2) {
-            $('#labelRecomm').click();
-            $('input[name=recommid]').val("");
-        }
-    });
-
-
-	// KM-1483 Amplitude
-	KurlyTracker.setScreenName('sign_up').setAction('view_sign_up').sendData();
+viewCart.loginCheck=false;
 </script>
-
-</div><!-- End indiv -->
-
 </div><!-- #content -->
 		</div><!-- #container -->
 
@@ -2024,6 +1126,9 @@ var bodyScroll = {
 </script>
 <!-- // PROM-316 [Branch] 트래킹 -->
 
+<!-- FacebookPixel Code -->
+<!-- End Facebook Pixel Code -->
+
 			
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaWFELV1RBTFgNWFpMRV1E","queueTime":0,"applicationTime":36,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2982e7e5e8","applicationID":"467839462","transactionName":"MVBTZxFTDEJVAUFcWwgaZEEKHRFZWxIaUlsJUUIcBF0NVUc9VlRGEhtBWxM=","queueTime":0,"applicationTime":30,"atts":"HRdQEVlJH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

@@ -61,6 +61,14 @@ public class MemberJoinController {
 		model.addAttribute("memId", id);
 		return "common/member/userCheck";
 	}
+	//honshop 아이디 중복체크 창
+	@RequestMapping("/userConfirm")
+	public String idChk2(@RequestParam(value="userId")String id,Model model) {
+		model.addAttribute("memId", id);
+		return "common/member/userCheck";
+	}
+	
+	
 	//아이디 중복확인 액션
 	@RequestMapping("/member/idCheckAction")
 	public String idChkAction(@RequestParam(value="userId")String id,Model model) {
@@ -68,5 +76,11 @@ public class MemberJoinController {
 		return "common/member/userCheck";
 	}
 	
+	//honshop 아이디 중복확인 액션
+	@RequestMapping("/idCheckAction")
+	public String idChkAction2(@RequestParam(value="userId")String id,Model model) {
+		mjs.idCheck(id,model);
+		return "common/member/userCheck";
+	}
 	
 }

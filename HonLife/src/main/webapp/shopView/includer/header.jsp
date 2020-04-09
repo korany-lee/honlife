@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +19,7 @@
 <link rel="stylesheet" href="shopView/plugins/jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" href="shopView/plugins/select2/dist/css/select2.min.css">
 <link rel="stylesheet" href="shopView/css/style.css">
-<title>Insert title here</title>
+<title>HON SHOP :: 혼자서도 멋지게, 모두의 혼 샵</title>
 </head>
 <body>
     <header class="header header--1" data-sticky="true">
@@ -175,7 +177,16 @@
                         </div>
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
-                            <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원가입</a></div>
+                            <c:if test="${empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="login">로그인</a><a href="shopJoin">회원가입</a>
+							</div>
+							</c:if>
+							<c:if test="${!empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="logout">로그아웃</a><a href="myShop">마이페이지</a>
+							</div>
+							</c:if>
                         </div>
                     </div>
                 </div>
@@ -545,7 +556,16 @@
                     </div>
                     <div class="ps-block--user-header">
                         <div class="ps-block__left"><i class="icon-user"></i></div>
-                        <div class="ps-block__right"><a href="my-account.html">로그인</a><a href="shopJoin">회원등록</a></div>
+                        <c:if test="${empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="login">로그인</a><a href="shopJoin">회원가입</a>
+							</div>
+							</c:if>
+							<c:if test="${!empty memberInfo }">
+							<div class="ps-block__right">
+								<a href="logout">로그아웃</a><a href="myShop">마이페이지</a>
+							</div>
+							</c:if>
                     </div>
                 </div>
             </div>

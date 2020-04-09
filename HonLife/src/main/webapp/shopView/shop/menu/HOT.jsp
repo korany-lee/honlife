@@ -213,7 +213,7 @@
                                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
                                                 <div class="ps-product">
                                                     <div class="ps-product__thumbnail">
-                                                    <a href="/any/product_detail/25">
+                                                    <a href="HOT/${shop.productNo }">
                                                 <c:forTokens items="${shop.productPhoto }" delims="-" var="proImg" varStatus="status">
 													<c:if test="${status.index == 0}">
                                                     <img src="update/${proImg }"/>													
