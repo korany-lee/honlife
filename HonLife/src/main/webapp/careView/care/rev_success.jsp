@@ -131,7 +131,7 @@
     <td>예약시간</td>
     <td colspan="3">
 		
-      &nbsp;&nbsp;&nbsp;&nbsp;${pc.revtime }시</td>
+   <fmt:formatDate value="${pc.revdate}" pattern="yyyy-MM-dd"/> &nbsp;&nbsp;&nbsp;&nbsp;${pc.revtime }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
