@@ -65,4 +65,9 @@ public class FurnitureRepository {
 		return sqlSession.selectOne(statement, furnitureNo);
 	}
 	
+	public void stateChange(String fNo) {
+		String statement = namespace + ".stateChange";
+		sqlSession.update(statement, fNo);
+	}
+	
 }

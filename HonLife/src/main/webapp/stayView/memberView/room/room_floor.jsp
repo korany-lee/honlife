@@ -64,8 +64,7 @@
             <div class="product_top_bar">
               <div class="left_dorp">
                 <select class="sorting" id="floorSelect">
-                  <option value="1">1층</option>
-                  <option value="2">2층</option>
+                
                   <option value="3">3층</option>
                   <option value="4">4층</option>
                   <option value="5">5층</option>
@@ -76,9 +75,7 @@
                   <option value="10">10층</option>
                   <option value="11">11층</option>
                   <option value="12">12층</option>
-                  <option value="13">13층</option>
-                  <option value="14">14층</option>
-                  <option value="15">15층</option>
+             
                   
                 </select>
                 

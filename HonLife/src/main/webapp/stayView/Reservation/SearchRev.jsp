@@ -89,6 +89,10 @@
    										 	<td>퇴실날짜</td>
    										 	<td><fmt:formatDate value="${list.roomRevStartDate }" pattern="yyyy-MM-dd"/></td>
   									</tr>
+  									<tr>
+   										 	<td>가구 예약상황</td>
+   										 	<td>${list.roomRevFrevchk }</td>
+  									</tr>
   									
   									
   									

@@ -146,12 +146,7 @@ public class FunitureController {
 		return "common/manager/managerview/managermain";
 	}
 	
-	@RequestMapping("/funiture/list")    //관리자에서 보는 리스트
-	public String furnitureList(Model model) {
-		furnitureListService.allSelect(model);
-		
-		return "stayView/funiture/funiture_list";
-	}
+	
 	
 	@RequestMapping("/funiture/selectFurniture")   //선택된 가구 타입만 출력
 	public String selectFurniture(@RequestParam(value="type")String type,Model model) {

@@ -312,7 +312,7 @@ alert(aa);
 
 </main>
 
-		<script  type="text/javascript" src="../careView/js/materialize.js"></script>
+		<script  type="text/javascript" src="../careView/js/materialize1.js"></script>
 	
 <jsp:include page="../includer/carefooter.jsp"/>
 </body>

@@ -196,7 +196,7 @@ $(function(){
 		
 		   $.ajax({	        
 		        type: "post",
-		        url: "../room/register",
+		        url: "roomregister",
 		        dataType:"html",
 		        success : function test(data){ 
 		        		$("#maincall").html(data); 
@@ -211,7 +211,7 @@ $(function(){
 	$('#roomList').click(function(){	
 		   $.ajax({	        
 		        type: "post",
-		        url: "../room/list",
+		        url: "roomlist",
 		        dataType:"html",
 		        success : function test(data){ 
 		        		$("#maincall").html(data); 
@@ -249,7 +249,7 @@ $(function(){
 		
 		   $.ajax({	        
 		        type: "post",
-		        url: "../funiture/list",
+		        url: "furniturelist",
 		        dataType:"html",
 		        success : function test(data){ 
 		        		$("#maincall").html(data); 
@@ -466,12 +466,7 @@ $(function(){
 					<li><a href="#" id="roomList">객실 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
-		  			<li><a href="#">객실 정비 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>
-		  			<li><a href="#">객실 건의사항 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>
+		  			
 		  								
 					
 				</ul>
@@ -480,31 +475,14 @@ $(function(){
 			<a href="#">가구관리 </a>
 				<ul class="submenu">
 					<li><a href="#" id="funitureRegister">가구 등록 </a></li>
-					<li><a href="../funiture/list" id="funitureList">가구 리스트 </a>
+					<li><a href="#" id="funitureList">가구 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>
-		  			<li><a href="#">가구 정비 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>
-		  			<li><a href="#">가구 건의사항 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>						
+		  								
 					
 				</ul>
 			</li>
-			<li>
-			<a href="#">자재관리 </a>
-				<ul class="submenu">
-					<li><a href="#" id="materialRegister">자재 등록 </a></li>
-					<li><a href="#">자재 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>
-		  			<li><a href="#">자재 사용현황 </a>
-						<span class="jquery-accordion-menu-label">count</span>
-		  			</li>						
-					
-				</ul>
-			</li>	
+				
 			 <li>
 				<a href="#">사원관리 </a>
 				<ul class="submenu">

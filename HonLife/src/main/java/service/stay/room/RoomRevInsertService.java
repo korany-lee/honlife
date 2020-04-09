@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 
 import Model.DTO.LoginDTO;
 import Model.DTO.RoomRevDTO;
+import service.stay.room.MemberRegMailService;
 import command.stay.room.ReservationCommand;
 import repository.stay.ReservationRepository;
 
@@ -20,6 +21,8 @@ import repository.stay.ReservationRepository;
 public class RoomRevInsertService {
 	@Autowired
 	ReservationRepository reservationRepository;
+	
+	
 	
 	
 	public void revInsert(ReservationCommand cmd, Model model,HttpSession session) {
@@ -61,5 +64,7 @@ public class RoomRevInsertService {
 		dto.setRoomRevEmail(cmd.getEmail());
 		
 		reservationRepository.roomRevInsert(dto);
+		
+		
 	}
 }

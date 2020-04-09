@@ -18,7 +18,7 @@ public class ReviewService {
 	ReservationRepository reservationRepository;
 	public void insert (ReviewCommand rc) {
 		ReviewDTO dto = new ReviewDTO();
-		dto.setRoomRevNO(rc.getRevNo());
+		dto.setRoomRevNo(rc.getRevNo());
 		dto.setUserNo(rc.getUserNo());
 		dto.setRoomNo(rc.getRoomNo());
 		dto.setReview(rc.getReview());
