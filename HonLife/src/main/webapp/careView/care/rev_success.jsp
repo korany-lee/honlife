@@ -111,48 +111,49 @@
 </colgroup>
   <tr>
     <td>예약번호</td>
-    <td colspan="3">${suc.cleanrevNo }</td>
+    <td colspan="3">${pc.revNo }</td>
   </tr>
   <tr>
     <td>성명</td>
-    <td>${suc.memDTO.userName }</td>
+    <td>${pc.uname }</td>
     <td>연락처</td>
-    <td>${suc.memDTO.userPh }</td>
+    <td>${pc.uph }</td>
   </tr>
   <tr>
     <td>이메일</td>
-    <td colspan="3">${suc.memDTO.userEmail }</td>
+    <td colspan="3">${pc.uemail }</td>
   </tr>
   <tr>
     <td>예약 주소</td>
-    <td colspan="3">${suc.cleanrevAddr }</td>
+    <td colspan="3">${pc.revaddr }</td>
   </tr>
   <tr>
     <td>예약시간</td>
     <td colspan="3">
-    	<fmt:formatDate value="${suc.cleanrevDate }" pattern="yyyy/MM/dd"/>&nbsp;&nbsp;-&nbsp;&nbsp;${suc.cleanrevTime  }시</td>
+		
+      &nbsp;&nbsp;&nbsp;&nbsp;${pc.revtime }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
-    <td>${suc.empDTO.employeeName }</td>
+    <td>${pc.empname }</td>
     <td>담당매니저 연락처</td>
-    <td>${suc.empDTO.employeePh }</td>
+    <td>${pc.empph }</td>
   </tr>
   <tr>
     <td>청소면적</td>
-    <td colspan="3">${suc.cleanfeeSize }평</td>
+    <td colspan="3">${pc.size }평</td>
   </tr>
   <tr>
     <td colspan="4">요청사항</td>
   
   </tr>
   <tr>
-    <td colspan="4">  ${suc.cleanrevDemand }</td>
+    <td colspan="4">  ${pc.demand }</td>
   </tr>
   <tr>
     <td colspan="2"></td>
     <td>총 결제 금액</td>
-    <td>${suc.revPay }</td>
+    <td>${pc.pay }</td>
   </tr>
 </table>
  <div class="row">

@@ -1,5 +1,10 @@
 package service.care.clean;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +15,7 @@ import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
 import Model.DTO.care.CleanRevDTO;
 import Model.DTO.care.EmployeeDTO;
+import command.care.clean.PayCommand;
 import repository.care.RegistRepository;
 import repository.shop.MemberRepository;
 
@@ -21,44 +27,46 @@ public class CleanRevDetailService {
 	MemberRepository memberRepository;
 	@Autowired 
 	EmployeeDetailService employeeDetailService;
+						
+	public void detail(HttpSession session,String revNo,String uname,Integer uph,String uemail,String revaddr,
+									     String revdate,String revtime,String empname, Integer empph, String empNo,
+										 Integer size,String demand,String pay,Model model) throws ParseException  {
 	
-	public void detail(HttpSession session,String userId,String userNo, String revNo,Model model) {
-		CleanRevDTO cdto = new CleanRevDTO();	
-		MemberDTO mdto =	new MemberDTO();
+		CleanRevDTO cr = new CleanRevDTO();
+		MemberDTO mdto = new MemberDTO();
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");		
+		mdto = memberRepository.selectOneMem(login.getUserId());
+		String Apay = pay.replace("원", "");
+		Integer Bpay = Integer.parseInt(Apay);
+		cr.setRevPay(Bpay);
+		System.out.println("detaildate=" +revdate);
+		
+		cr.setCleanfeeSize(size);
+		cr.setCleanrevAddr(revaddr);
 		
 		
-		cdto.setUserNo(userNo);
-		cdto.setCleanrevNo(revNo);
+		   SimpleDateFormat F2 = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
+		   System.out.println("detailparsedate=" + F2.parse(revdate));
+		  
+		   
+		 
+		   
+		cr.setCleanrevDate(F2.parse(revdate));
 		
+		cr.setCleanrevDemand(demand);
+		cr.setCleanrevNo(revNo);
+		cr.setCleanrevTime(revtime);
+		cr.setEmployeeNo(empNo);
+		cr.setUserNo(login.getUserNo());
 	
-		cdto = registRepository.revDetail(cdto);
-		
-		mdto = memberRepository.selectOneMem(userId);
-			
-			
-	
-		
-		model.addAttribute("rev", cdto);
+
+	    model.addAttribute("empname",empname);
+	    model.addAttribute("empph",empph);
+	    model.addAttribute("rev",cr);
+		model.addAttribute("pay", pay);
+		model.addAttribute("revNo" , revNo);
 		model.addAttribute("member", mdto);
 	}
-	
-	public void sucDetail(String revNo ,Model model, HttpSession ses ) {
-		
-		LoginDTO login = (LoginDTO)ses.getAttribute("memberInfo");
-		
-		
-		
-		CleanRevDTO cd = new CleanRevDTO();
-		cd.setCleanrevNo(revNo);
-		  cd.setUserNo(login.getUserNo());
-		  cd = registRepository.successDetail(cd);
-		  
-		 
-		
-		  String empNo = cd.getEmployeeNo(); 
-		  registRepository.revChkUp(empNo);
-		  model.addAttribute("suc",cd);
-		 
-	}
+
 	
 }

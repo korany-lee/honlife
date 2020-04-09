@@ -68,11 +68,11 @@
 
 
       <!--JavaScript at end of body for optimized loading-->
-      <link type="text/css" rel="stylesheet" href="../careView/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/project/careView/css/materialize.min.css"  media="screen,projection"/>
    
    
     
-     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
      
  
 
@@ -131,7 +131,7 @@
   </tr>
   <tr>
     <td>예약시간</td>
-    <td colspan="3"><fmt:formatDate value="${rev.cleanrevDate }" pattern="yyyy/MM/dd"/> / ${rev.cleanrevTime  }시</td>
+    <td colspan="3">${rev.cleanrevDate } / ${rev.cleanrevTime  }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
@@ -148,34 +148,34 @@
   
   </tr>
   <tr>
-    <td colspan="4"> ${rev.cleanrevDemand }</td>
+    <td colspan="4">${rev.cleanrevDemand }</td>
   </tr>
   <tr>
     <td colspan="2"></td>
     <td>총 결제 금액</td>
-    <td>${rev.revPay }</td>
+    <td>${pay }</td>
   </tr>
 </table>
 
 
- <label style="font-size: 18px;">결제 방법을 선택해주세요 예약하기 버튼을 누르시면 결제가 진행됩니다.</label>
- <div id=row>
- <button class="btn waves-effect waves-light"  onclick="javascript:payKG('${userId}','${userNo}','${rev.cleanrevNo}')"  style="width: 30%; border-radius: 30px; background-color: black">이니시스
-    <i class="material-icons right">send</i>
-  </button>
-  <button class="btn waves-effect waves-light" onclick="javascript:payKakao('${userId}','${userNo}','${rev.cleanrevNo}')"  
-  style="width: 30%; border-radius: 30px; background-color: black">카카오페이<i class="material-icons right">send</i>
-  </button>
-  <button class="btn waves-effect waves-light"  onclick="javascript:payDanal('${userId}','${userNo}','${rev.cleanrevNo}')"  style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
-    <i class="material-icons right">send</i>
-  </button>
-</div>
-		</div>
-	</div>
 
+
+ <button class="btn waves-effect waves-light"  onclick="payKG('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">이니시스
+   <i class="material-icons right">send</i>
+  </button>
+  <button class="btn waves-effect waves-light" onclick="payKakao('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">카카오페이
+  <i class="material-icons right">send</i>
+  </button>
+  <button class="btn waves-effect waves-light"  onclick="payDanal('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
+    <i class="material-icons right">send</i>
+  </button> 
+</div>
+</div>
 </div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+
+
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -187,16 +187,19 @@
       </div>
  
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <script  type="text/javascript" src="/project/careView/js/materialize1.js"></script>
 	<script type="text/javascript">
 
 	
-	function payKG(data1,data2,data3){		
+	function payKG(data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13){		
 	
 		  $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentKG",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
+		        data:{"revNo":data1, "uname":data2, "uph":data3, "uemail":data4, "revaddr":data5, "revdate":data6, 
+		        	  "revtime":data7, "empname":data8, "empNo":data9, "empph":data10, "size":data11, "demand":data12, "pay":data13}, 						
 		        success : function test(data){	
 		  
 		        		$("#paycall").html(data); 
@@ -204,15 +207,16 @@
 		        error : function error(){alert("error");}         
 		 });    
 	
-	};
+	}
 	
-	function payKakao(data1,data2,data3){		
+	function payKakao(data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13){		
 		
 		 $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentKakao",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
+		        data:{"revNo":data1, "uname":data2, "uph":data3, "uemail":data4, "revaddr":data5, "revdate":data6, 
+		        	  "revtime":data7, "empname":data8, "empNo":data9, "empph":data10, "size":data11, "demand":data12, "pay":data13}, 						
 		        success : function test(data){	
 		      
 		        		$("#paycall").html(data); 
@@ -220,15 +224,16 @@
 		        error : function error(){alert("error");}         
 		 });   
 	
-	};
+	}
 	
-	function payDanal(data1,data2,data3){		
+	function payDanal(data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13){		
 
 		 $.ajax({	        
 		        type: "post",
 		        dataType:"html",
 		        url: "paymentDanal",
-		        data:{"userId": data1,"userNo": data2, "revNo": data3}, 						
+		        data:{"revNo":data1, "uname":data2, "uph":data3, "uemail":data4, "revaddr":data5, "revdate":data6, 
+		        	  "revtime":data7, "empname":data8, "empNo":data9, "empph":data10, "size":data11, "demand":data12, "pay":data13}, 						
 		        success : function test(data){	
 		          
 		        		$("#paycall").html(data); 
@@ -236,38 +241,13 @@
 		        error : function error(){alert("error");}         
 		 });   
 	
-	};
-	
-	
-	//Get the modal
-	var modal = document.getElementById('myModal');
-
-	// Get the button that opens the modal
-	var btn = document.getElementById('mailModal');
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName('close')[0];                                          
-
-	// When the user clicks on the button, open the modal 
-	
-	// When the user clicks on <span> (x), close the modal
- 	 span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-	// When the user clicks anywhere outside of the modal, close it
-	
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
 	}
-</script>
-	<script src="../careView/contactform/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../careView/contactform/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="../careView/contactform/vendor/countdowntime/countdowntime.js"></script>
 	
-	<script src="../careView/contactform/js/main.js"></script>
+	
+
+</script>
+	
+	<script src="/project/careView/contactform/js/main.js"></script>
 	
 
 	</section>
@@ -276,7 +256,7 @@
 
 </main>
 
-		<script  type="text/javascript" src="../careView/js/materialize.js"></script>
+	
 	
 <jsp:include page="../includer/carefooter.jsp"/>
 </body>

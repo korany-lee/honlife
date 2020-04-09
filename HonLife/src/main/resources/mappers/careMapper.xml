@@ -127,7 +127,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
 		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
         <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
-        <result column="REV_CHK" jdbcType="VARCHAR" property="revChk"/>
+        <result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
         <association property="cr" javaType="Model.DTO.care.CleanRevDTO" resultMap="rev" />
 </resultMap>
 
@@ -137,7 +137,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 	values (#{employeeNo},#{employeeName},#{employeeWorkField},#{employeeCallnum}, 
 		   #{employeeJumin},#{employeePhoto},0,'N', 
 		   #{employeeAddr},#{employeeGender},#{employeePh},#{employeeAddrPost},
-		   #{employeeAddrDetail},#{employeeEmail},'0' )
+		   #{employeeAddrDetail},#{employeeEmail},0 )
 
 </insert>
 
@@ -350,17 +350,13 @@ c.CLEANREV_ADDR, c.REV_PAY
                       where c.cleanrev_date = #{cleanrevDate}   
                       and   c.cleanrev_time = #{cleanrevTime})
      and  e.EMPLOYEE_WORKFIELD = 'cm'  
-     and  e.REV_CHK  <![CDATA[ < ]]> 5               
+                 
 </select>
 
-<update id="revchk" parameterType="String">
+<update id="revchk" parameterType="string">
 	update employee  
 	set rev_chk = rev_chk + 1 
-	where employee_no = #{employeeNo}
-	
-	
-	
-
+	where employee_no = #{empNo}
 
 
 </update>

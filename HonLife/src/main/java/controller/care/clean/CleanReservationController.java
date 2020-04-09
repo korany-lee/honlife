@@ -1,6 +1,7 @@
 package controller.care.clean;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Model.DTO.LoginDTO;
 import command.care.clean.CleanRevCommand;
+import command.care.clean.PayCommand;
 import service.care.clean.CleanFeeService;
 import service.care.clean.CleanRevDetailService;
 import service.care.clean.CleanRevService;
@@ -53,7 +55,7 @@ public class CleanReservationController {
 	}
 
 @RequestMapping(value="/care/cleanAct")
-	public String revAct(CleanRevCommand crc,Model model,HttpSession ses) {
+	public String revAct(CleanRevCommand crc,Model model,HttpSession ses) throws ParseException {
 	
 	cleanRevService.revDetail(crc,model,ses);
 
@@ -61,9 +63,11 @@ public class CleanReservationController {
 }
 
 @RequestMapping(value="/care/success")
-public String success(	@RequestParam("revNo") String revNo ,Model model,HttpSession ses) {
-	cleanRevService.revIn(revNo, model, ses);
-	cleanRevDetailService.sucDetail(revNo, model, ses);
+public String success(PayCommand pc, Model model,HttpSession ses) throws ParseException {
+	cleanRevService.revIn(pc, model, ses);
+	
+	
+	
 	return "careView/care/rev_success";
 }
 

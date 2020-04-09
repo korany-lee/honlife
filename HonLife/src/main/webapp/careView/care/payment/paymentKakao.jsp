@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +20,13 @@ IMP.init('imp44470519');
 IMP.request_pay({
     pg : 'kakaopay', 
     pay_method :'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
-    merchant_uid :'${rev.cleanrevNo}', //상점에서 관리하시는 고유 주문번호를 전달
+    merchant_uid :'${revNo}', //상점에서 관리하시는 고유 주문번호를 전달
     name :'honCare / 청소서비스! ',
-    amount :'${rev.revPay }',
+    amount :'${pay }',
     buyer_email :'${member.userEmail}',
     buyer_name :'${member.userName}',
     buyer_tel :'${member.userPh }', //누락되면 이니시스 결제창에서 오류
-    buyer_addr :'${rev.cleanrevAddr}'
+   
     }, function(rsp) {
     if ( rsp.success ) {
     	//[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
@@ -54,19 +55,33 @@ IMP.request_pay({
     			//[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
     		}
     	});
-    	
-    location.href="../care/success?userNo="+'${userNo}'+"&revNo="+'${rev.cleanrevNo}' ;
+		$('#frm').submit();
     } else {
         var msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;
         
         alert(msg);
-        location.href='revDel?revNo='+'${rev.cleanrevNo}'
+        location.href='revDel?revNo='+'${revNo}'
         
     }
 });
 
 </script>
 
+<form method="post" action="../care/success" id="frm">
+<input type="hidden" value="${rev.cleanrevNo}" name="revNo">
+<input type="hidden" value="${member.userName}" name="uname">
+<input type="hidden" value="${member.userPh}" name="uph">
+<input type="hidden" value="${member.userEmail}" name="uemail">
+<input type="hidden" value="${rev.cleanrevAddr}" name="revaddr">
+<input type="hidden" value='${rev.cleanrevDate }'  name='revdate'>
+<input type="hidden" value="${rev.cleanrevTime }" name="revtime">
+<input type="hidden" value="${empname }" name="empname">
+<input type="hidden" value="${empph }" name="empph">
+<input type="hidden" value="${rev.employeeNo }" name="empNo">
+<input type="hidden" value="${rev.cleanfeeSize }" name="size">
+<input type="hidden" value="${rev.cleanrevDemand }" name="demand">
+<input type="hidden" value="${rev.revPay }" name="pay">
+</form>
 </body>
 </html>

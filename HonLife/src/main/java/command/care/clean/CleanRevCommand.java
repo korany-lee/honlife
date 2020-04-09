@@ -45,8 +45,8 @@ public class CleanRevCommand {
 	String userEmail;
 	Integer cleanfeeSize;
 	String cleanrevDemand;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	Date cleanrevDate;
+
+	String cleanrevDate;
 	String cleanrevTime;
 	String cleanrevAddr;
 	String revPay;
@@ -82,13 +82,14 @@ public class CleanRevCommand {
 	public void setCleanrevDemand(String cleanrevDemand) {
 		this.cleanrevDemand = cleanrevDemand;
 	}
-	public Date getCleanrevDate() {
+	
+
+	public String getCleanrevDate() {
 		return cleanrevDate;
 	}
-	public void setCleanrevDate(Date cleanrevDate) {
+	public void setCleanrevDate(String cleanrevDate) {
 		this.cleanrevDate = cleanrevDate;
 	}
-
 	public String getCleanrevAddr() {
 		return cleanrevAddr;
 	}

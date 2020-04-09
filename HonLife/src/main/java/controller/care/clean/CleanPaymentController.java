@@ -1,8 +1,12 @@
 package controller.care.clean;
 
+import java.text.ParseException;
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,42 +21,67 @@ public class CleanPaymentController {
 	@Autowired
 	CleanRevDetailService  cleanRevDetailService;
 	@RequestMapping(value="/care/paymentKG")
-	public String pay(HttpSession session,@RequestParam("userId") String userId,
-															@RequestParam("userNo") String userNo,
-															@RequestParam("revNo") String revNo ,Model model) {
+	public String pay(HttpSession session,@RequestParam("revNo") String revNo,
+			@RequestParam("uname") String uname,
+			@RequestParam("uph") Integer uph ,
+			@RequestParam("uemail") String uemail,
+			@RequestParam("revaddr") String revaddr,
+			@RequestParam("revdate") String revdate,
+			@RequestParam("revtime") String revtime,
+			@RequestParam("empname") String empname,
+			@RequestParam("empph") Integer empph,
+			@RequestParam("empNo") String empNo,
+			@RequestParam("size") Integer size,
+			@RequestParam("demand") String demand,
+			@RequestParam("pay") String pay,
+			Model model) throws ParseException {
 		
-		System.out.println("kguserId=" + userId);
-		System.out.println("kguserNo=" + userNo);
-		System.out.println("kgrevNo=" + revNo);
+
 		
-		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
+		cleanRevDetailService.detail(session,revNo,uname,uph,uemail,revaddr,revdate,revtime,empname,empph,empNo,size,demand,pay,model);
 		return "careView/care/payment/paymentKG";
 	}
 	@RequestMapping(value="/care/paymentKakao")
-	public String payKakao(HttpSession session,@RequestParam("userId") String userId,
-																	@RequestParam("userNo") String userNo,
-																	@RequestParam("revNo") String revNo ,Model model) {
-		System.out.println("kakaouserId=" + userId);
-		System.out.println("kakaouserNo=" + userNo);
-		System.out.println("kakaorevNo=" + revNo);
+	public String payKakao(HttpSession session,@RequestParam("revNo") String revNo,
+																	@RequestParam("uname") String uname,
+																	@RequestParam("uph") Integer uph ,
+																	@RequestParam("uemail") String uemail,
+																	@RequestParam("revaddr") String revaddr,
+																	@RequestParam("revdate") String revdate,
+																	@RequestParam("revtime") String revtime,
+																	@RequestParam("empname") String empname,
+																	@RequestParam("empph") Integer empph,
+																	@RequestParam("empNo") String empNo,
+																	@RequestParam("size") Integer size,
+																	@RequestParam("demand") String demand,
+																	@RequestParam("pay") String pay,																	
+																	Model model) throws ParseException {
+	
 		
 		
-		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
+		cleanRevDetailService.detail(session,revNo,uname,uph,uemail,revaddr,revdate,revtime,empname,empph,empNo,size,demand,pay,model);
 		
 		
 		return "careView/care/payment/paymentKakao";
 		
 	}
 	@RequestMapping(value="/care/paymentDanal")
-	public String payDanal(HttpSession session,@RequestParam("userId") String userId,
-																	@RequestParam("userNo") String userNo,
-																	@RequestParam("revNo") String revNo ,Model model) {
-		System.out.println("danaluserId=" + userId);
-		System.out.println("danaluserNo=" + userNo);
-		System.out.println("danalrevNo=" + revNo);
+	public String payDanal(HttpSession session,@RequestParam("revNo") String revNo,
+			@RequestParam("uname") String uname,
+			@RequestParam("uph") Integer uph ,
+			@RequestParam("uemail") String uemail,
+			@RequestParam("revaddr") String revaddr,
+			@RequestParam("revdate") String revdate,
+			@RequestParam("revtime") String revtime,
+			@RequestParam("empname") String empname,
+			@RequestParam("empph") Integer empph,
+			@RequestParam("empNo") String empNo,
+			@RequestParam("size") Integer size,
+			@RequestParam("demand") String demand,
+			@RequestParam("pay") String pay, Model model) throws ParseException {
+	
 		
-		
-		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
+		cleanRevDetailService.detail(session,revNo,uname,uph,uemail,revaddr,revdate,revtime,empname,empph,empNo,size,demand,pay,model);
 		return "careView/care/payment/paymentDanal";
 		
 

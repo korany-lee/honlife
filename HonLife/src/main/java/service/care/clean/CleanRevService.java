@@ -2,9 +2,11 @@ package service.care.clean;
 
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import Model.DTO.MemberDTO;
 import Model.DTO.care.CleanRevDTO;
 import Model.DTO.care.EmployeeDTO;
 import command.care.clean.CleanRevCommand;
+import command.care.clean.PayCommand;
 import repository.care.RegistRepository;
 import repository.shop.MemberRepository;
 
@@ -26,48 +29,56 @@ public class CleanRevService {
  RegistRepository registRepository;
  @Autowired
  MemberRepository memberRepository;
-	public void revIn(String revNo, Model model, HttpSession ses) {
+	public void revIn(PayCommand pc, Model model, HttpSession ses) throws ParseException {
 		LoginDTO login = (LoginDTO) ses.getAttribute("memberInfo");
 		CleanRevDTO crd = new CleanRevDTO();
+		crd.setCleanfeeSize(pc.getSize());
+		crd.setCleanrevAddr(pc.getRevaddr());
+		System.out.println(pc.getRevdate());
+		
+		
+		SimpleDateFormat F = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.US);
+		SimpleDateFormat FF = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
+		Date D = F.parse(pc.getRevdate());
+		
+		String DD = FF.format(D);
+		
+		
+		crd.setCleanrevDate(FF.parse(DD));
+		crd.setCleanrevDemand(pc.getDemand());
+		crd.setCleanrevNo(pc.getRevNo());
+		crd.setCleanrevTime(pc.getRevtime());
+		crd.setEmployeeNo(pc.getEmpNo());
+		
+		crd.setRevPay(pc.getPay());
 		crd.setUserNo(login.getUserNo());
-		crd.setCleanrevNo(revNo);
-		crd = registRepository.revDetail(crd);
-
+		 
+		registRepository.revChkUp(pc.getEmpNo());
+		    
+		System.out.println("chkempno==" + pc.getEmpNo());
+	
 	    registRepository.revIn(crd);
-	    
-	    model.addAttribute("suc",crd);
+	   
+	    model.addAttribute("pc",pc);
 	 
 	 
 	
 	}
-	public void revDetail(CleanRevCommand crc ,Model model, HttpSession ses) {
-			
-			CleanRevDTO cr = new CleanRevDTO();
+	
+	
+	public void revDetail(CleanRevCommand crc ,Model model, HttpSession ses) throws ParseException {
+		
 
 			LoginDTO login = (LoginDTO) ses.getAttribute("memberInfo");
-			cr.setCleanrevNo(crc.getCleanrevNo());
-			cr.setUserNo(crc.getUserNo());
-			cr.setEmployeeNo(crc.getEmployeeNo());
-		    cr.setCleanfeeSize(crc.getCleanfeeSize());
-		    String pay= crc.getRevPay().replace("원","");
-		    cr.setRevPay(Integer.parseInt(pay));
-		    
-		    System.out.println(pay);
-		    Date revDate = new Date(crc.getCleanrevDate().getTime());
-		    cr.setCleanrevDate(revDate);
 		
-		    cr.setCleanrevAddr(crc.getCleanrevAddr());
-		    cr.setCleanrevDemand(crc.getCleanrevDemand());
-		    
-		   
-		    cr.setCleanrevTime(crc.getCleanrevTime());
-		    System.out.println("Pay" + Integer.parseInt(pay) );
-		    
-		    
+	    
+		   String pay = crc.getRevPay().replace("원","");
+    
 		    String userId = login.getUserId();
 		    String userNo = login.getUserNo();
 	
 		EmployeeDTO ed = registRepository.empDetail(crc.getEmployeeNo());
+		    model.addAttribute("pay",pay);
 		    model.addAttribute("emp", ed);
 		    model.addAttribute("rev" , crc);
 		    model.addAttribute("userId", userId);

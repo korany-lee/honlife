@@ -44,7 +44,7 @@ public class MailController {
 		return "redirect:/manager/interview";
 	}
 	
-	@RequestMapping("/manager/intChk")
+	@RequestMapping("/care/intChk")
 	
 	public String intChk(@RequestParam(value="recNum") Integer recNum) {
 		

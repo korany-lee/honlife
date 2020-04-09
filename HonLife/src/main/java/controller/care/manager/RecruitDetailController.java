@@ -21,7 +21,7 @@ public class RecruitDetailController {
 		return "common/manager/managerview/care/recDetail";
 	}
 	
-	@RequestMapping("/manager/intDetail")
+	@RequestMapping("/care/intDetail")
 	public String oneSel1(@RequestParam("recNum") Integer recNum, Model model) {
 		
 		recruitDetailService.detail(recNum, model);
