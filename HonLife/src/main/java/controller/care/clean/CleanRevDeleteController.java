@@ -15,7 +15,7 @@ public class CleanRevDeleteController {
 	@RequestMapping("care/revDel")
 	public String revDelete( 	@RequestParam(value="revNo") String revNo) {
 		
-		revDeleteService.revDel(revNo);
+		/* revDeleteService.revDel(revNo); */
 	
 		
 		return "redirect:/careMain";

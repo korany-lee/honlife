@@ -28,11 +28,11 @@
         /* Modal Content/Box */
     .modal-content {
       background-color: #fefefe;
-   		 margin: 1% 1% 1% 1%;
-   	 padding: 40px;
-    border: 0px solid #888;
-    height: 1%;
-    width: 1%;                          
+   		margin: 1% 1% 1% 1%;
+   	  padding: 40px;
+      border: 0px solid #888;
+      height: 1%;
+      width: 1%;                          
         }
         /* The Close Button */
         .close {
@@ -131,7 +131,7 @@
   </tr>
   <tr>
     <td>예약시간</td>
-    <td colspan="3"><fmt:formatDate value="${rev.cleanrevDate }" pattern="yyyy/MM/dd"/> / ${rev.cleanrevTime  }</td>
+    <td colspan="3"><fmt:formatDate value="${rev.cleanrevDate }" pattern="yyyy/MM/dd"/> / ${rev.cleanrevTime  }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
@@ -148,7 +148,7 @@
   
   </tr>
   <tr>
-    <td colspan="4">  ${rev.cleanrevDemand }</td>
+    <td colspan="4"> ${rev.cleanrevDemand }</td>
   </tr>
   <tr>
     <td colspan="2"></td>

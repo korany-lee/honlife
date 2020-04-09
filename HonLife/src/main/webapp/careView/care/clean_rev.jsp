@@ -25,43 +25,33 @@
 
       <!--JavaScript at end of body for optimized loading-->
       <link type="text/css" rel="stylesheet" href="../careView/css/materialize.min.css"  media="screen,projection"/>
-   
-   
-    
- 
-    
-
-
-
 
 <body>
 	<jsp:include page="../includer/careheader.jsp"/>
 
 <main>
- <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript" >
- $(document).ready(function(){
-
-	    $('.datepicker').datepicker();    	
-	    
-	    
-	    $('.timepicker').timepicker();
+ $(function(){  	
+	   $('.datepicker').datepicker();
+	  
+   $('select#cleanrevTime').change( function() {		 
+	   console.log($('.datepicker').datepicker().val()); 
+	   console.log($('select#cleanrevTime').val());
+	    	$.ajax({
+		   		type:"POST",
+		   		url:"../empsel",
+		   		data:'time='+$('select#cleanrevTime').val()+"&date="+$('.datepicker').datepicker().val(),
+		   		datatype:'html' ,
+		   		success: function(data1){
+	   			 $('#employee').html(data1);   			 
+		   		}	   			   	
+		   	}); 		    
+	   }); 
    
-	  });
 
-
-</script>
-
-<script type="text/javascript">
-function aaa(){
-var str = document.getElementById('cleanrevTime');
-var aa = str.substr(0,2);
-alert(aa);
-}
-
-</script>
-
-
+ });
+	</script>
 <section>
 		<section class="main-section-1">
 
@@ -78,7 +68,7 @@ alert(aa);
 				</span>
 	
 				
-				<input type="button" onclick="aaa()" value="aa">
+
 				
 				
 	<form class="col s12" method="POST" name="frm" id="frm" action="cleanAct" >	
@@ -105,19 +95,25 @@ alert(aa);
      
      
      <div class="row">
+     
      <div class="input-field col s6">
      <label>예약 날짜</label>
-      <input type="text" class="datepicker" id="cleanrevDate"name="cleanrevDate" placeholder="예약날짜">
-  
+      <input type="text" class="datepicker" id="cleanrevDate"name="cleanrevDate" value="" placeholder="예약날짜">
 		</div>
-	<div class="input-field col s6">
-	   <label>예약 시간</label>
-  		<input type="text" class="timepicker" id="cleanrevTime" name="cleanrevTime"  placeholder="예약시간">
-  		
+		
+    <div class="input-field col s6" >   
+  		<select class="browser-default" name="cleanrevTime" id="cleanrevTime">
+    	 <option value="" disabled selected >원하시는 시간을 선택해주세요!</option>
+	     <option value="10"  >10시</option>
+	     <option value="12"  >12시</option>
+	     <option value="14"  >14시</option>
+	     <option value="16"  >16시</option>
+	     <option value="18"  >18시</option>
+  </select>
+     
      </div>
-     </div>
-   
-	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+   </div>
+
 		<script>		
 			$( document ).ready( function() {
 				$( 'select#size' ).change( function() {
@@ -130,12 +126,11 @@ alert(aa);
 					}else if($( 'select#size' ).val() == 16 ){
 						$('#pay').val(64000+'원');							
 					}				
-				} );
-			} );		
+				});					
+			});		
 		</script>
     <div class="row">
-  <div class="input-field col s6">
-  
+  <div class="input-field col s6">  
   <select class="browser-default" name="cleanfeeSize" id="size" >
       <option value="" disabled selected >청소 평수를 선택해주세요</option>
     <c:forEach items="${ fee}" var="f" varStatus="ii">
@@ -144,13 +139,9 @@ alert(aa);
   </select>
  
   </div>
-  
-    <div class="input-field col s6">
+    <div class="input-field col s6" id="employee">
   <select class="browser-default" name="employeeNo">
-    <option value="" disabled selected >청소 근무자를 선택해주세요</option>
-	<c:forEach items="${empList }" var="emp" varStatus="ii"> 
-    <option value="${emp.employeeNo }">${emp.employeeName }</option>
- </c:forEach>
+    <option disabled selected >청소 근무자를 선택해주세요</option>
   </select>
  
   </div>
@@ -271,39 +262,9 @@ alert(aa);
 
 	
 
-
-	<script src="../careView/contactform/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../careView/contactform/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="../careView/contactform/vendor/countdowntime/countdowntime.js"></script>
 	
 	<script src="../careView/contactform/js/main.js"></script>
-	<script src="../careView/contactform/vendor/select2/select2.min.js"></script>
-	<script>
-	 $(document).ready(function(){
-		    $('.datepicker').datepicker();
-		  });
-	
-	
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
 
-
-			$(".js-select2").each(function(){
-				$(this).on('select2:close', function (e){
-					if($(this).val() == "Please chooses") {
-						$('.js-show-service').slideUp();
-					}
-					else {
-						$('.js-show-service').slideUp();
-						$('.js-show-service').slideDown();
-					}
-				});
-			});
-		})
-	</script>
 
 
 	</section>
@@ -312,8 +273,9 @@ alert(aa);
 
 </main>
 
-		<script  type="text/javascript" src="../careView/js/materialize.js"></script>
 	
+<script  type="text/javascript" src="../careView/js/materialize.js"></script>
+
 <jsp:include page="../includer/carefooter.jsp"/>
 </body>
 </html>

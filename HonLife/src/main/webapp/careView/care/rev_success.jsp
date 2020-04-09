@@ -130,7 +130,7 @@
   <tr>
     <td>예약시간</td>
     <td colspan="3">
-    	<fmt:formatDate value="${suc.cleanrevDate }" pattern="yyyy/MM/dd"/>/${suc.cleanrevTime  }</td>
+    	<fmt:formatDate value="${suc.cleanrevDate }" pattern="yyyy/MM/dd"/>&nbsp;&nbsp;-&nbsp;&nbsp;${suc.cleanrevTime  }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
@@ -155,9 +155,11 @@
     <td>${suc.revPay }</td>
   </tr>
 </table>
-
-
- 
+ <div class="row">
+<button class="btn waves-effect waves-light"  id="sub" onclick ="location.href='../careMain'" style="width: 30%; border-radius: 30px; background-color: black">메인으로
+  </button>
+  
+</div>	   
 		</div>
 	</div>
 

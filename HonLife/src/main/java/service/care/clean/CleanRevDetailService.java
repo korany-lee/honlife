@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
 import Model.DTO.care.CleanRevDTO;
+import Model.DTO.care.EmployeeDTO;
 import repository.care.RegistRepository;
 import repository.shop.MemberRepository;
 
@@ -25,10 +26,13 @@ public class CleanRevDetailService {
 		CleanRevDTO cdto = new CleanRevDTO();	
 		MemberDTO mdto =	new MemberDTO();
 		
-		cdto.setCleanrevNo(revNo);
-		cdto.setUserNo(userNo);
 		
+		cdto.setUserNo(userNo);
+		cdto.setCleanrevNo(revNo);
+		
+	
 		cdto = registRepository.revDetail(cdto);
+		
 		mdto = memberRepository.selectOneMem(userId);
 			
 			
@@ -39,16 +43,22 @@ public class CleanRevDetailService {
 	}
 	
 	public void sucDetail(String revNo ,Model model, HttpSession ses ) {
+		
 		LoginDTO login = (LoginDTO)ses.getAttribute("memberInfo");
 		
 		
-		CleanRevDTO  cd = new CleanRevDTO();
+		
+		CleanRevDTO cd = new CleanRevDTO();
 		cd.setCleanrevNo(revNo);
-		cd.setUserNo(login.getUserNo());
-		cd = registRepository.successDetail(cd);
+		  cd.setUserNo(login.getUserNo());
+		  cd = registRepository.successDetail(cd);
+		  
+		 
 		
-		model.addAttribute("suc",cd);
-		
+		  String empNo = cd.getEmployeeNo(); 
+		  registRepository.revChkUp(empNo);
+		  model.addAttribute("suc",cd);
+		 
 	}
 	
 }

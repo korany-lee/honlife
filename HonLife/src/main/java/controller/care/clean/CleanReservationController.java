@@ -46,26 +46,24 @@ public class CleanReservationController {
 	  String cc = bb.replace(" ","");
 	  String dd = cc.replace(".", "");
 	 model.addAttribute("revNo" , dd);
-	
-	
-	
+
 	employeeListService.empList(model,session);
 	cleanFeeService.fee(model);
 		return "careView/care/clean_rev";
 	}
 
 @RequestMapping(value="/care/cleanAct")
-	public String revAct(CleanRevCommand cleanRevCommand,Model model,HttpSession session) {
-	cleanRevService.revIn(cleanRevCommand, model, session);
+	public String revAct(CleanRevCommand crc,Model model,HttpSession ses) {
 	
+	cleanRevService.revDetail(crc,model,ses);
 
 	return "careView/care/clean_rev_detail";
 }
 
 @RequestMapping(value="/care/success")
 public String success(	@RequestParam("revNo") String revNo ,Model model,HttpSession ses) {
-		
-	cleanRevDetailService.sucDetail(revNo , model,ses);
+	cleanRevService.revIn(revNo, model, ses);
+	cleanRevDetailService.sucDetail(revNo, model, ses);
 	return "careView/care/rev_success";
 }
 

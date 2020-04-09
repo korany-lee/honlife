@@ -168,6 +168,20 @@ public class RegistRepository {
 		
 	}
 
+	public List<EmployeeDTO> empsel(CleanRevDTO cr){
+		String statement = namespace + ".empsel";
+		
+		
+		return sqlSession.selectList(statement,cr);
+		
+	}
+	
+	public void revChkUp(String empNo) {
+		String statement  =namespace + ".revchk";
+		
+		sqlSession.update(statement);
+		
+	}
 	
 	
 }

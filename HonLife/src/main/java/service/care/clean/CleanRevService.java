@@ -26,41 +26,57 @@ public class CleanRevService {
  RegistRepository registRepository;
  @Autowired
  MemberRepository memberRepository;
-	public void revIn(CleanRevCommand crc, Model model, HttpSession session) {
-		CleanRevDTO cr = new CleanRevDTO();
+	public void revIn(String revNo, Model model, HttpSession ses) {
+		LoginDTO login = (LoginDTO) ses.getAttribute("memberInfo");
+		CleanRevDTO crd = new CleanRevDTO();
+		crd.setUserNo(login.getUserNo());
+		crd.setCleanrevNo(revNo);
+		crd = registRepository.revDetail(crd);
 
-		LoginDTO login = (LoginDTO) session.getAttribute("memberInfo");
-        System.out.println("RevService/empNo=" + crc.getEmployeeNo());
-        System.out.println("RevService/userNo=" + crc.getUserNo());
-        System.out.println("RevService/userId=" + crc.getUserName());
-        System.out.println("RevService/revNo=" + crc.getCleanrevNo());	
-		cr.setCleanrevNo(crc.getCleanrevNo());
-		cr.setUserNo(crc.getUserNo());
-		cr.setEmployeeNo(crc.getEmployeeNo());
-	    cr.setCleanfeeSize(crc.getCleanfeeSize());
-	    String pay= crc.getRevPay().replace("원","");
-	    cr.setRevPay(Integer.parseInt(pay));
+	    registRepository.revIn(crd);
 	    
-	    System.out.println(pay);
-	    Date revDate = new Date(crc.getCleanrevDate().getTime());
-	    cr.setCleanrevDate(revDate);
-	
-	    cr.setCleanrevAddr(crc.getCleanrevAddr());
-	    cr.setCleanrevDemand(crc.getCleanrevDemand());
-	    
-	   
-	    cr.setCleanrevTime(crc.getCleanrevTime());
-	    System.out.println("Pay" + Integer.parseInt(pay) );
-	    
-	    
-	    String userId = login.getUserId();
-	    String userNo = login.getUserNo();
-	    registRepository.revIn(cr);
-	    model.addAttribute("userId", userId);
-	    model.addAttribute("userNo" , userNo);
-	    model.addAttribute("rev" , crc);
+	    model.addAttribute("suc",crd);
 	 
-		EmployeeDTO ed = registRepository.empDetail(crc.getEmployeeNo());
-	    model.addAttribute("emp", ed);
+	 
+	
 	}
+	public void revDetail(CleanRevCommand crc ,Model model, HttpSession ses) {
+			
+			CleanRevDTO cr = new CleanRevDTO();
+
+			LoginDTO login = (LoginDTO) ses.getAttribute("memberInfo");
+			cr.setCleanrevNo(crc.getCleanrevNo());
+			cr.setUserNo(crc.getUserNo());
+			cr.setEmployeeNo(crc.getEmployeeNo());
+		    cr.setCleanfeeSize(crc.getCleanfeeSize());
+		    String pay= crc.getRevPay().replace("원","");
+		    cr.setRevPay(Integer.parseInt(pay));
+		    
+		    System.out.println(pay);
+		    Date revDate = new Date(crc.getCleanrevDate().getTime());
+		    cr.setCleanrevDate(revDate);
+		
+		    cr.setCleanrevAddr(crc.getCleanrevAddr());
+		    cr.setCleanrevDemand(crc.getCleanrevDemand());
+		    
+		   
+		    cr.setCleanrevTime(crc.getCleanrevTime());
+		    System.out.println("Pay" + Integer.parseInt(pay) );
+		    
+		    
+		    String userId = login.getUserId();
+		    String userNo = login.getUserNo();
+	
+		EmployeeDTO ed = registRepository.empDetail(crc.getEmployeeNo());
+		    model.addAttribute("emp", ed);
+		    model.addAttribute("rev" , crc);
+		    model.addAttribute("userId", userId);
+		    model.addAttribute("userNo" , userNo);
+		    
+		    
+		 
+	}
+	
+	
+	
 }

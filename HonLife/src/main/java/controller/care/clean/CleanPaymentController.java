@@ -54,6 +54,8 @@ public class CleanPaymentController {
 		
 		cleanRevDetailService.detail(session,userId,userNo,revNo,model);
 		return "careView/care/payment/paymentDanal";
+		
+
 	}
 	
 }

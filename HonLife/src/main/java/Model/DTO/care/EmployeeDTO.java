@@ -7,6 +7,19 @@ public class EmployeeDTO implements Serializable{
 	
 	
 
+
+	public Integer getRevChk() {
+		return revChk;
+	}
+	public void setRevChk(Integer revChk) {
+		this.revChk = revChk;
+	}
+	public CleanRevDTO getCr() {
+		return cr;
+	}
+	public void setCr(CleanRevDTO cr) {
+		this.cr = cr;
+	}
 	public String getEmployeeEmail() {
 		return employeeEmail;
 	}
@@ -33,8 +46,8 @@ public class EmployeeDTO implements Serializable{
 	String employeeAddrPost;
 	String employeeAddrDetail;
 	String employeeEmail;
-
-	
+	CleanRevDTO cr;
+	Integer revChk;
 	
 
 	

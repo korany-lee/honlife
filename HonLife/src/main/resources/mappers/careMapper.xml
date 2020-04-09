@@ -108,7 +108,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 	EMPLOYEE_NO, EMPLOYEE_NAME, EMPLOYEE_WORKFIELD, EMPLOYEE_CALLNUM,
 	 EMPLOYEE_JUMIN, EMPLOYEE_PHOTO, EMPLOYEE_SCORE, EMPLOYEE_BAD,
 	EMPLOYEE_ADDR, EMPLOYEE_GENDER, EMPLOYEE_PH, EMPLOYEE_ADDRPOST,
-	EMPLOYEE_ADDRDETAIL, EMPLOYEE_EMAIL
+	EMPLOYEE_ADDRDETAIL, EMPLOYEE_EMAIL,REV_CHK
 </sql>
 
 
@@ -126,7 +126,9 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 		<result  column="EMPLOYEE_PH" jdbcType="BIGINT" property="employeePh" />
 		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
 		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
-       <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
+        <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
+        <result column="REV_CHK" jdbcType="VARCHAR" property="revChk"/>
+        <association property="cr" javaType="Model.DTO.care.CleanRevDTO" resultMap="rev" />
 </resultMap>
 
 <insert id="empRegist">
@@ -135,7 +137,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 	values (#{employeeNo},#{employeeName},#{employeeWorkField},#{employeeCallnum}, 
 		   #{employeeJumin},#{employeePhoto},0,'N', 
 		   #{employeeAddr},#{employeeGender},#{employeePh},#{employeeAddrPost},
-		   #{employeeAddrDetail},#{employeeEmail} )
+		   #{employeeAddrDetail},#{employeeEmail},'0' )
 
 </insert>
 
@@ -272,7 +274,8 @@ and        c.cleanorder_no = t.cleanorder_no
 
 <sql id="baseRev">
 c.CLEANREV_NO, c.USER_NO, c.EMPLOYEE_NO, c.CLEANFEE_SIZE,
-c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, c.CLEANREV_ADDR, c.REV_PAY
+c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, 
+c.CLEANREV_ADDR, c.REV_PAY
 </sql>
 
 	<resultMap type="Model.DTO.MemberDTO" id="baseMember">
@@ -288,8 +291,7 @@ c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, c.CLEANREV_ADDR, c.REV_PAY
 		<result column="USER_BIRTH" jdbcType="DATE" property="userBirth" />
 		<result column="USER_REGIST" jdbcType="TIMESTAMP" property="userResist" />
 		<result column="CONNECT_DATE" jdbcType="TIMESTAMP" property="connectDate" />
-		<result column="ROLE" jdbcType="VARCHAR" property="role" />
-		
+		<result column="ROLE" jdbcType="VARCHAR" property="role" />	
 	</resultMap>
 
 
@@ -338,6 +340,30 @@ c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, c.CLEANREV_ADDR, c.REV_PAY
 	and    c.USER_NO = #{userNo}
 	and    c.CLEANREV_NO = #{cleanrevNo}
 </select>
+
+<select id="empsel" parameterType="Model.DTO.care.CleanRevDTO" resultMap="empList">
+    select  e.employee_no,e.employee_name
+    from employee e
+    where e.employee_no not in 
+                    (select c.employee_no 
+                      from cleanrev c
+                      where c.cleanrev_date = #{cleanrevDate}   
+                      and   c.cleanrev_time = #{cleanrevTime})
+     and  e.EMPLOYEE_WORKFIELD = 'cm'  
+     and  e.REV_CHK  <![CDATA[ < ]]> 5               
+</select>
+
+<update id="revchk" parameterType="String">
+	update employee  
+	set rev_chk = rev_chk + 1 
+	where employee_no = #{employeeNo}
+	
+	
+	
+
+
+
+</update>
 
 
 </mapper>
