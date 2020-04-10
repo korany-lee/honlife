@@ -19,6 +19,7 @@ import service.stay.room.RoomInsertService;
 import service.stay.room.RoomListService;
 import service.stay.room.RoomRevInsertService;
 import service.stay.room.RoomRevListService;
+import service.stay.room.WebSocketService;
 
 @Controller
 public class RoomController {
@@ -36,6 +37,9 @@ public class RoomController {
 	
 	@Autowired
 	RoomRevListService roomRevListService;
+	
+	@Autowired
+	WebSocketService webSocketService;
 	
 	
 	//회원용
@@ -103,6 +107,7 @@ public class RoomController {
 	
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
 	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session,HttpServletRequest request) throws Exception {
+		
 		roomRevInsertService.revInsert(revCommand,model,session);
 		roomRevListService.revChk(model,session,revCommand.getStartDate());
 		roomRevListService.sendSMS(revCommand,request);
@@ -158,7 +163,7 @@ public class RoomController {
 		  }
 		 
 		roomInsertService.roomInsert(roomCommand,request);
-		return "common/manager/managerview/managermain";
+		return "redirect:/manager/main";
 	}
 	
 	

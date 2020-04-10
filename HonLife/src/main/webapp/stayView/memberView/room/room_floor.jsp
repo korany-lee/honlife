@@ -207,7 +207,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 $.ajax({
 	type : "POST",
 	url : "floorSelect",
-	data : "floor=1",
+	data : "floor=3",
 	datatype : "html",
 	success : function(data1) {
 		$("#bdto").html(data1);

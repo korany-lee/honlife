@@ -10,9 +10,60 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 
+
+
 </head>
 
 <body>
+<input type="hidden" id="nick" value="중식집">
+
+
+<script>
+var url ="ws://192.168.4.172:8080/project/chat/";
+var webSocket = null;
+var msg = "";
+url += $("#nick").val();
+webSocket = new WebSocket(url); // 웹소켓 객체 생성
+	
+	//웹소켓 연결 됐을 떄
+webSocket.onopen =function(e) {
+	console.log(e);
+}
+	
+	
+webSocket.onclose = function(e){
+	if(e.type=="close") {
+			//monitor.innerHTML += "접속이 종료 되었습니다.<BR />";
+	}
+}
+	
+
+	//메세지 수신
+	/* webSocket.onmessage = function(e){
+		monitor.innerHTML += e.data +"<br />";
+	} */
+function disConn() {
+	webSocket.close();
+}
+	//메세지 전송
+function sendMsg() {
+		
+	msg += "revName:${rev.revName }"+"/";
+	msg += "livingName:${rev.livingName }"+"/";
+	msg += "ph:${rev.ph }"+"/";
+	msg += "email:${rev.email }"+"/";
+	msg += "price:${rev.price }"+"/";
+	msg += "startDate:${rev.startDate }"+"/";
+	msg += "endDate:${rev.endDate }"+"/";
+	msg += "roomNo:${rev.roomNo }"+"/";
+	alert(msg);
+	webSocket.send(msg);
+}
+	
+
+</script>
+
+
 
     <script>
     $(function(){
@@ -50,14 +101,17 @@
                         msg += '\결제 금액 : ' + rsp.paid_amount;
                         msg += '카드 승인번호 : ' + rsp.apply_num;
                         
-                        alert(msg);
+                        
                     } else {
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
                     }
                 });
                 //성공시 이동할 페이지
-                $("#frm").submit();
+                //$("#frm").submit();
+                sendMsg();
+
+                disConn();
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
@@ -69,20 +123,8 @@
         
     });
     </script>
-<form id="frm" action="reservationFinish" method="post">
-	<input type="hidden" id="revName" name="revName" value="${rev.revName }">
-	<input type="hidden" id="livingName" name="livingName" value="${rev.livingName }">
-	<input type="hidden" id="ph" name="ph" value="${rev.ph }">
-	<input type="hidden" id="email" name="email" value="${rev.email }">
-	<input type="hidden" id="price" name="price" value="${rev.price }">
-	<input type="hidden" id="startDate" name="startDate" value="${rev.startDate }">
-	<input type="hidden" id="endDate" name="endDate" value="${rev.endDate }">
-	<input type="hidden" id="roomNo" name="roomNo" value="${rev.roomNo }">
-
-</form>   
-    
-    
 </body>
+
 
 
 </html>

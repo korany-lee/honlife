@@ -44,8 +44,15 @@ public class RoomListService {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
 	public void floorSelect(String floor,Model model) {
 		List<RoomDTO> list = roomRepository.floorSelect(floor);
+		System.out.println("list의 크기는 ? " + list.size());
 		model.addAttribute("list",list );
 	}
 	

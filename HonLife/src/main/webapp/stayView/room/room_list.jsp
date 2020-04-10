@@ -1,105 +1,147 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hon Life - 객실 리스트</title>
-
-<%-- <jsp:include page="../../common/manager/managerheader.jsp" /> --%>
-<link rel="icon" type="image/png"
-	href="../common/manager/contactform/images/icons/favicon.ico" />
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/fonts/iconic/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/animate/animate.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/css-hamburgers/hamburgers.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/animsition/css/animsition.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/select2/select2.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/daterangepicker/daterangepicker.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/vendor/noui/nouislider.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../common/manager/contactform/css/util.css">
-
-<link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-
-<link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-
-
-<link href="../common/manager/managercss/jquery-accordion-menu.css"
-	rel="stylesheet" type="text/css" />
-<link href="../common/manager/managercss/font-awesome.css"
-	rel="stylesheet" type="text/css" />
-<script src="../common/manager/managerjs/jquery/jquery-1.11.2.min.js"
-	type="text/javascript"></script>
-<script
-	src="../common/manager/managerjs/jquery/jquery-accordion-menu.js"
-	type="text/javascript"></script>
+<title>Insert title here</title>
 </head>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  
 <script type="text/javascript">
-	$(function() {
-		$("#BigType").change(function() {
-			$("#bdto").innerHTML = "";
-			/* 	location.href = "selectFurniture?type="+$("#furnitureType").val(); */
-			$.ajax({
-				type : "POST",
-				url : "selectBigType",
-				data : "BigType=" + $("#BigType").val(),
-				datatype : "html",
-				success : function(data1) {
-					$("#bdto").html(data1);
-				}
-			});
-		});
-		
-		$("#SmallType").change(function() {
-			$("#cdto").innerHTML = "";
-			/* 	location.href = "selectFurniture?type="+$("#furnitureType").val(); */
-			$.ajax({
-				type : "POST",
-				url : "selectSmallType",
-				data : {"BigType" :  $("#BigType").val() , "SmallType" : $("#SmallType").val() } ,
-				datatype : "html",
-				success : function(data1) {
-					$("#cdto").html(data1);
-				}
-			});
-		});
-	});
-</script>
+ 	function floorDetail(n){
+ 		$("#floorDetail").innerHTML = "";  
+ 		 		
+ 		
+ 		$.ajax({
+ 			type : "POST",
+ 			url : "floorDetail",
+ 			data : "floor=" +n ,
+ 			datatype : "html",
+ 			success : function(data1) {
+ 				$("#detail").innerHTML= n+"층 단면도";
+ 				$("#floorDetail").html(data1);
+ 			}
+ 		
+ 		});  
+ 	}	
+ 
+	</script>
+<!-- <style type="text/css">
+
+.modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 5; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            
+            
+  
+		}
+        
+    
+        /* Modal Content/Box */
+    .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 40px;
+            border: 1px solid #888;
+            height: 250px;
+            width: 60%; /* Could be more or less, depending on screen size */                          
+        }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+</style> -->
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
 <body>
 
-
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 	
-	
-
-		<div class="container-contact100">
-			<div class="wrap-contact100">
-
-				<span class="contact100-form-title"> 객실 리스트 </span>
-				
-			</div>
-		</div>
-
+		<section class="animate-in-view">
+			<!-- <div class="section-content clearfix"> -->
+			<br>
+			<span  style="font-size: 40px;"> 객실 단면도</span><br><br>
+			
+<table class="tg" style="undefined;table-layout: fixed; width: 783px">
+<colgroup>
+<col style="width: 75px">
+<col style="width: 87px">
+<col style="width: 391px">
+<col style="width: 230px">
+</colgroup>
+  <tr>
+    <th class="tg-0pky"><span id="detail"></span></th>
+    <th class="tg-0pky" colspan="3" rowspan="13"><div id="floorDetail"></div></th>
+  </tr>
+  
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('15')" id="aaaa">15층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('14')" id="aaaa">14층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('13')" id="aaaa">13층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('12')" id="aaaa">12층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('11')" id="aaaa">11층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('10')" id="aaaa">10층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('9')" id="aaaa">9층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('8')" id="aaaa">8층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('7')" id="aaaa">7층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('6')" id="aaaa">6층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-lboi"><a href="#" onClick="javascript:floorDetail('5')" id="aaaa">5층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('4')" id="aaaa">4층</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="#" onClick="javascript:floorDetail('3')" id="aaaa">3층</a></td>
+  </tr>
+</table>
+			
+			
 
 
 
@@ -123,6 +165,6 @@
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-
+</section>
 </body>
 </html>

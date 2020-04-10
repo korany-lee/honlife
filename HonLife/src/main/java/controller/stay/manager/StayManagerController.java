@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import service.stay.furniture.FurnitureListService;
 import service.stay.manager.ManagerRevService;
 import service.stay.member.MyReservationService;
+import service.stay.room.RoomListService;
 
 @Controller
 public class StayManagerController {
@@ -20,6 +21,9 @@ public class StayManagerController {
 	
 	@Autowired
 	FurnitureListService furnitureListService;
+	
+	@Autowired
+	RoomListService roomListService;
 	
 	@RequestMapping("/manager/roomRevList")
 	public String roomRevList(Model model) {
@@ -86,5 +90,12 @@ public class StayManagerController {
 		myReservationService.settingFinsish(a);
 		return "redirect:/manager/main";
 	}
+	
+	@RequestMapping("/manager/floorDetail")
+	public String floorDetail(@RequestParam(value="floor")String num,Model model) {
+		roomListService.floorSelect(num,model);
+		return "stayView/room/room_floorDetail";
+	}
+	
 	
 }

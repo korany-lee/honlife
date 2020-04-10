@@ -54,6 +54,18 @@ a {
   -moz-transition: all 0.4s;
 }
 
+#aaaa {
+    font-family: 'Do Hyeon', sans-serif;
+	font-size: 20px;
+	line-height: 0.85;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
 .a2 {
     font-family: 'Do Hyeon', sans-serif;
 	font-size: 20px;
