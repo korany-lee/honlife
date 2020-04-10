@@ -1988,6 +1988,9 @@ button {
 }
 
 .form-control {
+	display: table-cell;
+	vertical-align: middle;
+
   outline: none;
   height: 50px;
   font-size: 14px;
@@ -2601,7 +2604,7 @@ textarea.form-control {
 .form-group--number .form-control {
   border: 1px solid #ccc;
   height: 40px;
-  padding: 0 25px;
+  padding: 0 45px;
   text-align: center;
   font-size: 14px;
   color: #000;

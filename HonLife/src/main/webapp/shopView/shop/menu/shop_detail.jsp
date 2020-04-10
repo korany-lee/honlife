@@ -57,7 +57,7 @@
                 <li><a href="shop-default.html">Consumer Electrics</a></li>
                 <li><a href="shop-default.html">Refrigerators</a></li>
                 <li>${product.productName }</li>
-            </ul>
+            </ul>               
         </div>
     </div>
     <div class="ps-page--product">
@@ -83,6 +83,10 @@
                                 </div>
                             </div>
                             <div class="ps-product__info">
+                            <form id="cart" name="shopCart" method="post" action="../cartGo">
+                            <input type="hidden" name="productName" value="${product.productName }"/>
+                            <input type="hidden" name="productNo" value="${product.productNo }"/>
+                            <input type="hidden" name="productPrice" value="${product.productPrice }"/>
                                 <h1>${product.productName }</h1>
                                 <div class="ps-product__meta">
                                     <p>Brand:<a href="shop-default.html">SSG</a></p>
@@ -113,40 +117,51 @@
                                         <div class="ps-variant ps-variant--color color--2"><span class="ps-variant__tooltip"> Gray</span></div>
                                     </figure>
                                 </div>
-                                <div class="ps-product__shopping">
+                                <div class="ps-product__shopping" style="width: 400px;">
+                                
                                     <figure>
                                         <figcaption>개수</figcaption>
-                                         <script type="text/javascript">
-								$(function() {
-									$('#down').click(function(e) {
-										e.preventDefault();
-										var stat = $('#quantity').text();
-										var num = parseInt(stat, 10);
-										num--;
-										if (num < 0) {
-											num = 0;
-										}
-										$('#quantity').text(num);
-									});
-									$('.up').click(function(e) { 
-										e.preventDefault();
-										var stat = $('#quantity').text();
-										var num = parseInt(stat, 10);
-										num++;
-
-										$('#quantity').text(num);
-									});
-								});
-							</script>
+                                
                                         <div class="form-group--number">
-                                            <button class="up" id="up"><i class="fa fa-plus"></i></button>
-                                            <button class="down" id="down"><i class="fa fa-minus"></i></button>
-                                            <input class="form-control" type="text" placeholder="1" id="quantity">
+                                            <button class="up" id="increaseQuantity"><i class="fa fa-plus"></i></button>
+                                            <button class="down" id="decreaseQuantity"><i class="fa fa-minus"></i></button>
+                                            <span class="form-control" id="quantity">1</span>
+                                            <input type="hidden" id="cartQuantity" name="cartQuantity"/>
                                         </div>
-
-                                    </figure><a class="ps-btn ps-btn--black" href="../cart">장바구니 담기</a>
+                                        
+                           	  <script src="http://code.jquery.com/jquery-latest.js"></script>
+                                <script type="text/javascript">
+                                $(function(){
+                                	$('#decreaseQuantity').click(function(e){
+                                	e.preventDefault();
+                                	var stat = $('#quantity').text();
+                                	var num = parseInt(stat,10);
+                                	num--;
+                                	if(num<0){
+                                		num =0;
+                                	}
+                                	$('#quantity').text(num);
+                                	console.log($('#quantity').html());
+                                	var cartQty = $('#quantity').html();
+                                	$("#cartQuantity").val(cartQty);
+                                	});
+                                	$('#increaseQuantity').click(function(e){
+                                	e.preventDefault();
+                                	var stat = $('#quantity').text();
+                                	var num = parseInt(stat,10);
+                                	num++;
+                                	$('#quantity').text(num);
+                                	console.log($('#quantity').html());
+                                	var cartQty = $('#quantity').html();
+                                	$("#cartQuantity").val(cartQty);                           	
+                                	});
+                                	});
+       					</script>
+									<input type="hidden" name="${product.productNo }"/>
+                                    </figure><button type="submit" class="ps-btn ps-btn--black">장바구니 담기</button>
                                     <div class="ps-product__actions"><a href="#"><i class="icon-heart"></i></a><a href="#"><i class="icon-chart-bars"></i></a></div>
                                 </div>
+                                    </form>
                                 <div class="ps-product__specification"><a class="report" href="#">Report Abuse</a>
                                     <p><strong>SSG:</strong> SF1133569600-${product.productNo }</p>
                                     <p class="categories"><strong> 카테고리:</strong>
@@ -960,5 +975,6 @@
     <script src="./../js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxflHHc5FlDVI-J71pO7hM1QJNW1dRp4U&amp;region=GB"></script>
 </body>
+
 
 </html>

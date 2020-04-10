@@ -43,7 +43,7 @@ public class ProductInsertService {
 			Timestamp productUsedate;
 			if(pc.getProductUsedate() == null) {
 				//yyyy-mm-dd hh:mm:ss.fffffffff
-				productUsedate = java.sql.Timestamp.valueOf("2020-04-01 00:00:00.000000000");
+				productUsedate = java.sql.Timestamp.valueOf("2025-04-01 00:00:00.000000000");
 				dto.setProductUsedate(productUsedate);
 			}else {
 				productUsedate = new Timestamp(pc.getProductUsedate().getTime());

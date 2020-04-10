@@ -24,8 +24,9 @@
 
 <insert id="insertProduct" parameterType="pro">
 	insert into product(<include refid="basecolumn" />)
-	 values (productSeq.nextval, #{productName},#{productType},#{productDetailtype},#{productPhoto},#{productPrice},#{productCount},
-	#{productUsedate})
+	 values (productSeq.nextval, #{productName,jdbcType=VARCHAR},#{productType,jdbcType=VARCHAR},
+	 #{productDetailtype,jdbcType=VARCHAR},#{productPhoto,jdbcType=VARCHAR},
+	 #{productPrice,jdbcType=BIGINT},#{productCount,jdbcType=BIGINT},#{productUsedate,jdbcType=TIMESTAMP})
 </insert>
 
 <select id="selectPro" parameterType="pro" resultMap="ProMap">
@@ -36,6 +37,14 @@
 select * from product where product_no = #{productNo}
 </select>
 
+<insert id="cartInsert" parameterType="Model.DTO.CartDTO">
+	<selectKey keyProperty="cartNo" resultType="int" order="BEFORE">
+		select cart_seq.nextval FROM dual
+	</selectKey>
+	
+	insert into basket
+	values(#{cartNo}, #{productNo}, #{basketAmount}, #{userNo})
+</insert>
 
 
 </mapper>

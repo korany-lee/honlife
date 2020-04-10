@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.DTO.CartDTO;
 import Model.DTO.ProductDTO;
 
 @Repository
@@ -27,4 +28,9 @@ public class ShopListRepository {
 		return sqlSession.selectOne(statement, ProductNo);
 	}
 	
+	public Integer cart(CartDTO dto) {
+		String statement = namespace + ".cartInsert";
+		sqlSession.insert(statement, dto);
+		return dto.getCartNo();
+	}
 }
