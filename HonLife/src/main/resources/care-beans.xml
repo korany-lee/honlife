@@ -8,8 +8,8 @@
         <bean id="recruitListService" class="service.care.clean.RecruitListService"/>
         <bean id="recruitDeleteService" class="service.care.clean.RecruitDeleteService" />
         <bean id="revDeleteService" class="service.care.clean.RevDeleteService" />
-        
-        
+        <bean id="laundryRevService" class="service.care.laundry.LaundryRevService" />
+        <bean id="sendSMSService" class="service.care.laundry.SendSMSService" />
         <bean id="recruitDetailService" class="service.care.clean.RecruitDetailService" />
 		<bean id="cleanFeeService" class="service.care.clean.CleanFeeService" />
 		<bean id="cleanRevService" class="service.care.clean.CleanRevService" />

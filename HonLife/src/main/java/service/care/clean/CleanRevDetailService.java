@@ -1,5 +1,6 @@
 package service.care.clean;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,19 +41,18 @@ public class CleanRevDetailService {
 		Integer Bpay = Integer.parseInt(Apay);
 		cr.setRevPay(Bpay);
 		System.out.println("detaildate=" +revdate);
+	
 		
 		cr.setCleanfeeSize(size);
 		cr.setCleanrevAddr(revaddr);
-		
-		
-		   SimpleDateFormat F2 = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
-		   System.out.println("detailparsedate=" + F2.parse(revdate));
+		SimpleDateFormat A = new SimpleDateFormat("yyyy-MM-dd");
+		    Date D =  A.parse(revdate);
+		    Timestamp T = new Timestamp(D.getTime());
+		    
+		    
 		  
-		   
-		 
-		   
-		cr.setCleanrevDate(F2.parse(revdate));
-		
+
+		cr.setCleanrevDate(T);
 		cr.setCleanrevDemand(demand);
 		cr.setCleanrevNo(revNo);
 		cr.setCleanrevTime(revtime);

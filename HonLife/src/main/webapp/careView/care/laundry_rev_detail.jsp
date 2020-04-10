@@ -28,11 +28,11 @@
         /* Modal Content/Box */
     .modal-content {
       background-color: #fefefe;
-   		 margin: 1% 1% 1% 1%;
-   	 padding: 40px;
-    border: 0px solid #888;
-    height: 1%;
-    width: 1%;                          
+   		margin: 1% 1% 1% 1%;
+   	  padding: 40px;
+      border: 0px solid #888;
+      height: 1%;
+      width: 1%;                          
         }
         /* The Close Button */
         .close {
@@ -68,11 +68,11 @@
 
 
       <!--JavaScript at end of body for optimized loading-->
-      <link type="text/css" rel="stylesheet" href="../careView/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/project/careView/css/materialize.min.css"  media="screen,projection"/>
    
    
     
-     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
      
  
 
@@ -82,7 +82,15 @@
 
 <main>
 
+<script type="text/javascript">
+	function goMain(){
+		
+		location.href="../careMain";
+		
+	}
 
+
+</script>
 
 <section>
 		<section class="main-section-1">
@@ -96,13 +104,15 @@
 			
 				
 				<span class="contact100-form-title" >
-		예약이 완료되었습니다 ! 내용을 확인해주세염.
+			예약이 완료되었습니다. 담당 기사가 배정되면 문자로 알려드리겠습니다!
 				</span>
 	
 				
 				
 
 				<table style="undefined;table-layout: fixed; width: 690px">
+				
+				
 <colgroup>
 <col style="width: 118px">
 <col style="width: 231px">
@@ -111,62 +121,43 @@
 </colgroup>
   <tr>
     <td>예약번호</td>
-    <td colspan="3">${cr.cleanrevNo }</td>
+    <td colspan="3">${ld.laundryrevNo }</td>
   </tr>
   <tr>
     <td>성명</td>
-    <td>${pc.uname }</td>
+    <td>${mem.userName }</td>
     <td>연락처</td>
-    <td>${pc.uph }</td>
+    <td>${mem.userPh }</td>
   </tr>
   <tr>
     <td>이메일</td>
-    <td colspan="3">${pc.uemail }</td>
+    <td colspan="3">${mem.userEmail }</td>
   </tr>
   <tr>
     <td>예약 주소</td>
-    <td colspan="3">${pc.revaddr }</td>
+    <td colspan="3">${ld.laundryrevAddr }</td>
   </tr>
   <tr>
-    <td>예약시간</td>
-    <td colspan="3">
-	<fmt:parseDate value="${pc.revdate}" var="date" pattern="yyyy-MM-dd HH:mm:ss.s"/>
-   <fmt:formatDate value="${date}" pattern="yyyy-MM-dd"/>&nbsp;&nbsp;/&nbsp;&nbsp;${pc.revtime }시</td>
+    <td>희망 수거 날짜</td>
+    <td colspan="3"> <fmt:formatDate value="${ld.laundryrevDate }" pattern="yyyy-MM-dd"/></td>
   </tr>
   <tr>
-    <td>담당 매니저</td>
-    <td>${pc.empname }</td>
-    <td>담당매니저 연락처</td>
-    <td>${pc.empph }</td>
+  <td>희망 배송 날짜</td>
+    <td colspan="3"> <fmt:formatDate value="${ld.laundryrevRecdate }" pattern="yyyy-MM-dd"/></td>
   </tr>
-  <tr>
-    <td>청소면적</td>
-    <td colspan="3">${pc.size }평</td>
-  </tr>
-  <tr>
-    <td colspan="4">요청사항</td>
-  
-  </tr>
-  <tr>
-    <td colspan="4">  ${pc.demand }</td>
-  </tr>
-  <tr>
-    <td colspan="2"></td>
-    <td>총 결제 금액</td>
-    <td>${pc.pay }</td>
-  </tr>
+
 </table>
- <div class="row">
-<button class="btn waves-effect waves-light"  id="sub" onclick ="location.href='../careMain'" style="width: 30%; border-radius: 30px; background-color: black">메인으로
+ <button class="btn waves-effect waves-light" onclick="goMain()" style="margin-left: 135px;width: 50%; border-radius: 30px; background-color: black">메인으로!
+   <i class="material-icons right">send</i>
   </button>
-  
-</div>	   
-		</div>
-	</div>
 
 </div>
+</div>
+</div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+
+
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -178,12 +169,11 @@
       </div>
  
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <script  type="text/javascript" src="/project/careView/js/materialize1.js"></script>
+
 	
-	<script src="../careView/contactform/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../careView/contactform/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="../careView/contactform/vendor/countdowntime/countdowntime.js"></script>
-	
-	<script src="../careView/contactform/js/main.js"></script>
+	<script src="/project/careView/contactform/js/main.js"></script>
 	
 
 	</section>
@@ -192,7 +182,7 @@
 
 </main>
 
-		<script  type="text/javascript" src="../careView/js/materialize.js"></script>
+	
 	
 <jsp:include page="../includer/carefooter.jsp"/>
 </body>

@@ -17,7 +17,7 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler/>
 	<mvc:view-resolvers>
-		<mvc:jsp prefix="/"/>
+			<mvc:jsp prefix="/"/>
 	</mvc:view-resolvers>
 	
 	<mvc:resources location="/" mapping="/**" cache-period="14400" />	
@@ -34,7 +34,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/manager/**" />
-			<bean class="Interceptor.AuthCheckInterceptor" />
+				<bean class="Interceptor.AuthCheckInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 

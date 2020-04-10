@@ -17,6 +17,11 @@
 
 
 
+<bean class="controller.care.laundry.LaundryReservationController" />
+
+
+
+
  
                      
 </beans>

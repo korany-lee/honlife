@@ -86,7 +86,13 @@
 				<c:if test="${empty memberInfo }">
 				<li id="menu-item-1804" onclick ="javascript:rev()"class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="#">청소예약</a></li>
 				</c:if>
-				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
+				<c:if test="${!empty memberInfo }">
+				<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="care/laundryrev">세탁예약</a></li>
+				</c:if>
+				<c:if test="${empty memberInfo }">
+				<li id="menu-item-1805" onclick="javascript:rev()" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805"><a href="#">세탁예약</a></li>
+				</c:if>
+				
 				<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="care/recruitment">모집요강</a></li>
 				<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="#">나의 예약내역</a></li>
 </ul>

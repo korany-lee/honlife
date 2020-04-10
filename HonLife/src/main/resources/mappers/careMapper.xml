@@ -301,7 +301,7 @@ c.CLEANREV_ADDR, c.REV_PAY
 	<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
 	<id column="CLEANFEE_SIZE" jdbcType="BIGINT" property="cleanfeeSize" />
      <result column="CLEANREV_DEMAND" jdbcType="VARCHAR" property="cleanrevDemand"/>
-	<result column="CLEANREV_DATE" jdbcType="DATE" property="cleanrevDate"/>
+	<result column="CLEANREV_DATE" jdbcType="TIMESTAMP" property="cleanrevDate"/>
 	<result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>
 	<result column="CLEANREV_ADDR" jdbcType="VARCHAR" property="cleanrevAddr"/>
 	<result column="REV_PAY" jdbcType="BIGINT" property="revPay"/>
@@ -358,8 +358,33 @@ c.CLEANREV_ADDR, c.REV_PAY
 	set rev_chk = rev_chk + 1 
 	where employee_no = #{empNo}
 
-
 </update>
+
+<insert id="laundIn">
+	insert into laundryrev (LAUNDRYREV_NO,USER_NO,
+                        			 LAUNDRYREV_DATE,LAUNDRYREV_RECDATE,LAUNDRYREV_ADDR )
+	values(#{laundryrevNo},#{userNo},#{laundryrevDate},#{laundryrevRecdate},#{laundryrevAddr}  )
+	
+</insert>
+
+
+<resultMap type="Model.DTO.laundry.LaundryRevDTO" id="laundryMap">
+	<id column="LAUNDRYREV_NO"  jdbcType="VARCHAR" property="laundryrevNo"/>
+	<id column="USER_NO"  jdbcType="VARCHAR" property="userNo"/>
+	<result column="LAUNDRYREV_DATE" jdbcType="TIMESTAMP" property="laundryrevDate"/>
+	<result column="LAUNDRYREV_RECDATE" jdbcType="TIMESTAMP" property="laundryrevRecdate"/>
+	<result column="LAUNDRYREV_ADDR" jdbcType="VARCHAR" property="laundryrevAddr"/>
+</resultMap>
+<select id="Ldtatil" parameterType="string" resultMap="laundryMap">
+
+	select   LAUNDRYREV_NO,USER_NO,
+               LAUNDRYREV_DATE,LAUNDRYREV_RECDATE,
+               LAUNDRYREV_ADDR
+	from LAUNDRYREV
+	where LAUNDRYREV_NO = #{laundryrevNo}
+
+</select>
+
 
 
 </mapper>

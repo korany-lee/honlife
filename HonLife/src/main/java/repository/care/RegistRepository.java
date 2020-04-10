@@ -15,6 +15,7 @@ import Model.DTO.care.CleanitemInsert;
 import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.EmptoItemOrderDTO;
 import Model.DTO.care.RecruitDTO;
+import Model.DTO.laundry.LaundryRevDTO;
 import command.care.clean.ItemCommand;
 
 @Repository
@@ -179,7 +180,22 @@ public class RegistRepository {
 	public void revChkUp(String empNo) {
 		String statement  =namespace + ".revchk";
 		
-		sqlSession.update(statement);
+		sqlSession.update(statement,empNo);
+		
+	}
+	
+	public Integer laundryRevIn(LaundryRevDTO ld) {
+		String statement = namespace + ".laundIn";
+		
+		return sqlSession.insert(statement, ld);
+		
+	}
+	
+	public LaundryRevDTO laundryDetail(String LrevNo) {
+		
+		String statement = namespace + ".Ldtatil";
+		
+		return sqlSession.selectOne(statement,LrevNo);
 		
 	}
 	

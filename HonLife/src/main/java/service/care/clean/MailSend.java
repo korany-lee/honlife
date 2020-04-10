@@ -25,7 +25,7 @@ public class MailSend {
 						+ "귀하의 입사지원 서류를 확인하였고 자격이 충분하다 생각하여 <br>  "
 						+ "다음 인성검사 페이지를 보내드립니다 <br> "
 						+ "지원해주셔서 감사합니다 . <br> "    
-						+ "<a href = 'http://192.168.219.105:8888/project/care/personality?recNum="+recNum+"&reciver="+reciver+"'> 인성검사 페이지로</a>"
+						+ "<a href = 'http://192.168.4.111:8080/project/care/personality?recNum="+recNum+"&reciver="+reciver+"'> 인성검사 페이지로</a>"
 						+ "</body></html>";
 		
 		String subject = "안녕하십니까 "+name+"님 HonCare 매니저 지원을 감사드립니다 ";
@@ -52,7 +52,7 @@ public class MailSend {
 				+ "면접 일정을 알려드리겠습니다. <br> "
 			    + "2020년 04월 20일에 일괄 면접을 실시합니다 <br>"
 			    + "아래 메일 확인을 진행해주세요 안하면 면접 안됩니다. <br>"
-			    + "<a href = 'http://192.168.219.105:8888/project/care/intChk?recNum="+recNum+"'> 메일 확인</a>"
+			    + "<a href = ' http://192.168.4.111:8080/project/care/intChk?recNum="+recNum+"'> 메일 확인</a>"
 			    + "</body></html>"; 
 		
 		
@@ -109,7 +109,7 @@ public class MailSend {
 			    + "저희 회사에서 열심히 일하기에 앞서 매니저 등록을 진행하기위해 <br>" 
 				+ "아래 링크로 들어오셔서 매니저 등록을 마쳐주시기 바랍니다! <br> "
 			    + "그럼 20000" 
-				+ "<a href = 'http://192.168.219.105:8888/project/care/empRegist?recNum="+recNum+" '>매니저 등록하기</a>"  ; 
+				+ "<a href = 'http://192.168.4.111:8080/project/care/empRegist?recNum="+recNum+" '>매니저 등록하기</a>"  ; 
 		
 		
 		String subject = name+ "님 ㅊㅋㅊㅋ 사원등록하셈";

@@ -1,10 +1,18 @@
 package command.care.clean;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class PayCommand {
+
+	public String getRevdate() {
+		return revdate;
+	}
+	public void setRevdate(String revdate) {
+		this.revdate = revdate;
+	}
 	String revNo;
 	String uname;
 	Integer uph;
@@ -51,12 +59,7 @@ public class PayCommand {
 		this.revaddr = revaddr;
 	}
 
-	public String getRevdate() {
-		return revdate;
-	}
-	public void setRevdate(String revdate) {
-		this.revdate = revdate;
-	}
+
 	public String getRevtime() {
 		return revtime;
 	}

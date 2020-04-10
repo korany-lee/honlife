@@ -117,13 +117,13 @@
   </tr>
   <tr>
     <td>성명</td>
-    <td>${rev.userName }</td>
+    <td>${mem.userName }</td>
     <td>연락처</td>
-    <td>${rev.userPh }</td>
+    <td>${mem.userPh }</td>
   </tr>
   <tr>
     <td>이메일</td>
-    <td colspan="3">${rev.userEmail }</td>
+    <td colspan="3">${mem.userEmail }</td>
   </tr>
   <tr>
     <td>예약 주소</td>
@@ -131,7 +131,7 @@
   </tr>
   <tr>
     <td>예약시간</td>
-    <td colspan="3">${rev.cleanrevDate } / ${rev.cleanrevTime  }시</td>
+    <td colspan="3"> <fmt:formatDate value="${rev.cleanrevDate }" pattern="yyyy-MM-dd"/>  / ${rev.cleanrevTime  }시</td>
   </tr>
   <tr>
     <td>담당 매니저</td>
@@ -160,13 +160,13 @@
 
 
 
- <button class="btn waves-effect waves-light"  onclick="payKG('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">이니시스
+ <button class="btn waves-effect waves-light"  onclick="payKG('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">이니시스
    <i class="material-icons right">send</i>
   </button>
-  <button class="btn waves-effect waves-light" onclick="payKakao('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">카카오페이
+  <button class="btn waves-effect waves-light" onclick="payKakao('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">카카오페이
   <i class="material-icons right">send</i>
   </button>
-  <button class="btn waves-effect waves-light"  onclick="payDanal('${rev.cleanrevNo}','${rev.userName }',${rev.userPh },'${rev.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
+  <button class="btn waves-effect waves-light"  onclick="payDanal('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
     <i class="material-icons right">send</i>
   </button> 
 </div>
@@ -211,6 +211,20 @@
 	
 	function payKakao(data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13){		
 		
+		console.log(data1);
+		console.log(data2);
+		console.log(data3);
+		console.log(data4);
+		console.log(data5);
+		console.log(data6);		
+		console.log(data7);
+		console.log(data8);
+		console.log(data9);
+		console.log(data10);
+		console.log(data11);
+		console.log(data12);
+		console.log(data13);
+		
 		 $.ajax({	        
 		        type: "post",
 		        dataType:"html",
@@ -222,7 +236,7 @@
 		        		$("#paycall").html(data); 
 		        		},
 		        error : function error(){alert("error");}         
-		 });   
+		 });    
 	
 	}
 	

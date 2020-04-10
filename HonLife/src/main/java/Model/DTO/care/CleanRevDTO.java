@@ -13,6 +13,14 @@ public class CleanRevDTO implements Serializable{
 
 	
 
+
+	
+	public Timestamp getCleanrevDate() {
+		return cleanrevDate;
+	}
+	public void setCleanrevDate(Timestamp cleanrevDate) {
+		this.cleanrevDate = cleanrevDate;
+	}
 	public MemberDTO getMemDTO() {
 		return memDTO;
 	}
@@ -36,7 +44,7 @@ public class CleanRevDTO implements Serializable{
 	String employeeNo;
 	Integer cleanfeeSize;
 	String cleanrevDemand;
-	Date cleanrevDate;
+	Timestamp cleanrevDate;
 	String cleanrevTime;
 	String cleanrevAddr;
     Integer revPay;
@@ -74,12 +82,7 @@ public class CleanRevDTO implements Serializable{
 	public void setCleanrevDemand(String cleanrevDemand) {
 		this.cleanrevDemand = cleanrevDemand;
 	}
-	public Date getCleanrevDate() {
-		return cleanrevDate;
-	}
-	public void setCleanrevDate(Date cleanrevDate) {
-		this.cleanrevDate = cleanrevDate;
-	}
+
 
 	public String getCleanrevAddr() {
 		return cleanrevAddr;

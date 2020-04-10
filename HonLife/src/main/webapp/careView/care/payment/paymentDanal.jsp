@@ -54,7 +54,7 @@ IMP.request_pay({
     		}
     	});
     	
-    location.href="../careMain";
+    	$('#frm').submit();
     } else {
         var msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;
@@ -66,6 +66,21 @@ IMP.request_pay({
 });
 
 </script>
+<form method="post" action="../care/success" id="frm">
+<input type="hidden" value="${revNo}" name="revNo">
+<input type="hidden" value="${member.userName}" name="uname">
+<input type="hidden" value="${member.userPh}" name="uph">
+<input type="hidden" value="${member.userEmail}" name="uemail">
+<input type="hidden" value="${rev.cleanrevAddr}" name="revaddr">
+<input type="hidden" value="${rev.cleanrevDate }"  name="revdate">
+<input type="hidden" value="${rev.cleanrevTime }" name="revtime">
+<input type="hidden" value="${empname }" name="empname">
+<input type="hidden" value="${empph }" name="empph">
+<input type="hidden" value="${rev.employeeNo }" name="empNo">
+<input type="hidden" value="${rev.cleanfeeSize }" name="size">
+<input type="hidden" value="${rev.cleanrevDemand }" name="demand">
+<input type="hidden" value="${rev.revPay }" name="pay">
+</form>
 
 </body>
 </html>

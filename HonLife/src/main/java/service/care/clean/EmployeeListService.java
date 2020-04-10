@@ -1,5 +1,6 @@
 package service.care.clean;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -54,7 +55,8 @@ public class EmployeeListService {
 		Date newdate;
 		try {
 			newdate = sdf.parse(date);
-			 cr.setCleanrevDate(newdate);
+			Timestamp T = new Timestamp(newdate.getTime());
+			 cr.setCleanrevDate(T);
 				System.out.println("empservice=" + time);
 				System.out.println("empservice date=" + date);
 				
