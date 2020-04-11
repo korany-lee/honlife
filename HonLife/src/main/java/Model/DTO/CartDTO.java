@@ -1,16 +1,29 @@
 package Model.DTO;
 
-public class CartDTO {
-	private Integer cartNo;
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class CartDTO implements Serializable{
 	private String userNo;
 	private String productNo;
 	private Integer basketAmount;
 	
-	public Integer getCartNo() {
-		return cartNo;
+	private MemberDTO member;
+	
+	private ProductDTO product;
+
+
+	public MemberDTO getMember() {
+		return member;
 	}
-	public void setCartNo(Integer cartNo) {
-		this.cartNo = cartNo;
+	public void setMember(MemberDTO member) {
+		this.member = member;
+	}
+	public ProductDTO getProduct() {
+		return product;
+	}
+	public void setProduct(ProductDTO product) {
+		this.product = product;
 	}
 	public String getUserNo() {
 		return userNo;

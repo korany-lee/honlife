@@ -28,9 +28,15 @@ public class ShopListRepository {
 		return sqlSession.selectOne(statement, ProductNo);
 	}
 	
-	public Integer cart(CartDTO dto) {
+	//장바구니 넣기
+	public void cart(CartDTO dto) {
 		String statement = namespace + ".cartInsert";
 		sqlSession.insert(statement, dto);
-		return dto.getCartNo();
+	}
+	
+	//장바구니 보기
+	public List<CartDTO> cartSelect(String userNo) {
+		String statement = namespace + ".selectCart";
+		return sqlSession.selectList(statement, userNo);
 	}
 }

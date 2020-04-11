@@ -81,7 +81,12 @@
                 <div class="ps-section__header">
                     <h2>장바구니</h2>
                     <p>주문하실 상품명 및 수량을 정확하게 확인해 주세요</p>
+                    <p>${memList.userName } 님의 장바구니</p>
                 </div>
+                <c:forEach items="${cart}" var="cartList" varStatus="status">
+              
+                ${cartList.basketAmount }
+                </c:forEach>
                 <div class="ps-section__content">
                     <div class="table-responsive">
                         <table class="table ps-table--shopping-cart">
@@ -96,34 +101,34 @@
                             <tbody>
                                 <tr>
                                     <td class="noCart" colspan="4">
-                                    <c:if test="${empty cartList }">
+                                    <c:if test="${empty product }">
                                    	장바구니에 담긴 상품이 없습니다.
                                     
                                     </c:if>
                                     </td>
-                                    <c:if test="${!empty cartList }">
+                                    <c:if test="${!empty product }">
                                     <td id="viewGoods">
-                                    <c:forEach items="${cartList }" var="cart" varStatus="status">
+                                    <c:forEach items="${product }" var="pro" varStatus="status">
                                         <div class="ps-product--cart">
                                             <div class="ps-product__thumbnail">
-                                            <a href="HOT/${cart.productNo }">
-                                            <c:forTokens items="${cart.productPhoto }" delims="-" var="proImg" varStatus="status">
+                                            <a href="HOT/${pro.productNo }">
+                                             <c:forTokens items="${pro.productPhoto }" delims="-" var="proImg" varStatus="status">
 													<c:if test="${status.index == 0}">
                                                     <img src="update/${proImg }"/>												
 													</c:if>
 													</c:forTokens>
-											</a></div>
-                                            <div class="ps-product__content"><a href="product-default.html">Marshall Kilburn Wireless Bluetooth Speaker, Black (A4819189)</a>
-                                                <p>Sold By:<strong> YOUNG SHOP</strong></p>
+											</a>
+										</div>
+                                            <div class="ps-product__content"><a href="#">${pro.productName }</a>
+                                                <p>Sold By:<strong>SSG</strong></p>
                                             </div>
                                         </div>
-                                        </c:forEach>
-                                    </td>
-                                    <td>                                  
+                                      
                                         <div class="form-group--number">
                                             <button class="up" id="up">+</button>
                                             <button class="down" id="down">-</button>
-                                            <input class="form-control" type="text" placeholder="1" value="1" id="quantity">
+                                            <input class="form-control" type="text" value=" 1" id="quantity">
+									
 							<script type="text/javascript">
 								$(function() {
 									$('#down').click(function(e) {
@@ -147,6 +152,10 @@
 								});
 							</script>
                                         </div>
+                                        </c:forEach>
+                                    </td>
+                                    <td>                                  
+                                        
                                     </td>
                                     <td>$205.00</td>
                                     <td><a href="#"><i class="icon-cross"></i></a></td>
