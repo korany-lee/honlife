@@ -48,10 +48,31 @@ public class CleanRevDTO implements Serializable{
 	String cleanrevTime;
 	String cleanrevAddr;
     Integer revPay;
-    MemberDTO memDTO;
+    Integer revCount;
+    Integer revChk;
+    public Integer getRevChk() {
+		return revChk;
+	}
+	public void setRevChk(Integer revChk) {
+		this.revChk = revChk;
+	}
+	public Integer getRevCount() {
+		return revCount;
+	}
+	public void setRevCount(Integer revCount) {
+		this.revCount = revCount;
+	}
+	MemberDTO memDTO;
     EmployeeDTO empDTO;
+    RevChkDTO rcDTO;
     
 	
+	public RevChkDTO getRcDTO() {
+		return rcDTO;
+	}
+	public void setRcDTO(RevChkDTO rcDTO) {
+		this.rcDTO = rcDTO;
+	}
 	public String getCleanrevNo() {
 		return cleanrevNo;
 	}

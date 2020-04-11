@@ -131,6 +131,25 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
         <association property="cr" javaType="Model.DTO.care.CleanRevDTO" resultMap="rev" />
 </resultMap>
 
+<resultMap type="Model.DTO.care.EmployeeDTO" id="emprev">
+		<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
+		<result  column="empname" jdbcType="VARCHAR" property="employeeName" />
+		<result  column="EMPLOYEE_WORKFIELD" jdbcType="VARCHAR" property="employeeWorkField" />
+		<result  column="EMPLOYEE_CALLNUM" jdbcType="BIGINT" property="employeeCallnum" />
+		<result  column="EMPLOYEE_JUMIN" jdbcType="INTEGER" property="employeeJumin" />
+		<result  column="EMPLOYEE_PHOTO" jdbcType="VARCHAR" property="employeePhoto" />
+		<result column="EMPLOYEE_SCORE" jdbcType="BIGINT" property="employeeScore" />
+		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="employeeBad"/>	
+		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="employeeAddr" />
+		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="employeeGender" />
+		<result  column="EMPLOYEE_PH" jdbcType="BIGINT" property="employeePh" />
+		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
+		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
+        <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
+        <result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
+        <association property="cr" javaType="Model.DTO.care.CleanRevDTO" resultMap="rev" />
+</resultMap>
+
 <insert id="empRegist">
 	insert into employee (<include refid="empBase" />)
 
@@ -235,7 +254,7 @@ and        c.cleanorder_no = t.cleanorder_no
     CLEANITEM_SUMPRICE ,EMPLOYEE_NO,ClEANORDER_NO
 </sql>
 
-<insert id="itemInsert" parameterType="Model.DTO.care.CleanitemInsert">
+<insert id="itemInsert">
 
 		insert into cleanitem (<include refid="itemBase"/>)
 		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice},
@@ -275,7 +294,7 @@ and        c.cleanorder_no = t.cleanorder_no
 <sql id="baseRev">
 c.CLEANREV_NO, c.USER_NO, c.EMPLOYEE_NO, c.CLEANFEE_SIZE,
 c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, 
-c.CLEANREV_ADDR, c.REV_PAY
+c.CLEANREV_ADDR, c.REV_PAY, c.REV_COUNT, c.REV_CHK
 </sql>
 
 	<resultMap type="Model.DTO.MemberDTO" id="baseMember">
@@ -293,27 +312,55 @@ c.CLEANREV_ADDR, c.REV_PAY
 		<result column="CONNECT_DATE" jdbcType="TIMESTAMP" property="connectDate" />
 		<result column="ROLE" jdbcType="VARCHAR" property="role" />	
 	</resultMap>
-
+	
+	<resultMap type="Model.DTO.care.RevChkDTO" id="rc">
+	 <id column="REV_COUNT" jdbcType="BIGINT" property="revCount"/>
+	 <result column="chk" jdbcType="BIGINT" property="revChk"/>
+	 <result column="CLEANREV_DATE" jdbcType="TIMESTAMP" property="cleanrevDate"/>
+	 <result column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
+	 <result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>	
+	</resultMap>
 
 <resultMap type="Model.DTO.care.CleanRevDTO" id="rev">
 	<id column="CLEANREV_NO" jdbcType="VARCHAR" property="cleanrevNo" />
 	<id column="USER_NO" jdbcType="VARCHAR" property="userNo" />
 	<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
 	<id column="CLEANFEE_SIZE" jdbcType="BIGINT" property="cleanfeeSize" />
+	<id column="REV_COUNT" jdbcType="BIGINT" property="revCount" />
      <result column="CLEANREV_DEMAND" jdbcType="VARCHAR" property="cleanrevDemand"/>
 	<result column="CLEANREV_DATE" jdbcType="TIMESTAMP" property="cleanrevDate"/>
 	<result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>
 	<result column="CLEANREV_ADDR" jdbcType="VARCHAR" property="cleanrevAddr"/>
 	<result column="REV_PAY" jdbcType="BIGINT" property="revPay"/>
+	<result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
 	<association property="memDTO" javaType="Model.DTO.MemberDTO" resultMap="baseMember" />
 	<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="empList" />
+	<association property="rcDTO" javaType="Model.DTO.care.RevChkDTO" resultMap="rc"></association>
+</resultMap>
+
+<resultMap type="Model.DTO.care.CleanRevDTO" id="rev1">
+	<id column="CLEANREV_NO" jdbcType="VARCHAR" property="cleanrevNo" />
+	<id column="USER_NO" jdbcType="VARCHAR" property="userNo" />
+	<id column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo" />
+	<id column="CLEANFEE_SIZE" jdbcType="BIGINT" property="cleanfeeSize" />	
+     <result column="CLEANREV_DEMAND" jdbcType="VARCHAR" property="cleanrevDemand"/>
+	<result column="CLEANREV_DATE" jdbcType="TIMESTAMP" property="cleanrevDate"/>
+	<result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>
+	<result column="CLEANREV_ADDR" jdbcType="VARCHAR" property="cleanrevAddr"/>
+	<result column="REV_PAY" jdbcType="BIGINT" property="revPay"/>
+	<result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
+	<result column="REV_COUNT" jdbcType="BIGINT" property="revCount" />
+	<association property="memDTO" javaType="Model.DTO.MemberDTO" resultMap="baseMember" />
+	<association property="empDTO" javaType="Model.DTO.care.EmployeeDTO" resultMap="emprev" />
+	<association property="rcDTO" javaType="Model.DTO.care.RevChkDTO" resultMap="rc"></association>
 </resultMap>
 
 
-<insert id="revIn">
+
+<insert id="revIn" parameterType="Model.DTO.care.CleanRevDTO">
 	insert into cleanrev c (<include refid="baseRev" />)
 	values(#{cleanrevNo},#{userNo},#{employeeNo},#{cleanfeeSize},#{cleanrevDemand},
-			  #{cleanrevDate},#{cleanrevTime},#{cleanrevAddr},#{revPay} )
+			  #{cleanrevDate},#{cleanrevTime},#{cleanrevAddr},#{revPay}, #{revCount},#{revChk} )
 </insert>
 
 <select id="revDetail" parameterType="Model.DTO.care.CleanRevDTO" resultMap="rev" >
@@ -355,12 +402,12 @@ c.CLEANREV_ADDR, c.REV_PAY
 
 <update id="revchk" parameterType="string">
 	update employee  
-	set rev_chk = rev_chk + 1 
+	set rev_chk = 1
 	where employee_no = #{empNo}
 
 </update>
 
-<insert id="laundIn">
+<insert id="laundIn" >
 	insert into laundryrev (LAUNDRYREV_NO,USER_NO,
                         			 LAUNDRYREV_DATE,LAUNDRYREV_RECDATE,LAUNDRYREV_ADDR )
 	values(#{laundryrevNo},#{userNo},#{laundryrevDate},#{laundryrevRecdate},#{laundryrevAddr}  )
@@ -382,7 +429,37 @@ c.CLEANREV_ADDR, c.REV_PAY
                LAUNDRYREV_ADDR
 	from LAUNDRYREV
 	where LAUNDRYREV_NO = #{laundryrevNo}
+</select>
 
+<insert id="chkIn" >
+	insert into revchk (REV_COUNT, EMPLOYEE_NO, REV_CHK, CLEANREV_DATE, CLEANREV_TIME)
+	values (c_seq.nextval,#{employeeNo},#{revChk},#{cleanrevDate},#{cleanrevTime})
+	
+
+</insert>
+
+<select id="rcchk" parameterType="Model.DTO.care.RevChkDTO" resultMap="rc"> 
+	select *
+	from revchk 
+	where EMPLOYEE_NO = #{employeeNo}
+	and  CLEANREV_DATE = #{cleanrevDate}
+	and  CLEANREV_TIME = #{cleanrevTime}
+</select>
+
+
+<select id="cleanRevList" resultMap="rev1">
+ 	select c.CLEANREV_NO, c.USER_NO, c.EMPLOYEE_NO, c.CLEANFEE_SIZE,
+			c.CLEANREV_DEMAND, c.CLEANREV_DATE, c.CLEANREV_TIME, 
+			c.CLEANREV_ADDR, c.REV_PAY, m.user_name, empname, chk
+from cleanrev c , member m , 
+                        (select e.employee_name as empname,e.employee_no as empno,
+                        					r.rev_chk as chk, r.rev_count as rc
+                           from employee e, revchk r
+                          where e.employee_no = r.employee_no
+                                )sub
+	where c.user_no = m.user_no
+    and   c.employee_no = sub.empno
+    and   c.rev_count = sub.rc
 </select>
 
 

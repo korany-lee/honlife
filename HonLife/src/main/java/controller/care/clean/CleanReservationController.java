@@ -22,6 +22,7 @@ import service.care.clean.CleanRevDetailService;
 import service.care.clean.CleanRevService;
 import service.care.clean.EmployeeDetailService;
 import service.care.clean.EmployeeListService;
+import service.care.laundry.SendSMSService;
 
 @Controller
 public class CleanReservationController {
@@ -32,7 +33,7 @@ public class CleanReservationController {
 	@Autowired
 	private CleanRevService cleanRevService;
 	@Autowired
-	private CleanRevDetailService cleanRevDetailService;
+	SendSMSService sendSMSService;
 	
 	
 @RequestMapping("/care/cleanRev")
@@ -67,7 +68,7 @@ public String success(PayCommand pc, Model model,HttpSession ses) throws ParseEx
 	cleanRevService.revIn(pc, model, ses);
 	
 	
-	
+	sendSMSService.cleanSvs(pc);
 	return "careView/care/rev_success";
 }
 

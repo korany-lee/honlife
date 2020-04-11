@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -18,6 +19,7 @@ import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
 import Model.DTO.care.CleanRevDTO;
 import Model.DTO.care.EmployeeDTO;
+import Model.DTO.care.RevChkDTO;
 import command.care.clean.CleanRevCommand;
 import command.care.clean.PayCommand;
 import repository.care.RegistRepository;
@@ -32,45 +34,67 @@ public class CleanRevService {
 	public void revIn(PayCommand pc, Model model, HttpSession ses) throws ParseException {
 		LoginDTO login = (LoginDTO) ses.getAttribute("memberInfo");
 		CleanRevDTO crd = new CleanRevDTO();
-		
-		crd.setCleanfeeSize(pc.getSize());
-		crd.setCleanrevAddr(pc.getRevaddr());
-	
-		
+		RevChkDTO rc = new RevChkDTO();
 		
 		System.out.println("pcDate======"+ pc.getRevdate());
 		SimpleDateFormat A = new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date D = A.parse(pc.getRevdate());
+		java.util.Date D = A.parse(pc.getRevdate());				
+		Timestamp T = new Timestamp(D.getTime());	
 		
 		
-		Timestamp T = new Timestamp(D.getTime());
-		
+		   rc.setRevChk(1);
+			rc.setCleanrevDate(T);
+			rc.setCleanrevTime(pc.getRevtime());
+			rc.setEmployeeNo(pc.getEmpNo());
+			registRepository.chkIn(rc);
+		    rc = registRepository.selchk(rc);
+
+		  
+		    System.out.println("rc.get/time" + rc.getCleanrevTime());
+		    System.out.println("rc.get/empno" + rc.getEmployeeNo());
+		    System.out.println("rc.getchk" + rc.getRevChk());
+		    System.out.println("rc.getcount" + rc.getRevCount());
+		    System.out.println("rc.getdate" + rc.getCleanrevDate());
+		    
+		    
 		crd.setCleanrevDate(T);
-		
-		System.out.println("insertDate====" + A.parse(pc.getRevdate()));
-		 
+		crd.setCleanfeeSize(pc.getSize());
+		crd.setCleanrevAddr(pc.getRevaddr());	
 		crd.setCleanrevDemand(pc.getDemand());
 		crd.setCleanrevNo(pc.getRevNo());
 		crd.setCleanrevTime(pc.getRevtime());
-		crd.setEmployeeNo(pc.getEmpNo());
-	
+		crd.setEmployeeNo(pc.getEmpNo());	
 		crd.setRevPay(pc.getPay());
 		crd.setUserNo(login.getUserNo());
-		 
-		registRepository.revChkUp(pc.getEmpNo());
-		    
-		System.out.println("chkempno==" + pc.getEmpNo());
+		crd.setRevChk(rc.getRevChk());
+		crd.setRevCount(rc.getRevCount());
 		
-	    registRepository.revIn(crd);
+		
+		/* registRepository.revChkUp(pc.getEmpNo()); */
+		System.out.println("revchk=====" + rc.getRevChk());
+		System.out.println("revcount=====" + rc.getRevCount());
+
+		registRepository.revIn(crd);
+		
+		
+		
+		 
+			
 		CleanRevDTO crda = new CleanRevDTO();
+		
 		crda.setCleanrevNo(pc.getRevNo());
 		crda.setUserNo(login.getUserNo());
 	    crda = registRepository.revDetail(crda);
 	   
+	  
 	    model.addAttribute("pc",pc);
 	    model.addAttribute("cr",crda);
 	 
+	    
+	    
 	 
+	 
+		
 	
 	}
 	
@@ -114,6 +138,15 @@ public class CleanRevService {
 		    
 		    
 		 
+	}
+	
+	public void list(Model model) {
+		
+		List<CleanRevDTO> crList = registRepository.revList();
+		
+		
+		model.addAttribute("cl",crList);
+		
 	}
 	
 	

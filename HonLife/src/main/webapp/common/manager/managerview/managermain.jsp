@@ -66,6 +66,19 @@ $(function(){
 		 }); 
 	
 	}); */
+	$('#cleanrevList').click(function(){	
+		  $.ajax({	        
+			        type: "post",
+			        url: "C_revList",
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#maincall").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 		 
+	});
+	
 	
 	$('#interview').click(function(){	
 	  $.ajax({	        
@@ -516,7 +529,7 @@ $(function(){
 			</li>		
 				<li><a href="#">예약관리 </a>
 					<ul class="submenu">			
-						<li><a href="#">청소 예약 내역</a>
+						<li><a href="#" id="cleanrevList">청소 예약 내역</a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
 						<li><a href="#">세탁 예약 내역 </a>
