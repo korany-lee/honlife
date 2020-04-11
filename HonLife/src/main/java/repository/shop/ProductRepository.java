@@ -1,5 +1,7 @@
 package repository.shop;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,5 +19,10 @@ public class ProductRepository {
 		String statement = namespace + ".insertProduct";
 		System.out.println("실행3---------");
 		sqlSession.insert(statement, dto);
+	}
+	
+	public List<String> selectNo(String userNo) {
+		String statement = namespace + ".selectNum";
+		return sqlSession.selectList(statement, userNo);
 	}
 }

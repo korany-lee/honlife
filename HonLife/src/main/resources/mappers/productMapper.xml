@@ -22,6 +22,22 @@
 		<result column="PRODUCT_USEDATE" jdbcType="TIMESTAMP" property="productUsedate"/>
 </resultMap>
 
+<resultMap type="Model.DTO.MemberDTO" id="memMap">
+		<id column="USER_NO" jdbcType="VARCHAR" property="userNo"/>
+		<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+		<result column="USER_PW" jdbcType="VARCHAR" property="userPw" />
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+		<result column="USER_PH" jdbcType="VARCHAR" property="userPh" />
+		<result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+		<result column="USER_ADDR" jdbcType="VARCHAR" property="userAddr" />
+		<result column="USER_ZONE" jdbcType="VARCHAR" property="userZone" />
+		<result column="USER_GENDER" jdbcType="VARCHAR" property="userGender" />
+		<result column="USER_BIRTH" jdbcType="DATE" property="userBirth" />
+		<result column="USER_REGIST" jdbcType="TIMESTAMP" property="userResist" />
+		<result column="CONNECT_DATE" jdbcType="TIMESTAMP" property="connectDate" />
+		<result column="ROLE" jdbcType="VARCHAR" property="role" />	
+</resultMap>
+
 <insert id="insertProduct" parameterType="pro">
 	insert into product(<include refid="basecolumn" />)
 	 values (productSeq.nextval, #{productName,jdbcType=VARCHAR},#{productType,jdbcType=VARCHAR},
@@ -35,16 +51,26 @@
 
 <select id="detailPro" resultMap="ProMap" parameterType="string">
 select * from product where product_no = #{productNo}
-</select>
+</select> 
+
+<resultMap type="Model.DTO.CartDTO" id="cart">
+		<id column="user_no" jdbcType="VARCHAR" property="userNo" />
+		<id  column="product_no" jdbcType="VARCHAR" property="productNo" />
+		<result  column="basket_amount" jdbcType="INTEGER" property="basketAmount" />
+</resultMap>
 
 <insert id="cartInsert" parameterType="Model.DTO.CartDTO">
-	<selectKey keyProperty="cartNo" resultType="int" order="BEFORE">
-		select cart_seq.nextval FROM dual
-	</selectKey>
-	
 	insert into basket
-	values(#{cartNo}, #{productNo}, #{basketAmount}, #{userNo})
+	values(#{basketAmount,jdbcType=INTEGER},#{productNo},#{userNo})
 </insert>
+
+<select id="selectNum" parameterType="string" resultType="string" >
+select product_no from basket where user_no =#{userNo}
+</select>
+
+<select id="selectCart" parameterType="String" resultMap="cart" >
+select basket_amount, product_no, user_no from basket where user_no = #{userNo}
+</select>
 
 
 </mapper>

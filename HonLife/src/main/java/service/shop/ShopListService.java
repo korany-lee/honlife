@@ -1,5 +1,6 @@
 package service.shop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,14 +11,26 @@ import org.springframework.ui.Model;
 
 import Model.DTO.CartDTO;
 import Model.DTO.LoginDTO;
+import Model.DTO.MemberDTO;
 import Model.DTO.ProductDTO;
 import command.shop.CartCmd;
+import repository.shop.MemberRepository;
+import repository.shop.ProductRepository;
 import repository.shop.ShopListRepository;
 
 @Service
 public class ShopListService {
 	@Autowired
 	private ShopListRepository slr;
+	
+	@Autowired
+	MemberRepository mr;
+	
+	@Autowired
+	ProductRepository pr;
+	
+	@Autowired
+	ShopListRepository sr;
 	
 	public void list(Model model) {
 		List<ProductDTO> pro = slr.listProducts();
@@ -32,15 +45,31 @@ public class ShopListService {
 	public void cartGo(CartCmd cart, Model model, HttpSession session) {
 		System.out.println("cart quantity: "+ cart.getCartQuantity());
 		CartDTO dto = new CartDTO();
-		
-		
 		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
 		dto.setUserNo(login.getUserNo());
+		System.out.println("userno:"+dto.getUserNo());
 		dto.setProductNo(cart.getProductNo());
+		System.out.println("productNo: "+dto.getProductNo());
 		dto.setBasketAmount(cart.getCartQuantity());
+		System.out.println("cartQuantity: "+dto.getBasketAmount());
 		
 		slr.cart(dto);
-		model.addAttribute("cart", dto);
-		System.out.println("가져온 dto값: "+ dto.getCartNo());
+		System.out.println("가져온 dto값: "+ dto.getUserNo());
+		
+		List<CartDTO> cartList = slr.cartSelect(dto.getUserNo());
+		
+		MemberDTO mdto = mr.selectOneMem(login.getUserId());
+		List<String> pNo = pr.selectNo(login.getUserNo()); // 장바구니에서 상품 번호 다 가져옴
+		
+		List<ProductDTO> product = new ArrayList<>();
+		
+		for(int i=0;i<pNo.size();i++) {
+			product.add(sr.detail(pNo.get(i)));
+		}
+		System.out.println("내가 가져온 상품 정보 갯수는?" + product.size());
+		
+		model.addAttribute("cart", cartList);
+		model.addAttribute("product", product);
+		model.addAttribute("memList", mdto);
 	}	
 }
