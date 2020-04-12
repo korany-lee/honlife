@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
+import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
@@ -18,13 +19,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import Model.DTO.RoomRevDTO;
+import command.stay.room.ReservationCommand;
 import repository.stay.ReservationRepository;
 
 @ServerEndpoint(value="/chat/{userId}")
 public class WebSocketService {
-
+	/*
+	 * @Autowired RoomRevInsertService roomRevInsertService;
+	 * 
+	 * @Autowired RoomRevListService roomRevListService;
+	 * 
+	 * @Autowired ReservationRepository reservationRepository;
+	 */
+	
 	static HashMap<String, Session> userList = new HashMap<String, Session>();
 	String storeId = null;
+	
+	
 	@OnOpen
 	public void onOpen(Session session, @PathParam("userId") String id) {
 		System.out.println("aaaaaaaaaaaa");
@@ -34,7 +45,7 @@ public class WebSocketService {
 	}
 	
 	@OnClose
-	public void onClose(Session session) {
+	public String onClose(Session session) {
 		String val = session.getId(); // 종료한 sessionId 확인
 
 		Set<String> keys = userList.keySet();
@@ -45,46 +56,59 @@ public class WebSocketService {
 			}
 
 		}
+		return "javascript:location.href='../room/reservationFinish'";
 
 	}
 
 	//해당 아이디에 전송
+	
 	private void broadCast() {
-		/*
-		 * List<RoomRevDTO> list= reservationRepository.allRoomRev(); String rev =
-		 * revCall(list); Set<String> keys = userList.keySet(); try { for (String key :
-		 * keys) { if(key.equals(storeId)) { Session session = userList.get(key);
-		 * session.getBasicRemote().sendText(rev); } } } catch (IOException e) {
-		 * e.printStackTrace(); }
-		 */
-	}
+		  ReservationRepository reservationRepository  = new ReservationRepository();
+		
+		  List<RoomRevDTO> list= reservationRepository.allRoomRev(); 
+		  String rev =revCall(list);
+		  Set<String> keys = userList.keySet(); 
+		  System.out.println("broad Cast 입장");
+		  try { 
+			  for (String key :keys) { 
+				  if(key.equals(storeId)) {
+					  Session session = userList.get(key);
+					  session.getBasicRemote().sendText(rev);
+				  } 
+			   } 
+		  } catch (IOException e) {
+		  e.printStackTrace(); }
+		 
+		  }
 	
 	
-
-	  public void onMessage(String msg, Session session , Model model, HttpServletRequest request, HttpSession sess) throws Exception {
-		  System.out.println("msg=" + msg); 
-		/*
-		 * ReservationCommand revCommand = new ReservationCommand();
-		 * roomRevInsertService.revInsert(revCommand,model,sess);
-		 * roomRevListService.revChk(model,sess,revCommand.getStartDate());
-		 * roomRevListService.sendSMS(revCommand,request); broadCast();
-		 */
-	  }
-	 
+	/*
+	 * @OnMessage public void onMessage(String message, Session session , Model
+	 * model, HttpServletRequest request, HttpSession sess) throws Exception {
+	 * System.out.println("온 메세지에서 msg=" + message); RoomRevInsertService
+	 * roomRevInsertService = new RoomRevInsertService(); RoomRevListService
+	 * roomRevListService = new RoomRevListService();
+	 * 
+	 * ReservationCommand revCommand = new ReservationCommand();
+	 * roomRevInsertService.revInsert(revCommand,model,sess);
+	 * roomRevListService.revChk(model,sess,revCommand.getStartDate());
+	 * roomRevListService.sendSMS(revCommand,request); broadCast();
+	 * 
+	 * 
+	 * }
+	 */
 	@OnError
 	public void onError(Session session,Throwable e) {
 		System.out.println(e.toString());
 	}
 	
+	
 	public String revCall(List<RoomRevDTO> lists) {
 		String msg="";
 		for (RoomRevDTO list : lists) {
-			msg += "<div class='tr reserved'> <div class='tr-content'><div class='tr-head'><div class='td'><span>" ;
-			msg += "<input style=\'background-color: transparent; cursor:pointer;color: #9fa7a7 \' class=\'boardList\'  id=\'name\' type=\'text\' value=\'"+list.getRoomRevNo()+"\' readonly=\'readonly\'>";
-			msg +="	</span>\r\n</div>\r\n\r\n<div class=\'td\'><span>"+list.getRoomRevName()+"</span></div><div class=\'td\'><span>"+list.getRoomNo()+"</span></div><div class=\'td\'>\r\n" ;
-		
+			msg = "aaaaa" ;
 		}
-		
+		System.out.println("revCall 함수 실행");
 	
 		return msg;
 	}

@@ -48,6 +48,10 @@ select * from furniture where furniture_no = #{furnitureNo}
 select * from furniture where funiture_name Like '%'||#{content}||'%' and furniture_type =#{type}
 </select>
 
+<select id="searchList" resultMap="furnitures" parameterType="string">
+select * from furniture where funiture_name Like '%'||#{content}||'%'
+</select>
+
 <insert id="wishInsert" parameterType="Model.DTO.FurnitureWishDTO">
 insert into furnitureWish(user_no,furniture_no) values(#{userNo},#{furnitureNo})
 </insert>
@@ -70,5 +74,13 @@ update furniture set furniture_state='사용중' where furniture_no=#{fNo}
 
 </update>
 
+<update id="stateChange1" parameterType="string">
+update furniture set furniture_state='미사용' where furniture_no=#{fNo}
+
+</update>
+
+<delete id="wishDelete" parameterType="Model.DTO.FurnitureWishDTO">
+delete from furnitureWish where user_no =#{userNo}and furniture_no =#{furnitureNo}
+</delete>
 
 </mapper>

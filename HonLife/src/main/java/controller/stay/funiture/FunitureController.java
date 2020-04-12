@@ -92,6 +92,15 @@ public class FunitureController {
 		return "redirect:/funiture/furnitureRev";
 		
 	}
+	
+	@RequestMapping("/funiture/furnitureWishDelete")
+	public String delete(@RequestParam(value="furnitureNo")String no,HttpSession session) {
+		System.out.println("컨트롤러 들어옴");
+		furnitureInsertService.wishDelete(no,session);
+		return "redirect:/funiture/furnitureRev";
+		
+	}
+	
 	@RequestMapping("/funiture/furnitureWishList") //장바구니로 이동
 	public String wishList(@RequestParam(value="start")Timestamp startDate,@RequestParam(value="end")Timestamp endDate,
 			@RequestParam(value="revNum") String revNo,HttpSession session,Model model) {
@@ -101,7 +110,7 @@ public class FunitureController {
 	
 	@RequestMapping("/funiture/furnitureRev")  //방 예약선택
 	public String furnitureRev(HttpSession session,Model model) {
-		roomRevMatchService.roomRevFind(session, model);
+		roomRevMatchService.roomRevFind1(session, model);
 		return "stayView/memberView/furniture/furniture_roomRevSelect";
 	}
 	

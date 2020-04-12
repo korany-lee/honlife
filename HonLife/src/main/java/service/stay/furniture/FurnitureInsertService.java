@@ -77,6 +77,17 @@ public class FurnitureInsertService {
 		
 	}
 	
+	public void wishDelete(String no,HttpSession session) {
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
+		System.out.println("insert 서비스 들어옴");
+		
+		FurnitureWishDTO dto = new FurnitureWishDTO();
+		dto.setUserNo(login.getUserNo());
+		dto.setFurnitureNo(no);
+		
+		furnitureRepository.wishDelete(dto);
+	}
+	
 	
 	
 	

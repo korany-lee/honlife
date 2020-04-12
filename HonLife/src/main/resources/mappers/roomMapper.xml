@@ -60,7 +60,7 @@ update room set room_state='사용중' where room_no=#{roomNo}
 </update>
 
 <update id="stateChange1" parameterType="string">
-update room set room_state='사용대기' where room_no=#{roomNo}
+update room set room_state='미사용' where room_no=#{roomNo}
 </update>
 
 

@@ -46,8 +46,19 @@ public class FurnitureRepository {
 		return sqlSession.selectList(statement,dto);
 	}
 	
+	public List<FurnitureDTO> searchList(String content) {
+		System.out.println("레퍼지토리 옴");
+		String statement = namespace +".searchList";
+		return sqlSession.selectList(statement, content);
+	}
+	
 	public void wishInsert(FurnitureWishDTO dto) {
 		String statement = namespace +".wishInsert";
+		sqlSession.delete(statement, dto);
+	}
+	
+	public void wishDelete(FurnitureWishDTO dto) {
+		String statement = namespace +".wishDelete";
 		sqlSession.insert(statement, dto);
 	}
 	
@@ -67,6 +78,11 @@ public class FurnitureRepository {
 	
 	public void stateChange(String fNo) {
 		String statement = namespace + ".stateChange";
+		sqlSession.update(statement, fNo);
+	}
+	
+	public void stateChange1(String fNo) {
+		String statement = namespace + ".stateChange1";
 		sqlSession.update(statement, fNo);
 	}
 	

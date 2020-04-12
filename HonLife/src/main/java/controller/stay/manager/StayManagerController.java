@@ -69,7 +69,6 @@ public class StayManagerController {
 	
 	@RequestMapping("/manager/roomregister")
 	public String roomRegister() {
-		System.out.println("객실등록페이지 호출");
 		return "common/manager/managerview/room_register";
 	}
 	
@@ -95,6 +94,18 @@ public class StayManagerController {
 	public String floorDetail(@RequestParam(value="floor")String num,Model model) {
 		roomListService.floorSelect(num,model);
 		return "stayView/room/room_floorDetail";
+	}
+	
+	@RequestMapping("/manager/roomDetail")
+	public String roomDetail(@RequestParam(value="roomNum")String no,Model model) {
+		roomListService.oneSelect(no, model);
+		return "stayView/room/roomDetail";
+	}
+	
+	@RequestMapping("/manager/searchFurniture")
+	public String search(@RequestParam(value="content")String content,Model model) {
+		furnitureListService.searchList(content,model);
+		return "stayView/funiture/searchFurniture";
 	}
 	
 	

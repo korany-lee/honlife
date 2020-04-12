@@ -47,6 +47,11 @@ public class ReservationRepository {
 		return sqlSession.selectList(statement, userNo);
 	}
 	
+	public List<RoomRevDTO> userRev1(String userNo) {
+		String statement = namespace + ".userRev1"; 
+		return sqlSession.selectList(statement, userNo);
+	}
+	
 	public RoomRevDTO oneRev(String revNum) {
 		String statement = namespace + ".oneRev";
 		return sqlSession.selectOne(statement,revNum);
@@ -139,5 +144,10 @@ public class ReservationRepository {
 	public void settingOk(String revNum) {
 		String statement = namespace +".setting";
 		sqlSession.update(statement, revNum);
+	}
+	
+	public RoomRevDTO roomsRev(String num) {
+		String statement = namespace +".roomsRev";
+		return sqlSession.selectOne(statement, num);
 	}
 }

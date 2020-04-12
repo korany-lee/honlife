@@ -1,15 +1,7 @@
-import java.io.*;
-import java.net.URLEncoder;
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
-import javax.net.ssl.HttpsURLConnection;
-import java.util.Properties;
-import java.util.Random;
 import java.util.HashMap;
-import java.util.Map.Entry;
-import org.json.simple.JSONArray;
+import java.util.Properties;
+
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 
 /*
  * Coolsms Class

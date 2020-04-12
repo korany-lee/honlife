@@ -202,7 +202,7 @@
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
 											<c:if test="${list.roomRevState eq '사용대기' }">
-											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkin('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">입실처리 </a>
+											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkin('${list.roomRevNo }','${list.roomNo }','${list.roomRevFrevchk }')" style="margin-right: 10px">입실처리 </a>
 											</c:if>
 											<c:if test="${list.roomRevState eq '사용중' }">
 											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkout('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">퇴실처리 </a>
@@ -286,7 +286,11 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 	};
 
 
-	function checkin(a,b){
+	function checkin(a,b,c){
+		if(c=='준비미완료'){
+			alert('가구 세팅이 완료되지 않았습니다');
+			return;
+		}
 		if(confirm('입실처리 하시겠습니까?')){
 			location.href="checkin?revNo="+a+"&&roomNo="+b;
 			alert('입실처리 되었습니다');
@@ -298,6 +302,8 @@ var url = {"archive_ap":"https:\/\/www.voxverticalvillage.ro\/en\/residences\/"}
 	}
 	
 	function checkout(a,b){
+		
+		
 		if(confirm('퇴실처리 하시겠습니까?')){
 			location.href="checkout?revNo="+a+"&&roomNo="+b;
 			alert('퇴실처리 되었습니다');
