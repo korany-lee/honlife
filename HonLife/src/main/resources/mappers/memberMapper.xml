@@ -52,4 +52,24 @@ select user_id from member where user_id=#{userId} and user_pw=#{userPw}
 select user_no from member where user_id=#{userId} and user_pw=#{userPw}
 </select>
 
+
+
+<select id="chkEmpId" parameterType="string" resultType="string">
+select employee_no from employee where employee_No = #{empNo}
+
+</select>
+
+<select id="chkEmpPw" parameterType="Model.DTO.care.EmpLogin" resultType="string">
+select employee_no from employee where employee_no = #{empNo} and employee_jumin = #{empJumin}
+
+</select>
+
+<select id="selClass" parameterType="Model.DTO.care.EmpLogin" resultType="string">
+
+select EMPLOYEE_WORKFIELD from employee where employee_no = #{empNo} and employee_jumin = #{empJumin}
+
+</select>
+
+
+
 </mapper>

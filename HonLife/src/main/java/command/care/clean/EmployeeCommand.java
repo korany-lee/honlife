@@ -13,7 +13,7 @@ public class EmployeeCommand {
 	private String employeeEmail;
 	private String employeeNo;
 	private String employeeName;
-	private Integer employeePh;
+	private String employeePh;
 	private String employeeGender;
 	private String employeeWorkField;
 	private Integer employeeCallnum;
@@ -44,10 +44,11 @@ public class EmployeeCommand {
 	public void setAddrDetail(String addrDetail) {
 		this.addrDetail = addrDetail;
 	}
-	public Integer getEmployeePh() {
+
+	public String getEmployeePh() {
 		return employeePh;
 	}
-	public void setEmployeePh(Integer employeePh) {
+	public void setEmployeePh(String employeePh) {
 		this.employeePh = employeePh;
 	}
 	public String getEmployeeGender() {

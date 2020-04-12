@@ -57,16 +57,21 @@ public class SendSMSService {
 		String api_key = "NCSW6VCZXODXGPOX"; //사이트에서 발급 받은 API KEY 
 		String api_secret = "UZMGJ9ADCK2LCTIEWQRITSVRXW3J0B3T"; //사이트에서 발급 받은 API SECRET KEY 
 		Message coolsms = new Message(api_key, api_secret); 
+		String revdate = pc.getRevdate();
+		String sendDate = revdate.substring(0, 10);
+		
+
+		
 		
 		HashMap<String, String> params = new HashMap<String, String>(); 
 		String content = " HonCare 세탁 서비스입니다 \n"
-				         + "[예약 접수]"
+				         + "[예약 접수]\n"
 				         + "예약 번호: " + pc.getRevNo()+"\n"	
-				         + "예약일시: " + pc.getRevdate()+" / "+pc.getRevtime()+"시\n"									         				         							
+				         + "예약일시: " + sendDate+" / "+pc.getRevtime()+"시\n"									         				         							
 				         + "장소: " + pc.getRevaddr()+"\n"			
 				         + "요청사항: " + pc.getDemand()+"\n" 
 				         + "아래 주소로 예약 확인을 해주세요! "
-				         + "http://192.168.4.104:8080/project/care/ok?revNo="+pc.getRevNo()+"empNo="+pc.getEmpNo();
+				         + "http://192.168.219.105:8888/project/care/ok?revNo="+pc.getRevNo()+"empNo="+pc.getEmpNo();
 	
 		
 		params.put("to",pc.getEmpph().toString()); 

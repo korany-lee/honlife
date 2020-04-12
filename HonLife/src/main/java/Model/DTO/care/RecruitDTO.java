@@ -23,7 +23,7 @@ public class RecruitDTO implements Serializable{
 	}
 	Integer recruitNo;
 	String recruitName;
-	Integer recruitPh;
+	String recruitPh;
 	Long recruitJumin;
 	String recruitEmail;
 	String recruitAddr;
@@ -106,10 +106,11 @@ public class RecruitDTO implements Serializable{
 	public void setRecruitName(String recruitName) {
 		this.recruitName = recruitName;
 	}
-	public Integer getRecruitPh() {
+	
+	public String getRecruitPh() {
 		return recruitPh;
 	}
-	public void setRecruitPh(Integer recruitPh) {
+	public void setRecruitPh(String recruitPh) {
 		this.recruitPh = recruitPh;
 	}
 	public Long getRecruitJumin() {

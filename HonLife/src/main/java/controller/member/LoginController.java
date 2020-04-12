@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import command.care.clean.ManagerLogin;
 import service.member.LoginService;
 
 @Controller
@@ -42,8 +43,8 @@ public class LoginController {
 	// stay에서 로그인 검사
 	@RequestMapping("/member/stayLoginAction")
 	public String stayLoginChk(@RequestParam(value = "id") String userId,
-			@RequestParam(value = "password") String userPw, Model model, HttpSession session) {
-		Integer result = loginService.loginAction(userId, userPw, model, session);
+			@RequestParam(value = "password") String userPw, Model model, HttpSession session ,ManagerLogin ml) {
+		Integer result = loginService.loginAction(userId, userPw, model, session ,ml);
 		if (result == 2) { // 로그인 성공 했을 때
 			return "redirect:/stayMain";
 		} else {// 로그인 실패 했을때
@@ -54,8 +55,8 @@ public class LoginController {
 	// shop에서 로그인 검사
 	@RequestMapping("/shopLoginAction")
 	public String shopLoginChk(@RequestParam(value = "id") String userId,
-			@RequestParam(value = "password") String userPw, Model model, HttpSession session) {
-		Integer result = loginService.loginAction(userId, userPw, model, session);
+			@RequestParam(value = "password") String userPw, Model model, HttpSession session ,ManagerLogin ml) {
+		Integer result = loginService.loginAction(userId, userPw, model, session ,ml);
 		if (result == 2) { // 로그인 성공 했을 때
 			return "redirect:/shopMain";
 		} else {// 로그인 실패 했을때
@@ -66,15 +67,17 @@ public class LoginController {
 	// care에서 로그인 검사
 	@RequestMapping("/careLoginAction")
 	public String careLoginChk(@RequestParam(value = "id") String userId,
-			@RequestParam(value = "password") String userPw, Model model, HttpSession session) {
-		Integer result = loginService.loginAction(userId, userPw, model, session);
+			@RequestParam(value = "password") String userPw, Model model, HttpSession session , ManagerLogin ml) {
+		Integer result = loginService.loginAction(userId, userPw, model, session,ml);
 		if (result == 2) { // 로그인 성공 했을 때
 			return "redirect:/careMain";
 		} else {// 로그인 실패 했을때
 			return "careView/care/care_login";
 		}
+	
 	}
 	
+
 	//stay에서 로그아웃
 	@RequestMapping("/member/stayLogout")
 	public String stayLogout(HttpSession session,HttpServletResponse response) throws IOException {

@@ -8,7 +8,7 @@ public class RegistCommand {
 	private Integer recruitNo;
 	private String recruitClass;
 	private String recruitName;
-	private Integer recruitPh;
+	private String recruitPh;
 	private Long recruitJumin;
 	private String recruitAddr;
 	private String recruitEmail1;
@@ -89,10 +89,11 @@ public class RegistCommand {
 	public void setRecruitName(String recruitName) {
 		this.recruitName = recruitName;
 	}
-	public Integer getRecruitPh() {
+
+	public String getRecruitPh() {
 		return recruitPh;
 	}
-	public void setRecruitPh(Integer recruitPh) {
+	public void setRecruitPh(String recruitPh) {
 		this.recruitPh = recruitPh;
 	}
 	public Long getRecruitJumin() {

@@ -15,14 +15,14 @@ public class PayCommand {
 	}
 	String revNo;
 	String uname;
-	Integer uph;
+	String uph;
 	String uemail;
 	String revaddr;
 
 	String revdate;
 	String revtime;
 	String empname;
-	Integer empph;
+	String empph;
 	String empNo;
 	Integer size;
 	String demand;
@@ -40,12 +40,7 @@ public class PayCommand {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	public Integer getUph() {
-		return uph;
-	}
-	public void setUph(Integer uph) {
-		this.uph = uph;
-	}
+
 	public String getUemail() {
 		return uemail;
 	}
@@ -72,10 +67,17 @@ public class PayCommand {
 	public void setEmpname(String empname) {
 		this.empname = empname;
 	}
-	public Integer getEmpph() {
+	
+	public String getUph() {
+		return uph;
+	}
+	public void setUph(String uph) {
+		this.uph = uph;
+	}
+	public String getEmpph() {
 		return empph;
 	}
-	public void setEmpph(Integer empph) {
+	public void setEmpph(String empph) {
 		this.empph = empph;
 	}
 	public String getEmpNo() {

@@ -160,13 +160,13 @@
 
 
 
- <button class="btn waves-effect waves-light"  onclick="payKG('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">이니시스
+ <button class="btn waves-effect waves-light"  onclick="payKG('${rev.cleanrevNo}','${mem.userName }','${mem.userPh }','${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }','${emp.employeePh }',${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">이니시스
    <i class="material-icons right">send</i>
   </button>
-  <button class="btn waves-effect waves-light" onclick="payKakao('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">카카오페이
+  <button class="btn waves-effect waves-light" onclick="payKakao('${rev.cleanrevNo}','${mem.userName }','${mem.userPh }','${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }','${emp.employeePh }',${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">카카오페이
   <i class="material-icons right">send</i>
   </button>
-  <button class="btn waves-effect waves-light"  onclick="payDanal('${rev.cleanrevNo}','${mem.userName }',${mem.userPh },'${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }',${emp.employeePh },${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
+  <button class="btn waves-effect waves-light"  onclick="payDanal('${rev.cleanrevNo}','${mem.userName }','${mem.userPh }','${mem.userEmail }','${rev.cleanrevAddr }','${rev.cleanrevDate }','${rev.cleanrevTime  }','${emp.employeeName }','${emp.employeeNo }','${emp.employeePh }',${rev.cleanfeeSize },'${rev.cleanrevDemand }','${pay}')" style="width: 30%; border-radius: 30px; background-color: black">다날 휴대폰결제
     <i class="material-icons right">send</i>
   </button> 
 </div>

@@ -83,10 +83,17 @@ $(function(){
                <div>${noPw }</div>
    
                <div class="checkbox_save">
-                  <label class="label_checkbox checked">
+                    <label class="label_checkbox checked">
                      <input type="checkbox" id="chk_security" name="chk_security" value="y" checked="checked" onChange="if( this.checked){$(this).parent().addClass('checked')}else{$(this).parent().removeClass('checked')} "> 
                      보안접속
+                     
                   </label>
+         	 		<label class="label_checkbox checked">
+         	      <input type="checkbox" id="chk_security" name="managerLogin" checked="checked" onChange="if( this.checked){$(this).parent().addClass('checked')}else{$(this).parent().removeClass('checked')}"    > 
+                    
+                     직원 접속</label>
+            
+         	      
                   <!--
                   <label><input type="checkbox" name="save_id" value="y" checked="checked" onclick="chk_save_id(this.checked);"> 아이디 저장</label>
                   <div class="auto_security">

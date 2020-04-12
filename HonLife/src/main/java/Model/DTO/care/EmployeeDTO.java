@@ -42,7 +42,7 @@ public class EmployeeDTO implements Serializable{
 	String employeeBad;
 	String employeeAddr;
 	String employeeGender;
-	Integer employeePh;
+	String employeePh;
 	String employeeAddrPost;
 	String employeeAddrDetail;
 	String employeeEmail;
@@ -52,6 +52,12 @@ public class EmployeeDTO implements Serializable{
 
 	
 	
+	public String getEmployeePh() {
+		return employeePh;
+	}
+	public void setEmployeePh(String employeePh) {
+		this.employeePh = employeePh;
+	}
 	public String getEmployeeAddr() {
 		return employeeAddr;
 	}
@@ -64,12 +70,7 @@ public class EmployeeDTO implements Serializable{
 	public void setEmployeeGender(String employeeGender) {
 		this.employeeGender = employeeGender;
 	}
-	public Integer getEmployeePh() {
-		return employeePh;
-	}
-	public void setEmployeePh(Integer employeePh) {
-		this.employeePh = employeePh;
-	}
+
 	public String getEmployeeAddrPost() {
 		return employeeAddrPost;
 	}

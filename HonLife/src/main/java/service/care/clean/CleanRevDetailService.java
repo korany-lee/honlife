@@ -29,8 +29,8 @@ public class CleanRevDetailService {
 	@Autowired 
 	EmployeeDetailService employeeDetailService;
 						
-	public void detail(HttpSession session,String revNo,String uname,Integer uph,String uemail,String revaddr,
-									     String revdate,String revtime,String empname, Integer empph, String empNo,
+	public void detail(HttpSession session,String revNo,String uname,String uph,String uemail,String revaddr,
+									     String revdate,String revtime,String empname, String empph, String empNo,
 										 Integer size,String demand,String pay,Model model) throws ParseException  {
 	
 		CleanRevDTO cr = new CleanRevDTO();

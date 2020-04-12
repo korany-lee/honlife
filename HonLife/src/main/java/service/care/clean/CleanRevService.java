@@ -42,7 +42,7 @@ public class CleanRevService {
 		Timestamp T = new Timestamp(D.getTime());	
 		
 		
-		   rc.setRevChk(1);
+		    rc.setRevChk(1);
 			rc.setCleanrevDate(T);
 			rc.setCleanrevTime(pc.getRevtime());
 			rc.setEmployeeNo(pc.getEmpNo());

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
+import Model.DTO.care.EmpLogin;
 
 @Repository
 public class MemberRepository{
@@ -45,5 +46,19 @@ public class MemberRepository{
 	public String selectNum(LoginDTO dto) {
 		String statement = namespace + ".selectUserNo";
 		return sqlSession.selectOne(statement,dto);
+	}
+	public String checkEmpId(String empNo) {
+		String statement = namespace + ".chkEmpId";
+		
+		return sqlSession.selectOne(statement,empNo);
+	}
+	public String checkEmpPw(EmpLogin empLogin) {
+		String statement = namespace + ".chkEmpPw";
+		
+		return sqlSession.selectOne(statement,empLogin);
+	}
+	public String classSel(EmpLogin empLogin) {
+		String statement = namespace + ".selClass";
+		return sqlSession.selectOne(statement, empLogin);
 	}
 }

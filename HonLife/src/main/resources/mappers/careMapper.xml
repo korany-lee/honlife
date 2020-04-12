@@ -26,7 +26,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 <resultMap type="Model.DTO.care.RecruitDTO" id="recList">
 		<id column="RECRUIT_NO" jdbcType="BIGINT" property="recruitNo" />
 		<result  column="RECRUIT_NAME" jdbcType="VARCHAR" property="recruitName" />
-		<result  column="RECRUIT_PH" jdbcType="BIGINT" property="recruitPh" />
+		<result  column="RECRUIT_PH" jdbcType="VARCHAR" property="recruitPh" />
 		<result  column="RECRUIT_JUMIN" jdbcType="BIGINT" property="recruitJumin" />
 		<result  column="RECRUIT_EMAIL" jdbcType="VARCHAR" property="recruitEmail" />
 		<result  column="RECRUIT_ADDR" jdbcType="VARCHAR" property="recruitAddr" />
@@ -123,7 +123,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="employeeBad"/>	
 		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="employeeAddr" />
 		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="employeeGender" />
-		<result  column="EMPLOYEE_PH" jdbcType="BIGINT" property="employeePh" />
+		<result  column="EMPLOYEE_PH" jdbcType="VARCHAR" property="employeePh" />
 		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
 		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
         <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
@@ -142,7 +142,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
 		<result column="EMPLOYEE_BAD" jdbcType="VARCHAR" property="employeeBad"/>	
 		<result  column="EMPLOYEE_ADDR" jdbcType="VARCHAR" property="employeeAddr" />
 		<result  column="EMPLOYEE_GENDER" jdbcType="VARCHAR" property="employeeGender" />
-		<result  column="EMPLOYEE_PH" jdbcType="BIGINT" property="employeePh" />
+		<result  column="EMPLOYEE_PH" jdbcType="VARCHAR" property="employeePh" />
 		<result  column="EMPLOYEE_ADDRPOST" jdbcType="VARCHAR" property="employeeAddrPost" />	
 		<result  column="EMPLOYEE_ADDRDETAIL" jdbcType="VARCHAR" property="employeeAddrDetail" />	
         <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
@@ -320,6 +320,13 @@ c.CLEANREV_ADDR, c.REV_PAY, c.REV_COUNT, c.REV_CHK
 	 <result column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
 	 <result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>	
 	</resultMap>
+	<resultMap type="Model.DTO.care.RevChkDTO" id="rc1">
+	 <id column="REV_COUNT" jdbcType="BIGINT" property="revCount"/>
+	 <result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
+	 <result column="CLEANREV_DATE" jdbcType="TIMESTAMP" property="cleanrevDate"/>
+	 <result column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
+	 <result column="CLEANREV_TIME" jdbcType="VARCHAR" property="cleanrevTime"/>	
+	</resultMap>
 
 <resultMap type="Model.DTO.care.CleanRevDTO" id="rev">
 	<id column="CLEANREV_NO" jdbcType="VARCHAR" property="cleanrevNo" />
@@ -438,7 +445,7 @@ c.CLEANREV_ADDR, c.REV_PAY, c.REV_COUNT, c.REV_CHK
 
 </insert>
 
-<select id="rcchk" parameterType="Model.DTO.care.RevChkDTO" resultMap="rc"> 
+<select id="rcchk" parameterType="Model.DTO.care.RevChkDTO" resultMap="rc1"> 
 	select *
 	from revchk 
 	where EMPLOYEE_NO = #{employeeNo}
