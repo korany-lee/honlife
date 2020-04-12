@@ -66,6 +66,22 @@ $(function(){
 		 }); 
 	
 	}); */
+	
+	
+	$('#laundryList').click(function(){	
+		  $.ajax({	        
+			        type: "post",
+			        url: "L_revList",
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#maincall").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 		 
+	});
+	
+	
 	$('#cleanrevList').click(function(){	
 		  $.ajax({	        
 			        type: "post",
@@ -532,7 +548,7 @@ $(function(){
 						<li><a href="#" id="cleanrevList">청소 예약 내역</a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
-						<li><a href="#">세탁 예약 내역 </a>
+						<li><a href="#" id="laundryList">세탁 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
 						<li><a href="#" id="roomRevList">객실 예약 내역 </a>

@@ -220,4 +220,12 @@ public class RegistRepository {
 		
 	}
 	
+	public List<LaundryRevDTO> laundryList(){
+		String statement = namespace + ".laundryList";
+		
+		return sqlSession.selectList(statement);
+		
+	}
+	
+	
 }

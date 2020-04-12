@@ -18,6 +18,7 @@
 
 
 
+
 <bean class="controller.shop.manager.mainController"/>
 
 <bean id="pis" class="service.shop.ProductInsertService"/>

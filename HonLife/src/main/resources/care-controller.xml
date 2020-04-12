@@ -18,7 +18,7 @@
 
 
 <bean class="controller.care.laundry.LaundryReservationController" />
-
+<bean class="controller.care.laundry.LaundryRevListController" />
 
 
 

@@ -469,6 +469,13 @@ from cleanrev c , member m ,
     and   c.rev_count = sub.rc
 </select>
 
+<select id="laundryList" resultMap="laundryMap">
+
+	select *
+	from laundryrev 
+
+</select>
+
 
 
 </mapper>
