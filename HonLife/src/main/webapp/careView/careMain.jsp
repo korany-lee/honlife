@@ -137,7 +137,7 @@
 		<h2>Simple & Comfortable Life</h2>
 
 		<a class="play-btn fancybox" href="care/cleanRev">청소 예약하기</a>
-		<a class="play-btn fancybox" href="#">세탁 예약하기</a>
+		<a class="play-btn fancybox" href="care/laundryrev">세탁 예약하기</a>
 
 	</div>
 
@@ -186,8 +186,8 @@
 			  만일 품질에 만족하지 못하시면 어떠한 추가비용 없이 재세탁 해드립니다. 이유있는 1등 서비스를 지금 경험해보세요.</p>
 <p>&nbsp;</p>
 
-				<a class="light-color elem-line-before" href="laundryAmountInfo" style="font-size: 20px;" >세탁요금 안내</a> <br>
-				<a class="light-color elem-line-before" href="" style="font-size: 20px;">세탁예약 하기</a>
+				<a class="light-color elem-line-before" href="care/laundryAmountInfo" style="font-size: 20px;" >세탁요금 안내</a> <br>
+				<a class="light-color elem-line-before" href="care/laundryrev" style="font-size: 20px;">세탁예약 하기</a>
 			</div>
 
 			<div class="col-left img-collage clearfix">
@@ -211,8 +211,8 @@
 <p>주방,거실,방,화장실 각 영역별로 표준화된 청소가이드에 맞춰 깔끔하게 청소해드립니다! </p>
 <p>&nbsp;</p>
 
-				<a class="light-color elem-line-before" href="care/cleanRev" style="font-size: 20px;">청소요금 안내</a><br>
-				<a class="light-color elem-line-before" href="" style="font-size: 20px;">청소예약하기</a>
+				<a class="light-color elem-line-before" href="care/cleanAmountInfo" style="font-size: 20px;">청소요금 안내</a><br>
+				<a class="light-color elem-line-before" href="care/cleanRev" style="font-size: 20px;">청소예약하기</a>
 			</div>
 
 			<div class="col-right img-col">
