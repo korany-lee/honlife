@@ -18,7 +18,40 @@
     <title>Hon Stay - 가구 장바구니</title>
     
   </head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
 
+function wishDelete(n){
+	/* $.ajax({
+		type : "POST",
+		url : "furnitureWishDelete",
+		data : "furnitureNo=" +n ,
+		datatype : "html",
+		success:cart_ok,
+		error: function(){
+			alert('로그아웃 되었습니다.\n다시 로그인 해 주세요.');
+			location.href="../stayMain";
+			return;
+		}
+	});   */
+	if(confirm('장바구니에서 삭제하시겠습니까?')){
+		location.href="furnitureWishDelete?furnitureNo="+n;
+		alert('삭제 되었습니다.');
+		/* location.href="furnitureWishList?start=" +a +"&&end="+b+"&&revNum="+$c; */
+	}else{
+		return;
+	}
+}
+
+function cart_ok(responseText, statusText, xhr, $form){
+	if(statusText == "success"){
+		alert('장바구니에서 삭제되었습니다.');
+		
+	}
+	
+	
+}
+</script>
   <body>
     <!--================Header Menu Area =================-->
      <jsp:include page="/stayView/memberView/header.jsp" />
@@ -53,8 +86,8 @@
                 <tr>
                   <th scope="col">상품정보</th>
                   <th scope="col">1일 대여료</th>
-                  <th scope="col">수량</th>
                   <th scope="col">총 대여료</th>
+                  <th scope="col">삭제</th>
                 </tr>
               </thead>
               <tbody>
@@ -80,27 +113,19 @@
                   </td>
                   <td>
                     <div class="product_count">
-                      <input
-                        type="text"
-                        name="qty"
-                        id="sst"
-                        maxlength="12"
-                        value="1"
-                        title="Quantity:"
-                        class="input-text qty"
-                      />
-                      
+                     
+                      <h5><fmt:formatNumber value="${wish.furnitureRentalFee*date }" pattern="#,###" />원</h5> 
                     </div>
                   </td>
                   <td>
-                    <h5><fmt:formatNumber value="${wish.furnitureRentalFee*date }" pattern="#,###" />원</h5> 
+                     <a href="#" onclick="javascript:wishDelete('${wish.furnitureNo}');">취소</a>
                   </td>
                 </tr>
                 </c:forEach>
                 
                 <tr class="bottom_button">
                   <td>
-                    
+                   
                   </td>
                   <td></td>
                   <td></td>

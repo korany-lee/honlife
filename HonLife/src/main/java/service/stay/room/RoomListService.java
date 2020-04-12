@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 
 import Model.DTO.ReviewDTO;
 import Model.DTO.RoomDTO;
+import Model.DTO.RoomRevDTO;
+import repository.stay.ReservationRepository;
 import repository.stay.ReviewRepository;
 import repository.stay.RoomRepository;
 
@@ -18,6 +20,9 @@ public class RoomListService {
 	
 	@Autowired
 	ReviewRepository reviewRepository;
+	
+	@Autowired
+	ReservationRepository revr;
 	
 	public void execute(String BigType,String SmallType,Model model) {
 		if(BigType.equals("view")) {
@@ -52,7 +57,7 @@ public class RoomListService {
 	
 	public void floorSelect(String floor,Model model) {
 		List<RoomDTO> list = roomRepository.floorSelect(floor);
-		System.out.println("list의 크기는 ? " + list.size());
+		model.addAttribute("floor", floor);
 		model.addAttribute("list",list );
 	}
 	
@@ -77,6 +82,11 @@ public class RoomListService {
 			Double average = (double) total /(double) totalReview;
 			Double average1 = Math.round(average*10)/10.0;
 			model.addAttribute("average", average1);
+		}
+		
+		if(one.getRoomState().equals("사용중")) {
+			RoomRevDTO dto = revr.roomsRev(num);
+			model.addAttribute("rev", dto);
 		}
 		
 		

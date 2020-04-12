@@ -25,4 +25,13 @@ public class RoomRevMatchService {
 		model.addAttribute("roomRev", dto);
 		
 	}
+	
+	public void roomRevFind1(HttpSession session,Model model) {
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
+		List<RoomRevDTO> dto = reservationRepository.userRev1(login.getUserNo());
+	
+		
+		model.addAttribute("roomRev", dto);
+		
+	}
 }

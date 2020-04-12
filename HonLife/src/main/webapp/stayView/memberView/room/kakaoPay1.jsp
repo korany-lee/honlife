@@ -19,7 +19,7 @@
 
 
 <script>
-var url ="ws://192.168.4.172:8080/project/chat/";
+var url ="ws://localhost:8888/project/chat/";
 var webSocket = null;
 var msg = "";
 url += $("#nick").val();

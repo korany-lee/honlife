@@ -41,5 +41,10 @@ public class FurnitureListService {
 		model.addAttribute("furniture", dto);
 	} 
 	
+	public void searchList(String content,Model model) {
+		List<FurnitureDTO> dto = furnitureRepository.searchList(content);
+		model.addAttribute("furniture", dto);
+	}
+	
 	
 }

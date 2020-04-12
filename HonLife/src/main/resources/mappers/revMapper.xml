@@ -68,6 +68,10 @@ select * from roomrev where roomrev_no=(select max(roomrev_no) from roomrev wher
 select * from roomrev where user_no = #{userNo}
 </select>
 
+<select id="userRev1" resultMap="roomRev" parameterType="string">
+select * from roomrev where user_no = #{userNo} and ROOMREV_STATE='사용대기'
+</select>
+
 <select id="oneRev" resultMap="roomRev" parameterType="string" >
 select * from roomrev where ROOMREV_NO = #{revNum}
 </select>
@@ -144,5 +148,9 @@ select * from furniturerev
 <update id="setting" parameterType="string">
 update roomrev set ROOMREV_FREVCHK='준비완료' where roomrev_no=#{revNum}
 </update>
+
+<select id="roomsRev" parameterType="string" resultMap="roomRev">
+select * from roomrev where room_no=#{num} and roomrev_state='사용중'
+</select>
 
 </mapper>
