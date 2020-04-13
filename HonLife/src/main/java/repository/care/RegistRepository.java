@@ -84,11 +84,6 @@ public class RegistRepository {
 		
 	}
 	
-	public void orderInsert(CleanOrderDTO dto) {
-		
-		String statement = namespace + ".orderInsert";
-		sqlSession.insert(statement,dto);
-	}
 	
 	public List<CleanOrderDTO> orderList() {
 		String statement = namespace + ".orderListSelect";
@@ -113,6 +108,15 @@ public class RegistRepository {
 		return sqlSession.selectOne(statement,empNo);
 	}
 	
+
+	
+	
+	public void orderInsert(CleanOrderDTO dto) {
+		
+		String statement = namespace + ".orderInsert";
+		sqlSession.insert(statement,dto);
+	}
+	
 	public void itemInsert(CleanItemDTO dto) {
 		
 	
@@ -134,6 +138,9 @@ public class RegistRepository {
 				 
 	
 	}
+	
+	
+	
 	
 	public List<CleanFeeDTO> fee() {
 		String statement = namespace + ".fee";

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html >
@@ -42,8 +43,15 @@
 				</span>
 				<span class="label-input100" style="font-size: 20px">발주사원번호</span>
 				<div class="wrap-input100 " >
-					
-					<input class="input100" type="text" name="employeeNo" placeholder="발주하는 사원의 번호을 입력해주세요">
+					<select id="employeeNo" name="employeeNo">
+						<option value="" selected="selected">발주하는 사원의 사번을 선택해주세요!</option>
+						<c:forEach items="${empList }" var="e">
+						<c:if test="${e.employeeWorkField == 'cm'}">
+							<option value="${e.employeeNo }" >${e.employeeName } </option>
+						</c:if>
+						</c:forEach>
+					</select>
+					<!-- <input class="input100" type="text" name="employeeNo" placeholder="발주하는 사원의 번호을 입력해주세요"> -->
 				</div>
 				<span class="label-input100" style="font-size: 20px">발주처</span>
 				<div class="wrap-input100 " >
@@ -209,16 +217,14 @@
 <script type="text/javascript">
 
  $(document).ready(function () {
-    var counter = -1;
-    
+    var counter = -1;    
     $("#itemAdd").on("click", function () {
         counter++;
         
         var newRow = $("<tr>");
         var cols = "";
         var realQty = $('#cleanitemQty').val();
-        
-        
+                
         cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text"id="cleanitemName" name="cleanitemName['+counter+']"  placeholder="품명"/></div></td>';					     
         cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" id="cleanitemPrice" name="cleanitemPrice['+counter+']"  placeholder="단가"/></div></td>';				
         cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" id="cleanitemQty" name="cleanitemQty['+counter+']"   placeholder="수량"/><input type="hidden" name="cleanitemrealQty['+counter+']" id="cleanitemrealQty"    /> </div></td>';			
@@ -228,50 +234,32 @@
         newRow.append(cols);
         
         $("table.order").append(newRow);
-        
-        
+             
     	$('.input1001p, .input1001q, .input1001s').keyup(function(){			
     		$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
     	});
     	
-    	$('#cleanitemQty').keyup(function(){
-    		
-    		$('#cleanitemrealQty').val($('#cleanitemQty').val());
-    		
-    		
+    	$('#cleanitemQty').keyup(function(){   		
+    		$('#cleanitemrealQty').val($('#cleanitemQty').val());    		    		
     	});
-    	
-    	
-    	
-    		
-    		
-    		
-    		
-    	
     });
-    
-    
-
-    $("table.order").on("change", 'input[id^="cleanitemName"], input[id^="cleanitemQty"]', function (event) {
-    
+     
+    $("table.order").on("change", 'input[id^="cleanitemName"], input[id^="cleanitemQty"]', function (event) {    
         calculateRow($(this).closest("tr"));
         calculateGrandTotal();
     });
-    
+   
     $("table.order").on("click", "input.contact100-form-btn2", function (event) {
-        $(this).closest("tr").remove();
-        
+        $(this).closest("tr").remove();        
         calculateGrandTotal();
     });
 });
     
 function calculateRow(row) {
-    var price = +row.find('input[id^="cleanitemPrice"]').val();
-    
+    var price = +row.find('input[id^="cleanitemPrice"]').val();   
     var qty = +row.find('input[id^="cleanitemQty"]').val();
     row.find('input[id^="cleanitemSum"]').val((price * qty));
-}
-    
+}    
 function calculateGrandTotal() {
     var grandTotal = 0;
     $("table.order").find('input[id^="cleanitemSum"]').each(function () {
@@ -282,7 +270,7 @@ function calculateGrandTotal() {
 
 </script>
 		
-				<span class="label-input100" style="font-size: 20px; " >배송방법</span>
+				<span class="label-input100" style="font-size: 20px; margin-left: 35px" >배송방법</span>
 					
 					<div>
 						<select class="js-select2" name="moveHow"   style=" font-family: 'Do Hyeon', sans-serif ;  font-size:18px; text-transform: none; background: transparent;border: none;">
