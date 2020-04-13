@@ -78,7 +78,7 @@
 	<input type="hidden" id="startDate" name="startDate" value="${rev.startDate }">
 	<input type="hidden" id="endDate" name="endDate" value="${rev.endDate }">
 	<input type="hidden" id="roomNo" name="roomNo" value="${rev.roomNo }">
-
+	<input type="hidden" id="userNo" value="${userNo }" name="userNo" >
 </form>   
     
     

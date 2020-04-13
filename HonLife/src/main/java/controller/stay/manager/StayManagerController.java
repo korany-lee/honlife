@@ -108,5 +108,11 @@ public class StayManagerController {
 		return "stayView/funiture/searchFurniture";
 	}
 	
+	@RequestMapping("/manager/realTime")
+	public String real() {
+		
+		return "stayView/Reservation/real";
+	}
+	
 	
 }

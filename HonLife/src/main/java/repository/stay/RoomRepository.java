@@ -16,6 +16,19 @@ public class RoomRepository {
 	private SqlSession sqlSession;	
 	private final String namespace="roomMapper";
 	
+	public RoomDTO oneSelect(String num) {
+		String statement = namespace + ".oneSelect";
+		return sqlSession.selectOne(statement, num);
+	}
+	
+
+	public String dateCheck(TimeCheckDTO dto) {
+		String statement = namespace +".dateCheck"; 
+		return sqlSession.selectOne(statement,dto);
+	}
+	
+	
+	
 	public void roomInsert(RoomDTO dto) {
 		String statement = namespace + ".roomInsert";
 		sqlSession.insert(statement, dto);
@@ -36,16 +49,7 @@ public class RoomRepository {
 		return sqlSession.selectList(statement,SmallType );
 	}
 	
-	public RoomDTO oneSelect(String num) {
-		String statement = namespace + ".oneSelect";
-		return sqlSession.selectOne(statement, num);
-	}
-	
 
-	public String dateCheck(TimeCheckDTO dto) {
-		String statement = namespace +".dateCheck"; 
-		return sqlSession.selectOne(statement,dto);
-	}
 	
 	public void changeState(String roomNo) {
 		String statement = namespace +".stateChange";

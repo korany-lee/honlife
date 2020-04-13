@@ -13,26 +13,11 @@
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <title>Hon Life - 객실 상세보기</title>
-    <!--  Bootstrap CSS -->
-<!--        <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="vendors/linericon/style.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css" />
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
-    <link rel="stylesheet" href="vendors/animate-css/animate.css" />
-    <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css" />
-    main css
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" /> -->
+
 <style type="text/css">
    .fc-sun {color:#e31b23}
 .fc-sat {color:#007dc3}
 </style>
-
-
-
 
 <link href='/project/stayView/memberView/css/main.css' rel='stylesheet' />
 <link href='/project/stayView/memberView/css/main2.css' rel='stylesheet' />
@@ -73,13 +58,9 @@
   });
 
 </script>
+</head>
 
-
-
-
-  </head>
-
-  <body>
+<body>
 	
  	 <jsp:include page="/stayView/memberView/header.jsp" />
     <!--================Header Menu Area =================-->
@@ -114,9 +95,6 @@
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                 
-                
-                
-                 
                 	<c:forTokens items="${room.roomPhoto }" delims="-" var="roomPhoto" varStatus="status">
                 	
                   <li data-target="#carouselExampleIndicators" data-slide-to="${status.index }" class="active">
@@ -124,21 +102,7 @@
                   </li>
                 	
                 	</c:forTokens>
-              
-                  
-                  
-                  <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1">
-                    <img src="/project/stayView/memberView/img/product/single-product/s-product-s-3.jpg" alt=""/>
-                  </li> -->
-                 
-                 
-                 
-                 
-                 
-                 
-                 <!--  <li data-target="#carouselExampleIndicators"data-slide-to="2">
-                    <img src="/project/stayView/memberView/img/product/single-product/s-product-s-4.jpg" alt=""/>
-                  </li>  -->
+
                 </ol>
                 
                 <div class="carousel-inner">

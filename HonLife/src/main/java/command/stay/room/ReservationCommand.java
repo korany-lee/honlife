@@ -11,9 +11,17 @@ public class ReservationCommand {
 	private String startDate;
 	private String endDate;
 	private String roomNo;
+	private String userNo;
 	
 	
 	
+	
+	public String getUserNo() {
+		return userNo;
+	}
+	public void setUserNo(String userNo) {
+		this.userNo = userNo;
+	}
 	public String getRoomNo() {
 		return roomNo;
 	}

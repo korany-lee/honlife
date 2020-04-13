@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -45,7 +45,7 @@
 									</div>
 									
 								</div>
-								<!-- ╩С╪╪ ╫цюш -->
+								<!-- Л┐│Л└╦ Л▀°Л·▒ -->
 								 <div class="tr-body">												
 										<div class="col-left">										
 											
@@ -58,39 +58,39 @@
 						<col style="width: 120px">
 									</colgroup>
   									<tr>
-    										<td>©╧╬Ююз╦М</td>  									
+    										<td>Л≤┬Л∙╫Л·░К╙┘</td>  									
    											<td>   											
    									${list.roomRevName } 											
    											</td>
   									</tr>
   									
   									<tr>
-    									<td>ютажюз╦М</td>
+    									<td>Л·┘Лё╪Л·░К╙┘</td>
    									    <td>${list.roomLiveName }</td>
   									</tr>
   									<tr>
-    									<td>ютажюз ©╛╤ТцЁ</td>
+    									<td>Л·┘Лё╪Л·░ Л≈╟К²╫Л╡≤</td>
    									    <td>${list.roomRevPh }</td>
   									</tr>
   									
   									
   								
   									<tr>
-    									<td>ютажюз юл╦чюо</td>
+    									<td>Л·┘Лё╪Л·░ Л²╢К╘■Л²╪</td>
     									<td>${list.roomRevEmail }</td>
                                     </tr>
                                     
  									 <tr>
-   										 	<td>ютажЁ╞б╔</td>
+   										 	<td>Л·┘Лё╪К┌═Л╖°</td>
    										 	<td><fmt:formatDate value="${list.roomRevStartDate }" pattern="yyyy-MM-dd"/></td>
   									</tr>
   									
   									 <tr>
-   										 	<td>еП╫гЁ╞б╔</td>
+   										 	<td>М┤╢Л▀╓К┌═Л╖°</td>
    										 	<td><fmt:formatDate value="${list.roomRevStartDate }" pattern="yyyy-MM-dd"/></td>
   									</tr>
   									<tr>
-   										 	<td>╟║╠╦ ©╧╬Ю╩Сх╡</td>
+   										 	<td>Й╟─Й╣╛ Л≤┬Л∙╫Л┐│М≥╘</td>
    										 	<td>${list.roomRevFrevchk }</td>
   									</tr>
   									
@@ -103,16 +103,16 @@
 </table>
 								
 									
-										<button class="minimal-btn close-tr elem-line-after">╩С╪╪ ╢щ╠Б</button> 
+										<button class="minimal-btn close-tr elem-line-after">Л┐│Л└╦ К▀╚Й╦╟</button> 
 									
 											
 											<button class="minimal-btn close-tr2 " style="margin-right: 10px">| </button> 
 											
-											<c:if test="${list.roomRevState eq '╩Г©К╢К╠Б' }">
-											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkin('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">ют╫гцЁ╦╝ </a>
+											<c:if test="${list.roomRevState eq 'Л┌╛Л ╘К▄─Й╦╟' }">
+											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkin('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">Л·┘Л▀╓Л╡≤К╕╛ </a>
 											</c:if>
-											<c:if test="${list.roomRevState eq '╩Г©Каъ' }">
-											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkout('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">еП╫гцЁ╦╝ </a>
+											<c:if test="${list.roomRevState eq 'Л┌╛Л ╘Л╓▒' }">
+											 <a href="#" class="minimal-btn close-tr2 " onclick="javascript:checkout('${list.roomRevNo }','${list.roomNo }')" style="margin-right: 10px">М┤╢Л▀╓Л╡≤К╕╛ </a>
 											</c:if>
 										
 											

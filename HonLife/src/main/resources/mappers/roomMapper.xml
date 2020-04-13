@@ -32,6 +32,18 @@
 	
 </resultMap>
 
+<select id="oneSelect" resultMap="rooms" parameterType="string">
+	select <include refid="basecolumn" /> from room where room_no =#{num}
+</select>
+
+<select id="dateCheck" resultType="string" parameterType="Model.DTO.TimeCheckDTO" >
+	select room_no from roomrev where  room_no=#{roomNo} and #{start} between roomrev_startdate and roomrev_enddate or #{end} between roomrev_startdate and roomrev_enddate 
+	
+	
+</select>
+
+
+
 
 <select id="viewSelect" resultMap="rooms" parameterType="string">
 	select <include refid="basecolumn" /> from room where room_view=#{SmallType} order by room_no asc
@@ -45,15 +57,7 @@
 	select <include refid="basecolumn" /> from room where substr(room_no,1,(length(room_no)-2)) = #{floor} order by room_no asc 
 </select>
 
-<select id="oneSelect" resultMap="rooms" parameterType="string">
-	select <include refid="basecolumn" /> from room where room_no =#{num}
-</select>
 
-<select id="dateCheck" resultType="string" parameterType="Model.DTO.TimeCheckDTO" >
-	select room_no from roomrev where #{start} between roomrev_startdate and roomrev_enddate or #{end} between roomrev_startdate and roomrev_enddate and room_no=#{roomNo}
-	
-	
-</select>
 
 <update id="stateChange" parameterType="string">
 update room set room_state='사용중' where room_no=#{roomNo}

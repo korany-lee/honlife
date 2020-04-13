@@ -15,11 +15,11 @@
 </head>
 
 <body>
-<input type="hidden" id="nick" value="중식집">
+<input type="hidden" id="nick" value="abcd">
 
 
 <script>
-var url ="ws://localhost:8888/project/chat/";
+var url ="ws://192.168.4.172:8080/project/chat/";
 var webSocket = null;
 var msg = "";
 url += $("#nick").val();
@@ -34,20 +34,20 @@ webSocket.onopen =function(e) {
 webSocket.onclose = function(e){
 	if(e.type=="close") {
 			//monitor.innerHTML += "접속이 종료 되었습니다.<BR />";
+		
+		
 	}
 }
-	
-
-	//메세지 수신
-	/* webSocket.onmessage = function(e){
-		monitor.innerHTML += e.data +"<br />";
-	} */
+//메세지 수신
+webSocket.onmessage = function(e){
+		//monitor.innerHTML += e.data +"<br />";
+	location.href="../room/reservationFinish";
+} 
 function disConn() {
 	webSocket.close();
 }
 	//메세지 전송
 function sendMsg() {
-		
 	msg += "revName:${rev.revName }"+"/";
 	msg += "livingName:${rev.livingName }"+"/";
 	msg += "ph:${rev.ph }"+"/";
@@ -56,7 +56,8 @@ function sendMsg() {
 	msg += "startDate:${rev.startDate }"+"/";
 	msg += "endDate:${rev.endDate }"+"/";
 	msg += "roomNo:${rev.roomNo }"+"/";
-	alert(msg);
+	msg += "userNo:${userNo}";
+	
 	webSocket.send(msg);
 }
 	
@@ -110,8 +111,8 @@ function sendMsg() {
                 //성공시 이동할 페이지
                 //$("#frm").submit();
                 sendMsg();
-
-                disConn();
+                //disConn();
+                
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
@@ -119,6 +120,7 @@ function sendMsg() {
                 location.href='reservationFail?roomNo='+${rev.roomNo};
                 alert(msg);
             }
+            
         });
         
     });

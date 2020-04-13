@@ -71,7 +71,7 @@ img.ui-datepicker-trigger {
    오늘 날짜 :
    <span id="today"></span><br>
    <h2>${roomNo }호 예약하기</h2> <br>   
-   		 <input type="hidden" value="${roomNo }" id="roomNo">
+   		 <input type="hidden" value="${roomNo }" id="roomNo" name="roomNo">
          <label for="fromDate">입실일자</label> <input type="text" name="fromDate" id="fromDate"> 
          <label for="toDate">퇴실일자</label> <input type="text" name="toDate" id="toDate"><br> 
          <input type="button" value="예약하기" id="submit">
