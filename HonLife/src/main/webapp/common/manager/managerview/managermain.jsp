@@ -66,6 +66,20 @@ $(function(){
 		 }); 
 	
 	}); */
+
+	
+	$('#itemreceiving').click(function(){	
+		  $.ajax({	        
+			        type: "post",
+			        url: "itemreceiving",
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#maincall").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 		 
+	});
 	
 	
 	$('#laundryList').click(function(){	
@@ -482,7 +496,7 @@ $(function(){
 					<li><a href="#" id="cleanItemList">발주 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 		  			</li>												
-					<li><a href="#">청소 물품 반출 </a></li>
+					<li><a href="#" id="itemreceiving">청소 물품 반출 </a></li>
 					<li><a href="#">반출 리스트 </a>
 						<span class="jquery-accordion-menu-label">count</span>
 					</li>				
