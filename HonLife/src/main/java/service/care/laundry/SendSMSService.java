@@ -64,14 +64,14 @@ public class SendSMSService {
 		
 		
 		HashMap<String, String> params = new HashMap<String, String>(); 
-		String content = " HonCare 세탁 서비스입니다 \n"
+		String content = " HonCare 청소 서비스입니다 \n"
 				         + "[예약 접수]\n"
 				         + "예약 번호: " + pc.getRevNo()+"\n"	
 				         + "예약일시: " + sendDate+" / "+pc.getRevtime()+"시\n"									         				         							
 				         + "장소: " + pc.getRevaddr()+"\n"			
 				         + "요청사항: " + pc.getDemand()+"\n" 
 				         + "아래 주소로 예약 확인을 해주세요! "
-				         + "http://192.168.219.105:8888/project/care/ok?revNo="+pc.getRevNo()+"empNo="+pc.getEmpNo();
+				         + "http://192.168.4.111:8080/project/care/ok?revNo="+pc.getRevNo()+"empNo="+pc.getEmpNo();
 	
 		
 		params.put("to",pc.getEmpph().toString()); 
