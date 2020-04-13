@@ -2604,7 +2604,7 @@ textarea.form-control {
 .form-group--number .form-control {
   border: 1px solid #ccc;
   height: 40px;
-  padding: 0 45px;
+  padding: 10px 45px;
   text-align: center;
   font-size: 14px;
   color: #000;
@@ -10962,7 +10962,7 @@ textarea.form-control {
   padding: 20px 20px;
   text-transform: uppercase;
   color: #000;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
   border-top:2px solid #D2B65C
 }
@@ -13928,6 +13928,10 @@ textarea.form-control {
     margin-bottom: 10px;
     text-align: center;
   }
+}
+
+.orderInfo {
+	display:none;
 }
 
 .ps-vendor-store {

@@ -81,247 +81,215 @@
                 <div class="ps-section__header">
                     <h2>장바구니</h2>
                     <p>주문하실 상품명 및 수량을 정확하게 확인해 주세요</p>
-                    <p>${memList.userName } 님의 장바구니</p>
                 </div>
-                <c:forEach items="${cart}" var="cartList" varStatus="status">
-              
-                ${cartList.basketAmount }
-                </c:forEach>
+                
                 <div class="ps-section__content">
                     <div class="table-responsive">
                         <table class="table ps-table--shopping-cart">
                             <thead>
                                 <tr>
+                                	<th>선택</th>
                                     <th>상품정보</th>
                                     <th>수량</th>
                                     <th>금액</th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="noCart" colspan="4">
-                                    <c:if test="${empty product }">
-                                   	장바구니에 담긴 상품이 없습니다.
-                                    
-                                    </c:if>
-                                    </td>
-                                    <c:if test="${!empty product }">
-                                    <td id="viewGoods">
-                                    <c:forEach items="${product }" var="pro" varStatus="status">
-                                        <div class="ps-product--cart">
-                                            <div class="ps-product__thumbnail">
-                                            <a href="HOT/${pro.productNo }">
-                                             <c:forTokens items="${pro.productPhoto }" delims="-" var="proImg" varStatus="status">
-													<c:if test="${status.index == 0}">
-                                                    <img src="update/${proImg }"/>												
-													</c:if>
-													</c:forTokens>
-											</a>
-										</div>
-                                            <div class="ps-product__content"><a href="#">${pro.productName }</a>
-                                                <p>Sold By:<strong>SSG</strong></p>
-                                            </div>
-                                        </div>
-                                      
-                                        <div class="form-group--number">
-                                            <button class="up" id="up">+</button>
-                                            <button class="down" id="down">-</button>
-                                            <input class="form-control" type="text" value=" 1" id="quantity">
-									
-							<script type="text/javascript">
-								$(function() {
-									$('#down').click(function(e) {
-										e.preventDefault();
-										var stat = $('#quantity').text();
-										var num = parseInt(stat, 10);
-										num--;
-										if (num < 0) {
-											num = 0;
-										}
-										$('#quantity').text(num);
-									});
-									$('#up').click(function(e) { 
-										e.preventDefault();
-										var stat = $('#quantity').text();
-										var num = parseInt(stat, 10);
-										num++;
-
-										$('#quantity').text(num);
-									});
-								});
-							</script>
-                                        </div>
-                                        </c:forEach>
-                                    </td>
-                                    <td>                                  
-                                        
-                                    </td>
-                                    <td>$205.00</td>
-                                    <td><a href="#"><i class="icon-cross"></i></a></td>
-                                   
-                                   </c:if>
-                                </tr>
-                            </tbody>
+							<tbody>
+								<tr>
+									<c:if test="${empty cart }">
+										<td class="noCart" colspan="4">장바구니에 담긴 상품이 없습니다.</td>
+									</c:if>
+								</tr>
+									<c:if test="${!empty cart }">
+										<c:set var="sum" value="0" />
+										<c:forEach items="${cart }" var="pro" varStatus="status">
+								<tr>
+									<td><input type="checkbox" name="check" checked="checked" value = "${pro.productNo}"/></td>
+											<td>
+												<div class="ps-product--cart">
+													<div class="ps-product__thumbnail">
+											
+														<a href="HOT/${pro.productNo }"> <c:forTokens
+																items="${pro.productPhoto }" delims="-" var="proImg"
+																varStatus="status">
+																<c:if test="${status.index == 0}">
+																	<img src="update/${proImg }" />
+																</c:if>
+															</c:forTokens>
+														</a>
+													</div>
+												
+													<div class="ps-product__content">
+														<a href="#">${pro.productName }</a>
+														<p>
+															<strong><span id="price" >${pro.productPrice }</span> 원</strong>
+														</p>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="form-group--number" id="number">
+													<button class="up" id="up">+</button>
+													<button class="down" id="down">-</button>
+													<span class="form-control" type="text"
+														 id="quantity">${pro.basketAmount }</span>
+												</div>
+											</td>
+											<td>
+											<span id="totalPrice" type="text">${pro.productPrice*pro.basketAmount }</span>
+											</td>
+											<td><a href="#"><i class="icon-cross"></i></a></td>
+								</tr>
+								<c:set var="sum" value="${sum + (pro.productPrice * pro.basketAmount)}" />
+								</c:forEach>
+								</c:if>
+							</tbody>
 						</table>
                     </div>
-                    <div class="ps-section__cart-actions"><a class="ps-btn" href="shop-default.html"><i class="icon-arrow-left"></i> Back to Shop</a><a class="ps-btn ps-btn--outline" href="shop-default.html"><i class="icon-sync"></i> Update cart</a></div>
+                    <div class="ps-section__cart-actions"><a class="ps-btn" href="shop-default.html"><i class="icon-arrow-left"></i>돌아가기</a><a class="ps-btn ps-btn--outline" href="shop-default.html"><i class="icon-sync"></i>새로고침</a></div>
                 </div>
                 <div class="ps-section__footer">
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                             <figure>
-                                <figcaption>Coupon Discount</figcaption>
+                                <figcaption>할인코드</figcaption>
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <button class="ps-btn ps-btn--outline">Apply</button>
+                                    <button class="ps-btn ps-btn--outline">입력</button>
                                 </div>
                             </figure>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
-                            <figure>
-                                <figcaption>Calculate shipping</figcaption>
-                                <div class="form-group">
-                                    <select class="ps-select">
-                                        <option value="1">America</option>
-                                        <option value="2">Italia</option>
-                                        <option value="3">Vietnam</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Town/City">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Postcode/Zip">
-                                </div>
-                                <div class="form-group">
-                                    <button class="ps-btn ps-btn--outline">Update</button>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+							<form role="form" method="post" autocomplete="off"
+								action="buyGo">
+								<figure class="orderInfo">
+									<figcaption>주문정보 입력</figcaption>
+									<div class="form-group">
+										<input type="hidden" name="amount" value="${sum }" />
+										
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="text" name="orderRec"
+											placeholder="수령인">
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="text" name="userPh"
+											placeholder="수령인 연락처">
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="text" name="userAddr"
+											placeholder="주소">
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="text" name="userZone"
+											placeholder="우편번호">
+									</div>
+									<div class="form-group">
+										<button type="submit" class="ps-btn ps-btn--outline"
+											style="margin-right: 70px;">주문</button>
+										<button class="cancel_btn ps-btn ps-btn--outline">취소</button>
+									</div>
+								</figure>
+							</form>
+						</div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="ps-block--shopping-total">
                                 <div class="ps-block__header">
-                                    <p>Subtotal <span> $683.49</span></p>
+                                    <p>상품금액 <span> <fmt:formatNumber pattern="###,###,###" value ="${sum }" /></span></p>
                                 </div>
                                 <div class="ps-block__content">
                                     <ul class="ps-block__product">
                                         <li><span class="ps-block__shop">YOUNG SHOP Shipping</span><span class="ps-block__shipping">Free Shipping</span><span class="ps-block__estimate">Estimate for <strong>Viet Nam</strong><a href="#"> MVMTH Classical Leather Watch In Black ×1</a></span></li>
                                         <li><span class="ps-block__shop">ROBERT’S STORE Shipping</span><span class="ps-block__shipping">Free Shipping</span><span class="ps-block__estimate">Estimate for <strong>Viet Nam</strong><a href="#">Apple Macbook Retina Display 12” ×1</a></span></li>
                                     </ul>
-                                    <h3>Total <span>$683.49</span></h3>
+                                    <h3>결제예정금액 <span>${sum } 원</span></h3>
                                 </div>
-                            </div><a class="ps-btn ps-btn--fullwidth" href="checkout.html">Proceed to checkout</a>
+                            </div><a class="orderOpne_bnt ps-btn ps-btn--fullwidth">주문정보 입력</a>
+                        <script src="http://code.jquery.com/jquery-latest.js"></script>
+                        <script type ="text/javascript">
+ $(".orderOpne_bnt").click(function(){
+  $(".orderInfo").slideDown();
+  $(".orderOpne_bnt").slideUp();
+ });
+ 
+ $(".cancel_btn").click(function(){
+  $(".orderInfo").slideUp();
+  $(".orderOpne_bnt").slideDown();
+ });      
+ </script>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="ps-newsletter">
-        <div class="container">
-            <form class="ps-form--newsletter" action="do_action" method="post">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                        <div class="ps-form__left">
-                            <h3>Newsletter</h3>
-                            <p>Subcribe to get information about products and coupons</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                        <div class="ps-form__right">
-                            <div class="form-group--nest">
-                                <input class="form-control" type="email" placeholder="Email address">
-                                <button class="ps-btn">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer class="ps-footer">
-        <div class="ps-container">
-            <div class="ps-footer__widgets">
-                <aside class="widget widget_footer widget_contact-us">
-                    <h4 class="widget-title">Contact us</h4>
-                    <div class="widget_content">
-                        <p>Call us 24/7</p>
-                        <h3>1800 97 97 69</h3>
-                        <p>502 New Design Str, Melbourne, Australia <br><a href="mailto:contact@martfury.co">contact@martfury.co</a></p>
-                        <ul class="ps-list--social">
-                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </aside>
-                <aside class="widget widget_footer">
-                    <h4 class="widget-title">Quick links</h4>
-                    <ul class="ps-list--link">
-                        <li><a href="#">Policy</a></li>
-                        <li><a href="#">Term & Condition</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Return</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
-                    </ul>
-                </aside>
-                <aside class="widget widget_footer">
-                    <h4 class="widget-title">Company</h4>
-                    <ul class="ps-list--link">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Affilate</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
-                    </ul>
-                </aside>
-                <aside class="widget widget_footer">
-                    <h4 class="widget-title">Bussiness</h4>
-                    <ul class="ps-list--link">
-                        <li><a href="#">Our Press</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="my-account.html">My account</a></li>
-                        <li><a href="shop-default.html">Shop</a></li>
-                    </ul>
-                </aside>
-            </div>
-            <div class="ps-footer__links">
-                <p><strong>Consumer Electric:</strong><a href="#">Air Conditioners</a><a href="#">Audios &amp; Theaters</a><a href="#">Car Electronics</a><a href="#">Office Electronics</a><a href="#">TV Televisions</a><a href="#">Washing Machines</a>
-                </p>
-                <p><strong>Clothing &amp; Apparel:</strong><a href="#">Printers</a><a href="#">Projectors</a><a href="#">Scanners</a><a href="#">Store &amp; Business</a><a href="#">4K Ultra HD TVs</a><a href="#">LED TVs</a><a href="#">OLED TVs</a>
-                </p>
-                <p><strong>Home, Garden &amp; Kitchen:</strong><a href="#">Cookware</a><a href="#">Decoration</a><a href="#">Furniture</a><a href="#">Garden Tools</a><a href="#">Garden Equipments</a><a href="#">Powers And Hand Tools</a><a href="#">Utensil &amp; Gadget</a>
-                </p>
-                <p><strong>Health &amp; Beauty:</strong><a href="#">Hair Care</a><a href="#">Decoration</a><a href="#">Hair Care</a><a href="#">Makeup</a><a href="#">Body Shower</a><a href="#">Skin Care</a><a href="#">Cologine</a><a href="#">Perfume</a>
-                </p>
-                <p><strong>Jewelry &amp; Watches:</strong><a href="#">Necklace</a><a href="#">Pendant</a><a href="#">Diamond Ring</a><a href="#">Sliver Earing</a><a href="#">Leather Watcher</a><a href="#">Gucci</a>
-                </p>
-                <p><strong>Computer &amp; Technologies:</strong><a href="#">Desktop PC</a><a href="#">Laptop</a><a href="#">Smartphones</a><a href="#">Tablet</a><a href="#">Game Controller</a><a href="#">Audio &amp; Video</a><a href="#">Wireless Speaker</a><a href="#">Done</a>
-                </p>
-            </div>
-            <div class="ps-footer__copyright">
-                <p>© 2018 Martfury. All Rights Reserved</p>
-                <p><span>We Using Safe Payment For:</span><a href="#"><img src="img/payment-method/1.jpg" alt=""></a><a href="#"><img src="img/payment-method/2.jpg" alt=""></a><a href="#"><img src="img/payment-method/3.jpg" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
-            </div>
-        </div>
-    </footer>
-    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
-    <div class="ps-site-overlay"></div>
-    <div id="loader-wrapper">
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
-        <div class="ps-search__content">
-            <form class="ps-form--primary-search" action="do_action" method="post">
-                <input class="form-control" type="text" placeholder="Search for...">
-                <button><i class="aroma-magnifying-glass"></i></button>
-            </form>
-        </div>
-    </div>
+    
+ 	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+								$(function() {
+									$('#down').click(function(e) {
+										e.preventDefault();
+										var stat = $('#quantity').text();
+										var num = parseInt(stat, 10);
+										var price = $('#price').text();
+										var total = $('#totalPrice').text();
+										num--;
+										if (num < 0) {
+											num = 0;
+										}
+										$('#quantity').text(num);
+										var cartQty = $('#quantity').html();
+	                                	$("#cartQuantity").val(cartQty);
+	                                
+	                                	$('#totalPrice').text(num * price);
+	                                	console.log($('#totalPrice').html());	
+									});
+									$('#up').click(function(e) { 
+										e.preventDefault();
+										var stat = $('#quantity').text();
+										var num = parseInt(stat, 10);
+										var price = $('#price').text();
+										var total = $('#totalPrice').text();
+										num++;
+
+										$('#quantity').text(num);
+										console.log($('#quantity').html());
+	                                	var cartQty = $('#quantity').html();
+	                                	$("#cartQuantity").val(cartQty);
+	                                	$('#totalPrice').text(num * price);
+	                                	console.log($('#totalPrice').html());
+									});
+									console.log($('#quantity').html());
+                                	var cartQty = $('#quantity').html();
+                                	$("#cartQuantity").val(cartQty);
+                                	$('#totalPrice').text(num * price);
+								});
+								
+								function buy1() {
+									   var chkbox = document.getElementsByName('check'); 
+									   var chk = 0; 
+									   var num = "";
+									   for(var i=0 ; i<chkbox.length ; i++) 
+									   { 
+									      if(chkbox[i].checked) 
+									      { 
+									         chk += 1;
+									         num+=chkbox[i].value +",";
+									      } 
+									    }
+									   if(chk == 0) {
+									      alert("구매 상품을 선택해 주세요.");
+									   }else { 
+									      location.href = "productBuy?chkNum="+ num;
+									   }
+
+									}
+							</script>
+    
     <script src="plugins/jquery-1.12.4.min.js"></script>
     <script src="plugins/popper.min.js"></script>
     <script src="plugins/owl-carousel/owl.carousel.min.js"></script>

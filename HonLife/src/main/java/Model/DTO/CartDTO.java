@@ -4,32 +4,37 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class CartDTO implements Serializable{
-	private String userNo;
 	private String productNo;
 	private Integer basketAmount;
+	private String userNo;
+	private String productName;
+	private Integer productPrice;
+	private String productPhoto;
 	
-	private MemberDTO member;
-	
-	private ProductDTO product;
 
-
-	public MemberDTO getMember() {
-		return member;
-	}
-	public void setMember(MemberDTO member) {
-		this.member = member;
-	}
-	public ProductDTO getProduct() {
-		return product;
-	}
-	public void setProduct(ProductDTO product) {
-		this.product = product;
-	}
 	public String getUserNo() {
 		return userNo;
 	}
 	public void setUserNo(String userNo) {
 		this.userNo = userNo;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public Integer getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(Integer productPrice) {
+		this.productPrice = productPrice;
+	}
+	public String getProductPhoto() {
+		return productPhoto;
+	}
+	public void setProductPhoto(String productPhoto) {
+		this.productPhoto = productPhoto;
 	}
 	public String getProductNo() {
 		return productNo;

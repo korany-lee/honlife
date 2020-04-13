@@ -5,7 +5,22 @@ public class CartCmd {
 	private String productNo;
 	private Integer productPrice;
 	private Integer cartQuantity;
+	private String productPhoto;
+	private String userName;
 	
+
+	public String getProductPhoto() {
+		return productPhoto;
+	}
+	public void setProductPhoto(String productPhoto) {
+		this.productPhoto = productPhoto;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public String getProductName() {
 		return productName;
 	}
