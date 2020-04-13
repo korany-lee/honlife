@@ -5,18 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>managermain</title>
+<title>HONLIFE - MANAGER PAGE</title>
 
 
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 <link href="../common/manager/managercss/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
 <link href="../common/manager/managercss/font-awesome.css" rel="stylesheet" type="text/css" />
 
-<script src="../common/manager/managerjs/jquery-1.11.2.min.js" type="text/javascript"></script>
-
-
-
-<script type="text/javascript" src="../common/manager/managerjs/jquery.form.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>  
 <style type="text/css">
 *{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; }
 body{background:#f0f0f0;}
@@ -43,7 +39,9 @@ body{background:#f0f0f0;}
 
 
 </style>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
+<!-- <script src="../common/manager/managerjs/jquery-1.11.2.min.js" type="text/javascript"></script>  -->
+<!-- <script type="text/javascript" src="../common/manager/managerjs/jquery.form.js"></script> -->
+ 
 <script type="text/javascript">
 
 
@@ -153,8 +151,9 @@ $(function(){
 
 	
 	
-	$('#cleanOrder').click(function(){		
-	  $.ajax({	        
+	$('#cleanOrder').click(function(){	
+		
+  $.ajax({	        
 		        type: "post",
 		        url: "cleanorder",
 		        dataType:"html",
@@ -163,7 +162,7 @@ $(function(){
 		        		},
 		        error : function error(){alert("error");}    
 		     
-		 }); 		 
+		 }); 	  
 	});
 	
 	
@@ -657,22 +656,20 @@ $(function() {
 
 
 
-<script src="../common/manager/contactform/vendor/animsition/js/animsition.min.js"></script>
-	<script src="../common/manager/contactform/vendor/bootstrap/js/popper.js"></script>
-	<script src="../common/manager/contactform/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../common/manager/contactform/vendor/bootstrap/js/popper.js"></script> 
+
 
 	<script src="../common/manager/contactform/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../common/manager/contactform/vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="../common/manager/contactform/vendor/countdowntime/countdowntime.js"></script>
-	
+	<script src="../common/manager/contactform/vendor/animsition/js/animsition.min.js"></script>
 	<script src="../common/manager/contactform/js/main.js"></script>
-
-
-
-
-</main>
+    
+	<script src="../common/manager/contactform/vendor/bootstrap/js/bootstrap.min.js"></script> 
 
 <script src="../common/manager/managerjs/jquery-accordion-menu.js" type="text/javascript"></script>
+</main>
+
+
 
 
 

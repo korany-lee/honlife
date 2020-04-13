@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 
 import Model.DTO.LoginDTO;
 import Model.DTO.MemberDTO;
+import Model.DTO.care.CleanOrderDTO;
 import Model.DTO.care.CleanRevDTO;
 import Model.DTO.care.EmployeeDTO;
 import repository.care.RegistRepository;
@@ -75,6 +76,13 @@ public class EmployeeListService {
 		
 		 
 	
+	}
+	
+	public void receivingemp(Model model, String orderNo) {
+	System.out.println("serviceEmp =====" + orderNo);
+	 String emp = 	registRepository.reOrder(orderNo);
+		
+	  model.addAttribute("emp" ,emp);
 	}
 	
 	

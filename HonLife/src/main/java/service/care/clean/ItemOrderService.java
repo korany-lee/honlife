@@ -31,7 +31,7 @@ public void orderInsert(ItemOrderCommand itemOrderCommand, Model model) {
 	System.out.println("receiveDate= " + receiveDate);
 	dto.setCleanorderDate(orderDate);
 	dto.setCleanorderReceiveDate(receiveDate);
-	
+
 	dto.setCleanorderCompanyName(itemOrderCommand.getCleanorderCompanyName());
 	dto.setCleanorderAddress(itemOrderCommand.getCleanorderAddress());
 	dto.setCleanorderCompanyPh(itemOrderCommand.getCleanorderCompanyPh());
@@ -60,7 +60,7 @@ public void itemInsert(ItemCommand itemCommand, ItemOrderCommand itemOrderComman
 	dto1.setCleanitemPrice( itemCommand.getCleanitemPrice());
 	dto1.setCleanitemQty(itemCommand.getCleanitemQty());		
 	dto1.setCleanitemSumprice( itemCommand.getCleanitemSumprice());
-
+	dto1.setCleanitemrealQty(itemCommand.getCleanitemrealQty());
 	System.out.println("dto1==="+dto1.getCleanitemPrice());
 	System.out.println("dto1==="+dto1.getCleanitemName());
 	System.out.println("dto1==="+dto1.getCleanitemQty());

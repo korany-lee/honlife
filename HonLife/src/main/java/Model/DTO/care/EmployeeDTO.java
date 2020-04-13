@@ -8,6 +8,12 @@ public class EmployeeDTO implements Serializable{
 	
 
 
+	public CleanOrderDTO getCo() {
+		return co;
+	}
+	public void setCo(CleanOrderDTO co) {
+		this.co = co;
+	}
 	public Integer getRevChk() {
 		return revChk;
 	}
@@ -48,6 +54,7 @@ public class EmployeeDTO implements Serializable{
 	String employeeEmail;
 	CleanRevDTO cr;
 	Integer revChk;
+	CleanOrderDTO co;
 	
 
 	

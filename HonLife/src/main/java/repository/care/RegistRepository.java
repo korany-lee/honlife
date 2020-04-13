@@ -122,12 +122,12 @@ public class RegistRepository {
         for(int i = 0 ; i < dto.getCleanitemPrice().size(); i++) {
         	CleanitemInsert	 in = new CleanitemInsert();
         	in.setCleanorderNo(dto.getCleanorderNo());
-        	 in.setEmployeeNo(dto.getEmployeeNo());
+        	in.setEmployeeNo(dto.getEmployeeNo());
         	in.setCleanitemPrice(dto.getCleanitemPrice().get(i));
         	in.setCleanitemName(dto.getCleanitemName().get(i));
         	in.setCleanitemQty(dto.getCleanitemQty().get(i));
         	in.setCleanitemSumprice(dto.getCleanitemSumprice().get(i));
-              	
+            in.setCleanitemrealQty(dto.getCleanitemrealQty().get(i));  	
         	sqlSession.insert(statement,in);
         	}
         
@@ -227,5 +227,17 @@ public class RegistRepository {
 		
 	}
 	
+	public String reOrder(String orderNo){
+		
+		String statement = namespace+ ".resel";
+		
+		return sqlSession.selectOne(statement,orderNo);
+	}
+	
+	public List<CleanitemInsert> tableview(String orderNo){
+		
+		String statement = namespace + ".table";
+		return sqlSession.selectList(statement,orderNo);
+	}
 	
 }

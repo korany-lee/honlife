@@ -5,9 +5,16 @@ import java.util.List;
 public class ItemCommand {
 	
 	
+	public List<String> getCleanitemrealQty() {
+		return cleanitemrealQty;
+	}
+	public void setCleanitemrealQty(List<String> cleanitemrealQty) {
+		this.cleanitemrealQty = cleanitemrealQty;
+	}
 	List<String> cleanitemName;
 	List<String> cleanitemPrice;
 	List<String> cleanitemQty;
+	List<String> cleanitemrealQty;
 	List<String> cleanitemSumprice;
 
 	public List<String> getCleanitemName() {

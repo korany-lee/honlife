@@ -129,6 +129,7 @@ ORIGINAL_FILE_NAME, STORE_FILE_NAME, FILE_SIZE, RECRUIT_PHOTO,POSTCODE,POINTS
         <result  column="EMPLOYEE_EMAIL" jdbcType="VARCHAR" property="employeeEmail" />
         <result column="REV_CHK" jdbcType="BIGINT" property="revChk"/>
         <association property="cr" javaType="Model.DTO.care.CleanRevDTO" resultMap="rev" />
+        <association property="co" javaType="Model.DTO.care.CleanOrderDTO" resultMap="orderList"></association>
 </resultMap>
 
 <resultMap type="Model.DTO.care.EmployeeDTO" id="emprev">
@@ -237,6 +238,7 @@ and        c.cleanorder_no = t.cleanorder_no
 			<result column="CLEANITEM_NAME" jdbcType="VARCHAR" property="cleanitemName"/>
 			<result column="CLEANITEM_PRICE" jdbcType="VARCHAR" property="cleanitemPrice"/>
 			<result column="CLEANITEM_QTY" jdbcType="VARCHAR" property="cleanitemQty"/>
+			<result column="CLEANITEM_REALQTY" jdbcType="VARCHAR" property="cleanitemrealQty"/>
 			<result column="CLEANITEM_SUMPRICE" jdbcType="VARCHAR" property="cleanitemSumprice"/>
 			<result column="EMPLOYEE_NO" jdbcType="VARCHAR" property="employeeNo"/>
 			<result column="ClEANORDER_NO" jdbcType="VARCHAR" property="cleanorderNo"/>
@@ -251,14 +253,14 @@ and        c.cleanorder_no = t.cleanorder_no
 </update>
 <sql id="itemBase">
 	CLEANITEM_NO, CLEANITEM_NAME, CLEANITEM_PRICE, CLEANITEM_QTY,
-    CLEANITEM_SUMPRICE ,EMPLOYEE_NO,ClEANORDER_NO
+    CLEANITEM_SUMPRICE ,EMPLOYEE_NO,ClEANORDER_NO,CLEANITEM_REALQTY
 </sql>
 
 <insert id="itemInsert">
 
 		insert into cleanitem (<include refid="itemBase"/>)
 		values ( item_seq.nextval,#{cleanitemName}, #{cleanitemPrice} ,#{cleanitemQty}, #{cleanitemSumprice},
-					#{employeeNo},#{cleanorderNo})
+					#{employeeNo},#{cleanorderNo},#{cleanitemrealQty})
 
 </insert>
 
@@ -476,6 +478,25 @@ from cleanrev c , member m ,
 
 </select>
 
+<select id="resel" parameterType="string" resultType="string" >
+	select e.employee_no, e.employee_name
+	from employee e
+	where e.employee_no in 
+							(select  o.employee_no
+								from cleanorder o 
+								where cleanorder_no = #{cleanorderNo} 						
+							)
+	and e.employee_workfield = 'cm'				
+							
+</select>
+
+<select id="table" parameterType="string" resultMap="itemList">
+
+	select * 	 
+	from cleanitem 
+	where cleanorder_no = #{cleanorderNo}
+
+</select>
 
 
 </mapper>

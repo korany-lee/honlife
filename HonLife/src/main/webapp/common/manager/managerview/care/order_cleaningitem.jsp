@@ -216,12 +216,12 @@
         
         var newRow = $("<tr>");
         var cols = "";
-
+        var realQty = $('#cleanitemQty').val();
         
         
         cols +='<td><div class="wrap-input1001 bg1 rs1-wrap-input10011"><input class="input1001n" type="text"id="cleanitemName" name="cleanitemName['+counter+']"  placeholder="품명"/></div></td>';					     
         cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001p" type="text" id="cleanitemPrice" name="cleanitemPrice['+counter+']"  placeholder="단가"/></div></td>';				
-        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" id="cleanitemQty" name="cleanitemQty['+counter+']"   placeholder="수량"/></div></td>';			
+        cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001q" type="text" id="cleanitemQty" name="cleanitemQty['+counter+']"   placeholder="수량"/><input type="hidden" name="cleanitemrealQty['+counter+']" id="cleanitemrealQty"    /> </div></td>';			
         cols +=	'<td><div class="wrap-input1001 bg1 rs1-wrap-input1001"><input class="input1001s" type="text" id="cleanitemSum" name="cleanitemSumprice['+counter+']"  placeholder="총액"/></div></td>';			
         cols += '<td><input type="button" name="delRow" class="contact100-form-btn2" value="물품 삭제"  style="cursor:pointer"/></td>';
     
@@ -233,6 +233,21 @@
     	$('.input1001p, .input1001q, .input1001s').keyup(function(){			
     		$(this).val( $(this).val().replace(/[^0-9]/gi,"") ); //숫자만 입력가능
     	});
+    	
+    	$('#cleanitemQty').keyup(function(){
+    		
+    		$('#cleanitemrealQty').val($('#cleanitemQty').val());
+    		
+    		
+    	});
+    	
+    	
+    	
+    		
+    		
+    		
+    		
+    	
     });
     
     

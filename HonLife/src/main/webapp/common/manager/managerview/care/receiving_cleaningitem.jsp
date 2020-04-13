@@ -10,6 +10,8 @@
 
 
 <head>
+<meta charset="UTF-8">
+ <script src="https://code.jquery.com/jquery-latest.js"></script>
 
 
 	<link rel="icon" type="image/png" href="../common/manager/contactform/images/icons/favicon.ico"/>
@@ -29,32 +31,9 @@
 
       <!--JavaScript at end of body for optimized loading-->
       <link type="text/css" rel="stylesheet" href="../careView/css/materialize.min.css"  media="screen,projection"/>
+
+
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script type="text/javascript" >
-	$(function(){
-		
-		$('#empList').change(function(){	
-			  $.ajax({	        
-				        type: "post",
-				        url: "empList",
-				        dataType:"html",
-				        success : function test(data){ 
-				        		$("#maincall").html(data); 
-				        		},
-				        error : function error(){alert("error");}    
-				     
-				 }); 		 
-			});
-		
-		
-		
-		
-	})
-
-
-</script>
-
-
 <script  type="text/javascript" src="../careView/js/materialize1.js"></script>
 </head>
 
@@ -67,21 +46,17 @@
 			
  
       <div class="row">
-        <div class="input-field col s6">
-       <select class="browser-default" name="cleanrevTime" id="orderEmp">
+        <div class="input-field col s6" >
+       <select class="browser-default" name="company" id="company">
     	 <option value="" disabled selected >입고처를 선택해주세요!</option>
     	 <c:forEach items="${orders }" var="order" varStatus="i">
-    	 <option value="${order.cleanorderNo }" >${order.cleanorderCompanyName }</option>
-    	 
+    	 <option value="${order.cleanorderNo}">${order.cleanorderCompanyName }</option>    	 
     	 </c:forEach>
 
   		</select>
         </div>
-        <div class="input-field col s6" >
-      <select class="browser-default" name="cleanrevTime" id="orderNo">
-    	 <option value="" disabled selected >반출사원의 사번을 선택하세요!</option>
-
-  		</select>
+        <div class="input-field col s6" id="empsel">
+      <input type="text" value="" name="orderEmp" >
         </div>
       
       </div>
@@ -100,11 +75,40 @@
 	 document.getElementById('orderInDate').value= 
 			new Date().toISOString().substring(0,10);
 
+		$('#company').change(function(){	
+				console.log($('#company').val());
+         $.ajax({	        
+				        type: "post",
+				        url: "receivingEmp?num="+$('#company').val(),
+				        dataType:"html",
+				        success : function test(data){ 
+				        		$("#empsel").html(data); 
+				        		},
+				        error : function error(){alert("error");}    
+				     
+				 }); 
+			}); 
+		
+		$('#company').keyup(function(){			
+		      $.ajax({	        
+			        type: "post",
+			        url: "receivingtable?num="+$('#company').val(),
+			        dataType:"html",
+			        success : function test(data){ 
+			        		$("#itemTable").html(data); 
+			        		},
+			        error : function error(){alert("error");}    
+			     
+			 }); 
+		}); 
+			
+	
+	});
 
 	
 	
 	  
-   $('select#cleanrevTime').change( function() {		 
+  /*  $('select#cleanrevTime').change( function() {		 
 	   console.log($('.datepicker').datepicker().val()); 
 	   console.log($('select#cleanrevTime').val());
 	    	$.ajax({
@@ -116,13 +120,13 @@
 	   			 $('#employee').html(data1);   			 
 		   		}	   			   	
 		   	}); 		    
-	   }); 
+	   });  */
    
 
- });
+
 </script>
 
-    <div class="input-field col s6" >   
+    <div class="input-field col s6" id="itemTable" >   
 
      </div>
      

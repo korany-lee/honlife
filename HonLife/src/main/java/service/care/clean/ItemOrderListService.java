@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 
 import Model.DTO.care.CleanItemDTO;
 import Model.DTO.care.CleanOrderDTO;
+import Model.DTO.care.CleanitemInsert;
 import Model.DTO.care.EmployeeDTO;
 import Model.DTO.care.EmptoItemOrderDTO;
 import repository.care.RegistRepository;
@@ -23,6 +24,13 @@ public class ItemOrderListService {
 
 		
 		model.addAttribute("orders" , orders);
+	}
+	
+	public void tableview(Model model,String orderNo) {
+		
+		List<CleanitemInsert> itemIn = registRepository.tableview(orderNo);
+			
+		model.addAttribute("table" , itemIn);
 	}
 	
 
