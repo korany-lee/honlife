@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 
 import Model.DTO.CartDTO;
 import Model.DTO.LoginDTO;
-import Model.DTO.MemberDTO;
 import Model.DTO.ProductDTO;
 import command.shop.CartCmd;
+import command.shop.OrderListVO;
+import command.shop.OrdershopCMD;
+import command.shop.OrdershopDetailsCMD;
 import repository.shop.MemberRepository;
 import repository.shop.ProductRepository;
 import repository.shop.ShopListRepository;
@@ -41,24 +43,24 @@ public class ShopListService {
 		ProductDTO dto = slr.detail(productNo);
 		model.addAttribute("product", dto);
 	}
-	
+	//장바구니
 	public void cartGo(CartCmd cart, Model model, HttpSession session) {
 		System.out.println("cart quantity: "+ cart.getCartQuantity());
 		CartDTO dto = new CartDTO();
 		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
-		dto.setUserNo(login.getUserNo());
-		System.out.println("userno:"+dto.getUserNo());
 		dto.setProductNo(cart.getProductNo());
 		System.out.println("productNo: "+dto.getProductNo());
 		dto.setBasketAmount(cart.getCartQuantity());
 		System.out.println("cartQuantity: "+dto.getBasketAmount());
+		dto.setProductPhoto(cart.getProductPhoto());
+		dto.setUserNo(login.getUserNo());
+		dto.setProductName(cart.getProductName());
+		dto.setProductPrice(cart.getProductPrice());
 		
 		slr.cart(dto);
-		System.out.println("가져온 dto값: "+ dto.getUserNo());
 		
-		List<CartDTO> cartList = slr.cartSelect(dto.getUserNo());
+		List<CartDTO> dto2 = slr.cartSelect(dto.getUserNo());
 		
-		MemberDTO mdto = mr.selectOneMem(login.getUserId());
 		List<String> pNo = pr.selectNo(login.getUserNo()); // 장바구니에서 상품 번호 다 가져옴
 		
 		List<ProductDTO> product = new ArrayList<>();
@@ -68,8 +70,32 @@ public class ShopListService {
 		}
 		System.out.println("내가 가져온 상품 정보 갯수는?" + product.size());
 		
-		model.addAttribute("cart", cartList);
+		model.addAttribute("cart", dto2);
 		model.addAttribute("product", product);
-		model.addAttribute("memList", mdto);
-	}	
+	}
+	//주문 정보
+	public void orderInfo(OrdershopCMD order) {
+		pr.orderInfo(order);
+	}
+	
+	//주문 상세정보
+	public void orderInfoDetails(OrdershopDetailsCMD orderDetail) {
+		pr.orderInfoDetail(orderDetail);
+	}
+	
+	//장바구니 삭제(주문시)
+	public void cartAllDelete(String userNo) {
+		pr.cartAllDelete(userNo);
+	}
+	
+	//특정 id 주문 목록
+	public List<OrdershopCMD> orderList(OrdershopCMD order) {
+		return pr.orderList(order);
+	}
+	
+	//특정 주문 목록
+	public List<OrderListVO> orderView(OrdershopCMD order){
+		return pr.orderView(order);
+	}
+	
 }

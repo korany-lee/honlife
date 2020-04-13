@@ -53,23 +53,96 @@
 select * from product where product_no = #{productNo}
 </select> 
 
+<sql id="cartColumn">
+	USER_NO, PRODUCT_NO, BASKET_AMOUNT, PRODUCT_NAME, PRODUCT_PHOTO, PRODUCT_PRICE
+</sql>
+
 <resultMap type="Model.DTO.CartDTO" id="cart">
 		<id column="user_no" jdbcType="VARCHAR" property="userNo" />
-		<id  column="product_no" jdbcType="VARCHAR" property="productNo" />
+		<result  column="product_no" jdbcType="VARCHAR" property="productNo" />
 		<result  column="basket_amount" jdbcType="INTEGER" property="basketAmount" />
+		<result  column="product_name" jdbcType="VARCHAR" property="productName" />
+		<result  column="product_photo" jdbcType="VARCHAR" property="productPhoto" />
+		<result  column="product_price" jdbcType="INTEGER" property="productPrice" />
 </resultMap>
 
 <insert id="cartInsert" parameterType="Model.DTO.CartDTO">
-	insert into basket
-	values(#{basketAmount,jdbcType=INTEGER},#{productNo},#{userNo})
+	insert into cart (<include refid="cartColumn" />)
+	values(#{userNo,jdbcType=VARCHAR},#{productNo,jdbcType=VARCHAR},#{basketAmount,jdbcType=INTEGER},
+	#{productName,jdbcType=VARCHAR},#{productPhoto,jdbcType=VARCHAR},#{productPrice,jdbcType=INTEGER})
 </insert>
 
 <select id="selectNum" parameterType="string" resultType="string" >
-select product_no from basket where user_no =#{userNo}
+select product_no from cart where user_no = #{userNo}
 </select>
 
 <select id="selectCart" parameterType="String" resultMap="cart" >
-select basket_amount, product_no, user_no from basket where user_no = #{userNo}
+select <include refid="cartColumn" />
+from cart where user_no = #{userNo}
+</select>
+
+<insert id="orderInfo">
+	insert into ordershop
+	(order_no, user_no, order_rec, USER_ADDR, USER_ZONE, USER_PH, amount)
+	values (#{orderNo},#{userNo},#{orderRec},#{userAddr},#{userZone},#{userPh},#{amount})
+</insert>
+
+<insert id="orderInfoDetail">
+	insert into ordershop_details (order_details_num, order_no, gds_num, cart_stock)
+		select order_details_seq.nextval, #{orderNo}, product_no, basket_amount from cart
+</insert>
+
+<delete id="cartAllDelete">
+	delete cart
+		where user_no = #{userNo}
+</delete>
+
+<resultMap type="command.shop.OrdershopCMD" id="order">
+		<id column="order_no" jdbcType="VARCHAR" property="orderNo" />
+		<result  column="user_no" jdbcType="VARCHAR" property="userNo" />
+		<result  column="order_rec" jdbcType="VARCHAR" property="orderRec" />
+		<result  column="user_addr" jdbcType="VARCHAR" property="userAddr" />
+		<result  column="user_ph" jdbcType="VARCHAR" property="userPh" />
+		<result  column="amount" jdbcType="INTEGER" property="amount" />
+		<result  column="order_date" jdbcType="DATE" property="orderDate" />
+</resultMap>
+
+<resultMap type="command.shop.OrderListVO" id="orderList">
+		<id column="order_no" jdbcType="VARCHAR" property="orderNo" />
+		<result  column="user_no" jdbcType="VARCHAR" property="userNo" />
+		<result  column="order_rec" jdbcType="VARCHAR" property="orderRec" />
+		<result  column="user_addr" jdbcType="VARCHAR" property="userAddr" />
+		<result  column="user_ph" jdbcType="VARCHAR" property="userPh" />
+		<result  column="amount" jdbcType="INTEGER" property="amount" />
+		<result  column="order_date" jdbcType="DATE" property="orderDate" />
+		<result  column="order_details_num" jdbcType="INTEGER" property="orderDetailsNum" />
+		<result  column="gds_num" jdbcType="INTEGER" property="gdsNum" />
+		<result  column="cart_stock" jdbcType="INTEGER" property="cartStock" />
+		<result  column="product_name" jdbcType="VARCHAR" property="productName" />
+		<result  column="product_photo" jdbcType="VARCHAR" property="productPhoto" />
+		<result  column="product_price" jdbcType="INTEGER" property="productPrice" />
+</resultMap>
+
+<!-- 특정 유저의 주문 목록 -->
+<select id="orderList" resultType="command.shop.OrdershopCMD" resultMap="order" parameterType="String">
+	select 
+		order_no, user_no, order_rec, user_addr, user_ph, amount, order_date
+	from ordershop
+		where user_no = #{userNo}
+</select>
+
+<select id="orderView" resultType="command.shop.OrderListVO" resultMap="orderList">
+ select
+     o.order_no, o.user_no, o.order_rec, o.user_addr,o.user_zone, o.amount, o.order_date,
+     d.order_details_num, d.gds_num, d.cart_stock,
+     g.product_name, g.product_photo, g.product_price
+ from ordershop o
+         inner join ORDERSHOP_DETAILS d
+             on o.order_no = d.order_no
+         inner join product g
+             on d.gds_num = g.product_no
+     where o.user_no = #{userNo}
+         and o.order_no = #{orderNo}
 </select>
 
 

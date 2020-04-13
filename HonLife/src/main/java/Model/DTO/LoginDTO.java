@@ -7,6 +7,14 @@ public class LoginDTO implements Serializable {
 	String userNo;
 	String userId;
 	String userPw;
+	String userName;
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public String getUserNo() {
 		return userNo;
 	}

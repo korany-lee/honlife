@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Model.DTO.LoginDTO;
 import Validator.roomCommandValidator;
 import command.stay.room.ReservationCommand;
 import command.stay.room.RoomCommand;
@@ -90,17 +91,21 @@ public class RoomController {
 	@RequestMapping("/room/ReservationTimeCheck")  //방 예약 여부 확인
 	public String dateCheck(@RequestParam(value="startdate")String start,@RequestParam(value="enddate")String end,
 			@RequestParam(value="roomNo")String room, Model model) {
-			String abc = dateCheckService.check(start,end,room,model);
-			if(abc==null) {
-				return "stayView/memberView/room/room_reservation";		
-			}else {
-				model.addAttribute("roomNo", room);
-				return "stayView/memberView/room/room_fail";
-			}		
+		String abc = dateCheckService.check(start,end,room,model);
+
+		if(abc==null) {
+			return "stayView/memberView/room/room_reservation";		
+		}else {
+			model.addAttribute("roomNo", room);
+			return "stayView/memberView/room/room_fail";
+		}		
 	}
 	
 	@RequestMapping("/room/payment")    //카카오페이 결제창으로
-	public String pay(ReservationCommand revCommand,Model model) {
+	public String pay(ReservationCommand revCommand,Model model,HttpSession session) {
+		LoginDTO login = (LoginDTO)session.getAttribute("memberInfo");
+		String userNo = login.getUserNo();
+		model.addAttribute("userNo", userNo);
 		model.addAttribute("rev", revCommand);
 		return "stayView/memberView/room/kakaoPay";
 	}
@@ -108,9 +113,10 @@ public class RoomController {
 	@RequestMapping("/room/reservationFinish")   //예약정보 저장
 	public String paySuccess(ReservationCommand revCommand,Model model,HttpSession session,HttpServletRequest request) throws Exception {
 		
-		roomRevInsertService.revInsert(revCommand,model,session);
-		roomRevListService.revChk(model,session,revCommand.getStartDate());
-		roomRevListService.sendSMS(revCommand,request);
+		roomRevInsertService.revInsert(revCommand); 
+		 roomRevListService.revChk(model,session,revCommand.getStartDate());
+		 roomRevListService.sendSMS(revCommand,request);
+		 
 		return "stayView/memberView/room/reservation_finish";
 	}
 	

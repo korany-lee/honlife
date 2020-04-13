@@ -45,8 +45,11 @@ public class RoomRevListService {
 	
 	
 	public void revChk(Model model,HttpSession session,String start) {
+		System.out.println("체크 들어옴");
 		LoginDTO login  = (LoginDTO)session.getAttribute("memberInfo");
 		RoomRevDTO dto = reservationRepository.revChk(login.getUserNo());
+		System.out.println("맨 위 예약 들어오는거");
+		System.out.println("예약시간" + dto.getRoomRevStartDate() +"~" + dto.getRoomRevEndDate());
 		memberRegMailService.sendMail(dto.getRoomRevEmail(), dto.getRoomRevNo(),dto.getRoomLiveName(),dto.getRoomRevStartDate());
 		
 		
@@ -56,6 +59,7 @@ public class RoomRevListService {
 	}
 	
 	public void sendSMS(ReservationCommand revCommand,HttpServletRequest request) throws Exception {
+		System.out.println("메일 보내러 들어옴");
 		String api_key = "NCSW6VCZXODXGPOX"; //사이트에서 발급 받은 API KEY 
 		String api_secret = "UZMGJ9ADCK2LCTIEWQRITSVRXW3J0B3T"; //사이트에서 발급 받은 API SECRET KEY 
 		Message coolsms = new Message(api_key, api_secret); 

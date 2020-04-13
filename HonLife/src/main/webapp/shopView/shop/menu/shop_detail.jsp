@@ -70,23 +70,35 @@
                                 <figure>
                                     <div class="ps-wrapper">
                                         <div class="ps-product__gallery" data-arrow="true">
-                                            <div class="item"><a href="./../img/products/detail/fullwidth/1.jpg"><img src="img/products/detail/fullwidth/1.jpg" alt=""></a></div>
-                                            <div class="item"><a href="./../img/products/detail/fullwidth/2.jpg"><img src="img/products/detail/fullwidth/2.jpg" alt=""></a></div>
-                                            <div class="item"><a href="./../img/products/detail/fullwidth/3.jpg"><img src="img/products/detail/fullwidth/3.jpg" alt=""></a></div>
-                                        </div>
+                                            <div class="item">
+										<c:forTokens items="${product.productPhoto }" delims="-"
+											var="proImg" varStatus="ii">
+											<c:if test="${ii.index == 0}">
+												<img src="../update/${proImg }" />
+											</c:if>
+										</c:forTokens>
+									</div>
+                                    </div>
                                     </div>
                                 </figure>
-                                <div class="ps-product__variants" data-item="4" data-md="4" data-sm="4" data-arrow="false">
-                                    <div class="item"><img src="./../img/products/detail/fullwidth/1.jpg" alt=""></div>
-                                    <div class="item"><img src="./../img/products/detail/fullwidth/2.jpg" alt=""></div>
-                                    <div class="item"><img src="./../img/products/detail/fullwidth/3.jpg" alt=""></div>
-                                </div>
-                            </div>
+								<div class="ps-product__variants" data-item="4" data-md="4"
+									data-sm="4" data-arrow="false">
+										<c:forTokens items="${product.productPhoto }" delims="-"
+											var="proImg">
+									<div class="item">
+											
+												<img src="../update/${proImg }" />
+											
+									</div>
+										</c:forTokens>
+								</div>
+							</div>
                             <div class="ps-product__info">
                             <form id="cart" name="shopCart" method="post" action="../cartGo">
                             <input type="hidden" name="productName" value="${product.productName }"/>
                             <input type="hidden" name="productNo" value="${product.productNo }"/>
                             <input type="hidden" name="productPrice" value="${product.productPrice }"/>
+                            <input type="hidden" name="productPhoto" value="${product.productPhoto } "/>
                                 <h1>${product.productName }</h1>
                                 <div class="ps-product__meta">
                                     <p>Brand:<a href="shop-default.html">SSG</a></p>
@@ -155,6 +167,9 @@
                                 	var cartQty = $('#quantity').html();
                                 	$("#cartQuantity").val(cartQty);                           	
                                 	});
+                                	console.log($('#quantity').html());
+                                	var cartQty = $('#quantity').html();
+                                	$("#cartQuantity").val(cartQty); 
                                 	});
        					</script>
 									<input type="hidden" name="${product.productNo }"/>

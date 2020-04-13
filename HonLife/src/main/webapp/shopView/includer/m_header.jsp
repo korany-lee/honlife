@@ -185,7 +185,7 @@
 							</c:if>
 							<c:if test="${!empty memberInfo }">
 							<div class="ps-block__right">
-								<a href="logout">로그아웃</a><a href="myShop">마이페이지</a>
+								<a href="logout">로그아웃</a><a href="orderList">마이페이지</a>
 							</div>
 							</c:if>
                         </div>

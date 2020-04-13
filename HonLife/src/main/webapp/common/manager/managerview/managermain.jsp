@@ -567,6 +567,9 @@ $(function(){
 						<li><a href="#" id="roomRevList">객실 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>
+						<li><a href="realTime" id="roomRevList">실시간 예약 내역 </a>
+							<span class="jquery-accordion-menu-label">count</span>
+						</li>
 						<li><a href="#" id="furnitureRevList">가구 예약 내역 </a>
 							<span class="jquery-accordion-menu-label">count</span>
 						</li>					
