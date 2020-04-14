@@ -430,6 +430,7 @@ c.CLEANREV_ADDR, c.REV_PAY, c.REV_COUNT, c.REV_CHK
 	<result column="LAUNDRYREV_DATE" jdbcType="TIMESTAMP" property="laundryrevDate"/>
 	<result column="LAUNDRYREV_RECDATE" jdbcType="TIMESTAMP" property="laundryrevRecdate"/>
 	<result column="LAUNDRYREV_ADDR" jdbcType="VARCHAR" property="laundryrevAddr"/>
+	<association property="mdto" javaType="Model.DTO.MemberDTO" resultMap="baseMember" />
 </resultMap>
 <select id="Ldtatil" parameterType="string" resultMap="laundryMap">
 
@@ -473,9 +474,9 @@ from cleanrev c , member m ,
 
 <select id="laundryList" resultMap="laundryMap">
 
-	select *
-	from laundryrev 
-
+	select l.* , m.*
+	from laundryrev l  , member m
+	where l.user_No = m.user_No
 </select>
 
 <select id="resel" parameterType="string" resultType="string" >
@@ -495,6 +496,14 @@ from cleanrev c , member m ,
 	select * 	 
 	from cleanitem 
 	where cleanorder_no = #{cleanorderNo}
+
+</select>
+
+<select id="empDel" parameterType="string">
+ delete from employee
+ where employee_no = #{employeeNo}
+	
+ 
 
 </select>
 

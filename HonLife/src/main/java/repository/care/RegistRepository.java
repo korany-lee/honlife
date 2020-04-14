@@ -247,4 +247,10 @@ public class RegistRepository {
 		return sqlSession.selectList(statement,orderNo);
 	}
 	
+	public void  empdel(String empNo) {
+		String statement = namespace + ".empDel";
+	   sqlSession.selectList(statement,empNo);
+	
+	}
+	
 }

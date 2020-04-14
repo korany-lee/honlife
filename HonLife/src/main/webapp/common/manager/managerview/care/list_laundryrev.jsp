@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사원 목록</title>
+<title>세탁 예약목록</title>
 </head>
 
 
@@ -53,7 +53,7 @@
 									
 									<div class="td">
 										<span >
-											<input style="background-color: transparent; cursor:pointer; color: #9fa7a7" id="reciver" class="boardList" type="text" value="${ll.userNo}" readonly="readonly">
+											<input style="background-color: transparent; cursor:pointer; color: #9fa7a7" id="reciver" class="boardList" type="text" value="${ll.mdto.userName}" readonly="readonly">
 										</span>
 										
 									</div>

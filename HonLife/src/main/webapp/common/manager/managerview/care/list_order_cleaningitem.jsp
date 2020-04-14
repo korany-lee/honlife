@@ -60,9 +60,9 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 	
 		<section class="animate-in-view">
-			<div class="section-content clearfix">
+			<div class="section-content clearfix" style=" margin-top: 20px;">
 			
-			<span  style="font-size: 40px;"> 지원자 리스트</span>
+			<span  style="font-size: 40px;"> 발주 목록</span>
 	        </div>
 	
 

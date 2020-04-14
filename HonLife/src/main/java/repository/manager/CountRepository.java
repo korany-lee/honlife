@@ -21,6 +21,17 @@ public class CountRepository {
 		return  sqlSession.selectOne(statement);
 	}
 	
+	public Integer cleanCount() {
+		String statement = namespace +".cleancount";	
+		
+		return  sqlSession.selectOne(statement);
+	}
+	
+	public Integer laundryCount() {
+		String statement = namespace +".laundrycount";	
+		return  sqlSession.selectOne(statement);
+	}
+	
 	
 	
 }

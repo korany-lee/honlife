@@ -23,7 +23,7 @@
         <bean id="mailSend" class="service.care.clean.MailSend" />
         <bean id="mailService" class="service.care.clean.MailService" />
   		<bean id="tableDetailService" class="service.care.clean.TableDetailService" />
-		
+		<bean id="empDeleteService" class="service.care.clean.EmpDeleteService" />
        	<bean id="personalityService" class="service.care.clean.PersonalityService" />
         <bean id="interviewListService" class="service.care.clean.InterviewListService"/>
         

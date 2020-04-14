@@ -14,8 +14,8 @@ public class ManagerMainController {
 	@RequestMapping("/manager/main")
 	public String main(Model model) {
 		
-		listCountService.recCount(model); 
-		listCountService.empCount(model);
+	
+		
 		return "common/manager/managerview/managermain";
 	}
 	

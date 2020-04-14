@@ -481,10 +481,10 @@ $(function(){
 		   		<a href="#">회원관리 </a>
 					<ul class="submenu">
 						<li><a href="#">회원 리스트 </a>
-								<span class="jquery-accordion-menu-label">count</span>
+				
 						</li>									
 						<li><a href="#">회원 블랙리스트 </a> 
-								<span class="jquery-accordion-menu-label">count</span>
+						
 						</li>
 					</ul>
 			</li>			
@@ -493,11 +493,11 @@ $(function(){
 				<ul class="submenu">
 					<li><a href="#" id="cleanOrder">청소 물품 발주 </a></li>
 					<li><a href="#" id="cleanItemList">발주 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+				
 		  			</li>												
 					<li><a href="#" id="itemreceiving">청소 물품 반출 </a></li>
 					<li><a href="#">반출 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+					
 					</li>				
 				</ul>
 			</li>		
@@ -506,7 +506,7 @@ $(function(){
 				<ul class="submenu">
 					<li><a href="#" id="roomRegister">객실 등록 </a></li>
 					<li><a href="#" id="roomList">객실 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+					
 		  			</li>
 		  			
 		  								
@@ -518,7 +518,7 @@ $(function(){
 				<ul class="submenu">
 					<li><a href="#" id="funitureRegister">가구 등록 </a></li>
 					<li><a href="#" id="funitureList">가구 리스트 </a>
-						<span class="jquery-accordion-menu-label">count</span>
+						
 		  			</li>
 		  								
 					
@@ -529,49 +529,31 @@ $(function(){
 				<a href="#">사원관리 </a>
 				<ul class="submenu">
 					<li><a href="#" id="recruitList">지원자 리스트 </a>
-						<span class="jquery-accordion-menu-label">
-						
-						<c:if test="${recruitcount == null }">
-						0
-						</c:if>		
-						<c:if test="${recruitcount >0 }">
-							${recruitcount}
-						</c:if>
-						
-						</span>
+				
 						</li>
 						
 						<li><a href="#" id="interview">면접대기자 </a></li>		
 						<li><a href="#" id="empList">사원 리스트 </a>
-						<span class="jquery-accordion-menu-label">
-						<c:if test="${employeecount == null }">
-						0
-						</c:if>
-						<c:if test="${employeecount >0 }">
-							${employeecount}
-						</c:if>
-						
-						
-						</span>
+				
 						</li>
 				</ul>
 			</li>		
 				<li><a href="#">예약관리 </a>
 					<ul class="submenu">			
 						<li><a href="#" id="cleanrevList">청소 예약 내역</a>
-							<span class="jquery-accordion-menu-label">count</span>
+							
 						</li>
 						<li><a href="#" id="laundryList">세탁 예약 내역 </a>
-							<span class="jquery-accordion-menu-label">count</span>
+						
 						</li>
 						<li><a href="#" id="roomRevList">객실 예약 내역 </a>
-							<span class="jquery-accordion-menu-label">count</span>
+							
 						</li>
 						<li><a href="realTime" id="roomRevList">실시간 예약 내역 </a>
-							<span class="jquery-accordion-menu-label">count</span>
+						
 						</li>
 						<li><a href="#" id="furnitureRevList">가구 예약 내역 </a>
-							<span class="jquery-accordion-menu-label">count</span>
+				
 						</li>					
 				</ul>
 				</li>	

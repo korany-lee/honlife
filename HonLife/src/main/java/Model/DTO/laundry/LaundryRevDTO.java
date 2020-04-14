@@ -3,8 +3,16 @@ package Model.DTO.laundry;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import Model.DTO.MemberDTO;
+
 @SuppressWarnings("serial")
 public class LaundryRevDTO implements Serializable{
+	public MemberDTO getMdto() {
+		return mdto;
+	}
+	public void setMdto(MemberDTO mdto) {
+		this.mdto = mdto;
+	}
 	public String getLaundryrevNo() {
 		return laundryrevNo;
 	}
@@ -40,5 +48,7 @@ public class LaundryRevDTO implements Serializable{
 	Timestamp laundryrevDate; 
 	Timestamp laundryrevRecdate;
 	String laundryrevAddr;
+	
+	MemberDTO mdto;
 
 }

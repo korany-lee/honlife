@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사원 목록</title>
+<title>청소예약 목록</title>
 </head>
 
 

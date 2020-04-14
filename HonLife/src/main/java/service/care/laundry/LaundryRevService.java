@@ -74,13 +74,13 @@ public class LaundryRevService {
 		return i;
 	}
 
-	public void list(Model model) {
-		
-		
+	public void list(Model model, HttpSession ses) {
+
+	
 		List<LaundryRevDTO> raundryDTO = registrepository.laundryList();
 
 		
-		
+	
 		model.addAttribute("laundryList",raundryDTO);
 	}
 

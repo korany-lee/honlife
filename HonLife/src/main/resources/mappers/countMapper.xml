@@ -12,6 +12,16 @@
 	select count(*) from employee
 </select>
 
+<select id="cleancount" resultType="int"> 
+	select count(*) from cleanrev
+</select>
 
+<select id="laundrycount" resultType="int"> 
+	select count(*) from laundryrev
+</select>
 
+<select id="roomcount" resultType="int">
+	select count(*) from room
+
+</select>
 </mapper>
